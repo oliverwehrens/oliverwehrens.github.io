@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Solid on maxheapsize</title>
+    <link>http://maxheapsize.com/categories/solid/index.xml</link>
+    <description>Recent content in Solid on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/categories/solid/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>SOLID Development Principles In Motivational Pictures (enhanced)</title>
+      <link>http://maxheapsize.com/2009/03/08/solid-development-principles-in-motivational-pictures-enhanced/</link>
+      <pubDate>Sun, 08 Mar 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2009/03/08/solid-development-principles-in-motivational-pictures-enhanced/</guid>
+      <description>&lt;p&gt;I found &lt;a href=&#34;http://www.lostechies.com/blogs/derickbailey/archive/2009/02/11/solid-development-principles-in-motivational-pictures.aspx&#34;&gt;SOLID Development Principles In Motivational Pictures&lt;/a&gt; a couple of days ago. I put one of them up in the restroom. So it turned out some clever colleague enhanced the SRP picture. Nice job.
+&lt;img alt=&#34;Single Responsibility Principle and Don&#39;t Repeat Yourself&#34; src=&#34;http://maxheapsize.com/static/SingleResponsibilityEnhanced.jpg&#34; title=&#34;SRP and DRY&#34; width=&#34;550&#34; height=&#34;461&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

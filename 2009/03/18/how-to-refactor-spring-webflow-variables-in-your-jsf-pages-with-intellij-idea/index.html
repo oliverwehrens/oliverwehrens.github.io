@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="How to refactor Spring Webflow variables in your JSF pages with IntelliJ IDEA - maxheapsize" property="og:title">
+<title>How to refactor Spring Webflow variables in your JSF pages with IntelliJ IDEA | maxheapsize</title>
+<link rel="stylesheet" href="http://maxheapsize.com//css/style.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous" />
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://maxheapsize.com/"><h1 class="title is-4">maxheapsize</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">March 18, 2009</h2>
+    <h1 class="title">How to refactor Spring Webflow variables in your JSF pages with IntelliJ IDEA</h1>
+    
+    <div class="content">
+      <p>We are using <strong>JSF,</strong> <strong>Facelets</strong> and <strong>Spring Webflow</strong> in the product I&rsquo;m currently working on. What bugged me for some time already was that when we started to refactor the domain and the corresponding dto&rsquo;s the GUI was a problem since the variables which get pulled out of the webflow are just string declarations. I had to go to each xhtml file and change the code to reflect the access to the new properties.</p>
+
+<p>For some reason I missed a feature of IntelliJ IDEA completely.</p>
+
+<p>If you are using Spring Webflow your code might look like this:</p>
+
+<pre><code class="language-xml">&lt;tr:outputText value=&quot;#{flowScope.myViewBean.creditCardDto.fullName}&quot;/&gt;
+</code></pre>
+
+<p>You get no code completion nor refactoring security.</p>
+
+<p>Now it is possible to make this a little bit <strong>better</strong>.</p>
+
+<pre><code class="language-xml">&lt;c:set value=&quot;#{flowScope.creditCardDto}&quot; var=&quot;creditCardDto&quot;&gt;&lt;/c:set&gt;
+&lt;!--@elvariable id=&quot;creditCardDto&quot;
+     type=&quot;net.wehrens.accounting.CreditCardDto&quot;--&gt;
+&lt;tr:outputText value=&quot;#{creditCardDto.fullName}&quot;/&gt;
+</code></pre>
+
+<p>With the clever Inspection &lsquo;<strong>Declare External Variable in Comment Annotation</strong>&rsquo; (just press Alt+Enter on the usage of creditCardDto) IDEA creates a comment annotation which tells the IDE of what type the given variable is.  Since you are using webflow, you would pull the needed variable with a c:set tag out of the flowScope (or any other scope) and then declare the variable and it&rsquo;s type.</p>
+
+<p>There you go.</p>
+
+<p>You can now start refactoring the creditCardDto and the GUI will reflect the changes. No more manual editing.</p>
+
+<p>To make sure the comments do not get rendered out to the client (and with that the class information) you can turn that off for faclets in the web.xml  configuration.</p>
+
+<pre><code class="language-xml">&lt;context-param&gt;
+    &lt;param-name&gt;facelets.SKIP_COMMENTS&lt;/param-name&gt;
+    &lt;param-value&gt;true&lt;/param-value&gt;
+&lt;/context-param&gt;
+</code></pre>
+
+<p>This is not specific to JSF, facelets or anything. This works with Freemaker, JSP&rsquo;s and others as well.</p>
+
+<p>My life just got a whole lot better.</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

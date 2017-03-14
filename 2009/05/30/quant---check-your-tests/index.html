@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="Quant - Check your Tests - maxheapsize" property="og:title">
+<title>Quant - Check your Tests | maxheapsize</title>
+<link rel="stylesheet" href="http://maxheapsize.com//css/style.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous" />
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://maxheapsize.com/"><h1 class="title is-4">maxheapsize</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">May 30, 2009</h2>
+    <h1 class="title">Quant - Check your Tests</h1>
+    
+    <div class="content">
+      <p><img src="http://maxheapsize.com/static/QuantLogo.png" class="alignleft"/>Did you ever wondered if all tests your team wrote are <strong>really running</strong> ? How many <strong>disabled tests</strong> does your code base have? How many public void methods <strong>do not have a @Test</strong> annotation (or at the class) ?</p>
+
+<p>I saw all of that in the last years.</p>
+
+<p>To overcome this situation I wrote a couple of java classes which will scan your java test sources and will examine the annotations (for TestNG, sorry JUnit). The code will detect if all public void methods do have a<code>@Test</code> annotation (either direct on the method or on the class) or if there are disabled tests. Both signals are most likely a sign of rotten code.</p>
+
+<p>If you have different test groups defined like &lsquo;unitTest&rsquo; or &lsquo;integrationTest&rsquo; you want to make sure all tests are in at least one test group. This ensures if you run all test groups all tests are executed.</p>
+
+<p>The usage is really <strong>simple</strong>. To make sure all your tests are ok is to <strong>write just another test</strong> which will check all tests.</p>
+
+<pre><code class="language-java">ClassFinder classFinder =
+   new ClassFinder.Builder(sourceDirectory).build();
+for (Class klass : classFinder.getClassList()) {
+  TestClassTester testClassTester =
+    new TestNGTestClassTester.Builder(klass).build();   
+  Assert.assertTrue(testClassTester.allTestMethodsHaveValidTestGroup());
+}
+</code></pre>
+
+<p>You need to specify the source files of your code so that all java files can be scanned. It is possible to exclude certain packages to be checked (via <code>TestNGTestClassTester.Builder(klass).addExcludedPackage(&quot;testclasses&quot;).build()</code>). After gathering all class names from the sources the code will check for <code>@Test</code> annotations in the test classes. You can also specify the test groups which all test should belong to (via <code>addTestGroup(&quot;unitTest&quot;)</code> in the builder).</p>
+
+<p>Finding disabled test methods is very simple too (one of the unit tests)</p>
+
+<pre><code class="language-java">@Test
+public void testNoDisabledTest() {
+  DisabledTestFinder unitUnderTest =
+    new TestNGDisabledTestFinder.Builder(TwoTestGroups.class).build();
+  assertFalse(unitUnderTest.hasDisabledTests());
+}
+</code></pre>
+
+<p>This would test a single class (but you can of course feed it with the results of the ClassFinder).</p>
+
+<p>If you combine the possibility to break your build because of defect test classes and a  <strong>continuous integration system</strong>, you can make sure everybody will annotate their classes correctly or never disables tests (or even better use a CI with delayed check in and personal build like Jetbrains Teamcity). Of course you can define your own thresholds for e.g. 30 disabled tests are allowed (I know sometimes you just can&rsquo;t avoid it).</p>
+
+<p>The code depends on testng and commons-io and is released under the Apache v2 license.</p>
+
+<p>I still need to figure out where to put the maven2 sources. Either Google code or GitHub ? Any ideas?</p>
+
+<p><strong>Update:</strong> Code is available at <a href="http://code.google.com/p/quant/source/checkout">Google Code Hosting</a>.</p>
+
+<p>Things to implement:</p>
+
+<ul>
+<li>A more flexible exclude patterm, like Apache ant maybe</li>
+<li>Make sure to check @BeforeXXX and @AfterXXX methods as well</li>
+<li>Implement JUnit (maybe ;-) )</li>
+</ul>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

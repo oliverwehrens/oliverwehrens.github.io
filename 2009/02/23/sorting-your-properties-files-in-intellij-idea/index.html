@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="Sorting your properties files in IntelliJ Idea - maxheapsize" property="og:title">
+<title>Sorting your properties files in IntelliJ Idea | maxheapsize</title>
+<link rel="stylesheet" href="http://maxheapsize.com//css/style.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous" />
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://maxheapsize.com/"><h1 class="title is-4">maxheapsize</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">February 23, 2009</h2>
+    <h1 class="title">Sorting your properties files in IntelliJ Idea</h1>
+    
+    <div class="content">
+      <p>I do work with language property files pretty much every day (since I&rsquo;m the GUI guy in the team). The files are updated on different branches copied up to the trunk and merged down to new branches, sometimes even updated by our product owner. We got a couple of times into not so funny merge conflicts since people did not sort the property files in the same way. To get around that we used an external tool to sort the files just before committing them.</p>
+
+<p>Right, we can do better than this.</p>
+
+<p>I wrote a small plugin for IntelliJ IDEA (and turns out my colleague too) for sorting these inside IDEA. I took the easy approach to sort them in the editor window. Simply open a properties file and choose <em>Code</em> - <em>Sort Properties</em>. It detects if this is  a real properties file (e.g. all lines do  have a # at the start or do follow the pattern key=value) and sorts them. If things go boom you always can undo ;-).</p>
+
+<p><img alt="" src="http://maxheapsize.com/static/ideapropertysorter_small.gif" title="Idea Property File Sorter" class="alignnone" width="300" height="240" /></p>
+
+<p>You can get it from <a href="http://maxheapsize.com/static/IdeaPropertySorter.zip">here</a>. It&rsquo;s just 7KB since I did not include the testng jars.</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

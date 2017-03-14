@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Test Unittest on maxheapsize</title>
+    <link>http://maxheapsize.com/categories/spring-test-unittest/index.xml</link>
+    <description>Recent content in Spring Test Unittest on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/categories/spring-test-unittest/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Three reasons why you don&#39;t want to use a Spring context in unit tests</title>
+      <link>http://maxheapsize.com/2009/02/25/three-reasons-why-you-dont-want-to-use-a-spring-context-in-unit-tests/</link>
+      <pubDate>Wed, 25 Feb 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2009/02/25/three-reasons-why-you-dont-want-to-use-a-spring-context-in-unit-tests/</guid>
+      <description>&lt;p&gt;You use Spring in  your application everywhere. You love it. Everything gets injected and is configured by Spring. Great. Why not use the same technology to wire up your tests?&lt;/p&gt;
+
+&lt;p&gt;The bottom line is: Starting the Spring Context all the time in your tests drags you down at the costs of development time.&lt;/p&gt;
+
+&lt;p&gt;Here is why:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. Turnaround times are much faster&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;When you discover a bug which might have not been covered by tests yet (this happens to me all the time) you are much faster rerunning your tests without the application context. In the application I&amp;rsquo;m working on it takes about 20-25 seconds to run a test with application context, whereas a pure unit test just takes 1 second. Now imagine this: changing some code and rerunning tests like 100 times saves you a lot of time. The &lt;strong&gt;tests run faster&lt;/strong&gt;, you &lt;strong&gt;don&amp;rsquo;t get distracted&lt;/strong&gt; because you could do something else in those 20-25 seconds, like browsing some web pages (you want to be efficient and use the &amp;lsquo;spare&amp;rsquo; time to read up the newest stories on infoq.com). But then you need to switch windows, read something, switch back, wonder what you did, rethink the problem and so on. In the end it costs you much more time than it  seems.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. Enables you pratice Test Driven Development&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Since you can run test faster without the Spring context, you can start doing Test Driven Development. Before any line of production code gets typed into your IDE, write the test. That the code does not compile is the first test, go fix it by writing the actual stub for the class which you want to test. Now onto the next test. It fails, you implement the feature and rerun the test. This goes on and on and on until you fully implemented the requirements. It forces you &lt;strong&gt;only to implements the things needed&lt;/strong&gt; and not more.&lt;/p&gt;
+
+&lt;p&gt;Uncle Bob&amp;rsquo;s three rules of Test Driven Development
+&lt;blockquote&gt;
+1. You are not allowed to write any production code unless it is to make a failing unit test pass.
+2. You are not allowed to write any more of a unit test than is sufficient to fail; and compilation failures are failures.
+3. You are not allowed to write any more production code than is sufficient to pass the one failing unit test.
+&lt;/blockquote&gt;
+Learn more about &lt;a title=&#34;Uncle Bob about Test Driven Development&#34; href=&#34;http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd&#34;&gt;Test Driven Development&lt;/a&gt; with Uncle Bob.&lt;/p&gt;
+
+&lt;p&gt;Without fast unit tests you just can&amp;rsquo;t do TDD.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. No corrupt test configuration
+&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Depending on the setup of the project you might have an extra Spring application context configuration for tests. You have to configure and keep it up to date. Things can go wrong here and will be detected very late.
+If you use the application context in tests you get the beans injected but sometimes you need to mock them, because you depend on an application server, a database or an external service which you don&amp;rsquo;t want to start up every time you run tests. You must be very careful with that. Using &lt;strong&gt;mocks&lt;/strong&gt; with Spring application context can be &lt;strong&gt;very powerful but also very dangerous&lt;/strong&gt;. You have to make sure that you remove the mocks after you are done with your tests (and reinject the right ones) or mark the methods which are injecting mocks with the DirtiesContext annotation so Spring can reload them.  I did debug forgotten DirtiesContext annotations one too many times. The mock object lives on in your context and 282 test later an exception occurs for no reason and you start debugging at a  wrong place.
+You will not discover those mock problems until you run the full suite of tests. Since your &lt;strong&gt;tests are slow&lt;/strong&gt; you not very likely to run all the on a regular basis to see if everything  plays well together.  No, you run all tests &lt;strong&gt;right before checkin&lt;/strong&gt; and then start to wonder why some tests somewhere &lt;strong&gt;fail&lt;/strong&gt;. Depending on the size of the changes and the project it will require some substantial amount of time to find and fix the problem.&lt;/p&gt;
+
+&lt;p&gt;You might say: &amp;ldquo;But I need my application context in the tests. My Service which I want to test has so many dependencies, I just can&amp;rsquo;t mock them all!&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;While this happened to me as well it might turn out that this service is maybe doing too much. Split the functionality  into smaller packages and test them individually (that&amp;rsquo;s the S in &lt;a title=&#34;Solid Principles&#34; href=&#34;http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod&#34;&gt;SOLID&lt;/a&gt; principles). The danger in testing a complex service with mocks only is also that you might end up mocking everything and you don&amp;rsquo;t do any real tests anymore (happened to me, I threw hours of coding away).&lt;/p&gt;
+
+&lt;p&gt;There is one reason to run tests with a Spring application context. It&amp;rsquo;s just not in unit tests. If you want to test the integration with external services (like databases or webservices) you need to use it  of course. Just make sure you really just test the interaction between your service and the external interface and not more (but even that is debatable in some cases). That&amp;rsquo;s what I call an integration test.&lt;/p&gt;
+
+&lt;p&gt;Do you use Spring in your unit tests? What experiences did you make?&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

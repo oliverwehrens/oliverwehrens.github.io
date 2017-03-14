@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="Cucumber-jvm for Java - maxheapsize" property="og:title">
+<title>Cucumber-jvm for Java | maxheapsize</title>
+<link rel="stylesheet" href="http://maxheapsize.com//css/style.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous" />
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://maxheapsize.com/"><h1 class="title is-4">maxheapsize</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">April 12, 2012</h2>
+    <h1 class="title">Cucumber-jvm for Java</h1>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/test">Test</a>
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/java">Java</a>
+    
+</div>
+
+    
+    <div class="content">
+      <p>In an <a href="http://maxheapsize.com/2009/10/13/concordion-vs-cucumber-and-java-based-acceptance-testing">earlier</a> article I compared cucumber (with Cuke4Duke) and Concordion. It was very cumbersome due to the ruby/jruby jvm chain. Behold - the new <strong><a href="https://github.com/cucumber/cucumber-jvm">cucumber-jvm</a></strong> was released. So how did it <strong>improve</strong> ?</p>
+
+<p>Cucumber-jvm has support for many languages, e.g. Scala, Groovy, Closure and of course Java. I will focus on <strong>Java</strong> and <strong>Maven</strong>.</p>
+
+<p></p>
+
+<p>To get you maven project going you just need to include the following dependencies:</p>
+
+<p>{% include_code [Dependencies] cucumber-jvm/pom.xml %}</p>
+
+<p>First thing you (or your Business Analyst or something) is doing, is <strong>describing your feature</strong>. It would look something like:</p>
+
+<pre><code>Feature: Hello Car
+
+Scenario: Car can drive
+    Given I have a car
+    When I add 4 wheels
+    Then It can drive
+</code></pre>
+
+<p>You need to put that into a file called Car.feature. The <strong>.feature</strong> extension is important.</p>
+
+<p>To get all Cucumber-jvm tests off the ground we need one <strong>test runner</strong>. I often see it being called RunCukesTest.</p>
+
+<p>{% include_code [Test Runner] cucumber-jvm/RunCukesTest.java %}</p>
+
+<p>You note the Cucumber.Options annotation. It will also produce a nice html in the given directory.</p>
+
+<p>Writing the test now itself is no different than with Cuke4Duke.</p>
+
+<p>{% include_code [The test class] cucumber-jvm/CarTest.java %}</p>
+
+<p>You need to match the <strong>.feature</strong> description with <strong>@Given</strong>, <strong>@When</strong>, <strong><strong></strong>@Then<strong></strong></strong> Annotation (regexp that is). Each usage of any of the annotations is called a step definition. Each one must be unique among all .feature files (as far as I can tell). The code will be executed accordingly.</p>
+
+<p>A maven test will get you:</p>
+
+<p><img src="http://maxheapsize.com/static/cucumber-jvm-console.png" alt="Maven Cucumber-jvm test output" /></p>
+
+<p>Make sure you put your .feature file in the <strong>right location</strong>. It needs right next to tests. I tend to put it into the resources folder in maven so it does not &lsquo;pollute&rsquo; my Java source files.</p>
+
+<p><img src="http://maxheapsize.com/static/cucumber-jvm-source-tree.png" alt="Cucumber-jvm Test source tree" /></p>
+
+<p>Finally your Html report is rendered (somewhat nicely and collapsable).</p>
+
+<p><img src="http://maxheapsize.com/static/cucumber-jvm-html.png" alt="Cucumber-jvm test output" /></p>
+
+<p>And yes, this applies to cucumber-jvm version 1.0.2.</p>
+
+<p>I hope you found that useful as very short intro into cucumber-jvm. If you are wondering if you would want to use concordion check out my older <a href="http://maxheapsize.com/2009/10/13/concordion-vs-cucumber-and-java-based-acceptance-testing">blog post</a>.</p>
+
+<p>If I would have a choice again.<strong>I would choose</strong> cucumber-jvm for using a BDD tool. The plain text format makes it <strong>easy</strong> to read for a non programmer and it produces somewhat <strong>good documentation</strong> (if used well of course ;-) ). The tool chain is much smoother now and faster as well.</p>
+
+<p>What I found <strong>missing</strong> is support for my favorite unit test tool <strong>TestNG</strong>. I also don&rsquo;t know yet how to <strong>execute a single feature</strong>/scenario when having multiple ones (which will be almost certain always the case).</p>
+
+<p>The learn more about cucumber checkout their <a href="http://cukes.info/">website</a>.</p>
+
+<p>The code used above is available on <a href="https://github.com/oliverwehrens/cucumber-jvm-demo">GitHub</a></p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

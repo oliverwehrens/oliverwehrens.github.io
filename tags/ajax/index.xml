@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ajax on maxheapsize</title>
+    <link>http://maxheapsize.com/tags/ajax/index.xml</link>
+    <description>Recent content in Ajax on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to detect if your server is down when making jQuery Ajax calls </title>
+      <link>http://maxheapsize.com/2010/04/26/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</link>
+      <pubDate>Mon, 26 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2010/04/26/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</guid>
+      <description>&lt;p&gt;If you developed an &lt;strong&gt;ajax rich web application&lt;/strong&gt;, maybe even a single page interface, you want to make sure that the user gets &lt;strong&gt;notified&lt;/strong&gt; if the server is &lt;strong&gt;not reachable&lt;/strong&gt; anymore. This happens either if the it goes down or the client loses its network connection.
+Depending on your code the application can run for a while and the &lt;strong&gt;user is confused&lt;/strong&gt; about missing interactivity.&lt;/p&gt;
+
+&lt;p&gt;So how do you detect this? jQuery offers an error callback if something with the call goes wrong.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;window.setInterval(function() {
+$.ajax({
+   type: &#39;GET&#39;,
+      url: &#39;http://www.myapp.com/heartbeat&#39;,
+      success: function(data, textStatus, XMLHttpRequest) {},
+      error: function(XMLHttpRequest, textStatus, errorThrown) {
+        alert(&#39;Failure&#39;);
+      }
+  });
+}, 2000);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Unfortunately this does not work for a server which is down and if you are using a debugger like Firebug you will see that these calls have the status aborted. It turns out that if the &lt;strong&gt;server goes away&lt;/strong&gt; jQuery will still execute the &lt;strong&gt;success callback&lt;/strong&gt;. So how do you know that the server died?&lt;/p&gt;
+
+&lt;p&gt;I changed the response of the &lt;strong&gt;heartbeat&lt;/strong&gt; query to contain some simple string like &amp;lsquo;alive&amp;rsquo;.  In the success callback I just check if the data contains this string. If it does not, I know that I do have a problem and I need to make sure that the user can&amp;rsquo;t do anything anymore.&lt;/p&gt;
+
+&lt;p&gt;I use the &lt;a href=&#39;http://jquery.malsup.com/block/&#39;&gt;jQuery plugin uiBlock&lt;/a&gt; to block every interaction and show a nice little message. Check out the &lt;a href=&#34;http://jquery.malsup.com/block/#demos&#34;&gt;uiBlock demos&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var uiBlocked = false;
+
+window.setInterval(function() {
+    $.ajax({
+      cache: false,
+      type: &#39;GET&#39;,
+      url: &#39;/mywebapp/alive.txt&#39;,
+      timeout: 1000,
+      success: function(data, textStatus, XMLHttpRequest) {
+        if (data != &#39;alive&#39;) {
+          if (uiBlocked == false) {
+            uiBlocked = true;
+            $.blockUI({
+              message: &amp;amp;quot;I&#39;m trying to connect to the server.&amp;amp;quot;,
+              css: {
+                border: &#39;none&#39;,
+                padding: &#39;15px&#39;,
+                backgroundColor: &#39;#000&#39;,
+                &#39;-webkit-border-radius&#39;: &#39;10px&#39;,
+                &#39;-moz-border-radius&#39;: &#39;10px&#39;,
+                opacity: .5,
+                color: &#39;#fff&#39;
+              } });
+          }
+        } else {
+          if (uiBlocked == true) {
+            uiBlocked = false;
+            $.unblockUI();
+          }
+        }
+      }
+    })
+
+  }, 2000);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This code will check the server every 2 seconds and will&lt;strong&gt; block the UI&lt;/strong&gt; when the server is not reachable and will &lt;strong&gt;come back up&lt;/strong&gt; if the connection is &lt;strong&gt;alive&lt;/strong&gt; again. Depending on your scenario (intranet/internet) you can change the interval for checking the connection.&lt;/p&gt;
+
+&lt;p&gt;This took me a couple of hours to get to this point and I thought it might be worth sharing. It seems a bit hacky but it works. What do you think?&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

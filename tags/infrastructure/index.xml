@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Infrastructure on maxheapsize</title>
+    <link>http://maxheapsize.com/tags/infrastructure/index.xml</link>
+    <description>Recent content in Infrastructure on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/tags/infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>What&#39;s your preferred development infrastructure stack?</title>
+      <link>http://maxheapsize.com/2010/01/13/whats-your-preferred-development-infrastructure-stack/</link>
+      <pubDate>Wed, 13 Jan 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2010/01/13/whats-your-preferred-development-infrastructure-stack/</guid>
+      <description>
+
+&lt;p&gt;In Response to &lt;a href=&#34;http://raibledesigns.com/rd/entry/what_s_your_preferred_development&#34;&gt;Matt Raible&amp;rsquo;s&lt;/a&gt; question about my preferred development stack.&lt;/p&gt;
+
+&lt;h3 id=&#34;source-control&#34;&gt;Source control&lt;/h3&gt;
+
+&lt;p&gt;In my own development project I switched to &lt;a href=&#34;http://git-scm.com&#34;&gt;Git&lt;/a&gt; some time ago. I was using svn and before that cvs for a couple of years. Git just makes it easy to try out small ideas very quickly without reverting the code. We will introduce Git at work pretty soon (I hope).&lt;/p&gt;
+
+&lt;h3 id=&#34;the-atlassian-cloud&#34;&gt;The Atlassian cloud&lt;/h3&gt;
+
+&lt;p&gt;I was using &lt;a href=&#34;http://www.atlassian.com/software/confluence/&#34;&gt;Confluence&lt;/a&gt; as a Wiki in my open source project and my current employer &lt;a href=&#34;http://www.hypoport.de&#34;&gt;Hypoport&lt;/a&gt; uses it as well.  Bug tracking is pretty much a task of &lt;a href=&#34;http://www.atlassian.com/software/jira/&#34;&gt;Jira&lt;/a&gt;. Those two integrate very nicely. You can have ping backs in your Jira Ticket from Confluence, so you see all related files. I would love to use &lt;a href=&#34;http://www.atlassian.com/software/fisheye/&#34;&gt;FishEye&lt;/a&gt; but I&amp;rsquo;m not sure how to justify the costs and what the added value is in our case.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-code&#34;&gt;The Code&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;m pretty much sold to &lt;a href=&#34;http://www.jetbrains.com/idea/index.html&#34;&gt;Jetbrains IntelliJ Idea&lt;/a&gt;. I&amp;rsquo;m using it for 5 years now. With it comes &lt;a href=&#34;http://www.jetbrains.com/teamcity/&#34;&gt;Teamcity&lt;/a&gt;. It&amp;rsquo;s a very nice continuous integration tool where the biggest plus (among other things) is the delayed (and pre tested) checkin. No more late night checkins which break the master. We just rolled out the latest version which has a much nicer Git integration (so we can make the switch).&lt;/p&gt;
+
+&lt;p&gt;So it comes down to:&lt;/p&gt;
+
+&lt;h3 id=&#34;the-list&#34;&gt;The List&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Source control: &lt;b&gt;Git&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Wiki: &lt;b&gt;Atlassian Confluence&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Continuous Integration: &lt;b&gt;Jetbrains Teamcity&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Bugtracker: &lt;b&gt;Atlassian Jira&lt;/b&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We are about to use &lt;a href=&#34;http://sonar.codehaus.org/&#34;&gt;Sonar&lt;/a&gt; for code analysis and development over time, but this is just in the beginning.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s yours ?&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="Do not use Javadoc - maxheapsize" property="og:title">
+<title>Do not use Javadoc | maxheapsize</title>
+<link rel="stylesheet" href="http://maxheapsize.com//css/style.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous" />
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://maxheapsize.com/"><h1 class="title is-4">maxheapsize</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">July 27, 2012</h2>
+    <h1 class="title">Do not use Javadoc</h1>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/javadoc">javadoc</a>
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/java">java</a>
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/development">development</a>
+    
+</div>
+
+    
+    <div class="content">
+      <p>Javadoc is here to help. To understand what the code does and how it works? Right?</p>
+
+<p>I don&rsquo;t think so. I confuses the heck out of me in most cases.</p>
+
+<!-- more -->
+
+<p>When I look at code like</p>
+
+<pre><code>/**
+* Version number of signature.
+*/
+public static final String SIGNATURE_VERSION = &quot;1&quot;;
+</code></pre>
+
+<p>I get the feeling that the javadoc is pretty pointless. Well, the damn String is named what it is, how does the Javadoc help me here?</p>
+
+<p>Remove it. If you don&rsquo;t remove it you might end up with something like</p>
+
+<pre><code>/**
+ * Version number of signature.
+ */
+public static final String SIGNATURE_VERSION_OLD = &quot;1&quot;;
+</code></pre>
+
+<p>after a while. Uh, what does this mean now? The Javadoc did not change but the variable was renamed … hmm, where is the truth?</p>
+
+<p>Another example of Javadoc just used to satisfy the coding guide lines of a project is:</p>
+
+<pre><code>/** The request. */
+private final HttpServletRequest request;
+
+/**
+ * Constructor.
+ *
+ * @param request the request
+ */
+ public HttpParamSource(final HttpServletRequest request) {
+…
+</code></pre>
+
+<p>I mean, come on, so much noise. Totally useless for the reader of the code. It destroys the flow of reading the code. Most of the time we are spending code reading (and trying to understand).</p>
+
+<p>The problem with Javadoc is that it only helps in a very few cases (public api is one of them). Furthermore chances are that the <strong>Javadoc</strong> will <strong>not be updated</strong> during refactoring or by adding new functionality.</p>
+
+<p>If you are trying to attempt to write a Javadoc think about the naming again. It is always a <strong>sign</strong> that <strong>something is not right</strong>. Why are you trying to document it? Does it <strong>more than you can describe in a name</strong>? Maybe you should split it?</p>
+
+<p>Please, use only minimal Javadoc in your code. Thanks.</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

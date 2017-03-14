@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on maxheapsize</title>
+    <link>http://maxheapsize.com/categories/test/index.xml</link>
+    <description>Recent content in Test on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/categories/test/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>4 ways to test your code</title>
+      <link>http://maxheapsize.com/2009/08/20/4-ways-to-test-your-code/</link>
+      <pubDate>Thu, 20 Aug 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2009/08/20/4-ways-to-test-your-code/</guid>
+      <description>
+
+&lt;p&gt;Whenever you write some code you better make sure you have it covered by some tests. There are different possibilities on how to achieve this (and you might want to use all of them).&lt;/p&gt;
+
+&lt;h1 id=&#34;unit-tests&#34;&gt;Unit Tests&lt;/h1&gt;
+
+&lt;p&gt;Unit tests are a classic. You usually write them while you code. Write tests, run failing test, write code and run passing test. Repeat. Keep this &lt;strong&gt;small and simple&lt;/strong&gt;. Test the smallest unit which makes sense. You might end up with hundreds if not thousands of them. Make sure you have no external dependencies in them, like databases or external webservices. &lt;strong&gt;Mock&lt;/strong&gt; them away. They are usually written in TestNG or JUnit.
+These tests can run at every check in in the VCS.&lt;/p&gt;
+
+&lt;h1 id=&#34;integration-tests&#34;&gt;Integration Tests&lt;/h1&gt;
+
+&lt;p&gt;Integrations Test are one step higher. You want to make sure your applications runs with &lt;strong&gt;all or some dependencies&lt;/strong&gt; and things plays well together. These usually have a much higher run time since they might involve some external services. Usually you would use a framework like TestNG, nUnit for them.
+These tests are run not so often since they can be very expensive.&lt;/p&gt;
+
+&lt;h1 id=&#34;ui-tests&#34;&gt;UI Tests&lt;/h1&gt;
+
+&lt;p&gt;Many applications have some sort of graphical user interface. To make sure everything works alright there are several tools like Selenium or HP Quality Center to &lt;strong&gt;simulate&lt;/strong&gt; a user going through the &lt;strong&gt;GUI&lt;/strong&gt;. These tests are written more towards the end of the projects since in the beginning the interface might change fast and often and the overhead to change them might be significant. You usually can not run through all paths of your applications. Choose the ones which are the most critical.
+They can be run a couple of times a day depending on the size of the application and the tool (e.g. Quality Center tends to be sort of slow) you use.&lt;/p&gt;
+
+&lt;h1 id=&#34;reference-system-tests&#34;&gt;Reference System Tests&lt;/h1&gt;
+
+&lt;p&gt;If you have to implement some business rules or calculations and your client can specify these in Excel you might want to use a framework like Fit (or Fitnesse). You run your system against the values in the sheets and verify that it meets the expectation.&lt;/p&gt;
+
+&lt;p&gt;There are many more test possibilities and techniques to make sure the system meets the demands of the customer. These are just the ones I tend to use in my projects and I found them very useful.
+Tests (and specifications) with tools like &lt;a href=&#34;http://www.concordion.org/&#34; alt=&#34;Concordion&#34;&gt;Concordion&lt;/a&gt; or the use of a Behavior Driven Design frameworks like &lt;a href=&#34;http://www.easyb.org&#34; alt=&#34;EasyB&#34;&gt;EasyB&lt;/a&gt; are offering nice
+ways to make sure the customers gets what he pays for (and he understands it). I still need to play with them.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

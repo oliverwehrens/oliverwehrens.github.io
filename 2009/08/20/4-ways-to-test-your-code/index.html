@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="4 ways to test your code - maxheapsize" property="og:title">
+<title>4 ways to test your code | maxheapsize</title>
+<link rel="stylesheet" href="http://maxheapsize.com//css/style.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous" />
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://maxheapsize.com/"><h1 class="title is-4">maxheapsize</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">August 20, 2009</h2>
+    <h1 class="title">4 ways to test your code</h1>
+    
+    <div class="content">
+      
+
+<p>Whenever you write some code you better make sure you have it covered by some tests. There are different possibilities on how to achieve this (and you might want to use all of them).</p>
+
+<h1 id="unit-tests">Unit Tests</h1>
+
+<p>Unit tests are a classic. You usually write them while you code. Write tests, run failing test, write code and run passing test. Repeat. Keep this <strong>small and simple</strong>. Test the smallest unit which makes sense. You might end up with hundreds if not thousands of them. Make sure you have no external dependencies in them, like databases or external webservices. <strong>Mock</strong> them away. They are usually written in TestNG or JUnit.
+These tests can run at every check in in the VCS.</p>
+
+<h1 id="integration-tests">Integration Tests</h1>
+
+<p>Integrations Test are one step higher. You want to make sure your applications runs with <strong>all or some dependencies</strong> and things plays well together. These usually have a much higher run time since they might involve some external services. Usually you would use a framework like TestNG, nUnit for them.
+These tests are run not so often since they can be very expensive.</p>
+
+<h1 id="ui-tests">UI Tests</h1>
+
+<p>Many applications have some sort of graphical user interface. To make sure everything works alright there are several tools like Selenium or HP Quality Center to <strong>simulate</strong> a user going through the <strong>GUI</strong>. These tests are written more towards the end of the projects since in the beginning the interface might change fast and often and the overhead to change them might be significant. You usually can not run through all paths of your applications. Choose the ones which are the most critical.
+They can be run a couple of times a day depending on the size of the application and the tool (e.g. Quality Center tends to be sort of slow) you use.</p>
+
+<h1 id="reference-system-tests">Reference System Tests</h1>
+
+<p>If you have to implement some business rules or calculations and your client can specify these in Excel you might want to use a framework like Fit (or Fitnesse). You run your system against the values in the sheets and verify that it meets the expectation.</p>
+
+<p>There are many more test possibilities and techniques to make sure the system meets the demands of the customer. These are just the ones I tend to use in my projects and I found them very useful.
+Tests (and specifications) with tools like <a href="http://www.concordion.org/" alt="Concordion">Concordion</a> or the use of a Behavior Driven Design frameworks like <a href="http://www.easyb.org" alt="EasyB">EasyB</a> are offering nice
+ways to make sure the customers gets what he pays for (and he understands it). I still need to play with them.</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

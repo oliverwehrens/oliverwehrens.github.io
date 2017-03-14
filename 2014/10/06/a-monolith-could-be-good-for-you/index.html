@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="A Monolith could be good for you - maxheapsize" property="og:title">
+<title>A Monolith could be good for you | maxheapsize</title>
+<link rel="stylesheet" href="http://maxheapsize.com//css/style.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous" />
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://maxheapsize.com/"><h1 class="title is-4">maxheapsize</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">October 6, 2014</h2>
+    <h1 class="title">A Monolith could be good for you</h1>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/monolith">monolith</a>
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/architecture">architecture</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<p>Everybody says monolithic applications are bad. I usually hear things like:</p>
+
+<ul>
+<li>Tiny changes need full redeployment (maybe even with downtime)</li>
+<li>Limited agility</li>
+<li>Easy to get a big ball of mud</li>
+</ul>
+
+<p>So why would you like to have a monolith?</p>
+
+<!-- more -->
+
+<p><img src="http://maxheapsize.com/static/monoliths.jpg" alt="Monolith" /></p>
+
+<p>There are many definitions of a monolithic application. There are tons  for microservices.</p>
+
+<p>A Monolith has it&rsquo;s advantages. There are companies which are successful with monolithic applications.</p>
+
+<h1 id="you-start-faster">You start faster.</h1>
+
+<p>It&rsquo;s one codebase. All in one editor. Only one team working on it. Why would you split that into multiple projects, thinking about interfaces and deployment? If you start with a new project I would recommend to do it just like that. Dealing with multiple services right from the start adds overhead and complexity which you can avoid.</p>
+
+<h1 id="you-can-must-modularize-the-monolith">You <del>can</del> must modularize the monolith.</h1>
+
+<p>Even if everything is in one codebase, you can still structure it. Of course we all do it, right? In Java you typically use packages. One trap which you can easily fall into is to structure it along the technology. Does Frontend, Backend, Database sound familiar? I still see that very often, because as programmers we think in technology.</p>
+
+<p>Try to do it along business logic. This is much harder but it will make refactoring much easier because changing a thing in one business aspect  is much less likely to break another business case.</p>
+
+<p>Make use of things like private and package protected access. It&rsquo;s a great way to show the intent of the code to the reader.</p>
+
+<h2 id="testing-is-easier">Testing is easier.</h2>
+
+<p>Since all is in one place. Testing is much easier. It will be never easier than that.</p>
+
+<h2 id="deployment-is-easier">Deployment is easier.</h2>
+
+<p>It is one application. How hard could it be to deploy it. Sure it can be, but just like testing&hellip;it will just grow from here. Enjoy it while you can.</p>
+
+<h2 id="so-why-change-that">So why change that?</h2>
+
+<p>Good question.</p>
+
+<p>If you have a (relativly) small code base and one team. I guess it should stay like this.</p>
+
+<p>If the project grows in terms of team members, teams and/or code base you will start to have a new slew of problems.</p>
+
+<p>More people means, more intercation, more explaining, more code/architecture styles &hellip; well more of everything.</p>
+
+<p>At this point you might need to think about splitting the code. If you did the base work in the monolith already you might have a good start into the world of distributed systems. You need to carefully think about if you want to move the complexity one level up and how you will manage it there.</p>
+
+<p>If you did not modularize your monolith, you end up with <a href="http://www.codingthearchitecture.com/2014/07/06/distributed_big_balls_of_mud.html">big balls of distributed mud</a> later.</p>
+
+<blockquote>
+<p>If you can&rsquo;t build a monolith, what makes you think microservices are the answer?</p>
+</blockquote>
+
+<p>To cite Martin Fowler:</p>
+
+<blockquote>
+<p>First Law of Distributed Object Design: &ldquo;don&rsquo;t distribute your objects&rdquo;.</p>
+</blockquote>
+
+<p>It&rsquo;s hard.</p>
+
+<p>If you want to learn more about microservices and monoliths come and join us at the <a href="http://microxchg.io">microXchg 2015</a> community conference in February in Berlin, Germany.</p>
+
+<p><small>Picture by <a href="https://www.flickr.com/photos/lamnatos/2266234773/in/photolist-4sg3Dk-2MKSNr-akQfJA-gtZneb-ef6qrS-4rXk8h-rVDD4-cykvPW-9iwEH1-g9b8zY-6YWSXZ-aFi219-9m8k-2Sx3D-hrLrEM-f4ADq8-5v9Mo5-8V9pVW-e9Wm3B-9ySZxU-4Xg2pr-9RGCGM-nyKzAC-7Uwrzi-6Z1RoS-9eWnWt-8NLpS2-6o1TD2-4AVGEW-99BadQ-rZFN8-9LCr5A-aWCXi4-2ixBeR-dYp5cN-acMxYe-iTx9TF-4xw2Bn-akDMXG-udUsG-5TxKx4-7aFXXn-4bi8H-8VQD1W-6TpC3E-6eiRbJ-nvgxnX-5mfGTh-8Ktoq-6dgxvy">Antonis Lamnatos</a> licensed under <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons 2.0</a></small></p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ie7 on maxheapsize</title>
+    <link>http://maxheapsize.com/categories/ie7/index.xml</link>
+    <description>Recent content in Ie7 on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/categories/ie7/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>IE7 caches rendered elements?</title>
+      <link>http://maxheapsize.com/2009/03/30/ie7-caches-rendered-elements/</link>
+      <pubDate>Mon, 30 Mar 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2009/03/30/ie7-caches-rendered-elements/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m tasked with some css tweaking to our current product. We need to implement a &amp;lsquo;Print Preview&amp;rsquo; screen so the customer can see how this looks before printing. Css supports exactly this use case with the @media notation.&lt;/p&gt;
+
+&lt;p&gt;So far so good.&lt;/p&gt;
+
+&lt;p&gt;Now Internet Explorer gives me some headache. Basically it looks like that if I render a page and then render the same page again with a slightly different style sheet, the lovely IE (7) will cache the width/text-align of the element. That means formerly right aligned text now looks like center aligned. Using FireBug under Firefox confirms the correct right aligned styled text. Even using the IE Developer Toolbar shows the correct style sheet information and element. Still, it renders sort of centered. By accident the right border of the text is exactly as far away from the left border as in the previous rendering. If I add any attribute to the text cell (or delete an attribute) all of the sudden the text will be rendered right aligned exactly how it should have been in the first place.&lt;/p&gt;
+
+&lt;p&gt;My guess is that IE remembers the width and alignment of the text cell from the previous page (why else the centered text appears to be the size). Deleting/adding an element via the developer tools forces a refresh and voila it renders how it should be.&lt;/p&gt;
+
+&lt;p&gt;I hate it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;First rendering of the text cell&#34; src=&#34;http://maxheapsize.com/static/ie_align_01.jpg&#34; title=&#34;First rendering of the text cell&#34; width=&#34;265&#34; height=&#34;22&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Rendering with almost the same style sheet&#34; src=&#34;http://maxheapsize.com/static/ie_align_02.jpg&#34; title=&#34;Rendering with almost the same style sheet&#34; width=&#34;419&#34; height=&#34;28&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Identifying the cell with the IE developer toolbar&#34; src=&#34;http://maxheapsize.com/static/ie_align_03.jpg&#34; title=&#34;Identifying the cell with the IE developer toolbar&#34; width=&#34;429&#34; height=&#34;28&#34; /&gt;
+&lt;img alt=&#34;Deleting the id attribute with the Developer Toolbar&#34; src=&#34;http://maxheapsize.com/static/ie_align_04.jpg&#34; title=&#34;Deleting the id attribute with the Developer Toolbar&#34; width=&#34;514&#34; height=&#34;89&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Voila, just after deleting the attribute, the cell renders how it should have been&#34; src=&#34;http://maxheapsize.com/static/ie_align_05.jpg&#34; title=&#34;Voila, just after deleting the attribute, the table cell renders how it should have been&#34; width=&#34;419&#34; height=&#34;30&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I guess there is a solution for this, I just don&amp;rsquo;t know it. In any case&amp;hellip;.this is unexpected behavior.&lt;/p&gt;
+
+&lt;p&gt;On top of that: using css and Apache Trindad with a print preview on screen makes it hard to manipulate the css for the printout since I just don&amp;rsquo;t know the names of the css classes nor the imported Trinidad css file name (and I do have pre compiled/packaged css file where I have to restart the server every time if I do some changes).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;rant off&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="Javascript testing for Java projects - maxheapsize" property="og:title">
+<title>Javascript testing for Java projects | maxheapsize</title>
+<link rel="stylesheet" href="http://maxheapsize.com//css/style.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous" />
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://maxheapsize.com/"><h1 class="title is-4">maxheapsize</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">July 12, 2012</h2>
+    <h1 class="title">Javascript testing for Java projects</h1>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/javascript">javascript</a>
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/java">java</a>
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/web">web</a>
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/maven">maven</a>
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/jstestdriver">jstestdriver</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<p>I&rsquo;m a Java Programmer. I do mostly web projects. There is a tendency to move away from server side frameworks towards Javascript (+mvc) and rest services. This now involves me in programming Javascript at the GUI level. Welcome <strong>maven</strong>, <strong>IDE</strong> and <strong>continous integration</strong>.</p>
+
+<!-- more -->
+
+<p>Coming from the JVM world I&rsquo;m pretty much used to writing tests in my IDE running them and then writing the production code. What I found out, this is not that easy with Javascript. For obvious reason I need to run it in a browser. So I need to leave my IDE. Not convinient. If something fails I transfer that result back to my IDE and check what&rsquo;s going on. What about the different Javascript implementations? Ok, I need to run it on all browsers, Chrome, Firefox, Safari, IE … and the mobile versions maybe as well? Is this overkill? Is this managable?
+What about my CI run? I need to make sure only tested code gets checked in. Oh boy. This can be very frustrating.</p>
+
+<p>#Options</p>
+
+<p>There are a lot of frameworks which do provide (or are useful) if you want to get started with Javascript Unit Testing. You might find these if you google for <a href="https://www.google.de/search?ie=UTF-8&amp;q=javascript+testing">javascript testing</a>:</p>
+
+<ul>
+<li><a href="http://www.mozilla.org/rhino/">Rhino</a> - Java Javascript implementation</li>
+<li><a href="http://www.envjs.com">Envjs</a> - Simulated Browser environment</li>
+<li><a href="http://code.google.com/p/phantomjs/">PhantomJS</a> - Headless Webkit browser</li>
+<li><a href="https://github.com/chilicat/JsChilicat">JsChilicat</a> - Framework for headless Javascript testing, uses Rhino</li>
+<li><a href="http://docs.jquery.com/QUnit">QUnit</a> - Unit Testing Framework</li>
+<li><a href="http://code.google.com/p/js-test-driver/">JsTestDriver</a> - Framework for Unit Tests</li>
+<li><a href="http://pivotal.github.com/jasmine/">Jasmine</a> - Javascript BDD Framework</li>
+</ul>
+
+<p>I started with QUnit to get a feeling how unit testing works in Javascript. I added PhantomJS (and Xfvb) for headless testing but this needed some fiddeling around and was not that straitforward. Here are some <a href="https://www.google.de/search?ie=UTF-8&amp;q=phantomjs+qunit">links</a> to help you get started.</p>
+
+<p>#So what to use now ?</p>
+
+<p>So I started with JSTest Driver since it seems to be the one which has all the features I wanted.</p>
+
+<p>##JS Test Driver</p>
+
+<h3 id="ide">IDE</h3>
+
+<p>A Dream! I use IntelliJ Idea and with the help of a plugin I can <a href="http://www.jetbrains.com/idea/webhelp/running-javascript-unit-tests-in-browser.html">test javascript</a> like a charm.</p>
+
+<p><img src="http://maxheapsize.com/static/jstestdriver_config.png"/></p>
+
+<p><img src="http://maxheapsize.com/static/jstestdriver_run.png"/></p>
+
+<h3 id="maven">Maven</h3>
+
+<p>After some fiddeling around I got the Maven test to run. The last commit of the maven plugn was around August 2011.</p>
+
+<p>To use the plugin configure it like this (full code in the example code on <a href="https://github.com/oliverwehrens/jstestdriver-example">github</a>).</p>
+
+<pre><code> &lt;plugin&gt;
+    &lt;groupId&gt;com.googlecode.jstd-maven-plugin&lt;/groupId&gt;
+    &lt;artifactId&gt;jstd-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;1.3.2.5&lt;/version&gt;
+    &lt;configuration&gt;
+      &lt;port&gt;9876&lt;/port&gt;
+      &lt;browser&gt;/Apps/Firefox12.app/Contents/MacOS/firefox-bin&lt;/browser&gt;
+    &lt;/configuration&gt;
+    &lt;executions&gt;
+      &lt;execution&gt;
+        &lt;id&gt;run-tests&lt;/id&gt;
+        &lt;goals&gt;
+          &lt;goal&gt;test&lt;/goal&gt;
+        &lt;/goals&gt;
+      &lt;/execution&gt;
+    &lt;/executions&gt;
+  &lt;/plugin&gt;
+</code></pre>
+
+<p>What I do not like at the moment is the specification of the browser path. This might make it hard to run the same configuration on a local machine and in a ci build. Yes, I <strong>don&rsquo;t</strong> want to go down the path of maven profiles.
+Even with that you might have the issue of the port configuration. Two testruns at the same time and both starting the server on the same port calls fro trouble.</p>
+
+<p>Running <code>mvn test</code> shows me something like:</p>
+
+<pre><code>...
+
+[INFO]
+[INFO] --- jstd-maven-plugin:1.3.2.5:test (run-tests) @ jstestdriver-demo ---
+
+-------------------------------------------
+J S  T E S T  D R I V E R                 
+-------------------------------------------
+
+.F
+Total 2 tests (Passed: 1; Fails: 1; Errors: 0) (1.00 ms)
+ Firefox 12.0 Mac OS: Run 2 tests (Passed: 1; Fails: 1; Errors 0) (1.00 ms)
+  Echo Test.testHello2 failed (0.00 ms): AssertError:
+
+...
+</code></pre>
+
+<p>#Summary</p>
+
+<p>Here you have it. A nice way to run your Javascript test in your IDE and maven. Some small issues remain but I have seen plugins which deal with e.g. port issues.</p>
+
+<p>The full demo code is available on <a href="https://github.com/oliverwehrens/jstestdriver-example">GitHub</a>.</p>
+
+<p>Any thoughts ?</p>
+
+<p>#Links</p>
+
+<ul>
+<li><a href="http://loose-bits.com/2011/02/browserless-ajax-testing-with-rhino-and.html]">http://loose-bits.com/2011/02/browserless-ajax-testing-with-rhino-and.html</a></li>
+<li><a href="http://twoguysarguing.wordpress.com/2010/11/02/make-javascript-tests-part-of-your-build-qunit-rhino/">http://twoguysarguing.wordpress.com/2010/11/02/make-javascript-tests-part-of-your-build-qunit-rhino/</a></li>
+<li><a href="http://thomas-genin.com/blog/javascript-3/qunit-and-rhino-javascript-unit-test-in-the-console/">http://thomas-genin.com/blog/javascript-3/qunit-and-rhino-javascript-unit-test-in-the-console/</a></li>
+<li><a href="http://www.nczonline.net/blog/2009/11/17/the-curious-case-of-javascript-unit-testing/">http://www.nczonline.net/blog/2009/11/17/the-curious-case-of-javascript-unit-testing/</a></li>
+<li><a href="http://www.readmore.ch/post/18940470535">http://www.readmore.ch/post/18940470535</a></li>
+<li><a href="http://code.google.com/p/qunit-maven-plugin/">http://code.google.com/p/qunit-maven-plugin/</a></li>
+<li><a href="http://code.google.com/p/js-test-driver/">http://code.google.com/p/js-test-driver/</a></li>
+</ul>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

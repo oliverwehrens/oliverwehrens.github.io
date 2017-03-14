@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring3 on maxheapsize</title>
+    <link>http://maxheapsize.com/tags/spring3/index.xml</link>
+    <description>Recent content in Spring3 on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/tags/spring3/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Spring 3 MVC, Ajax and jQuery Magic (or better: simplicity)</title>
+      <link>http://maxheapsize.com/2010/07/20/spring-3-mvc-ajax-and-jquery-magic-or-better-simplicity/</link>
+      <pubDate>Tue, 20 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2010/07/20/spring-3-mvc-ajax-and-jquery-magic-or-better-simplicity/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m playing around with some web frameworks lately and to see what&amp;rsquo;s in store with Spring 3 MVC (never did too much with it) I gave it a try to see how it handles Ajax. According to &lt;a href=&#34;http://blog.springsource.com/2010/01/25/ajax-simplifications-in-spring-3-0/&#34;&gt;ajax simplification announcement&lt;/a&gt; it should be possible to get up and running in (almost) no time.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;We will do a simple web application which will show the current time via Ajax.&lt;/p&gt;
+
+&lt;p&gt;The directory layout (using maven) should look like this:&lt;img alt=&#34;Directory Layout&#34; src=&#34;http://maxheapsize.com/static/Spring3MVCFiles.png&#34; title=&#34;Ajax result&#34; width=&#34;329&#34; height=&#34;308&#34; /&gt;
+web.xml&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;web-app xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;
+	xmlns=&amp;quot;http://java.sun.com/xml/ns/javaee&amp;quot;
+	xmlns:web=&amp;quot;http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&amp;quot;
+	xsi:schemaLocation=&amp;quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&amp;quot;
+	id=&amp;quot;WebApp_ID&amp;quot; version=&amp;quot;2.5&amp;quot;&amp;gt;
+	&amp;lt;display-name&amp;gt;Spring3MVC&amp;lt;/display-name&amp;gt;
+	&amp;lt;welcome-file-list&amp;gt;
+		&amp;lt;welcome-file&amp;gt;index.jsp&amp;lt;/welcome-file&amp;gt;
+	&amp;lt;/welcome-file-list&amp;gt;
+
+	&amp;lt;servlet&amp;gt;
+		&amp;lt;servlet-name&amp;gt;spring&amp;lt;/servlet-name&amp;gt;
+		&amp;lt;servlet-class&amp;gt;
+			org.springframework.web.servlet.DispatcherServlet
+		&amp;lt;/servlet-class&amp;gt;
+		&amp;lt;load-on-startup&amp;gt;1&amp;lt;/load-on-startup&amp;gt;
+	&amp;lt;/servlet&amp;gt;
+	&amp;lt;servlet-mapping&amp;gt;
+		&amp;lt;servlet-name&amp;gt;spring&amp;lt;/servlet-name&amp;gt;
+		&amp;lt;url-pattern&amp;gt;*.html&amp;lt;/url-pattern&amp;gt;
+	&amp;lt;/servlet-mapping&amp;gt;
+&amp;lt;/web-app&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The web.xml holds no secrets. The Dispatcher servlet is defined and it should react on everything *.html.&lt;/p&gt;
+
+&lt;p&gt;Since we named our Servlet &amp;lsquo;spring&amp;rsquo; we need to add a servlet configuration for that. It goes in WEB-INF as well.&lt;/p&gt;
+
+&lt;p&gt;xml&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;
+	xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;
+	xmlns:p=&amp;quot;http://www.springframework.org/schema/p&amp;quot;
+	xmlns:context=&amp;quot;http://www.springframework.org/schema/context&amp;quot;
+	xsi:schemaLocation=&amp;quot;http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd&amp;quot;&amp;gt;
+
+	&amp;lt;context:component-scan base-package=&amp;quot;com.maxheapsize.springmvc3.controller&amp;quot; /&amp;gt;
+
+	&amp;lt;bean id=&amp;quot;viewResolver&amp;quot;
+		class=&amp;quot;org.springframework.web.servlet.view.UrlBasedViewResolver&amp;quot;&amp;gt;
+		&amp;lt;property name=&amp;quot;viewClass&amp;quot; value=&amp;quot;org.springframework.web.servlet.view.JstlView&amp;quot; /&amp;gt;
+		&amp;lt;property name=&amp;quot;prefix&amp;quot; value=&amp;quot;/WEB-INF/jsp/&amp;quot; /&amp;gt;
+		&amp;lt;property name=&amp;quot;suffix&amp;quot; value=&amp;quot;.jsp&amp;quot; /&amp;gt;
+	&amp;lt;/bean&amp;gt;
+&amp;lt;/beans&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It uses the component scanning feature of spring and instructs spring to check the package &amp;lsquo;com.maxheapsize.springmvc3.controller&amp;rsquo; for controllers. Furthermore a url based view resolver is defined which uses Jstl and looks into /WEB-INF/jsp for jsp with the ending &amp;lsquo;.jsp&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;In  WEB-INF/jsp/hello.jsp we define a jQuery snippet for the Ajax request and provide a button which we should push if we want to know the time.&lt;/p&gt;
+
+&lt;p&gt;jsp hello.jsp&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;jsp:useBean id=&amp;quot;message&amp;quot; scope=&amp;quot;request&amp;quot; type=&amp;quot;java.lang.String&amp;quot;/&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+  &amp;lt;title&amp;gt;Spring MVC Ajax Demo&amp;lt;/title&amp;gt;
+  &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;scripts/jquery.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+    function doAjax() {
+      $.ajax({
+        url: &#39;time.html&#39;,
+        data: ({name : &amp;quot;me&amp;quot;}),
+        success: function(data) {
+          $(&#39;#time&#39;).html(data);
+        }
+      });
+    }
+  &amp;lt;/script&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+${message}
+&amp;lt;button id=&amp;quot;demo&amp;quot; onclick=&amp;quot;doAjax()&amp;quot; title=&amp;quot;Button&amp;quot;&amp;gt;Get the time!&amp;lt;/button&amp;gt;
+&amp;lt;div id=&amp;quot;time&amp;quot;&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;How does Spring now know which classes or methods to call? Here comes the nice part about it.&lt;/p&gt;
+
+&lt;p&gt;java HelloWorldController.java&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package com.maxheapsize.springmvc3.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+import java.util.Date;
+
+@Controller
+public class HelloWorldController {
+
+  @RequestMapping(&amp;quot;/hello&amp;quot;)
+  public ModelAndView helloWorld() {
+    return new ModelAndView(&amp;quot;hello&amp;quot;, &amp;quot;message&amp;quot;, &amp;quot;Spring MVC Demo&amp;quot;);
+  }
+
+  @RequestMapping(value = &amp;quot;/time&amp;quot;, method = RequestMethod.GET)
+  public @ResponseBody String getTime(@RequestParam String name) {
+    String result = &amp;quot;Time for &amp;quot; + name + &amp;quot; is &amp;quot; + new Date().toString();
+    return result;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The RequestMappings define the Url&amp;rsquo;s which can be called to reach that code. So the helloWorld method is available with &amp;lsquo;hello.html&amp;rsquo; in the web app. Why hello.html and not just hello ? Because we said so in the web.xml. I included a sample message which will be shown at the web  page when this method is called.&lt;/p&gt;
+
+&lt;p&gt;If you now push the button on the webpage, &amp;lsquo;time.html&amp;rsquo; with a parameter &amp;lsquo;name&amp;rsquo; is called. This will go directly to the second method. Spring will also check if a string parameter &amp;lsquo;name&amp;rsquo; (@RequestParam) is present in the original request. The @ResponseBody annotation  indicates that a method return value should be bound to the web response body.&lt;/p&gt;
+
+&lt;p&gt;The result will be returned and shown in the webpage.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Ajax Result&#34; src=&#34;http://maxheapsize.com/static/Spring3MVCAjax.png&#34; title=&#34;Ajax result&#34; width=&#34;554&#34; height=&#34;83&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Overall this is a pretty nice integration. I tend to use Spring for many projects and this makes it even easier to write some nice web apps in it. If you have a single page application and all you do is sending ajax request back and forth this might be a solution.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;JSON response Update&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To get a JSON response from your Controller you need to:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Make sure the jackson mapper is present in your classpath. Maven users use:
+``` xml
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.codehaus.jackson&lt;/groupId&gt;
+      &lt;artifactId&gt;jackson-mapper-asl&lt;/artifactId&gt;
+      &lt;version&gt;1.5.3&lt;/version&gt;
+    &lt;/dependency&gt;
+```
+
+in their pom.xml.
+&lt;/li&gt;
+&lt;li&gt;MySimpleDataObject is a Pojo&lt;/li&gt;
+&lt;li&gt;The method you are calling has a signature like:
+``` java
+@RequestMapping(value = &#34;/demo&#34;, method= RequestMethod.GET)
+public @ResponseBody MySimpleDataObject doSomething(@RequestParam name, @RequestParam email)
+```
+&lt;/li&gt;
+&lt;li&gt;You are returning MySimpleDataObject at the end&lt;/li&gt;
+&lt;li&gt;Your calling javascript looks like this:
+``` javascript
+jQuery.getJSON(&#34;demo.html&#34;, {name: name, email: email}, function (data) {
+        alert(data.someValueInMySimpleDataObject);
+      });
+```
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;See also &lt;a href=&#34;http://rwehner.wordpress.com/2010/06/09/2-ways-to-create-json-response-for-ajax-request-in-spring3/&#34;&gt;Ralf&amp;rsquo;s post about Json and Spring MVC&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

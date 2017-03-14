@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualization on maxheapsize</title>
+    <link>http://maxheapsize.com/tags/virtualization/index.xml</link>
+    <description>Recent content in Virtualization on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Using KVM and Virt-Manager via XQuartz on MacOSX (and solving the keymapping trouble)</title>
+      <link>http://maxheapsize.com/2013/06/03/using-kvm-and-virt-manager-via-xquartz-on-macosx-and-solving-the-keymapping-trouble/</link>
+      <pubDate>Mon, 03 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2013/06/03/using-kvm-and-virt-manager-via-xquartz-on-macosx-and-solving-the-keymapping-trouble/</guid>
+      <description>&lt;p&gt;In the last couple of months I got to play around with virtualization at work. Doing automated delivery pipleines and provisiong via puppet I decided it&amp;rsquo;s time to get my hands even more dirty at home.&lt;/p&gt;
+
+&lt;p&gt;I got myself a &lt;a href=&#34;http://h10010.www1.hp.com/wwpc/uk/en/sm/WF06b/15351-15351-4237916-4237917-4237917-4248009-5336624.html?dnr=1&#34;&gt;HP Microserver N54L&lt;/a&gt; equipped with 16 GB of RAM and 9 TB disks. I wanted ZFS and KVM. Since the machine has an AMD processor the only way was to install Linux on it. SmartOS would have been a nice choice but it only supports KVM for Intel processors.&lt;/p&gt;
+
+&lt;p&gt;There are some hickups to get &lt;code&gt;virt-manager&lt;/code&gt; running via X11 on Macos.&lt;/p&gt;
+
+&lt;p&gt;You need to fix two things.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;First you need to add a .Xmodmap to your home directory.&lt;/p&gt;
+
+&lt;p&gt;{% codeblock ~/.Xmodmap %}
+clear Mod1
+keycode 66 = Alt_L
+keycode 69 = Alt_R
+add Mod1 = Alt_L
+add Mod1 = Alt_R
+{% endcodeblock %}&lt;/p&gt;
+
+&lt;p&gt;This will enabled Left-Alt, Left-Command to exit the VNC Screen.&lt;/p&gt;
+
+&lt;p&gt;When you start up &lt;code&gt;virt-manager&lt;/code&gt; make sure you select the approriate Keymap. Otherwise you keyboard will be garbled.&lt;/p&gt;
+
+&lt;p&gt;&lt;image src=&#34;http://maxheapsize.com/static/virt-manager-vnc.png&#34; alt=&#34;Virt Manager VNC Keymap settings&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;With that you should have no problem running &lt;code&gt;virt-manager&lt;/code&gt; via X11 on Macos.&lt;/p&gt;
+
+&lt;p&gt;If you are installing an image via commandline make sure to specify &lt;code&gt;--graphics vnc,keymap=en-us&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Used Version:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Virt-Manager 0.9.0&lt;/li&gt;
+&lt;li&gt;XQuartz 2.7.2&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

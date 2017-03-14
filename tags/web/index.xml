@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on maxheapsize</title>
+    <link>http://maxheapsize.com/tags/web/index.xml</link>
+    <description>Recent content in Web on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Javascript testing for Java projects</title>
+      <link>http://maxheapsize.com/2012/07/12/javascript-testing-for-java-projects/</link>
+      <pubDate>Thu, 12 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2012/07/12/javascript-testing-for-java-projects/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;m a Java Programmer. I do mostly web projects. There is a tendency to move away from server side frameworks towards Javascript (+mvc) and rest services. This now involves me in programming Javascript at the GUI level. Welcome &lt;strong&gt;maven&lt;/strong&gt;, &lt;strong&gt;IDE&lt;/strong&gt; and &lt;strong&gt;continous integration&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;Coming from the JVM world I&amp;rsquo;m pretty much used to writing tests in my IDE running them and then writing the production code. What I found out, this is not that easy with Javascript. For obvious reason I need to run it in a browser. So I need to leave my IDE. Not convinient. If something fails I transfer that result back to my IDE and check what&amp;rsquo;s going on. What about the different Javascript implementations? Ok, I need to run it on all browsers, Chrome, Firefox, Safari, IE … and the mobile versions maybe as well? Is this overkill? Is this managable?
+What about my CI run? I need to make sure only tested code gets checked in. Oh boy. This can be very frustrating.&lt;/p&gt;
+
+&lt;p&gt;#Options&lt;/p&gt;
+
+&lt;p&gt;There are a lot of frameworks which do provide (or are useful) if you want to get started with Javascript Unit Testing. You might find these if you google for &lt;a href=&#34;https://www.google.de/search?ie=UTF-8&amp;amp;q=javascript+testing&#34;&gt;javascript testing&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.mozilla.org/rhino/&#34;&gt;Rhino&lt;/a&gt; - Java Javascript implementation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.envjs.com&#34;&gt;Envjs&lt;/a&gt; - Simulated Browser environment&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/phantomjs/&#34;&gt;PhantomJS&lt;/a&gt; - Headless Webkit browser&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/chilicat/JsChilicat&#34;&gt;JsChilicat&lt;/a&gt; - Framework for headless Javascript testing, uses Rhino&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.jquery.com/QUnit&#34;&gt;QUnit&lt;/a&gt; - Unit Testing Framework&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/js-test-driver/&#34;&gt;JsTestDriver&lt;/a&gt; - Framework for Unit Tests&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pivotal.github.com/jasmine/&#34;&gt;Jasmine&lt;/a&gt; - Javascript BDD Framework&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I started with QUnit to get a feeling how unit testing works in Javascript. I added PhantomJS (and Xfvb) for headless testing but this needed some fiddeling around and was not that straitforward. Here are some &lt;a href=&#34;https://www.google.de/search?ie=UTF-8&amp;amp;q=phantomjs+qunit&#34;&gt;links&lt;/a&gt; to help you get started.&lt;/p&gt;
+
+&lt;p&gt;#So what to use now ?&lt;/p&gt;
+
+&lt;p&gt;So I started with JSTest Driver since it seems to be the one which has all the features I wanted.&lt;/p&gt;
+
+&lt;p&gt;##JS Test Driver&lt;/p&gt;
+
+&lt;h3 id=&#34;ide&#34;&gt;IDE&lt;/h3&gt;
+
+&lt;p&gt;A Dream! I use IntelliJ Idea and with the help of a plugin I can &lt;a href=&#34;http://www.jetbrains.com/idea/webhelp/running-javascript-unit-tests-in-browser.html&#34;&gt;test javascript&lt;/a&gt; like a charm.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://maxheapsize.com/static/jstestdriver_config.png&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://maxheapsize.com/static/jstestdriver_run.png&#34;/&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;maven&#34;&gt;Maven&lt;/h3&gt;
+
+&lt;p&gt;After some fiddeling around I got the Maven test to run. The last commit of the maven plugn was around August 2011.&lt;/p&gt;
+
+&lt;p&gt;To use the plugin configure it like this (full code in the example code on &lt;a href=&#34;https://github.com/oliverwehrens/jstestdriver-example&#34;&gt;github&lt;/a&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; &amp;lt;plugin&amp;gt;
+    &amp;lt;groupId&amp;gt;com.googlecode.jstd-maven-plugin&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;jstd-maven-plugin&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;1.3.2.5&amp;lt;/version&amp;gt;
+    &amp;lt;configuration&amp;gt;
+      &amp;lt;port&amp;gt;9876&amp;lt;/port&amp;gt;
+      &amp;lt;browser&amp;gt;/Apps/Firefox12.app/Contents/MacOS/firefox-bin&amp;lt;/browser&amp;gt;
+    &amp;lt;/configuration&amp;gt;
+    &amp;lt;executions&amp;gt;
+      &amp;lt;execution&amp;gt;
+        &amp;lt;id&amp;gt;run-tests&amp;lt;/id&amp;gt;
+        &amp;lt;goals&amp;gt;
+          &amp;lt;goal&amp;gt;test&amp;lt;/goal&amp;gt;
+        &amp;lt;/goals&amp;gt;
+      &amp;lt;/execution&amp;gt;
+    &amp;lt;/executions&amp;gt;
+  &amp;lt;/plugin&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What I do not like at the moment is the specification of the browser path. This might make it hard to run the same configuration on a local machine and in a ci build. Yes, I &lt;strong&gt;don&amp;rsquo;t&lt;/strong&gt; want to go down the path of maven profiles.
+Even with that you might have the issue of the port configuration. Two testruns at the same time and both starting the server on the same port calls fro trouble.&lt;/p&gt;
+
+&lt;p&gt;Running &lt;code&gt;mvn test&lt;/code&gt; shows me something like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...
+
+[INFO]
+[INFO] --- jstd-maven-plugin:1.3.2.5:test (run-tests) @ jstestdriver-demo ---
+
+-------------------------------------------
+J S  T E S T  D R I V E R                 
+-------------------------------------------
+
+.F
+Total 2 tests (Passed: 1; Fails: 1; Errors: 0) (1.00 ms)
+ Firefox 12.0 Mac OS: Run 2 tests (Passed: 1; Fails: 1; Errors 0) (1.00 ms)
+  Echo Test.testHello2 failed (0.00 ms): AssertError:
+
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#Summary&lt;/p&gt;
+
+&lt;p&gt;Here you have it. A nice way to run your Javascript test in your IDE and maven. Some small issues remain but I have seen plugins which deal with e.g. port issues.&lt;/p&gt;
+
+&lt;p&gt;The full demo code is available on &lt;a href=&#34;https://github.com/oliverwehrens/jstestdriver-example&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Any thoughts ?&lt;/p&gt;
+
+&lt;p&gt;#Links&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://loose-bits.com/2011/02/browserless-ajax-testing-with-rhino-and.html]&#34;&gt;http://loose-bits.com/2011/02/browserless-ajax-testing-with-rhino-and.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://twoguysarguing.wordpress.com/2010/11/02/make-javascript-tests-part-of-your-build-qunit-rhino/&#34;&gt;http://twoguysarguing.wordpress.com/2010/11/02/make-javascript-tests-part-of-your-build-qunit-rhino/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://thomas-genin.com/blog/javascript-3/qunit-and-rhino-javascript-unit-test-in-the-console/&#34;&gt;http://thomas-genin.com/blog/javascript-3/qunit-and-rhino-javascript-unit-test-in-the-console/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.nczonline.net/blog/2009/11/17/the-curious-case-of-javascript-unit-testing/&#34;&gt;http://www.nczonline.net/blog/2009/11/17/the-curious-case-of-javascript-unit-testing/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.readmore.ch/post/18940470535&#34;&gt;http://www.readmore.ch/post/18940470535&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/qunit-maven-plugin/&#34;&gt;http://code.google.com/p/qunit-maven-plugin/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/js-test-driver/&#34;&gt;http://code.google.com/p/js-test-driver/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Lightweight Web Prototyping for the Framework loving (Java) Developer</title>
+      <link>http://maxheapsize.com/2010/04/20/lightweight-web-prototyping-for-the-framework-loving-java-developer/</link>
+      <pubDate>Tue, 20 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2010/04/20/lightweight-web-prototyping-for-the-framework-loving-java-developer/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/istylr/3777635804/sizes/s/&#34;&gt;&lt;img class=&#34;alignleft&#34; src=&#34;http://farm3.static.flickr.com/2562/3777635804_babcd16f90_m.jpg&#34; title=&#34;&amp;copy; iStylr @ flickr&#34;  /&gt;&lt;/a&gt;A couple of month ago I had an idea for a small web app. But what does it take to do it ? Do you start with the back end or the front end (read server or client side) ? Typically I would start at the back end, get the domain right and then see how I can fit the UI in. If a programmer starts this way you end with the typical &amp;lsquo;the programmer did the GUI&amp;rsquo; scenario. That&amp;rsquo;s not really what I wanted. Don&amp;rsquo;t think too much about the domain, just see what the needs of the end user are and get the UI done (right).&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h3 id=&#34;trying-frameworks&#34;&gt;Trying frameworks &amp;hellip;&lt;/h3&gt;
+
+&lt;p&gt;But there you go, being a framework loving web developer, how do you do the UI, or better, in what technology? Among other I tried  &lt;a href=&#34;https://javaserverfaces.dev.java.net/&#34;&gt;JSF 2&lt;/a&gt; and I thought it&amp;rsquo;s cool. After a couple of hours I realized that this will slow me down. Fiddling with different ideas and concepts I just could not do that with JSF right away. I would have to write my own components. This is supposed to be very easy but still too much waste when I&amp;rsquo;m not sure if I even will use this.&lt;/p&gt;
+
+&lt;h3 id=&#34;trying-paper&#34;&gt;Trying paper&amp;hellip;&lt;/h3&gt;
+
+&lt;p&gt;Next I started very basic and did some drawings. While this is all nice (I did it on my white board, I strongly recommend to do this on something you can erase) it turns out I had no idea on how to realize that in Html. I knew this must be possible somehow today but I had no idea what does it take to implement things like drag and drop, box scrolling, reordering and more. Nice thing I build on &lt;a href=&#34;http://www.raincreativelab.com/paperbrowser/&#34;&gt;paper&lt;/a&gt;&amp;hellip;but can I do it ?&lt;/p&gt;
+
+&lt;h3 id=&#34;the-solution&#34;&gt;The solution&lt;/h3&gt;
+
+&lt;p&gt;What if I now combine those two approaches ? I needed some lightweight web framework, easy to learn (maybe one I already know) with  quick turn around. After looking around for a couple of hours I came up with &lt;a href=&#34;http://www.w3.org/TR/html5/&#34;&gt;Html&lt;/a&gt; and &lt;a href=&#34;http://jquery.com/&#34;&gt;jQuery&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I have some knowledge in Html and Css but I never did anything in Javascript or jQuery. So there is something new to learn. Since this was on my agenda anyway and I already bought Mannings &lt;a href=&#34;http://www.manning.com/bibeault/&#34;&gt;jQuery in Action&lt;/a&gt; book in December I went this route. I hoped that adding jQuery into the page would give me some interactivity to the otherwise static Html page.&lt;/p&gt;
+
+&lt;p&gt;It turns out, it was the best choice. I came up with at least three completely different designs in a matter of evenings, got them to a working stage and could &amp;lsquo;feel&amp;rsquo; how they would work (or not). After experiencing this I decided to do some substantial changes to the UI. Dragging and dropping is all nice and dandy, but it&amp;rsquo;s too much clicking and dragging for the app. On paper this really looked cool but in practice it was not.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s amazing what you can do with jQuery. You can save state on elements using Html 5 attribute, can load other Html snippets as Ajax responses and use a dozen jQuery plugins for menus, zooming, dragging and so on. Not to mention the power of jQuery itself. You can append action, animations or anything to any element. Without programming one line server side I got a fully working prototype running including adding and removing items, saving, loading and dynamic generated forms.&lt;/p&gt;
+
+&lt;p&gt;Some more iterations later (still not 100% happy) I started to implement it for real. Since I wanted to stay with that design (and very much Ajax oriented) I went the route of &lt;a href=&#34;http://directwebremoting.org/dwr/index.html&#34;&gt;Direct Web Remoting&lt;/a&gt; and &lt;a href=&#34;http://freemarker.sourceforge.net/&#34;&gt;Freemarker&lt;/a&gt;. Freemarker will render my templates and DWR talks to my Spring beans. Whenever I needed to design another page I first did the standalone Html version, got it to a working state and then integrated it in the app.&lt;/p&gt;
+
+&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Even if I would not have decided to use jQuery and pure Html for the final implementation (totally depends on the use case) I would strongly consider going the same route for doing the prototype again. It was so easy and the feedback was right there. I could throw away not working ideas  and make new ones very easily. There was a learning curve using jQuery (and I needed to refresh my CSS) but it was time well invested.&lt;/p&gt;
+
+&lt;p&gt;How do you your prototypes? Fully integrated with your existing frameworks or on paper?&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Review on maxheapsize</title>
+    <link>http://maxheapsize.com/tags/review/index.xml</link>
+    <description>Recent content in Review on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/tags/review/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Doing a Sprint Review with a Review Fair</title>
+      <link>http://maxheapsize.com/2013/06/23/doing-a-sprint-review-with-a-review-fair/</link>
+      <pubDate>Sun, 23 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2013/06/23/doing-a-sprint-review-with-a-review-fair/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m working in an organization where we do synchronized sprints between all teams. This means every two weeks all meeting rooms are booked for retrospectives and sprint plannings. If you have around 10-20 teams distributing knowledge what&amp;rsquo;s happening in the other teams is tricky. No one has the time to go to all reviews.&lt;/p&gt;
+
+&lt;p&gt;Enter &amp;lsquo;Review Fair&amp;rsquo;.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;The principle is quite simple. All teams show up in one (big) room. This might be the biggest meeting room you have. Every team presents for 3-5 minutes what they have done and why people should came afterwards and talk to them. They usually have some flipchart or laptop to show off stuff to lure the audicence.
+After the presentations everybody knows what everybody did and can go to those which did the most important stuff for each one in the audience.&lt;/p&gt;
+
+&lt;p&gt;I take notes during the presentations and get no bullshit content about the stuff I&amp;rsquo;m interested in afterwards. Furthermore I get an overview what has been done and I at least heard of the things (depending on your product this might be very important).&lt;/p&gt;
+
+&lt;p&gt;Thanks to all the scrummasters in the company who came up with this (or wherever they got this from). It looks like &lt;a href=&#34;http://www.scrumalliance.org/community/articles/2013/january/scaling-the-sprint-review-the-fair&#34;&gt;Stephan Kraus and his peers at Otto&lt;/a&gt; where among the first ones doing it.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

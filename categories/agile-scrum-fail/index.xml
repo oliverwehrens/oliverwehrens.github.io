@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Agile Scrum Fail on maxheapsize</title>
+    <link>http://maxheapsize.com/categories/agile-scrum-fail/index.xml</link>
+    <description>Recent content in Agile Scrum Fail on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/categories/agile-scrum-fail/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Why our current Sprint commitment will fail.</title>
+      <link>http://maxheapsize.com/2009/03/05/why-our-current-sprint-commitment-will-fail./</link>
+      <pubDate>Thu, 05 Mar 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2009/03/05/why-our-current-sprint-commitment-will-fail./</guid>
+      <description>&lt;p&gt;We do have our Sprint Review tomorrow. We will not meet our commitment. Bummer.&lt;/p&gt;
+
+&lt;p&gt;What happened?&lt;/p&gt;
+
+&lt;p&gt;After the planning we did the breakdown of almost all stories. We had 5 Stories and another epic. As we did the epic breakdown we knew that we could not nail down every task since it was clear that some refactoring along the user story would be needed. So we marked one card in that story to remind us that we need to break things further down and refine the tasks.&lt;/p&gt;
+
+&lt;p&gt;The first couple of stories went very well (although we still suffer from estimating small stories too big and big stories too small). In the third week we got to our reminder card and our domain experts began to really think about the tasks needed and designed a much more useable and better architecture. This took a couple of hours and could not have been done at breakdown time (or could it?). It turned out it was quite some work to be done but we still could meet the deadline.&lt;/p&gt;
+
+&lt;p&gt;Some of us started to implement the new design and things seemed well. What we not did is a detailed planning of the tasks. It was more like we do see what is needed and write down task cards as we see the need for it. This was mostly done on &amp;lsquo;unplanned task cards&amp;rsquo; (see earlier post on &lt;a href=&#34;http://maxheapsize.com/2009/02/19/the-scrumboard-cheat-sheet/&#34;&gt;Scrumboard  Cheat Sheet&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Due to the complexity that team could not check in their changes for some days (Remember? Never check in code which does not pass all tests). The only problem was that without that part of code most members of the team could not proceed very effectively on the epic. We found ourselves in a classic deadlock. I was part of those who could not work as intensive on the sprint goal as they would have liked to. It was a frustrating experience. In the end I think we could have been somewhat closer to the goal if we would have seen the warning signs like we just do write the task cards at the stand up (and acting on them). This goes down in my book under &amp;lsquo;Lessons learned&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m not sure how we could have made it better. Doing a better task planning at the breakdown? We usually spent about two hours to define the tasks. Going over that time with the whole team seemed always to stress this a bit and it got less effective .
+Should we have spent earlier on more time in designing the refactoring? Two people could have started right after that on that topic. But that epic had a lower priority and everything else should have been done before that if we do follow agile ideas.&lt;/p&gt;
+
+&lt;p&gt;However since our Product Owners saw that coming (there were usually at our daily standup) there were not shocked about it as they would have never heard of that problem before. But I guess they are not too happy with us.&lt;/p&gt;
+
+&lt;p&gt;Three more days and we are done. Promised.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

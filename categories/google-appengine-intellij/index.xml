@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Appengine Intellij on maxheapsize</title>
+    <link>http://maxheapsize.com/categories/google-appengine-intellij/index.xml</link>
+    <description>Recent content in Google Appengine Intellij on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/categories/google-appengine-intellij/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Jetbrains released a Google App Engine plugin for IntelliJ</title>
+      <link>http://maxheapsize.com/2009/05/08/jetbrains-released-a-google-app-engine-plugin-for-intellij/</link>
+      <pubDate>Fri, 08 May 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2009/05/08/jetbrains-released-a-google-app-engine-plugin-for-intellij/</guid>
+      <description>&lt;p&gt;Jetbrains &lt;a href=&#34;http://plugins.intellij.net/plugin/?id=4254&#34;&gt;released a Google App Engine plugin&lt;/a&gt; for their IntelliJ IDE. I did not see any announcement about this at all.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;New project inside IntelliJ for Google App Engine&#34; src=&#34;http://maxheapsize.com/static/intellijgaej.png&#34; title=&#34;New project inside IntelliJ for Google App Engine&#34; width=&#34;533&#34; height=&#34;93&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You will have a new option when creating a new project. After supplying the path to the local app engine SDK your almost good to go. I needed to add the app engine jars as libraries to my project. That being out of the way you can start coding, run you local server (a pre configured run configuration is supplied) and also deploy it to Google all from within IntelliJ. I tested it with a very basic example with local development and remote deployment and this works really nice.&lt;/p&gt;
+
+&lt;p&gt;Thanks Jetbrains.&lt;/p&gt;
+
+&lt;p&gt;From the release notes:&lt;/p&gt;
+
+&lt;p&gt;This plugin provides the following features:&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;option on &#34;Technologies&#34; page of the module wizard to quickly create:
+&lt;/li&gt;
+&lt;ul&gt;
+    &lt;li&gt;appengine-web.xml descriptor
+&lt;/li&gt;
+    &lt;li&gt;App Engine Facet
+&lt;/li&gt;
+    &lt;li&gt;App Engine Dev server run configuration
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;li&amp;gt;inspection to report forbidden code in App Engine application
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/li&gt;
+    &lt;li&gt;run configuration for Google App Engine Dev server
+&lt;/li&gt;
+    &lt;li&gt;action for uploading an application to Google (Tools | Upload App Engine Application)
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

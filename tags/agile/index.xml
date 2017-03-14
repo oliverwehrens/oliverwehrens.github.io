@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Agile on maxheapsize</title>
+    <link>http://maxheapsize.com/tags/agile/index.xml</link>
+    <description>Recent content in Agile on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/tags/agile/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Story based daily stand-up meeting</title>
+      <link>http://maxheapsize.com/2009/12/25/story-based-daily-stand-up-meeting/</link>
+      <pubDate>Fri, 25 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2009/12/25/story-based-daily-stand-up-meeting/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/royskeane/413103429/sizes/s/&#34;&gt;&lt;img src=&#34;http://maxheapsize.com/wp-content/uploads/scrum.jpg&#34; alt=&#34;&amp;copy; royskeane@flickr &#34; title=&#34;Scrum &amp;copy; royskeane@flickr &#34; width=&#34;240&#34; height=&#34;180&#34; class=&#34;size-full wp-image-384&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We are agile. We do Scrum. We do daily Stand-ups.&lt;/p&gt;
+
+&lt;p&gt;A couple of weeks ago we changed our daily stand-up meeting. Our Scrum master came up with the idea to not go around the whole team and everybody talks about what he has done, what he will do and what the impediments are but to make it story based.&lt;/p&gt;
+
+&lt;p&gt;Usually after a break down everybody was working on one story, saw the task cards and made sure he did the things he was supposed to do. But this is not enough. You need to have an overview of the whole story (and the sprint). Only with that knowledge you can make sure you will meet the commitment.&lt;/p&gt;
+
+&lt;p&gt;So what we started to do is a stand-up meeting based on stories. Every story has a story owner. This is either the person who first started on this story or somebody who is expert in the field worked on. Every morning he is giving a review of how &amp;lsquo;his&amp;rsquo; story is progressing, where the problems are and how he could need help. Depending on the priority he gets everything he needs. After presenting the status to the whole team every team member involved gives a smiley on how he feels about the story and the sprint. &lt;strong&gt;This way everybody knows what the situation is and how the sprint is progressing&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;We found this very effective and it gives every team member a much better feeling about our commitment.&lt;/p&gt;
+
+&lt;p&gt;You should try it too.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

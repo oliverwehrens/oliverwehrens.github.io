@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testng Drools on maxheapsize</title>
+    <link>http://maxheapsize.com/categories/testng-drools/index.xml</link>
+    <description>Recent content in Testng Drools on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/categories/testng-drools/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Test JBoss Rules 5 (or Drools) with TestNG</title>
+      <link>http://maxheapsize.com/2009/09/23/test-jboss-rules-5-or-drools-with-testng/</link>
+      <pubDate>Wed, 23 Sep 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2009/09/23/test-jboss-rules-5-or-drools-with-testng/</guid>
+      <description>&lt;p&gt;We have been using our own flavor of &lt;a href=&#34;http://fit-for-rules.sourceforge.net/&#34;&gt;Fit for Rules&lt;/a&gt; (which is build on top of &lt;a href=&#34;http://fit.c2.com&#34;&gt;fit&lt;/a&gt;) for about 1 &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt; years now to test our business logic written in &lt;a href=&#34;http://jboss.org/drools/&#34;&gt;JBoss Rules 5&lt;/a&gt;.  It&amp;rsquo;s relatively  easy to get the&lt;strong&gt; Business Analyst&lt;/strong&gt; on board since he is using his tool (which is Microsoft Excel) to communicate test cases for the rules. So in theory, he writes the tests in &lt;strong&gt;Excel&lt;/strong&gt;, we do the rules coding and voila, all &lt;strong&gt;tests turn green&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Reality is, we have to&lt;strong&gt; tweak the Excel sheets&lt;/strong&gt;. We need to put in imports of our fact model, insert facts and create objects within that not so programmer friendly table environment. A couple of days ago we got the request to tweak some rules and we all had to start doing rules again (and we used to use Eclipse for writing rules because that&amp;rsquo;s the only IDE having a plugin for that).&lt;/p&gt;
+
+&lt;p&gt;After half a day of coding Java syntax in Excel sheets we decided that the &lt;strong&gt;ramp up time&lt;/strong&gt; for the not so knowledgeable rules/fit programmers like me is&lt;strong&gt; too much&lt;/strong&gt;. With debugging, copy and paste we spent easily 5-10 times more time on making the tests work than writing the code itself. Test driven design is not really an option here, since you need to know the imports of the rules file to get the sheet even to compile.&lt;/p&gt;
+
+&lt;p&gt;So what did we do ? Well why not try to get things working the way we used to do it ? TestNG anyone ?&lt;/p&gt;
+
+&lt;p&gt;There are &lt;strong&gt;many pros&lt;/strong&gt; to use unit testing but also some cons. &lt;strong&gt;The biggest issue is that we will loose the direct communication to the business analyst&lt;/strong&gt;. It&amp;rsquo;s always better if someone else writes the test and I just have to implement the solution. Maybe we can find another solution involving Active Spec or DSL. For now we stick to unit tests and the task the we have to make sure we convert every Excel test case to java code (but hey, that&amp;rsquo;s what our code reviews are for).&lt;/p&gt;
+
+&lt;p&gt;Checkout our current base class for testing our rules:&lt;/p&gt;
+
+&lt;p&gt;``` java AbstractRulesTest.java
+public abstract class AbstractRulesTest {
+   public abstract String[] getRulesFileNames();
+   private final String GET_FINDINGS = &amp;ldquo;import com.maxheapsize.RulesFinding;&amp;rdquo; +
+                                                                           &amp;rdquo;query \&amp;ldquo;getAllRulesFindings\&amp;rdquo;\n&amp;rdquo; +
+                                                                           &amp;ldquo;   finding : FRulesFinding()\n&amp;rdquo; +
+                                                                           &amp;ldquo;end&amp;rdquo;;&lt;/p&gt;
+
+&lt;p&gt;  private static Logger LOG = Logger.getLogger(AbstractRulesTest.class);&lt;/p&gt;
+
+&lt;p&gt;  public final List&lt;FRulesFinding&gt; fireRules(Set factsForWorkingMemory) {
+       KnowledgeBase ruleBase = setUpKnowledgeBase();
+       return fireRules(ruleBase, factsForWorkingMemory);
+   }&lt;/p&gt;
+
+&lt;p&gt;  public KnowledgeBase setUpKnowledgeBase() {
+       KnowledgeBaseConfiguration configuration = KnowledgeBaseFactory.newKnowledgeBaseConfiguration();
+       KnowledgeBase ruleBase = KnowledgeBaseFactory.newKnowledgeBase(configuration);&lt;/p&gt;
+
+&lt;p&gt;      KnowledgeBuilder build = KnowledgeBuilderFactory.newKnowledgeBuilder();
+       build.add(ResourceFactory.newReaderResource(new StringReader(GET_FINDINGS)), ResourceType.DRL);
+       String[] fileNames = getRulesFileNames();
+       for (String fileName : fileNames) {
+           File userDefinedFile = new File(fileName);
+           build.add(ResourceFactory.newFileResource(userDefinedFile), ResourceType.DRL);
+       }&lt;/p&gt;
+
+&lt;p&gt;      handleBuilderErrors(build);&lt;/p&gt;
+
+&lt;p&gt;      ruleBase.addKnowledgePackages(build.getKnowledgePackages());
+       return ruleBase;
+   }&lt;/p&gt;
+
+&lt;p&gt;  private void handleBuilderErrors(KnowledgeBuilder build) {
+       if (build.hasErrors()) {
+           KnowledgeBuilderErrors knowledgeBuilderErrors = build.getErrors();
+           for (KnowledgeBuilderError knowledgeBuilderError : knowledgeBuilderErrors) {
+               int[] ints = knowledgeBuilderError.getErrorLines();
+               LOG.error(&amp;ldquo;Error at : &amp;ldquo;+ints[0]+&amp;rdquo; : &amp;ldquo;+ints[1]);
+               LOG.error(knowledgeBuilderError.getMessage());
+           }
+       }
+   }&lt;/p&gt;
+
+&lt;p&gt;  private List&lt;FRulesFinding&gt; fireRules(KnowledgeBase ruleBase, Set facts) {
+       List&lt;FRulesFinding&gt; result = new ArrayList&lt;FRulesFinding&gt;();
+       StatefulKnowledgeSession statefulSession = ruleBase.newStatefulKnowledgeSession();
+       for (Object fact : facts) {
+           statefulSession.insert(fact);
+       }
+       statefulSession.fireAllRules();&lt;/p&gt;
+
+&lt;p&gt;      QueryResults results = statefulSession.getQueryResults(&amp;ldquo;getAllRulesFindings&amp;rdquo;);
+       try {
+           FRulesFinding finding = (FRulesFinding) results.iterator().next().get(&amp;ldquo;finding&amp;rdquo;);
+           result.add(finding);
+       }
+       catch (NoSuchElementException e) {
+           result = new ArrayList&lt;FRulesFinding&gt;();
+       }
+      return result;
+   }
+}&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+All my rules insert a RulesFinding (and only one at the moment) into the working memory when triggered.  The rest is pretty easy. You subclass it, overwrite getRulesFileNames and call fireRules with a set of objects (your tests) which need be insert into the working memory. To get the finding back you need to execute an already inserted  query which needs to have an identifier (line 3, 20, 52, 54). It will contain the result of your rule execution.
+
+Sample code would look like this:
+
+``` java RulesTest.java
+public class RulesTest extends AbstractRulesTest {
+
+   private Set facts;
+
+   @BeforeMethod
+   public void setUp() {
+       facts = new HashSet();
+   }
+
+   @Override
+   public String[] getRulesFileNames() {
+       return new String[]{
+               &amp;quot;src/main/rules/myrules.drl&amp;quot;,
+               &amp;quot;src/main/rules/generealRules.drl&amp;quot;
+           };
+  }
+
+   @Test
+   public void testDemoRule() {
+
+       FMyFact myFact = new FMyFact();
+    myFact.setColor(&amp;quot;green&amp;quot;);
+       facts.add(myFact); // add all your facts here
+
+       List&amp;lt;FRulesFinding&amp;gt; findings = fireRules(facts);
+       Assert.assertTrue(findings.size() == 1);
+       FRulesFinding finding = findings.get(0);
+       Assert.assertTrue(finding.getStatus() == FStatus.OK);
+   }
+ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Depending on how you cut your rules you can extract the assertion of the status.&lt;/p&gt;
+
+&lt;p&gt;Each test case in Excel now takes about 5-10 lines of java code. Considering we are covering each rule with about 5-15 test cases and boundary conditions this amounts to 75-150 lines of test code. I take that &lt;strong&gt;any day over programming in Excel&lt;/strong&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="Extreme visibility in an agile environment - maxheapsize" property="og:title">
+<title>Extreme visibility in an agile environment | maxheapsize</title>
+<link rel="stylesheet" href="http://maxheapsize.com//css/style.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous" />
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://maxheapsize.com/"><h1 class="title is-4">maxheapsize</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">February 17, 2009</h2>
+    <h1 class="title">Extreme visibility in an agile environment</h1>
+    
+    <div class="content">
+      <p>What is Extreme visibility?</p>
+
+<p>Extreme visibility is all about providing information about the code to every team in near real time. We show several metrics such as complexity of the code (xs), todo&rsquo;s, deprecated methods, number of broken builds, open tickets and their priority and so on. These are distributed over a couple of screens which our software is rotating through. Every team member can easily see if his or her commits effecting the code quality in a good or bad way and makes the members aware of certain quality standards we try to keep in our code base. A typical screen looks like this (mockup):</p>
+
+<p><img title="Extreme Visibility" src="http://maxheapsize.com/static/extreme.jpg" alt="" width="500" height="165" /></p>
+
+<p>We discovered that showing these kind of statistics to the team has the effect that everybody in the team room cares about the numbers (and therefore the code quality). Without this display you just don&rsquo;t know how your changes will effect the overall quality of the code. It might seem a bit threatening to individual team members at first (like we do show who checks in without a commit message) it turns out this is not really a problem.</p>
+
+<p>While we did provide very detailed information in the past about the trunk and every branch (every user story is on it&rsquo;s on branch), we found out that too many screens are counter productive and results in not caring about the values displayed too much anymore. We also do believe that showing time line and progression information on several metrics are very motivating to the team. We are planning of tweaking the information this way in the near future.</p>
+
+<p>The software we use is written by ourselves in Grails. On the front end we simply have Firefox running a full screen mode. Every team has a big screen TV connected to a computer (turns out I could connect my Sega Dreamcast too). We did collect some good feedback and learned a lot about the usage in the last couple of months. The next step now is to enable the teams to write their own modules to provide the information which is the most useful to them.</p>
+
+<p>I&rsquo;m not aware of any open source (or other) software doing the same kind of thing. Writing it by ourselves we could tailor it to our specific needs like showing svn information, showing Teamcity build statistics or information about the code using Structure 101.</p>
+
+<p>Overall the team I&rsquo;m working in is very happy with the information we get from our extreme visibility monitor. XV makes sure we all can seeÂ¬â€  how the quality of our code develops and we get warning signs to take counter measures to bring it back on track. And that&rsquo;s what we want after all ;-).</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

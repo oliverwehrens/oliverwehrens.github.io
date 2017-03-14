@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="Lightweight Web Prototyping for the Framework loving (Java) Developer - maxheapsize" property="og:title">
+<title>Lightweight Web Prototyping for the Framework loving (Java) Developer | maxheapsize</title>
+<link rel="stylesheet" href="http://maxheapsize.com//css/style.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous" />
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://maxheapsize.com/"><h1 class="title is-4">maxheapsize</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">April 20, 2010</h2>
+    <h1 class="title">Lightweight Web Prototyping for the Framework loving (Java) Developer</h1>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/web">Web</a>
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/java">Java</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<p><a href="http://www.flickr.com/photos/istylr/3777635804/sizes/s/"><img class="alignleft" src="http://farm3.static.flickr.com/2562/3777635804_babcd16f90_m.jpg" title="&copy; iStylr @ flickr"  /></a>A couple of month ago I had an idea for a small web app. But what does it take to do it ? Do you start with the back end or the front end (read server or client side) ? Typically I would start at the back end, get the domain right and then see how I can fit the UI in. If a programmer starts this way you end with the typical &lsquo;the programmer did the GUI&rsquo; scenario. That&rsquo;s not really what I wanted. Don&rsquo;t think too much about the domain, just see what the needs of the end user are and get the UI done (right).</p>
+
+<!-- more -->
+
+<h3 id="trying-frameworks">Trying frameworks &hellip;</h3>
+
+<p>But there you go, being a framework loving web developer, how do you do the UI, or better, in what technology? Among other I tried  <a href="https://javaserverfaces.dev.java.net/">JSF 2</a> and I thought it&rsquo;s cool. After a couple of hours I realized that this will slow me down. Fiddling with different ideas and concepts I just could not do that with JSF right away. I would have to write my own components. This is supposed to be very easy but still too much waste when I&rsquo;m not sure if I even will use this.</p>
+
+<h3 id="trying-paper">Trying paper&hellip;</h3>
+
+<p>Next I started very basic and did some drawings. While this is all nice (I did it on my white board, I strongly recommend to do this on something you can erase) it turns out I had no idea on how to realize that in Html. I knew this must be possible somehow today but I had no idea what does it take to implement things like drag and drop, box scrolling, reordering and more. Nice thing I build on <a href="http://www.raincreativelab.com/paperbrowser/">paper</a>&hellip;but can I do it ?</p>
+
+<h3 id="the-solution">The solution</h3>
+
+<p>What if I now combine those two approaches ? I needed some lightweight web framework, easy to learn (maybe one I already know) with  quick turn around. After looking around for a couple of hours I came up with <a href="http://www.w3.org/TR/html5/">Html</a> and <a href="http://jquery.com/">jQuery</a>.</p>
+
+<p>I have some knowledge in Html and Css but I never did anything in Javascript or jQuery. So there is something new to learn. Since this was on my agenda anyway and I already bought Mannings <a href="http://www.manning.com/bibeault/">jQuery in Action</a> book in December I went this route. I hoped that adding jQuery into the page would give me some interactivity to the otherwise static Html page.</p>
+
+<p>It turns out, it was the best choice. I came up with at least three completely different designs in a matter of evenings, got them to a working stage and could &lsquo;feel&rsquo; how they would work (or not). After experiencing this I decided to do some substantial changes to the UI. Dragging and dropping is all nice and dandy, but it&rsquo;s too much clicking and dragging for the app. On paper this really looked cool but in practice it was not.</p>
+
+<p>It&rsquo;s amazing what you can do with jQuery. You can save state on elements using Html 5 attribute, can load other Html snippets as Ajax responses and use a dozen jQuery plugins for menus, zooming, dragging and so on. Not to mention the power of jQuery itself. You can append action, animations or anything to any element. Without programming one line server side I got a fully working prototype running including adding and removing items, saving, loading and dynamic generated forms.</p>
+
+<p>Some more iterations later (still not 100% happy) I started to implement it for real. Since I wanted to stay with that design (and very much Ajax oriented) I went the route of <a href="http://directwebremoting.org/dwr/index.html">Direct Web Remoting</a> and <a href="http://freemarker.sourceforge.net/">Freemarker</a>. Freemarker will render my templates and DWR talks to my Spring beans. Whenever I needed to design another page I first did the standalone Html version, got it to a working state and then integrated it in the app.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Even if I would not have decided to use jQuery and pure Html for the final implementation (totally depends on the use case) I would strongly consider going the same route for doing the prototype again. It was so easy and the feedback was right there. I could throw away not working ideas  and make new ones very easily. There was a learning curve using jQuery (and I needed to refresh my CSS) but it was time well invested.</p>
+
+<p>How do you your prototypes? Fully integrated with your existing frameworks or on paper?</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+
+<head>
+
+<title>HTML 5 GeoLocation Demo</title>
+
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false
+    &amp;key=ABQIAAAA8JXb0YDVa4otOLnM95w50BSeC_rwpfX9fQb-nbMGMDH8BB4BVRTjxWS14T5WLZf7TpXaaAtk_SIb-Q"
+    type="text/javascript">
+  </script>
+
+
+<!-- Please link to my blog http://maxheapsize.com if you use this code. -->
+
+<style type="text/css">
+
+body {
+    font-family: Corbel,Geneva,Verdana,sans-serif;
+    background-color: #245aa6;
+}
+
+#main {
+	background-color: #245aa6;
+	color: #fff;
+	}
+	
+#description {
+	width: 400px;
+	text-align: left;
+	}
+	
+a {
+	color: yellow;
+	text-decoration: none;
+}
+
+h1 {
+text-align:center;
+}
+
+</style>
+
+<script type="text/javascript">
+
+
+    var map;
+    var geocoder;
+
+    function initialize() {
+      map = new GMap2(document.getElementById("map_canvas"));
+      map.setCenter(new GLatLng(34, 0), 1);
+      geocoder = new GClientGeocoder();
+    }
+
+    function addAddressToMap(response) {
+      map.clearOverlays();
+      if (!response || response.Status.code != 200) {
+        alert("Sorry, we were unable to geocode that address");
+      } else {
+        place = response.Placemark[0];
+        point = new GLatLng(place.Point.coordinates[1],
+                            place.Point.coordinates[0]);
+        marker = new GMarker(point);
+        map.setCenter(point, 13);
+        map.addOverlay(marker);
+		var addr = document.getElementById('address');
+		addr.firstChild.data = place.address;
+      }
+    }
+
+    function showLocation() {
+      var address = document.forms[0].q.value;
+      geocoder.getLocations(address, addAddressToMap);
+    }
+
+    function findLocation(address) {
+      document.forms[0].q.value = address;
+      showLocation();
+    }
+
+
+if (navigator.geolocation) {
+  
+   navigator.geolocation.getCurrentPosition(function(position) {  
+   s = position.coords.latitude+","+position.coords.longitude;
+	document.forms[0].q.value = s;
+	showLocation();
+ }); 
+  
+} else {
+  alert("I'm sorry, but geolocation services are not supported by your browser.");
+}  
+
+</script>
+
+</head>
+
+<body onload="initialize()">
+
+<div id="main" align="center">
+<h1>HTML 5 GeoLocation Demo</h1>
+<div id="description">
+<p>
+This Demo works with a GeoLocation aware browser such as <a href="http://www.mozilla.com/en-US/firefox/all-beta.html">FireFox 3.1b3 (or later)</a>.
+If you don't have hardware installed to determine your location you can install an <a href="https://addons.mozilla.org/en-US/firefox/addon/8420">addon</a> for Firefox where you can set your location.
+<p/>
+<p>
+Back to <a href="http://maxheapsize.com">my blog</a>.
+</p>
+</div>
+    <form action="#" onsubmit="showLocation(); return false;">
+      <p>
+        <b>Search for an address:</b>
+        <input type="text" name="q" value="" class="address_input" size="40" />
+        <input type="submit" name="find" value="Search" />
+
+      </p>
+    </form>
+    <div id="map_canvas" style="width: 500px; height: 300px"></div>
+
+You location is: <span id="address">Unknown</span>.
+	
+</div>
+</body>
+
+</html>

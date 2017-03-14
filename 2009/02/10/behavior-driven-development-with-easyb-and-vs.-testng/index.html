@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="Behavior driven development with EasyB (and vs. TestNG) - maxheapsize" property="og:title">
+<title>Behavior driven development with EasyB (and vs. TestNG) | maxheapsize</title>
+<link rel="stylesheet" href="http://maxheapsize.com//css/style.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous" />
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://maxheapsize.com/"><h1 class="title is-4">maxheapsize</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">February 10, 2009</h2>
+    <h1 class="title">Behavior driven development with EasyB (and vs. TestNG)</h1>
+    
+    <div class="content">
+      <p>I heard about BDD a couple of months ago and did not really pay attention. Just some weeks ago I thought that maybe I could improve our test and/or documentation. So I decided to give it a shot with the BDD implementation <a href="http://easyb.org">easyb</a>.</p>
+
+<p>According to Wikipedia:
+<blockquote><strong>Behavior Driven Development</strong> (or <strong>BDD</strong>) is an <a title="Agile software development" href="http://en.wikipedia.org/wiki/Agile_software_development">Agile software development</a> technique that encourages collaboration between developers, QA and non-technical or business participants in a software project. It was originally conceived in 2003 by Dan North <sup id="cite_ref-origin_0-0" class="reference"><a href="http://en.wikipedia.org/wiki/Behavior_Driven_Development#cite_note-origin-0"></a></sup>as a response to <a class="mw-redirect" title="Test Driven Development" href="http://en.wikipedia.org/wiki/Test_Driven_Development">Test Driven Development</a>, and has evolved over the last few years.</blockquote></p>
+
+<p>So I took the chance to sketch out a little example and to test it against readability.</p>
+
+<p>This is the class which I would to test with BDD and classic TestNG.</p>
+
+<pre><code class="language-java">	package net.wehrens.easyb;
+
+	import java.util.ArrayList;
+	import java.util.List;
+
+	public class Car {
+    	private boolean engineInstalled;
+   		private int doors;
+    	private List&lt;Wheel&gt; wheels = new ArrayList&lt;Wheel&gt;();
+
+ 	    public void addDoor() { doors++; }
+ 	    public void addEngine() { engineInstalled = true; }
+ 	    public boolean isEngineInstalled() { return engineInstalled; }
+   	    public int getDoors() { return doors; }
+   	    public void addWheel(Wheel p_wheel) { wheels.add(p_wheel); }
+   	    public List&lt;Wheel&gt; getWheels() { return wheels; }
+	}
+</code></pre>
+
+<p>The testcode in easyb looks very descriptive (and even my Product Owner can understand what&rsquo;s happening). It uses Groovy to create it&rsquo;s own DSL for writing tests. Even if I don&rsquo;t explain any more you have a good chance to understand it at the first read.</p>
+
+<pre><code class="language-groovy">	import net.wehrens.easyb.Car
+	import net.wehrens.easyb.Wheel
+
+	scenario &quot;make a new car with one door&quot; {
+    given &quot;a new car&quot; {
+    car = new Car()
+	  }
+
+	  when &quot;a door is added&quot;, {
+   	 car.addDoor()
+  	}
+
+  then &quot;car should have one door&quot;, {
+    car.doors.shouldBe 1
+  }
+}
+
+scenario &quot;make a car with an engine&quot;, {
+
+  given &quot;a new car&quot;, {
+    car = new Car()
+  }
+
+  when &quot;an engine is added&quot;, {
+    car.addEngine()
+  }
+
+  then &quot;the car should have an engine&quot;, {
+    ensure(car.engineInstalled)
+  }
+}
+</code></pre>
+
+<p>The TestNG version of this test looks a little bit tighter but not as easy to understand for non programmers.</p>
+
+<pre><code class="language-java">package net.wehrens.easyb;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class CarTest {
+    private Car _car;
+
+    @BeforeMethod
+    public void setUp() {
+        _car = new Car();
+    }
+
+    @Test
+    public void testAddEngine() {
+        _car.addEngine();
+        Assert.assertTrue(_car.isEngineInstalled());
+    }
+
+    @Test
+    public void testAddDoor() {
+        _car.addDoor();
+        Assert.assertEquals(_car.getDoors(), 1);
+    }
+}
+</code></pre>
+
+<p>The big advantage I see here is that non technical people could be able to design test, how the code should behave, what the results should be. This is an often underestimated problem when communicating with the requirements engineers. Just write the BDD tests and the developers make sure they will turn green. The neat thing is that easyb has maven 2 integration and an IntelliJ Idea plugin. This makes working with it a breeze.</p>
+
+<p>Sure sounds easy, but I by myself did not had a chance yet to try that out in a more complex environment&hellip;maybe stuff for a later post.</p>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

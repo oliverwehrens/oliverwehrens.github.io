@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Selenium2 on maxheapsize</title>
+    <link>http://maxheapsize.com/tags/selenium2/index.xml</link>
+    <description>Recent content in Selenium2 on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/tags/selenium2/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Using Selenium2 for web testing (and not Selenium IDE)</title>
+      <link>http://maxheapsize.com/2010/01/04/using-selenium2-for-web-testing-and-not-selenium-ide/</link>
+      <pubDate>Mon, 04 Jan 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2010/01/04/using-selenium2-for-web-testing-and-not-selenium-ide/</guid>
+      <description>
+
+&lt;h3 id=&#34;selenium-ide&#34;&gt;Selenium IDE&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://seleniumhq.org&#34;&gt;Selenium&lt;/a&gt; is well know for automatic testing web pages. It does support many &lt;a href=&#34;http://seleniumhq.org/about/platforms.htm&#34;&gt;browsers, operating systems and languages&lt;a/&gt;. A &lt;a href=&#34;http://seleniumhq.org/projects/ide/&#34;&gt;Selenium IDE&lt;/a&gt; exists to aid you creating automated tests.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Selenium&#34; src=&#34;http://maxheapsize.com/static/selenium.png&#34; title=&#34;Selenium IDE&#34; width=&#34;303&#34; height=&#34;177&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It is possible to write extensions in JavaScript to have data driven tests. If you organize your selenium tests in a way that you split  the pages and forms in components, you can  load up new data for the tests (written in xml) to fill out forms differently for each use case. The Selenium IDE will be of a great help here since you start develop the tests in the IDE and later &amp;lsquo;just&amp;rsquo; parametrize the pages. With a couple of more javascript magic you can run these as well in &lt;a href=&#34;http://seleniumhq.org/projects/remote-control/&#34;&gt;Selenium Remote Control&lt;/a&gt; (Selenium RC for short). This even works for running  the tests in continuous integration systems like Hudson or Teamcity.&lt;/p&gt;
+
+&lt;p&gt;Great Stuff.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-problem&#34;&gt;The problem.&lt;/h3&gt;
+
+&lt;p&gt;The drawback coding up your tests with the Selenium IDE is: &lt;b&gt;HTML&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;You will end up with some test suites including many test scenarios. It will be one big ball of&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;tr&amp;gt;
+  &amp;lt;td&amp;gt;type&amp;lt;/td&amp;gt;
+  &amp;lt;td&amp;gt;accountnumber:Value&amp;lt;/td&amp;gt;
+  &amp;lt;td&amp;gt;82892892811&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&amp;lt;tr&amp;gt;
+  &amp;lt;td&amp;gt;type&amp;lt;/td&amp;gt;
+  &amp;lt;td&amp;gt;accountAmount:Value&amp;lt;/td&amp;gt;
+  &amp;lt;td&amp;gt;2345.33&amp;lt;/td&amp;gt;
+&amp;lt;/tr&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You will build components and you will end up with GotoIf and Label statements. Back to Basic programming from the 80ties. Without more javascript extensions you also can&amp;rsquo;t reuse combinations of scenarios.&lt;/p&gt;
+
+&lt;p&gt;While this works pretty ok: I&amp;rsquo;m a programmer and do have a &lt;strong&gt;problem&lt;/strong&gt; with the &lt;strong&gt;quality of the produced code&lt;/strong&gt;. It&amp;rsquo;s &lt;strong&gt;easy to mess up&lt;/strong&gt;. It&amp;rsquo;s &lt;strong&gt;not safe for refactoring&lt;/strong&gt;. To extend functionality you need to have javascript knowledge. Depending on your company profile (e.g. java shop) , this might be a problem.  Having a dedicated tester on the team certainly helps to overcome these obstacles, but if everybody in the team just once in a while looks into the Selenium IDE tests, the quality and the reliability of the code will not improve. Not to mention all the &lt;strong&gt;copy and paste&lt;/strong&gt;. Been there, done that.&lt;/p&gt;
+
+&lt;h3 id=&#34;selenium-2&#34;&gt;Selenium 2&lt;/h3&gt;
+
+&lt;p&gt;A much nicer approach for me would be something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;WebDriver driver  = new FirefoxDriver();
+AppWebTest test = new AppWebTest(driver, &amp;quot;http://myapp.com/login&amp;quot;);
+LoggedInUser user = test.login(&amp;quot;user&amp;quot;, &amp;quot;password&amp;quot;);
+Account account = user.createNewAccount(&amp;quot;DemoAccount&amp;quot;);
+account.addPerson(PersonFactory.createPersonWithNoIncome());
+...
+account.verify();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This would log in a user, creates an account and assigns a person to it. Everybody could &lt;strong&gt;read and understand&lt;/strong&gt; it. Furthermore you can easily reuse components and logic. I would imagine that creating a DSL, matchers and finders is everything one would need to have a very nice test scenario.&lt;/p&gt;
+
+&lt;p&gt;All that is already possible with Selenium 1 and the language bindings (more or less).&lt;/p&gt;
+
+&lt;p&gt;Just with the release of the first alpha of Selenium 2 mid december 2009 it became just a little bit easier.&lt;/p&gt;
+
+&lt;p&gt;Selenium 2 is the &lt;strong&gt;combined effort&lt;/strong&gt; of Google&amp;rsquo;s Webdriver and Selenium. Webdriver tries to &lt;a href=&#34;http://google-opensource.blogspot.com/2009/05/introducing-webdriver.html&#34;&gt;tackle&lt;/a&gt; Seleniums problems with Javascript and the security model as well as the complex Selenium RC API.&lt;/p&gt;
+
+&lt;blockquote&gt;
+Selenium is written in JavaScript which causes a significant weakness: browsers impose a pretty strict security model on any JavaScript that they execute in order to protect a user from malicious scripts.
+...
+Additionally, being a mature product, the API for Selenium RC has grown over time, and as it has done so it has become harder to understand how best to use it. For example, it&#39;s not immediately obvious whether you should be using &#34;type&#34; instead of &#34;typeKeys&#34; to enter text into a form control. Although it&#39;s a question of aesthetics, some find the large API intimidating and difficult to navigate.
+&lt;/blockquote&gt;
+
+&lt;p&gt;Webdriver does not use JavaScript to control the web browser but &lt;strong&gt;uses native controls&lt;/strong&gt;, e.g. an extension for Firefox or the native automation extensions of IE. Furthermore it introduces an object based API instead of following Seleniums directory based approach.&lt;/p&gt;
+
+&lt;p&gt;So given the above example the login method would look something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt; public LoggedInUser login(String userName, String password) {
+    driver.get(url);
+    driver.findElement(By.id(&amp;quot;user&amp;quot;)).sendKeys(userName);
+    driver.findElement(By.id(&amp;quot;password&amp;quot;)).sendKeys(password);
+    driver.findElement(By.id(&amp;quot;login&amp;quot;)).click();
+
+    LoggedInUser user = new LoggedInUser(driver);
+
+    WebElement startPage = driver.findElement(By.id(&amp;quot;startPage&amp;quot;));
+
+    assertThat(startPage().getText()).isEqualTo(&amp;quot;Start&amp;quot;);
+    return user;
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can take this to any level. It took me just a few hours to model the above use case with componentized input elements.&lt;/p&gt;
+
+&lt;p&gt;With a bit more abstraction addPerson looks something like the following code. Whatever is needed to add a person to an account will be replayed. This is what Selenium IDE would normally do.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public void addPerson(Person person) {
+    jumpToAccountOverView();
+    clickOnLink(&amp;quot;menu:Overview&amp;quot;);
+    clickOnLink(&amp;quot;table_personTable:link_newPerson&amp;quot;);
+
+    inputGuiElement(person.getTitle());
+    inputGuiElement(person.getLastName());
+...
+    clickSave();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And now for the best part. You &lt;strong&gt;don&amp;rsquo;t really need a real web browser&lt;/strong&gt;. Selenium 2 supports 4 WebDriver:
+&lt;ul&gt;
+&lt;li&gt;Firefox&lt;/li&gt;
+&lt;li&gt;Chrome&lt;/li&gt;
+&lt;li&gt;Internet Explorer (on Windows)&lt;/li&gt;
+&lt;li&gt;HtmlUnit&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;htmlunit&#34;&gt;HtmlUnit&lt;/h3&gt;
+
+&lt;p&gt;With enabled JavaScript on HtmlUnit (it uses Rhino, so not all JavaScript tricks might work, could be a drawback depending on your scenario) I can run my test as &lt;strong&gt;TestNG or JUnit&lt;/strong&gt; test case. No need for a Selenium RC anymore. &lt;strong&gt;No  browsers running locally&lt;/strong&gt; or on remote machine listing to ports to execute tests and transmitting results back.&lt;/p&gt;
+
+&lt;p&gt;It is very useful to have the Selenium RC take screen shots during it&amp;rsquo;s run. Selenium 2 can&amp;rsquo;t do this right now (and with HtmlUnit never can). But by simply integrating some logging in the components and elements and you know right away where things went wrong.
+Developing with the &lt;strong&gt;Selenium IDE&lt;/strong&gt; might seem like a must, but during the work on my prototype all I needed was Firebug and a XPath Searcher. I &lt;strong&gt;did not miss it&lt;/strong&gt; at all. To do integration tests you could test all components independently and one at a time. Once these work, chain them together and let them run as unit tests. Did I mention &lt;strong&gt;HtmlUnit is fast&lt;/strong&gt; ?&lt;/p&gt;
+
+&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;I barely dug into the webdriver code, I played around with it for a couple of hours and I&amp;rsquo;m sure there more is stuff (and bugs) to find. Given that Selenium 2 is in alpha 1 stage right now I expect very nice things coming out of it. It certainly looks like the way to go.&lt;/p&gt;
+
+&lt;p&gt;Another strong contender is &lt;a href=&#34;http://webtest.canoo.com/webtest/manual/WebTestHome.html&#34;&gt;Canoo WebTest&lt;/a&gt;. I will have a look at this one in another post.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update Ajax and HtmlUnit&lt;/strong&gt; 1/5/2010&lt;/p&gt;
+
+&lt;p&gt;It does not seem to work. You need a real browser to get dynamically content re-rendered through Ajax.&lt;/p&gt;
+
+&lt;p&gt;A method waiting for an id to be rendered (or timeout after x seconds) could look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;  public void waitForElementOrTimeout(String idToWaitFor, int timeout) {
+    long end = System.currentTimeMillis() + timeout * 1000;
+    RenderedWebElement resultsDiv = null;
+    while (System.currentTimeMillis() &amp;lt; end) {
+      try {
+        resultsDiv = (RenderedWebElement) driver.findElement(By.id(idToWaitFor));
+      }
+      catch (NoSuchElementException e) {
+        //
+      }
+      if (resultsDiv != null &amp;amp;amp;&amp;amp;amp; resultsDiv.isDisplayed()) {
+        break;
+      }
+    }
+    assertThat(resultsDiv).isNotNull();
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will either find the element specified or throw an assertion (updated example from the selenium 2 page).&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

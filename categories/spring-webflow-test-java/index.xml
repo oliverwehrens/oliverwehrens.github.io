@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Webflow Test Java on maxheapsize</title>
+    <link>http://maxheapsize.com/categories/spring-webflow-test-java/index.xml</link>
+    <description>Recent content in Spring Webflow Test Java on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/categories/spring-webflow-test-java/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to test Spring Webflow 2 (with parent flows)</title>
+      <link>http://maxheapsize.com/2009/04/20/how-to-test-spring-webflow-2-with-parent-flows/</link>
+      <pubDate>Mon, 20 Apr 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2009/04/20/how-to-test-spring-webflow-2-with-parent-flows/</guid>
+      <description>&lt;p&gt;In the last couple of month I was writing some flows using Spring Webflow 2. I knew that I (in theory) I could test them but I never did. The overall documentation of Webflow 2 is not that great at the moment, so I hope to improve that a little bit.&lt;/p&gt;
+
+&lt;p&gt;Spring Webflow 2 supports only JUnit tests so far. I guess this will change at some point  but until then you have to pull out that junit.jar again.&lt;/p&gt;
+
+&lt;p&gt;Sorry for the awkward line breaks. Spring just does love long method and class names (which is not that bad).&lt;/p&gt;
+
+&lt;p&gt;Your Testclass needs to extends &lt;code&gt;AbstractXmlFlowExecutionTests&lt;/code&gt; and to implement&lt;code&gt;protected FlowDefinitionResource getResource(FlowDefinitionResourceFactory resourceFactory)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class MyWebflowTest extends AbstractXmlFlowExecutionTests
+  protected FlowDefinitionResource getResource(
+     FlowDefinitionResourceFactory resourceFactory) {
+    FlowDefinitionResource flowDefinitionResource =
+      resourceFactory.createResource(&amp;quot;flows/administration/skinManagement.flow.xml&amp;quot;);
+    return flowDefinitionResource;
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If your flow now happen to have a parent flow you are in a bit of trouble. You just can include one flow in the &lt;code&gt;FlowDefinitionResource&lt;/code&gt;. The parent tag in your flow points to an id of the parentflow which is usually defined in a webflow configuration file. If this parent flow again has parents as well&amp;hellip;yes, same game again.&lt;/p&gt;
+
+&lt;p&gt;To get a hold of these flows you need to override &lt;code&gt;getModelResources[]&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Override
+protected FlowDefinitionResource[]
+ getModelResources(FlowDefinitionResourceFactory resourceFactory) {
+  FlowDefinitionResource[] flowDefinitionResources =
+ new FlowDefinitionResource[3];
+  flowDefinitionResources[0] =
+    resourceFactory.createResource(&amp;quot;flows/common.flow.xml&amp;quot;);
+  flowDefinitionResources[1] =
+    resourceFactory.createResource(&amp;quot;flows/common-exceptionHandling.flow.xml&amp;quot;);
+  flowDefinitionResources[2] =
+    resourceFactory.createResource(&amp;quot;flows/common-menu.flow.xml&amp;quot;);
+  return flowDefinitionResources;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If one of your flows is using beans you want to mock them in the test.  You can do that by registering with the &lt;code&gt;MockFlowBuildContext&lt;/code&gt;. The method &lt;code&gt;configureFlowBuilderContext&lt;/code&gt; will be called by &lt;code&gt;AbstractXmlFlowExecutionTests&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Override
+protected void configureFlowBuilderContext(
+    MockFlowBuilderContext builderContext) {
+  builderContext.registerBean(&amp;quot;validationExceptionHandler&amp;quot;,
+    new ValidationExceptionHandler());
+  builderContext.registerBean(&amp;quot;infastructureExceptionHandler&amp;quot;,
+    new InfastructureExceptionHandler());
+  builderContext.registerBean(&amp;quot;springSecurityExceptionHandler&amp;quot;,
+    new SpringSecurityExceptionHandler());
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With this setup you now can start testing the flow.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;...
+public void testSkinManagementView() {
+  MockExternalContext mockExternalContext = new MockExternalContext();
+  startFlow(mockExternalContext);
+  assertFlowExecutionActive();
+  assertCurrentStateEquals(&amp;quot;showSkinManagementOverview&amp;quot;);
+}
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I think the code is pretty self explanatory.&lt;/p&gt;
+
+&lt;p&gt;You have several possibilities including start and resume flow and assert certain states. You can test action methods doing something (like calling a service) and making sure the correct flow is executed.&lt;/p&gt;
+
+&lt;p&gt;Figuring out the initial setup with the parent flow and beans was the most time consuming task. You need to make sure that you only put flow logic in the definition of the flow since that is what webflow is for. I think with some clever usage of &lt;code&gt;set&lt;/code&gt; and &lt;code&gt;result&lt;/code&gt; you can make things complicated and a bit tricky.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

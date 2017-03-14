@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testng Test on maxheapsize</title>
+    <link>http://maxheapsize.com/categories/testng-test/index.xml</link>
+    <description>Recent content in Testng Test on maxheapsize</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://maxheapsize.com/categories/testng-test/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Using TestNG with DataProviders to cover more test cases</title>
+      <link>http://maxheapsize.com/2009/03/23/using-testng-with-dataproviders-to-cover-more-test-cases/</link>
+      <pubDate>Mon, 23 Mar 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://maxheapsize.com/2009/03/23/using-testng-with-dataproviders-to-cover-more-test-cases/</guid>
+      <description>&lt;p&gt;A couple of days ago I had the case that I needed to test a method with different parameters. I ended up writing a couple of test methods &lt;strong&gt;differing only in passing various arguments&lt;/strong&gt; to the unit under test.&lt;/p&gt;
+
+&lt;p&gt;Tonight I was at a &lt;a href=&#34;http://newthinking-store.de/stammtisch/javausergroup/20090310&#34;&gt;TestNG&lt;/a&gt; talk and while I knew most of the stuff already the DataProviders (which I heard of before but unfortunately never really payed attention to) really caught me.&lt;/p&gt;
+
+&lt;p&gt;Now I can create a&lt;strong&gt; DataProvider which generates test data&lt;/strong&gt;. Each of these data sets will result in call of the test method with the corresponding arguments.&lt;/p&gt;
+
+&lt;p&gt;The following code will test a String to Property Converter if it works correctly. It takes two parameters, first the string to be converted, second the result which I will assert.&lt;/p&gt;
+
+&lt;p&gt;[java]
+@Test(dataProvider = &amp;ldquo;convertTestDataProvider&amp;rdquo;)
+public void testConvert(String property, String result)
+{
+    Properties properties =
+      stringPropertyConverter.convertString(property);
+    Assert.assertTrue(properties.get(&amp;ldquo;A&amp;rdquo;).equals(result));
+  }
+[/java]&lt;/p&gt;
+
+&lt;p&gt;Now the DataProvider must return an array of array of objects. TestNG will cast the return values to the method signature of all the tests with the corresponding annotation.&lt;/p&gt;
+
+&lt;p&gt;[java]
+    @DataProvider(name = &amp;ldquo;convertTestDataProvider&amp;rdquo;)
+    public Object[][] convertTestDataProvider()
+    {
+        return new Object[][]{
+                {&amp;ldquo;A=&amp;rdquo;, &amp;ldquo;&amp;rdquo;},
+                {&amp;ldquo;A=1&amp;rdquo;, &amp;ldquo;1&amp;rdquo;},
+                {&amp;ldquo;A=2=3&amp;rdquo;, &amp;ldquo;2=3&amp;rdquo;},
+                {&amp;ldquo;A=2&amp;rdquo; + StringPropertyConverter.ideaLineSeperator +
+                 &amp;ldquo;# Comment&amp;rdquo; +
+                 StringPropertyConverter.ideaLineSeperator + &amp;ldquo;C=1&amp;rdquo;, &amp;ldquo;2&amp;rdquo;},
+        };
+    }
+[/java]&lt;/p&gt;
+
+&lt;p&gt;Here I cover 4 test cases. It is very easy to add more tests just by adding one more line with the values to test and the expected result.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;TestNG results with DataProvider&#34; src=&#34;http://maxheapsize.com/static/TestNGWithDataProvider.jpg&#34; title=&#34;TestNG results with DataProvider&#34; width=&#34;463&#34; height=&#34;312&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This will save me some amount of time.&lt;/p&gt;
+
+&lt;p&gt;Good Job &lt;a href=&#34;http://beust.com/weblog/&#34;&gt;Cedrik&lt;/a&gt; &amp;amp; friends.&lt;/p&gt;
+
+&lt;p&gt;Next step: How to make sure you cover all the relevant test cases (and having a systematic way of getting there). Anybody has an Idea?&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
