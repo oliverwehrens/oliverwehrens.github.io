@@ -12,12 +12,12 @@
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/2015/09/29/entwicklung-verteilter-systeme---herausforderungen-nicht-nur-an-die-architektur./</loc>
+    <loc>http://maxheapsize.com/2015/09/29/entwicklung-verteilter-systeme---herausforderungen-nicht-nur-an-die-architektur/</loc>
     <lastmod>2015-09-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/2014/11/06/wider-den-monolith---am-ende-wird-alles-gut./</loc>
+    <loc>http://maxheapsize.com/2014/11/06/wider-den-monolith---am-ende-wird-alles-gut/</loc>
     <lastmod>2014-11-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -92,17 +92,12 @@
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/2012/04/12/starting-again-.../</loc>
-    <lastmod>2012-04-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://maxheapsize.com/2011/06/14/one-assert-per-test-really./</loc>
+    <loc>http://maxheapsize.com/2011/06/14/one-assert-per-test-really/</loc>
     <lastmod>2011-06-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/2011/05/09/hello-again./</loc>
+    <loc>http://maxheapsize.com/2011/05/09/hello-again/</loc>
     <lastmod>2011-05-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -309,6 +304,11 @@
   <url>
     <loc>http://maxheapsize.com/2009/02/10/behavior-driven-development-with-easyb-and-vs.-testng/</loc>
     <lastmod>2009-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://maxheapsize.com/2009/02/07/starting-again/</loc>
+    <lastmod>2009-02-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>

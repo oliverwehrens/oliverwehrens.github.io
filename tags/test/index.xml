@@ -6,6 +6,7 @@
     <description>Recent content in Test on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/test/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -187,11 +188,11 @@ Scenario: Car can drive
     </item>
     
     <item>
-      <title>One assert per test, really.</title>
-      <link>http://maxheapsize.com/2011/06/14/one-assert-per-test-really./</link>
+      <title>One assert per test, really</title>
+      <link>http://maxheapsize.com/2011/06/14/one-assert-per-test-really/</link>
       <pubDate>Tue, 14 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2011/06/14/one-assert-per-test-really./</guid>
+      <guid>http://maxheapsize.com/2011/06/14/one-assert-per-test-really/</guid>
       <description>&lt;p&gt;Recently I was debugging my code and I could not see why my test was failing. It took me about 20 minutes to see that I violated one rule I try to follow. &lt;strong&gt;One assert per test&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;After &lt;a href=&#34;http://twitter.com/#!/owehrens/status/78809340437467136&#34;&gt;tweeting&lt;/a&gt; it I got some reaction ranging from &amp;lsquo;this is a very silly guideline&amp;rsquo; to &amp;lsquo;Tests should test one thing. Often one assertion, but not always.&amp;rsquo;. I, of course, tend to agree the latter one.&lt;/p&gt;

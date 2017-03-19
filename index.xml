@@ -6,6 +6,7 @@
     <description>Recent content on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <lastBuildDate>Wed, 01 Feb 2017 20:54:58 +0100</lastBuildDate>
     <atom:link href="http://maxheapsize.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -231,11 +232,11 @@ runtime:
     </item>
     
     <item>
-      <title>Entwicklung verteilter Systeme - Herausforderungen nicht nur an die Architektur.</title>
-      <link>http://maxheapsize.com/2015/09/29/entwicklung-verteilter-systeme---herausforderungen-nicht-nur-an-die-architektur./</link>
+      <title>Entwicklung verteilter Systeme - Herausforderungen nicht nur an die Architektur</title>
+      <link>http://maxheapsize.com/2015/09/29/entwicklung-verteilter-systeme---herausforderungen-nicht-nur-an-die-architektur/</link>
       <pubDate>Tue, 29 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2015/09/29/entwicklung-verteilter-systeme---herausforderungen-nicht-nur-an-die-architektur./</guid>
+      <guid>http://maxheapsize.com/2015/09/29/entwicklung-verteilter-systeme---herausforderungen-nicht-nur-an-die-architektur/</guid>
       <description>&lt;p&gt;This is my talk about &lt;strong&gt;Development of distributed systems - challenges not only for the architecture&lt;/strong&gt;. You guessed it, it is in german. I gave this talk at &lt;a href=&#34;http://bed-con.org/2015/talks/Entwicklung-verteilter-Systeme---Herausforderungen-nicht-nur-an-die-Architektur&#34;&gt;BedCon 2015&lt;/a&gt; and I will talk about it again at the &lt;a href=&#34;http://www.the-architecture-gathering.de/indexEN.php&#34;&gt;Architecture Gathering 2015&lt;/a&gt; in Munich on October 22nd.&lt;/p&gt;
 
 &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;af49bc1ea74b4fefaeaa3636c69542cd&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
@@ -251,11 +252,11 @@ runtime:
     </item>
     
     <item>
-      <title>Wider den Monolith - Am Ende wird alles gut.</title>
-      <link>http://maxheapsize.com/2014/11/06/wider-den-monolith---am-ende-wird-alles-gut./</link>
+      <title>Wider den Monolith - Am Ende wird alles gut</title>
+      <link>http://maxheapsize.com/2014/11/06/wider-den-monolith---am-ende-wird-alles-gut/</link>
       <pubDate>Thu, 06 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2014/11/06/wider-den-monolith---am-ende-wird-alles-gut./</guid>
+      <guid>http://maxheapsize.com/2014/11/06/wider-den-monolith---am-ende-wird-alles-gut/</guid>
       <description>&lt;p&gt;My &lt;a href=&#34;https://jax.de/wjax2014/sessions/wider-den-monolith-am-ende-wird-alles-gut&#34;&gt;WJax 2014&lt;/a&gt; talk in german.&lt;/p&gt;
 
 &lt;p&gt;Wider den Monolith - Am Ende wird alles gut. My first talk with lots of pictures. The talk was recorded. As soon as I know the url I will post it here (and if I&amp;rsquo;m not too embarrassed :) ).&lt;/p&gt;
