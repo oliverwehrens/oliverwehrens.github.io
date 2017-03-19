@@ -6,15 +6,14 @@
     <description>Recent content in Xv Extreme Visibility Code on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/categories/xv-extreme-visibility-code/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Extreme visibility in an agile environment</title>
-      <link>http://maxheapsize.com/post/2009-02-17-extreme-visibility-in-an-agile-environment/</link>
+      <link>http://maxheapsize.com/2009/02/17/extreme-visibility-in-an-agile-environment/</link>
       <pubDate>Tue, 17 Feb 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/post/2009-02-17-extreme-visibility-in-an-agile-environment/</guid>
+      <guid>http://maxheapsize.com/2009/02/17/extreme-visibility-in-an-agile-environment/</guid>
       <description>&lt;p&gt;What is Extreme visibility?&lt;/p&gt;
 
 &lt;p&gt;Extreme visibility is all about providing information about the code to every team in near real time. We show several metrics such as complexity of the code (xs), todo&amp;rsquo;s, deprecated methods, number of broken builds, open tickets and their priority and so on. These are distributed over a couple of screens which our software is rotating through. Every team member can easily see if his or her commits effecting the code quality in a good or bad way and makes the members aware of certain quality standards we try to keep in our code base. A typical screen looks like this (mockup):&lt;/p&gt;

@@ -6,15 +6,14 @@
     <description>Recent content in Google Appengine Intellij on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/categories/google-appengine-intellij/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Jetbrains released a Google App Engine plugin for IntelliJ</title>
-      <link>http://maxheapsize.com/post/2009-05-08-jetbrains-released-a-google-app-engine-plugin-for-intellij/</link>
+      <link>http://maxheapsize.com/2009/05/08/jetbrains-released-a-google-app-engine-plugin-for-intellij/</link>
       <pubDate>Fri, 08 May 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/post/2009-05-08-jetbrains-released-a-google-app-engine-plugin-for-intellij/</guid>
+      <guid>http://maxheapsize.com/2009/05/08/jetbrains-released-a-google-app-engine-plugin-for-intellij/</guid>
       <description>&lt;p&gt;Jetbrains &lt;a href=&#34;http://plugins.intellij.net/plugin/?id=4254&#34;&gt;released a Google App Engine plugin&lt;/a&gt; for their IntelliJ IDE. I did not see any announcement about this at all.&lt;/p&gt;
 
 &lt;p&gt;&lt;img alt=&#34;New project inside IntelliJ for Google App Engine&#34; src=&#34;http://maxheapsize.com/static/intellijgaej.png&#34; title=&#34;New project inside IntelliJ for Google App Engine&#34; width=&#34;533&#34; height=&#34;93&#34; /&gt;&lt;/p&gt;

@@ -6,15 +6,14 @@
     <description>Recent content in Web on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/web/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Javascript testing for Java projects</title>
-      <link>http://maxheapsize.com/post/2012-07-12-javascript-testing-for-java-projects/</link>
+      <link>http://maxheapsize.com/2012/07/12/javascript-testing-for-java-projects/</link>
       <pubDate>Thu, 12 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/post/2012-07-12-javascript-testing-for-java-projects/</guid>
+      <guid>http://maxheapsize.com/2012/07/12/javascript-testing-for-java-projects/</guid>
       <description>
 
 &lt;p&gt;I&amp;rsquo;m a Java Programmer. I do mostly web projects. There is a tendency to move away from server side frameworks towards Javascript (+mvc) and rest services. This now involves me in programming Javascript at the GUI level. Welcome &lt;strong&gt;maven&lt;/strong&gt;, &lt;strong&gt;IDE&lt;/strong&gt; and &lt;strong&gt;continous integration&lt;/strong&gt;.&lt;/p&gt;
@@ -125,10 +124,10 @@ Total 2 tests (Passed: 1; Fails: 1; Errors: 0) (1.00 ms)
     
     <item>
       <title>Lightweight Web Prototyping for the Framework loving (Java) Developer</title>
-      <link>http://maxheapsize.com/post/2010-04-20-lightweight-web-prototyping-for-the-framework-loving-java-developer/</link>
+      <link>http://maxheapsize.com/2010/04/20/lightweight-web-prototyping-for-the-framework-loving-java-developer/</link>
       <pubDate>Tue, 20 Apr 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/post/2010-04-20-lightweight-web-prototyping-for-the-framework-loving-java-developer/</guid>
+      <guid>http://maxheapsize.com/2010/04/20/lightweight-web-prototyping-for-the-framework-loving-java-developer/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/istylr/3777635804/sizes/s/&#34;&gt;&lt;img class=&#34;alignleft&#34; src=&#34;http://farm3.static.flickr.com/2562/3777635804_babcd16f90_m.jpg&#34; title=&#34;&amp;copy; iStylr @ flickr&#34;  /&gt;&lt;/a&gt;A couple of month ago I had an idea for a small web app. But what does it take to do it ? Do you start with the back end or the front end (read server or client side) ? Typically I would start at the back end, get the domain right and then see how I can fit the UI in. If a programmer starts this way you end with the typical &amp;lsquo;the programmer did the GUI&amp;rsquo; scenario. That&amp;rsquo;s not really what I wanted. Don&amp;rsquo;t think too much about the domain, just see what the needs of the end user are and get the UI done (right).&lt;/p&gt;

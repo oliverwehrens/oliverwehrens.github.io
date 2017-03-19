@@ -6,15 +6,14 @@
     <description>Recent content in Appengine Google Java on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/categories/appengine-google-java/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>A Quick Look at Google App Engine for Java</title>
-      <link>http://maxheapsize.com/post/2009-04-08-a-quick-look-at-google-app-engine-for-java/</link>
+      <link>http://maxheapsize.com/2009/04/08/a-quick-look-at-google-app-engine-for-java/</link>
       <pubDate>Wed, 08 Apr 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/post/2009-04-08-a-quick-look-at-google-app-engine-for-java/</guid>
+      <guid>http://maxheapsize.com/2009/04/08/a-quick-look-at-google-app-engine-for-java/</guid>
       <description>&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;http://maxheapsize.com/static/appengine.gif&#34; class=&#34;alignleft&#34; width=&#34;145&#34; height=&#34;111&#34; /&gt;At &lt;a href=&#34;http://code.google.com/campfire/&#34;&gt;Campfire One&lt;/a&gt; Google &lt;a href=&#34;http://googleappengine.blogspot.com/2009/04/seriously-this-time-new-language-on-app.html&#34;&gt;announced&lt;/a&gt; their App Engine for Java (this was in the rumor mill for a couple of days already). The first 10,000 developers would get an early look at App Engine&amp;rsquo;s Java language support. I would have almost missed it. Some tweets reminded me of registering with Google. I heard of AppEngine before but the fact that it was only available for Python did not make it very attractive to me. Now the game changed a bit with introducing Java (and &lt;a href=&#34;http://groups.google.com/group/google-appengine-java/web/will-it-play-in-app-engine&#34;&gt;other JVM languages&lt;/a&gt; (JRuby, partial Scala &amp;hellip;), well &lt;a href=&#34;http://blog.springsource.com/2009/04/07/write-your-google-app-engine-applications-in-groovy/&#34;&gt;Groovy&lt;/a&gt; for sure, &lt;a href=&#34;http://olabini.com/blog/2009/04/dynamic-languages-on-google-app-engine-an-overview/&#34;&gt;Ola Bini&lt;/a&gt; has more on that).&lt;/p&gt;
 
 &lt;p&gt;After &lt;a href=&#34;http://appengine.google.com/&#34;&gt;registering&lt;/a&gt; with my Google ID they wanted to verify my account with a sms text message. Google is just listing  3 countries and then &amp;lsquo;Other&amp;rsquo; for sms verification and I expected it would not work with a german cellphone. But it did ;-).&lt;/p&gt;

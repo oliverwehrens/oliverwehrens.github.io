@@ -6,15 +6,14 @@
     <description>Recent content in Test on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/categories/test/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>4 ways to test your code</title>
-      <link>http://maxheapsize.com/post/2009-08-20-4-ways-to-test-your-code/</link>
+      <link>http://maxheapsize.com/2009/08/20/4-ways-to-test-your-code/</link>
       <pubDate>Thu, 20 Aug 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/post/2009-08-20-4-ways-to-test-your-code/</guid>
+      <guid>http://maxheapsize.com/2009/08/20/4-ways-to-test-your-code/</guid>
       <description>
 
 &lt;p&gt;Whenever you write some code you better make sure you have it covered by some tests. There are different possibilities on how to achieve this (and you might want to use all of them).&lt;/p&gt;

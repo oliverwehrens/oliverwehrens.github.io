@@ -2,312 +2,312 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://maxheapsize.com/post/2017-02-01-service-discovery-for-machines-and-humans/</loc>
+    <loc>http://maxheapsize.com/2017/02/01/service-discovery-for-machines-and-humans/</loc>
     <lastmod>2017-02-01T20:54:58+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2016-01-15-How-is-your-microservice-architecture-doing/</loc>
+    <loc>http://maxheapsize.com/2016/01/15/how-is-your-microservice-architecture-doing/</loc>
     <lastmod>2016-01-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2015-09-29-Entwicklung-verteilter-systeme/</loc>
+    <loc>http://maxheapsize.com/2015/09/29/entwicklung-verteilter-systeme---herausforderungen-nicht-nur-an-die-architektur./</loc>
     <lastmod>2015-09-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2014-11-06-wider-den-monolith/</loc>
+    <loc>http://maxheapsize.com/2014/11/06/wider-den-monolith---am-ende-wird-alles-gut./</loc>
     <lastmod>2014-11-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2014-10-09-ways-to-migrate-away-from-monoliths/</loc>
+    <loc>http://maxheapsize.com/2014/10/09/migrating-a-monolith/</loc>
     <lastmod>2014-10-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2014-10-07-if-you-dont-fight-it-you-end-up-with-a-monolith/</loc>
+    <loc>http://maxheapsize.com/2014/10/07/if-you-dont-fight-it-you-end-up-with-a-monolith/</loc>
     <lastmod>2014-10-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2014-10-06-a-monolith-could-be-good-for-you/</loc>
+    <loc>http://maxheapsize.com/2014/10/06/a-monolith-could-be-good-for-you/</loc>
     <lastmod>2014-10-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2014-10-03-How-do-you-know-you-have-a-monolith/</loc>
+    <loc>http://maxheapsize.com/2014/10/03/how-you-might-know-that-you-have-a-monolith/</loc>
     <lastmod>2014-10-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2014-02-23-how-failing-tests-can-be-green/</loc>
+    <loc>http://maxheapsize.com/2014/02/13/how-failing-tests-can-be-green/</loc>
     <lastmod>2014-02-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2013-12-18-getting-faster/</loc>
+    <loc>http://maxheapsize.com/2013/12/18/getting-faster/</loc>
     <lastmod>2013-12-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2013-06-23-doing-sprint-reviews-with-a-review-fair/</loc>
+    <loc>http://maxheapsize.com/2013/06/23/doing-a-sprint-review-with-a-review-fair/</loc>
     <lastmod>2013-06-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2013-06-03-using-xquartz-virt-manager-and-macosx/</loc>
+    <loc>http://maxheapsize.com/2013/06/03/using-kvm-and-virt-manager-via-xquartz-on-macosx-and-solving-the-keymapping-trouble/</loc>
     <lastmod>2013-06-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2013-05-26-getting-started-with-veewee-and-vagrant/</loc>
+    <loc>http://maxheapsize.com/2013/05/26/getting-started-with-veewee-and-vagrant/</loc>
     <lastmod>2013-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2013-04-26-from-development-to-production/</loc>
+    <loc>http://maxheapsize.com/2013/04/26/from-development-to-production/</loc>
     <lastmod>2013-04-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2012-07-27-do-not-use-javadoc/</loc>
+    <loc>http://maxheapsize.com/2012/07/27/do-not-use-javadoc/</loc>
     <lastmod>2012-07-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2012-07-12-javascript-testing-for-java-projects/</loc>
+    <loc>http://maxheapsize.com/2012/07/12/javascript-testing-for-java-projects/</loc>
     <lastmod>2012-07-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2012-05-01-hello-octopress/</loc>
+    <loc>http://maxheapsize.com/2012/05/01/hello-octopress/</loc>
     <lastmod>2012-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2012-04-12-cucumber-jvm-for-java/</loc>
+    <loc>http://maxheapsize.com/2012/04/12/cucumber-jvm-for-java/</loc>
     <lastmod>2012-04-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-02-07-hello-world/</loc>
+    <loc>http://maxheapsize.com/2012/04/12/starting-again-.../</loc>
     <lastmod>2012-04-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2011-06-14-one-assert-per-test-really/</loc>
+    <loc>http://maxheapsize.com/2011/06/14/one-assert-per-test-really./</loc>
     <lastmod>2011-06-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2011-05-09-hello-again/</loc>
+    <loc>http://maxheapsize.com/2011/05/09/hello-again./</loc>
     <lastmod>2011-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2010-07-20-spring-3-mvc-ajax-and-jquery-magic-or-better-simplicity/</loc>
+    <loc>http://maxheapsize.com/2010/07/20/spring-3-mvc-ajax-and-jquery-magic-or-better-simplicity/</loc>
     <lastmod>2010-07-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2010-06-05-busy-programmers-guide-on-where-to-buy-ebooks/</loc>
+    <loc>http://maxheapsize.com/2010/06/05/busy-programmers-guide-on-where-to-buy-ebooks/</loc>
     <lastmod>2010-06-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2010-04-26-how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</loc>
+    <loc>http://maxheapsize.com/2010/04/26/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</loc>
     <lastmod>2010-04-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2010-04-20-lightweight-web-prototyping-for-the-framework-loving-java-developer/</loc>
+    <loc>http://maxheapsize.com/2010/04/20/lightweight-web-prototyping-for-the-framework-loving-java-developer/</loc>
     <lastmod>2010-04-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2010-03-22-how-we-switched-from-subversion-to-git/</loc>
+    <loc>http://maxheapsize.com/2010/03/22/how-we-switched-from-subversion-to-git/</loc>
     <lastmod>2010-03-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2010-02-23-5-code-metrics-you-need-to-watch/</loc>
+    <loc>http://maxheapsize.com/2010/02/23/5-code-metrics-you-need-to-watch/</loc>
     <lastmod>2010-02-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2010-02-09-name-your-objects-right/</loc>
+    <loc>http://maxheapsize.com/2010/02/09/name-your-objects-right/</loc>
     <lastmod>2010-02-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2010-02-06-one-year-of-blogging/</loc>
+    <loc>http://maxheapsize.com/2010/02/06/one-year-of-blogging/</loc>
     <lastmod>2010-02-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2010-01-13-whats-your-preferred-development-infrastructure-stack/</loc>
+    <loc>http://maxheapsize.com/2010/01/13/whats-your-preferred-development-infrastructure-stack/</loc>
     <lastmod>2010-01-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2010-01-04-using-selenium-2-for-web-testing/</loc>
+    <loc>http://maxheapsize.com/2010/01/04/using-selenium2-for-web-testing-and-not-selenium-ide/</loc>
     <lastmod>2010-01-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-12-25-story-based-daily-stand-up-meeting/</loc>
+    <loc>http://maxheapsize.com/2009/12/25/story-based-daily-stand-up-meeting/</loc>
     <lastmod>2009-12-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-11-28-integrate-early-integrate-often/</loc>
+    <loc>http://maxheapsize.com/2009/11/28/integrate-early-integrate-often/</loc>
     <lastmod>2009-11-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-10-13-concordion-vs-cucumber-and-java-based-acceptance-testing/</loc>
+    <loc>http://maxheapsize.com/2009/10/13/concordion-vs.-cucumber-and-java-based-acceptance-testing/</loc>
     <lastmod>2009-10-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-09-23-test-jboss-rules-5-with-testng/</loc>
+    <loc>http://maxheapsize.com/2009/09/23/test-jboss-rules-5-or-drools-with-testng/</loc>
     <lastmod>2009-09-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-09-13-how-pair-programming-can-help-you-to-get-into-test-driven-development/</loc>
+    <loc>http://maxheapsize.com/2009/09/13/how-pair-programming-can-help-you-to-get-into-test-driven-development/</loc>
     <lastmod>2009-09-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-08-20-4-ways-to-test-your-code/</loc>
+    <loc>http://maxheapsize.com/2009/08/20/4-ways-to-test-your-code/</loc>
     <lastmod>2009-08-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-08-05-how-to-get-your-developers-to-pay-more-attention-to-the-burn-down-chart-and-have-fun/</loc>
+    <loc>http://maxheapsize.com/2009/08/05/how-to-get-your-developers-to-pay-more-attention-to-the-burn-down-chart-and-have-fun/</loc>
     <lastmod>2009-08-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-07-24-two-upgrades-to-cut-down-development-time/</loc>
+    <loc>http://maxheapsize.com/2009/07/24/two-upgrades-to-cut-down-development-time/</loc>
     <lastmod>2009-07-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-07-03-getting-started-with-jsf-2-and-maven/</loc>
+    <loc>http://maxheapsize.com/2009/07/03/getting-started-with-jsf-2-and-maven/</loc>
     <lastmod>2009-07-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-06-25-update-on-quant-testtester/</loc>
+    <loc>http://maxheapsize.com/2009/06/25/update-on-quant-testtester/</loc>
     <lastmod>2009-06-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-05-30-quant-check-your-tests/</loc>
+    <loc>http://maxheapsize.com/2009/05/30/quant---check-your-tests/</loc>
     <lastmod>2009-05-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-05-08-jetbrains-released-a-google-app-engine-plugin-for-intellij/</loc>
+    <loc>http://maxheapsize.com/2009/05/08/jetbrains-released-a-google-app-engine-plugin-for-intellij/</loc>
     <lastmod>2009-05-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-05-05-intellij-idea-plugin-property-sorter-updated/</loc>
+    <loc>http://maxheapsize.com/2009/05/05/intellij-idea-plugin-property-sorter-updated/</loc>
     <lastmod>2009-05-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-04-20-how-to-test-spring-webflow-2-with-parent-flows/</loc>
+    <loc>http://maxheapsize.com/2009/04/20/how-to-test-spring-webflow-2-with-parent-flows/</loc>
     <lastmod>2009-04-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-04-11-getting-the-browsers-geolocation-with-html-5/</loc>
+    <loc>http://maxheapsize.com/2009/04/11/getting-the-browsers-geolocation-with-html-5/</loc>
     <lastmod>2009-04-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-04-08-a-quick-look-at-google-app-engine-for-java/</loc>
+    <loc>http://maxheapsize.com/2009/04/08/a-quick-look-at-google-app-engine-for-java/</loc>
     <lastmod>2009-04-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-04-06-coloring-your-ide/</loc>
+    <loc>http://maxheapsize.com/2009/04/06/coloring-your-ide/</loc>
     <lastmod>2009-04-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-03-30-ie7-caches-rendered-element/</loc>
+    <loc>http://maxheapsize.com/2009/03/30/ie7-caches-rendered-elements/</loc>
     <lastmod>2009-03-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-03-23-using-testng-with-dataproviders-to-cover-more-test-cases/</loc>
+    <loc>http://maxheapsize.com/2009/03/23/using-testng-with-dataproviders-to-cover-more-test-cases/</loc>
     <lastmod>2009-03-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-03-18-how-to-refactor-spring-webflow-variables-in-your-jsf-pages-with-intellij-idea/</loc>
+    <loc>http://maxheapsize.com/2009/03/18/how-to-refactor-spring-webflow-variables-in-your-jsf-pages-with-intellij-idea/</loc>
     <lastmod>2009-03-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-03-12-updated-scrum-board-cheat-sheet-with-story-owner/</loc>
+    <loc>http://maxheapsize.com/2009/03/12/updated-scrum-board-cheat-sheet-with-story-owner/</loc>
     <lastmod>2009-03-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-03-08-solid-development-principles-in-motivational-pictures-enhanced/</loc>
+    <loc>http://maxheapsize.com/2009/03/08/solid-development-principles-in-motivational-pictures-enhanced/</loc>
     <lastmod>2009-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-03-05-why-our-current-sprint-commitment-will-fail/</loc>
+    <loc>http://maxheapsize.com/2009/03/05/why-our-current-sprint-commitment-will-fail./</loc>
     <lastmod>2009-03-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-02-25-three-reasons-why-you-dont-want-to-use-a-spring-context-in-unit-tests/</loc>
+    <loc>http://maxheapsize.com/2009/02/25/three-reasons-why-you-dont-want-to-use-a-spring-context-in-unit-tests/</loc>
     <lastmod>2009-02-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-02-23-sorting-your-properties-files-in-idea/</loc>
+    <loc>http://maxheapsize.com/2009/02/23/sorting-your-properties-files-in-intellij-idea/</loc>
     <lastmod>2009-02-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-02-19-the-scrumboard-cheat-sheet/</loc>
+    <loc>http://maxheapsize.com/2009/02/19/the-scrumboard-cheat-sheet/</loc>
     <lastmod>2009-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-02-17-extreme-visibility-in-an-agile-environment/</loc>
+    <loc>http://maxheapsize.com/2009/02/17/extreme-visibility-in-an-agile-environment/</loc>
     <lastmod>2009-02-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-02-15-my-macbook-pro-loves-4-gb/</loc>
+    <loc>http://maxheapsize.com/2009/02/15/my-macbook-pro-loves-4-gb/</loc>
     <lastmod>2009-02-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-02-14-intellij-idea-rulezzz-with-code-completion/</loc>
+    <loc>http://maxheapsize.com/2009/02/14/intellij-idea-rulezzz-with-code-completion/</loc>
     <lastmod>2009-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-02-11-intellij-idea-81/</loc>
+    <loc>http://maxheapsize.com/2009/02/11/intellij-idea-8.1/</loc>
     <lastmod>2009-02-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/post/2009-02-10-behavior-driven-development-with-easyb-and-vs-testng/</loc>
+    <loc>http://maxheapsize.com/2009/02/10/behavior-driven-development-with-easyb-and-vs.-testng/</loc>
     <lastmod>2009-02-10T00:00:00+00:00</lastmod>
   </url>
   

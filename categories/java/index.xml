@@ -6,15 +6,14 @@
     <description>Recent content in Java on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/categories/java/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>IntelliJ IDEA 8.1</title>
-      <link>http://maxheapsize.com/post/2009-02-11-intellij-idea-81/</link>
+      <link>http://maxheapsize.com/2009/02/11/intellij-idea-8.1/</link>
       <pubDate>Wed, 11 Feb 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/post/2009-02-11-intellij-idea-81/</guid>
+      <guid>http://maxheapsize.com/2009/02/11/intellij-idea-8.1/</guid>
       <description>&lt;p&gt;I do love IntelliJ IDEA  but the 8.0 release had some issues with indexing and compiler caches.
 Version &lt;a href=&#34;http://www.jetbrains.com/idea/features/newfeatures.html&#34;&gt;8.1&lt;/a&gt; is out  and addresses these issues (among other things, e.g. git support). Hurray.&lt;/p&gt;
 </description>
@@ -22,10 +21,10 @@ Version &lt;a href=&#34;http://www.jetbrains.com/idea/features/newfeatures.html&
     
     <item>
       <title>Behavior driven development with EasyB (and vs. TestNG)</title>
-      <link>http://maxheapsize.com/post/2009-02-10-behavior-driven-development-with-easyb-and-vs-testng/</link>
+      <link>http://maxheapsize.com/2009/02/10/behavior-driven-development-with-easyb-and-vs.-testng/</link>
       <pubDate>Tue, 10 Feb 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/post/2009-02-10-behavior-driven-development-with-easyb-and-vs-testng/</guid>
+      <guid>http://maxheapsize.com/2009/02/10/behavior-driven-development-with-easyb-and-vs.-testng/</guid>
       <description>&lt;p&gt;I heard about BDD a couple of months ago and did not really pay attention. Just some weeks ago I thought that maybe I could improve our test and/or documentation. So I decided to give it a shot with the BDD implementation &lt;a href=&#34;http://easyb.org&#34;&gt;easyb&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;According to Wikipedia:

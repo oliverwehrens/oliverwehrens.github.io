@@ -6,15 +6,14 @@
     <description>Recent content in Test Java on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/categories/test-java/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Update on Quant TestTester</title>
-      <link>http://maxheapsize.com/post/2009-06-25-update-on-quant-testtester/</link>
+      <link>http://maxheapsize.com/2009/06/25/update-on-quant-testtester/</link>
       <pubDate>Thu, 25 Jun 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/post/2009-06-25-update-on-quant-testtester/</guid>
+      <guid>http://maxheapsize.com/2009/06/25/update-on-quant-testtester/</guid>
       <description>&lt;p&gt;Here is a small update on my little fun project.&lt;/p&gt;
 
 &lt;p&gt;I released version 0.2 of quant. Now it will recognize all TestNG annotations which do not have a TestNG group (like @BeforeMethod, @BeforeClass etc.). The method &amp;lsquo;reportViolation&amp;rsquo; on ClassTester will now report whats wrong with the examined class.&lt;/p&gt;
@@ -54,10 +53,10 @@ Specified TestGroups :  + testUnitTest
     
     <item>
       <title>Quant - Check your Tests</title>
-      <link>http://maxheapsize.com/post/2009-05-30-quant-check-your-tests/</link>
+      <link>http://maxheapsize.com/2009/05/30/quant---check-your-tests/</link>
       <pubDate>Sat, 30 May 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/post/2009-05-30-quant-check-your-tests/</guid>
+      <guid>http://maxheapsize.com/2009/05/30/quant---check-your-tests/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;http://maxheapsize.com/static/QuantLogo.png&#34; class=&#34;alignleft&#34;/&gt;Did you ever wondered if all tests your team wrote are &lt;strong&gt;really running&lt;/strong&gt; ? How many &lt;strong&gt;disabled tests&lt;/strong&gt; does your code base have? How many public void methods &lt;strong&gt;do not have a @Test&lt;/strong&gt; annotation (or at the class) ?&lt;/p&gt;
 
 &lt;p&gt;I saw all of that in the last years.&lt;/p&gt;

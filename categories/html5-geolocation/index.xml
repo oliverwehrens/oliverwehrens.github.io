@@ -6,15 +6,14 @@
     <description>Recent content in Html5 Geolocation on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/categories/html5-geolocation/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Getting the Browsers GeoLocation with HTML 5</title>
-      <link>http://maxheapsize.com/post/2009-04-11-getting-the-browsers-geolocation-with-html-5/</link>
+      <link>http://maxheapsize.com/2009/04/11/getting-the-browsers-geolocation-with-html-5/</link>
       <pubDate>Sat, 11 Apr 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/post/2009-04-11-getting-the-browsers-geolocation-with-html-5/</guid>
+      <guid>http://maxheapsize.com/2009/04/11/getting-the-browsers-geolocation-with-html-5/</guid>
       <description>&lt;p&gt;Until now it was almost impossible to get the &lt;strong&gt;GeoLocation&lt;/strong&gt; of a user browsing your site. You could try to use several services to more or less guess the current position. Most of the time they where using the IP address to tackle the problem. This was &lt;strong&gt;not very reliable&lt;/strong&gt; when it came to mobile devices.&lt;/p&gt;
 
 &lt;p&gt;Ever since the iPhone hit the market mobile adoption of the web grew exponentially. Google threw in Android and I&amp;rsquo;m sure some Windows Mobile phones do have GPS as well.  According to some talks at &lt;a href=&#34;http://www.re-publica.de&#34;&gt;re:publica 09&lt;/a&gt; the big telco carriers such as T-Mobile and Vodafone see their &lt;strong&gt;future in the mobile (geolocation aware) web&lt;/strong&gt;.&lt;/p&gt;

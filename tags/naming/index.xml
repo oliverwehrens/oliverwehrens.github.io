@@ -6,15 +6,14 @@
     <description>Recent content in Naming on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/naming/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Name your objects right</title>
-      <link>http://maxheapsize.com/post/2010-02-09-name-your-objects-right/</link>
+      <link>http://maxheapsize.com/2010/02/09/name-your-objects-right/</link>
       <pubDate>Tue, 09 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/post/2010-02-09-name-your-objects-right/</guid>
+      <guid>http://maxheapsize.com/2010/02/09/name-your-objects-right/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/nataliemaynor/2988366432/sizes/s/&#34;&gt;&lt;img alt=&#34;No Name&#34; src=&#34;http://farm4.static.flickr.com/3220/2988366432_8f39394055_m.jpg&#34; title=&#34;&amp;copy; NatalieMaynor @ flickr&#34; width=&#34;180&#34; height=&#34;240&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Whenever you create an object you have to find a meaningful name.&lt;/p&gt;

@@ -6,15 +6,14 @@
     <description>Recent content in Blog on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Hello Octopress</title>
-      <link>http://maxheapsize.com/post/2012-05-01-hello-octopress/</link>
+      <link>http://maxheapsize.com/2012/05/01/hello-octopress/</link>
       <pubDate>Tue, 01 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/post/2012-05-01-hello-octopress/</guid>
+      <guid>http://maxheapsize.com/2012/05/01/hello-octopress/</guid>
       <description>&lt;p&gt;Octopress. Now.&lt;/p&gt;
 
 &lt;p&gt;I got tired of Wordpress and choose to get something different. &lt;a href=&#34;http://octopress.org&#34;&gt;Octopress&lt;/a&gt;. First, I like markdown and I want to become a little more fluent. Second, publishing is only a commit away. Plain html files, no php. Hosting everywhere. I can start to learn ruby. Can I ask for more?&lt;/p&gt;
@@ -25,10 +24,10 @@
     
     <item>
       <title>Hello again.</title>
-      <link>http://maxheapsize.com/post/2011-05-09-hello-again/</link>
+      <link>http://maxheapsize.com/2011/05/09/hello-again./</link>
       <pubDate>Mon, 09 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/post/2011-05-09-hello-again/</guid>
+      <guid>http://maxheapsize.com/2011/05/09/hello-again./</guid>
       <description>&lt;p&gt;My former hoster had a system crash and it took a while to get an older backup working. Some posts are lost.&lt;/p&gt;
 
 &lt;p&gt;Here I am.&lt;/p&gt;
@@ -41,10 +40,10 @@
     
     <item>
       <title>One year of blogging</title>
-      <link>http://maxheapsize.com/post/2010-02-06-one-year-of-blogging/</link>
+      <link>http://maxheapsize.com/2010/02/06/one-year-of-blogging/</link>
       <pubDate>Sat, 06 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/post/2010-02-06-one-year-of-blogging/</guid>
+      <guid>http://maxheapsize.com/2010/02/06/one-year-of-blogging/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/mrs_logic/3799729875/sizes/s/&#34;&gt;&lt;img alt=&#34;&amp;copy; Mrs Logic @ flickr&#34; src=&#34;http://farm3.static.flickr.com/2509/3799729875_16098fe242_m.jpg&#34; title=&#34;One Year&#34; width=&#34;171&#34; height=&#34;240&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;One year ago I started to blog again. Time for a little recap.&lt;/p&gt;
