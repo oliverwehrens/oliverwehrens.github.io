@@ -342,7 +342,7 @@
   
   <url>
     <loc>http://maxheapsize.com/tags/architecture/</loc>
-    <lastmod>2016-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2017-02-01T20:54:58+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -533,7 +533,7 @@
   
   <url>
     <loc>http://maxheapsize.com/tags/microservice/</loc>
-    <lastmod>2016-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2017-02-01T20:54:58+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -612,6 +612,12 @@
   <url>
     <loc>http://maxheapsize.com/tags/selenium2/</loc>
     <lastmod>2010-01-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://maxheapsize.com/tags/service-discovery/</loc>
+    <lastmod>2017-02-01T20:54:58+01:00</lastmod>
     <priority>0</priority>
   </url>
   
