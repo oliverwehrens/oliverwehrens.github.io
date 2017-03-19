@@ -6,14 +6,15 @@
     <description>Recent content in Deployment on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/deployment/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How failing tests can be green</title>
-      <link>http://maxheapsize.com/2014/02/13/how-failing-tests-can-be-green/</link>
+      <link>http://maxheapsize.com/post/2014-02-23-how-failing-tests-can-be-green/</link>
       <pubDate>Thu, 13 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2014/02/13/how-failing-tests-can-be-green/</guid>
+      <guid>http://maxheapsize.com/post/2014-02-23-how-failing-tests-can-be-green/</guid>
       <description>
 
 &lt;p&gt;Imagine this conversation:&lt;/p&gt;
@@ -60,10 +61,10 @@
     
     <item>
       <title>Getting Faster</title>
-      <link>http://maxheapsize.com/2013/12/18/getting-faster/</link>
+      <link>http://maxheapsize.com/post/2013-12-18-getting-faster/</link>
       <pubDate>Wed, 18 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2013/12/18/getting-faster/</guid>
+      <guid>http://maxheapsize.com/post/2013-12-18-getting-faster/</guid>
       <description>&lt;p&gt;My &lt;a href=&#34;http://www.continuouslifecycle.de/lecture.php?id=291&#34;&gt;Continuous Lifecycle 2013&lt;/a&gt; talk. How we got faster at deploying our software.&lt;/p&gt;
 
 &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;fd5eb9e02df501313a98663820a88a30&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
@@ -72,10 +73,10 @@
     
     <item>
       <title>From Development to Production</title>
-      <link>http://maxheapsize.com/2013/04/26/from-development-to-production/</link>
+      <link>http://maxheapsize.com/post/2013-04-26-from-development-to-production/</link>
       <pubDate>Fri, 26 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2013/04/26/from-development-to-production/</guid>
+      <guid>http://maxheapsize.com/post/2013-04-26-from-development-to-production/</guid>
       <description>&lt;p&gt;My &lt;a href=&#34;http://bed-con.org/2013/talks/&#34;&gt;BedCon 2013&lt;/a&gt; talk. Covering commiting code, packaging,testing, deployment and organisational changes.&lt;/p&gt;
 
 &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;e8470d7082450130e5211231381a9963&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;

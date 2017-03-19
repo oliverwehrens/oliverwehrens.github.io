@@ -6,14 +6,15 @@
     <description>Recent content in Monolith on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/monolith/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Entwicklung verteilter Systeme - Herausforderungen nicht nur an die Architektur.</title>
-      <link>http://maxheapsize.com/2015/09/29/entwicklung-verteilter-systeme---herausforderungen-nicht-nur-an-die-architektur./</link>
+      <link>http://maxheapsize.com/post/2015-09-29-Entwicklung-verteilter-systeme/</link>
       <pubDate>Tue, 29 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2015/09/29/entwicklung-verteilter-systeme---herausforderungen-nicht-nur-an-die-architektur./</guid>
+      <guid>http://maxheapsize.com/post/2015-09-29-Entwicklung-verteilter-systeme/</guid>
       <description>&lt;p&gt;This is my talk about &lt;strong&gt;Development of distributed systems - challenges not only for the architecture&lt;/strong&gt;. You guessed it, it is in german. I gave this talk at &lt;a href=&#34;http://bed-con.org/2015/talks/Entwicklung-verteilter-Systeme---Herausforderungen-nicht-nur-an-die-Architektur&#34;&gt;BedCon 2015&lt;/a&gt; and I will talk about it again at the &lt;a href=&#34;http://www.the-architecture-gathering.de/indexEN.php&#34;&gt;Architecture Gathering 2015&lt;/a&gt; in Munich on October 22nd.&lt;/p&gt;
 
 &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;af49bc1ea74b4fefaeaa3636c69542cd&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
@@ -30,10 +31,10 @@
     
     <item>
       <title>Wider den Monolith - Am Ende wird alles gut.</title>
-      <link>http://maxheapsize.com/2014/11/06/wider-den-monolith---am-ende-wird-alles-gut./</link>
+      <link>http://maxheapsize.com/post/2014-11-06-wider-den-monolith/</link>
       <pubDate>Thu, 06 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2014/11/06/wider-den-monolith---am-ende-wird-alles-gut./</guid>
+      <guid>http://maxheapsize.com/post/2014-11-06-wider-den-monolith/</guid>
       <description>&lt;p&gt;My &lt;a href=&#34;https://jax.de/wjax2014/sessions/wider-den-monolith-am-ende-wird-alles-gut&#34;&gt;WJax 2014&lt;/a&gt; talk in german.&lt;/p&gt;
 
 &lt;p&gt;Wider den Monolith - Am Ende wird alles gut. My first talk with lots of pictures. The talk was recorded. As soon as I know the url I will post it here (and if I&amp;rsquo;m not too embarrassed :) ).&lt;/p&gt;
@@ -46,10 +47,10 @@
     
     <item>
       <title>Migrating a monolith</title>
-      <link>http://maxheapsize.com/2014/10/09/migrating-a-monolith/</link>
+      <link>http://maxheapsize.com/post/2014-10-09-ways-to-migrate-away-from-monoliths/</link>
       <pubDate>Thu, 09 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2014/10/09/migrating-a-monolith/</guid>
+      <guid>http://maxheapsize.com/post/2014-10-09-ways-to-migrate-away-from-monoliths/</guid>
       <description>
 
 &lt;p&gt;If you start, a monolith is much easier to begin with. Everything is in one place, it&amp;rsquo;s fast and all team members understand the code.
@@ -105,10 +106,10 @@ If you plan your application from the start as distributed system in a microserv
     
     <item>
       <title>If you don&#39;t fight it you end up with a monolith</title>
-      <link>http://maxheapsize.com/2014/10/07/if-you-dont-fight-it-you-end-up-with-a-monolith/</link>
+      <link>http://maxheapsize.com/post/2014-10-07-if-you-dont-fight-it-you-end-up-with-a-monolith/</link>
       <pubDate>Tue, 07 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2014/10/07/if-you-dont-fight-it-you-end-up-with-a-monolith/</guid>
+      <guid>http://maxheapsize.com/post/2014-10-07-if-you-dont-fight-it-you-end-up-with-a-monolith/</guid>
       <description>&lt;p&gt;You planned your software. You talked to your business owners. As soon as you saw a new use case which should be implemented, you modularized it. You did everything right. And then you hit the integration layer. Sounds familiar?&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -162,10 +163,10 @@ You can also add a &lt;strong&gt;new version/new resource&lt;/strong&gt;. This i
     
     <item>
       <title>A Monolith could be good for you</title>
-      <link>http://maxheapsize.com/2014/10/06/a-monolith-could-be-good-for-you/</link>
+      <link>http://maxheapsize.com/post/2014-10-06-a-monolith-could-be-good-for-you/</link>
       <pubDate>Mon, 06 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2014/10/06/a-monolith-could-be-good-for-you/</guid>
+      <guid>http://maxheapsize.com/post/2014-10-06-a-monolith-could-be-good-for-you/</guid>
       <description>
 
 &lt;p&gt;Everybody says monolithic applications are bad. I usually hear things like:&lt;/p&gt;
@@ -240,10 +241,10 @@ You can also add a &lt;strong&gt;new version/new resource&lt;/strong&gt;. This i
     
     <item>
       <title>How you might know that you have a monolith</title>
-      <link>http://maxheapsize.com/2014/10/03/how-you-might-know-that-you-have-a-monolith/</link>
+      <link>http://maxheapsize.com/post/2014-10-03-How-do-you-know-you-have-a-monolith/</link>
       <pubDate>Fri, 03 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2014/10/03/how-you-might-know-that-you-have-a-monolith/</guid>
+      <guid>http://maxheapsize.com/post/2014-10-03-How-do-you-know-you-have-a-monolith/</guid>
       <description>&lt;p&gt;You start your green field project and keep working on it. It grows and grows and grows. You feel comfortable with it and it could not be better. Because more needs to be done/the product is successful another team is added.&lt;/p&gt;
 
 &lt;!-- more --&gt;

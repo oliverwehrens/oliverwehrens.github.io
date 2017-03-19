@@ -6,14 +6,15 @@
     <description>Recent content in Javadoc on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/javadoc/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Do not use Javadoc</title>
-      <link>http://maxheapsize.com/2012/07/27/do-not-use-javadoc/</link>
+      <link>http://maxheapsize.com/post/2012-07-27-do-not-use-javadoc/</link>
       <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2012/07/27/do-not-use-javadoc/</guid>
+      <guid>http://maxheapsize.com/post/2012-07-27-do-not-use-javadoc/</guid>
       <description>&lt;p&gt;Javadoc is here to help. To understand what the code does and how it works? Right?&lt;/p&gt;
 
 &lt;p&gt;I don&amp;rsquo;t think so. I confuses the heck out of me in most cases.&lt;/p&gt;

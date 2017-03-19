@@ -6,14 +6,15 @@
     <description>Recent content in Jquery on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Spring 3 MVC, Ajax and jQuery Magic (or better: simplicity)</title>
-      <link>http://maxheapsize.com/2010/07/20/spring-3-mvc-ajax-and-jquery-magic-or-better-simplicity/</link>
+      <link>http://maxheapsize.com/post/2010-07-20-spring-3-mvc-ajax-and-jquery-magic-or-better-simplicity/</link>
       <pubDate>Tue, 20 Jul 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2010/07/20/spring-3-mvc-ajax-and-jquery-magic-or-better-simplicity/</guid>
+      <guid>http://maxheapsize.com/post/2010-07-20-spring-3-mvc-ajax-and-jquery-magic-or-better-simplicity/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m playing around with some web frameworks lately and to see what&amp;rsquo;s in store with Spring 3 MVC (never did too much with it) I gave it a try to see how it handles Ajax. According to &lt;a href=&#34;http://blog.springsource.com/2010/01/25/ajax-simplifications-in-spring-3-0/&#34;&gt;ajax simplification announcement&lt;/a&gt; it should be possible to get up and running in (almost) no time.&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -186,10 +187,10 @@ jQuery.getJSON(&#34;demo.html&#34;, {name: name, email: email}, function (data) 
     
     <item>
       <title>How to detect if your server is down when making jQuery Ajax calls </title>
-      <link>http://maxheapsize.com/2010/04/26/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</link>
+      <link>http://maxheapsize.com/post/2010-04-26-how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</link>
       <pubDate>Mon, 26 Apr 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2010/04/26/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</guid>
+      <guid>http://maxheapsize.com/post/2010-04-26-how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</guid>
       <description>&lt;p&gt;If you developed an &lt;strong&gt;ajax rich web application&lt;/strong&gt;, maybe even a single page interface, you want to make sure that the user gets &lt;strong&gt;notified&lt;/strong&gt; if the server is &lt;strong&gt;not reachable&lt;/strong&gt; anymore. This happens either if the it goes down or the client loses its network connection.
 Depending on your code the application can run for a while and the &lt;strong&gt;user is confused&lt;/strong&gt; about missing interactivity.&lt;/p&gt;
 

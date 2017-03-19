@@ -6,14 +6,15 @@
     <description>Recent content in Ajax on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How to detect if your server is down when making jQuery Ajax calls </title>
-      <link>http://maxheapsize.com/2010/04/26/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</link>
+      <link>http://maxheapsize.com/post/2010-04-26-how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</link>
       <pubDate>Mon, 26 Apr 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2010/04/26/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</guid>
+      <guid>http://maxheapsize.com/post/2010-04-26-how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</guid>
       <description>&lt;p&gt;If you developed an &lt;strong&gt;ajax rich web application&lt;/strong&gt;, maybe even a single page interface, you want to make sure that the user gets &lt;strong&gt;notified&lt;/strong&gt; if the server is &lt;strong&gt;not reachable&lt;/strong&gt; anymore. This happens either if the it goes down or the client loses its network connection.
 Depending on your code the application can run for a while and the &lt;strong&gt;user is confused&lt;/strong&gt; about missing interactivity.&lt;/p&gt;
 

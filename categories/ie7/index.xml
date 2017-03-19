@@ -6,14 +6,15 @@
     <description>Recent content in Ie7 on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/categories/ie7/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>IE7 caches rendered elements?</title>
-      <link>http://maxheapsize.com/2009/03/30/ie7-caches-rendered-elements/</link>
+      <link>http://maxheapsize.com/post/2009-03-30-ie7-caches-rendered-element/</link>
       <pubDate>Mon, 30 Mar 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2009/03/30/ie7-caches-rendered-elements/</guid>
+      <guid>http://maxheapsize.com/post/2009-03-30-ie7-caches-rendered-element/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m tasked with some css tweaking to our current product. We need to implement a &amp;lsquo;Print Preview&amp;rsquo; screen so the customer can see how this looks before printing. Css supports exactly this use case with the @media notation.&lt;/p&gt;
 
 &lt;p&gt;So far so good.&lt;/p&gt;

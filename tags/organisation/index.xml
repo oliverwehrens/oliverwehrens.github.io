@@ -6,14 +6,15 @@
     <description>Recent content in Organisation on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/organisation/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Entwicklung verteilter Systeme - Herausforderungen nicht nur an die Architektur.</title>
-      <link>http://maxheapsize.com/2015/09/29/entwicklung-verteilter-systeme---herausforderungen-nicht-nur-an-die-architektur./</link>
+      <link>http://maxheapsize.com/post/2015-09-29-Entwicklung-verteilter-systeme/</link>
       <pubDate>Tue, 29 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2015/09/29/entwicklung-verteilter-systeme---herausforderungen-nicht-nur-an-die-architektur./</guid>
+      <guid>http://maxheapsize.com/post/2015-09-29-Entwicklung-verteilter-systeme/</guid>
       <description>&lt;p&gt;This is my talk about &lt;strong&gt;Development of distributed systems - challenges not only for the architecture&lt;/strong&gt;. You guessed it, it is in german. I gave this talk at &lt;a href=&#34;http://bed-con.org/2015/talks/Entwicklung-verteilter-Systeme---Herausforderungen-nicht-nur-an-die-Architektur&#34;&gt;BedCon 2015&lt;/a&gt; and I will talk about it again at the &lt;a href=&#34;http://www.the-architecture-gathering.de/indexEN.php&#34;&gt;Architecture Gathering 2015&lt;/a&gt; in Munich on October 22nd.&lt;/p&gt;
 
 &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;af49bc1ea74b4fefaeaa3636c69542cd&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;

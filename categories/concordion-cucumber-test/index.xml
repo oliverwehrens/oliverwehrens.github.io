@@ -6,14 +6,15 @@
     <description>Recent content in Concordion Cucumber Test on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/categories/concordion-cucumber-test/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Concordion vs. Cucumber and Java based Acceptance Testing</title>
-      <link>http://maxheapsize.com/2009/10/13/concordion-vs.-cucumber-and-java-based-acceptance-testing/</link>
+      <link>http://maxheapsize.com/post/2009-10-13-concordion-vs-cucumber-and-java-based-acceptance-testing/</link>
       <pubDate>Tue, 13 Oct 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2009/10/13/concordion-vs.-cucumber-and-java-based-acceptance-testing/</guid>
+      <guid>http://maxheapsize.com/post/2009-10-13-concordion-vs-cucumber-and-java-based-acceptance-testing/</guid>
       <description>
 
 &lt;p&gt;If you want your Business Analyst to provide some acceptance tests for your implementation it would be best to make sure you get it in some form your tests can read. That way you can make sure your code does really do that what the customers wants.&lt;/p&gt;

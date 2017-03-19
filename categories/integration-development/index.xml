@@ -6,14 +6,15 @@
     <description>Recent content in Integration Development on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/categories/integration-development/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Integrate early, integrate often</title>
-      <link>http://maxheapsize.com/2009/11/28/integrate-early-integrate-often/</link>
+      <link>http://maxheapsize.com/post/2009-11-28-integrate-early-integrate-often/</link>
       <pubDate>Sat, 28 Nov 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2009/11/28/integrate-early-integrate-often/</guid>
+      <guid>http://maxheapsize.com/post/2009-11-28-integrate-early-integrate-often/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/shuttercat7/298477892/sizes/s/&#34; title=&#34;&amp;copy; RogueSun Media @ flickr&#34;&gt;&lt;img class=&#34;alignleft&#34; src=&#34;http://maxheapsize.com/static/gears.jpg&#34; width=&#34;240&#34; height=&#34;180&#34; alt=&#34;gears.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;You are doing scrum, your story is big, you really don&#39;t know much about it and the feature does not get implemented in time.&lt;/p&gt;
 &lt;p&gt;Sounds familiar ?&lt;/p&gt;

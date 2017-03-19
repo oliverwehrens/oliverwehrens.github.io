@@ -6,14 +6,15 @@
     <description>Recent content in Scrum Agile on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/categories/scrum-agile/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>The ScrumBoard Cheat Sheet</title>
-      <link>http://maxheapsize.com/2009/02/19/the-scrumboard-cheat-sheet/</link>
+      <link>http://maxheapsize.com/post/2009-02-19-the-scrumboard-cheat-sheet/</link>
       <pubDate>Thu, 19 Feb 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2009/02/19/the-scrumboard-cheat-sheet/</guid>
+      <guid>http://maxheapsize.com/post/2009-02-19-the-scrumboard-cheat-sheet/</guid>
       <description>&lt;p&gt;In the last couple of month we continuously improved our scrum task board. After a sprint planning we usually do a story breakdown into tasks. All tasks for one story get ordered and a time for each will be estimated. We do try do make sure every task is smaller than 8 hours so it can be completed in one day.Our ScrumBoard is a magnetic whiteboard with hand drawn lines.&lt;/p&gt;
 
 &lt;p&gt;We do use color coded cards for the tasks we do. We do shuffle the colors each sprint but we have different colors for:

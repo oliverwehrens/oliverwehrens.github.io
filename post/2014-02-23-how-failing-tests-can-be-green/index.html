@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="How failing tests can be green - maxheapsize" property="og:title">
+<title>How failing tests can be green | maxheapsize</title>
+<link rel="stylesheet" href="http://maxheapsize.com//css/style.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://maxheapsize.com/"><h1 class="title is-4">maxheapsize</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/oliverwehrens">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/owehrens">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="http://maxheapsize.com/index.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="subtitle is-6">February 13, 2014</h2>
+    <h1 class="title">How failing tests can be green</h1>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/green-build">green build</a>
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/deployment">deployment</a>
+    
+        <a class="button is-link" href="http://maxheapsize.com/tags/tests">tests</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<p>Imagine this conversation:</p>
+
+<p><img src="http://maxheapsize.com/static/traffic-light-vector-icon.jpg" alt="red" /></p>
+
+<p><em>Friend</em>: &ldquo;We have an integration system where we deploy every two weeks all commits and run hundreds of end to end tests on it.&rdquo;</p>
+
+<p><em>Me</em>: &ldquo;And if everything passed it goes into production?&rdquo;</p>
+
+<p><em>Friend</em>: &ldquo;Yes.&rdquo;</p>
+
+<p><em>Me</em>: &ldquo;How often do they fail?&rdquo;</p>
+
+<p><em>Friend</em>: &ldquo;Uhmm, well like every night. But we just take the failing tests and run them again and after that or the next run they will be green.&rdquo;</p>
+
+<p><em>Me</em>: &ldquo;And then it goes into production?&rdquo;</p>
+
+<p><em>Friend</em>: &ldquo;Yes.&rdquo;</p>
+
+<p><em>Me</em>: &ldquo;Uh?&rdquo;</p>
+
+<!-- more -->
+
+<p>After some further digging it turns out the tests where not green in the first run for some time (like months). Nobody seem to care. Everybody thought they have just an unstable test system and no time for fixing it.</p>
+
+<h3 id="slow-is-the-new-fast">&ldquo;Slow is the new fast&rdquo;.</h3>
+
+<p>At some point somebody took the time to investigate one of the failing tests. He found that this was a real bug also happning in production and he opened a bug ticket for it. Yes, the system was unstable and they had flickering tests but this is no reason to put the (un)tested code into production. It took a team of 5 people three weeks to stabilize the system. No new features were deployed during that time.</p>
+
+<blockquote>
+<p>If you accept that red tests are ok you are on the way to hell. You have no clue if the system behaves like you think it should.</p>
+</blockquote>
+
+<p>No flickering tests are allowed. The build has to be always green. Do not accept any excuses telling you that this is ok and everything is under control.</p>
+
+<p><strong>It is not.</strong></p>
+
+<p>Don&rsquo;t do it.</p>
+
+<p><small>(Traffic Light Image from <a href="http://psdblast.com/traffic-light-icon-psd">psdblast</a>.)</small></p>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'maxheapsize';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2009-2017 Oliver Wehrens
+      <a class="level-item" href="http://maxheapsize.com/impressum">
+         Impressum
+      </a>
+  </p>
+  </div>
+</section>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/go.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/dockerfile.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+

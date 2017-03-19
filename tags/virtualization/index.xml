@@ -6,14 +6,15 @@
     <description>Recent content in Virtualization on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Using KVM and Virt-Manager via XQuartz on MacOSX (and solving the keymapping trouble)</title>
-      <link>http://maxheapsize.com/2013/06/03/using-kvm-and-virt-manager-via-xquartz-on-macosx-and-solving-the-keymapping-trouble/</link>
+      <link>http://maxheapsize.com/post/2013-06-03-using-xquartz-virt-manager-and-macosx/</link>
       <pubDate>Mon, 03 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2013/06/03/using-kvm-and-virt-manager-via-xquartz-on-macosx-and-solving-the-keymapping-trouble/</guid>
+      <guid>http://maxheapsize.com/post/2013-06-03-using-xquartz-virt-manager-and-macosx/</guid>
       <description>&lt;p&gt;In the last couple of months I got to play around with virtualization at work. Doing automated delivery pipleines and provisiong via puppet I decided it&amp;rsquo;s time to get my hands even more dirty at home.&lt;/p&gt;
 
 &lt;p&gt;I got myself a &lt;a href=&#34;http://h10010.www1.hp.com/wwpc/uk/en/sm/WF06b/15351-15351-4237916-4237917-4237917-4248009-5336624.html?dnr=1&#34;&gt;HP Microserver N54L&lt;/a&gt; equipped with 16 GB of RAM and 9 TB disks. I wanted ZFS and KVM. Since the machine has an AMD processor the only way was to install Linux on it. SmartOS would have been a nice choice but it only supports KVM for Intel processors.&lt;/p&gt;

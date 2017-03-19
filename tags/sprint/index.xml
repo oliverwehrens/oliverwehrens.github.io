@@ -6,14 +6,15 @@
     <description>Recent content in Sprint on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/sprint/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Doing a Sprint Review with a Review Fair</title>
-      <link>http://maxheapsize.com/2013/06/23/doing-a-sprint-review-with-a-review-fair/</link>
+      <link>http://maxheapsize.com/post/2013-06-23-doing-sprint-reviews-with-a-review-fair/</link>
       <pubDate>Sun, 23 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2013/06/23/doing-a-sprint-review-with-a-review-fair/</guid>
+      <guid>http://maxheapsize.com/post/2013-06-23-doing-sprint-reviews-with-a-review-fair/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m working in an organization where we do synchronized sprints between all teams. This means every two weeks all meeting rooms are booked for retrospectives and sprint plannings. If you have around 10-20 teams distributing knowledge what&amp;rsquo;s happening in the other teams is tricky. No one has the time to go to all reviews.&lt;/p&gt;
 
 &lt;p&gt;Enter &amp;lsquo;Review Fair&amp;rsquo;.&lt;/p&gt;

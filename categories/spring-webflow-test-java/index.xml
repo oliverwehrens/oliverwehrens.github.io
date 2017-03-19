@@ -6,14 +6,15 @@
     <description>Recent content in Spring Webflow Test Java on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/categories/spring-webflow-test-java/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How to test Spring Webflow 2 (with parent flows)</title>
-      <link>http://maxheapsize.com/2009/04/20/how-to-test-spring-webflow-2-with-parent-flows/</link>
+      <link>http://maxheapsize.com/post/2009-04-20-how-to-test-spring-webflow-2-with-parent-flows/</link>
       <pubDate>Mon, 20 Apr 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2009/04/20/how-to-test-spring-webflow-2-with-parent-flows/</guid>
+      <guid>http://maxheapsize.com/post/2009-04-20-how-to-test-spring-webflow-2-with-parent-flows/</guid>
       <description>&lt;p&gt;In the last couple of month I was writing some flows using Spring Webflow 2. I knew that I (in theory) I could test them but I never did. The overall documentation of Webflow 2 is not that great at the moment, so I hope to improve that a little bit.&lt;/p&gt;
 
 &lt;p&gt;Spring Webflow 2 supports only JUnit tests so far. I guess this will change at some point  but until then you have to pull out that junit.jar again.&lt;/p&gt;

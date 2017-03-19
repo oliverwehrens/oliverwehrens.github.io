@@ -6,14 +6,15 @@
     <description>Recent content in Scrum Agile Burndown on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/categories/scrum-agile-burndown/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How to get your developers to pay more attention to the burn down chart (and have fun)</title>
-      <link>http://maxheapsize.com/2009/08/05/how-to-get-your-developers-to-pay-more-attention-to-the-burn-down-chart-and-have-fun/</link>
+      <link>http://maxheapsize.com/post/2009-08-05-how-to-get-your-developers-to-pay-more-attention-to-the-burn-down-chart-and-have-fun/</link>
       <pubDate>Wed, 05 Aug 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2009/08/05/how-to-get-your-developers-to-pay-more-attention-to-the-burn-down-chart-and-have-fun/</guid>
+      <guid>http://maxheapsize.com/post/2009-08-05-how-to-get-your-developers-to-pay-more-attention-to-the-burn-down-chart-and-have-fun/</guid>
       <description>&lt;p&gt;For the last couple of month our scrum master always drew our daily burn down chart. Nice and fine and it always happened automagically. It came to the point that we (the developers) only occasionally paid attention to it (a little less then we should). One day our scrum master stopped doing it and forced us to do by ourselves. While it seemed a bit strange at first it turns out it was a brilliant idea.&lt;/p&gt;
 
 &lt;p&gt;We are now reminded every day how much hours we burned (in contrast to we just complete cards but nobody calculates the sum and tells that everybody). If the result is far below the theoretical number of developers x 8 hours a day we quickly analyze the problem and try to solve it. We are more aware that we might be in trouble. This was not so much the case in the last sprints.&lt;/p&gt;

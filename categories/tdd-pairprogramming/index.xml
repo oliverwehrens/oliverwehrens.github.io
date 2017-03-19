@@ -6,14 +6,15 @@
     <description>Recent content in Tdd Pairprogramming on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/categories/tdd-pairprogramming/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How pair programming can help you to get into Test Driven Development</title>
-      <link>http://maxheapsize.com/2009/09/13/how-pair-programming-can-help-you-to-get-into-test-driven-development/</link>
+      <link>http://maxheapsize.com/post/2009-09-13-how-pair-programming-can-help-you-to-get-into-test-driven-development/</link>
       <pubDate>Sun, 13 Sep 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2009/09/13/how-pair-programming-can-help-you-to-get-into-test-driven-development/</guid>
+      <guid>http://maxheapsize.com/post/2009-09-13-how-pair-programming-can-help-you-to-get-into-test-driven-development/</guid>
       <description>&lt;p&gt;At my current job management buys into Test driven development. It slowly starts to become our primary development style.&lt;/p&gt;
 
 &lt;p&gt;Some &lt;strong&gt;advantages&lt;/strong&gt; of TDD for me are:&lt;/p&gt;

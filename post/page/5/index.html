@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="http://maxheapsize.com//css/style.css">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
 
 
 <section class="section">
@@ -20,6 +20,24 @@
       <div class="nav-right">
         <nav class="nav-item level is-mobile">
           
+          <a class="level-item" href="https://github.com/oliverwehrens">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/owehrens">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="http://maxheapsize.com/index.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
         </nav>
       </div>
     </nav>
@@ -30,15 +48,35 @@
   <div class="container">
     
     <article>
+      <h2 class="subtitle is-6">June 25, 2009</h2>
+      <h1 class="title"><a href="http://maxheapsize.com/post/2009-06-25-update-on-quant-testtester/">Update on Quant TestTester</a></h1>
+      
+      <div class="content">
+        Here is a small update on my little fun project.
+I released version 0.2 of quant. Now it will recognize all TestNG annotations which do not have a TestNG group (like @BeforeMethod, @BeforeClass etc.). The method &lsquo;reportViolation&rsquo; on ClassTester will now report whats wrong with the examined class.
+assertFalse(classTester.isInvalidTestClass(), classTester.reportViolation());  Above code will now report:
+ java.lang.AssertionError: Report for Class com.maxheapsize.quant.testclasses.SetupMethodWithoutTestGroup Ignore abstract classes: true Specified TestGroups : + testUnitTest * Methods with wrong test group: - testSetUp  In this way you know what went wrong and where to look for it.
+        
+        ...<a class="button is-link" href="http://maxheapsize.com/post/2009-06-25-update-on-quant-testtester/" style="height:28px">
+          Read more
+          <span class="icon is-small">
+            <i class="fa fa-angle-double-right"></i>
+          </span>
+        </a>
+        
+      </div>
+    </article>
+    
+    <article>
       <h2 class="subtitle is-6">May 30, 2009</h2>
-      <h1 class="title"><a href="http://maxheapsize.com/2009/05/30/quant---check-your-tests/">Quant - Check your Tests</a></h1>
+      <h1 class="title"><a href="http://maxheapsize.com/post/2009-05-30-quant-check-your-tests/">Quant - Check your Tests</a></h1>
       
       <div class="content">
         Did you ever wondered if all tests your team wrote are really running ? How many disabled tests does your code base have? How many public void methods do not have a @Test annotation (or at the class) ?
 I saw all of that in the last years.
 To overcome this situation I wrote a couple of java classes which will scan your java test sources and will examine the annotations (for TestNG, sorry JUnit).
         
-        ...<a class="button is-link" href="http://maxheapsize.com/2009/05/30/quant---check-your-tests/" style="height:28px">
+        ...<a class="button is-link" href="http://maxheapsize.com/post/2009-05-30-quant-check-your-tests/" style="height:28px">
           Read more
           <span class="icon is-small">
             <i class="fa fa-angle-double-right"></i>
@@ -50,13 +88,13 @@ To overcome this situation I wrote a couple of java classes which will scan your
     
     <article>
       <h2 class="subtitle is-6">May 8, 2009</h2>
-      <h1 class="title"><a href="http://maxheapsize.com/2009/05/08/jetbrains-released-a-google-app-engine-plugin-for-intellij/">Jetbrains released a Google App Engine plugin for IntelliJ</a></h1>
+      <h1 class="title"><a href="http://maxheapsize.com/post/2009-05-08-jetbrains-released-a-google-app-engine-plugin-for-intellij/">Jetbrains released a Google App Engine plugin for IntelliJ</a></h1>
       
       <div class="content">
         Jetbrains released a Google App Engine plugin for their IntelliJ IDE. I did not see any announcement about this at all.
 You will have a new option when creating a new project. After supplying the path to the local app engine SDK your almost good to go. I needed to add the app engine jars as libraries to my project. That being out of the way you can start coding, run you local server (a pre configured run configuration is supplied) and also deploy it to Google all from within IntelliJ.
         
-        ...<a class="button is-link" href="http://maxheapsize.com/2009/05/08/jetbrains-released-a-google-app-engine-plugin-for-intellij/" style="height:28px">
+        ...<a class="button is-link" href="http://maxheapsize.com/post/2009-05-08-jetbrains-released-a-google-app-engine-plugin-for-intellij/" style="height:28px">
           Read more
           <span class="icon is-small">
             <i class="fa fa-angle-double-right"></i>
@@ -68,7 +106,7 @@ You will have a new option when creating a new project. After supplying the path
     
     <article>
       <h2 class="subtitle is-6">May 5, 2009</h2>
-      <h1 class="title"><a href="http://maxheapsize.com/2009/05/05/intellij-idea-plugin-property-sorter-updated/">IntelliJ Idea Plugin Property Sorter updated</a></h1>
+      <h1 class="title"><a href="http://maxheapsize.com/post/2009-05-05-intellij-idea-plugin-property-sorter-updated/">IntelliJ Idea Plugin Property Sorter updated</a></h1>
       
       <div class="content">
         I&rsquo;m pretty busy at work right now but I could find some time to add one more feature to my little property sorter plugin for IntelliJ Idea.
@@ -80,13 +118,13 @@ The plugin is available from within Idea or at Google Code.
     
     <article>
       <h2 class="subtitle is-6">April 20, 2009</h2>
-      <h1 class="title"><a href="http://maxheapsize.com/2009/04/20/how-to-test-spring-webflow-2-with-parent-flows/">How to test Spring Webflow 2 (with parent flows)</a></h1>
+      <h1 class="title"><a href="http://maxheapsize.com/post/2009-04-20-how-to-test-spring-webflow-2-with-parent-flows/">How to test Spring Webflow 2 (with parent flows)</a></h1>
       
       <div class="content">
         In the last couple of month I was writing some flows using Spring Webflow 2. I knew that I (in theory) I could test them but I never did. The overall documentation of Webflow 2 is not that great at the moment, so I hope to improve that a little bit.
 Spring Webflow 2 supports only JUnit tests so far. I guess this will change at some point but until then you have to pull out that junit.
         
-        ...<a class="button is-link" href="http://maxheapsize.com/2009/04/20/how-to-test-spring-webflow-2-with-parent-flows/" style="height:28px">
+        ...<a class="button is-link" href="http://maxheapsize.com/post/2009-04-20-how-to-test-spring-webflow-2-with-parent-flows/" style="height:28px">
           Read more
           <span class="icon is-small">
             <i class="fa fa-angle-double-right"></i>
@@ -98,13 +136,13 @@ Spring Webflow 2 supports only JUnit tests so far. I guess this will change at s
     
     <article>
       <h2 class="subtitle is-6">April 11, 2009</h2>
-      <h1 class="title"><a href="http://maxheapsize.com/2009/04/11/getting-the-browsers-geolocation-with-html-5/">Getting the Browsers GeoLocation with HTML 5</a></h1>
+      <h1 class="title"><a href="http://maxheapsize.com/post/2009-04-11-getting-the-browsers-geolocation-with-html-5/">Getting the Browsers GeoLocation with HTML 5</a></h1>
       
       <div class="content">
         Until now it was almost impossible to get the GeoLocation of a user browsing your site. You could try to use several services to more or less guess the current position. Most of the time they where using the IP address to tackle the problem. This was not very reliable when it came to mobile devices.
 Ever since the iPhone hit the market mobile adoption of the web grew exponentially. Google threw in Android and I&rsquo;m sure some Windows Mobile phones do have GPS as well.
         
-        ...<a class="button is-link" href="http://maxheapsize.com/2009/04/11/getting-the-browsers-geolocation-with-html-5/" style="height:28px">
+        ...<a class="button is-link" href="http://maxheapsize.com/post/2009-04-11-getting-the-browsers-geolocation-with-html-5/" style="height:28px">
           Read more
           <span class="icon is-small">
             <i class="fa fa-angle-double-right"></i>
@@ -116,12 +154,12 @@ Ever since the iPhone hit the market mobile adoption of the web grew exponential
     
     <article>
       <h2 class="subtitle is-6">April 8, 2009</h2>
-      <h1 class="title"><a href="http://maxheapsize.com/2009/04/08/a-quick-look-at-google-app-engine-for-java/">A Quick Look at Google App Engine for Java</a></h1>
+      <h1 class="title"><a href="http://maxheapsize.com/post/2009-04-08-a-quick-look-at-google-app-engine-for-java/">A Quick Look at Google App Engine for Java</a></h1>
       
       <div class="content">
         At Campfire One Google announced their App Engine for Java (this was in the rumor mill for a couple of days already). The first 10,000 developers would get an early look at App Engine&rsquo;s Java language support. I would have almost missed it. Some tweets reminded me of registering with Google. I heard of AppEngine before but the fact that it was only available for Python did not make it very attractive to me.
         
-        ...<a class="button is-link" href="http://maxheapsize.com/2009/04/08/a-quick-look-at-google-app-engine-for-java/" style="height:28px">
+        ...<a class="button is-link" href="http://maxheapsize.com/post/2009-04-08-a-quick-look-at-google-app-engine-for-java/" style="height:28px">
           Read more
           <span class="icon is-small">
             <i class="fa fa-angle-double-right"></i>
@@ -133,13 +171,13 @@ Ever since the iPhone hit the market mobile adoption of the web grew exponential
     
     <article>
       <h2 class="subtitle is-6">April 6, 2009</h2>
-      <h1 class="title"><a href="http://maxheapsize.com/2009/04/06/coloring-your-ide/">Coloring your IDE</a></h1>
+      <h1 class="title"><a href="http://maxheapsize.com/post/2009-04-06-coloring-your-ide/">Coloring your IDE</a></h1>
       
       <div class="content">
         Your IDE does a great job in helping you to program. This includes advanced features like Refactoring, Code completion and support for nifty frameworks. But it can do much more.
 Most of the time you actually read the code instead writing it. So how about to make this a bit more pleasant experience (well it was for me at least). Most of the people I see use the standard color scheme of the IDE.
         
-        ...<a class="button is-link" href="http://maxheapsize.com/2009/04/06/coloring-your-ide/" style="height:28px">
+        ...<a class="button is-link" href="http://maxheapsize.com/post/2009-04-06-coloring-your-ide/" style="height:28px">
           Read more
           <span class="icon is-small">
             <i class="fa fa-angle-double-right"></i>
@@ -151,14 +189,14 @@ Most of the time you actually read the code instead writing it. So how about to 
     
     <article>
       <h2 class="subtitle is-6">March 30, 2009</h2>
-      <h1 class="title"><a href="http://maxheapsize.com/2009/03/30/ie7-caches-rendered-elements/">IE7 caches rendered elements?</a></h1>
+      <h1 class="title"><a href="http://maxheapsize.com/post/2009-03-30-ie7-caches-rendered-element/">IE7 caches rendered elements?</a></h1>
       
       <div class="content">
         I&rsquo;m tasked with some css tweaking to our current product. We need to implement a &lsquo;Print Preview&rsquo; screen so the customer can see how this looks before printing. Css supports exactly this use case with the @media notation.
 So far so good.
 Now Internet Explorer gives me some headache. Basically it looks like that if I render a page and then render the same page again with a slightly different style sheet, the lovely IE (7) will cache the width/text-align of the element.
         
-        ...<a class="button is-link" href="http://maxheapsize.com/2009/03/30/ie7-caches-rendered-elements/" style="height:28px">
+        ...<a class="button is-link" href="http://maxheapsize.com/post/2009-03-30-ie7-caches-rendered-element/" style="height:28px">
           Read more
           <span class="icon is-small">
             <i class="fa fa-angle-double-right"></i>
@@ -170,30 +208,13 @@ Now Internet Explorer gives me some headache. Basically it looks like that if I 
     
     <article>
       <h2 class="subtitle is-6">March 23, 2009</h2>
-      <h1 class="title"><a href="http://maxheapsize.com/2009/03/23/using-testng-with-dataproviders-to-cover-more-test-cases/">Using TestNG with DataProviders to cover more test cases</a></h1>
+      <h1 class="title"><a href="http://maxheapsize.com/post/2009-03-23-using-testng-with-dataproviders-to-cover-more-test-cases/">Using TestNG with DataProviders to cover more test cases</a></h1>
       
       <div class="content">
         A couple of days ago I had the case that I needed to test a method with different parameters. I ended up writing a couple of test methods differing only in passing various arguments to the unit under test.
 Tonight I was at a TestNG talk and while I knew most of the stuff already the DataProviders (which I heard of before but unfortunately never really payed attention to) really caught me.
         
-        ...<a class="button is-link" href="http://maxheapsize.com/2009/03/23/using-testng-with-dataproviders-to-cover-more-test-cases/" style="height:28px">
-          Read more
-          <span class="icon is-small">
-            <i class="fa fa-angle-double-right"></i>
-          </span>
-        </a>
-        
-      </div>
-    </article>
-    
-    <article>
-      <h2 class="subtitle is-6">March 18, 2009</h2>
-      <h1 class="title"><a href="http://maxheapsize.com/2009/03/18/how-to-refactor-spring-webflow-variables-in-your-jsf-pages-with-intellij-idea/">How to refactor Spring Webflow variables in your JSF pages with IntelliJ IDEA</a></h1>
-      
-      <div class="content">
-        We are using JSF, Facelets and Spring Webflow in the product I&rsquo;m currently working on. What bugged me for some time already was that when we started to refactor the domain and the corresponding dto&rsquo;s the GUI was a problem since the variables which get pulled out of the webflow are just string declarations. I had to go to each xhtml file and change the code to reflect the access to the new properties.
-        
-        ...<a class="button is-link" href="http://maxheapsize.com/2009/03/18/how-to-refactor-spring-webflow-variables-in-your-jsf-pages-with-intellij-idea/" style="height:28px">
+        ...<a class="button is-link" href="http://maxheapsize.com/post/2009-03-23-using-testng-with-dataproviders-to-cover-more-test-cases/" style="height:28px">
           Read more
           <span class="icon is-small">
             <i class="fa fa-angle-double-right"></i>
@@ -236,12 +257,24 @@ Tonight I was at a TestNG talk and while I knew most of the stuff already the Da
   </div>
 </section>
 
+
+
 <section class="section">
   <div class="container has-text-centered">
-    <p></p>
+    <p>&copy; 2009-2017 Oliver Wehrens
+      <a class="level-item" href="http://maxheapsize.com/impressum">
+         Impressum
+      </a>
+  </p>
   </div>
 </section>
+
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/go.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/dockerfile.min.js"></script>
 
 <script>hljs.initHighlightingOnLoad();</script>
 

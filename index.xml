@@ -6,15 +6,31 @@
     <description>Recent content on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
+    <lastBuildDate>Wed, 01 Feb 2017 20:54:58 +0100</lastBuildDate>
     <atom:link href="http://maxheapsize.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Service Discovery For Machines And Humans</title>
+      <link>http://maxheapsize.com/post/2017-02-01-service-discovery-for-machines-and-humans/</link>
+      <pubDate>Wed, 01 Feb 2017 20:54:58 +0100</pubDate>
+      
+      <guid>http://maxheapsize.com/post/2017-02-01-service-discovery-for-machines-and-humans/</guid>
+      <description>&lt;p&gt;My slides from the OOP 2017 conference:&lt;/p&gt;
+
+&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;5c80e29228d147f9891b7918f6a3a021&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;Combining Continuous Deployment and a Microservice architecture brings new challenges to develop and operate your platform. A service discovery enables you to build a flexible system. Developers need to have an up to date view on the deployed services as well. A human readable registry with relevant information is needed.
+I will outline what we solved with a Service Registry and what impact it had on our architecture. Furthermore I will show what we needed to give our developers to get an up to date view on the whole platform.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>How is your microservice architecture doing?</title>
-      <link>http://maxheapsize.com/2016/01/15/how-is-your-microservice-architecture-doing/</link>
+      <link>http://maxheapsize.com/post/2016-01-15-How-is-your-microservice-architecture-doing/</link>
       <pubDate>Fri, 15 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2016/01/15/how-is-your-microservice-architecture-doing/</guid>
+      <guid>http://maxheapsize.com/post/2016-01-15-How-is-your-microservice-architecture-doing/</guid>
       <description>
 
 &lt;p&gt;It all started when my new boss stepped into my door and asked me if I had a clue how our system was working. In an &lt;strong&gt;ideal world&lt;/strong&gt; we would have teams and developers who work on a isolated context with clear boundaries. They develop, test, deploy, monitor and operate everything by themselves. They are on &lt;sup&gt;24&lt;/sup&gt;&amp;frasl;&lt;sub&gt;7&lt;/sub&gt; call and therefore they do everything possible that nothing fails. The system is stable and brings in the money.&lt;/p&gt;
@@ -190,7 +206,7 @@ runtime:
 
 &lt;p&gt;We already made some progress  and even got some cool visualization. D3 is cool if you know how to use it (or just stackoverflow it).&lt;/p&gt;
 
-&lt;p&gt;{% img /static/arc-viz.png %}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://maxheapsize.com/static/arc-viz.png&#34; alt=&#34;Monolith&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We have tons of ideas what might be possible with that. But first things first.&lt;/p&gt;
 
@@ -213,10 +229,10 @@ runtime:
     
     <item>
       <title>Entwicklung verteilter Systeme - Herausforderungen nicht nur an die Architektur.</title>
-      <link>http://maxheapsize.com/2015/09/29/entwicklung-verteilter-systeme---herausforderungen-nicht-nur-an-die-architektur./</link>
+      <link>http://maxheapsize.com/post/2015-09-29-Entwicklung-verteilter-systeme/</link>
       <pubDate>Tue, 29 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2015/09/29/entwicklung-verteilter-systeme---herausforderungen-nicht-nur-an-die-architektur./</guid>
+      <guid>http://maxheapsize.com/post/2015-09-29-Entwicklung-verteilter-systeme/</guid>
       <description>&lt;p&gt;This is my talk about &lt;strong&gt;Development of distributed systems - challenges not only for the architecture&lt;/strong&gt;. You guessed it, it is in german. I gave this talk at &lt;a href=&#34;http://bed-con.org/2015/talks/Entwicklung-verteilter-Systeme---Herausforderungen-nicht-nur-an-die-Architektur&#34;&gt;BedCon 2015&lt;/a&gt; and I will talk about it again at the &lt;a href=&#34;http://www.the-architecture-gathering.de/indexEN.php&#34;&gt;Architecture Gathering 2015&lt;/a&gt; in Munich on October 22nd.&lt;/p&gt;
 
 &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;af49bc1ea74b4fefaeaa3636c69542cd&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
@@ -233,10 +249,10 @@ runtime:
     
     <item>
       <title>Wider den Monolith - Am Ende wird alles gut.</title>
-      <link>http://maxheapsize.com/2014/11/06/wider-den-monolith---am-ende-wird-alles-gut./</link>
+      <link>http://maxheapsize.com/post/2014-11-06-wider-den-monolith/</link>
       <pubDate>Thu, 06 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2014/11/06/wider-den-monolith---am-ende-wird-alles-gut./</guid>
+      <guid>http://maxheapsize.com/post/2014-11-06-wider-den-monolith/</guid>
       <description>&lt;p&gt;My &lt;a href=&#34;https://jax.de/wjax2014/sessions/wider-den-monolith-am-ende-wird-alles-gut&#34;&gt;WJax 2014&lt;/a&gt; talk in german.&lt;/p&gt;
 
 &lt;p&gt;Wider den Monolith - Am Ende wird alles gut. My first talk with lots of pictures. The talk was recorded. As soon as I know the url I will post it here (and if I&amp;rsquo;m not too embarrassed :) ).&lt;/p&gt;
@@ -249,10 +265,10 @@ runtime:
     
     <item>
       <title>Migrating a monolith</title>
-      <link>http://maxheapsize.com/2014/10/09/migrating-a-monolith/</link>
+      <link>http://maxheapsize.com/post/2014-10-09-ways-to-migrate-away-from-monoliths/</link>
       <pubDate>Thu, 09 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2014/10/09/migrating-a-monolith/</guid>
+      <guid>http://maxheapsize.com/post/2014-10-09-ways-to-migrate-away-from-monoliths/</guid>
       <description>
 
 &lt;p&gt;If you start, a monolith is much easier to begin with. Everything is in one place, it&amp;rsquo;s fast and all team members understand the code.
@@ -308,10 +324,10 @@ If you plan your application from the start as distributed system in a microserv
     
     <item>
       <title>If you don&#39;t fight it you end up with a monolith</title>
-      <link>http://maxheapsize.com/2014/10/07/if-you-dont-fight-it-you-end-up-with-a-monolith/</link>
+      <link>http://maxheapsize.com/post/2014-10-07-if-you-dont-fight-it-you-end-up-with-a-monolith/</link>
       <pubDate>Tue, 07 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2014/10/07/if-you-dont-fight-it-you-end-up-with-a-monolith/</guid>
+      <guid>http://maxheapsize.com/post/2014-10-07-if-you-dont-fight-it-you-end-up-with-a-monolith/</guid>
       <description>&lt;p&gt;You planned your software. You talked to your business owners. As soon as you saw a new use case which should be implemented, you modularized it. You did everything right. And then you hit the integration layer. Sounds familiar?&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -365,10 +381,10 @@ You can also add a &lt;strong&gt;new version/new resource&lt;/strong&gt;. This i
     
     <item>
       <title>A Monolith could be good for you</title>
-      <link>http://maxheapsize.com/2014/10/06/a-monolith-could-be-good-for-you/</link>
+      <link>http://maxheapsize.com/post/2014-10-06-a-monolith-could-be-good-for-you/</link>
       <pubDate>Mon, 06 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2014/10/06/a-monolith-could-be-good-for-you/</guid>
+      <guid>http://maxheapsize.com/post/2014-10-06-a-monolith-could-be-good-for-you/</guid>
       <description>
 
 &lt;p&gt;Everybody says monolithic applications are bad. I usually hear things like:&lt;/p&gt;
@@ -443,10 +459,10 @@ You can also add a &lt;strong&gt;new version/new resource&lt;/strong&gt;. This i
     
     <item>
       <title>How you might know that you have a monolith</title>
-      <link>http://maxheapsize.com/2014/10/03/how-you-might-know-that-you-have-a-monolith/</link>
+      <link>http://maxheapsize.com/post/2014-10-03-How-do-you-know-you-have-a-monolith/</link>
       <pubDate>Fri, 03 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2014/10/03/how-you-might-know-that-you-have-a-monolith/</guid>
+      <guid>http://maxheapsize.com/post/2014-10-03-How-do-you-know-you-have-a-monolith/</guid>
       <description>&lt;p&gt;You start your green field project and keep working on it. It grows and grows and grows. You feel comfortable with it and it could not be better. Because more needs to be done/the product is successful another team is added.&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -472,10 +488,10 @@ You can also add a &lt;strong&gt;new version/new resource&lt;/strong&gt;. This i
     
     <item>
       <title>How failing tests can be green</title>
-      <link>http://maxheapsize.com/2014/02/13/how-failing-tests-can-be-green/</link>
+      <link>http://maxheapsize.com/post/2014-02-23-how-failing-tests-can-be-green/</link>
       <pubDate>Thu, 13 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2014/02/13/how-failing-tests-can-be-green/</guid>
+      <guid>http://maxheapsize.com/post/2014-02-23-how-failing-tests-can-be-green/</guid>
       <description>
 
 &lt;p&gt;Imagine this conversation:&lt;/p&gt;
@@ -522,10 +538,10 @@ You can also add a &lt;strong&gt;new version/new resource&lt;/strong&gt;. This i
     
     <item>
       <title>Getting Faster</title>
-      <link>http://maxheapsize.com/2013/12/18/getting-faster/</link>
+      <link>http://maxheapsize.com/post/2013-12-18-getting-faster/</link>
       <pubDate>Wed, 18 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2013/12/18/getting-faster/</guid>
+      <guid>http://maxheapsize.com/post/2013-12-18-getting-faster/</guid>
       <description>&lt;p&gt;My &lt;a href=&#34;http://www.continuouslifecycle.de/lecture.php?id=291&#34;&gt;Continuous Lifecycle 2013&lt;/a&gt; talk. How we got faster at deploying our software.&lt;/p&gt;
 
 &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;fd5eb9e02df501313a98663820a88a30&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
@@ -534,10 +550,10 @@ You can also add a &lt;strong&gt;new version/new resource&lt;/strong&gt;. This i
     
     <item>
       <title>Doing a Sprint Review with a Review Fair</title>
-      <link>http://maxheapsize.com/2013/06/23/doing-a-sprint-review-with-a-review-fair/</link>
+      <link>http://maxheapsize.com/post/2013-06-23-doing-sprint-reviews-with-a-review-fair/</link>
       <pubDate>Sun, 23 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2013/06/23/doing-a-sprint-review-with-a-review-fair/</guid>
+      <guid>http://maxheapsize.com/post/2013-06-23-doing-sprint-reviews-with-a-review-fair/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m working in an organization where we do synchronized sprints between all teams. This means every two weeks all meeting rooms are booked for retrospectives and sprint plannings. If you have around 10-20 teams distributing knowledge what&amp;rsquo;s happening in the other teams is tricky. No one has the time to go to all reviews.&lt;/p&gt;
 
 &lt;p&gt;Enter &amp;lsquo;Review Fair&amp;rsquo;.&lt;/p&gt;
@@ -555,10 +571,10 @@ After the presentations everybody knows what everybody did and can go to those w
     
     <item>
       <title>Using KVM and Virt-Manager via XQuartz on MacOSX (and solving the keymapping trouble)</title>
-      <link>http://maxheapsize.com/2013/06/03/using-kvm-and-virt-manager-via-xquartz-on-macosx-and-solving-the-keymapping-trouble/</link>
+      <link>http://maxheapsize.com/post/2013-06-03-using-xquartz-virt-manager-and-macosx/</link>
       <pubDate>Mon, 03 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2013/06/03/using-kvm-and-virt-manager-via-xquartz-on-macosx-and-solving-the-keymapping-trouble/</guid>
+      <guid>http://maxheapsize.com/post/2013-06-03-using-xquartz-virt-manager-and-macosx/</guid>
       <description>&lt;p&gt;In the last couple of months I got to play around with virtualization at work. Doing automated delivery pipleines and provisiong via puppet I decided it&amp;rsquo;s time to get my hands even more dirty at home.&lt;/p&gt;
 
 &lt;p&gt;I got myself a &lt;a href=&#34;http://h10010.www1.hp.com/wwpc/uk/en/sm/WF06b/15351-15351-4237916-4237917-4237917-4248009-5336624.html?dnr=1&#34;&gt;HP Microserver N54L&lt;/a&gt; equipped with 16 GB of RAM and 9 TB disks. I wanted ZFS and KVM. Since the machine has an AMD processor the only way was to install Linux on it. SmartOS would have been a nice choice but it only supports KVM for Intel processors.&lt;/p&gt;
@@ -600,10 +616,10 @@ add Mod1 = Alt_R
     
     <item>
       <title>Getting started with veewee and vagrant</title>
-      <link>http://maxheapsize.com/2013/05/26/getting-started-with-veewee-and-vagrant/</link>
+      <link>http://maxheapsize.com/post/2013-05-26-getting-started-with-veewee-and-vagrant/</link>
       <pubDate>Sun, 26 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2013/05/26/getting-started-with-veewee-and-vagrant/</guid>
+      <guid>http://maxheapsize.com/post/2013-05-26-getting-started-with-veewee-and-vagrant/</guid>
       <description>
 
 &lt;p&gt;What do you need to do to get a fully automated kickstart of a virtual machine on your local development platform running? Not much it turns out. There are some tricks to get around but after that it&amp;rsquo;s all fine.&lt;/p&gt;
@@ -713,10 +729,10 @@ After that it will create a Virtual Machine in VirtualBox and boot its up. Ssh t
     
     <item>
       <title>From Development to Production</title>
-      <link>http://maxheapsize.com/2013/04/26/from-development-to-production/</link>
+      <link>http://maxheapsize.com/post/2013-04-26-from-development-to-production/</link>
       <pubDate>Fri, 26 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2013/04/26/from-development-to-production/</guid>
+      <guid>http://maxheapsize.com/post/2013-04-26-from-development-to-production/</guid>
       <description>&lt;p&gt;My &lt;a href=&#34;http://bed-con.org/2013/talks/&#34;&gt;BedCon 2013&lt;/a&gt; talk. Covering commiting code, packaging,testing, deployment and organisational changes.&lt;/p&gt;
 
 &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;e8470d7082450130e5211231381a9963&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
@@ -725,10 +741,10 @@ After that it will create a Virtual Machine in VirtualBox and boot its up. Ssh t
     
     <item>
       <title>Do not use Javadoc</title>
-      <link>http://maxheapsize.com/2012/07/27/do-not-use-javadoc/</link>
+      <link>http://maxheapsize.com/post/2012-07-27-do-not-use-javadoc/</link>
       <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2012/07/27/do-not-use-javadoc/</guid>
+      <guid>http://maxheapsize.com/post/2012-07-27-do-not-use-javadoc/</guid>
       <description>&lt;p&gt;Javadoc is here to help. To understand what the code does and how it works? Right?&lt;/p&gt;
 
 &lt;p&gt;I don&amp;rsquo;t think so. I confuses the heck out of me in most cases.&lt;/p&gt;
@@ -776,120 +792,6 @@ private final HttpServletRequest request;
 &lt;p&gt;If you are trying to attempt to write a Javadoc think about the naming again. It is always a &lt;strong&gt;sign&lt;/strong&gt; that &lt;strong&gt;something is not right&lt;/strong&gt;. Why are you trying to document it? Does it &lt;strong&gt;more than you can describe in a name&lt;/strong&gt;? Maybe you should split it?&lt;/p&gt;
 
 &lt;p&gt;Please, use only minimal Javadoc in your code. Thanks.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Javascript testing for Java projects</title>
-      <link>http://maxheapsize.com/2012/07/12/javascript-testing-for-java-projects/</link>
-      <pubDate>Thu, 12 Jul 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://maxheapsize.com/2012/07/12/javascript-testing-for-java-projects/</guid>
-      <description>
-
-&lt;p&gt;I&amp;rsquo;m a Java Programmer. I do mostly web projects. There is a tendency to move away from server side frameworks towards Javascript (+mvc) and rest services. This now involves me in programming Javascript at the GUI level. Welcome &lt;strong&gt;maven&lt;/strong&gt;, &lt;strong&gt;IDE&lt;/strong&gt; and &lt;strong&gt;continous integration&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;Coming from the JVM world I&amp;rsquo;m pretty much used to writing tests in my IDE running them and then writing the production code. What I found out, this is not that easy with Javascript. For obvious reason I need to run it in a browser. So I need to leave my IDE. Not convinient. If something fails I transfer that result back to my IDE and check what&amp;rsquo;s going on. What about the different Javascript implementations? Ok, I need to run it on all browsers, Chrome, Firefox, Safari, IE … and the mobile versions maybe as well? Is this overkill? Is this managable?
-What about my CI run? I need to make sure only tested code gets checked in. Oh boy. This can be very frustrating.&lt;/p&gt;
-
-&lt;p&gt;#Options&lt;/p&gt;
-
-&lt;p&gt;There are a lot of frameworks which do provide (or are useful) if you want to get started with Javascript Unit Testing. You might find these if you google for &lt;a href=&#34;https://www.google.de/search?ie=UTF-8&amp;amp;q=javascript+testing&#34;&gt;javascript testing&lt;/a&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.mozilla.org/rhino/&#34;&gt;Rhino&lt;/a&gt; - Java Javascript implementation&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.envjs.com&#34;&gt;Envjs&lt;/a&gt; - Simulated Browser environment&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/phantomjs/&#34;&gt;PhantomJS&lt;/a&gt; - Headless Webkit browser&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/chilicat/JsChilicat&#34;&gt;JsChilicat&lt;/a&gt; - Framework for headless Javascript testing, uses Rhino&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.jquery.com/QUnit&#34;&gt;QUnit&lt;/a&gt; - Unit Testing Framework&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/js-test-driver/&#34;&gt;JsTestDriver&lt;/a&gt; - Framework for Unit Tests&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://pivotal.github.com/jasmine/&#34;&gt;Jasmine&lt;/a&gt; - Javascript BDD Framework&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I started with QUnit to get a feeling how unit testing works in Javascript. I added PhantomJS (and Xfvb) for headless testing but this needed some fiddeling around and was not that straitforward. Here are some &lt;a href=&#34;https://www.google.de/search?ie=UTF-8&amp;amp;q=phantomjs+qunit&#34;&gt;links&lt;/a&gt; to help you get started.&lt;/p&gt;
-
-&lt;p&gt;#So what to use now ?&lt;/p&gt;
-
-&lt;p&gt;So I started with JSTest Driver since it seems to be the one which has all the features I wanted.&lt;/p&gt;
-
-&lt;p&gt;##JS Test Driver&lt;/p&gt;
-
-&lt;h3 id=&#34;ide&#34;&gt;IDE&lt;/h3&gt;
-
-&lt;p&gt;A Dream! I use IntelliJ Idea and with the help of a plugin I can &lt;a href=&#34;http://www.jetbrains.com/idea/webhelp/running-javascript-unit-tests-in-browser.html&#34;&gt;test javascript&lt;/a&gt; like a charm.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://maxheapsize.com/static/jstestdriver_config.png&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://maxheapsize.com/static/jstestdriver_run.png&#34;/&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;maven&#34;&gt;Maven&lt;/h3&gt;
-
-&lt;p&gt;After some fiddeling around I got the Maven test to run. The last commit of the maven plugn was around August 2011.&lt;/p&gt;
-
-&lt;p&gt;To use the plugin configure it like this (full code in the example code on &lt;a href=&#34;https://github.com/oliverwehrens/jstestdriver-example&#34;&gt;github&lt;/a&gt;).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt; &amp;lt;plugin&amp;gt;
-    &amp;lt;groupId&amp;gt;com.googlecode.jstd-maven-plugin&amp;lt;/groupId&amp;gt;
-    &amp;lt;artifactId&amp;gt;jstd-maven-plugin&amp;lt;/artifactId&amp;gt;
-    &amp;lt;version&amp;gt;1.3.2.5&amp;lt;/version&amp;gt;
-    &amp;lt;configuration&amp;gt;
-      &amp;lt;port&amp;gt;9876&amp;lt;/port&amp;gt;
-      &amp;lt;browser&amp;gt;/Apps/Firefox12.app/Contents/MacOS/firefox-bin&amp;lt;/browser&amp;gt;
-    &amp;lt;/configuration&amp;gt;
-    &amp;lt;executions&amp;gt;
-      &amp;lt;execution&amp;gt;
-        &amp;lt;id&amp;gt;run-tests&amp;lt;/id&amp;gt;
-        &amp;lt;goals&amp;gt;
-          &amp;lt;goal&amp;gt;test&amp;lt;/goal&amp;gt;
-        &amp;lt;/goals&amp;gt;
-      &amp;lt;/execution&amp;gt;
-    &amp;lt;/executions&amp;gt;
-  &amp;lt;/plugin&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;What I do not like at the moment is the specification of the browser path. This might make it hard to run the same configuration on a local machine and in a ci build. Yes, I &lt;strong&gt;don&amp;rsquo;t&lt;/strong&gt; want to go down the path of maven profiles.
-Even with that you might have the issue of the port configuration. Two testruns at the same time and both starting the server on the same port calls fro trouble.&lt;/p&gt;
-
-&lt;p&gt;Running &lt;code&gt;mvn test&lt;/code&gt; shows me something like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;...
-
-[INFO]
-[INFO] --- jstd-maven-plugin:1.3.2.5:test (run-tests) @ jstestdriver-demo ---
-
--------------------------------------------
-J S  T E S T  D R I V E R                 
--------------------------------------------
-
-.F
-Total 2 tests (Passed: 1; Fails: 1; Errors: 0) (1.00 ms)
- Firefox 12.0 Mac OS: Run 2 tests (Passed: 1; Fails: 1; Errors 0) (1.00 ms)
-  Echo Test.testHello2 failed (0.00 ms): AssertError:
-
-...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;#Summary&lt;/p&gt;
-
-&lt;p&gt;Here you have it. A nice way to run your Javascript test in your IDE and maven. Some small issues remain but I have seen plugins which deal with e.g. port issues.&lt;/p&gt;
-
-&lt;p&gt;The full demo code is available on &lt;a href=&#34;https://github.com/oliverwehrens/jstestdriver-example&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Any thoughts ?&lt;/p&gt;
-
-&lt;p&gt;#Links&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://loose-bits.com/2011/02/browserless-ajax-testing-with-rhino-and.html]&#34;&gt;http://loose-bits.com/2011/02/browserless-ajax-testing-with-rhino-and.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://twoguysarguing.wordpress.com/2010/11/02/make-javascript-tests-part-of-your-build-qunit-rhino/&#34;&gt;http://twoguysarguing.wordpress.com/2010/11/02/make-javascript-tests-part-of-your-build-qunit-rhino/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://thomas-genin.com/blog/javascript-3/qunit-and-rhino-javascript-unit-test-in-the-console/&#34;&gt;http://thomas-genin.com/blog/javascript-3/qunit-and-rhino-javascript-unit-test-in-the-console/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.nczonline.net/blog/2009/11/17/the-curious-case-of-javascript-unit-testing/&#34;&gt;http://www.nczonline.net/blog/2009/11/17/the-curious-case-of-javascript-unit-testing/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.readmore.ch/post/18940470535&#34;&gt;http://www.readmore.ch/post/18940470535&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/qunit-maven-plugin/&#34;&gt;http://code.google.com/p/qunit-maven-plugin/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/js-test-driver/&#34;&gt;http://code.google.com/p/js-test-driver/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

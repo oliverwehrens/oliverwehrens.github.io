@@ -6,14 +6,15 @@
     <description>Recent content in Git on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How we switched from Subversion to Git</title>
-      <link>http://maxheapsize.com/2010/03/22/how-we-switched-from-subversion-to-git/</link>
+      <link>http://maxheapsize.com/post/2010-03-22-how-we-switched-from-subversion-to-git/</link>
       <pubDate>Mon, 22 Mar 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2010/03/22/how-we-switched-from-subversion-to-git/</guid>
+      <guid>http://maxheapsize.com/post/2010-03-22-how-we-switched-from-subversion-to-git/</guid>
       <description>
 
 &lt;p&gt;&lt;img class=&#34;alignleft&#34; src=&#34;http://git.wiki.kernel.org/images-git/2/24/Gitlogo.svg_from_msysGit.png&#34; title=&#34;Â¬Â© GitLogo @ mssysgit&#34;  /&gt;

@@ -6,14 +6,15 @@
     <description>Recent content in Microservice on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/microservice/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How is your microservice architecture doing?</title>
-      <link>http://maxheapsize.com/2016/01/15/how-is-your-microservice-architecture-doing/</link>
+      <link>http://maxheapsize.com/post/2016-01-15-How-is-your-microservice-architecture-doing/</link>
       <pubDate>Fri, 15 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2016/01/15/how-is-your-microservice-architecture-doing/</guid>
+      <guid>http://maxheapsize.com/post/2016-01-15-How-is-your-microservice-architecture-doing/</guid>
       <description>
 
 &lt;p&gt;It all started when my new boss stepped into my door and asked me if I had a clue how our system was working. In an &lt;strong&gt;ideal world&lt;/strong&gt; we would have teams and developers who work on a isolated context with clear boundaries. They develop, test, deploy, monitor and operate everything by themselves. They are on &lt;sup&gt;24&lt;/sup&gt;&amp;frasl;&lt;sub&gt;7&lt;/sub&gt; call and therefore they do everything possible that nothing fails. The system is stable and brings in the money.&lt;/p&gt;
@@ -189,7 +190,7 @@ runtime:
 
 &lt;p&gt;We already made some progress  and even got some cool visualization. D3 is cool if you know how to use it (or just stackoverflow it).&lt;/p&gt;
 
-&lt;p&gt;{% img /static/arc-viz.png %}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://maxheapsize.com/static/arc-viz.png&#34; alt=&#34;Monolith&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We have tons of ideas what might be possible with that. But first things first.&lt;/p&gt;
 
@@ -212,10 +213,10 @@ runtime:
     
     <item>
       <title>Entwicklung verteilter Systeme - Herausforderungen nicht nur an die Architektur.</title>
-      <link>http://maxheapsize.com/2015/09/29/entwicklung-verteilter-systeme---herausforderungen-nicht-nur-an-die-architektur./</link>
+      <link>http://maxheapsize.com/post/2015-09-29-Entwicklung-verteilter-systeme/</link>
       <pubDate>Tue, 29 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2015/09/29/entwicklung-verteilter-systeme---herausforderungen-nicht-nur-an-die-architektur./</guid>
+      <guid>http://maxheapsize.com/post/2015-09-29-Entwicklung-verteilter-systeme/</guid>
       <description>&lt;p&gt;This is my talk about &lt;strong&gt;Development of distributed systems - challenges not only for the architecture&lt;/strong&gt;. You guessed it, it is in german. I gave this talk at &lt;a href=&#34;http://bed-con.org/2015/talks/Entwicklung-verteilter-Systeme---Herausforderungen-nicht-nur-an-die-Architektur&#34;&gt;BedCon 2015&lt;/a&gt; and I will talk about it again at the &lt;a href=&#34;http://www.the-architecture-gathering.de/indexEN.php&#34;&gt;Architecture Gathering 2015&lt;/a&gt; in Munich on October 22nd.&lt;/p&gt;
 
 &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;af49bc1ea74b4fefaeaa3636c69542cd&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
@@ -232,10 +233,10 @@ runtime:
     
     <item>
       <title>Wider den Monolith - Am Ende wird alles gut.</title>
-      <link>http://maxheapsize.com/2014/11/06/wider-den-monolith---am-ende-wird-alles-gut./</link>
+      <link>http://maxheapsize.com/post/2014-11-06-wider-den-monolith/</link>
       <pubDate>Thu, 06 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2014/11/06/wider-den-monolith---am-ende-wird-alles-gut./</guid>
+      <guid>http://maxheapsize.com/post/2014-11-06-wider-den-monolith/</guid>
       <description>&lt;p&gt;My &lt;a href=&#34;https://jax.de/wjax2014/sessions/wider-den-monolith-am-ende-wird-alles-gut&#34;&gt;WJax 2014&lt;/a&gt; talk in german.&lt;/p&gt;
 
 &lt;p&gt;Wider den Monolith - Am Ende wird alles gut. My first talk with lots of pictures. The talk was recorded. As soon as I know the url I will post it here (and if I&amp;rsquo;m not too embarrassed :) ).&lt;/p&gt;

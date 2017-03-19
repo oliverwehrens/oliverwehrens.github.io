@@ -6,14 +6,15 @@
     <description>Recent content in Development on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/development/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Getting Faster</title>
-      <link>http://maxheapsize.com/2013/12/18/getting-faster/</link>
+      <link>http://maxheapsize.com/post/2013-12-18-getting-faster/</link>
       <pubDate>Wed, 18 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2013/12/18/getting-faster/</guid>
+      <guid>http://maxheapsize.com/post/2013-12-18-getting-faster/</guid>
       <description>&lt;p&gt;My &lt;a href=&#34;http://www.continuouslifecycle.de/lecture.php?id=291&#34;&gt;Continuous Lifecycle 2013&lt;/a&gt; talk. How we got faster at deploying our software.&lt;/p&gt;
 
 &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;fd5eb9e02df501313a98663820a88a30&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
@@ -22,10 +23,10 @@
     
     <item>
       <title>Getting started with veewee and vagrant</title>
-      <link>http://maxheapsize.com/2013/05/26/getting-started-with-veewee-and-vagrant/</link>
+      <link>http://maxheapsize.com/post/2013-05-26-getting-started-with-veewee-and-vagrant/</link>
       <pubDate>Sun, 26 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2013/05/26/getting-started-with-veewee-and-vagrant/</guid>
+      <guid>http://maxheapsize.com/post/2013-05-26-getting-started-with-veewee-and-vagrant/</guid>
       <description>
 
 &lt;p&gt;What do you need to do to get a fully automated kickstart of a virtual machine on your local development platform running? Not much it turns out. There are some tricks to get around but after that it&amp;rsquo;s all fine.&lt;/p&gt;
@@ -135,10 +136,10 @@ After that it will create a Virtual Machine in VirtualBox and boot its up. Ssh t
     
     <item>
       <title>From Development to Production</title>
-      <link>http://maxheapsize.com/2013/04/26/from-development-to-production/</link>
+      <link>http://maxheapsize.com/post/2013-04-26-from-development-to-production/</link>
       <pubDate>Fri, 26 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2013/04/26/from-development-to-production/</guid>
+      <guid>http://maxheapsize.com/post/2013-04-26-from-development-to-production/</guid>
       <description>&lt;p&gt;My &lt;a href=&#34;http://bed-con.org/2013/talks/&#34;&gt;BedCon 2013&lt;/a&gt; talk. Covering commiting code, packaging,testing, deployment and organisational changes.&lt;/p&gt;
 
 &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;e8470d7082450130e5211231381a9963&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
@@ -147,10 +148,10 @@ After that it will create a Virtual Machine in VirtualBox and boot its up. Ssh t
     
     <item>
       <title>Do not use Javadoc</title>
-      <link>http://maxheapsize.com/2012/07/27/do-not-use-javadoc/</link>
+      <link>http://maxheapsize.com/post/2012-07-27-do-not-use-javadoc/</link>
       <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2012/07/27/do-not-use-javadoc/</guid>
+      <guid>http://maxheapsize.com/post/2012-07-27-do-not-use-javadoc/</guid>
       <description>&lt;p&gt;Javadoc is here to help. To understand what the code does and how it works? Right?&lt;/p&gt;
 
 &lt;p&gt;I don&amp;rsquo;t think so. I confuses the heck out of me in most cases.&lt;/p&gt;
@@ -203,10 +204,10 @@ private final HttpServletRequest request;
     
     <item>
       <title>5 code metrics you need to watch</title>
-      <link>http://maxheapsize.com/2010/02/23/5-code-metrics-you-need-to-watch/</link>
+      <link>http://maxheapsize.com/post/2010-02-23-5-code-metrics-you-need-to-watch/</link>
       <pubDate>Tue, 23 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2010/02/23/5-code-metrics-you-need-to-watch/</guid>
+      <guid>http://maxheapsize.com/post/2010-02-23-5-code-metrics-you-need-to-watch/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/iliahi/2606644514/sizes/s/&#34; title=&#34;Â¬Â© Biking Nikon PDX@flickr&#34; &gt;&lt;img class=&#34;alignleft&#34; src=&#34;http://farm4.static.flickr.com/3241/2606644514_b6f294fb2e_m.jpg&#34; title=&#34;&amp;copy; Biking Nikon PDX@flickr&#34; width=&#34;240&#34; height=&#34;167&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -274,10 +275,10 @@ What metrics do you look out for ? &lt;strong&gt;Let me know &lt;/strong&gt; in 
     
     <item>
       <title>Name your objects right</title>
-      <link>http://maxheapsize.com/2010/02/09/name-your-objects-right/</link>
+      <link>http://maxheapsize.com/post/2010-02-09-name-your-objects-right/</link>
       <pubDate>Tue, 09 Feb 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2010/02/09/name-your-objects-right/</guid>
+      <guid>http://maxheapsize.com/post/2010-02-09-name-your-objects-right/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/nataliemaynor/2988366432/sizes/s/&#34;&gt;&lt;img alt=&#34;No Name&#34; src=&#34;http://farm4.static.flickr.com/3220/2988366432_8f39394055_m.jpg&#34; title=&#34;&amp;copy; NatalieMaynor @ flickr&#34; width=&#34;180&#34; height=&#34;240&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Whenever you create an object you have to find a meaningful name.&lt;/p&gt;
@@ -298,10 +299,10 @@ What metrics do you look out for ? &lt;strong&gt;Let me know &lt;/strong&gt; in 
     
     <item>
       <title>What&#39;s your preferred development infrastructure stack?</title>
-      <link>http://maxheapsize.com/2010/01/13/whats-your-preferred-development-infrastructure-stack/</link>
+      <link>http://maxheapsize.com/post/2010-01-13-whats-your-preferred-development-infrastructure-stack/</link>
       <pubDate>Wed, 13 Jan 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2010/01/13/whats-your-preferred-development-infrastructure-stack/</guid>
+      <guid>http://maxheapsize.com/post/2010-01-13-whats-your-preferred-development-infrastructure-stack/</guid>
       <description>
 
 &lt;p&gt;In Response to &lt;a href=&#34;http://raibledesigns.com/rd/entry/what_s_your_preferred_development&#34;&gt;Matt Raible&amp;rsquo;s&lt;/a&gt; question about my preferred development stack.&lt;/p&gt;

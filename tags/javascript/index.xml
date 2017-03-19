@@ -6,14 +6,15 @@
     <description>Recent content in Javascript on maxheapsize</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; 2009-2017 Oliver Wehrens</copyright>
     <atom:link href="http://maxheapsize.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Javascript testing for Java projects</title>
-      <link>http://maxheapsize.com/2012/07/12/javascript-testing-for-java-projects/</link>
+      <link>http://maxheapsize.com/post/2012-07-12-javascript-testing-for-java-projects/</link>
       <pubDate>Thu, 12 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2012/07/12/javascript-testing-for-java-projects/</guid>
+      <guid>http://maxheapsize.com/post/2012-07-12-javascript-testing-for-java-projects/</guid>
       <description>
 
 &lt;p&gt;I&amp;rsquo;m a Java Programmer. I do mostly web projects. There is a tendency to move away from server side frameworks towards Javascript (+mvc) and rest services. This now involves me in programming Javascript at the GUI level. Welcome &lt;strong&gt;maven&lt;/strong&gt;, &lt;strong&gt;IDE&lt;/strong&gt; and &lt;strong&gt;continous integration&lt;/strong&gt;.&lt;/p&gt;
@@ -124,10 +125,10 @@ Total 2 tests (Passed: 1; Fails: 1; Errors: 0) (1.00 ms)
     
     <item>
       <title>How to detect if your server is down when making jQuery Ajax calls </title>
-      <link>http://maxheapsize.com/2010/04/26/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</link>
+      <link>http://maxheapsize.com/post/2010-04-26-how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</link>
       <pubDate>Mon, 26 Apr 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://maxheapsize.com/2010/04/26/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</guid>
+      <guid>http://maxheapsize.com/post/2010-04-26-how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</guid>
       <description>&lt;p&gt;If you developed an &lt;strong&gt;ajax rich web application&lt;/strong&gt;, maybe even a single page interface, you want to make sure that the user gets &lt;strong&gt;notified&lt;/strong&gt; if the server is &lt;strong&gt;not reachable&lt;/strong&gt; anymore. This happens either if the it goes down or the client loses its network connection.
 Depending on your code the application can run for a while and the &lt;strong&gt;user is confused&lt;/strong&gt; about missing interactivity.&lt;/p&gt;
 
