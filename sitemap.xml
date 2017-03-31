@@ -267,7 +267,7 @@
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/2009/03/05/why-our-current-sprint-commitment-will-fail./</loc>
+    <loc>http://maxheapsize.com/2009/03/05/why-our-current-sprint-commitment-will-fail/</loc>
     <lastmod>2009-03-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -471,14 +471,14 @@
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/categories/java/</loc>
-    <lastmod>2009-02-11T00:00:00+00:00</lastmod>
+    <loc>http://maxheapsize.com/tags/java/</loc>
+    <lastmod>2012-07-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/tags/java/</loc>
-    <lastmod>2012-07-27T00:00:00+00:00</lastmod>
+    <loc>http://maxheapsize.com/categories/java/</loc>
+    <lastmod>2009-02-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -680,14 +680,14 @@
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/categories/test/</loc>
-    <lastmod>2009-08-20T00:00:00+00:00</lastmod>
+    <loc>http://maxheapsize.com/tags/test/</loc>
+    <lastmod>2013-05-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://maxheapsize.com/tags/test/</loc>
-    <lastmod>2013-05-26T00:00:00+00:00</lastmod>
+    <loc>http://maxheapsize.com/categories/test/</loc>
+    <lastmod>2009-08-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
