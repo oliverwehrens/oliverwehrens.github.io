@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://maxheapsize.com/2017/03/31/2017-90---random-tech-links/</loc>
+    <lastmod>2017-03-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://maxheapsize.com/2017/02/01/service-discovery-for-machines-and-humans/</loc>
     <lastmod>2017-02-01T20:54:58+01:00</lastmod>
   </url>
@@ -508,6 +513,12 @@
   </url>
   
   <url>
+    <loc>http://maxheapsize.com/tags/links/</loc>
+    <lastmod>2017-03-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://maxheapsize.com/tags/macos/</loc>
     <lastmod>2013-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -563,7 +574,7 @@
   
   <url>
     <loc>http://maxheapsize.com/post/</loc>
-    <lastmod>2017-02-01T20:54:58+01:00</lastmod>
+    <lastmod>2017-03-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -730,7 +741,7 @@
   
   <url>
     <loc>http://maxheapsize.com/</loc>
-    <lastmod>2017-02-01T20:54:58+01:00</lastmod>
+    <lastmod>2017-03-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
