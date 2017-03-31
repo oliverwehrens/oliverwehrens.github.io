@@ -15,19 +15,19 @@
       <pubDate>Fri, 31 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>http://maxheapsize.com/2017/03/31/2017-90---random-tech-links/</guid>
-      <description>&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;https://thenewstack.io/automating-kubernetes-cluster-operations-operators/&#34;&gt;Automating Kubernetes Cluster Operations with Operators&lt;/a&gt;&lt;br/&gt;The goal is to give end-users a carefree Kubernetes-as-a-Service (KaaS) no matter the underlying infrastructure. Most importantly that means getting the full vanilla Kubernetes experience out-of-the-box. &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/atlassian/localstack&#34;&gt;A fully functional local AWS cloud stack. Develop and test your cloud apps offline!&lt;/a&gt;&lt;br/&gt;LocalStack provides an easy-to-use test/mocking framework for developing Cloud applications.
+      <description>&lt;p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;https://thenewstack.io/automating-kubernetes-cluster-operations-operators/&#34;&gt;Automating Kubernetes Cluster Operations with Operators&lt;/a&gt;&lt;br/&gt;The goal is to give end-users a carefree Kubernetes-as-a-Service (KaaS) no matter the underlying infrastructure. Most importantly that means getting the full vanilla Kubernetes experience out-of-the-box. &lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/atlassian/localstack&#34;&gt;A fully functional local AWS cloud stack. Develop and test your cloud apps offline!&lt;/a&gt;&lt;br/&gt;LocalStack provides an easy-to-use test/mocking framework for developing Cloud applications.&lt;/p&gt;
 
-Currently, the focus is primarily on supporting the AWS cloud stack.
+&lt;p&gt;Currently, the focus is primarily on supporting the AWS cloud stack.&lt;/p&gt;
 
-LocalStack spins up the following core Cloud APIs on your local machine:
-API Gateway, Kinesis, DynamoDB, DynamoDB Streams, Elasticsearch, S3, Firehose, Lambda, SNS, SQS, Redshift 
+&lt;p&gt;LocalStack spins up the following core Cloud APIs on your local machine:
+API Gateway, Kinesis, DynamoDB, DynamoDB Streams, Elasticsearch, S3, Firehose, Lambda, SNS, SQS, Redshift
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://opencredo.com/automating-your-security-acceptance-tests/&#34;&gt;Automating Your Security Acceptance Tests&lt;/a&gt;&lt;br/&gt;Automate security tests with the open source OWASP ZAP proxy. &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://thenewstack.io/kubernetes-federation-post-configuration-management-universe/&#34;&gt;Federation of Kubernetes Cluster&lt;/a&gt;&lt;br/&gt;cluster federation — the pooling together of multiple clusters&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://t.co/YjuhwjVBey?ssr=true&#34;&gt;10 Lessons in Microservcies&lt;/a&gt;&lt;br/&gt;Good read and reminder on things like Keep it small, Autonomy, Bounded Context, Monitoring and more.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+&lt;/ul&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
