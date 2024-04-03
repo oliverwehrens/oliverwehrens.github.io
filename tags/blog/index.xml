@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Oliver Wehrens</title>
-    <link>https://example.org/tags/blog/</link>
+    <link>https://oliverwehrens.github.io/tags/blog/</link>
     <description>Recent content in Blog on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 06 Feb 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oliverwehrens.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>One year of blogging</title>
-      <link>https://example.org/one-year-of-blogging/</link>
+      <link>https://oliverwehrens.github.io/one-year-of-blogging/</link>
       <pubDate>Sat, 06 Feb 2010 00:00:00 +0000</pubDate>
-      <guid>https://example.org/one-year-of-blogging/</guid>
+      <guid>https://oliverwehrens.github.io/one-year-of-blogging/</guid>
       <description>One year ago I started to blog again. Time for a little recap. Why did I do it ? I use this blog to write down my own thoughts about software and development. This is for my own reference but also it is a little way to give something back to the world wide community in return for all the useful stuff I do read on the net. I noticed how this also made me a better programmer.</description>
     </item>
   </channel>

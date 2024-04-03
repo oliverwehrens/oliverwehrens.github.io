@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Selenium2 on Oliver Wehrens</title>
-    <link>https://example.org/tags/selenium2/</link>
+    <link>https://oliverwehrens.github.io/tags/selenium2/</link>
     <description>Recent content in Selenium2 on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 04 Jan 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/selenium2/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oliverwehrens.github.io/tags/selenium2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Selenium2 for web testing (and not Selenium IDE)</title>
-      <link>https://example.org/using-selenium2-for-web-testing-and-not-selenium-ide/</link>
+      <link>https://oliverwehrens.github.io/using-selenium2-for-web-testing-and-not-selenium-ide/</link>
       <pubDate>Mon, 04 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>https://example.org/using-selenium2-for-web-testing-and-not-selenium-ide/</guid>
+      <guid>https://oliverwehrens.github.io/using-selenium2-for-web-testing-and-not-selenium-ide/</guid>
       <description>Selenium IDE Selenium is well know for automatic testing web pages. It does support many browsers, operating systems and languages. A Selenium IDE exists to aid you creating automated tests. It is possible to write extensions in JavaScript to have data driven tests. If you organize your selenium tests in a way that you split the pages and forms in components, you can load up new data for the tests (written in xml) to fill out forms differently for each use case.</description>
     </item>
   </channel>

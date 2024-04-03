@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Organization on Oliver Wehrens</title>
-    <link>https://example.org/tags/organization/</link>
+    <link>https://oliverwehrens.github.io/tags/organization/</link>
     <description>Recent content in Organization on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 31 Oct 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/organization/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oliverwehrens.github.io/tags/organization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Artifacts for effective alignment</title>
-      <link>https://example.org/artifacts-for-effective-alignment/</link>
+      <link>https://oliverwehrens.github.io/artifacts-for-effective-alignment/</link>
       <pubDate>Tue, 31 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://example.org/artifacts-for-effective-alignment/</guid>
+      <guid>https://oliverwehrens.github.io/artifacts-for-effective-alignment/</guid>
       <description>In my professional life, I came across many different companies and organizations. The majority of those were digital companies with its own Tech and Product departments (and only there might the following text applicable). If you have not found your product/market fit, it might be a different game. But if you have, read on.&#xA;One of the biggest complications was always the alignment of where to go and how to get there.</description>
     </item>
     <item>
       <title>Podcast time</title>
-      <link>https://example.org/podcast-time/</link>
+      <link>https://oliverwehrens.github.io/podcast-time/</link>
       <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://example.org/podcast-time/</guid>
+      <guid>https://oliverwehrens.github.io/podcast-time/</guid>
       <description>No, I did not start my own. Ivan of dev.env podcast invited me to talk about how I got there, where I am. Thanks for having me Ivan. It was fun.&#xA;Sorry, German only.&#xA;https://shows.acast.com/dev-env/episodes/18-oliver-wehrens</description>
     </item>
     <item>
       <title>How hands-on should a CTO be?</title>
-      <link>https://example.org/how-hands-on-should-a-cto-be/</link>
+      <link>https://oliverwehrens.github.io/how-hands-on-should-a-cto-be/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://example.org/how-hands-on-should-a-cto-be/</guid>
+      <guid>https://oliverwehrens.github.io/how-hands-on-should-a-cto-be/</guid>
       <description>I got asked on LinkedIn, so here is my answer.&#xA;It depends (on the phase of the company).&#xA;I like Simon Wardley&amp;rsquo;s Mapping. He defines categories of company phases&#xA;Pioneers (searching for Product-Market Fit) Settlers (might have found Product-Market Fit) Town planners (Found something to grow) A job in an early startup is very different from a big corporation. I also assume that while going through the phases, the company grows.</description>
     </item>
     <item>
       <title>Sketch Book Summary: No Estimates</title>
-      <link>https://example.org/sketch-book-summary-no-estimates/</link>
+      <link>https://oliverwehrens.github.io/sketch-book-summary-no-estimates/</link>
       <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://example.org/sketch-book-summary-no-estimates/</guid>
+      <guid>https://oliverwehrens.github.io/sketch-book-summary-no-estimates/</guid>
       <description>Here is my Sketch Book Summary of No Estimates by Vasco Duarte.</description>
     </item>
     <item>
       <title>Four weeks of home office</title>
-      <link>https://example.org/four-weeks-of-home-office/</link>
+      <link>https://oliverwehrens.github.io/four-weeks-of-home-office/</link>
       <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://example.org/four-weeks-of-home-office/</guid>
+      <guid>https://oliverwehrens.github.io/four-weeks-of-home-office/</guid>
       <description>On March 12th we decided to send everybody into Home office. We were partially already working remotely but we never tried to be 100%. Now we were forced to.&#xA;As a summary: It works better than I expected. The remote work is not as much as a problem for everybody. Being stuck at home is.&#xA;Tools (don’t fix problems) We already had bits and pieces in place to enable remote collaboration.</description>
     </item>
   </channel>

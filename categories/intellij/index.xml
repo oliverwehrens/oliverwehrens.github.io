@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IntelliJ on Oliver Wehrens</title>
-    <link>https://example.org/categories/intellij/</link>
+    <link>https://oliverwehrens.github.io/categories/intellij/</link>
     <description>Recent content in IntelliJ on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Feb 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/categories/intellij/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oliverwehrens.github.io/categories/intellij/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IntelliJ IDEA Rulezzz with code completion</title>
-      <link>https://example.org/intellij-idea-rulezzz-with-code-completion/</link>
+      <link>https://oliverwehrens.github.io/intellij-idea-rulezzz-with-code-completion/</link>
       <pubDate>Sat, 14 Feb 2009 00:00:00 +0000</pubDate>
-      <guid>https://example.org/intellij-idea-rulezzz-with-code-completion/</guid>
+      <guid>https://oliverwehrens.github.io/intellij-idea-rulezzz-with-code-completion/</guid>
       <description>Today I got an interesting ctrl+space code completion in IDEA 8.1. Easteregg anyone ? :)</description>
     </item>
     <item>
       <title>IntelliJ IDEA 8.1</title>
-      <link>https://example.org/intellij-idea-8.1/</link>
+      <link>https://oliverwehrens.github.io/intellij-idea-8.1/</link>
       <pubDate>Wed, 11 Feb 2009 00:00:00 +0000</pubDate>
-      <guid>https://example.org/intellij-idea-8.1/</guid>
+      <guid>https://oliverwehrens.github.io/intellij-idea-8.1/</guid>
       <description>I do love IntelliJ IDEA but the 8.0 release had some issues with indexing and compiler caches. Version 8.1 is out and addresses these issues (among other things, e.g. git support). Hurray.</description>
     </item>
   </channel>

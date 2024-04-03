@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spring Webflow Test Java on Oliver Wehrens</title>
-    <link>https://example.org/categories/spring-webflow-test-java/</link>
+    <link>https://oliverwehrens.github.io/categories/spring-webflow-test-java/</link>
     <description>Recent content in Spring Webflow Test Java on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 20 Apr 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/categories/spring-webflow-test-java/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oliverwehrens.github.io/categories/spring-webflow-test-java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to test Spring Webflow 2 (with parent flows)</title>
-      <link>https://example.org/how-to-test-spring-webflow-2-with-parent-flows/</link>
+      <link>https://oliverwehrens.github.io/how-to-test-spring-webflow-2-with-parent-flows/</link>
       <pubDate>Mon, 20 Apr 2009 00:00:00 +0000</pubDate>
-      <guid>https://example.org/how-to-test-spring-webflow-2-with-parent-flows/</guid>
+      <guid>https://oliverwehrens.github.io/how-to-test-spring-webflow-2-with-parent-flows/</guid>
       <description>In the last couple of month I was writing some flows using Spring Webflow 2. I knew that I (in theory) I could test them but I never did. The overall documentation of Webflow 2 is not that great at the moment, so I hope to improve that a little bit.&#xA;Spring Webflow 2 supports only JUnit tests so far. I guess this will change at some point but until then you have to pull out that junit.</description>
     </item>
   </channel>

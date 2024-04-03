@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java on Oliver Wehrens</title>
-    <link>https://example.org/tags/java/</link>
+    <link>https://oliverwehrens.github.io/tags/java/</link>
     <description>Recent content in Java on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 27 Jul 2012 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oliverwehrens.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Do not use Javadoc</title>
-      <link>https://example.org/do-not-use-javadoc/</link>
+      <link>https://oliverwehrens.github.io/do-not-use-javadoc/</link>
       <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
-      <guid>https://example.org/do-not-use-javadoc/</guid>
+      <guid>https://oliverwehrens.github.io/do-not-use-javadoc/</guid>
       <description>Javadoc is here to help. To understand what the code does and how it works? Right?&#xA;I don&amp;rsquo;t think so. I confuses the heck out of me in most cases.&#xA;When I look at code like&#xA;/** * Version number of signature. */ public static final String SIGNATURE_VERSION = &amp;#34;1&amp;#34;; I get the feeling that the javadoc is pretty pointless. Well, the damn String is named what it is, how does the Javadoc help me here?</description>
     </item>
     <item>
       <title>Javascript testing for Java projects</title>
-      <link>https://example.org/javascript-testing-for-java-projects/</link>
+      <link>https://oliverwehrens.github.io/javascript-testing-for-java-projects/</link>
       <pubDate>Thu, 12 Jul 2012 00:00:00 +0000</pubDate>
-      <guid>https://example.org/javascript-testing-for-java-projects/</guid>
+      <guid>https://oliverwehrens.github.io/javascript-testing-for-java-projects/</guid>
       <description>I&amp;rsquo;m a Java Programmer. I do mostly web projects. There is a tendency to move away from server side frameworks towards Javascript (+mvc) and rest services. This now involves me in programming Javascript at the GUI level. Welcome maven, IDE and continous integration.&#xA;Coming from the JVM world I&amp;rsquo;m pretty much used to writing tests in my IDE running them and then writing the production code. What I found out, this is not that easy with Javascript.</description>
     </item>
     <item>
       <title>Cucumber-jvm for Java</title>
-      <link>https://example.org/cucumber-jvm-for-java/</link>
+      <link>https://oliverwehrens.github.io/cucumber-jvm-for-java/</link>
       <pubDate>Thu, 12 Apr 2012 00:00:00 +0000</pubDate>
-      <guid>https://example.org/cucumber-jvm-for-java/</guid>
-      <description>&lt;p&gt;In an &lt;a href=&#34;https://example.org/concordion-vs-cucumber-and-java-based-acceptance-testing&#34;&gt;earlier&lt;/a&gt; article I compared cucumber (with Cuke4Duke) and Concordion. It was very cumbersome due to the ruby/jruby jvm chain. Behold - the new &lt;strong&gt;&lt;a href=&#34;https://github.com/cucumber/cucumber-jvm&#34;&gt;cucumber-jvm&lt;/a&gt;&lt;/strong&gt; was released. So how did it &lt;strong&gt;improve&lt;/strong&gt; ?&lt;/p&gt;&#xA;&lt;p&gt;Cucumber-jvm has support for many languages, e.g. Scala, Groovy, Closure and of course Java. I will focus on &lt;strong&gt;Java&lt;/strong&gt; and &lt;strong&gt;Maven&lt;/strong&gt;.&lt;/p&gt;</description>
+      <guid>https://oliverwehrens.github.io/cucumber-jvm-for-java/</guid>
+      <description>&lt;p&gt;In an &lt;a href=&#34;https://oliverwehrens.github.io/concordion-vs-cucumber-and-java-based-acceptance-testing&#34;&gt;earlier&lt;/a&gt; article I compared cucumber (with Cuke4Duke) and Concordion. It was very cumbersome due to the ruby/jruby jvm chain. Behold - the new &lt;strong&gt;&lt;a href=&#34;https://github.com/cucumber/cucumber-jvm&#34;&gt;cucumber-jvm&lt;/a&gt;&lt;/strong&gt; was released. So how did it &lt;strong&gt;improve&lt;/strong&gt; ?&lt;/p&gt;&#xA;&lt;p&gt;Cucumber-jvm has support for many languages, e.g. Scala, Groovy, Closure and of course Java. I will focus on &lt;strong&gt;Java&lt;/strong&gt; and &lt;strong&gt;Maven&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lightweight Web Prototyping for the Framework loving (Java) Developer</title>
-      <link>https://example.org/lightweight-web-prototyping-for-the-framework-loving-java-developer/</link>
+      <link>https://oliverwehrens.github.io/lightweight-web-prototyping-for-the-framework-loving-java-developer/</link>
       <pubDate>Tue, 20 Apr 2010 00:00:00 +0000</pubDate>
-      <guid>https://example.org/lightweight-web-prototyping-for-the-framework-loving-java-developer/</guid>
+      <guid>https://oliverwehrens.github.io/lightweight-web-prototyping-for-the-framework-loving-java-developer/</guid>
       <description>A couple of month ago I had an idea for a small web app. But what does it take to do it ? Do you start with the back end or the front end (read server or client side) ? Typically I would start at the back end, get the domain right and then see how I can fit the UI in. If a programmer starts this way you end with the typical &amp;rsquo;the programmer did the GUI&amp;rsquo; scenario.</description>
     </item>
   </channel>

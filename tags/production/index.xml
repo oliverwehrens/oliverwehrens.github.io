@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Production on Oliver Wehrens</title>
-    <link>https://example.org/tags/production/</link>
+    <link>https://oliverwehrens.github.io/tags/production/</link>
     <description>Recent content in Production on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 18 Dec 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/production/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oliverwehrens.github.io/tags/production/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Faster</title>
-      <link>https://example.org/getting-faster/</link>
+      <link>https://oliverwehrens.github.io/getting-faster/</link>
       <pubDate>Wed, 18 Dec 2013 00:00:00 +0000</pubDate>
-      <guid>https://example.org/getting-faster/</guid>
+      <guid>https://oliverwehrens.github.io/getting-faster/</guid>
       <description> My Continuous Lifecycle 2013 talk. How we got faster at deploying our software. </description>
     </item>
     <item>
       <title>From Development to Production</title>
-      <link>https://example.org/from-development-to-production/</link>
+      <link>https://oliverwehrens.github.io/from-development-to-production/</link>
       <pubDate>Fri, 26 Apr 2013 00:00:00 +0000</pubDate>
-      <guid>https://example.org/from-development-to-production/</guid>
+      <guid>https://oliverwehrens.github.io/from-development-to-production/</guid>
       <description> My BedCon 2013 talk. Covering commiting code, packaging,testing, deployment and organisational changes. </description>
     </item>
   </channel>

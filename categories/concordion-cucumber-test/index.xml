@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Concordion Cucumber Test on Oliver Wehrens</title>
-    <link>https://example.org/categories/concordion-cucumber-test/</link>
+    <link>https://oliverwehrens.github.io/categories/concordion-cucumber-test/</link>
     <description>Recent content in Concordion Cucumber Test on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 13 Oct 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/categories/concordion-cucumber-test/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oliverwehrens.github.io/categories/concordion-cucumber-test/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Concordion vs. Cucumber and Java based Acceptance Testing</title>
-      <link>https://example.org/concordion-vs.-cucumber-and-java-based-acceptance-testing/</link>
+      <link>https://oliverwehrens.github.io/concordion-vs.-cucumber-and-java-based-acceptance-testing/</link>
       <pubDate>Tue, 13 Oct 2009 00:00:00 +0000</pubDate>
-      <guid>https://example.org/concordion-vs.-cucumber-and-java-based-acceptance-testing/</guid>
+      <guid>https://oliverwehrens.github.io/concordion-vs.-cucumber-and-java-based-acceptance-testing/</guid>
       <description>If you want your Business Analyst to provide some acceptance tests for your implementation it would be best to make sure you get it in some form your tests can read. That way you can make sure your code does really do that what the customers wants. Two tools to achieve that are Concordion and Cucumber (and cuke4duke). Both taking the approach of Fit a step further. You can find very good documentation for the tools on their web pages or as examples along with the code.</description>
     </item>
   </channel>

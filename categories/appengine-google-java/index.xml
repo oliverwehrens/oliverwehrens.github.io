@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AppEngine Google Java on Oliver Wehrens</title>
-    <link>https://example.org/categories/appengine-google-java/</link>
+    <link>https://oliverwehrens.github.io/categories/appengine-google-java/</link>
     <description>Recent content in AppEngine Google Java on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 08 Apr 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/categories/appengine-google-java/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oliverwehrens.github.io/categories/appengine-google-java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Quick Look at Google App Engine for Java</title>
-      <link>https://example.org/a-quick-look-at-google-app-engine-for-java/</link>
+      <link>https://oliverwehrens.github.io/a-quick-look-at-google-app-engine-for-java/</link>
       <pubDate>Wed, 08 Apr 2009 00:00:00 +0000</pubDate>
-      <guid>https://example.org/a-quick-look-at-google-app-engine-for-java/</guid>
+      <guid>https://oliverwehrens.github.io/a-quick-look-at-google-app-engine-for-java/</guid>
       <description>At Campfire One Google announced their App Engine for Java (this was in the rumor mill for a couple of days already). The first 10,000 developers would get an early look at App Engine&#39;s Java language support. I would have almost missed it. Some tweets reminded me of registering with Google. I heard of AppEngine before but the fact that it was only available for Python did not make it very attractive to me.</description>
     </item>
   </channel>

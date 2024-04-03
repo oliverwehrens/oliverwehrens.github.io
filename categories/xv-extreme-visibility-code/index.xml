@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xv, Extreme Visibility, Code on Oliver Wehrens</title>
-    <link>https://example.org/categories/xv-extreme-visibility-code/</link>
+    <link>https://oliverwehrens.github.io/categories/xv-extreme-visibility-code/</link>
     <description>Recent content in Xv, Extreme Visibility, Code on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Feb 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/categories/xv-extreme-visibility-code/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oliverwehrens.github.io/categories/xv-extreme-visibility-code/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Extreme visibility in an agile environment</title>
-      <link>https://example.org/extreme-visibility-in-an-agile-environment/</link>
+      <link>https://oliverwehrens.github.io/extreme-visibility-in-an-agile-environment/</link>
       <pubDate>Tue, 17 Feb 2009 00:00:00 +0000</pubDate>
-      <guid>https://example.org/extreme-visibility-in-an-agile-environment/</guid>
+      <guid>https://oliverwehrens.github.io/extreme-visibility-in-an-agile-environment/</guid>
       <description>What is Extreme visibility?&#xA;Extreme visibility is all about providing information about the code to every team in near real time. We show several metrics such as complexity of the code (xs), todo&amp;rsquo;s, deprecated methods, number of broken builds, open tickets and their priority and so on. These are distributed over a couple of screens which our software is rotating through. Every team member can easily see if his or her commits effecting the code quality in a good or bad way and makes the members aware of certain quality standards we try to keep in our code base.</description>
     </item>
   </channel>

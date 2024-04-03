@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ajax on Oliver Wehrens</title>
-    <link>https://example.org/tags/ajax/</link>
+    <link>https://oliverwehrens.github.io/tags/ajax/</link>
     <description>Recent content in Ajax on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 26 Apr 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oliverwehrens.github.io/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to detect if your server is down when making jQuery Ajax calls </title>
-      <link>https://example.org/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</link>
+      <link>https://oliverwehrens.github.io/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</link>
       <pubDate>Mon, 26 Apr 2010 00:00:00 +0000</pubDate>
-      <guid>https://example.org/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</guid>
+      <guid>https://oliverwehrens.github.io/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</guid>
       <description>If you developed an ajax rich web application, maybe even a single page interface, you want to make sure that the user gets notified if the server is not reachable anymore. This happens either if the it goes down or the client loses its network connection. Depending on your code the application can run for a while and the user is confused about missing interactivity.&#xA;So how do you detect this?</description>
     </item>
   </channel>

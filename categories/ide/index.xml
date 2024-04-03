@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IDE on Oliver Wehrens</title>
-    <link>https://example.org/categories/ide/</link>
+    <link>https://oliverwehrens.github.io/categories/ide/</link>
     <description>Recent content in IDE on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 24 Jul 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/categories/ide/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oliverwehrens.github.io/categories/ide/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Two upgrades to cut down development time</title>
-      <link>https://example.org/two-upgrades-to-cut-down-development-time/</link>
+      <link>https://oliverwehrens.github.io/two-upgrades-to-cut-down-development-time/</link>
       <pubDate>Fri, 24 Jul 2009 00:00:00 +0000</pubDate>
-      <guid>https://example.org/two-upgrades-to-cut-down-development-time/</guid>
+      <guid>https://oliverwehrens.github.io/two-upgrades-to-cut-down-development-time/</guid>
       <description>No matter how good a developer is, with two hardware upgrades you can speed up most machines and cut down development time for everybody.&#xA;Your big fat IDE Depending what you use to crunch out your code, these things are eating your memory. And then you have your application server running, and an internet browser with 20+ sessions, plus Twitter, plus Photoshop, plus, plus, plus.&#xA;I used to have 2 GB RAM in my laptop and I thought it is ok.</description>
     </item>
   </channel>

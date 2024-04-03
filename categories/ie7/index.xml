@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ie7 on Oliver Wehrens</title>
-    <link>https://example.org/categories/ie7/</link>
+    <link>https://oliverwehrens.github.io/categories/ie7/</link>
     <description>Recent content in Ie7 on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 30 Mar 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/categories/ie7/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oliverwehrens.github.io/categories/ie7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IE7 caches rendered elements?</title>
-      <link>https://example.org/ie7-caches-rendered-elements/</link>
+      <link>https://oliverwehrens.github.io/ie7-caches-rendered-elements/</link>
       <pubDate>Mon, 30 Mar 2009 00:00:00 +0000</pubDate>
-      <guid>https://example.org/ie7-caches-rendered-elements/</guid>
+      <guid>https://oliverwehrens.github.io/ie7-caches-rendered-elements/</guid>
       <description>I&amp;rsquo;m tasked with some css tweaking to our current product. We need to implement a &amp;lsquo;Print Preview&amp;rsquo; screen so the customer can see how this looks before printing. Css supports exactly this use case with the @media notation.&#xA;So far so good.&#xA;Now Internet Explorer gives me some headache. Basically it looks like that if I render a page and then render the same page again with a slightly different style sheet, the lovely IE (7) will cache the width/text-align of the element.</description>
     </item>
   </channel>

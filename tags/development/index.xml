@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development on Oliver Wehrens</title>
-    <link>https://example.org/tags/development/</link>
+    <link>https://oliverwehrens.github.io/tags/development/</link>
     <description>Recent content in Development on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 18 Dec 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oliverwehrens.github.io/tags/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Faster</title>
-      <link>https://example.org/getting-faster/</link>
+      <link>https://oliverwehrens.github.io/getting-faster/</link>
       <pubDate>Wed, 18 Dec 2013 00:00:00 +0000</pubDate>
-      <guid>https://example.org/getting-faster/</guid>
+      <guid>https://oliverwehrens.github.io/getting-faster/</guid>
       <description> My Continuous Lifecycle 2013 talk. How we got faster at deploying our software. </description>
     </item>
     <item>
       <title>Getting started with veewee and vagrant</title>
-      <link>https://example.org/getting-started-with-veewee-and-vagrant/</link>
+      <link>https://oliverwehrens.github.io/getting-started-with-veewee-and-vagrant/</link>
       <pubDate>Sun, 26 May 2013 00:00:00 +0000</pubDate>
-      <guid>https://example.org/getting-started-with-veewee-and-vagrant/</guid>
+      <guid>https://oliverwehrens.github.io/getting-started-with-veewee-and-vagrant/</guid>
       <description>What do you need to do to get a fully automated kickstart of a virtual machine on your local development platform running? Not much it turns out. There are some tricks to get around but after that it&amp;rsquo;s all fine.&#xA;The resulting image can also be used to get a system in production.&#xA;I will look at the OS installation part. Puppet will come in a later post.&#xA;Installation Tools we will play with:</description>
     </item>
     <item>
       <title>From Development to Production</title>
-      <link>https://example.org/from-development-to-production/</link>
+      <link>https://oliverwehrens.github.io/from-development-to-production/</link>
       <pubDate>Fri, 26 Apr 2013 00:00:00 +0000</pubDate>
-      <guid>https://example.org/from-development-to-production/</guid>
+      <guid>https://oliverwehrens.github.io/from-development-to-production/</guid>
       <description> My BedCon 2013 talk. Covering commiting code, packaging,testing, deployment and organisational changes. </description>
     </item>
     <item>
       <title>Do not use Javadoc</title>
-      <link>https://example.org/do-not-use-javadoc/</link>
+      <link>https://oliverwehrens.github.io/do-not-use-javadoc/</link>
       <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
-      <guid>https://example.org/do-not-use-javadoc/</guid>
+      <guid>https://oliverwehrens.github.io/do-not-use-javadoc/</guid>
       <description>Javadoc is here to help. To understand what the code does and how it works? Right?&#xA;I don&amp;rsquo;t think so. I confuses the heck out of me in most cases.&#xA;When I look at code like&#xA;/** * Version number of signature. */ public static final String SIGNATURE_VERSION = &amp;#34;1&amp;#34;; I get the feeling that the javadoc is pretty pointless. Well, the damn String is named what it is, how does the Javadoc help me here?</description>
     </item>
     <item>
       <title>5 code metrics you need to watch</title>
-      <link>https://example.org/5-code-metrics-you-need-to-watch/</link>
+      <link>https://oliverwehrens.github.io/5-code-metrics-you-need-to-watch/</link>
       <pubDate>Tue, 23 Feb 2010 00:00:00 +0000</pubDate>
-      <guid>https://example.org/5-code-metrics-you-need-to-watch/</guid>
+      <guid>https://oliverwehrens.github.io/5-code-metrics-you-need-to-watch/</guid>
       <description>Developing software ain&amp;rsquo;t easy.&#xA;How do you know how you are doing ?&#xA;You could start collecting metrics about your code. These can give you some indication how maintainable and reliable it is.&#xA;The metric which come to mind to the most people is code coverage. Some people say it must be near 100%, other say 80% is a good number. At the end it can&amp;rsquo;t tell you if you are doing great or good.</description>
     </item>
     <item>
       <title>Name your objects right</title>
-      <link>https://example.org/name-your-objects-right/</link>
+      <link>https://oliverwehrens.github.io/name-your-objects-right/</link>
       <pubDate>Tue, 09 Feb 2010 00:00:00 +0000</pubDate>
-      <guid>https://example.org/name-your-objects-right/</guid>
+      <guid>https://oliverwehrens.github.io/name-your-objects-right/</guid>
       <description>Whenever you create an object you have to find a meaningful name.&#xA;While renaming later in modern IDE&amp;rsquo;s is no problem at all you should not pick the first name which comes to your mind.&#xA;Imagine you have an external fraud detection web service and it will return a &amp;lsquo;hit&amp;rsquo; or &amp;lsquo;miss&amp;rsquo;. How do you name this object? HitOrMiss maybe (since this is the representation you get from the webservice) ?</description>
     </item>
     <item>
       <title>What&#39;s your preferred development infrastructure stack?</title>
-      <link>https://example.org/whats-your-preferred-development-infrastructure-stack/</link>
+      <link>https://oliverwehrens.github.io/whats-your-preferred-development-infrastructure-stack/</link>
       <pubDate>Wed, 13 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>https://example.org/whats-your-preferred-development-infrastructure-stack/</guid>
+      <guid>https://oliverwehrens.github.io/whats-your-preferred-development-infrastructure-stack/</guid>
       <description>In Response to Matt Raible&#39;s question about my preferred development stack. Source control In my own development project I switched to Git some time ago. I was using svn and before that cvs for a couple of years. Git just makes it easy to try out small ideas very quickly without reverting the code. We will introduce Git at work pretty soon (I hope).&#xA;The Atlassian cloud I was using Confluence as a Wiki in my open source project and my current employer Hypoport uses it as well.</description>
     </item>
   </channel>
