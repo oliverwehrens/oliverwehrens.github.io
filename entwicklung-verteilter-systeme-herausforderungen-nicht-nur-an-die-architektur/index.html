@@ -1,0 +1,349 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Entwicklung verteilter Systeme - Herausforderungen nicht nur an die Architektur - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="This is my talk about Development of distributed systems - challenges not only for the architecture. You guessed it, it is in german. I gave this talk at BedCon 2015 and I will talk about it again at the Architecture Gathering 2015 in Munich on October 22nd. Abstract:
+Jede Platform wächst mit der Zeit. Mehr Entwickler mit noch mehr Ideen und Vorstellungen arbeiten alle gemeinsam an der Weiterentwicklung. Das System wird größer und auf viele Systeme verteilt." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Entwicklung verteilter Systeme - Herausforderungen nicht nur an die Architektur</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Sep 29, 2015</time>
+      
+      
+      
+      
+      <span class="text-gray">- 2 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>This is my talk about <strong>Development of distributed systems - challenges not only for the architecture</strong>.
+
+
+ You guessed it, it is in german. I gave this talk at <a href="http://bed-con.org/2015/talks/Entwicklung-verteilter-Systeme---Herausforderungen-nicht-nur-an-die-Architektur">BedCon 2015</a> and I will talk about it again at the <a href="http://www.the-architecture-gathering.de/indexEN.php">Architecture Gathering 2015</a> in Munich on October 22nd.
+
+<script async class="speakerdeck-embed" data-id="af49bc1ea74b4fefaeaa3636c69542cd" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+</p>
+<p>Abstract:</p>
+<!-- raw HTML omitted -->
+<p>Jede Platform wächst mit der Zeit. Mehr Entwickler mit noch mehr Ideen und Vorstellungen arbeiten alle gemeinsam an der Weiterentwicklung. Das System wird größer und auf viele Systeme verteilt. Häufig wird ein Technologie Stack vorgegeben, um es vermeintlich wartbarer und stabiler zu machen. Zusätzlich wird die Software oft dabei von Entwicklung zu QA weitergereicht und am Schluss von Operations deployed und betrieben. Das Ergebnis davon sind lange Releasezyklen und das verschenkte Potenzial, weil nicht die richtigen Tools genutzt werden konnten.</p>
+<p>Dieser Vortrag erläutert unsere Leitplanken zur Entwicklung verteilter Systeme bei der E-POST. Wie erlauben wir es den 15 Teams mit 100 Personen „The right tool for the right job“ einzusetzen statt ein starres Korsett an Technologien vorzugeben? Welche Rahmenbedingungen müssen beachtet werden und wo kann ein Team autonom entscheiden wie eine Software zu entwickeln ist? Trotz wachsender Anzahl verteilter Systemen und steigender Komplexität wollen wir weiterhin eine stabile Platform zur Verfügung stellen. Es wird erklärt welche Anforderungen wir dabei in den Bereichen Architektur, Entwicklung, Testen, Deployment, Betrieb und Security vorgeben und was die Teams dabei beachten müssen.</p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/monolith"
+      >monolith</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/architecture"
+      >architecture</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/microservice"
+      >microservice</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/organisation"
+      >organisation</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/how-is-your-microservice-architecture-doing/"
+      ><span class="mr-1.5">←</span><span>How is your microservice architecture doing?</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/wider-den-monolith-am-ende-wird-alles-gut/"
+      ><span>Wider den Monolith - Am Ende wird alles gut</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2009 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

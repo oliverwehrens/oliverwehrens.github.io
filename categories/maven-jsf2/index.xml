@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maven JSF2 on Oliver Wehrens</title>
+    <link>http://localhost:1313/categories/maven-jsf2/</link>
+    <description>Recent content in Maven JSF2 on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Jul 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/maven-jsf2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting started with JSF 2 (and Maven)</title>
+      <link>http://localhost:1313/getting-started-with-jsf-2-and-maven/</link>
+      <pubDate>Fri, 03 Jul 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/getting-started-with-jsf-2-and-maven/</guid>
+      <description>I use Apache Trinidad at work and since JSF 2 is now final I decided to play with it a bit.&#xA;Of course this is going to be the classic Hello World example (as there are many other like this around the web).&#xA;First you need to setup a simple Maven project.&#xA;The file layout should be something like that. After that change your pom.xml to include the servlet and jsf2 libs.</description>
+    </item>
+  </channel>
+</rss>

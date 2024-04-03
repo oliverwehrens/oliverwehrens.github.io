@@ -1,0 +1,330 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>IE7 caches rendered elements? - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="I&rsquo;m tasked with some css tweaking to our current product. We need to implement a &lsquo;Print Preview&rsquo; screen so the customer can see how this looks before printing. Css supports exactly this use case with the @media notation.
+So far so good.
+Now Internet Explorer gives me some headache. Basically it looks like that if I render a page and then render the same page again with a slightly different style sheet, the lovely IE (7) will cache the width/text-align of the element." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">IE7 caches rendered elements?</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Mar 30, 2009</time>
+      
+      
+      
+      
+      <span class="text-gray">- 2 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>I&rsquo;m tasked with some css tweaking to our current product. We need to implement a &lsquo;Print Preview&rsquo; screen so the customer can see how this looks before printing. Css supports exactly this use case with the @media notation.</p>
+<p>So far so good.</p>
+<p>Now Internet Explorer gives me some headache. Basically it looks like that if I render a page and then render the same page again with a slightly different style sheet, the lovely IE (7) will cache the width/text-align of the element. That means formerly right aligned text now looks like center aligned. Using FireBug under Firefox confirms the correct right aligned styled text. Even using the IE Developer Toolbar shows the correct style sheet information and element. Still, it renders sort of centered. By accident the right border of the text is exactly as far away from the left border as in the previous rendering. If I add any attribute to the text cell (or delete an attribute) all of the sudden the text will be rendered right aligned exactly how it should have been in the first place.</p>
+<p>My guess is that IE remembers the width and alignment of the text cell from the previous page (why else the centered text appears to be the size). Deleting/adding an element via the developer tools forces a refresh and voila it renders how it should be.</p>
+<p>I hate it.
+
+
+<img alt="First rendering of the text cell" src="/static/ie_align_01.jpg" title="First rendering of the text cell" width="265" height="22" />
+
+<img alt="Rendering with almost the same style sheet" src="/static/ie_align_02.jpg" title="Rendering with almost the same style sheet" width="419" height="28" />
+
+<img alt="Identifying the cell with the IE developer toolbar" src="/static/ie_align_03.jpg" title="Identifying the cell with the IE developer toolbar" width="429" height="28" />
+<img alt="Deleting the id attribute with the Developer Toolbar" src="/static/ie_align_04.jpg" title="Deleting the id attribute with the Developer Toolbar" width="514" height="89" />
+
+<img alt="Voila, just after deleting the attribute, the cell renders how it should have been" src="/static/ie_align_05.jpg" title="Voila, just after deleting the attribute, the table cell renders how it should have been" width="419" height="30" />
+
+I guess there is a solution for this, I just don&rsquo;t know it. In any case&hellip;.this is unexpected behavior.</p>
+<p>On top of that: using css and Apache Trindad with a print preview on screen makes it hard to manipulate the css for the printout since I just don&rsquo;t know the names of the css classes nor the imported Trinidad css file name (and I do have pre compiled/packaged css file where I have to restart the server every time if I do some changes).</p>
+<p><em>rant off</em></p>
+</section>
+
+
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/coloring-your-ide/"
+      ><span class="mr-1.5">←</span><span>Coloring your IDE</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/using-testng-with-dataproviders-to-cover-more-test-cases/"
+      ><span>Using TestNG with DataProviders to cover more test cases</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

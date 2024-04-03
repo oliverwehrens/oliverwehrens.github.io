@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Links on Oliver Wehrens</title>
+    <link>http://localhost:1313/tags/links/</link>
+    <description>Recent content in Links on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 31 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/links/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2017-90 - Random Tech Links</title>
+      <link>http://localhost:1313/2017-90-random-tech-links/</link>
+      <pubDate>Fri, 31 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2017-90-random-tech-links/</guid>
+      <description>Currently, the focus is primarily on supporting the AWS cloud stack.&#xA;LocalStack spins up the following core Cloud APIs on your local machine: API Gateway, Kinesis, DynamoDB, DynamoDB Streams, Elasticsearch, S3, Firehose, Lambda, SNS, SQS, Redshift</description>
+    </item>
+  </channel>
+</rss>

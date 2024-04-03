@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Oliver Wehrens</title>
+    <link>http://localhost:1313/tags/web/</link>
+    <description>Recent content in Web on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Jul 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript testing for Java projects</title>
+      <link>http://localhost:1313/javascript-testing-for-java-projects/</link>
+      <pubDate>Thu, 12 Jul 2012 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/javascript-testing-for-java-projects/</guid>
+      <description>I&amp;rsquo;m a Java Programmer. I do mostly web projects. There is a tendency to move away from server side frameworks towards Javascript (+mvc) and rest services. This now involves me in programming Javascript at the GUI level. Welcome maven, IDE and continous integration.&#xA;Coming from the JVM world I&amp;rsquo;m pretty much used to writing tests in my IDE running them and then writing the production code. What I found out, this is not that easy with Javascript.</description>
+    </item>
+    <item>
+      <title>Lightweight Web Prototyping for the Framework loving (Java) Developer</title>
+      <link>http://localhost:1313/lightweight-web-prototyping-for-the-framework-loving-java-developer/</link>
+      <pubDate>Tue, 20 Apr 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/lightweight-web-prototyping-for-the-framework-loving-java-developer/</guid>
+      <description>A couple of month ago I had an idea for a small web app. But what does it take to do it ? Do you start with the back end or the front end (read server or client side) ? Typically I would start at the back end, get the domain right and then see how I can fit the UI in. If a programmer starts this way you end with the typical &amp;rsquo;the programmer did the GUI&amp;rsquo; scenario.</description>
+    </item>
+  </channel>
+</rss>

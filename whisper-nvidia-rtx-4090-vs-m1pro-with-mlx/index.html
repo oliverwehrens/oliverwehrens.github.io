@@ -1,0 +1,430 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Whisper: Nvidia RTX 4090 vs M1Pro with MLX (updated with M2/M3) - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="(&hellip; see down below for M2 Ultra / M3 Max Update and a Nvidia optimzied whisper)
+Apple released a machine learning framework for Apple Silicon. Along with that are some examples to see how things are working. They also use a whisper for benchmarking. So I dug out my benchmark and used that to measure performance.
+I simply added a new file to the repo (and the whisper large model was already downloaded)." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Whisper: Nvidia RTX 4090 vs M1Pro with MLX (updated with M2/M3)</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Dec 9, 2023</time>
+      
+      
+      
+      
+      <span class="text-gray">- 5 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>(&hellip; see down below for M2 Ultra / M3 Max Update and a Nvidia optimzied whisper)</p>
+<p>Apple <a href="https://github.com/ml-explore/mlx">released a machine learning framework</a> for Apple Silicon. Along with that are <a href="https://github.com/ml-explore/mlx-examples">some examples</a> to see how things are working. They also use a whisper for benchmarking. So I dug out my benchmark and used that to measure performance.</p>
+<p>I simply added a new file to the repo (and the whisper large model was already downloaded). See the original <a href="https://github.com/ml-explore/mlx-examples/tree/main/whisper">source dir</a>.</p>
+<pre tabindex="0"><code>import datetime
+from pprint import pprint
+
+from whisper import transcribe
+
+if __name__ == &#39;__main__&#39;:
+    audio_file = &#34;whisper/assets/audio.wav&#34;
+    start_time = datetime.datetime.now()
+    x = transcribe(audio=audio_file, model=&#39;large&#39;)
+    end_time = datetime.datetime.now()
+    pprint(x)
+    print(end_time - start_time)
+</code></pre><p>It reports back a list of segements with the following structure:</p>
+<pre tabindex="0"><code>{&#39;avg_logprob&#39;: -0.18728541468714807,
+               &#39;compression_ratio&#39;: 1.3786764705882353,
+               &#39;end&#39;: 589.92,
+               &#39;id&#39;: 139,
+               &#39;no_speech_prob&#39;: 0.0017877654172480106,
+               &#39;seek&#39;: 56892,
+               &#39;start&#39;: 586.92,
+               &#39;temperature&#39;: 0.0,
+               &#39;text&#39;: &#39; Ich heiße Moses Fendel, danke fürs Zuhören und &#39;
+                       &#39;tschüß.&#39;,
+               &#39;tokens&#39;: [51264,
+                          3141,
+                          39124,
+                          68,
+                          17580,
+                          479,
+                          521,
+                          338,
+                          11,
+                          46434,
+                          46577,
+                          1176,
+                          3232,
+                          26377,
+                          674,
+                          256,
+                          6145,
+                          774,
+                          2536,
+                          13,
+                          51414]},
+</code></pre><p>The structure is the same as I get with Python whisper on my RTX 4090.</p>
+<p>The audio file is the same as in my other <a href="https://owehrens.com/openai-whisper-on-apple-m1-cpp-version/">benchmarks</a> with M1 and <a href="https://owehrens.com/whisper-performance-on-nvidia-rtx-4090/">4090</a>.</p>
+<p><img src="MLX-Power.png" alt="CPU" title="CPU Usage"></p>
+<h1 id="result">Result</h1>
+<p>The result for a 10 Minute audio is 0:03:36.296329 (216 seconds). Compare that to 0:03:06.707770 (186 seconds) on my Nvidia 4090. The 2000 € GPU is still 30 seconds or ~ 16% faster. All graphics core where fully utilized during the run and I quit all programs, disabled desktop picture or similar for that run.</p>
+<p>If I use an Nvidia optimized model I get the transcript in 8 seconds.</p>
+<h2 id="my-macbook-hardware-specs">My Macbook Hardware Specs:</h2>
+<ul>
+<li>14&quot; MacBook with M1 Pro, 8 (6 performance and 2 efficiency) cores (2021 model)</li>
+<li>32 GB RAM</li>
+<li>16 GPU Cores</li>
+</ul>
+<h2 id="pc-spec">PC Spec:</h2>
+<ul>
+<li>Intel Core I7-12700KF 8x 3.60GHz</li>
+<li>2x32 GB RAM 3200 MHz DDR4, Kingston FURY Beast</li>
+<li>SSD M.2 PCIe 2280 - 1000GB Kingston KC3000 PCIe 4.0 NVMe</li>
+<li>7000 MBps (read)/ 6000 MBps (write)</li>
+<li>GeForce RTX 4090, 24GB GDDR6X / Palit RTX 4090 GameRock OmniBlack</li>
+</ul>
+<h1 id="insanely-fast-whisper">insanely-fast-whisper</h1>
+<p>This article is trending on <a href="https://news.ycombinator.com/item?id=38628184">HackerNews</a>. User modeless said:</p>
+<blockquote>
+<p>downloaded the 10 minute file he used and ran it on my 4090 with insanely-fast-whisper, which took two commands to install. Using whisper-large-v3 the file is transcribed in less than eight seconds. Fifteen seconds if you include the model loading time before transcription starts (obviously this extra time does not depend on the length of the audio file).</p>
+</blockquote>
+<p>After some hickups and got it working. Alright, the new king (with V3 large model):</p>
+<pre tabindex="0"><code>(iw-kgoj) ➜  iw insanely-fast-whisper --file-name audio.mp3 --flash True
+/home/ai/.virtualenvs/iw-kgoj/lib/python3.10/site-packages/pyannote/audio/core/io.py:43: UserWarning: torchaudio._backend.set_audio_backend has been deprecated. With dispatcher enabled, this function is no-op. You can remove the function call.
+  torchaudio.set_audio_backend(&#34;soundfile&#34;)
+/home/ai/.virtualenvs/iw-kgoj/lib/python3.10/site-packages/torch_audiomentations/utils/io.py:27: UserWarning: torchaudio._backend.set_audio_backend has been deprecated. With dispatcher enabled, this function is no-op. You can remove the function call.
+  torchaudio.set_audio_backend(&#34;soundfile&#34;)
+The model was loaded with use_flash_attention_2=True, which is deprecated and may be removed in a future release. Please use `attn_implementation=&#34;flash_attention_2&#34;` instead.
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to(&#39;cuda&#39;)`.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+🤗 Transcribing... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:00:08
+Voila!✨ Your file has been transcribed go check it out over here 👉 output.json
+</code></pre><p>8 Seconds. Nvidia optimized model. Wow. Today I learned something new :).</p>
+<p>Since MacOS is also supported, I ran it on MacOS as well.</p>
+<pre tabindex="0"><code>&gt; insanely-fast-whisper --file-name audio.mp3 --device mps --batch-size 4
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+🤗 Transcribing... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:04:23
+Voila!✨ Your file has been transcribed go check it out over here 👉 output.json
+</code></pre><h1 id="m2-ultra--m3-max-update">M2 Ultra / M3 Max Update</h1>
+<p><a href="https://twitter.com/ivanfioravanti/status/1734644638357573679">Ivan over at Twitter</a> ran the same audio file on M2 Ultra with 76 GPUs and M3 Max with 40 GPUs. Much faster than my M1 but both are similar speed.</p>
+<p><img src="bench.jpg" alt="Benchmark" title="Benchmark"></p>
+<h1 id="comparison">Comparison</h1>
+<p>Keep in mind, this is not 100% accurate. The rough idea should be visible. Other processes running, loading times, cold, warm start can influence the numbers.</p>
+<h1 id="power-consumption">Power consumption</h1>
+<p>Difference between idle PC / M1Pro and GPU running PC / M1Pro</p>
+<ul>
+<li>PC +242 W (Nvidia 4090 running vs. idle)</li>
+<li>MacBook +38 W (16 M1 GPU cores running vs. idle)</li>
+</ul>
+<p>I measured that with a Shelly plug. This might not be 100% accurate but gives an idea where it is going.</p>
+<p><strong>Dear Reddit comments:</strong></p>
+<p>This is not supposed to be a scientific measurement. This gives you a rough idea what the MLX framework is capable of :).  A ~ 2 year old Macbook using Whisper is almost as fast as the fastest consumer graphics card (~ 1 year old) on the market (but only if you don&rsquo;t use an Nvidia optimized model).</p>
+<p>Not so amazing anymore as it seemed 3 days ago. Still not bad for a laptop.</p>
+<h1 id="why-im-doing-this">Why I&rsquo;m doing this?</h1>
+<p>I run a podcast search engine over at <a href="https://podpodgogo.com">https://podpodgogo.com</a>. I transcribe tens of thousands episodes, make them full text searchable and run some data mining on them.</p>
+<p><strong>Update Dec 11th</strong>: Added specs and more tests without loading the model.</p>
+<p><strong>Update Dec 12th</strong>: The 4090 is the fastest consumer graphics card. Also updated numbers for M2/M3.</p>
+<p><strong>Update Dec 13th</strong>: Got mentioned on HackerNews and saw a comment about Nvidia optimized whisper.</p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/ai"
+      >ai</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/can-ai-replace-me-as-a-consultant/"
+      ><span class="mr-1.5">←</span><span>Can AI replace me as a consultant?</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/artifacts-for-effective-alignment/"
+      ><span>Artifacts for effective alignment</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

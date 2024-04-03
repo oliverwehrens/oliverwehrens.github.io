@@ -1,0 +1,357 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>How failing tests can be green - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Imagine this conversation:
+Friend: &ldquo;We have an integration system where we deploy every two weeks all commits and run hundreds of end to end tests on it.&rdquo;
+Me: &ldquo;And if everything passed it goes into production?&rdquo;
+Friend: &ldquo;Yes.&rdquo;
+Me: &ldquo;How often do they fail?&rdquo;
+Friend: &ldquo;Uhmm, well like every night. But we just take the failing tests and run them again and after that or the next run they will be green." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">How failing tests can be green</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Feb 13, 2014</time>
+      
+      
+      
+      
+      <span class="text-gray">- 2 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>Imagine this conversation:</p>
+<p><img src="/static/traffic-light-vector-icon.jpg" alt="red"></p>
+<p><em>Friend</em>: &ldquo;We have an integration system where we deploy every two weeks all commits and run hundreds of end to end tests on it.&rdquo;</p>
+<p><em>Me</em>: &ldquo;And if everything passed it goes into production?&rdquo;</p>
+<p><em>Friend</em>: &ldquo;Yes.&rdquo;</p>
+<p><em>Me</em>: &ldquo;How often do they fail?&rdquo;</p>
+<p><em>Friend</em>: &ldquo;Uhmm, well like every night. But we just take the failing tests and run them again and after that or the next run they will be green.&rdquo;</p>
+<p><em>Me</em>: &ldquo;And then it goes into production?&rdquo;</p>
+<p><em>Friend</em>: &ldquo;Yes.&rdquo;</p>
+<p><em>Me</em>: &ldquo;Uh?&rdquo;</p>
+<!-- raw HTML omitted -->
+<p>After some further digging it turns out the tests where not green in the first run for some time (like months). Nobody seem to care. Everybody thought they have just an unstable test system and no time for fixing it.</p>
+<h3 id="slow-is-the-new-fast">&ldquo;Slow is the new fast&rdquo;.</h3>
+<p>At some point somebody took the time to investigate one of the failing tests. He found that this was a real bug also happning in production and he opened a bug ticket for it. Yes, the system was unstable and they had flickering tests but this is no reason to put the (un)tested code into production. It took a team of 5 people three weeks to stabilize the system. No new features were deployed during that time.</p>
+<blockquote>
+<p>If you accept that red tests are ok you are on the way to hell. You have no clue if the system behaves like you think it should.</p>
+</blockquote>
+<p>No flickering tests are allowed. The build has to be always green. Do not accept any excuses telling you that this is ok and everything is under control.</p>
+<p><strong>It is not.</strong></p>
+<p>Don&rsquo;t do it.</p>
+<p><!-- raw HTML omitted -->(Traffic Light Image from <!-- raw HTML omitted -->psdblast<!-- raw HTML omitted -->.)<!-- raw HTML omitted --></p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/green-build"
+      >green build</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/deployment"
+      >deployment</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/tests"
+      >tests</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/how-you-might-know-that-you-have-a-monolith/"
+      ><span class="mr-1.5">←</span><span>How you might know that you have a monolith</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/getting-faster/"
+      ><span>Getting Faster</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2009 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

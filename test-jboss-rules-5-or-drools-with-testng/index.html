@@ -1,0 +1,414 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Test JBoss Rules 5 (or Drools) with TestNG - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="We have been using our own flavor of Fit for Rules (which is build on top of fit) for about 1 1/2 years now to test our business logic written in JBoss Rules 5. It&#39;s relatively easy to get the Business Analyst on board since he is using his tool (which is Microsoft Excel) to communicate test cases for the rules. So in theory, he writes the tests in Excel, we do the rules coding and voila, all tests turn green." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Test JBoss Rules 5 (or Drools) with TestNG</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Sep 23, 2009</time>
+      
+      
+      
+      
+      <span class="text-gray">- 4 min</span>
+    </div>
+    
+  </header>
+
+  <section>
+
+We have been using our own flavor of <a href="http://fit-for-rules.sourceforge.net/">Fit for Rules</a> (which is build on top of <a href="http://fit.c2.com">fit</a>) for about 1 1/2 years now to test our business logic written in <a href="http://jboss.org/drools/">JBoss Rules 5</a>.  It's relatively  easy to get the<strong> Business Analyst</strong> on board since he is using his tool (which is Microsoft Excel) to communicate test cases for the rules. So in theory, he writes the tests in <strong>Excel</strong>, we do the rules coding and voila, all <strong>tests turn green</strong>.
+
+<p>Reality is, we have to<!-- raw HTML omitted --> tweak the Excel sheets<!-- raw HTML omitted -->. We need to put in imports of our fact model, insert facts and create objects within that not so programmer friendly table environment. A couple of days ago we got the request to tweak some rules and we all had to start doing rules again (and we used to use Eclipse for writing rules because that&rsquo;s the only IDE having a plugin for that).</p>
+<p>After half a day of coding Java syntax in Excel sheets we decided that the <!-- raw HTML omitted -->ramp up time<!-- raw HTML omitted --> for the not so knowledgeable rules/fit programmers like me is<!-- raw HTML omitted --> too much<!-- raw HTML omitted -->. With debugging, copy and paste we spent easily 5-10 times more time on making the tests work than writing the code itself. Test driven design is not really an option here, since you need to know the imports of the rules file to get the sheet even to compile.</p>
+<p>So what did we do ? Well why not try to get things working the way we used to do it ? TestNG anyone ?</p>
+<p>There are <!-- raw HTML omitted -->many pros<!-- raw HTML omitted --> to use unit testing but also some cons. <!-- raw HTML omitted -->The biggest issue is that we will loose the direct communication to the business analyst<!-- raw HTML omitted -->. It&rsquo;s always better if someone else writes the test and I just have to implement the solution. Maybe we can find another solution involving Active Spec or DSL. For now we stick to unit tests and the task the we have to make sure we convert every Excel test case to java code (but hey, that&rsquo;s what our code reviews are for).</p>
+<p>Checkout our current base class for testing our rules:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AbstractRulesTest</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> String<span style="color:#f92672">[]</span> <span style="color:#a6e22e">getRulesFileNames</span>();
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String GET_FINDINGS <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;import com.maxheapsize.RulesFinding;&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>                                                                           <span style="color:#e6db74">&#34;query \&#34;getAllRulesFindings\&#34;\n&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>                                                                           <span style="color:#e6db74">&#34;   finding : FRulesFinding()\n&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>                                                                           <span style="color:#e6db74">&#34;end&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> Logger LOG <span style="color:#f92672">=</span> Logger.<span style="color:#a6e22e">getLogger</span>(AbstractRulesTest.<span style="color:#a6e22e">class</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> List<span style="color:#f92672">&lt;</span>FRulesFinding<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">fireRules</span>(Set factsForWorkingMemory) {
+</span></span><span style="display:flex;"><span>       KnowledgeBase ruleBase <span style="color:#f92672">=</span> setUpKnowledgeBase();
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">return</span> fireRules(ruleBase, factsForWorkingMemory);
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">public</span> KnowledgeBase <span style="color:#a6e22e">setUpKnowledgeBase</span>() {
+</span></span><span style="display:flex;"><span>       KnowledgeBaseConfiguration configuration <span style="color:#f92672">=</span> KnowledgeBaseFactory.<span style="color:#a6e22e">newKnowledgeBaseConfiguration</span>();
+</span></span><span style="display:flex;"><span>       KnowledgeBase ruleBase <span style="color:#f92672">=</span> KnowledgeBaseFactory.<span style="color:#a6e22e">newKnowledgeBase</span>(configuration);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       KnowledgeBuilder build <span style="color:#f92672">=</span> KnowledgeBuilderFactory.<span style="color:#a6e22e">newKnowledgeBuilder</span>();
+</span></span><span style="display:flex;"><span>       build.<span style="color:#a6e22e">add</span>(ResourceFactory.<span style="color:#a6e22e">newReaderResource</span>(<span style="color:#66d9ef">new</span> StringReader(GET_FINDINGS)), ResourceType.<span style="color:#a6e22e">DRL</span>);
+</span></span><span style="display:flex;"><span>       String<span style="color:#f92672">[]</span> fileNames <span style="color:#f92672">=</span> getRulesFileNames();
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">for</span> (String fileName : fileNames) {
+</span></span><span style="display:flex;"><span>           File userDefinedFile <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File(fileName);
+</span></span><span style="display:flex;"><span>           build.<span style="color:#a6e22e">add</span>(ResourceFactory.<span style="color:#a6e22e">newFileResource</span>(userDefinedFile), ResourceType.<span style="color:#a6e22e">DRL</span>);
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       handleBuilderErrors(build);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       ruleBase.<span style="color:#a6e22e">addKnowledgePackages</span>(build.<span style="color:#a6e22e">getKnowledgePackages</span>());
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">return</span> ruleBase;
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleBuilderErrors</span>(KnowledgeBuilder build) {
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">if</span> (build.<span style="color:#a6e22e">hasErrors</span>()) {
+</span></span><span style="display:flex;"><span>           KnowledgeBuilderErrors knowledgeBuilderErrors <span style="color:#f92672">=</span> build.<span style="color:#a6e22e">getErrors</span>();
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">for</span> (KnowledgeBuilderError knowledgeBuilderError : knowledgeBuilderErrors) {
+</span></span><span style="display:flex;"><span>               <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> ints <span style="color:#f92672">=</span> knowledgeBuilderError.<span style="color:#a6e22e">getErrorLines</span>();
+</span></span><span style="display:flex;"><span>               LOG.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Error at : &#34;</span><span style="color:#f92672">+</span>ints<span style="color:#f92672">[</span>0<span style="color:#f92672">]+</span><span style="color:#e6db74">&#34; : &#34;</span><span style="color:#f92672">+</span>ints<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span>);
+</span></span><span style="display:flex;"><span>               LOG.<span style="color:#a6e22e">error</span>(knowledgeBuilderError.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>           }
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>FRulesFinding<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">fireRules</span>(KnowledgeBase ruleBase, Set facts) {
+</span></span><span style="display:flex;"><span>       List<span style="color:#f92672">&lt;</span>FRulesFinding<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>FRulesFinding<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>       StatefulKnowledgeSession statefulSession <span style="color:#f92672">=</span> ruleBase.<span style="color:#a6e22e">newStatefulKnowledgeSession</span>();
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">for</span> (Object fact : facts) {
+</span></span><span style="display:flex;"><span>           statefulSession.<span style="color:#a6e22e">insert</span>(fact);
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>       statefulSession.<span style="color:#a6e22e">fireAllRules</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       QueryResults results <span style="color:#f92672">=</span> statefulSession.<span style="color:#a6e22e">getQueryResults</span>(<span style="color:#e6db74">&#34;getAllRulesFindings&#34;</span>);
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>           FRulesFinding finding <span style="color:#f92672">=</span> (FRulesFinding) results.<span style="color:#a6e22e">iterator</span>().<span style="color:#a6e22e">next</span>().<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;finding&#34;</span>);
+</span></span><span style="display:flex;"><span>           result.<span style="color:#a6e22e">add</span>(finding);
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">catch</span> (NoSuchElementException e) {
+</span></span><span style="display:flex;"><span>           result <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>FRulesFinding<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> result;
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>All my rules insert a RulesFinding (and only one at the moment) into the working memory when triggered.  The rest is pretty easy. You subclass it, overwrite getRulesFileNames and call fireRules with a set of objects (your tests) which need be insert into the working memory. To get the finding back you need to execute an already inserted  query which needs to have an identifier (line 3, 20, 52, 54). It will contain the result of your rule execution.</p>
+<p>Sample code would look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RulesTest</span> <span style="color:#66d9ef">extends</span> AbstractRulesTest {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">private</span> Set facts;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">@BeforeMethod</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setUp</span>() {
+</span></span><span style="display:flex;"><span>       facts <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet();
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">public</span> String<span style="color:#f92672">[]</span> <span style="color:#a6e22e">getRulesFileNames</span>() {
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">[]</span>{
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;src/main/rules/myrules.drl&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;src/main/rules/generealRules.drl&#34;</span>
+</span></span><span style="display:flex;"><span>           };
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testDemoRule</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       FMyFact myFact <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FMyFact();
+</span></span><span style="display:flex;"><span>    myFact.<span style="color:#a6e22e">setColor</span>(<span style="color:#e6db74">&#34;green&#34;</span>);
+</span></span><span style="display:flex;"><span>       facts.<span style="color:#a6e22e">add</span>(myFact); <span style="color:#75715e">// add all your facts here</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       List<span style="color:#f92672">&lt;</span>FRulesFinding<span style="color:#f92672">&gt;</span> findings <span style="color:#f92672">=</span> fireRules(facts);
+</span></span><span style="display:flex;"><span>       Assert.<span style="color:#a6e22e">assertTrue</span>(findings.<span style="color:#a6e22e">size</span>() <span style="color:#f92672">==</span> 1);
+</span></span><span style="display:flex;"><span>       FRulesFinding finding <span style="color:#f92672">=</span> findings.<span style="color:#a6e22e">get</span>(0);
+</span></span><span style="display:flex;"><span>       Assert.<span style="color:#a6e22e">assertTrue</span>(finding.<span style="color:#a6e22e">getStatus</span>() <span style="color:#f92672">==</span> FStatus.<span style="color:#a6e22e">OK</span>);
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span> }
+</span></span></code></pre></div><p>Depending on how you cut your rules you can extract the assertion of the status.</p>
+<p>Each test case in Excel now takes about 5-10 lines of java code. Considering we are covering each rule with about 5-15 test cases and boundary conditions this amounts to 75-150 lines of test code. I take that <!-- raw HTML omitted -->any day over programming in Excel<!-- raw HTML omitted -->.</p>
+</section>
+
+
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/concordion-vs.-cucumber-and-java-based-acceptance-testing/"
+      ><span class="mr-1.5">←</span><span>Concordion vs. Cucumber and Java based Acceptance Testing</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/how-pair-programming-can-help-you-to-get-into-test-driven-development/"
+      ><span>How pair programming can help you to get into Test Driven Development</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

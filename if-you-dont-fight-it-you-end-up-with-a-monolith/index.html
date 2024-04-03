@@ -1,0 +1,355 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>If you don&#39;t fight it you end up with a monolith - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="You planned your software. You talked to your business owners. As soon as you saw a new use case which should be implemented, you modularized it. You did everything right. And then you hit the integration layer. Sounds familiar?
+At some point in your project you need to integrate all modules with each other. In case of a website you need to produce HTML.
+There are different approaches how to tackle this problem." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">If you don&#39;t fight it you end up with a monolith</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Oct 7, 2014</time>
+      
+      
+      
+      
+      <span class="text-gray">- 4 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>You planned your software. You talked to your business owners. As soon as you saw a new use case which should be implemented, you modularized it. You did everything right. And then you hit the integration layer. Sounds familiar?</p>
+<!-- raw HTML omitted -->
+<p>At some point in your project you need to integrate all modules with each other. In case of a website you need to produce HTML.</p>
+<p>There are different approaches how to tackle this problem. You can integrate it on the server side, grabbing all ui code from the affected systems and pack it together or you can integrate it in the browser.</p>
+<p><strong>Why you should care?</strong> Both ways seem to have some advantages. What is the reason we modularize in the beginning? It could be something like code reuse or that we could refactor better. These are valid technical reasons.</p>
+<p>My take on it is that we enable the system to have <strong>different lifecycles for each module</strong>. This means we can <strong>ship faster</strong>. That means we are not depending on other teams/modules. Why would you like to ship things faster? It could be that your product owner (or somebody like that) would like to have the features deployed as soon as they are ready. Or he likes the idea that whenever a bug occurs that you are able to deploy it very fast once you fixed it in the code. I saw it (and still see it) way too often that teams can&rsquo;t deploy fixes because a module (of another team) they are depending on can not deployed in the newest (changed) version just right now. You can try to mitigate that by branching the code but this strategy has it&rsquo;s own problems (merge hell).</p>
+<p>This is not restricted to UI code. Usually a system depends on a number of other systems. If these other systems are also managed by the very same team, well, this team can decide all by themselves when and how to ship code, we are good. If, however, the other systems are owned by other teams you might have a problem. Raise your hand if you never had this situation.</p>
+<p>One way to get around this is to have <strong>never changing interfaces</strong> to the systems. As good as this sounds, this will not be the reality for long. This is just impractical. Another way is to have <strong>backwards compatible interfaces</strong>. Whatever the other systems do, they need to make sure they don&rsquo;t break existing code. To help them to detect this, one could write contract tests where each team tests the behaviour of the interfaces they use. From my expierence this will somehow work but of course clever teams will find ways around it. Depending on the number of systems people will try to find all their clients, make sure they change as well and make incompatible changes. This could work assuming you have tests for everything and/or like to find bugs in production.
+You can also add a <strong>new version/new resource</strong>. This is a backwards compatible change and should not cause any problems (well except the API might be bloated after some time). Versioning interfaces is a whole new story and everybody has their opinion on that. This stuff is hard.</p>
+<p>If you do not have these problems you have</p>
+<ul>
+<li>a) a very nice (maybe small) and easy system</li>
+<li>b) a monolith</li>
+<li>c) I&rsquo;m jealous</li>
+</ul>
+<p>Since monolith is a somewhat bad word these days:</p>
+<p><strong>What is a monolith anyway?</strong></p>
+<p>In a distributed system for me it is:</p>
+<blockquote>
+<p>You have a monolith in a distributed system if a change in one system requires deployment in at least one other system which the same team can&rsquo;t control/deploy all by themselves.</p>
+</blockquote>
+<p>If it’s two teams, make sure they sit and work closely together. For more than 2, 3 teams: You’re doomed.</p>
+<p><strong>It&rsquo;s all about being independent</strong>. If you have systems which are coupled: this might not be bad. Make sure the same team is responsible for both. Problem solved. Migrating to that kind of solution can involve a differently layered business case, which means, talking to the business owners. This process can take very long.</p>
+<p>Why did I write all of the above? I saw it multiple times (I am guilty myself) that we wrote (with the best intensions) distributed systems but then had a problem at the integration of all of them. They all were required to be <strong>deployed together</strong> to make the system work. In the worst case this meant <strong>down time deployment</strong>. This is a reminder for myself that nothing in distributed systems is as easy as it looks.</p>
+<p>Nothing will be ever perfect. But it is a goal.</p>
+<p>Just don&rsquo;t give up on it.</p>
+<p>One anecdote from a monolith workshop: Once you are on your way away from the monolith you will expierence that <strong>the monolith sucks you back in</strong>. I just expierenced that.</p>
+<p>If you want to learn more / talk about about microservices and monoliths come and join us at the <a href="http://microxchg.io">microXchg 2015</a> community conference in February in Berlin, Germany.</p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/monolith"
+      >monolith</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/architecture"
+      >architecture</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/migrating-a-monolith/"
+      ><span class="mr-1.5">←</span><span>Migrating a monolith</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/a-monolith-could-be-good-for-you/"
+      ><span>A Monolith could be good for you</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2009 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

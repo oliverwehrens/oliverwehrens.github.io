@@ -1,0 +1,450 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Concordion vs. Cucumber and Java based Acceptance Testing - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="If you want your Business Analyst to provide some acceptance tests for your implementation it would be best to make sure you get it in some form your tests can read. That way you can make sure your code does really do that what the customers wants. Two tools to achieve that are Concordion and Cucumber (and cuke4duke). Both taking the approach of Fit a step further. You can find very good documentation for the tools on their web pages or as examples along with the code." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Concordion vs. Cucumber and Java based Acceptance Testing</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Oct 13, 2009</time>
+      
+      
+      
+      
+      <span class="text-gray">- 5 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>If you want your Business Analyst to provide some acceptance tests for your implementation it would be best to make sure you get it in some form your tests can read. That way you can make sure your code does really do that what the customers wants.
+
+
+Two tools to achieve that are <a href="http://www.concordion.org">Concordion</a> and <a href="http://cukes.info">Cucumber</a> (and cuke4duke).  Both taking the approach of <a href="http://c2.fit.com">Fit</a> a step further. You can find very good documentation for the tools on their web pages or as examples along with the code.
+</p>
+<h2 id="concordion">Concordion</h2>
+<p>Concordion let&rsquo;s you write the specifications in html. You can  instrument them with some Concordion code. Since the instrumentation code is in html, it is hidden when you render it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">xmlns:concordion</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.concordion.org/2007/concordion&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">xmlns:xsi</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">xsi:schemaLocation</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.concordion.org/2007/concordion &#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">concordion:execute</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;setCurrentTime(#TEXT)&#34;</span>&gt;09:00AM&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>  The greeting for user &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">concordion:set</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#firstName&#34;</span>&gt;Bob&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>  will be:
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">concordion:assertEquals</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;greetingFor(#firstName)&#34;</span>&gt;Hello Bob!&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>Concordion can instrument free text as well as tables to have some sort of data provider for tests. It  integrates directly with JUnit (no TestNG support yet).
+
+
+<img alt="Concordion Specification/Fixture/System" src="/static/ConcordionFixture.png" title="Concordion Specification/Fixture/System" width="407" height="114" />
+
+The idea is that your specifications is stable. This will not change as much as maybe your code to fulfill the requirements of the customer. Your fixture bridges these two together.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.maxheapsize.concordion;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.concordion.integration.junit3.ConcordionTestCase;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DemoTest</span> <span style="color:#66d9ef">extends</span> ConcordionTestCase {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">greetingFor</span>(String firstName) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello &#34;</span> <span style="color:#f92672">+</span> firstName <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;!&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setCurrentTime</span>(String time) {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(time);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Your java code provides the methods which are called from the specification. At that point you are most likely to use a DSL to build up your business logic. Concordion will assert the expected values.</p>
+<p>After you run the unit test you will get a nice looking html page.
+
+
+<img alt="Concordion output" src="/static/ConcordionResult.png" title="Concordion output" width="630" height="122" />
+
+Passed tests will be green, failed red, pretty easy.
+
+Pro Concordion:
+<ul>
+<li>Instrumention of  free text</li>
+<li>The final report is nice looking</li>
+<li>JUnit support</li>
+<li>Easy setup</li>
+<li>Pure Java</li>
+</ul>
+
+Con Concordion:
+
+<ul>
+<li>The business analyst needs to know a little bit of html</li>
+<li>Usually the programmer needs to change the specification to instrument it</li>
+<li>You program parts in html, refactoring support is missing</li>
+<li>No TestNG support</li>
+</ul>
+</p>
+<h2 id="cucumber">Cucumber</h2>
+<p>Cucumber is a ruby based behaviour driven development tool. Since you can run Ruby code inside the JVM with the help of JRuby it is possible to use it for your Java code. The usually way so far is that you use maven or ant to startup JRuby and the Cucumber ruby code.</p>
+<p>In Cucumber you write your specification (or feature) in plain english (or russian, german,<!-- raw HTML omitted -->lolcode<!-- raw HTML omitted --> or 36 or so more supported languages). No instrumentation is necessary but your customer has to stick to a certain layout (or better: structure). It follows the well known given-when-then pattern.
+
+
+<pre>
+  Feature: Demo
+
+  Scenario: A Car with 4 wheels
+    Given I have a car
+    When I add 4 wheels
+    Then I should be able to drive the car
+</pre>
+
+You can write your step definitions (like the fixture in Concordion) with the help of annotations.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.maxheapsize.cucumber;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> cuke4duke.Given;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> cuke4duke.Then;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> cuke4duke.When;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.Assert;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CarFeature</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> Car car;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Given</span>(<span style="color:#e6db74">&#34;I have a car&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">iHaveACar</span>() {
+</span></span><span style="display:flex;"><span>    car <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Car();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@When</span>(<span style="color:#e6db74">&#34;I add (\\d+) wheels&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">iAddWheels</span>(<span style="color:#66d9ef">int</span> numberOfWheels) {
+</span></span><span style="display:flex;"><span>    car.<span style="color:#a6e22e">setWheels</span>(numberOfWheels);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Then</span>(<span style="color:#e6db74">&#34;I should be able to drive the car&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">iShouldBeAbleToDriveTheCar</span>() {
+</span></span><span style="display:flex;"><span>    Assert.<span style="color:#a6e22e">assertTrue</span>(car.<span style="color:#a6e22e">canDrive</span>());
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The regular expressions defined in the annotations must match the feature definitions.
+
+
+<img alt="Cucumber results" src="/static/cucumber.png" title="Cucumber results" width="480" height="159" />
+
+You can define information in a table like structure as well to provide more data in an easy way. The given when then structure can be used to have multiple when's or then's. So it is very flexible that way.
+
+Pro Cucumber
+
+<ul>
+<li>Feature can be described in plain language</li>
+<li>No extra programmer work on he feature required</li>
+<li>Instrumentation is directly on the Java code via annotations</li>
+</ul>
+
+Con Cucumber
+
+<ul>
+<li>More complex due to the Ruby/JRuby/Java chain</li>
+<li>Business analyst needs to stick to predefined format</li>
+<li>The only way (without extra work to write a runner)  to run it seems to be within ant or maven, for rapid turn around and TDD I would like to have JUnit/TestNG support of some kind</li>
+</ul>
+
+</p>
+<h2 id="verdict">Verdict</h2>
+<p>It is easy to get started with both tools. I spent about a couple of hours with each of them and was able to get simple and a bit more complex examples running. They get you going with BDD and acceptance based testing.</p>
+<p>I like parts of both concepts. I want to be able to write a feature like in Cucumber. The instrumentation should be directly on my code and not in the part of the customer. The easy setup and integration of Concordion with JUnit (need TestNG here) and the output of it is very nice. So where is the tool which has these features ;-).</p>
+<p>So which tools will I use?</p>
+<p>I have yet to see the use case where the business analyst writes the (and updates) the acceptance tests.  I don&rsquo;t mind add some extra code to the specification and I know html. I might get started with Concordion for now.
+
+
+You might also check my post about <a href="/behavior-driven-development-with-easyb-and-vs-testng/">Behavior driven development with EasyB (and vs. TestNG)</a>.
+
+Do you use any of these tools? Or a different one? What's your expierence?
+
+<b>Update</b>
+
+The next-gen cuke4duke was released: Cucumber-jvm. <a href="/cucumber-jvm-for-java/">Check out my post</a> on that one.
+</p>
+</section>
+
+
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/integrate-early-integrate-often/"
+      ><span class="mr-1.5">←</span><span>Integrate early, integrate often</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/test-jboss-rules-5-or-drools-with-testng/"
+      ><span>Test JBoss Rules 5 (or Drools) with TestNG</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IntelliJ Plugin on Oliver Wehrens</title>
+    <link>http://localhost:1313/categories/intellij-plugin/</link>
+    <description>Recent content in IntelliJ Plugin on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 May 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/intellij-plugin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IntelliJ Idea Plugin Property Sorter updated</title>
+      <link>http://localhost:1313/intellij-idea-plugin-property-sorter-updated/</link>
+      <pubDate>Tue, 05 May 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/intellij-idea-plugin-property-sorter-updated/</guid>
+      <description> I&#39;m pretty busy at work right now but I could find some time to add one more feature to my little property sorter plugin for IntelliJ Idea. Comments above property entries will now be preserved when you sort the file. The plugin is available from within Idea or at Google Code. </description>
+    </item>
+    <item>
+      <title>Sorting your properties files in IntelliJ Idea</title>
+      <link>http://localhost:1313/sorting-your-properties-files-in-intellij-idea/</link>
+      <pubDate>Mon, 23 Feb 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sorting-your-properties-files-in-intellij-idea/</guid>
+      <description>I do work with language property files pretty much every day (since I&amp;rsquo;m the GUI guy in the team). The files are updated on different branches copied up to the trunk and merged down to new branches, sometimes even updated by our product owner. We got a couple of times into not so funny merge conflicts since people did not sort the property files in the same way. To get around that we used an external tool to sort the files just before committing them.</description>
+    </item>
+  </channel>
+</rss>

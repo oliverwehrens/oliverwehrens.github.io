@@ -1,0 +1,384 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>A Quick Look at Google App Engine for Java - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="At Campfire One Google announced their App Engine for Java (this was in the rumor mill for a couple of days already). The first 10,000 developers would get an early look at App Engine&#39;s Java language support. I would have almost missed it. Some tweets reminded me of registering with Google. I heard of AppEngine before but the fact that it was only available for Python did not make it very attractive to me." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">A Quick Look at Google App Engine for Java</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Apr 8, 2009</time>
+      
+      
+      
+      
+      <span class="text-gray">- 4 min</span>
+    </div>
+    
+  </header>
+
+  <section>
+
+<img alt="" src="/static/appengine.gif" class="alignleft" width="145" height="111" />At <a href="http://code.google.com/campfire/">Campfire One</a> Google <a href="http://googleappengine.blogspot.com/2009/04/seriously-this-time-new-language-on-app.html">announced</a> their App Engine for Java (this was in the rumor mill for a couple of days already). The first 10,000 developers would get an early look at App Engine's Java language support. I would have almost missed it. Some tweets reminded me of registering with Google. I heard of AppEngine before but the fact that it was only available for Python did not make it very attractive to me. Now the game changed a bit with introducing Java (and <a href="http://groups.google.com/group/google-appengine-java/web/will-it-play-in-app-engine">other JVM languages</a> (JRuby, partial Scala ...), well <a href="http://blog.springsource.com/2009/04/07/write-your-google-app-engine-applications-in-groovy/">Groovy</a> for sure, <a href="http://olabini.com/blog/2009/04/dynamic-languages-on-google-app-engine-an-overview/">Ola Bini</a> has more on that).
+
+After <a href="http://appengine.google.com/">registering</a> with my Google ID they wanted to verify my account with a sms text message. Google is just listing  3 countries and then 'Other' for sms verification and I expected it would not work with a german cellphone. But it did ;-).
+
+The <a href="http://code.google.com/appengine/docs/java/gettingstarted/">Tutorials</a> on their site are working nicely (even if you don't have Eclipse which they are always referring to). Just follow the instructions step by step, use ant and the command line to get through the examples. Don't copy the template project, this is not in line with the documentation.
+
+In the last hour or so I went from nothing to a running <a href="http://maxheapsize.appspot.com/">Guestbook App at Google (try it!)</a>. Once you get the environment right, the code is pretty straight forward.
+
+I see a couple of things which I do like about the App Engine.
+
+<strong>Support for Google Id and Sign In</strong>
+AppEngine support sign in with an Google ID with 2! lines of code. Great. I don't want to worry about that (this generates the Google login page and redirects).
+<pre name="code" class="java">
+UserService userService = UserServiceFactory.getUserService();
+User user = userService.getCurrentUser();
+</pre>
+
+<strong>Automagic Persistence</strong>
+With simple annotation you persist your objects. No mapping, no nothing. You can configure if you want to be using JDO or JPA. No database hassle or whatsoever. Of course it needs to be seen how this work with more complex domain models.
+
+``` java
+@PersistenceCapable(identityType = IdentityType.APPLICATION)
+..
+    @PrimaryKey
+    @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+    private Long id;
+
+    @Persistent
+    private User author;
+
+    @Persistent
+    private String content;
+
+    @Persistent
+    private Date date;
+...
+```
+
+<strong>Local Development - Remote Depolyment</strong>
+Everything works locally. If you deploy it to Google it uses the Google facilities. I don't have to worry (deployment is one ant command).
+
+<strong>Scalability and free Use</strong>
+If your application is successful you can grow with Google. More Resources at your fingertips. Of course this costs money (but you should make money at this point right?). If you are beyond the <strong>free</strong> 10 GB bandwidth in/day, 10 GB bandwidth out/day, 5 million pageviews a month, 46.3 cpu h/day and 1000 emails/day you pay:
+
+<ul>
+<li>CPU Time 	$0.10/CPU hour </li>
+<li>Bandwidth Out $0.12/GByte </li>
+<li>Bandwidth In $0.10/GByte </li>
+<li>Stored Data $0.005/GByte-day</li>
+<li>Recipients Emailed $0.0001/Email </li>
+</ul>
+
+<strong>Monitoring</strong>
+You get nice and detailed overview of the status of you application. You can upload new version any time and go live on demand.
+<img alt="Google AppEngine Dashboard" src="/static/GoogleAppEngineDashboard.jpg" title="Google AppEngine Dashboard" width="450" height="303" />
+
+This this is limited access and Google titles it 'early look' there must be some gotchas but I hope they will get worked out. Of course you will depend on Google's code but I could imagine with a good abstraction layer you can minimize the dependencies to the AppEngine (although replacing some services you might need to use could be hard).
+
+The downside of using it are (gathered from various sources)
+
+<ul>
+<li>No own threads</li>
+<li>Restrictions of java.io.File</li>
+<li>Restrictions on reflection</li>
+<li>Maximum of 30 seconds per request</li>
+<li>An application may not open sockets</li>
+</ul>
+
+
+For sure there are some more benefits in hosting with Google (I guess the same goes for Amazon with S3/EC2). In the past I heard from a couple of startups using those kind of services but I never imagined that it would be that easy.  As I said, I was up and running in under one hour.
+
+I certainly will use AppEngine for a small application in the near future.
+
+</section>
+
+
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/getting-the-browsers-geolocation-with-html-5/"
+      ><span class="mr-1.5">←</span><span>Getting the Browsers GeoLocation with HTML 5</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/coloring-your-ide/"
+      ><span>Coloring your IDE</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

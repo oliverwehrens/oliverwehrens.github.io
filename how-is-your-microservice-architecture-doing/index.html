@@ -1,0 +1,492 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>How is your microservice architecture doing? - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="It all started when my new boss stepped into my door and asked me if I had a clue how our system was working. In an ideal world we would have teams and developers who work on a isolated context with clear boundaries. They develop, test, deploy, monitor and operate everything by themselves. They are on 24/7 call and therefore they do everything possible that nothing fails. The system is stable and brings in the money." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">How is your microservice architecture doing?</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Jan 15, 2016</time>
+      
+      
+      
+      
+      <span class="text-gray">- 10 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>It all started when my new boss stepped into my door and asked me if I had a clue how our system was working. In an <strong>ideal world</strong> we would have teams and developers who work on a isolated context with clear boundaries. They develop, test, deploy, monitor and operate everything by themselves. They are on 24/7 call and therefore they do everything possible that nothing fails. The system is stable and brings in the money.</p>
+<p>In my world however, things are a little <strong>different</strong>.</p>
+<!-- raw HTML omitted -->
+<p>Being there for over 2 years and a developer I knew from history vaguely what was going on, who did what and even sometimes why. But it struck me that we had no clear overview. My boss wanted to know what he is dealing with and could only find <strong>(outdated) wiki pages and knowledge of some people</strong>. Wikis are great (Where Information Kills Itself) but developers tend to not updated them. People come and leave or forget things if they not constantly working on it. The only person knowing what is going on is the developer (and through incidents operations). The former person does not like to leave his development environment and documenting stuff is mostly boring. <strong>The truth is in the source.</strong> I&rsquo;m guilty of that as well.</p>
+<p>To make things worse we were (and are) in a transition from a monolithic application (but distributed over a dozen services) to a much more &lsquo;microservice&rsquo; landscape. So new services were popping up left and right, teams were slicing the old ones and creating many much smaller ones. We have now more than 70 different services composing our platform.</p>
+<h1 id="how-do-you-know-whats-going-on">How do you know what&rsquo;s going on?</h1>
+<p>I ended up in a role taking care of the whole platform and I was wondering do I really need to know? I can&rsquo;t possible understand the whole system. We do have a team architect in every team. We have created a set of rules how we develop services: &lsquo;API backwards compatible, REST, HATEOAS, phoenix&rsquo; style. The team knows it the best when and how to create new services and how to deal with them. They know the business logic.</p>
+<p>The rule set took a while to sink in to peoples minds (we talk about months &gt; 18) but finally it started to show. In case you are wondering, we do have a couple of more rules then the ones I just stated ;-). Still the teams were working mostly by themselves and it turns out to be okish.</p>
+<p>After a couple of month I had the <strong>gut feeling</strong> that I know <strong>nothing about the platform</strong> and that this is not so good. Not even about programming languages used. We have our rules but one guy managed to sneak in Scala anyway. Not a bad choice but those things have a broader impact on the organisation.</p>
+<p>As we hired more and more people (internal &amp; consultants) and with over 70 services it is hard to understand the system. Especially when you grew from a distributed monolith and still (of course) have the roots of that in the system. So that is a problem. Another thing we ran into is that sometimes you need to make breaking API changes. In this case it is useful to know who is your client to get that code changed as well. Maybe strict CDC tests would also reveal that. So an overview of all software to get started/get more information as well as the overall picture is sometimes needed.</p>
+<h1 id="our-own-tool">Our own tool.</h1>
+<p>So about a year ago we decided to change that and wrote a tool to <strong>collect information about every single software</strong> we wrote. The developers were demanding it. We could not find any documentation software out there which deals with different repos, different languages, information aggregation in the way we thought we need it. About the same time we went through our regular licenses check to make sure we do not use any licenses which we are not allowed to (read AGPL and friends). Being JVM based and using Maven and SBT mostly I could gather all the information I needed but it was very tedious and took a couple of days. So we decided to include that in the collection of information as well. The idea is simple: many build tools generate license (and therefore dependency) information. We simply parse those files. We have implementations for gradle, maven, sbt and some javascript build tools. For the few others we use static configs (which needs manually updates). It has the nice effect of always knowing which version of what we use at the moment and if a library as some security problems we can identify which sources needs to be updated.</p>
+<p>We always <strong>want to know</strong> of every piece of our software:</p>
+<ul>
+<li>The name</li>
+<li>Which team is responsible</li>
+<li>Description what it does</li>
+<li>What kind is it? Library/Tool/Service</li>
+<li>Where is the wiki page with more information</li>
+<li>Where is the build chain</li>
+<li>All license/dependency information</li>
+<li>VCS root</li>
+</ul>
+<p>So every team put a yaml file in the source root of  the software and modified the CI template to run our tool to gather/generate all the information and upload them to the wiki. Every time a developer now <strong>checks in something we update</strong> the information. It took some weeks to get the teams to introduce this file but finally we are done.</p>
+<h1 id="but-there-is-more-to-it-">But there is more to it &hellip;</h1>
+<p>Seeing this information for some time I realized how much more we could do, e.g. if you run on virtual machines and secure them with iptables. If you introduce a new connection from one service to another, and depending on network zones and hardware firewalls, it will trigger a (half) manual action by operations. If I would know the <strong>connections and dependencies</strong> between the services we could generate it automatically, I could <strong>draw the whole architecture</strong>. I drew a picture of our bounded contexts some time ago by hand and I keep it updated but what if I can put a mapping between services and contexts in the described yaml file? So again I set out to see if I can find a piece of software which does it for me. We wrote our own tool for the first use case but I was <strong>wondering if somebody else came up with something interesting</strong> in the mean time.</p>
+<p>I found many monitoring and documentation tools which run in production and capture the connections there. I think this is very useful and we may need something like this as well to see how the current situation is. But I could not find tools which generate how the situation should be (plus all the other information we wanted to know about the software). Phil Calcado of (Ex)Soundcloud pointed me to some <!-- raw HTML omitted -->slides<!-- raw HTML omitted --> where you see <strong>something similar</strong> and during GOTO Berlin one guy from Spotify talked about their <strong>&lsquo;System-Z&rsquo;</strong> which does something like we wanted. But <strong>nothing</strong> of that was/is available as Open Source.</p>
+<h1 id="lets-do-it">Let&rsquo;s do it.</h1>
+<p>So, here we go again.</p>
+<p>The last couple of days my colleague Felix and I started to enhance our current code.</p>
+<p>First I thought about what we might need (and maybe not just us) and what we could easily gather automatically or the teams would have to contribute. Here is the first try:</p>
+<pre tabindex="0"><code>
+# ID Generated by server
+# - Mandatory
+ID: w0er7wq30sodacdhofk
+
+# Name of the Service
+# - Mandatory
+Name: UberBillPrint
+
+# One of (Service|Tool|Mobile|Lib), really can be anything in the database, depends
+# on the user
+# - Mandatory
+Type: Service
+
+# Servicename, with that name, other will find and connect to me in their &#39;talks_to&#39; section
+# - Mandatory in case of Service
+Servicename: UBP
+
+# Which team is responsible for this software
+# - Mandatory
+Team: Team Blue
+
+# What do I do ?
+# - Mandatory
+Description: Provides an awesome REST Service with Billing and Printing (including ordering an Uber Taxi).
+
+# Maybe just for Mobile|Service: where do I run, am I already in production?
+# - Value can be anything, what fits for you is right.
+# - Mandatory in case of service|mobile
+Status: (production|dev|test|prototype)
+
+# Where is my source code
+# - Value can be anything, maybe if URL starts with http we link it later
+# - Mandatory
+VCS: git://vcs.local/billprint
+
+# Links to several resources which a user can click on
+Links:
+    # - Values need to be &#39;linked text&#39; : &#39;url&#39;
+    homepage: http://wiki.local/billprint
+    buildchain: http://ci.local/billprint
+    monitoring: http://monitoring.local/billprint
+
+# Only applicable to services.
+# This software is providing the following named service, on these ports.
+# If there is just one provided service you can leave out the &#39;default&#39; section.
+# If you have more than one (why?)
+# you need to specify the default port. DNS for cheap.
+# - Values can be Name:Port:default connection
+# - Mandatory in case of service
+provides:
+    - UberBillPrint:8443:default
+    - Bootstrap:8600
+
+# I need to talk to these service, this can be:
+# - &lt;Servicename&gt;
+# - &lt;Servicename&gt;:&lt;NamedPort&gt;
+# - &lt;Servicename&gt;:&lt;Port&gt;
+# - &lt;IP&gt;:&lt;Port&gt;
+# Preferred is Servicename with or without NamedPort. All others are just fallbacks,
+# for things you might not have under your control or located outside.
+# - Mandatory in case of service
+talks_to:
+    - BIL
+    - PRN:Print
+    - UBR:3000
+    - 192.168.178.2:100
+
+# In which network zone am I located. This can be interesting for hardware firewalls.
+# - Values can be anything, what fits for you is right.
+# - Optional
+Network_zone:
+    BACKEND
+
+# This should not happen, but reality is: You have deployment dependencies
+# which you can&#39;t fix in the near future. So we want to declare the Service names you need.
+# - Values can be any other Servicename.
+# - Optional
+Needs_to_be_deployed_before:
+    USR
+
+# I belong to the following context. This is used to get a better overview.
+# - Values can be anything, what fits for you is right.
+# - Optional
+Belongs_to_Bounded_Context:
+    Delivery
+
+# Defining how the machine/container should look like (virtual) hardware wise.
+# - Values can be anything, what fits for you is right.
+# - Optional
+runtime:
+  cpu: L
+  ram: S
+  disk: XL
+</code></pre><p>As I came up with my fictional example and trying to figure out what information we would require to have I thought this whole thing is totally customisable by the user. Almost all parameters are optional. The tool should work like this:</p>
+<ol>
+<li>A <strong>client</strong> runs in the source directory of the software and can <strong>gather (or not) additional information</strong>. It might transform a yaml file (like we choose to do) into json, enrich it with generated license and vcs information and upload it to a server. This client <strong>could also be just a curl</strong> command and just reading in a file in json format.</li>
+<li>The <strong>server indexes it</strong> and provides an api to access the data.</li>
+<li><strong>Other clients</strong> query the server and <strong>generate</strong> firewall rules, docker-compose files, visualizes the architecture, list all services and their description and so on.</li>
+<li>The <strong>format needs to be flexible</strong> and I do not want to force anybody to use things which might not be interesting for them. So we settled for now as mandatory attributes: ID, Name, Type, Team, Description, VCS. This is the minimal information we need. I guess we need to discuss the VCS when we want to model our whole architecture which includes a commercial database.</li>
+<li>The server <strong>accepts everything in json</strong> which has the mandatory fields. Your client needs to make sense of it. We want to provide a recommended set of data structure and some clients which do something useful with it.</li>
+</ol>
+<h2 id="current-work">Current work.</h2>
+<p>This is work in progress and we coded a few hours on a prototype to see if this is doable. We see this tool to serve multiple goals:</p>
+<ol>
+<li><strong>Document</strong> your microservices</li>
+<li><strong>Visualize</strong> your Architecture</li>
+<li><strong>Generate</strong> data for your infrastructure (firewall, docker-compose, etc)</li>
+<li><strong>Find</strong> used libraries (with security problems)</li>
+</ol>
+<p>We already made some progress  and even got some cool visualization. D3 is cool if you know how to use it (or just stackoverflow it).</p>
+<p><img src="/static/arc-viz.png" alt="Monolith"></p>
+<p>We have tons of ideas what might be possible with that. But first things first.</p>
+<p><strong>Thanks for your time and for reading so far</strong>. I would love to know :</p>
+<ul>
+<li>What do you think of all this?</li>
+<li>How do you handle the above questions?</li>
+<li>Which tools do you use?</li>
+<li>What other use case do you have?</li>
+<li>Would be something like this interesting to you? I love coding but I&rsquo;m happy to use a better tool if you know one.</li>
+<li>Would that be interesting if we open source it ?</li>
+</ul>
+<p>Any thoughts ?</p>
+<p>Oliver</p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/microservice"
+      >microservice</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/architecture"
+      >architecture</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/documentation"
+      >documentation</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/generate"
+      >generate</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/der-real-life-check/"
+      ><span class="mr-1.5">←</span><span>Der Real-Life-Check</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/entwicklung-verteilter-systeme-herausforderungen-nicht-nur-an-die-architektur/"
+      ><span>Entwicklung verteilter Systeme - Herausforderungen nicht nur an die Architektur</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2009 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

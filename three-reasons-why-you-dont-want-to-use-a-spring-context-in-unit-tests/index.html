@@ -1,0 +1,337 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Three reasons why you don&#39;t want to use a Spring context in unit tests - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="You use Spring in your application everywhere. You love it. Everything gets injected and is configured by Spring. Great. Why not use the same technology to wire up your tests?
+The bottom line is: Starting the Spring Context all the time in your tests drags you down at the costs of development time.
+Here is why:
+1. Turnaround times are much faster
+When you discover a bug which might have not been covered by tests yet (this happens to me all the time) you are much faster rerunning your tests without the application context." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Three reasons why you don&#39;t want to use a Spring context in unit tests</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Feb 25, 2009</time>
+      
+      
+      
+      
+      <span class="text-gray">- 5 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>You use Spring in  your application everywhere. You love it. Everything gets injected and is configured by Spring. Great. Why not use the same technology to wire up your tests?</p>
+<p>The bottom line is: Starting the Spring Context all the time in your tests drags you down at the costs of development time.</p>
+<p>Here is why:</p>
+<p><strong>1. Turnaround times are much faster</strong></p>
+<p>When you discover a bug which might have not been covered by tests yet (this happens to me all the time) you are much faster rerunning your tests without the application context. In the application I&rsquo;m working on it takes about 20-25 seconds to run a test with application context, whereas a pure unit test just takes 1 second. Now imagine this: changing some code and rerunning tests like 100 times saves you a lot of time. The <strong>tests run faster</strong>, you <strong>don&rsquo;t get distracted</strong> because you could do something else in those 20-25 seconds, like browsing some web pages (you want to be efficient and use the &lsquo;spare&rsquo; time to read up the newest stories on infoq.com). But then you need to switch windows, read something, switch back, wonder what you did, rethink the problem and so on. In the end it costs you much more time than it  seems.</p>
+<p><strong>2. Enables you pratice Test Driven Development</strong></p>
+<p>Since you can run test faster without the Spring context, you can start doing Test Driven Development. Before any line of production code gets typed into your IDE, write the test. That the code does not compile is the first test, go fix it by writing the actual stub for the class which you want to test. Now onto the next test. It fails, you implement the feature and rerun the test. This goes on and on and on until you fully implemented the requirements. It forces you <strong>only to implements the things needed</strong> and not more.</p>
+<p>Uncle Bob&rsquo;s three rules of Test Driven Development</p>
+<ol>
+<li>You are not allowed to write any production code unless it is to make a failing unit test pass.</li>
+<li>You are not allowed to write any more of a unit test than is sufficient to fail; and compilation failures are failures.</li>
+<li>You are not allowed to write any more production code than is sufficient to pass the one failing unit test.</li>
+</ol>
+<p>Learn more about <a href="http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd">Test Driven Development</a> with Uncle Bob.</p>
+<p>Without fast unit tests you just can&rsquo;t do TDD.</p>
+<p>**3. No corrupt test configuration
+**</p>
+<p>Depending on the setup of the project you might have an extra Spring application context configuration for tests. You have to configure and keep it up to date. Things can go wrong here and will be detected very late.
+If you use the application context in tests you get the beans injected but sometimes you need to mock them, because you depend on an application server, a database or an external service which you don&rsquo;t want to start up every time you run tests. You must be very careful with that. Using <strong>mocks</strong> with Spring application context can be <strong>very powerful but also very dangerous</strong>. You have to make sure that you remove the mocks after you are done with your tests (and reinject the right ones) or mark the methods which are injecting mocks with the DirtiesContext annotation so Spring can reload them.  I did debug forgotten DirtiesContext annotations one too many times. The mock object lives on in your context and 282 test later an exception occurs for no reason and you start debugging at a  wrong place.
+You will not discover those mock problems until you run the full suite of tests. Since your <strong>tests are slow</strong> you not very likely to run all the on a regular basis to see if everything  plays well together.  No, you run all tests <strong>right before checkin</strong> and then start to wonder why some tests somewhere <strong>fail</strong>. Depending on the size of the changes and the project it will require some substantial amount of time to find and fix the problem.</p>
+<p>You might say: &ldquo;But I need my application context in the tests. My Service which I want to test has so many dependencies, I just can&rsquo;t mock them all!&rdquo;</p>
+<p>While this happened to me as well it might turn out that this service is maybe doing too much. Split the functionality  into smaller packages and test them individually (that&rsquo;s the S in <a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod">SOLID</a> principles). The danger in testing a complex service with mocks only is also that you might end up mocking everything and you don&rsquo;t do any real tests anymore (happened to me, I threw hours of coding away).</p>
+<p>There is one reason to run tests with a Spring application context. It&rsquo;s just not in unit tests. If you want to test the integration with external services (like databases or webservices) you need to use it  of course. Just make sure you really just test the interaction between your service and the external interface and not more (but even that is debatable in some cases). That&rsquo;s what I call an integration test.</p>
+<p>Do you use Spring in your unit tests? What experiences did you make?</p>
+</section>
+
+
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/why-our-current-sprint-commitment-will-fail/"
+      ><span class="mr-1.5">←</span><span>Why our current Sprint commitment will fail</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/sorting-your-properties-files-in-intellij-idea/"
+      ><span>Sorting your properties files in IntelliJ Idea</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,475 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Spring 3 MVC, Ajax and jQuery Magic (or better: simplicity) - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="I&#39;m playing around with some web frameworks lately and to see what&#39;s in store with Spring 3 MVC (never did too much with it) I gave it a try to see how it handles Ajax. According to ajax simplification announcement it should be possible to get up and running in (almost) no time. We will do a simple web application which will show the current time via Ajax. The directory layout (using maven) should look like this: web." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Spring 3 MVC, Ajax and jQuery Magic (or better: simplicity)</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Jul 20, 2010</time>
+      
+      
+      
+      
+      <span class="text-gray">- 3 min</span>
+    </div>
+    
+  </header>
+
+  <section>
+
+
+I'm playing around with some web frameworks lately and to see what's in store with Spring 3 MVC (never did too much with it) I gave it a try to see how it handles Ajax. According to <a href="http://blog.springsource.com/2010/01/25/ajax-simplifications-in-spring-3-0/">ajax simplification announcement</a> it should be possible to get up and running in (almost) no time.
+
+<!-- raw HTML omitted -->
+<p>We will do a simple web application which will show the current time via Ajax.
+
+
+
+The directory layout (using maven) should look like this:<img alt="Directory Layout" src="/static/Spring3MVCFiles.png" title="Ajax result" width="329" height="308" />
+web.xml
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;web-app</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://java.sun.com/xml/ns/javaee&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">xmlns:web=</span><span style="color:#e6db74">&#34;http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;WebApp_ID&#34;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;2.5&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;display-name&gt;</span>Spring3MVC<span style="color:#f92672">&lt;/display-name&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;welcome-file-list&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;welcome-file&gt;</span>index.jsp<span style="color:#f92672">&lt;/welcome-file&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/welcome-file-list&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;servlet&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;servlet-name&gt;</span>spring<span style="color:#f92672">&lt;/servlet-name&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;servlet-class&gt;</span>
+</span></span><span style="display:flex;"><span>			org.springframework.web.servlet.DispatcherServlet
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;/servlet-class&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;load-on-startup&gt;</span>1<span style="color:#f92672">&lt;/load-on-startup&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/servlet&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;servlet-mapping&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;servlet-name&gt;</span>spring<span style="color:#f92672">&lt;/servlet-name&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;url-pattern&gt;</span>*.html<span style="color:#f92672">&lt;/url-pattern&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/servlet-mapping&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/web-app&gt;</span>
+</span></span></code></pre></div><p>The web.xml holds no secrets. The Dispatcher servlet is defined and it should react on everything *.html.</p>
+<p>Since we named our Servlet &lsquo;spring&rsquo; we need to add a servlet configuration for that. It goes in WEB-INF as well.</p>
+<p>xml</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;beans</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">xmlns:p=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/p&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">xmlns:context=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/context&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		http://www.springframework.org/schema/context
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">		http://www.springframework.org/schema/context/spring-context-3.0.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;context:component-scan</span> <span style="color:#a6e22e">base-package=</span><span style="color:#e6db74">&#34;com.maxheapsize.springmvc3.controller&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;viewResolver&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;org.springframework.web.servlet.view.UrlBasedViewResolver&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;viewClass&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;org.springframework.web.servlet.view.JstlView&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;prefix&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;/WEB-INF/jsp/&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;suffix&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;.jsp&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/bean&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/beans&gt;</span>
+</span></span></code></pre></div><p>It uses the component scanning feature of spring and instructs spring to check the package &lsquo;com.maxheapsize.springmvc3.controller&rsquo; for controllers. Furthermore a url based view resolver is defined which uses Jstl and looks into /WEB-INF/jsp for jsp with the ending &lsquo;.jsp&rsquo;.</p>
+<p>In  WEB-INF/jsp/hello.jsp we define a jQuery snippet for the Ajax request and provide a button which we should push if we want to know the time.</p>
+<p>jsp hello.jsp</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;jsp:useBean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;message&#34;</span> <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;request&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;java.lang.String&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;html&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;head&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;title&gt;</span>Spring MVC Ajax Demo<span style="color:#f92672">&lt;/title&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;script</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;scripts/jquery.js&#34;</span><span style="color:#f92672">&gt;&lt;/script&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;script</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    function doAjax() {
+</span></span><span style="display:flex;"><span>      $.ajax({
+</span></span><span style="display:flex;"><span>        url: &#39;time.html&#39;,
+</span></span><span style="display:flex;"><span>        data: ({name : &#34;me&#34;}),
+</span></span><span style="display:flex;"><span>        success: function(data) {
+</span></span><span style="display:flex;"><span>          $(&#39;#time&#39;).html(data);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/script&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/head&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;body&gt;</span>
+</span></span><span style="display:flex;"><span>${message}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;button</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;demo&#34;</span> <span style="color:#a6e22e">onclick=</span><span style="color:#e6db74">&#34;doAjax()&#34;</span> <span style="color:#a6e22e">title=</span><span style="color:#e6db74">&#34;Button&#34;</span><span style="color:#f92672">&gt;</span>Get the time!<span style="color:#f92672">&lt;/button&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;time&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/body&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/html&gt;</span>
+</span></span></code></pre></div><p>How does Spring now know which classes or methods to call? Here comes the nice part about it.</p>
+<p>java HelloWorldController.java</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.maxheapsize.springmvc3.controller;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Controller;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestMapping;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestMethod;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestParam;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.ResponseBody;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.servlet.ModelAndView;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Date;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Controller</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorldController</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@RequestMapping</span>(<span style="color:#e6db74">&#34;/hello&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> ModelAndView <span style="color:#a6e22e">helloWorld</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ModelAndView(<span style="color:#e6db74">&#34;hello&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>, <span style="color:#e6db74">&#34;Spring MVC Demo&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@RequestMapping</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/time&#34;</span>, method <span style="color:#f92672">=</span> RequestMethod.<span style="color:#a6e22e">GET</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">@ResponseBody</span> String <span style="color:#a6e22e">getTime</span>(<span style="color:#a6e22e">@RequestParam</span> String name) {
+</span></span><span style="display:flex;"><span>    String result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Time for &#34;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; is &#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">toString</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> result;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The RequestMappings define the Url&rsquo;s which can be called to reach that code. So the helloWorld method is available with &lsquo;hello.html&rsquo; in the web app. Why hello.html and not just hello ? Because we said so in the web.xml. I included a sample message which will be shown at the web  page when this method is called.</p>
+<p>If you now push the button on the webpage, &rsquo;time.html&rsquo; with a parameter &rsquo;name&rsquo; is called. This will go directly to the second method. Spring will also check if a string parameter &rsquo;name&rsquo; (@RequestParam) is present in the original request. The @ResponseBody annotation  indicates that a method return value should be bound to the web response body.</p>
+<p>The result will be returned and shown in the webpage.
+
+
+
+<img alt="Ajax Result" src="/static/Spring3MVCAjax.png" title="Ajax result" width="554" height="83" />
+</p>
+<p>Overall this is a pretty nice integration. I tend to use Spring for many projects and this makes it even easier to write some nice web apps in it. If you have a single page application and all you do is sending ajax request back and forth this might be a solution.</p>
+<p><!-- raw HTML omitted -->JSON response Update<!-- raw HTML omitted --></p>
+<p>To get a JSON response from your Controller you need to:
+
+
+
+<ol>
+<li>Make sure the jackson mapper is present in your classpath. Maven users use:
+``` xml
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+      <version>1.5.3</version>
+    </dependency>
+```
+
+in their pom.xml.
+</li>
+<li>MySimpleDataObject is a Pojo</li>
+<li>The method you are calling has a signature like:
+
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/demo&#34;</span>, method<span style="color:#f92672">=</span> RequestMethod.<span style="color:#a6e22e">GET</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">@ResponseBody</span> MySimpleDataObject <span style="color:#a6e22e">doSomething</span>(<span style="color:#a6e22e">@RequestParam</span> name, <span style="color:#a6e22e">@RequestParam</span> email)
+</span></span></code></pre></div><!-- raw HTML omitted -->
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/spring3"
+      >Spring3</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/mvc"
+      >MVC</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/jquery"
+      >jQuery</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/one-assert-per-test-really/"
+      ><span class="mr-1.5">←</span><span>One assert per test, really</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/busy-programmers-guide-on-where-to-buy-ebooks/"
+      ><span>Busy Programmers Guide on where to buy eBooks</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

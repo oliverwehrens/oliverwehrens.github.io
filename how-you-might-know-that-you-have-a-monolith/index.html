@@ -1,0 +1,340 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>How you might know that you have a monolith - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="You start your green field project and keep working on it. It grows and grows and grows. You feel comfortable with it and it could not be better. Because more needs to be done/the product is successful another team is added.
+If this new team starts complaining that the setup if very complicated and they do take a lot of time to get started: Listen carefully. Of course everybody will complain if they get thrown into another code base, nobody understands the code and of course everybody would have it done differently." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">How you might know that you have a monolith</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Oct 3, 2014</time>
+      
+      
+      
+      
+      <span class="text-gray">- 2 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>You start your green field project and keep working on it. It grows and grows and grows. You feel comfortable with it and it could not be better. Because more needs to be done/the product is successful another team is added.</p>
+<!-- raw HTML omitted -->
+<p><img src="/static/monolith150150.jpg" alt="Monolith"></p>
+<p>If this <strong>new team starts</strong> complaining that the setup if very complicated and they do take a lot of time to get started:
+<strong>Listen carefully</strong>. Of course everybody will complain if they get thrown into another code base, nobody understands the code and of course everybody would have it done differently.</p>
+<p>There is a good chance that they say something which you don&rsquo;t like to hear and <strong>they are right about it</strong>. You have built a piece of software which grew very large and maybe a single person can not understand the code base anymore.</p>
+<p>If you think you have a modular software project but you need to bring everything together to test things out they might be right about it.</p>
+<p>Don&rsquo;t get into a fight with the other team and insist that you are right (since you know how things work) and they are wrong. It is way to <strong>easy too get upset</strong> if somebody does not like your baby and critize it. The other team want&rsquo;s to help and will very likely stay longer on the project. They are not dumb people so listen to their problems carefully. It&rsquo;s like a code and architecture review from outside your tunnel. <strong>Don&rsquo;t ignore the valuable information you can gather</strong>.</p>
+<p>If they do complain about how all things assembled and deployed at the end and that this takes very long and is compliacted &hellip; <strong>you might have built a monolith</strong>. You might not have seen it that way because you are just used to it.</p>
+<p>YMMV
+
+
+<small>(Picture by <a href="https://www.flickr.com/photos/wwward0/13233527895/in/photolist-maphN4-6YWSLK-4h6k-8zAydR-5mtbMq-aRBpj8-hV5Cms-hSTpRS-5fgZ1r-6E3y1j-84ynMr-5DRLd1-5eiMLK-QZ5zb-wZngC-9Uq8Zd-5DRLcq-nb9v27-hSShNW-4sk5S1-e7r1QM-5QNzVv-7sNicm-dN1TUs-6YWY3X-6YWWCv-gpVW66-6YWPbx-6YWTcc-QVvZh-jjzBWg-jahqpB-j2Y1XA-aRq6jg-5fmtnW-qKNC5-7Tn8wM-6FBfAK-akn7u2-4aMBK-628hS-i1CHCs-3dopVB-6293X-6293R-6293U-btgyyH-6YWX4Z-auKxW8-akpUGj">Billie Ward</a>.)</small>
+</p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/monolith"
+      >monolith</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/architecture"
+      >architecture</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/a-monolith-could-be-good-for-you/"
+      ><span class="mr-1.5">←</span><span>A Monolith could be good for you</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/how-failing-tests-can-be-green/"
+      ><span>How failing tests can be green</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2009 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

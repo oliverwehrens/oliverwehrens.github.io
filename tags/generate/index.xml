@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Generate on Oliver Wehrens</title>
+    <link>http://localhost:1313/tags/generate/</link>
+    <description>Recent content in Generate on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/generate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How is your microservice architecture doing?</title>
+      <link>http://localhost:1313/how-is-your-microservice-architecture-doing/</link>
+      <pubDate>Fri, 15 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/how-is-your-microservice-architecture-doing/</guid>
+      <description>It all started when my new boss stepped into my door and asked me if I had a clue how our system was working. In an ideal world we would have teams and developers who work on a isolated context with clear boundaries. They develop, test, deploy, monitor and operate everything by themselves. They are on 24/7 call and therefore they do everything possible that nothing fails. The system is stable and brings in the money.</description>
+    </item>
+  </channel>
+</rss>

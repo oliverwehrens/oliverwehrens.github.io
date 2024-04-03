@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Agile Scrum Fail on Oliver Wehrens</title>
+    <link>http://localhost:1313/categories/agile-scrum-fail/</link>
+    <description>Recent content in Agile Scrum Fail on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Mar 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/agile-scrum-fail/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why our current Sprint commitment will fail</title>
+      <link>http://localhost:1313/why-our-current-sprint-commitment-will-fail/</link>
+      <pubDate>Thu, 05 Mar 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/why-our-current-sprint-commitment-will-fail/</guid>
+      <description>We do have our Sprint Review tomorrow. We will not meet our commitment. Bummer.&#xA;What happened?&#xA;After the planning we did the breakdown of almost all stories. We had 5 Stories and another epic. As we did the epic breakdown we knew that we could not nail down every task since it was clear that some refactoring along the user story would be needed. So we marked one card in that story to remind us that we need to break things further down and refine the tasks.</description>
+    </item>
+  </channel>
+</rss>

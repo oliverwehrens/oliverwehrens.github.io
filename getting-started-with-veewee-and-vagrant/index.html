@@ -1,0 +1,389 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Getting started with veewee and vagrant - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="What do you need to do to get a fully automated kickstart of a virtual machine on your local development platform running? Not much it turns out. There are some tricks to get around but after that it&rsquo;s all fine.
+The resulting image can also be used to get a system in production.
+I will look at the OS installation part. Puppet will come in a later post.
+Installation Tools we will play with:" />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Getting started with veewee and vagrant</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>May 26, 2013</time>
+      
+      
+      
+      
+      <span class="text-gray">- 3 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>What do you need to do to get a fully automated kickstart of a virtual machine on your local development platform running? Not much it turns out. There are some tricks to get around but after that it&rsquo;s all fine.</p>
+<!-- raw HTML omitted -->
+<p>The resulting image can also be used to get a system in production.</p>
+<p>I will look at the OS installation part. Puppet will come in a later post.</p>
+<h1 id="installation">Installation</h1>
+<p>Tools we will play with:</p>
+<ul>
+<li>rvm</li>
+<li>VirtualBox</li>
+<li>VeeWee</li>
+<li>Vagrant</li>
+</ul>
+<p>Simple first step: get <a href="https://www.virtualbox.org/">VirtualBox</a> from Oracle and instal it. Make sure you get the latest version.</p>
+<p>Next up is <code>rvm</code> the tool to manage the ruby version your ruby code needs (or so). <a href="https://rvm.io/rvm/install/">Read about rvm</a>.</p>
+<pre tabindex="0"><code>$ \curl -L https://get.rvm.io | bash -s stable --ruby
+</code></pre><p>The above line will do the trick to get you the latest version of <code>rvm</code> installed. This may take a while.</p>
+<p>Now we come to the meat:</p>
+<blockquote>
+<p>VeeWee: the tool to easily build vagrant base boxes or kvm,virtualbox and fusion images</p>
+</blockquote>
+<p><code>VeeWee</code> will build the basebox containing our operating system which will be booted on the commandline in virtualbox via vagrant. ;-)</p>
+<p>VeeWee is written in ruby, so it&rsquo;s time to get your previously installed <code>rvm</code> in place.</p>
+<ol>
+<li>If you use rvm for the first time you might need to do an addtional install of the needed ruby version.</li>
+<li>Drink coffee</li>
+</ol>
+<p>As the docs of veewee mention:</p>
+<blockquote>
+<p>The Veewee project is moving quickly and the Rubygem might be outdated. We recommend installing Veewee from source.</p>
+</blockquote>
+<p>So your first steps would be:</p>
+<pre tabindex="0"><code>$ git clone https://github.com/jedi4ever/veewee.git
+$ cd veewee
+$ gem install bundler
+$ bundle install
+</code></pre><p>This takes a moment and you are all setup for building a basebox for vagrant fully automated.</p>
+<p>Still in the VeeWee source directory you can define boxes. They do have many templates available. Pick and choose you want to use from the <code>templates</code> directory. VeeWee will copy the template to the <code>definitions</code> directory.</p>
+<pre tabindex="0"><code>veewee vbox define &#39;CentOS-6.4-x86_64-minimal&#39; CentOS-6.4-x86_64-minimal
+</code></pre><p>If you issue now a</p>
+<pre tabindex="0"><code>veewee vbox build &#39;CentOS-6.4-x86_64-minimal&#39; --workdir=/Users/oliver/Source/veewee --nogui
+</code></pre><p>
+
+<img src="/static/veewee_install.png" alt="VeeWee installation" />
+
+It will build a minimal box with CentOS 6.4 in VirtualBox. If you want to see what it is doing don&rsquo;t run the above command with <code>--nogui</code>.</p>
+<p>VeeWee will download the Operation System iso image plus the GuestBoxAdditions. It will cache it for use with other definitions. Isos are placed in the <code>iso</code> directory.</p>
+<p>Drink a cup of coffee. This will take a while.</p>
+<p>After VeeWee is done the machine is running. You can ssh into it with:</p>
+<pre tabindex="0"><code>ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 7222 -l veewee 127.0.0.1
+</code></pre><p>You should not make any changes to it, just shut it down. Any manual change would defeat the principal of automating it.</p>
+<p>To export the box do a:</p>
+<pre tabindex="0"><code>veewee vbox export CentOS-6.4-x86_64-minimal
+</code></pre><p>Make sure you have the latest vagrant version installed. Sometimes it is picky about the VirtualBox Version.</p>
+<p>To import it into vagrant type:</p>
+<pre tabindex="0"><code>vagrant box add &#39;CentOS-6.4-x86_64-minimal&#39; &#39;/Users/oliver/Source/veewee/CentOS-6.4-x86_64-minimal.box&#39;
+</code></pre><p>To use it in any directory:</p>
+<pre tabindex="0"><code>vagrant init &#39;CentOS-6.4-x86_64-minimal&#39;
+vagrant up
+vagrant ssh
+</code></pre><p>This creates a default &lsquo;Vagrantfile` in this directory. It contains the definitions of the box, like image, network config and puppet config.
+After that it will create a Virtual Machine in VirtualBox and boot its up. Ssh to it and you are all set.</p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/test"
+      >test</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/development"
+      >development</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/using-kvm-and-virt-manager-via-xquartz-on-macosx-and-solving-the-keymapping-trouble/"
+      ><span class="mr-1.5">←</span><span>Using KVM and Virt-Manager via XQuartz on MacOSX (and solving the keymapping trouble)</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/from-development-to-production/"
+      ><span>From Development to Production</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2009 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

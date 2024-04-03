@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Architecture on Oliver Wehrens</title>
+    <link>http://localhost:1313/tags/architecture/</link>
+    <description>Recent content in Architecture on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why you need a macro architecture</title>
+      <link>http://localhost:1313/why-you-need-a-macro-architecture/</link>
+      <pubDate>Sun, 17 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/why-you-need-a-macro-architecture/</guid>
+      <description>Eberhard Wolff on LinkedIn asked recently: &amp;lsquo;What was the biggest mistake you witnessed or did?&amp;rsquo; (in software architecture).&#xA;The one thing which came to my mind is that at one point we did not have a shared understanding how we should build our system back when I was working at DHL E-POST. This was in ~ 2014. We split the monolith in multiple services. Every team (we had 10 teams) was doing it how they thought it would be good.</description>
+    </item>
+    <item>
+      <title>What does it take to become a software architect?</title>
+      <link>http://localhost:1313/what-does-it-take-to-become-a-software-architekt/</link>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/what-does-it-take-to-become-a-software-architekt/</guid>
+      <description>I got together with Eberhard Wolff to discuss and answer questions about what it takes to become a Software Architekt on Software Architektur TV. He was asked by several people what kind of skills a software architect needs, how a recruitment process might look or what kind of advice he could give to students to become an architect. So we got together and talked about it with live questions from the audience.</description>
+    </item>
+    <item>
+      <title>Technical Agility</title>
+      <link>http://localhost:1313/technical-agility/</link>
+      <pubDate>Sat, 21 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/technical-agility/</guid>
+      <description>I was giving a talk at an internal event of a consulting firm on Technical Agility. Here are my experiences and ideas on that topic.&#xA;I will touch on&#xA;What Why Where How ( &amp;amp; How to measure) I will only touch on technical aspects of this topic. There is so much more to it like organization, team structure, culture and trust.&#xA;The ability to react to changes is the reason I want to have Technical Agility.</description>
+    </item>
+    <item>
+      <title>CD und DevOps im Expertencheck</title>
+      <link>http://localhost:1313/cd-und-devops-im-expertencheck/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cd-und-devops-im-expertencheck/</guid>
+      <description>Grau ist alle Theorie. Wir haben daher verschiedene Experten zum Thema Continuous Delivery und DevOps befragt – wir wollten wissen, wie ihre Erfahrungen mit den eigenen Teams und Unternehmen verlaufen sind. Oft stellte sich heraus, dass die Technik an sich nicht das größte Problem ist.&#39;</description>
+    </item>
+    <item>
+      <title>Warum wir auf DevOps setzen</title>
+      <link>http://localhost:1313/warum-wir-auf-devops-setzen/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/warum-wir-auf-devops-setzen/</guid>
+      <description>Die Konkurrenz ist groß, jeder will beim Ausliefern der Software der schnellste sein. Warum wir dabei auf DevOps setzen? Das sind die Argumente.</description>
+    </item>
+    <item>
+      <title>Service Discovery For Machines And Humans</title>
+      <link>http://localhost:1313/service-discovery-for-machines-and-humans/</link>
+      <pubDate>Wed, 01 Feb 2017 20:54:58 +0100</pubDate>
+      <guid>http://localhost:1313/service-discovery-for-machines-and-humans/</guid>
+      <description>My slides from the OOP 2017 conference.&#xA;Abstract: Combining Continuous Deployment and a Microservice architecture brings new challenges to develop and operate your platform. A service discovery enables you to build a flexible system. Developers need to have an up to date view on the deployed services as well. A human readable registry with relevant information is needed. I will outline what we solved with a Service Registry and what impact it had on our architecture.</description>
+    </item>
+    <item>
+      <title>Microservices bei der E-POST</title>
+      <link>http://localhost:1313/microservices-bei-der-e-post/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/microservices-bei-der-e-post/</guid>
+      <description>Microservices sind in aller Munde, und auf Konferenzen versprechen Migrationsszenarien und technische Details gut besuchte Vorträge. Eine Folie, die fast immer auftaucht, ist eine Feststellung von Melvin Conway aus dem Jahr 1968, die besagt, dass „Organisationen, die Systeme entwerfen, […] auf Entwürfe festgelegt sind, welche die Kommunikationsstrukturen dieser Organisationen abbilden.“ (Conways Law). Das heißt konkret, dass sich die Organisation der Firma und der Teams ­direkt auf den Code und die Architektur auswirkt.</description>
+    </item>
+    <item>
+      <title>Der Real-Life-Check</title>
+      <link>http://localhost:1313/der-real-life-check/</link>
+      <pubDate>Sun, 01 May 2016 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/der-real-life-check/</guid>
+      <description>Über Microservices wird momentan viel in Theorie geschrieben und gesprochen. Doch wie sieht es in der wahren Welt dort draußen aus? Wir haben die Autoren dieses Themenschwerpunkts und weitere Experten aus der Branche gefragt, wie ihre Microservices-Erfahrungen aus der Praxis sind.</description>
+    </item>
+    <item>
+      <title>How is your microservice architecture doing?</title>
+      <link>http://localhost:1313/how-is-your-microservice-architecture-doing/</link>
+      <pubDate>Fri, 15 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/how-is-your-microservice-architecture-doing/</guid>
+      <description>It all started when my new boss stepped into my door and asked me if I had a clue how our system was working. In an ideal world we would have teams and developers who work on a isolated context with clear boundaries. They develop, test, deploy, monitor and operate everything by themselves. They are on 24/7 call and therefore they do everything possible that nothing fails. The system is stable and brings in the money.</description>
+    </item>
+    <item>
+      <title>Entwicklung verteilter Systeme - Herausforderungen nicht nur an die Architektur</title>
+      <link>http://localhost:1313/entwicklung-verteilter-systeme-herausforderungen-nicht-nur-an-die-architektur/</link>
+      <pubDate>Tue, 29 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/entwicklung-verteilter-systeme-herausforderungen-nicht-nur-an-die-architektur/</guid>
+      <description>This is my talk about Development of distributed systems - challenges not only for the architecture. You guessed it, it is in german. I gave this talk at BedCon 2015 and I will talk about it again at the Architecture Gathering 2015 in Munich on October 22nd.&#xA;Abstract:&#xA;Jede Platform wächst mit der Zeit. Mehr Entwickler mit noch mehr Ideen und Vorstellungen arbeiten alle gemeinsam an der Weiterentwicklung. Das System wird größer und auf viele Systeme verteilt.</description>
+    </item>
+    <item>
+      <title>Migrating a monolith</title>
+      <link>http://localhost:1313/migrating-a-monolith/</link>
+      <pubDate>Thu, 09 Oct 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/migrating-a-monolith/</guid>
+      <description>If you start, a monolith is much easier to begin with. Everything is in one place, it&amp;rsquo;s fast and all team members understand the code. If you plan your application from the start as distributed system in a microservice like style, you add some significant overhead. Don&amp;rsquo;t do it, monoliths have their advantages at some point. If another team start with the same project or more functionality is added, splitting up the monolith might be a way to go.</description>
+    </item>
+    <item>
+      <title>If you don&#39;t fight it you end up with a monolith</title>
+      <link>http://localhost:1313/if-you-dont-fight-it-you-end-up-with-a-monolith/</link>
+      <pubDate>Tue, 07 Oct 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/if-you-dont-fight-it-you-end-up-with-a-monolith/</guid>
+      <description>You planned your software. You talked to your business owners. As soon as you saw a new use case which should be implemented, you modularized it. You did everything right. And then you hit the integration layer. Sounds familiar?&#xA;At some point in your project you need to integrate all modules with each other. In case of a website you need to produce HTML.&#xA;There are different approaches how to tackle this problem.</description>
+    </item>
+    <item>
+      <title>A Monolith could be good for you</title>
+      <link>http://localhost:1313/a-monolith-could-be-good-for-you/</link>
+      <pubDate>Mon, 06 Oct 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/a-monolith-could-be-good-for-you/</guid>
+      <description>Everybody says monolithic applications are bad. I usually hear things like:&#xA;Tiny changes need full redeployment (maybe even with downtime) Limited agility Easy to get a big ball of mud So why would you like to have a monolith?&#xA;There are many definitions of a monolithic application. There are tons for microservices.&#xA;A Monolith has it&amp;rsquo;s advantages. There are companies which are successful with monolithic applications.&#xA;You start faster. It&amp;rsquo;s one codebase.</description>
+    </item>
+    <item>
+      <title>How you might know that you have a monolith</title>
+      <link>http://localhost:1313/how-you-might-know-that-you-have-a-monolith/</link>
+      <pubDate>Fri, 03 Oct 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/how-you-might-know-that-you-have-a-monolith/</guid>
+      <description>You start your green field project and keep working on it. It grows and grows and grows. You feel comfortable with it and it could not be better. Because more needs to be done/the product is successful another team is added.&#xA;If this new team starts complaining that the setup if very complicated and they do take a lot of time to get started: Listen carefully. Of course everybody will complain if they get thrown into another code base, nobody understands the code and of course everybody would have it done differently.</description>
+    </item>
+    <item>
+      <title>Mit Puppet und RPM</title>
+      <link>http://localhost:1313/mit-puppet-und-rpm/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/mit-puppet-und-rpm/</guid>
+      <description>„It works on my machine“ hat sicher jeder schon einmal gehört. In der Entwicklung verhält sich die Software wie erwartet. Bis diese in der Produktion ist, dauert es lange. Einmal live, treten dann unerwartete Fehler auf, während die Softwareentwicklung längst an einer ganz anderen Stelle ist. Wie kann dieser Spagat umgangen werden? Dieser Artikel reflektiert, wie wir mit diesem Problem auf Basis einer paketorientierten Deployment Pipeline umgehen. </description>
+    </item>
+    <item>
+      <title>Realtime Push Events zum Browser</title>
+      <link>http://localhost:1313/realtime-push-events-zum-browser/</link>
+      <pubDate>Tue, 01 May 2012 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/realtime-push-events-zum-browser/</guid>
+      <description>WebSockets sind in aller Munde, im Java Magazin sind sie nun sogar Titelthema. Aber es geht auch einfacher: Wer Echtzeit-Events zum Browser schicken will, kann es sich leicht machen. Dieser Artikel zeigt, wie.</description>
+    </item>
+  </channel>
+</rss>

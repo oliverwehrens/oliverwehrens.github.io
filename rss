@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oliver Wehrens</title>
+    <link>https://example.org/</link>
+    <description>Recent content on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clean code ... should you DRY?</title>
+      <link>https://example.org/clean-code-should-you-dry/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/clean-code-should-you-dry/</guid>
+      <description>2008 Robert C. Martin published his book &amp;lsquo;Clean Code&amp;rsquo;. I was just starting my new job as Senior Software Developer at Hypoport. It was eye-opening. We discussed it in a tech department wide book circle, exchanged ideas of what things mean and agreed to some standards which are important to us.&#xA;Over the years, I learned that people took that as the bible. And it went further. My favourite example of taking it religiously is: Don&amp;rsquo;t repeat yourself (DRY).</description>
+    </item>
+    <item>
+      <title>Why you need a macro architecture</title>
+      <link>https://example.org/why-you-need-a-macro-architecture/</link>
+      <pubDate>Sun, 17 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/why-you-need-a-macro-architecture/</guid>
+      <description>Eberhard Wolff on LinkedIn asked recently: &amp;lsquo;What was the biggest mistake you witnessed or did?&amp;rsquo;.&#xA;The one thing which came to my mind is that at one point we did not have a shared understanding how we should build our system back when I was working at DHL E-POST. This was in ~ 2014. We split the monolith in multiple services. Every team (we had 10 teams) was doing it how they thought it would be good.</description>
+    </item>
+    <item>
+      <title>Can AI replace me as a consultant?</title>
+      <link>https://example.org/can-ai-replace-me-as-a-consultant/</link>
+      <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://example.org/can-ai-replace-me-as-a-consultant/</guid>
+      <description>I got recently asked if my job as a consultant in the tech, product and organizations development space, can be replaced by an AI.&#xA;I said, that I&amp;rsquo;m that arrogant to think that this is not possible.&#xA;After thinking about it for a few days I was wondering: Is that so?&#xA;Usually our customers call us to get help or for an outside view on their (digital) product development. This includes observing everything around product, technology &amp;amp; organization, help implementing improvements and enable the customer to be more effective and efficient after we leave.</description>
+    </item>
+    <item>
+      <title>Whisper: Nvidia RTX 4090 vs M1Pro with MLX (updated with M2/M3)</title>
+      <link>https://example.org/whisper-nvidia-rtx-4090-vs-m1pro-with-mlx/</link>
+      <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://example.org/whisper-nvidia-rtx-4090-vs-m1pro-with-mlx/</guid>
+      <description>(&amp;hellip; see down below for M2 Ultra / M3 Max Update and a Nvidia optimzied whisper)&#xA;Apple released a machine learning framework for Apple Silicon. Along with that are some examples to see how things are working. They also use a whisper for benchmarking. So I dug out my benchmark and used that to measure performance.&#xA;I simply added a new file to the repo (and the whisper large model was already downloaded).</description>
+    </item>
+    <item>
+      <title>Artifacts for effective alignment</title>
+      <link>https://example.org/artifacts-for-effective-alignment/</link>
+      <pubDate>Tue, 31 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://example.org/artifacts-for-effective-alignment/</guid>
+      <description>In my professional life, I came across many different companies and organizations. The majority of those were digital companies with its own Tech and Product departments (and only there might the following text applicable). If you have not found your product/market fit, it might be a different game. But if you have, read on.&#xA;One of the biggest complications was always the alignment of where to go and how to get there.</description>
+    </item>
+    <item>
+      <title>Podcast time</title>
+      <link>https://example.org/podcast-time/</link>
+      <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://example.org/podcast-time/</guid>
+      <description>No, I did not start my own. Ivan of dev.env podcast invited me to talk about how I got there, where I am. Thanks for having me Ivan. It was fun.&#xA;Sorry, German only.&#xA;https://shows.acast.com/dev-env/episodes/18-oliver-wehrens</description>
+    </item>
+    <item>
+      <title>OpenAI Whisper Performance on Nvidia RTX 4090</title>
+      <link>https://example.org/whisper-performance-on-nvidia-rtx-4090/</link>
+      <pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://example.org/whisper-performance-on-nvidia-rtx-4090/</guid>
+      <description>Short update on my performance series on OpenAI Whisper running on T4 / A100 and Apple Silicon.&#xA;I got my hands on a Nvidia RTX 4090 and ran a 3600 seconds audio file through it.&#xA;GPU 0 NVIDIA GeForce RTX 4090 Load Model at 2023-03-21 17:22:09.623805 Loading took 0:00:09.574030 started at 2023-03-21 17:22:19.197835 ended at 2023-03-21 17:25:25.905605 time elapsed: 0:03:06.707770 With the large model it makes a ~ 19.3 x speed up.</description>
+    </item>
+    <item>
+      <title>Semantic Search with Cosine Similarity</title>
+      <link>https://example.org/semantic-search-with-cosine-similarity/</link>
+      <pubDate>Thu, 23 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semantic-search-with-cosine-similarity/</guid>
+      <description>If you have a lot of text, how do you search though it? Keywords? What if these keywords never show up there? Imagine you want to know if Jerome Powell says something about &amp;lsquo;Inflation decrease&amp;rsquo; but he might not say the exact words? You will not find it. Databases like Meilisearch offer synonyms, but this can only take you so far.&#xA;Similarity Enter semantic search.&#xA;I first heard about it when I saw that OpenAI offers this.</description>
+    </item>
+    <item>
+      <title>OpenAI Whisper Benchmark Nvidia Tesla T4 / A100</title>
+      <link>https://example.org/openai-whisper-benchmark-on-nvidia-tesla-t4-a100/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://example.org/openai-whisper-benchmark-on-nvidia-tesla-t4-a100/</guid>
+      <description>In my previous article, I wondered how OpenAI Whisper C++ Edition on a MacBook Pro M1Pro stacks up against a CUDA card. I don&amp;rsquo;t have one, so I could not do the test.&#xA;Benchmarking Nvidia Tesla T4 Google Colab to the rescue. I totally forgot about it. I can run (for free) on an Nvidia T4. If you start a notebook for yourself, don&amp;rsquo;t forget to set the Runtime to GPU.</description>
+    </item>
+    <item>
+      <title>OpenAI Whisper on Apple M1</title>
+      <link>https://example.org/openai-whisper-on-apple-m1-cpp-version/</link>
+      <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://example.org/openai-whisper-on-apple-m1-cpp-version/</guid>
+      <description>OpenAI released Whisper in September 2022 as Open Source. To achieve good performance, you need an Nvidia CUDA GPU with &amp;gt; 8 GB VRAM.&#xA;Recently, Georgi Gerganov released a C++ port optimized for CPU and especially Apple Silicon Platform. So I tried this out.&#xA;I run all of that on a Macbook Pro with a M1Pro CPU (6 performance and 2 efficiency cores) and 32 GB RAM. I want to run one 10 minute audio file in German with different number of cores and different models (tiny, base, small, medium, large).</description>
+    </item>
+    <item>
+      <title>What does it take to become a software architect?</title>
+      <link>https://example.org/what-does-it-take-to-become-a-software-architekt/</link>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/what-does-it-take-to-become-a-software-architekt/</guid>
+      <description>I got together with Eberhard Wolff to discuss and answer questions about what it takes to become a Software Architekt on Software Architektur TV. He was asked by several people what kind of skills a software architect needs, how a recruitment process might look or what kind of advice he could give to students to become an architect. So we got together and talked about it with live questions from the audience.</description>
+    </item>
+    <item>
+      <title>How hands-on should a CTO be?</title>
+      <link>https://example.org/how-hands-on-should-a-cto-be/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://example.org/how-hands-on-should-a-cto-be/</guid>
+      <description>I got asked on LinkedIn, so here is my answer.&#xA;It depends (on the phase of the company).&#xA;I like Simon Wardley&amp;rsquo;s Mapping. He defines categories of company phases&#xA;Pioneers (searching for Product-Market Fit) Settlers (might have found Product-Market Fit) Town planners (Found something to grow) A job in an early startup is very different from a big corporation. I also assume that while going through the phases, the company grows.</description>
+    </item>
+    <item>
+      <title>Sketch Book Summary: No Estimates</title>
+      <link>https://example.org/sketch-book-summary-no-estimates/</link>
+      <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://example.org/sketch-book-summary-no-estimates/</guid>
+      <description>Here is my Sketch Book Summary of No Estimates by Vasco Duarte.</description>
+    </item>
+    <item>
+      <title>Four weeks of home office</title>
+      <link>https://example.org/four-weeks-of-home-office/</link>
+      <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://example.org/four-weeks-of-home-office/</guid>
+      <description>On March 12th we decided to send everybody into Home office. We were partially already working remotely but we never tried to be 100%. Now we were forced to.&#xA;As a summary: It works better than I expected. The remote work is not as much as a problem for everybody. Being stuck at home is.&#xA;Tools (don’t fix problems) We already had bits and pieces in place to enable remote collaboration.</description>
+    </item>
+  </channel>
+</rss>

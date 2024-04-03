@@ -1,0 +1,353 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Migrating a monolith - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="If you start, a monolith is much easier to begin with. Everything is in one place, it&rsquo;s fast and all team members understand the code. If you plan your application from the start as distributed system in a microservice like style, you add some significant overhead. Don&rsquo;t do it, monoliths have their advantages at some point. If another team start with the same project or more functionality is added, splitting up the monolith might be a way to go." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Migrating a monolith</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Oct 9, 2014</time>
+      
+      
+      
+      
+      <span class="text-gray">- 5 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>If you start, a monolith is much easier to begin with. Everything is in one place, it&rsquo;s fast and all team members understand the code.
+If you plan your application from the start as distributed system in a microservice like style, you add some significant overhead. Don&rsquo;t do it, <a href="/a-monolith-could-be-good-for-you/">monoliths have their advantages</a> at some point. If another team start with the same project or more functionality is added, splitting up the monolith might be a way to go. Looking at ways to migrate, you maybe can do some better  design decision to for you monolith.</p>
+<!-- raw HTML omitted -->
+<p>If you still <strong>try to find your domain model</strong> I would <strong>not recommend</strong> to migrate towards smaller services. It is very hard to move domain objects across service boundaries due to simple things like lacking IDE support. Make sure you understand your business before moving into that direction.</p>
+<p>Your monolith could be one of:</p>
+<ul>
+<li>one executable only</li>
+<li>multiple executables (services) but with heavy dependencies</li>
+</ul>
+<h1 id="how-to-move-away">How to move away</h1>
+<p>An identified <strong>bounded context</strong> would be a good candidate to start with isloating in a microservice. You usually find that talking (a lot) to a domain expert. From here onward, start migrating one after the other. A microservice does not have to be very very small in terms of code size. Things like: &lsquo;It must be 300 lines of code or less.&rsquo; does not help anybody. Let your new service do one thing and one thing only. This is a good start.</p>
+<p>Another way to start is to <strong>extract that what hurts the most</strong>. If one part of the software is constantly causing pain and slows you down, try to isolate the problem and migrate it. You can do that either in putting it in a new service or build a facade around it (anti corruption layer). This a way if you need to start very quickly to work with a legacy system. Don&rsquo;t forget later to either rip the functionality off the old service or if you understand the old legacy monolith better after some time, remove the facade and refactor the monolith.</p>
+<p>If you started building a monolith (which I would recommend in the most cases), you usually end up with something like <strong>shared services</strong> (but try to avoid it!). This is one of the <strong>hardest things</strong> to get rid of. It might not be even services but shared database views or things like shared enterprise service buses. You can tackle this problem if you establish a team which is responsible for that service. And this does not change. Not, Team A does this today, tomorrow Team B, and in 3 months Team C. No, the <strong>same Team will stay on it</strong> for a very long time. This will take a while, since this is usually a process of better understanding the business model and migrating the domain to the right places. As mentioned above, migrating domain objects over services border is possible, but you need to be patient and is not an easy task at all.</p>
+<h3 id="the-monolith-might-live-on">The monolith might live on</h3>
+<p>Some part of the <strong>monolith will survive</strong>. That&rsquo;s not so bad. It might be not worth the effort to split it up any further. If this part of your system does not change very often you can leave it that way. Just make sure you automate the deployment (which might be downtime deployment) and this could be ok.</p>
+<h3 id="communication">Communication</h3>
+<p>If you start with a bounded context of your application, what do you do? How does it <strong>communicate with the rest of your system</strong>? This can be a pain. Discovering how another system works can involve a lot of probing interfaces and testing responses. If changes to the API occur you might be in trouble. Good API design pays.</p>
+<p>An idea to solve this is to use a language agnostic approach like <strong>REST</strong>. Combined with <a href="http://en.wikipedia.org/wiki/HATEOAS"><strong>HATEOAS</strong></a> (<em>H</em>ypermedia <em>A</em>s <em>T</em>he <em>E</em>ngine <em>O</em>f <em>A</em>pplication <em>S</em>tate) it can lead to some powerful possibilities for service communication. Applications can detect where to go all by themselves. Changing urls for service would not matter anymore since everybody (hopefully) follows their links.</p>
+<p>This is of course theory and sound all too nice. You still maintain a contract, you define keywords which can&rsquo;t be changed if you want to provide the same functionality. You need to return a defined format from the API calls so the client knows what to do with it. You can&rsquo;t delete functionality but adding or modifying (limited) is possible without breaking the clients. By using HTTP you get a lot of functionality for free. Working with HTTP codes, content-types and links can save you a lot of effort. REST is not a silver bullet but for certain use cases it fits very well. If you have different requirements your mileage might vary.</p>
+<h3 id="moving-to-microservices">Moving to microservices</h3>
+<p>Of course there is some stuff you need to take care of. Moving to a distributed system will throw you into the realm of <strong>unreliable systems</strong>. Systems might go down, just starting or be running. You need to handle that. You need to make your system on an application layer much more robust. In a monolith everything is just there or not. Pretty simple. In a distributed system you need to :</p>
+<ul>
+<li>make sure your clients can handle the situation that another system is not available and can make sense of it</li>
+<li>you maybe need to do some intelligent way of handling request to a dead system with something like a circuit breaker pattern, otherwise the server which will startup again will be &lsquo;slashdotted&rsquo; (do you still say that?) by the queued request of the clients</li>
+</ul>
+<p><strong>Resilience</strong> just knocked on the door.</p>
+<p>The complexity of your system just moved one level up. The tools to do that are not yet on par with handling complexity in a monolith. Make a concious decision about it.</p>
+<p>It is a hard to do a migration. If you don&rsquo;t do it, your system might grow overly complex and nobody can handle it. With microservices your system will also be complex but on a different level. You need to handle the communication between the systems, but a team can at least understand one susbsystem all by themselves.</p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/monolith"
+      >monolith</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/architecture"
+      >architecture</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/wider-den-monolith-am-ende-wird-alles-gut/"
+      ><span class="mr-1.5">←</span><span>Wider den Monolith - Am Ende wird alles gut</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/if-you-dont-fight-it-you-end-up-with-a-monolith/"
+      ><span>If you don&#39;t fight it you end up with a monolith</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2009 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

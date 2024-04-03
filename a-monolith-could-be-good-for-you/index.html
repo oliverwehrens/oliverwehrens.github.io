@@ -1,0 +1,367 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>A Monolith could be good for you - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Everybody says monolithic applications are bad. I usually hear things like:
+Tiny changes need full redeployment (maybe even with downtime) Limited agility Easy to get a big ball of mud So why would you like to have a monolith?
+There are many definitions of a monolithic application. There are tons for microservices.
+A Monolith has it&rsquo;s advantages. There are companies which are successful with monolithic applications.
+You start faster. It&rsquo;s one codebase." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">A Monolith could be good for you</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Oct 6, 2014</time>
+      
+      
+      
+      
+      <span class="text-gray">- 3 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>Everybody says monolithic applications are bad. I usually hear things like:</p>
+<ul>
+<li>Tiny changes need full redeployment (maybe even with downtime)</li>
+<li>Limited agility</li>
+<li>Easy to get a big ball of mud</li>
+</ul>
+<p>So why would you like to have a monolith?</p>
+<!-- raw HTML omitted -->
+<p><img src="/static/monoliths.jpg" alt="Monolith"></p>
+<p>There are many definitions of a monolithic application. There are tons  for microservices.</p>
+<p>A Monolith has it&rsquo;s advantages. There are companies which are successful with monolithic applications.</p>
+<h1 id="you-start-faster">You start faster.</h1>
+<p>It&rsquo;s one codebase. All in one editor. Only one team working on it. Why would you split that into multiple projects, thinking about interfaces and deployment? If you start with a new project I would recommend to do it just like that. Dealing with multiple services right from the start adds overhead and complexity which you can avoid.</p>
+<h1 id="you-can-must-modularize-the-monolith">You <del>can</del> must modularize the monolith.</h1>
+<p>Even if everything is in one codebase, you can still structure it. Of course we all do it, right? In Java you typically use packages. One trap which you can easily fall into is to structure it along the technology. Does Frontend, Backend, Database sound familiar? I still see that very often, because as programmers we think in technology.</p>
+<p>Try to do it along business logic. This is much harder but it will make refactoring much easier because changing a thing in one business aspect  is much less likely to break another business case.</p>
+<p>Make use of things like private and package protected access. It&rsquo;s a great way to show the intent of the code to the reader.</p>
+<h2 id="testing-is-easier">Testing is easier.</h2>
+<p>Since all is in one place. Testing is much easier. It will be never easier than that.</p>
+<h2 id="deployment-is-easier">Deployment is easier.</h2>
+<p>It is one application. How hard could it be to deploy it. Sure it can be, but just like testing&hellip;it will just grow from here. Enjoy it while you can.</p>
+<h2 id="so-why-change-that">So why change that?</h2>
+<p>Good question.</p>
+<p>If you have a (relativly) small code base and one team. I guess it should stay like this.</p>
+<p>If the project grows in terms of team members, teams and/or code base you will start to have a new slew of problems.</p>
+<p>More people means, more intercation, more explaining, more code/architecture styles &hellip; well more of everything.</p>
+<p>At this point you might need to think about splitting the code. If you did the base work in the monolith already you might have a good start into the world of distributed systems. You need to carefully think about if you want to move the complexity one level up and how you will manage it there.</p>
+<p>If you did not modularize your monolith, you end up with <a href="http://www.codingthearchitecture.com/2014/07/06/distributed_big_balls_of_mud.html">big balls of distributed mud</a> later.</p>
+<blockquote>
+<p>If you can&rsquo;t build a monolith, what makes you think microservices are the answer?</p>
+</blockquote>
+<p>To cite Martin Fowler:</p>
+<blockquote>
+<p>First Law of Distributed Object Design: &ldquo;don&rsquo;t distribute your objects&rdquo;.</p>
+</blockquote>
+<p>It&rsquo;s hard.</p>
+<p>If you want to learn more about microservices and monoliths come and join us at the <a href="http://microxchg.io">microXchg 2015</a> community conference in February in Berlin, Germany.</p>
+<p><!-- raw HTML omitted -->Picture by <a href="https://www.flickr.com/photos/lamnatos/2266234773/in/photolist-4sg3Dk-2MKSNr-akQfJA-gtZneb-ef6qrS-4rXk8h-rVDD4-cykvPW-9iwEH1-g9b8zY-6YWSXZ-aFi219-9m8k-2Sx3D-hrLrEM-f4ADq8-5v9Mo5-8V9pVW-e9Wm3B-9ySZxU-4Xg2pr-9RGCGM-nyKzAC-7Uwrzi-6Z1RoS-9eWnWt-8NLpS2-6o1TD2-4AVGEW-99BadQ-rZFN8-9LCr5A-aWCXi4-2ixBeR-dYp5cN-acMxYe-iTx9TF-4xw2Bn-akDMXG-udUsG-5TxKx4-7aFXXn-4bi8H-8VQD1W-6TpC3E-6eiRbJ-nvgxnX-5mfGTh-8Ktoq-6dgxvy">Antonis Lamnatos</a> licensed under <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons 2.0</a><!-- raw HTML omitted --></p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/monolith"
+      >monolith</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/architecture"
+      >architecture</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/if-you-dont-fight-it-you-end-up-with-a-monolith/"
+      ><span class="mr-1.5">←</span><span>If you don&#39;t fight it you end up with a monolith</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/how-you-might-know-that-you-have-a-monolith/"
+      ><span>How you might know that you have a monolith</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2009 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

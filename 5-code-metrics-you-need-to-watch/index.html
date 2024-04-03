@@ -1,0 +1,381 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>5 code metrics you need to watch - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Developing software ain&rsquo;t easy.
+How do you know how you are doing ?
+You could start collecting metrics about your code. These can give you some indication how maintainable and reliable it is.
+The metric which come to mind to the most people is code coverage. Some people say it must be near 100%, other say 80% is a good number. At the end it can&rsquo;t tell you if you are doing great or good." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">5 code metrics you need to watch</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Feb 23, 2010</time>
+      
+      
+      
+      
+      <span class="text-gray">- 3 min</span>
+    </div>
+    
+  </header>
+
+  <section><p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>Developing software ain&rsquo;t easy.</p>
+<p>How do you know how you are doing ?</p>
+<p>You could start <!-- raw HTML omitted -->collecting metrics<!-- raw HTML omitted --> about your code. These can give you some indication how maintainable and reliable it is.</p>
+<p>The metric which come to mind to the most people is <!-- raw HTML omitted -->code coverage<!-- raw HTML omitted -->. Some people say it must be near 100%, other say 80% is a good number. At the end it can&rsquo;t tell you if you are doing great or good. The only thing you might read from it is that a <!-- raw HTML omitted -->low number<!-- raw HTML omitted --> indicates a <!-- raw HTML omitted -->potential problem<!-- raw HTML omitted -->.</p>
+<!-- raw HTML omitted -->
+<p>Duplication is another one you should look out for. A high number of <!-- raw HTML omitted -->duplicated code<!-- raw HTML omitted --> might bring up the problem that a bug was fixed in one place but lives on in other. If you are doing code generation (e.g. from WSDL&rsquo;s) you might have a lot of duplicated code reported to you. A closer inspection is needed to really make sure this is a problem in the code you have written and is not auto generated.</p>
+<p><!-- raw HTML omitted -->Test success<!-- raw HTML omitted --> is not a metric you should be worried to much about. It just needs to be <!-- raw HTML omitted -->100% <!-- raw HTML omitted -->at every checking in a shared repository. <!-- raw HTML omitted -->No discussion<!-- raw HTML omitted -->.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->Cyclomatic complexity<!-- raw HTML omitted --><!-- raw HTML omitted --> let&rsquo;s you measure the number of linearly independent paths through your code. A high number means a more complex code. A complex code base is hard to maintain and involves a lot of work to adopt it to new requirements.</p>
+<p>Dependencies between packages is another important value to check on (see <!-- raw HTML omitted -->Uncle Bob&rsquo;s paper on Acyclic Dependency Principle<!-- raw HTML omitted -->). Basically it revolves around that packages should not have <!-- raw HTML omitted -->cyclic dependencies<!-- raw HTML omitted --> between them since this does have an impact on releasing and testing (and therefore coding).  A change in one package could trigger a whole system build to make sure everything works together.</p>
+<p>Tools like Findbugs let you define rules to which your code should comply to. This is great because it is tailored to your code/company and ensures you control and fine tune the measures. Or so. It requires some time to define these rules. They need to be refined over time and you have to understand them to make use of it. Of course you can leave out some of these and reduce complexity. Do not underestimate the effort to implement these.</p>
+<p>This rounds up the metrics you can get from your code base.</p>
+<p>But wait, there is <!-- raw HTML omitted -->more<!-- raw HTML omitted -->.</p>
+<p>A valuable metric is the <!-- raw HTML omitted -->meantime between reporting<!-- raw HTML omitted --> a feature or bug <!-- raw HTML omitted -->and fixing<!-- raw HTML omitted -->. This gives your team (and management of course) a rough estimate how fast you can react to market changes.</p>
+<p>To get an estimate of the mean time before a failure happens you can <!-- raw HTML omitted -->measure the time between two bugs<!-- raw HTML omitted -->. The higher the number the better. Current reported bugs per lines of code can also be measured. These metrics will give you some confidence in your code base.</p>
+<p>At the end of the day the <!-- raw HTML omitted -->ultimate measure<!-- raw HTML omitted --> is the money on the company&rsquo;s bank account. If this is not working out you are in trouble.</p>
+<h2 id="how-to-get-all-of-these-">How to get all of these ?</h2>
+
+
+There are some static code analysis tools to get you started. I only can talk about Java related tools but there <a href="http://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis">are others</a> as well.
+<ul>
+	<li><a href="http://checkstyle.sourceforge.net/">Checkstyle</a></li>
+	<li><a href="http://findbugs.sourceforge.net/">FindBugs</a></li>
+	<li><a href="http://pmd.sourceforge.net/">PMD</a></li>
+	<li><a href="http://cobertura.sourceforge.net/">Cobertura</a></li>
+	<li><a href="http://www.headwaysoftware.com/products/structure101/index.php">Structure 101</a></li>
+	<li><a href="http://sonar.codehaus.org/">Sonar</a></li>
+</ul>
+
+<p>To get more information about your bugs should query your bug tracking system like <!-- raw HTML omitted -->Jira<!-- raw HTML omitted --> or <!-- raw HTML omitted -->Bugzilla<!-- raw HTML omitted -->.</p>
+<h2 id="summary">Summary</h2>
+<p>There are much more numbers out there but I think these are the ones you should always keep an eye on.</p>
+<p>Look out for
+
+
+
+<ul>
+	<li>Code Coverage</li>
+	<li>Duplication</li>
+	<li>Cyclomatic complexity</li>
+	<li>Cyclic dependencies</li>
+	<li>Test success</li>
+	<li>Time to market</li>
+	<li>Mean time between failure</li>
+</ul>
+What metrics do you look out for ? <strong>Let me know </strong> in in the comments and why.
+</p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/code"
+      >Code</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/metrics"
+      >Metrics</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/development"
+      >Development</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/how-we-switched-from-subversion-to-git/"
+      ><span class="mr-1.5">←</span><span>How we switched from Subversion to Git</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/name-your-objects-right/"
+      ><span>Name your objects right</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

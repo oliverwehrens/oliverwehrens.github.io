@@ -1,0 +1,449 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Using Selenium2 for web testing (and not Selenium IDE) - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Selenium IDE Selenium is well know for automatic testing web pages. It does support many browsers, operating systems and languages. A Selenium IDE exists to aid you creating automated tests. It is possible to write extensions in JavaScript to have data driven tests. If you organize your selenium tests in a way that you split the pages and forms in components, you can load up new data for the tests (written in xml) to fill out forms differently for each use case." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Using Selenium2 for web testing (and not Selenium IDE)</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Jan 4, 2010</time>
+      
+      
+      
+      
+      <span class="text-gray">- 6 min</span>
+    </div>
+    
+  </header>
+
+  <section><h3 id="selenium-ide">Selenium IDE</h3>
+
+
+
+<a href="http://seleniumhq.org">Selenium</a> is well know for automatic testing web pages. It does support many <a href="http://seleniumhq.org/about/platforms.htm">browsers, operating systems and languages<a/>. A <a href="http://seleniumhq.org/projects/ide/">Selenium IDE</a> exists to aid you creating automated tests.
+
+<img alt="Selenium" src="/static/selenium.png" title="Selenium IDE" width="303" height="177" />
+
+It is possible to write extensions in JavaScript to have data driven tests. If you organize your selenium tests in a way that you split  the pages and forms in components, you can  load up new data for the tests (written in xml) to fill out forms differently for each use case. The Selenium IDE will be of a great help here since you start develop the tests in the IDE and later 'just' parametrize the pages. With a couple of more javascript magic you can run these as well in <a href="http://seleniumhq.org/projects/remote-control/">Selenium Remote Control</a> (Selenium RC for short). This even works for running  the tests in continuous integration systems like Hudson or Teamcity.
+
+Great Stuff.
+
+<h3 id="the-problem">The problem.</h3>
+<p>The drawback coding up your tests with the Selenium IDE is: <!-- raw HTML omitted -->HTML<!-- raw HTML omitted -->.</p>
+<p>You will end up with some test suites including many test scenarios. It will be one big ball of</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">td</span>&gt;type&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">td</span>&gt;accountnumber:Value&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">td</span>&gt;82892892811&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">td</span>&gt;type&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">td</span>&gt;accountAmount:Value&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">td</span>&gt;2345.33&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span></code></pre></div><p>You will build components and you will end up with GotoIf and Label statements. Back to Basic programming from the 80ties. Without more javascript extensions you also can&rsquo;t reuse combinations of scenarios.
+
+
+
+While this works pretty ok: I'm a programmer and do have a <strong>problem</strong> with the <strong>quality of the produced code</strong>. It's <strong>easy to mess up</strong>. It's <strong>not safe for refactoring</strong>. To extend functionality you need to have javascript knowledge. Depending on your company profile (e.g. java shop) , this might be a problem.  Having a dedicated tester on the team certainly helps to overcome these obstacles, but if everybody in the team just once in a while looks into the Selenium IDE tests, the quality and the reliability of the code will not improve. Not to mention all the <strong>copy and paste</strong>. Been there, done that.
+</p>
+<h3 id="selenium-2">Selenium 2</h3>
+<p>A much nicer approach for me would be something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>WebDriver driver  <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FirefoxDriver();
+</span></span><span style="display:flex;"><span>AppWebTest test <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AppWebTest(driver, <span style="color:#e6db74">&#34;http://myapp.com/login&#34;</span>);
+</span></span><span style="display:flex;"><span>LoggedInUser user <span style="color:#f92672">=</span> test.<span style="color:#a6e22e">login</span>(<span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#e6db74">&#34;password&#34;</span>);
+</span></span><span style="display:flex;"><span>Account account <span style="color:#f92672">=</span> user.<span style="color:#a6e22e">createNewAccount</span>(<span style="color:#e6db74">&#34;DemoAccount&#34;</span>);
+</span></span><span style="display:flex;"><span>account.<span style="color:#a6e22e">addPerson</span>(PersonFactory.<span style="color:#a6e22e">createPersonWithNoIncome</span>());
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>account.<span style="color:#a6e22e">verify</span>();
+</span></span></code></pre></div><p>This would log in a user, creates an account and assigns a person to it. Everybody could <!-- raw HTML omitted -->read and understand<!-- raw HTML omitted --> it. Furthermore you can easily reuse components and logic. I would imagine that creating a DSL, matchers and finders is everything one would need to have a very nice test scenario.</p>
+<p>All that is already possible with Selenium 1 and the language bindings (more or less).</p>
+<p>Just with the release of the first alpha of Selenium 2 mid december 2009 it became just a little bit easier.
+
+
+
+Selenium 2 is the <strong>combined effort</strong> of Google's Webdriver and Selenium. Webdriver tries to <a href="http://google-opensource.blogspot.com/2009/05/introducing-webdriver.html">tackle</a> Seleniums problems with Javascript and the security model as well as the complex Selenium RC API.
+
+<blockquote>
+Selenium is written in JavaScript which causes a significant weakness: browsers impose a pretty strict security model on any JavaScript that they execute in order to protect a user from malicious scripts.
+...
+Additionally, being a mature product, the API for Selenium RC has grown over time, and as it has done so it has become harder to understand how best to use it. For example, it's not immediately obvious whether you should be using "type" instead of "typeKeys" to enter text into a form control. Although it's a question of aesthetics, some find the large API intimidating and difficult to navigate.
+</blockquote>
+
+Webdriver does not use JavaScript to control the web browser but <strong>uses native controls</strong>, e.g. an extension for Firefox or the native automation extensions of IE. Furthermore it introduces an object based API instead of following Seleniums directory based approach.
+</p>
+<p>So given the above example the login method would look something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> LoggedInUser <span style="color:#a6e22e">login</span>(String userName, String password) {
+</span></span><span style="display:flex;"><span>    driver.<span style="color:#a6e22e">get</span>(url);
+</span></span><span style="display:flex;"><span>    driver.<span style="color:#a6e22e">findElement</span>(By.<span style="color:#a6e22e">id</span>(<span style="color:#e6db74">&#34;user&#34;</span>)).<span style="color:#a6e22e">sendKeys</span>(userName);
+</span></span><span style="display:flex;"><span>    driver.<span style="color:#a6e22e">findElement</span>(By.<span style="color:#a6e22e">id</span>(<span style="color:#e6db74">&#34;password&#34;</span>)).<span style="color:#a6e22e">sendKeys</span>(password);
+</span></span><span style="display:flex;"><span>    driver.<span style="color:#a6e22e">findElement</span>(By.<span style="color:#a6e22e">id</span>(<span style="color:#e6db74">&#34;login&#34;</span>)).<span style="color:#a6e22e">click</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    LoggedInUser user <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LoggedInUser(driver);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    WebElement startPage <span style="color:#f92672">=</span> driver.<span style="color:#a6e22e">findElement</span>(By.<span style="color:#a6e22e">id</span>(<span style="color:#e6db74">&#34;startPage&#34;</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    assertThat(startPage().<span style="color:#a6e22e">getText</span>()).<span style="color:#a6e22e">isEqualTo</span>(<span style="color:#e6db74">&#34;Start&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> user;
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>You can take this to any level. It took me just a few hours to model the above use case with componentized input elements.</p>
+<p>With a bit more abstraction addPerson looks something like the following code. Whatever is needed to add a person to an account will be replayed. This is what Selenium IDE would normally do.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addPerson</span>(Person person) {
+</span></span><span style="display:flex;"><span>    jumpToAccountOverView();
+</span></span><span style="display:flex;"><span>    clickOnLink(<span style="color:#e6db74">&#34;menu:Overview&#34;</span>);
+</span></span><span style="display:flex;"><span>    clickOnLink(<span style="color:#e6db74">&#34;table_personTable:link_newPerson&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    inputGuiElement(person.<span style="color:#a6e22e">getTitle</span>());
+</span></span><span style="display:flex;"><span>    inputGuiElement(person.<span style="color:#a6e22e">getLastName</span>());
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>    clickSave();
+</span></span></code></pre></div>
+
+
+And now for the best part. You <strong>don't really need a real web browser</strong>. Selenium 2 supports 4 WebDriver:
+<ul>
+<li>Firefox</li>
+<li>Chrome</li>
+<li>Internet Explorer (on Windows)</li>
+<li>HtmlUnit</li>
+</ul>
+
+<h3 id="htmlunit">HtmlUnit</h3>
+<p>With enabled JavaScript on HtmlUnit (it uses Rhino, so not all JavaScript tricks might work, could be a drawback depending on your scenario) I can run my test as <!-- raw HTML omitted -->TestNG or JUnit<!-- raw HTML omitted --> test case. No need for a Selenium RC anymore. <!-- raw HTML omitted -->No  browsers running locally<!-- raw HTML omitted --> or on remote machine listing to ports to execute tests and transmitting results back.</p>
+<p>It is very useful to have the Selenium RC take screen shots during it&rsquo;s run. Selenium 2 can&rsquo;t do this right now (and with HtmlUnit never can). But by simply integrating some logging in the components and elements and you know right away where things went wrong.
+Developing with the <!-- raw HTML omitted -->Selenium IDE<!-- raw HTML omitted --> might seem like a must, but during the work on my prototype all I needed was Firebug and a XPath Searcher. I <!-- raw HTML omitted -->did not miss it<!-- raw HTML omitted --> at all. To do integration tests you could test all components independently and one at a time. Once these work, chain them together and let them run as unit tests. Did I mention <!-- raw HTML omitted -->HtmlUnit is fast<!-- raw HTML omitted --> ?</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>I barely dug into the webdriver code, I played around with it for a couple of hours and I&rsquo;m sure there more is stuff (and bugs) to find. Given that Selenium 2 is in alpha 1 stage right now I expect very nice things coming out of it. It certainly looks like the way to go.
+
+
+
+Another strong contender is <a href="http://webtest.canoo.com/webtest/manual/WebTestHome.html">Canoo WebTest</a>. I will have a look at this one in another post.
+
+<strong>Update Ajax and HtmlUnit</strong> 1/5/2010
+</p>
+<p>It does not seem to work. You need a real browser to get dynamically content re-rendered through Ajax.</p>
+<p>A method waiting for an id to be rendered (or timeout after x seconds) could look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">waitForElementOrTimeout</span>(String idToWaitFor, <span style="color:#66d9ef">int</span> timeout) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">long</span> end <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">currentTimeMillis</span>() <span style="color:#f92672">+</span> timeout <span style="color:#f92672">*</span> 1000;
+</span></span><span style="display:flex;"><span>    RenderedWebElement resultsDiv <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (System.<span style="color:#a6e22e">currentTimeMillis</span>() <span style="color:#f92672">&lt;</span> end) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        resultsDiv <span style="color:#f92672">=</span> (RenderedWebElement) driver.<span style="color:#a6e22e">findElement</span>(By.<span style="color:#a6e22e">id</span>(idToWaitFor));
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">catch</span> (NoSuchElementException e) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (resultsDiv <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;</span>amp;<span style="color:#f92672">&amp;</span>amp; resultsDiv.<span style="color:#a6e22e">isDisplayed</span>()) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    assertThat(resultsDiv).<span style="color:#a6e22e">isNotNull</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>This will either find the element specified or throw an assertion (updated example from the selenium 2 page).</p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/selenium2"
+      >Selenium2</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/test"
+      >Test</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/whats-your-preferred-development-infrastructure-stack/"
+      ><span class="mr-1.5">←</span><span>What&#39;s your preferred development infrastructure stack?</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/story-based-daily-stand-up-meeting/"
+      ><span>Story based daily stand-up meeting</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2009 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

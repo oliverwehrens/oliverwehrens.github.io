@@ -1,0 +1,363 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>What&#39;s your preferred development infrastructure stack? - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="In Response to Matt Raible&#39;s question about my preferred development stack. Source control In my own development project I switched to Git some time ago. I was using svn and before that cvs for a couple of years. Git just makes it easy to try out small ideas very quickly without reverting the code. We will introduce Git at work pretty soon (I hope).
+The Atlassian cloud I was using Confluence as a Wiki in my open source project and my current employer Hypoport uses it as well." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">What&#39;s your preferred development infrastructure stack?</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Jan 13, 2010</time>
+      
+      
+      
+      
+      <span class="text-gray">- 2 min</span>
+    </div>
+    
+  </header>
+
+  <section>
+
+
+In Response to <a href="http://raibledesigns.com/rd/entry/what_s_your_preferred_development">Matt Raible's</a> question about my preferred development stack.
+
+<h3 id="source-control">Source control</h3>
+<p>In my own development project I switched to <!-- raw HTML omitted -->Git<!-- raw HTML omitted --> some time ago. I was using svn and before that cvs for a couple of years. Git just makes it easy to try out small ideas very quickly without reverting the code. We will introduce Git at work pretty soon (I hope).</p>
+<h3 id="the-atlassian-cloud">The Atlassian cloud</h3>
+
+
+
+I was using <a href="http://www.atlassian.com/software/confluence/">Confluence</a> as a Wiki in my open source project and my current employer <a href="http://www.hypoport.de">Hypoport</a> uses it as well.  Bug tracking is pretty much a task of <a href="http://www.atlassian.com/software/jira/">Jira</a>. Those two integrate very nicely. You can have ping backs in your Jira Ticket from Confluence, so you see all related files. I would love to use <a href="http://www.atlassian.com/software/fisheye/">FishEye</a> but I'm not sure how to justify the costs and what the added value is in our case.
+
+<h3 id="the-code">The Code</h3>
+
+
+
+I'm pretty much sold to <a href="http://www.jetbrains.com/idea/index.html">Jetbrains IntelliJ Idea</a>. I'm using it for 5 years now. With it comes <a href="http://www.jetbrains.com/teamcity/">Teamcity</a>. It's a very nice continuous integration tool where the biggest plus (among other things) is the delayed (and pre tested) checkin. No more late night checkins which break the master. We just rolled out the latest version which has a much nicer Git integration (so we can make the switch).
+
+So it comes down to:
+
+<h3 id="the-list">The List</h3>
+
+
+
+<ul>
+<li>Source control: <b>Git</b></li>
+<li>Wiki: <b>Atlassian Confluence</b></li>
+<li>Continuous Integration: <b>Jetbrains Teamcity</b></li>
+<li>Bugtracker: <b>Atlassian Jira</b></li>
+</ul>
+
+
+We are about to use <a href="http://sonar.codehaus.org/">Sonar</a> for code analysis and development over time, but this is just in the beginning.
+
+What's yours ?
+
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/development"
+      >Development</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/infrastructure"
+      >Infrastructure</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/one-year-of-blogging/"
+      ><span class="mr-1.5">←</span><span>One year of blogging</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/using-selenium2-for-web-testing-and-not-selenium-ide/"
+      ><span>Using Selenium2 for web testing (and not Selenium IDE)</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

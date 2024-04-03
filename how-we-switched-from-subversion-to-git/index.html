@@ -1,0 +1,381 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>How we switched from Subversion to Git - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="So I heard about these strange distributed version control systems like over a year ago. I used it in my own little projects and everything went smoothly and I really liked it. The idea also caught on at work and my team started a using Git in a fresh project last summer. We did not had so much problems since you can use Git very much like a central vcs like Subversion if you want to." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">How we switched from Subversion to Git</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Mar 22, 2010</time>
+      
+      
+      
+      
+      <span class="text-gray">- 7 min</span>
+    </div>
+    
+  </header>
+
+  <section>
+
+
+<img class="alignleft" src="http://git.wiki.kernel.org/images-git/2/24/Gitlogo.svg_from_msysGit.png" title="Â¬Â© GitLogo @ mssysgit"  />
+So I heard about these strange <strong>distributed version control system</strong>s like over a year ago. I used it in my own little projects and everything went smoothly and I really liked it.
+The idea also caught on at work and my team started a using Git in a fresh project last summer. We did not had so much problems since you can use Git very much like a central vcs like Subversion if you want to.
+
+Still, for all other code, we <strong>used Subversion</strong>.
+We believe in agile and feature branches, so that's what we do a lot. Every story has its own branch. If one story touches multiple code bases, that means multiple <a href="http://www.infoq.com/articles/agile-version-control">merge down/copy up's</a>.  
+At some point, in preparation for a sprint review, we found that code had disappeared from the trunk. Everything seems to work perfectly, just this feature was missing. Usually you would think if code was deleted, there would be at least one test failing and telling you that something is missing. But no, typing <strong>one wrong version number</strong> during merge down/copy up <strong>cut out the story</strong> very cleanly. Once we found the problem we could merged it back in from the not yet deleted feature branch.
+Overall we managed to work with Subversion but it was a growing pain since we knew there was something better.
+
+There are several advantages of distributed version control system which you all might have heard of already so I won't go in to detail of this (of course there is also one major disadvantage: complexity). The <strong>main advantages</strong> for me are:
+
+<!-- more -->
+
+<ul>
+<li>Everything is local - very fast</li>
+<li>Merging is much much easier (or updating from another repo)</li>
+<li>Because merging is easier I tend to branch more often to try out ideas</li>
+</ul>
+
+Now, what does it take for my team to get Git going in all major code bases?
+
+<h1 id="technology">Technology</h1>
+<p>Here is our setup what we use at work:</p>
+<!-- raw HTML omitted -->
+<h3 id="the-os-windows-and-mac">The OS: Windows and Mac</h3>
+<p>Basically no surprise here. <!-- raw HTML omitted -->Works<!-- raw HTML omitted --> on both machines.</p>
+<h3 id="the-ide-intellij-idea-9">The IDE: IntelliJ Idea 9</h3>
+<p>Idea does support Git. I do like the approach which they took to simply use the git binary of your operating system. With the version control console you can see what Idea is doing. This way you can watch and learn. Back with subversion we had sometimes trouble using two different tools for handling subversion problems, like Idea and Tortoise SVN. Using the same tool for everything will make it easier.
+The Git integration is not perfect but it <!-- raw HTML omitted -->does work well<!-- raw HTML omitted -->.</p>
+<h3 id="continuous-integration-teamcity">Continuous Integration: Teamcity</h3>
+<p>Teamcity does support Git the same way as Subversion. There is one drawback however: <!-- raw HTML omitted -->Pre-Tested checkins are not supported yet<!-- raw HTML omitted -->. This cool features allows you to run all tests before checking in. You will never have a broken branch/trunk if you use it! Basically it will take your changes to the code base, runs all tests and only commits them if everything passes. Sadly, it does not work with Git (yet, but you can <!-- raw HTML omitted -->vote for this feature<!-- raw HTML omitted -->).
+Teamcity does allow you however to do a remote run with the changes you committed locally. So you check in everything locally and while Teamcity runs all the tests you can keep on coding. Running all tests with your current changes in the change list is also supported.
+Teamcity uses JGit and has some limitations (like no tagging support). In Teamcity 5.1 they want to use the Git binary as well.</p>
+<p>Another problem, which I will talk about in the next section, is agent side checkout.</p>
+<h3 id="build-tool-maven">Build Tool: Maven</h3>
+<p><!-- raw HTML omitted -->Maven supports git as scm<!-- raw HTML omitted -->. Nothing more to say.</p>
+<p>Since we are releasing our software every other week we automated the build process to two stages. Building the release and packaging different build artifacts. We used to have a button in Teamcity, push it and 30 minutes later we had a release. Unfortunately the way Teamcity supports Git is that the code which will get checkout does not have a .git directory (and for maven it is not under source control). I still wonder what the heck they are doing there. Without that, maven can not advance the version numbers in your pom and you are stuck. Please go and <!-- raw HTML omitted -->vote for this feature now<!-- raw HTML omitted -->. Thanks.
+Until then we just do it like in the good old times and do a maven release from the command line.</p>
+<h1 id="people">People</h1>
+<p>While everything so far was technical, the biggest challenge might be mindset of the people and support from your friendly manager.</p>
+<p>I&rsquo;m lucky that my boss is very hands on and really liked that idea (also, since he was the one we usually asked if we yet again had problems with Subversion properties being messed up somehow). Otherwise you might need to do some ROI calculation why this really is a good idea.</p>
+<p>What I encourage is that <!-- raw HTML omitted -->every team needs to have 1 or 2 people interested in git<!-- raw HTML omitted -->. The others in the team should see the benefit of it, even though they don&rsquo;t know how git works. My advice would be that one person would give a  <!-- raw HTML omitted -->20 minutes presentation of what you can do<!-- raw HTML omitted --> with it to all interested co workers. We did not do it,  but looking back, we should have done it. Make sure that you bring across the message that switching scm&rsquo;s will not be that easy. If possible make everyone <!-- raw HTML omitted -->read the first 3 chapters<!-- raw HTML omitted --> of the freely available <!-- raw HTML omitted --><!-- raw HTML omitted -->Pro Git<!-- raw HTML omitted --><!-- raw HTML omitted --> book (and also  buy a copy or two for the library). This will give them a much better understanding.
+It is change and <!-- raw HTML omitted -->change usually causes some trouble<!-- raw HTML omitted -->. We got a <!-- raw HTML omitted -->team commitment<!-- raw HTML omitted --> for it so at least nobody was opposed to it. If a couple of people are not happy with the way how the new things are around here, they will have an easy time to make a loud and clear statement that switching to Git was a bad idea. Git is more complex but also more powerful.</p>
+<p>I did a  <!-- raw HTML omitted -->plan<!-- raw HTML omitted --> on how to <!-- raw HTML omitted -->migrate<!-- raw HTML omitted -->. This took me just a couple of hours.</p>
+<!-- raw HTML omitted -->
+<p>Plan and test these as much as you can. We started to use git just to discover that we missed some use cases like our automated runs to check the external web service dependencies. Two people doing the planning certainly helps.</p>
+<p>After start using it, we had  <!-- raw HTML omitted -->one guy<!-- raw HTML omitted --> (me) who went around for the first 2-3 days and <!-- raw HTML omitted -->helped people with their git related problems<!-- raw HTML omitted -->. There will be problems, I promise!</p>
+<p>We did migrate all of our code at once since we did not want to be stuck between two vcs&rsquo;s. We will go with Gitorius and ssh based authentication. Since we do not have a server for that (yet) we use a shared drive for the time being as a repository. Being distributed it will be no problem for Git to change it&rsquo;s location later on.</p>
+<p>The first two of days were a bit tricky but it got much smoother after we all got used to it.</p>
+<p>The<!-- raw HTML omitted --> work flow is different<!-- raw HTML omitted --> and it will take some time until everybody takes advantages of all the features like commit your files more often or make more private branches to try out ideas.
+We <!-- raw HTML omitted -->started with a similar work flow<!-- raw HTML omitted --> we are used to  and plan to introduce one feature of git at a time. This could have been better. <!-- raw HTML omitted -->Iron out the known commit habits with Git<!-- raw HTML omitted --> and make sure this works in your favorite IDE before hand. It is very important to make the transition a better experience.</p>
+<p>We started just this month but we already had some nice effects like merging two branches with renamed files. On guy changed file and somebody else renamed the same file in his repository.  As he merged in the changes, the change appeared in the renamed file. Really great.</p>
+<p>Do you use a distributed version control system? How did your transition go ?</p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/svn"
+      >Svn</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/git"
+      >Git</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/lightweight-web-prototyping-for-the-framework-loving-java-developer/"
+      ><span class="mr-1.5">←</span><span>Lightweight Web Prototyping for the Framework loving (Java) Developer</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/5-code-metrics-you-need-to-watch/"
+      ><span>5 code metrics you need to watch</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

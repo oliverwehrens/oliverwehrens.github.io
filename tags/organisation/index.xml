@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Organisation on Oliver Wehrens</title>
+    <link>http://localhost:1313/tags/organisation/</link>
+    <description>Recent content in Organisation on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Sep 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/organisation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Entwicklung verteilter Systeme - Herausforderungen nicht nur an die Architektur</title>
+      <link>http://localhost:1313/entwicklung-verteilter-systeme-herausforderungen-nicht-nur-an-die-architektur/</link>
+      <pubDate>Tue, 29 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/entwicklung-verteilter-systeme-herausforderungen-nicht-nur-an-die-architektur/</guid>
+      <description>This is my talk about Development of distributed systems - challenges not only for the architecture. You guessed it, it is in german. I gave this talk at BedCon 2015 and I will talk about it again at the Architecture Gathering 2015 in Munich on October 22nd.&#xA;Abstract:&#xA;Jede Platform wächst mit der Zeit. Mehr Entwickler mit noch mehr Ideen und Vorstellungen arbeiten alle gemeinsam an der Weiterentwicklung. Das System wird größer und auf viele Systeme verteilt.</description>
+    </item>
+  </channel>
+</rss>

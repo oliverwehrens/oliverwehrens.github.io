@@ -1,0 +1,425 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Javascript testing for Java projects - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="I&rsquo;m a Java Programmer. I do mostly web projects. There is a tendency to move away from server side frameworks towards Javascript (&#43;mvc) and rest services. This now involves me in programming Javascript at the GUI level. Welcome maven, IDE and continous integration.
+Coming from the JVM world I&rsquo;m pretty much used to writing tests in my IDE running them and then writing the production code. What I found out, this is not that easy with Javascript." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Javascript testing for Java projects</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Jul 12, 2012</time>
+      
+      
+      
+      
+      <span class="text-gray">- 3 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>I&rsquo;m a Java Programmer. I do mostly web projects. There is a tendency to move away from server side frameworks towards Javascript (+mvc) and rest services. This now involves me in programming Javascript at the GUI level. Welcome <strong>maven</strong>, <strong>IDE</strong> and <strong>continous integration</strong>.</p>
+<!-- raw HTML omitted -->
+<p>Coming from the JVM world I&rsquo;m pretty much used to writing tests in my IDE running them and then writing the production code. What I found out, this is not that easy with Javascript. For obvious reason I need to run it in a browser. So I need to leave my IDE. Not convinient. If something fails I transfer that result back to my IDE and check what&rsquo;s going on. What about the different Javascript implementations? Ok, I need to run it on all browsers, Chrome, Firefox, Safari, IE … and the mobile versions maybe as well? Is this overkill? Is this managable?
+What about my CI run? I need to make sure only tested code gets checked in. Oh boy. This can be very frustrating.</p>
+<h1 id="options">Options</h1>
+<p>There are a lot of frameworks which do provide (or are useful) if you want to get started with Javascript Unit Testing. You might find these if you google for <a href="https://www.google.de/search?ie=UTF-8&amp;q=javascript+testing">javascript testing</a>:</p>
+<ul>
+<li><a href="http://www.mozilla.org/rhino/">Rhino</a> - Java Javascript implementation</li>
+<li><a href="http://www.envjs.com">Envjs</a> - Simulated Browser environment</li>
+<li><a href="http://code.google.com/p/phantomjs/">PhantomJS</a> - Headless Webkit browser</li>
+<li><a href="https://github.com/chilicat/JsChilicat">JsChilicat</a> - Framework for headless Javascript testing, uses Rhino</li>
+<li><a href="http://docs.jquery.com/QUnit">QUnit</a> - Unit Testing Framework</li>
+<li><a href="http://code.google.com/p/js-test-driver/">JsTestDriver</a> - Framework for Unit Tests</li>
+<li><a href="http://pivotal.github.com/jasmine/">Jasmine</a> - Javascript BDD Framework</li>
+</ul>
+<p>I started with QUnit to get a feeling how unit testing works in Javascript. I added PhantomJS (and Xfvb) for headless testing but this needed some fiddeling around and was not that straitforward. Here are some <a href="https://www.google.de/search?ie=UTF-8&amp;q=phantomjs+qunit">links</a> to help you get started.</p>
+<h1 id="so-what-to-use-now-">So what to use now ?</h1>
+<p>So I started with JSTest Driver since it seems to be the one which has all the features I wanted.</p>
+<h2 id="js-test-driver">JS Test Driver</h2>
+<h3 id="ide">IDE</h3>
+<p>A Dream! I use IntelliJ Idea and with the help of a plugin I can <a href="http://www.jetbrains.com/idea/webhelp/running-javascript-unit-tests-in-browser.html">test javascript</a> like a charm.</p>
+
+
+<img src="/static/jstestdriver_config.png"/>
+
+<img src="/static/jstestdriver_run.png"/>
+
+<h3 id="maven">Maven</h3>
+<p>After some fiddeling around I got the Maven test to run. The last commit of the maven plugn was around August 2011.</p>
+<p>To use the plugin configure it like this (full code in the example code on <a href="https://github.com/oliverwehrens/jstestdriver-example">github</a>).</p>
+<pre><code> &lt;plugin&gt;
+    &lt;groupId&gt;com.googlecode.jstd-maven-plugin&lt;/groupId&gt;
+    &lt;artifactId&gt;jstd-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;1.3.2.5&lt;/version&gt;
+    &lt;configuration&gt;
+      &lt;port&gt;9876&lt;/port&gt;
+      &lt;browser&gt;/Apps/Firefox12.app/Contents/MacOS/firefox-bin&lt;/browser&gt;
+    &lt;/configuration&gt;
+    &lt;executions&gt;
+      &lt;execution&gt;
+        &lt;id&gt;run-tests&lt;/id&gt;
+        &lt;goals&gt;
+          &lt;goal&gt;test&lt;/goal&gt;
+        &lt;/goals&gt;
+      &lt;/execution&gt;
+    &lt;/executions&gt;
+  &lt;/plugin&gt;
+</code></pre>
+<p>What I do not like at the moment is the specification of the browser path. This might make it hard to run the same configuration on a local machine and in a ci build. Yes, I <strong>don&rsquo;t</strong> want to go down the path of maven profiles.
+Even with that you might have the issue of the port configuration. Two testruns at the same time and both starting the server on the same port calls fro trouble.</p>
+<p>Running <code>mvn test</code> shows me something like:</p>
+<pre><code>...
+
+[INFO]
+[INFO] --- jstd-maven-plugin:1.3.2.5:test (run-tests) @ jstestdriver-demo ---
+
+-------------------------------------------
+J S  T E S T  D R I V E R                 
+-------------------------------------------
+
+.F
+Total 2 tests (Passed: 1; Fails: 1; Errors: 0) (1.00 ms)
+ Firefox 12.0 Mac OS: Run 2 tests (Passed: 1; Fails: 1; Errors 0) (1.00 ms)
+  Echo Test.testHello2 failed (0.00 ms): AssertError:
+
+...
+</code></pre>
+<h1 id="summary">Summary</h1>
+<p>Here you have it. A nice way to run your Javascript test in your IDE and maven. Some small issues remain but I have seen plugins which deal with e.g. port issues.</p>
+<p>The full demo code is available on <a href="https://github.com/oliverwehrens/jstestdriver-example">GitHub</a>.</p>
+<p>Any thoughts ?</p>
+<h1 id="links">Links</h1>
+<ul>
+<li><a href="http://loose-bits.com/2011/02/browserless-ajax-testing-with-rhino-and.html%5D">http://loose-bits.com/2011/02/browserless-ajax-testing-with-rhino-and.html</a></li>
+<li><a href="http://twoguysarguing.wordpress.com/2010/11/02/make-javascript-tests-part-of-your-build-qunit-rhino/">http://twoguysarguing.wordpress.com/2010/11/02/make-javascript-tests-part-of-your-build-qunit-rhino/</a></li>
+<li><a href="http://thomas-genin.com/blog/javascript-3/qunit-and-rhino-javascript-unit-test-in-the-console/">http://thomas-genin.com/blog/javascript-3/qunit-and-rhino-javascript-unit-test-in-the-console/</a></li>
+<li><a href="http://www.nczonline.net/blog/2009/11/17/the-curious-case-of-javascript-unit-testing/">http://www.nczonline.net/blog/2009/11/17/the-curious-case-of-javascript-unit-testing/</a></li>
+<li><a href="http://www.readmore.ch/post/18940470535">http://www.readmore.ch/post/18940470535</a></li>
+<li><a href="http://code.google.com/p/qunit-maven-plugin/">http://code.google.com/p/qunit-maven-plugin/</a></li>
+<li><a href="http://code.google.com/p/js-test-driver/">http://code.google.com/p/js-test-driver/</a></li>
+</ul>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/javascript"
+      >javascript</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/java"
+      >java</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/web"
+      >web</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/maven"
+      >maven</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/jstestdriver"
+      >jstestdriver</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/do-not-use-javadoc/"
+      ><span class="mr-1.5">←</span><span>Do not use Javadoc</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/realtime-push-events-zum-browser/"
+      ><span>Realtime Push Events zum Browser</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

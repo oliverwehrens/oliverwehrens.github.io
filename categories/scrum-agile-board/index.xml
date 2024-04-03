@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scrum Agile Board on Oliver Wehrens</title>
+    <link>http://localhost:1313/categories/scrum-agile-board/</link>
+    <description>Recent content in Scrum Agile Board on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Mar 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/scrum-agile-board/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Updated Scrum Board Cheat Sheet with Story Owner</title>
+      <link>http://localhost:1313/updated-scrum-board-cheat-sheet-with-story-owner/</link>
+      <pubDate>Thu, 12 Mar 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/updated-scrum-board-cheat-sheet-with-story-owner/</guid>
+      <description>So just in the last sprint we (re) discovered that we need an owner of each story. A person who makes sure things are going smoothly and takes care that everything is done in a way so we can fulfill all acceptance tests. At sprint start the person which feels the strongest about the first story will be owner and he will drive the story. Very often we do operate in a king and servant model.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,381 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>OpenAI Whisper Benchmark Nvidia Tesla T4 / A100 - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="In my previous article, I wondered how OpenAI Whisper C&#43;&#43; Edition on a MacBook Pro M1Pro stacks up against a CUDA card. I don&rsquo;t have one, so I could not do the test.
+Benchmarking Nvidia Tesla T4 Google Colab to the rescue. I totally forgot about it. I can run (for free) on an Nvidia T4. If you start a notebook for yourself, don&rsquo;t forget to set the Runtime to GPU." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">OpenAI Whisper Benchmark Nvidia Tesla T4 / A100</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Dec 22, 2022</time>
+      
+      
+      
+      
+      <span class="text-gray">- 3 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>In my previous article, I wondered how OpenAI Whisper C++ Edition on a MacBook Pro M1Pro stacks up against a CUDA card. I don&rsquo;t have one, so I could not do the test.</p>
+<h1 id="benchmarking-nvidia-tesla-t4">Benchmarking Nvidia Tesla T4</h1>
+<p>Google Colab to the rescue. I totally forgot about it. I can run (for free) on an Nvidia T4. If you start a notebook for yourself, don&rsquo;t forget to set the Runtime to GPU.</p>
+<p>To really check the speed on these, I used a longer audio file of 2:01h.</p>
+<p><img src="TeslaT4.png" alt="&ldquo;Tesla T4&rdquo;" title="TeslaT4"></p>
+<p>For 7250 seconds of audio the T4 needed 794 seconds to transcribe, a 9.2 x speed increase. A smaller file just had a 3.2 x.</p>
+<h1 id="benchmarking-nvidia-tesla-a100">Benchmarking Nvidia Tesla A100</h1>
+<p>Taking this a notch up, I went ahead to Google Cloud and got an Nvidia Tesla A100 40 GB GPU instance with an CUDA 11.3 M102 and pytorch 1.12 image.</p>
+<p>This is the little script I used to measure.</p>
+<pre tabindex="0"><code>import whisper
+import torch
+import json
+import datetime
+
+if torch.cuda.is_available():
+  device = torch.device(&#34;cuda:0&#34;)
+  print(&#34;GPU&#34;)
+  print(torch.cuda.current_device())
+  print(torch.cuda.device(0))
+  print(torch.cuda.get_device_name(0))
+else:
+  device = torch.device(&#34;cpu&#34;)
+  print(&#34;CPU&#34;)
+
+t0 = datetime.datetime.now()
+print(f&#34;Load Model at  {t0}&#34;)
+model = whisper.load_model(&#39;large&#39;)
+t1 = datetime.datetime.now()
+print(f&#34;Loading took {t1-t0}&#34;)
+print(f&#34;started at {t1}&#34;)
+
+# do the transcription
+output = model.transcribe(&#34;audio.mp3&#34;)
+
+# show time elapsed after transcription is complete.
+t2 = datetime.datetime.now()
+print(f&#34;ended at {t2}&#34;)
+print(f&#34;time elapsed: {t2 - t1}&#34;)
+
+with open(&#34;transcription.json&#34;, &#34;w&#34;) as f:
+    f.write(json.dumps(output))
+</code></pre><p>For the same audio, it took 710 seconds. Not that much faster, &lsquo;just&rsquo; 10.2 x.</p>
+<pre tabindex="0"><code>GPU
+0
+&lt;torch.cuda.device object at 0x7fcacbd5d6d0&gt;
+NVIDIA A100-SXM4-40GB
+Load Model at  2022-12-29 15:43:59.387223
+Loading took 0:00:26.258414
+started at 2022-12-29 15:44:25.645637
+ended at 2022-12-29 15:56:16.130757
+time elapsed: 0:11:50.485120
+</code></pre><p>Looking at nvidia-smi tells me:</p>
+<p><img src="nvidia-smi.jpg" alt="Nvidia SMI" title="Nvidia SMI"></p>
+<p>The CPU is just utilized by 40%! No idea why.</p>
+<p>Not sure if there are A100 and T4 model revision with different specs. A <a href="https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-t4/t4-tensor-core-datasheet-951643.pdf">Tesla T4</a> has 65 FP16 TFLOPS. A <a href="https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf">Tesla A100</a> has up to 312/624 FP16 TFLOPS. So roughly 5x or 10x the speed. So extrapolation of FP16 TFLOPS does not help. It does not explain the &lsquo;slow&rsquo; transcription. Running two processes on the card might work and somehow doubles the throughput.</p>
+<p>I would run the test in a shell on a T4 again, but it is very hard (impossible) to find an available T4 instance in any Google Cloud region. Go to the cloud, they said, it has endless resources. Not.</p>
+<h1 id="running-on-graphics-card">Running on Graphics card?</h1>
+<p>If I ran this on a Graphics card, what would I need? Judging from the unreliable TFLOPS numbers any card with &gt; 65 TFLOPS and &gt;=12GB RAM would be good. A RTX 4090 (almost same spec as A100, with <a href="https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf">330/660 TFLOPS FP16</a>) running two processes could be nice, 2*11.5 GB should fit into the VRAM and should have comparable Performance (but much more Power usage). If I get my hands on CUDA Graphics card (maybe not an expensive 4090), I will try this. Thankfully, <a href="https://15kwp.de/">I just had a solar roof installed.</a></p>
+<p>I&rsquo;m new to all of that, so this all might make no sense. By writing it down, I try to get my head sorted :).</p>
+<p>Lots of more fun ahead.</p>
+<p>Update: <a href="https://owehrens.com/whisper-nvidia-rtx-4090-vs-m1pro-with-mlx/">Checkout my comparison 4090 vs M1Pro with the MLX Framework</a></p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/ai"
+      >ai</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/semantic-search-with-cosine-similarity/"
+      ><span class="mr-1.5">←</span><span>Semantic Search with Cosine Similarity</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/openai-whisper-on-apple-m1-cpp-version/"
+      ><span>OpenAI Whisper on Apple M1</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

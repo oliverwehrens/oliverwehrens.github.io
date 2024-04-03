@@ -1,0 +1,340 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Lightweight Web Prototyping for the Framework loving (Java) Developer - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="A couple of month ago I had an idea for a small web app. But what does it take to do it ? Do you start with the back end or the front end (read server or client side) ? Typically I would start at the back end, get the domain right and then see how I can fit the UI in. If a programmer starts this way you end with the typical &rsquo;the programmer did the GUI&rsquo; scenario." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Lightweight Web Prototyping for the Framework loving (Java) Developer</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Apr 20, 2010</time>
+      
+      
+      
+      
+      <span class="text-gray">- 4 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>A couple of month ago I had an idea for a small web app. But what does it take to do it ? Do you start with the back end or the front end (read server or client side) ? Typically I would start at the back end, get the domain right and then see how I can fit the UI in. If a programmer starts this way you end with the typical &rsquo;the programmer did the GUI&rsquo; scenario. That&rsquo;s not really what I wanted. Don&rsquo;t think too much about the domain, just see what the needs of the end user are and get the UI done (right).</p>
+<!-- raw HTML omitted -->
+<h3 id="trying-frameworks-">Trying frameworks &hellip;</h3>
+<p>But there you go, being a framework loving web developer, how do you do the UI, or better, in what technology? Among other I tried  <!-- raw HTML omitted -->JSF 2<!-- raw HTML omitted --> and I thought it&rsquo;s cool. After a couple of hours I realized that this will slow me down. Fiddling with different ideas and concepts I just could not do that with JSF right away. I would have to write my own components. This is supposed to be very easy but still too much waste when I&rsquo;m not sure if I even will use this.</p>
+<h3 id="trying-paper">Trying paper&hellip;</h3>
+<p>Next I started very basic and did some drawings. While this is all nice (I did it on my white board, I strongly recommend to do this on something you can erase) it turns out I had no idea on how to realize that in Html. I knew this must be possible somehow today but I had no idea what does it take to implement things like drag and drop, box scrolling, reordering and more. Nice thing I build on <!-- raw HTML omitted -->paper<!-- raw HTML omitted -->&hellip;but can I do it ?</p>
+<h3 id="the-solution">The solution</h3>
+<p>What if I now combine those two approaches ? I needed some lightweight web framework, easy to learn (maybe one I already know) with  quick turn around. After looking around for a couple of hours I came up with <!-- raw HTML omitted -->Html<!-- raw HTML omitted --> and <!-- raw HTML omitted -->jQuery<!-- raw HTML omitted -->.</p>
+<p>I have some knowledge in Html and Css but I never did anything in Javascript or jQuery. So there is something new to learn. Since this was on my agenda anyway and I already bought Mannings <!-- raw HTML omitted -->jQuery in Action<!-- raw HTML omitted --> book in December I went this route. I hoped that adding jQuery into the page would give me some interactivity to the otherwise static Html page.</p>
+<p>It turns out, it was the best choice. I came up with at least three completely different designs in a matter of evenings, got them to a working stage and could &lsquo;feel&rsquo; how they would work (or not). After experiencing this I decided to do some substantial changes to the UI. Dragging and dropping is all nice and dandy, but it&rsquo;s too much clicking and dragging for the app. On paper this really looked cool but in practice it was not.</p>
+<p>It&rsquo;s amazing what you can do with jQuery. You can save state on elements using Html 5 attribute, can load other Html snippets as Ajax responses and use a dozen jQuery plugins for menus, zooming, dragging and so on. Not to mention the power of jQuery itself. You can append action, animations or anything to any element. Without programming one line server side I got a fully working prototype running including adding and removing items, saving, loading and dynamic generated forms.</p>
+<p>Some more iterations later (still not 100% happy) I started to implement it for real. Since I wanted to stay with that design (and very much Ajax oriented) I went the route of <!-- raw HTML omitted -->Direct Web Remoting<!-- raw HTML omitted --> and <!-- raw HTML omitted -->Freemarker<!-- raw HTML omitted -->. Freemarker will render my templates and DWR talks to my Spring beans. Whenever I needed to design another page I first did the standalone Html version, got it to a working state and then integrated it in the app.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Even if I would not have decided to use jQuery and pure Html for the final implementation (totally depends on the use case) I would strongly consider going the same route for doing the prototype again. It was so easy and the feedback was right there. I could throw away not working ideas  and make new ones very easily. There was a learning curve using jQuery (and I needed to refresh my CSS) but it was time well invested.</p>
+<p>How do you your prototypes? Fully integrated with your existing frameworks or on paper?</p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/web"
+      >Web</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/java"
+      >Java</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/"
+      ><span class="mr-1.5">←</span><span>How to detect if your server is down when making jQuery Ajax calls </span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/how-we-switched-from-subversion-to-git/"
+      ><span>How we switched from Subversion to Git</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2009 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

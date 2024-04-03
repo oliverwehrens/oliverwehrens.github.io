@@ -1,0 +1,342 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Why you need a macro architecture - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Eberhard Wolff on LinkedIn asked recently: &lsquo;What was the biggest mistake you witnessed or did?&rsquo; (in software architecture).
+The one thing which came to my mind is that at one point we did not have a shared understanding how we should build our system back when I was working at DHL E-POST. This was in ~ 2014. We split the monolith in multiple services. Every team (we had 10 teams) was doing it how they thought it would be good." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Why you need a macro architecture</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Mar 17, 2024</time>
+      
+      
+      
+      
+      <span class="text-gray">- 3 min</span>
+    </div>
+    
+  </header>
+
+  <section><p><a href="https://ewolff.com">Eberhard Wolff</a> on <a href="https://www.linkedin.com/in/eberhardwolff/">LinkedIn</a> asked recently: &lsquo;What was the biggest mistake you witnessed or did?&rsquo; (in software architecture).</p>
+<p>The one thing which came to my mind is that at one point we did not have a shared understanding how we should build our system back when I was working at DHL E-POST. This was in ~ 2014. We split the monolith in multiple services. Every team (we had 10 teams) was doing it how they thought it would be good. Turns out the overall system was harder to use, full of surprises in the APIs (REST) and had different concepts when operating. Documentation was hard to find and different stakeholders had different ideas how things should be done.</p>
+<p>So we decided what is important in such a system. The main points for us to handle was:</p>
+<ul>
+<li>State in applications (only DB, no local data, phoenix system)</li>
+<li>Resilience (Loadbalancing, Consul)</li>
+<li>Service communication (REST)</li>
+<li>Documentation (Swagger, Pivio)</li>
+<li>No shared databases between services</li>
+<li>Request tracking (defined correlation ID)</li>
+<li>Monitoring (Alarm books, health endpoints)</li>
+<li>Logging (all to Splunk via syslog, Logformat)</li>
+<li>How deployment is done, automated DB updates</li>
+<li>Operations (1 VM per service in OpenNebula)</li>
+</ul>
+<p>The only &lsquo;restriction&rsquo; we had for teams in terms of how they write the service was the use of Java. If they wanted to switch they had to talk to the leadership team first. How the service is written, what the services does internally was left to decide to the teams. The main influence on their daily business  was that they have to have meaningful documentation (e.g. Swagger, ADRs) and that they should be able to fix critical bugs immediately.</p>
+<p>Most of the other rules had the goal to make it easier to run in production, to make it easier to find bugs, to track requests. Since our main way of communicating between service, we even did our own version of the Zalando RESTful API Guidelines. This brought a lot of unification and shared understanding to all developers on how to develop REST service and not getting confused when consuming services.</p>
+<p>So we had to bring everybody together and get alignment how and what we should do. Every team send one person in a working group, we exchanged ideas, concepts and ways of implementing. Out of that we got our &lsquo;Rules of Play&rsquo;. Since this was way before Corona and we were all in the office, I drew up a poster and put it in a few places in the office. This way and always repeating and insisting on it in meetings made our transition possible. Step by step, along user stories, the system changed and made it easier to use.</p>
+<p>Lots of these things are much easier to use today in off the shelf cloud systems. Yet, I see people sshing into kubernetes nodes to fix things manually, see log files in different formats and not having any documentation.</p>
+<p>If you have a few development teams and you are creating a distributed system, please make sure you have some guidelines to make the overall system easier to program, use and trace/debug. You need it.</p>
+<p>What did you put into your macro architecture? Happy to discuss. Contact me via LinkedIn.</p>
+<p><img src="rules_of_play_e-post_v4.jpg" alt="Rules of Play" title="Rules of Play"></p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/architecture"
+      >architecture</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/clean-code-should-you-dry/"
+      ><span class="mr-1.5">←</span><span>Clean code ... should you DRY?</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/can-ai-replace-me-as-a-consultant/"
+      ><span>Can AI replace me as a consultant?</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

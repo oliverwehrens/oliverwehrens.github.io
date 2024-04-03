@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on Oliver Wehrens</title>
+    <link>http://localhost:1313/categories/test/</link>
+    <description>Recent content in Test on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Aug 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>4 ways to test your code</title>
+      <link>http://localhost:1313/4-ways-to-test-your-code/</link>
+      <pubDate>Thu, 20 Aug 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/4-ways-to-test-your-code/</guid>
+      <description>Whenever you write some code you better make sure you have it covered by some tests. There are different possibilities on how to achieve this (and you might want to use all of them).&#xA;Unit Tests Unit tests are a classic. You usually write them while you code. Write tests, run failing test, write code and run passing test. Repeat. Keep this small and simple. Test the smallest unit which makes sense.</description>
+    </item>
+  </channel>
+</rss>

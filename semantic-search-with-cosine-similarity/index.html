@@ -1,0 +1,383 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Semantic Search with Cosine Similarity - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="If you have a lot of text, how do you search though it? Keywords? What if these keywords never show up there? Imagine you want to know if Jerome Powell says something about &lsquo;Inflation decrease&rsquo; but he might not say the exact words? You will not find it. Databases like Meilisearch offer synonyms, but this can only take you so far.
+Similarity Enter semantic search.
+I first heard about it when I saw that OpenAI offers this." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Semantic Search with Cosine Similarity</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Feb 23, 2023</time>
+      
+      
+      
+      
+      <span class="text-gray">- 3 min</span>
+    </div>
+    
+  </header>
+
+  <section><p><img src="Cosine.png" alt="&ldquo;Cosine&rdquo;" title="Cosine Similarity"></p>
+<p>If you have a lot of text, how do you search though it? Keywords? What if these keywords never show up there? Imagine you want to know if Jerome Powell says something about &lsquo;Inflation decrease&rsquo; but he might not say the exact words? You will not find it. Databases like <a href="https://www.meilisearch.com/">Meilisearch</a> offer synonyms, but this can only take you so far.</p>
+<h1 id="similarity">Similarity</h1>
+<p>Enter semantic search.</p>
+<p>I first heard about it when I saw that <a href="https://openai.com/blog/introducing-text-and-code-embeddings/">OpenAI</a> offers this. It is based around that text can be represented as vectors and similar texts are very close together &lsquo;<a href="https://en.wikipedia.org/wiki/Dot_product#Application_to_the_law_of_cosines">cosine similarity</a>&rsquo;. Complicated maths, but you don&rsquo;t need to understand all of it to use it (I certainly don&rsquo;t). Pretrained ML models can calculate vectors for any text. These vectors are specific to that particular model. To give you an understanding how such a vector looks like (I cut out 150 or so lines).</p>
+<pre tabindex="0"><code>[-3.07975650e-01 -4.73436937e-02 -1.03426361e-02  1.10289887e-01-
+1.38934078e-02  7.06083328e-02 -3.67332667e-01  1.16913512e-01-
+2.93210179e-01  2.50628859e-01 -6.69540018e-02  4.43334401e-
+011.70516875e-02  2.39368200e-01 -4.94712442e-01  2.04233713e-02-
+2.03837603e-02  2.25737140e-01  1.33947954e-01  1.23015614e-
+022.05453351e-01 -1.86783701e-01  1.81604587e-02 -3.47994678e-02
+...
+
+-1.66226476e-01 -5.37997723e-01 -1.25642300e-01  9.77484733e-
+024.24027830e-01 -1.34015873e-01  3.46000522e-01  1.68134421e-01-
+1.16296090e-01 -2.67094791e-01  4.55991402e-02  1.12584665e-
+015.82341433e-01  5.29223680e-02 -3.03590298e-02 -3.04945894e-02-
+2.88803399e-01 -4.12475541e-02 -9.93557051e-02  7.09266439e-
+021.81840926e-01 -1.34017412e-02  1.19283721e-01 -1.16099559e-
+012.49713331e-01 -1.49268331e-02 -6.08050339e-02  3.11732795e-02]
+This just represents &#39;Inflation decrease&#39;.
+</code></pre><h1 id="the-code">The Code</h1>
+<p>How would that work now? How do I find out if Mr. Powell says something about Inflation decrease in his <a href="https://www.federalreserve.gov/newsevents/speech/powell20221130a.htm">speech</a>?</p>
+<p>Here is the code for that.</p>
+<pre tabindex="0"><code>import numpy as np
+from sentence_transformers import SentenceTransformer
+
+with open(&#34;powell.txt&#34;) as f:
+    text = f.read()
+    text.replace(&#34;\n&#34;, &#34; &#34;)
+sentences = text.split(&#34;.&#34;)
+
+query = &#34;Inflation decrease&#34;
+
+model = SentenceTransformer(&#39;nblokker/debatenet-2-cat&#39;)
+text_embed = model.encode(query)
+embeddings = model.encode(sentences)
+
+
+def cosine_similarity(a, b):
+    return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
+
+
+for c in range(len(sentences)):
+    similarity = cosine_similarity(text_embed, embeddings[c])
+    if similarity &gt; 0.75:
+        print(f&#34;{similarity} {sentences[c]} &#34;)
+</code></pre><p>After reading in the file and settings the query, it loads the model <a href="https://huggingface.co/nblokker/debatenet-2-cat">nblokker/debatenet-2-cat</a> from huggingface.co (~1 GB of data), transforms the question and the sentences to vectors.</p>
+<p>I searched on the website for a model with Sentence Similarity. There might be even better ones. Try out a few. OpenAI&rsquo;s models are for sure far more sophisticated and perform better. Check out their (API)[https://platform.openai.com/docs/guides/embeddings] for embeddings. But you pay for it.</p>
+<p>The cosine_similiarty function is from the original openAI util lib. It will calculate the similarity between each sent cense and the search term.
+At the end, I&rsquo;m printing all sentences with a 75% similarity that he talks about an inflation decrease.</p>
+<h1 id="the-result">The Result:</h1>
+<p>0.8572854399681091 It will take substantially more evidence to give comfort that inflation is actually declining</p>
+<p>0.858913242816925 So when will inflation come down?
+I could answer this question by pointing to the inflation forecasts of private-sector forecasters or of FOMC participants, which broadly show a significant decline over the next year</p>
+<p>0.8331760168075562 But forecasts have been predicting just such a decline for more than a year, while inflation has moved stubbornly sideways
+0.7778124213218689 For now, let&rsquo;s put aside the forecasts and look instead to the macroeconomic conditions we think we need to see to bring inflation down to 2 percent over time</p>
+<p>0.7833545207977295 Despite the tighter policy and slower growth over the past year, we have not seen clear progress on slowing inflation</p>
+<p>0.7558010220527649 Core goods inflation has moved down from very high levels over the course of 2022, while housing services inflation has risen rapidly</p>
+<p>0.9091041088104248 Indeed, a decline in this inflation underlies most forecasts of declining inflation</p>
+<p>0.7939192652702332 Let&rsquo;s sum up this review of economic conditions that we think we need to see to bring inflation down to 2 percent</p>
+<p>With that, searching through text is on a different level. Of course, this is a very simple example, but still fun to play with. Next stop would be storing that in vector databases or using something like <a href="https://github.com/pgvector/pgvector">pgvector</a> for postgres to store and search for these huge vectors efficiently.</p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/ai"
+      >ai</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/whisper-performance-on-nvidia-rtx-4090/"
+      ><span class="mr-1.5">←</span><span>OpenAI Whisper Performance on Nvidia RTX 4090</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/openai-whisper-benchmark-on-nvidia-tesla-t4-a100/"
+      ><span>OpenAI Whisper Benchmark Nvidia Tesla T4 / A100</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

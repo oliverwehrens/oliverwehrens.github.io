@@ -1,0 +1,352 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>OpenAI Whisper on Apple M1 - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="OpenAI released Whisper in September 2022 as Open Source. To achieve good performance, you need an Nvidia CUDA GPU with &gt; 8 GB VRAM.
+Recently, Georgi Gerganov released a C&#43;&#43; port optimized for CPU and especially Apple Silicon Platform. So I tried this out.
+I run all of that on a Macbook Pro with a M1Pro CPU (6 performance and 2 efficiency cores) and 32 GB RAM. I want to run one 10 minute audio file in German with different number of cores and different models (tiny, base, small, medium, large)." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">OpenAI Whisper on Apple M1</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Dec 8, 2022</time>
+      
+      
+      
+      
+      <span class="text-gray">- 4 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>OpenAI <a href="https://openai.com/blog/whisper/">released Whisper</a> in September 2022 as Open Source. To achieve good performance, you need an Nvidia CUDA GPU with &gt; 8 GB VRAM.</p>
+<p>Recently, Georgi Gerganov released a <a href="https://github.com/ggerganov/whisper.cpp">C++ port</a> optimized for CPU and especially Apple Silicon Platform.  So I tried this out.</p>
+<p>I run all of that on a Macbook Pro with a M1Pro CPU (6 performance and 2 efficiency cores) and 32 GB RAM. I want to run one 10 minute audio file in German with different number of cores and different models (tiny, base, small, medium, large). For more on the models and how it works, see the <a href="https://github.com/ggerganov/whisper.cpp/blob/master/README.md">readme</a> of Georgi. I used an exact 10-minute audio clip (search for podcast with the <a href="itunes:duration">itunes:duration</a>600&lt;/itunes:duration&gt; in the RSS feed) from []&lsquo;Was jetzt?&rsquo; Zeit Podcast](<a href="https://www.zeit.de/serie/was-jetzt)">https://www.zeit.de/serie/was-jetzt)</a>.</p>
+<h1 id="speed">Speed</h1>
+<p>The following graph shows the total time from Whispers output in milliseconds.</p>
+<p><img src="bench1.png" alt="Bench1" title="whisper.cpp time for different models with different number of threads"></p>
+<p>I split between tiny and base and the rest, because they are so much faster for the speed-up real-time comparison of a 10-Minute audio clip.</p>
+<p><img src="speedup_smaller_models.jpg" alt="Bench2" title="Models"></p>
+<p><img src="speedup_larger_models.jpg" alt="Bench3" title="Larger Models"></p>
+<p>In the higher models (with hopefully the best quality), I got a ~ 2x speed-up, with the smaller model a 10-40x.</p>
+<p>I wonder how good a CUDA GPU would perform. I don&rsquo;t have one, maybe you have? Furthermore, I put everything into a <a href="https://github.com/oliverwehrens/benchmark-whisper-cpp">Github Repo</a>, so you can see the numbers and how I ran the benchmark. I also added a Python version which should ran with a CUDA GPU (but I never tested it).</p>
+<h1 id="accuracy">Accuracy</h1>
+<p>Next up is the accuracy. Which model to choose? The benchmark saves the output as SRT, VTT and text file for each model. Time to compare.</p>
+<p>This is a tricky one. I choose a very simple approach. I copied and edited a (large model generated) file by hand to what I heard in the audio file. Then I subtract all these words from the ones by the model. All words which are left are an error (in transcription and original). I also assume, all models produce the same output when running on different number of threads. So I took the 4 thread version.</p>
+<p><img src="errors.jpg" alt="Errors" title="Errors"></p>
+<p>If I combine the words left in the original file and the transcribed one, I get the following results. I know this is a very light approach in checking accuracy. But I did not know better (without checking everything by hand).</p>
+<p><img src="accuracy.jpg" alt="Accuracy" title="Accuracy"></p>
+<p>Different models generated different amount of words.</p>
+<p><img src="words.jpg" alt="Words" title="Words"></p>
+<p>I edited a large model to make it the original. Only 4 words were wrong (if I read it correctly).</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>No surprise, the large model seems to be the best. For lower accuracy (and much faster speed) the small model is doing very well in my test. I will need to investigate that further. For sentiment analysis, the tiny model might be good (and I have no idea how to do that).</p>
+<p>If I ran the large model (the best quality!) on 2 cores, I can run 3 tasks like that. That means in 402 seconds, I can transcribe 30 minutes of audio on my MacBook Pro, which results in ~4,5 speed-up. One process takes ~ 5 GB of RAM with the large model.</p>
+<p>A Mac Studio M1 Ultra with 64 GB RAM and 16 performance cores would run 8 of these, resulting in an ~ 11,9 speed-up. This will cost you €4600. I need an Nvidia Cuda comparison to see how that matches up.</p>
+<p>I did not measure power usage during the tests.</p>
+<p>The Python version of OpenAI Whisper runs on my Macbook with the large model in 662.5 seconds, which is ~ 10% slow down. That is faster than I expected. Apple Silicon PyTorch and OpenWhisper (Python) are coming. This will be interesting.</p>
+<p>This was a fun task.</p>
+<h1 id="bonus">Bonus</h1>
+<p>I ran the same test on a MacBook Air M1 with 8 GB RAM. Only 4 performance cores are available.</p>
+<p><img src="MBA_speed.jpg" alt="MBA" title="MBA Speed"></p>
+<p>Tiny performance is about the same. With much less RAM and slower M1 (non-Pro) processors, you can see the numbers declining a lot.</p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/ai"
+      >ai</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/openai-whisper-benchmark-on-nvidia-tesla-t4-a100/"
+      ><span class="mr-1.5">←</span><span>OpenAI Whisper Benchmark Nvidia Tesla T4 / A100</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/what-does-it-take-to-become-a-software-architekt/"
+      ><span>What does it take to become a software architect?</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

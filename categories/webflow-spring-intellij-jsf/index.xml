@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webflow Spring IntelliJ JSF on Oliver Wehrens</title>
+    <link>http://localhost:1313/categories/webflow-spring-intellij-jsf/</link>
+    <description>Recent content in Webflow Spring IntelliJ JSF on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Mar 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/webflow-spring-intellij-jsf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to refactor Spring Webflow variables in your JSF pages with IntelliJ IDEA</title>
+      <link>http://localhost:1313/how-to-refactor-spring-webflow-variables-in-your-jsf-pages-with-intellij-idea/</link>
+      <pubDate>Wed, 18 Mar 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/how-to-refactor-spring-webflow-variables-in-your-jsf-pages-with-intellij-idea/</guid>
+      <description>We are using JSF, Facelets and Spring Webflow in the product I&amp;rsquo;m currently working on. What bugged me for some time already was that when we started to refactor the domain and the corresponding dto&amp;rsquo;s the GUI was a problem since the variables which get pulled out of the webflow are just string declarations. I had to go to each xhtml file and change the code to reflect the access to the new properties.</description>
+    </item>
+  </channel>
+</rss>

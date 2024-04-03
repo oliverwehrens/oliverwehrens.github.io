@@ -1,0 +1,359 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>How to test Spring Webflow 2 (with parent flows) - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="In the last couple of month I was writing some flows using Spring Webflow 2. I knew that I (in theory) I could test them but I never did. The overall documentation of Webflow 2 is not that great at the moment, so I hope to improve that a little bit.
+Spring Webflow 2 supports only JUnit tests so far. I guess this will change at some point but until then you have to pull out that junit." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">How to test Spring Webflow 2 (with parent flows)</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Apr 20, 2009</time>
+      
+      
+      
+      
+      <span class="text-gray">- 2 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>In the last couple of month I was writing some flows using Spring Webflow 2. I knew that I (in theory) I could test them but I never did. The overall documentation of Webflow 2 is not that great at the moment, so I hope to improve that a little bit.</p>
+<p>Spring Webflow 2 supports only JUnit tests so far. I guess this will change at some point  but until then you have to pull out that junit.jar again.</p>
+<p>Sorry for the awkward line breaks. Spring just does love long method and class names (which is not that bad).</p>
+<p>Your Testclass needs to extends <code>AbstractXmlFlowExecutionTests</code> and to implement<code> protected FlowDefinitionResource getResource(FlowDefinitionResourceFactory resourceFactory)</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyWebflowTest</span> <span style="color:#66d9ef">extends</span> AbstractXmlFlowExecutionTests
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">protected</span> FlowDefinitionResource <span style="color:#a6e22e">getResource</span>(
+</span></span><span style="display:flex;"><span>     FlowDefinitionResourceFactory resourceFactory) {
+</span></span><span style="display:flex;"><span>    FlowDefinitionResource flowDefinitionResource <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>      resourceFactory.<span style="color:#a6e22e">createResource</span>(<span style="color:#e6db74">&#34;flows/administration/skinManagement.flow.xml&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> flowDefinitionResource;
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>If your flow now happen to have a parent flow you are in a bit of trouble. You just can include one flow in the <code>FlowDefinitionResource</code>. The parent tag in your flow points to an id of the parentflow which is usually defined in a webflow configuration file. If this parent flow again has parents as well&hellip;yes, same game again.</p>
+<p>To get a hold of these flows you need to override <code>getModelResources[]</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">protected</span> FlowDefinitionResource<span style="color:#f92672">[]</span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">getModelResources</span>(FlowDefinitionResourceFactory resourceFactory) {
+</span></span><span style="display:flex;"><span>  FlowDefinitionResource<span style="color:#f92672">[]</span> flowDefinitionResources <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">new</span> FlowDefinitionResource<span style="color:#f92672">[</span>3<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>  flowDefinitionResources<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>    resourceFactory.<span style="color:#a6e22e">createResource</span>(<span style="color:#e6db74">&#34;flows/common.flow.xml&#34;</span>);
+</span></span><span style="display:flex;"><span>  flowDefinitionResources<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>    resourceFactory.<span style="color:#a6e22e">createResource</span>(<span style="color:#e6db74">&#34;flows/common-exceptionHandling.flow.xml&#34;</span>);
+</span></span><span style="display:flex;"><span>  flowDefinitionResources<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>    resourceFactory.<span style="color:#a6e22e">createResource</span>(<span style="color:#e6db74">&#34;flows/common-menu.flow.xml&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> flowDefinitionResources;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If one of your flows is using beans you want to mock them in the test.  You can do that by registering with the <code>MockFlowBuildContext</code>. The method <code>configureFlowBuilderContext</code> will be called by <code>AbstractXmlFlowExecutionTests</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">configureFlowBuilderContext</span>(
+</span></span><span style="display:flex;"><span>    MockFlowBuilderContext builderContext) {
+</span></span><span style="display:flex;"><span>  builderContext.<span style="color:#a6e22e">registerBean</span>(<span style="color:#e6db74">&#34;validationExceptionHandler&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">new</span> ValidationExceptionHandler());
+</span></span><span style="display:flex;"><span>  builderContext.<span style="color:#a6e22e">registerBean</span>(<span style="color:#e6db74">&#34;infastructureExceptionHandler&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">new</span> InfastructureExceptionHandler());
+</span></span><span style="display:flex;"><span>  builderContext.<span style="color:#a6e22e">registerBean</span>(<span style="color:#e6db74">&#34;springSecurityExceptionHandler&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">new</span> SpringSecurityExceptionHandler());
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>With this setup you now can start testing the flow.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testSkinManagementView</span>() {
+</span></span><span style="display:flex;"><span>  MockExternalContext mockExternalContext <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MockExternalContext();
+</span></span><span style="display:flex;"><span>  startFlow(mockExternalContext);
+</span></span><span style="display:flex;"><span>  assertFlowExecutionActive();
+</span></span><span style="display:flex;"><span>  assertCurrentStateEquals(<span style="color:#e6db74">&#34;showSkinManagementOverview&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>I think the code is pretty self explanatory.</p>
+<p>You have several possibilities including start and resume flow and assert certain states. You can test action methods doing something (like calling a service) and making sure the correct flow is executed.</p>
+<p>Figuring out the initial setup with the parent flow and beans was the most time consuming task. You need to make sure that you only put flow logic in the definition of the flow since that is what webflow is for. I think with some clever usage of <code>set</code> and <code>result</code> you can make things complicated and a bit tricky.</p>
+</section>
+
+
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/intellij-idea-plugin-property-sorter-updated/"
+      ><span class="mr-1.5">←</span><span>IntelliJ Idea Plugin Property Sorter updated</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/getting-the-browsers-geolocation-with-html-5/"
+      ><span>Getting the Browsers GeoLocation with HTML 5</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

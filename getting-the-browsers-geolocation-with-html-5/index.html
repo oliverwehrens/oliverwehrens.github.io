@@ -1,0 +1,340 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Getting the Browsers GeoLocation with HTML 5 - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Until now it was almost impossible to get the GeoLocation of a user browsing your site. You could try to use several services to more or less guess the current position. Most of the time they where using the IP address to tackle the problem. This was not very reliable when it came to mobile devices. Ever since the iPhone hit the market mobile adoption of the web grew exponentially." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="http://localhost:1313/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Product Lover. Mentor.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./twitter.svg)"
+          href="https://twitter.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          twitter
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/rss "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Getting the Browsers GeoLocation with HTML 5</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Apr 11, 2009</time>
+      
+      
+      
+      
+      <span class="text-gray">- 3 min</span>
+    </div>
+    
+  </header>
+
+  <section>
+
+Until now it was almost impossible to get the <strong>GeoLocation</strong> of a user browsing your site. You could try to use several services to more or less guess the current position. Most of the time they where using the IP address to tackle the problem. This was <strong>not very reliable</strong> when it came to mobile devices.
+
+Ever since the iPhone hit the market mobile adoption of the web grew exponentially. Google threw in Android and I'm sure some Windows Mobile phones do have GPS as well.  According to some talks at <a href="http://www.re-publica.de">re:publica 09</a> the big telco carriers such as T-Mobile and Vodafone see their <strong>future in the mobile (geolocation aware) web</strong>.
+
+Even though these devices had the capabilities to get the current location,  website developers are still facing the problem that they can <strong>not access the positioning hardware of the phone</strong>. There was almost no way for (mobile) web developers to get the location of the user. There are some solution out there but you needed to install extra software which is not always possible on a phone.
+
+Fortunately W3C is working on the <b><a href="http://dev.w3.org/html5/spec/Overview.html">HTML 5</a></b> standard which includes JavaScript <b>access to the <a href="http://dev.w3.org/geo/api/spec-source.html">browsers location</a></b> (at least I hope it will be included). The latest beta of <a href="http://en-us.www.mozilla.com/en-US/firefox/3.1b3/releasenotes/">Firefox 3.1 (beta3)</a> already supports that API.   If you don't have a GPS system in your computer you can install an <a href="https://addons.mozilla.org/en-US/firefox/addon/8420 ">addon</a> to set your location. Rumors has it that Apple will release the upcoming <strong>iPhone 3.0</strong> OS with a location aware browser and Google will do the same with one of the next updates of <strong>Android</strong>.
+
+To test that I wrote a small <a href="/static/html5geolocationdemo.html">geolocation aware demo webpage</a> with some JavaScript to pull out the information. If you are accessing it with Firefox 3.1b3+ (plugin installed and configured with your position) you will be prompted for unveiling your location to the website. If you do so it will show you your current position on the map and print out the address.
+<img alt="Allow access to the browsers GeoLocation" src="/static/html5geolocation01.jpg" title="Allow access to the browsers GeoLocation" width="490" height="482" />
+
+<img alt="Showing the GeoLocation of the Browser" src="/static/html5geolocation02.jpg" title="Showing the GeoLocation of the Browser" width="490" height="527" />
+
+To access this information all you need to do is:
+
+``` javascript
+    function showMap(position) {
+      // Show a map centered at
+      // (position.coords.latitude, position.coords.longitude).
+    }
+    // One-shot position request.
+    navigator.geolocation.getCurrentPosition(showMap);
+```
+
+
+Once this feature is widely available in mobile browsers (I do hope for this summer) my bet is that we will see a whole bunch of websites doing all sort of crazy things with these information. I'm a big Location Based Services (LBS) fan and I can't wait to see people taking advantage of this.
+
+ <strong>Update</strong> Firefox 3.5.x uses Google's Geolocation service if no other way can be used. This is halfway accurate. It gathers information about nearby wireless access points and your computer's IP address. No more plugin needed.
+
+</section>
+
+
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/how-to-test-spring-webflow-2-with-parent-flows/"
+      ><span class="mr-1.5">←</span><span>How to test Spring Webflow 2 (with parent flows)</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://localhost:1313/a-quick-look-at-google-app-engine-for-java/"
+      ><span>A Quick Look at Google App Engine for Java</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2012 - 2024
+    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>
