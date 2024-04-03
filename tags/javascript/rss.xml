@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on Oliver Wehrens</title>
+    <link>https://oliverwehrens.github.io/tags/javascript/</link>
+    <description>Recent content in Javascript on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Jul 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://oliverwehrens.github.io/tags/javascript/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript testing for Java projects</title>
+      <link>https://oliverwehrens.github.io/javascript-testing-for-java-projects/</link>
+      <pubDate>Thu, 12 Jul 2012 00:00:00 +0000</pubDate>
+      <guid>https://oliverwehrens.github.io/javascript-testing-for-java-projects/</guid>
+      <description>I&amp;rsquo;m a Java Programmer. I do mostly web projects. There is a tendency to move away from server side frameworks towards Javascript (+mvc) and rest services. This now involves me in programming Javascript at the GUI level. Welcome maven, IDE and continous integration.&#xA;Coming from the JVM world I&amp;rsquo;m pretty much used to writing tests in my IDE running them and then writing the production code. What I found out, this is not that easy with Javascript.</description>
+    </item>
+    <item>
+      <title>How to detect if your server is down when making jQuery Ajax calls </title>
+      <link>https://oliverwehrens.github.io/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</link>
+      <pubDate>Mon, 26 Apr 2010 00:00:00 +0000</pubDate>
+      <guid>https://oliverwehrens.github.io/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</guid>
+      <description>If you developed an ajax rich web application, maybe even a single page interface, you want to make sure that the user gets notified if the server is not reachable anymore. This happens either if the it goes down or the client loses its network connection. Depending on your code the application can run for a while and the user is confused about missing interactivity.&#xA;So how do you detect this?</description>
+    </item>
+  </channel>
+</rss>

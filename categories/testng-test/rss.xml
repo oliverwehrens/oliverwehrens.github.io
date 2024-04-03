@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TestNG Test on Oliver Wehrens</title>
+    <link>https://oliverwehrens.github.io/categories/testng-test/</link>
+    <description>Recent content in TestNG Test on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Mar 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://oliverwehrens.github.io/categories/testng-test/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using TestNG with DataProviders to cover more test cases</title>
+      <link>https://oliverwehrens.github.io/using-testng-with-dataproviders-to-cover-more-test-cases/</link>
+      <pubDate>Mon, 23 Mar 2009 00:00:00 +0000</pubDate>
+      <guid>https://oliverwehrens.github.io/using-testng-with-dataproviders-to-cover-more-test-cases/</guid>
+      <description>A couple of days ago I had the case that I needed to test a method with different parameters. I ended up writing a couple of test methods differing only in passing various arguments to the unit under test.&#xA;Tonight I was at a TestNG talk and while I knew most of the stuff already the DataProviders (which I heard of before but unfortunately never really payed attention to) really caught me.</description>
+    </item>
+  </channel>
+</rss>

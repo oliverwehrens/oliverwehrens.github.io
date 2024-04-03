@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Test UnitTest on Oliver Wehrens</title>
+    <link>https://oliverwehrens.github.io/categories/spring-test-unittest/</link>
+    <description>Recent content in Spring Test UnitTest on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Feb 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://oliverwehrens.github.io/categories/spring-test-unittest/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Three reasons why you don&#39;t want to use a Spring context in unit tests</title>
+      <link>https://oliverwehrens.github.io/three-reasons-why-you-dont-want-to-use-a-spring-context-in-unit-tests/</link>
+      <pubDate>Wed, 25 Feb 2009 00:00:00 +0000</pubDate>
+      <guid>https://oliverwehrens.github.io/three-reasons-why-you-dont-want-to-use-a-spring-context-in-unit-tests/</guid>
+      <description>You use Spring in your application everywhere. You love it. Everything gets injected and is configured by Spring. Great. Why not use the same technology to wire up your tests?&#xA;The bottom line is: Starting the Spring Context all the time in your tests drags you down at the costs of development time.&#xA;Here is why:&#xA;1. Turnaround times are much faster&#xA;When you discover a bug which might have not been covered by tests yet (this happens to me all the time) you are much faster rerunning your tests without the application context.</description>
+    </item>
+  </channel>
+</rss>

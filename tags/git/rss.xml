@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Oliver Wehrens</title>
+    <link>https://oliverwehrens.github.io/tags/git/</link>
+    <description>Recent content in Git on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Mar 2010 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://oliverwehrens.github.io/tags/git/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How we switched from Subversion to Git</title>
+      <link>https://oliverwehrens.github.io/how-we-switched-from-subversion-to-git/</link>
+      <pubDate>Mon, 22 Mar 2010 00:00:00 +0000</pubDate>
+      <guid>https://oliverwehrens.github.io/how-we-switched-from-subversion-to-git/</guid>
+      <description>So I heard about these strange distributed version control systems like over a year ago. I used it in my own little projects and everything went smoothly and I really liked it. The idea also caught on at work and my team started a using Git in a fresh project last summer. We did not had so much problems since you can use Git very much like a central vcs like Subversion if you want to.</description>
+    </item>
+  </channel>
+</rss>

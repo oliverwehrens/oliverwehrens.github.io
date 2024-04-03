@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Integration Development on Oliver Wehrens</title>
+    <link>https://oliverwehrens.github.io/categories/integration-development/</link>
+    <description>Recent content in Integration Development on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Nov 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://oliverwehrens.github.io/categories/integration-development/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Integrate early, integrate often</title>
+      <link>https://oliverwehrens.github.io/integrate-early-integrate-often/</link>
+      <pubDate>Sat, 28 Nov 2009 00:00:00 +0000</pubDate>
+      <guid>https://oliverwehrens.github.io/integrate-early-integrate-often/</guid>
+      <description>You are doing scrum, your story is big, you really don&#39;t know much about it and the feature does not get implemented in time.&#xA;Sounds familiar ?&#xA;I had this a couple of times.&#xA;What turned out to be a real problem is that, tech nerds as we are, we spent most of the time coding up a nice solution (and we were almost always convinced that this was the minimum we should have done).</description>
+    </item>
+  </channel>
+</rss>

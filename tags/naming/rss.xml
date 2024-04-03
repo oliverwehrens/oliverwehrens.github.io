@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Naming on Oliver Wehrens</title>
+    <link>https://oliverwehrens.github.io/tags/naming/</link>
+    <description>Recent content in Naming on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Feb 2010 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://oliverwehrens.github.io/tags/naming/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Name your objects right</title>
+      <link>https://oliverwehrens.github.io/name-your-objects-right/</link>
+      <pubDate>Tue, 09 Feb 2010 00:00:00 +0000</pubDate>
+      <guid>https://oliverwehrens.github.io/name-your-objects-right/</guid>
+      <description>Whenever you create an object you have to find a meaningful name.&#xA;While renaming later in modern IDE&amp;rsquo;s is no problem at all you should not pick the first name which comes to your mind.&#xA;Imagine you have an external fraud detection web service and it will return a &amp;lsquo;hit&amp;rsquo; or &amp;lsquo;miss&amp;rsquo;. How do you name this object? HitOrMiss maybe (since this is the representation you get from the webservice) ?</description>
+    </item>
+  </channel>
+</rss>

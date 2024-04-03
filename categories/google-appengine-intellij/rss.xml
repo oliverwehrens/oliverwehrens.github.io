@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google AppEngine IntelliJ on Oliver Wehrens</title>
+    <link>https://oliverwehrens.github.io/categories/google-appengine-intellij/</link>
+    <description>Recent content in Google AppEngine IntelliJ on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 May 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://oliverwehrens.github.io/categories/google-appengine-intellij/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jetbrains released a Google App Engine plugin for IntelliJ</title>
+      <link>https://oliverwehrens.github.io/jetbrains-released-a-google-app-engine-plugin-for-intellij/</link>
+      <pubDate>Fri, 08 May 2009 00:00:00 +0000</pubDate>
+      <guid>https://oliverwehrens.github.io/jetbrains-released-a-google-app-engine-plugin-for-intellij/</guid>
+      <description>Jetbrains released a Google App Engine plugin for their IntelliJ IDE. I did not see any announcement about this at all. You will have a new option when creating a new project. After supplying the path to the local app engine SDK your almost good to go. I needed to add the app engine jars as libraries to my project. That being out of the way you can start coding, run you local server (a pre configured run configuration is supplied) and also deploy it to Google all from within IntelliJ.</description>
+    </item>
+  </channel>
+</rss>
