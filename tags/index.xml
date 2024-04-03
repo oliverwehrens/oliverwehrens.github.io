@@ -2,332 +2,332 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Oliver Wehrens</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://example.org/tags/</link>
     <description>Recent content in Tags on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Coding</title>
-      <link>http://localhost:1313/tags/coding/</link>
+      <link>https://example.org/tags/coding/</link>
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/coding/</guid>
+      <guid>https://example.org/tags/coding/</guid>
       <description></description>
     </item>
     <item>
       <title>Architecture</title>
-      <link>http://localhost:1313/tags/architecture/</link>
+      <link>https://example.org/tags/architecture/</link>
       <pubDate>Sun, 17 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/architecture/</guid>
+      <guid>https://example.org/tags/architecture/</guid>
       <description></description>
     </item>
     <item>
       <title>Ai</title>
-      <link>http://localhost:1313/tags/ai/</link>
+      <link>https://example.org/tags/ai/</link>
       <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ai/</guid>
+      <guid>https://example.org/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Organization</title>
-      <link>http://localhost:1313/tags/organization/</link>
+      <link>https://example.org/tags/organization/</link>
       <pubDate>Tue, 31 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/organization/</guid>
+      <guid>https://example.org/tags/organization/</guid>
       <description></description>
     </item>
     <item>
       <title>Knowledge</title>
-      <link>http://localhost:1313/tags/knowledge/</link>
+      <link>https://example.org/tags/knowledge/</link>
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/knowledge/</guid>
+      <guid>https://example.org/tags/knowledge/</guid>
       <description></description>
     </item>
     <item>
       <title>Personal</title>
-      <link>http://localhost:1313/tags/personal/</link>
+      <link>https://example.org/tags/personal/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/personal/</guid>
+      <guid>https://example.org/tags/personal/</guid>
       <description></description>
     </item>
     <item>
       <title>Links</title>
-      <link>http://localhost:1313/tags/links/</link>
+      <link>https://example.org/tags/links/</link>
       <pubDate>Fri, 31 Mar 2017 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/links/</guid>
+      <guid>https://example.org/tags/links/</guid>
       <description></description>
     </item>
     <item>
       <title>Microservice</title>
-      <link>http://localhost:1313/tags/microservice/</link>
+      <link>https://example.org/tags/microservice/</link>
       <pubDate>Wed, 01 Feb 2017 20:54:58 +0100</pubDate>
-      <guid>http://localhost:1313/tags/microservice/</guid>
+      <guid>https://example.org/tags/microservice/</guid>
       <description></description>
     </item>
     <item>
       <title>Service Discovery</title>
-      <link>http://localhost:1313/tags/service-discovery/</link>
+      <link>https://example.org/tags/service-discovery/</link>
       <pubDate>Wed, 01 Feb 2017 20:54:58 +0100</pubDate>
-      <guid>http://localhost:1313/tags/service-discovery/</guid>
+      <guid>https://example.org/tags/service-discovery/</guid>
       <description></description>
     </item>
     <item>
       <title>Documentation</title>
-      <link>http://localhost:1313/tags/documentation/</link>
+      <link>https://example.org/tags/documentation/</link>
       <pubDate>Fri, 15 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/documentation/</guid>
+      <guid>https://example.org/tags/documentation/</guid>
       <description></description>
     </item>
     <item>
       <title>Generate</title>
-      <link>http://localhost:1313/tags/generate/</link>
+      <link>https://example.org/tags/generate/</link>
       <pubDate>Fri, 15 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/generate/</guid>
+      <guid>https://example.org/tags/generate/</guid>
       <description></description>
     </item>
     <item>
       <title>Monolith</title>
-      <link>http://localhost:1313/tags/monolith/</link>
+      <link>https://example.org/tags/monolith/</link>
       <pubDate>Tue, 29 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/monolith/</guid>
+      <guid>https://example.org/tags/monolith/</guid>
       <description></description>
     </item>
     <item>
       <title>Organisation</title>
-      <link>http://localhost:1313/tags/organisation/</link>
+      <link>https://example.org/tags/organisation/</link>
       <pubDate>Tue, 29 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/organisation/</guid>
+      <guid>https://example.org/tags/organisation/</guid>
       <description></description>
     </item>
     <item>
       <title>Deployment</title>
-      <link>http://localhost:1313/tags/deployment/</link>
+      <link>https://example.org/tags/deployment/</link>
       <pubDate>Thu, 13 Feb 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/deployment/</guid>
+      <guid>https://example.org/tags/deployment/</guid>
       <description></description>
     </item>
     <item>
       <title>Green Build</title>
-      <link>http://localhost:1313/tags/green-build/</link>
+      <link>https://example.org/tags/green-build/</link>
       <pubDate>Thu, 13 Feb 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/green-build/</guid>
+      <guid>https://example.org/tags/green-build/</guid>
       <description></description>
     </item>
     <item>
       <title>Tests</title>
-      <link>http://localhost:1313/tags/tests/</link>
+      <link>https://example.org/tags/tests/</link>
       <pubDate>Thu, 13 Feb 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tests/</guid>
+      <guid>https://example.org/tags/tests/</guid>
       <description></description>
     </item>
     <item>
       <title>Development</title>
-      <link>http://localhost:1313/tags/development/</link>
+      <link>https://example.org/tags/development/</link>
       <pubDate>Wed, 18 Dec 2013 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/development/</guid>
+      <guid>https://example.org/tags/development/</guid>
       <description></description>
     </item>
     <item>
       <title>Production</title>
-      <link>http://localhost:1313/tags/production/</link>
+      <link>https://example.org/tags/production/</link>
       <pubDate>Wed, 18 Dec 2013 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/production/</guid>
+      <guid>https://example.org/tags/production/</guid>
       <description></description>
     </item>
     <item>
       <title>Provisioning</title>
-      <link>http://localhost:1313/tags/provisioning/</link>
+      <link>https://example.org/tags/provisioning/</link>
       <pubDate>Wed, 18 Dec 2013 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/provisioning/</guid>
+      <guid>https://example.org/tags/provisioning/</guid>
       <description></description>
     </item>
     <item>
       <title>Review</title>
-      <link>http://localhost:1313/tags/review/</link>
+      <link>https://example.org/tags/review/</link>
       <pubDate>Sun, 23 Jun 2013 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/review/</guid>
+      <guid>https://example.org/tags/review/</guid>
       <description></description>
     </item>
     <item>
       <title>Sprint</title>
-      <link>http://localhost:1313/tags/sprint/</link>
+      <link>https://example.org/tags/sprint/</link>
       <pubDate>Sun, 23 Jun 2013 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sprint/</guid>
+      <guid>https://example.org/tags/sprint/</guid>
       <description></description>
     </item>
     <item>
       <title>Kvm</title>
-      <link>http://localhost:1313/tags/kvm/</link>
+      <link>https://example.org/tags/kvm/</link>
       <pubDate>Mon, 03 Jun 2013 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kvm/</guid>
+      <guid>https://example.org/tags/kvm/</guid>
       <description></description>
     </item>
     <item>
       <title>Macos</title>
-      <link>http://localhost:1313/tags/macos/</link>
+      <link>https://example.org/tags/macos/</link>
       <pubDate>Mon, 03 Jun 2013 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/macos/</guid>
+      <guid>https://example.org/tags/macos/</guid>
       <description></description>
     </item>
     <item>
       <title>Virtualization</title>
-      <link>http://localhost:1313/tags/virtualization/</link>
+      <link>https://example.org/tags/virtualization/</link>
       <pubDate>Mon, 03 Jun 2013 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/virtualization/</guid>
+      <guid>https://example.org/tags/virtualization/</guid>
       <description></description>
     </item>
     <item>
       <title>Test</title>
-      <link>http://localhost:1313/tags/test/</link>
+      <link>https://example.org/tags/test/</link>
       <pubDate>Sun, 26 May 2013 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/test/</guid>
+      <guid>https://example.org/tags/test/</guid>
       <description></description>
     </item>
     <item>
       <title>Java</title>
-      <link>http://localhost:1313/tags/java/</link>
+      <link>https://example.org/tags/java/</link>
       <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/java/</guid>
+      <guid>https://example.org/tags/java/</guid>
       <description></description>
     </item>
     <item>
       <title>Javadoc</title>
-      <link>http://localhost:1313/tags/javadoc/</link>
+      <link>https://example.org/tags/javadoc/</link>
       <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/javadoc/</guid>
+      <guid>https://example.org/tags/javadoc/</guid>
       <description></description>
     </item>
     <item>
       <title>Javascript</title>
-      <link>http://localhost:1313/tags/javascript/</link>
+      <link>https://example.org/tags/javascript/</link>
       <pubDate>Thu, 12 Jul 2012 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/javascript/</guid>
+      <guid>https://example.org/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>Jstestdriver</title>
-      <link>http://localhost:1313/tags/jstestdriver/</link>
+      <link>https://example.org/tags/jstestdriver/</link>
       <pubDate>Thu, 12 Jul 2012 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/jstestdriver/</guid>
+      <guid>https://example.org/tags/jstestdriver/</guid>
       <description></description>
     </item>
     <item>
       <title>Maven</title>
-      <link>http://localhost:1313/tags/maven/</link>
+      <link>https://example.org/tags/maven/</link>
       <pubDate>Thu, 12 Jul 2012 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/maven/</guid>
+      <guid>https://example.org/tags/maven/</guid>
       <description></description>
     </item>
     <item>
       <title>Web</title>
-      <link>http://localhost:1313/tags/web/</link>
+      <link>https://example.org/tags/web/</link>
       <pubDate>Thu, 12 Jul 2012 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web/</guid>
+      <guid>https://example.org/tags/web/</guid>
       <description></description>
     </item>
     <item>
       <title>JQuery</title>
-      <link>http://localhost:1313/tags/jquery/</link>
+      <link>https://example.org/tags/jquery/</link>
       <pubDate>Tue, 20 Jul 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/jquery/</guid>
+      <guid>https://example.org/tags/jquery/</guid>
       <description></description>
     </item>
     <item>
       <title>MVC</title>
-      <link>http://localhost:1313/tags/mvc/</link>
+      <link>https://example.org/tags/mvc/</link>
       <pubDate>Tue, 20 Jul 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mvc/</guid>
+      <guid>https://example.org/tags/mvc/</guid>
       <description></description>
     </item>
     <item>
       <title>Spring3</title>
-      <link>http://localhost:1313/tags/spring3/</link>
+      <link>https://example.org/tags/spring3/</link>
       <pubDate>Tue, 20 Jul 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/spring3/</guid>
+      <guid>https://example.org/tags/spring3/</guid>
       <description></description>
     </item>
     <item>
       <title>Books</title>
-      <link>http://localhost:1313/tags/books/</link>
+      <link>https://example.org/tags/books/</link>
       <pubDate>Sat, 05 Jun 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/books/</guid>
+      <guid>https://example.org/tags/books/</guid>
       <description></description>
     </item>
     <item>
       <title>Ajax</title>
-      <link>http://localhost:1313/tags/ajax/</link>
+      <link>https://example.org/tags/ajax/</link>
       <pubDate>Mon, 26 Apr 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ajax/</guid>
+      <guid>https://example.org/tags/ajax/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>http://localhost:1313/tags/git/</link>
+      <link>https://example.org/tags/git/</link>
       <pubDate>Mon, 22 Mar 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/git/</guid>
+      <guid>https://example.org/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Svn</title>
-      <link>http://localhost:1313/tags/svn/</link>
+      <link>https://example.org/tags/svn/</link>
       <pubDate>Mon, 22 Mar 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/svn/</guid>
+      <guid>https://example.org/tags/svn/</guid>
       <description></description>
     </item>
     <item>
       <title>Code</title>
-      <link>http://localhost:1313/tags/code/</link>
+      <link>https://example.org/tags/code/</link>
       <pubDate>Tue, 23 Feb 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/code/</guid>
+      <guid>https://example.org/tags/code/</guid>
       <description></description>
     </item>
     <item>
       <title>Metrics</title>
-      <link>http://localhost:1313/tags/metrics/</link>
+      <link>https://example.org/tags/metrics/</link>
       <pubDate>Tue, 23 Feb 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/metrics/</guid>
+      <guid>https://example.org/tags/metrics/</guid>
       <description></description>
     </item>
     <item>
       <title>Naming</title>
-      <link>http://localhost:1313/tags/naming/</link>
+      <link>https://example.org/tags/naming/</link>
       <pubDate>Tue, 09 Feb 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/naming/</guid>
+      <guid>https://example.org/tags/naming/</guid>
       <description></description>
     </item>
     <item>
       <title>Blog</title>
-      <link>http://localhost:1313/tags/blog/</link>
+      <link>https://example.org/tags/blog/</link>
       <pubDate>Sat, 06 Feb 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/blog/</guid>
+      <guid>https://example.org/tags/blog/</guid>
       <description></description>
     </item>
     <item>
       <title>Infrastructure</title>
-      <link>http://localhost:1313/tags/infrastructure/</link>
+      <link>https://example.org/tags/infrastructure/</link>
       <pubDate>Wed, 13 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/infrastructure/</guid>
+      <guid>https://example.org/tags/infrastructure/</guid>
       <description></description>
     </item>
     <item>
       <title>Selenium2</title>
-      <link>http://localhost:1313/tags/selenium2/</link>
+      <link>https://example.org/tags/selenium2/</link>
       <pubDate>Mon, 04 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/selenium2/</guid>
+      <guid>https://example.org/tags/selenium2/</guid>
       <description></description>
     </item>
     <item>
       <title>Agile</title>
-      <link>http://localhost:1313/tags/agile/</link>
+      <link>https://example.org/tags/agile/</link>
       <pubDate>Fri, 25 Dec 2009 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/agile/</guid>
+      <guid>https://example.org/tags/agile/</guid>
       <description></description>
     </item>
     <item>
       <title>Scrum</title>
-      <link>http://localhost:1313/tags/scrum/</link>
+      <link>https://example.org/tags/scrum/</link>
       <pubDate>Fri, 25 Dec 2009 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/scrum/</guid>
+      <guid>https://example.org/tags/scrum/</guid>
       <description></description>
     </item>
   </channel>

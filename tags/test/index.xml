@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Test on Oliver Wehrens</title>
-    <link>http://localhost:1313/tags/test/</link>
+    <link>https://example.org/tags/test/</link>
     <description>Recent content in Test on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 26 May 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/tags/test/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting started with veewee and vagrant</title>
-      <link>http://localhost:1313/getting-started-with-veewee-and-vagrant/</link>
+      <link>https://example.org/getting-started-with-veewee-and-vagrant/</link>
       <pubDate>Sun, 26 May 2013 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/getting-started-with-veewee-and-vagrant/</guid>
+      <guid>https://example.org/getting-started-with-veewee-and-vagrant/</guid>
       <description>What do you need to do to get a fully automated kickstart of a virtual machine on your local development platform running? Not much it turns out. There are some tricks to get around but after that it&amp;rsquo;s all fine.&#xA;The resulting image can also be used to get a system in production.&#xA;I will look at the OS installation part. Puppet will come in a later post.&#xA;Installation Tools we will play with:</description>
     </item>
     <item>
       <title>Cucumber-jvm for Java</title>
-      <link>http://localhost:1313/cucumber-jvm-for-java/</link>
+      <link>https://example.org/cucumber-jvm-for-java/</link>
       <pubDate>Thu, 12 Apr 2012 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cucumber-jvm-for-java/</guid>
-      <description>&lt;p&gt;In an &lt;a href=&#34;http://localhost:1313/concordion-vs-cucumber-and-java-based-acceptance-testing&#34;&gt;earlier&lt;/a&gt; article I compared cucumber (with Cuke4Duke) and Concordion. It was very cumbersome due to the ruby/jruby jvm chain. Behold - the new &lt;strong&gt;&lt;a href=&#34;https://github.com/cucumber/cucumber-jvm&#34;&gt;cucumber-jvm&lt;/a&gt;&lt;/strong&gt; was released. So how did it &lt;strong&gt;improve&lt;/strong&gt; ?&lt;/p&gt;&#xA;&lt;p&gt;Cucumber-jvm has support for many languages, e.g. Scala, Groovy, Closure and of course Java. I will focus on &lt;strong&gt;Java&lt;/strong&gt; and &lt;strong&gt;Maven&lt;/strong&gt;.&lt;/p&gt;</description>
+      <guid>https://example.org/cucumber-jvm-for-java/</guid>
+      <description>&lt;p&gt;In an &lt;a href=&#34;https://example.org/concordion-vs-cucumber-and-java-based-acceptance-testing&#34;&gt;earlier&lt;/a&gt; article I compared cucumber (with Cuke4Duke) and Concordion. It was very cumbersome due to the ruby/jruby jvm chain. Behold - the new &lt;strong&gt;&lt;a href=&#34;https://github.com/cucumber/cucumber-jvm&#34;&gt;cucumber-jvm&lt;/a&gt;&lt;/strong&gt; was released. So how did it &lt;strong&gt;improve&lt;/strong&gt; ?&lt;/p&gt;&#xA;&lt;p&gt;Cucumber-jvm has support for many languages, e.g. Scala, Groovy, Closure and of course Java. I will focus on &lt;strong&gt;Java&lt;/strong&gt; and &lt;strong&gt;Maven&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>One assert per test, really</title>
-      <link>http://localhost:1313/one-assert-per-test-really/</link>
+      <link>https://example.org/one-assert-per-test-really/</link>
       <pubDate>Tue, 14 Jun 2011 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/one-assert-per-test-really/</guid>
+      <guid>https://example.org/one-assert-per-test-really/</guid>
       <description>Recently I was debugging my code and I could not see why my test was failing. It took me about 20 minutes to see that I violated one rule I try to follow. One assert per test. After tweeting it I got some reaction ranging from &#39;this is a very silly guideline&#39; to &#39;Tests should test one thing. Often one assertion, but not always.&#39;. I, of course, tend to agree the latter one.</description>
     </item>
     <item>
       <title>Using Selenium2 for web testing (and not Selenium IDE)</title>
-      <link>http://localhost:1313/using-selenium2-for-web-testing-and-not-selenium-ide/</link>
+      <link>https://example.org/using-selenium2-for-web-testing-and-not-selenium-ide/</link>
       <pubDate>Mon, 04 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/using-selenium2-for-web-testing-and-not-selenium-ide/</guid>
+      <guid>https://example.org/using-selenium2-for-web-testing-and-not-selenium-ide/</guid>
       <description>Selenium IDE Selenium is well know for automatic testing web pages. It does support many browsers, operating systems and languages. A Selenium IDE exists to aid you creating automated tests. It is possible to write extensions in JavaScript to have data driven tests. If you organize your selenium tests in a way that you split the pages and forms in components, you can load up new data for the tests (written in xml) to fill out forms differently for each use case.</description>
     </item>
   </channel>

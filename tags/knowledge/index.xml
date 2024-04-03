@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Knowledge on Oliver Wehrens</title>
-    <link>http://localhost:1313/tags/knowledge/</link>
+    <link>https://example.org/tags/knowledge/</link>
     <description>Recent content in Knowledge on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/knowledge/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/tags/knowledge/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sketch Book Summary: Good Strategy, Bad Strategy</title>
-      <link>http://localhost:1313/sketch-book-summary-good-strategy-bad-strategy/</link>
+      <link>https://example.org/sketch-book-summary-good-strategy-bad-strategy/</link>
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sketch-book-summary-good-strategy-bad-strategy/</guid>
+      <guid>https://example.org/sketch-book-summary-good-strategy-bad-strategy/</guid>
       <description>Here is my Sketch Book Summary about Good Stratgey, Bad Strategy. Thanks to Daniel for recommending it.</description>
     </item>
     <item>
       <title>Using Sketch Book Summary (SBS) to remember content what matters to me.</title>
-      <link>http://localhost:1313/sketch-book-summary-sbs/</link>
+      <link>https://example.org/sketch-book-summary-sbs/</link>
       <pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sketch-book-summary-sbs/</guid>
+      <guid>https://example.org/sketch-book-summary-sbs/</guid>
       <description>Over the time I developed my own way of remembering what the content of a book was. I&amp;rsquo;m reading a lot self improvement, time management, management and culture books. A trainer once told me if I could remember months later only 10% what was in the book I&amp;rsquo;m really good. I wanted to change that.&#xA;I&amp;rsquo;m reading mostly on my Kindle. I have all the books always with me. The nice thing about it is, that I could mark text which is important or useful to me.</description>
     </item>
     <item>
       <title>Sketch Book Summary: Atomic Habits</title>
-      <link>http://localhost:1313/sbs-atomic-habbits/</link>
+      <link>https://example.org/sbs-atomic-habbits/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sbs-atomic-habbits/</guid>
+      <guid>https://example.org/sbs-atomic-habbits/</guid>
       <description>Below my summary about the Book Atomic Habits by James Clear. This is how I try remember some ideas in books. There is another post about this and why I do it.</description>
     </item>
   </channel>

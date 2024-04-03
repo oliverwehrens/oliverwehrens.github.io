@@ -47,7 +47,7 @@
   style="--bg: "
   lang="en-us"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -78,14 +78,14 @@ The file layout should be something like that. After that change your pom.xml to
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="https://example.org/main.min.css" />
 
   
   
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="https://example.org/theme.png" />
 
   
   
@@ -95,15 +95,15 @@ The file layout should be something like that. After that change your pom.xml to
 
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  <link rel="preload" as="image" href="https://example.org/twitter.svg" />
   
-  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  <link rel="preload" as="image" href="https://example.org/linkedin.svg" />
   
-  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  <link rel="preload" as="image" href="https://example.org/bluesky.svg" />
   
-  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  <link rel="preload" as="image" href="https://example.org/speakerdeck.svg" />
   
-  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  <link rel="preload" as="image" href="https://example.org/rss.svg" />
   
   
 
@@ -111,7 +111,7 @@ The file layout should be something like that. After that change your pom.xml to
   
   <script
     defer
-    src="http://localhost:1313/highlight.min.js"
+    src="https://example.org/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -121,13 +121,47 @@ The file layout should be something like that. After that change your pom.xml to
   
 
   
-  <link rel="icon" href="http://localhost:1313/favicon.ico" />
-  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+  <link rel="icon" href="https://example.org/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://example.org/apple-touch-icon.png" />
 
   
   <meta name="generator" content="Hugo 0.124.1">
 
   
+  
+  
+  
+  
+  <meta itemprop="name" content="Getting started with JSF 2 (and Maven)">
+<meta itemprop="description" content="I use Apache Trinidad at work and since JSF 2 is now final I decided to play with it a bit.
+Of course this is going to be the classic Hello World example (as there are many other like this around the web).
+First you need to setup a simple Maven project.
+The file layout should be something like that. After that change your pom.xml to include the servlet and jsf2 libs."><meta itemprop="datePublished" content="2009-07-03T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2009-07-03T00:00:00+00:00" />
+<meta itemprop="wordCount" content="489">
+<meta itemprop="keywords" content="" />
+  
+  <meta property="og:title" content="Getting started with JSF 2 (and Maven)" />
+<meta property="og:description" content="I use Apache Trinidad at work and since JSF 2 is now final I decided to play with it a bit.
+Of course this is going to be the classic Hello World example (as there are many other like this around the web).
+First you need to setup a simple Maven project.
+The file layout should be something like that. After that change your pom.xml to include the servlet and jsf2 libs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/getting-started-with-jsf-2-and-maven/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2009-07-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2009-07-03T00:00:00+00:00" />
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Getting started with JSF 2 (and Maven)"/>
+<meta name="twitter:description" content="I use Apache Trinidad at work and since JSF 2 is now final I decided to play with it a bit.
+Of course this is going to be the classic Hello World example (as there are many other like this around the web).
+First you need to setup a simple Maven project.
+The file layout should be something like that. After that change your pom.xml to include the servlet and jsf2 libs."/>
+
+  
+  
+  
+  <link rel="canonical" href="https://example.org/getting-started-with-jsf-2-and-maven/" />
   
   
 </head>
@@ -136,7 +170,7 @@ The file layout should be something like that. After that change your pom.xml to
     
 <div class="mx-auto pt-2 flex flex-col justify-center items-center">
   <div>
-      <a  href="http://localhost:1313/">
+      <a  href="https://example.org/">
        <img
         class="my-0 aspect-square  rounded-full "
         src="/img/oliver_square.jpg"
@@ -200,7 +234,7 @@ The file layout should be something like that. After that change your pom.xml to
         <a
           class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
           style="--url: url(./rss.svg)"
-          href="http://localhost:1313/rss "
+          href="https://example.org/rss "
           target="_blank" 
           rel="alternate"
         >
@@ -421,14 +455,14 @@ And that&rsquo;s it. Sure it&rsquo;s a simple example, but so far I do like the 
     
     <a
       class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="http://localhost:1313/two-upgrades-to-cut-down-development-time/"
+      href="https://example.org/two-upgrades-to-cut-down-development-time/"
       ><span class="mr-1.5">←</span><span>Two upgrades to cut down development time</span></a
     >
     
     
     <a
       class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="http://localhost:1313/update-on-quant-testtester/"
+      href="https://example.org/update-on-quant-testtester/"
       ><span>Update on Quant TestTester</span><span class="ml-1.5">→</span></a
     >
     
@@ -467,8 +501,8 @@ class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-co
 >
 
   <div class="mr-auto">
-    &copy; 2012 - 2024
-    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+    &copy; 2009 - 2024
+    <a class="link" href="https://example.org/">Oliver Wehrens</a>
   </div>
 
 </footer>

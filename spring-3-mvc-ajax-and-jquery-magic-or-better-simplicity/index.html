@@ -47,7 +47,7 @@
   style="--bg: "
   lang="en-us"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -75,14 +75,14 @@
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="https://example.org/main.min.css" />
 
   
   
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="https://example.org/theme.png" />
 
   
   
@@ -92,15 +92,15 @@
 
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  <link rel="preload" as="image" href="https://example.org/twitter.svg" />
   
-  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  <link rel="preload" as="image" href="https://example.org/linkedin.svg" />
   
-  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  <link rel="preload" as="image" href="https://example.org/bluesky.svg" />
   
-  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  <link rel="preload" as="image" href="https://example.org/speakerdeck.svg" />
   
-  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  <link rel="preload" as="image" href="https://example.org/rss.svg" />
   
   
 
@@ -108,7 +108,7 @@
   
   <script
     defer
-    src="http://localhost:1313/highlight.min.js"
+    src="https://example.org/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -118,13 +118,38 @@
   
 
   
-  <link rel="icon" href="http://localhost:1313/favicon.ico" />
-  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+  <link rel="icon" href="https://example.org/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://example.org/apple-touch-icon.png" />
 
   
   <meta name="generator" content="Hugo 0.124.1">
 
   
+  
+  
+  
+  
+  <meta itemprop="name" content="Spring 3 MVC, Ajax and jQuery Magic (or better: simplicity)">
+<meta itemprop="description" content="I&#39;m playing around with some web frameworks lately and to see what&#39;s in store with Spring 3 MVC (never did too much with it) I gave it a try to see how it handles Ajax. According to ajax simplification announcement it should be possible to get up and running in (almost) no time. We will do a simple web application which will show the current time via Ajax. The directory layout (using maven) should look like this: web."><meta itemprop="datePublished" content="2010-07-20T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2010-07-20T00:00:00+00:00" />
+<meta itemprop="wordCount" content="613">
+<meta itemprop="keywords" content="Spring3,MVC,jQuery," />
+  
+  <meta property="og:title" content="Spring 3 MVC, Ajax and jQuery Magic (or better: simplicity)" />
+<meta property="og:description" content="I&#39;m playing around with some web frameworks lately and to see what&#39;s in store with Spring 3 MVC (never did too much with it) I gave it a try to see how it handles Ajax. According to ajax simplification announcement it should be possible to get up and running in (almost) no time. We will do a simple web application which will show the current time via Ajax. The directory layout (using maven) should look like this: web." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/spring-3-mvc-ajax-and-jquery-magic-or-better-simplicity/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2010-07-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2010-07-20T00:00:00+00:00" />
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Spring 3 MVC, Ajax and jQuery Magic (or better: simplicity)"/>
+<meta name="twitter:description" content="I&#39;m playing around with some web frameworks lately and to see what&#39;s in store with Spring 3 MVC (never did too much with it) I gave it a try to see how it handles Ajax. According to ajax simplification announcement it should be possible to get up and running in (almost) no time. We will do a simple web application which will show the current time via Ajax. The directory layout (using maven) should look like this: web."/>
+
+  
+  
+  
+  <link rel="canonical" href="https://example.org/spring-3-mvc-ajax-and-jquery-magic-or-better-simplicity/" />
   
   
 </head>
@@ -133,7 +158,7 @@
     
 <div class="mx-auto pt-2 flex flex-col justify-center items-center">
   <div>
-      <a  href="http://localhost:1313/">
+      <a  href="https://example.org/">
        <img
         class="my-0 aspect-square  rounded-full "
         src="/img/oliver_square.jpg"
@@ -197,7 +222,7 @@
         <a
           class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
           style="--url: url(./rss.svg)"
-          href="http://localhost:1313/rss "
+          href="https://example.org/rss "
           target="_blank" 
           rel="alternate"
         >
@@ -392,19 +417,19 @@ in their pom.xml.
      
     <a
       class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="http://localhost:1313/tags/spring3"
+      href="https://example.org/tags/spring3"
       >Spring3</a
     >
      
     <a
       class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="http://localhost:1313/tags/mvc"
+      href="https://example.org/tags/mvc"
       >MVC</a
     >
      
     <a
       class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="http://localhost:1313/tags/jquery"
+      href="https://example.org/tags/jquery"
       >jQuery</a
     >
     
@@ -419,14 +444,14 @@ in their pom.xml.
     
     <a
       class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="http://localhost:1313/one-assert-per-test-really/"
+      href="https://example.org/one-assert-per-test-really/"
       ><span class="mr-1.5">←</span><span>One assert per test, really</span></a
     >
     
     
     <a
       class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="http://localhost:1313/busy-programmers-guide-on-where-to-buy-ebooks/"
+      href="https://example.org/busy-programmers-guide-on-where-to-buy-ebooks/"
       ><span>Busy Programmers Guide on where to buy eBooks</span><span class="ml-1.5">→</span></a
     >
     
@@ -465,8 +490,8 @@ class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-co
 >
 
   <div class="mr-auto">
-    &copy; 2012 - 2024
-    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+    &copy; 2009 - 2024
+    <a class="link" href="https://example.org/">Oliver Wehrens</a>
   </div>
 
 </footer>

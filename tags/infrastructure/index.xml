@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Infrastructure on Oliver Wehrens</title>
-    <link>http://localhost:1313/tags/infrastructure/</link>
+    <link>https://example.org/tags/infrastructure/</link>
     <description>Recent content in Infrastructure on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Jan 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/tags/infrastructure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What&#39;s your preferred development infrastructure stack?</title>
-      <link>http://localhost:1313/whats-your-preferred-development-infrastructure-stack/</link>
+      <link>https://example.org/whats-your-preferred-development-infrastructure-stack/</link>
       <pubDate>Wed, 13 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/whats-your-preferred-development-infrastructure-stack/</guid>
+      <guid>https://example.org/whats-your-preferred-development-infrastructure-stack/</guid>
       <description>In Response to Matt Raible&#39;s question about my preferred development stack. Source control In my own development project I switched to Git some time ago. I was using svn and before that cvs for a couple of years. Git just makes it easy to try out small ideas very quickly without reverting the code. We will introduce Git at work pretty soon (I hope).&#xA;The Atlassian cloud I was using Confluence as a Wiki in my open source project and my current employer Hypoport uses it as well.</description>
     </item>
   </channel>

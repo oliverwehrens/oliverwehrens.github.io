@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MVC on Oliver Wehrens</title>
-    <link>http://localhost:1313/tags/mvc/</link>
+    <link>https://example.org/tags/mvc/</link>
     <description>Recent content in MVC on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 20 Jul 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/mvc/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/tags/mvc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring 3 MVC, Ajax and jQuery Magic (or better: simplicity)</title>
-      <link>http://localhost:1313/spring-3-mvc-ajax-and-jquery-magic-or-better-simplicity/</link>
+      <link>https://example.org/spring-3-mvc-ajax-and-jquery-magic-or-better-simplicity/</link>
       <pubDate>Tue, 20 Jul 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/spring-3-mvc-ajax-and-jquery-magic-or-better-simplicity/</guid>
+      <guid>https://example.org/spring-3-mvc-ajax-and-jquery-magic-or-better-simplicity/</guid>
       <description>I&#39;m playing around with some web frameworks lately and to see what&#39;s in store with Spring 3 MVC (never did too much with it) I gave it a try to see how it handles Ajax. According to ajax simplification announcement it should be possible to get up and running in (almost) no time. We will do a simple web application which will show the current time via Ajax. The directory layout (using maven) should look like this: web.</description>
     </item>
   </channel>

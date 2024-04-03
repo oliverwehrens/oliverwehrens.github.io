@@ -47,7 +47,7 @@
   style="--bg: "
   lang="en-us"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -76,14 +76,14 @@ Cucumber-jvm has support for many languages, e.g. Scala, Groovy, Closure and of 
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="https://example.org/main.min.css" />
 
   
   
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="https://example.org/theme.png" />
 
   
   
@@ -93,15 +93,15 @@ Cucumber-jvm has support for many languages, e.g. Scala, Groovy, Closure and of 
 
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  <link rel="preload" as="image" href="https://example.org/twitter.svg" />
   
-  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  <link rel="preload" as="image" href="https://example.org/linkedin.svg" />
   
-  <link rel="preload" as="image" href="http://localhost:1313/bluesky.svg" />
+  <link rel="preload" as="image" href="https://example.org/bluesky.svg" />
   
-  <link rel="preload" as="image" href="http://localhost:1313/speakerdeck.svg" />
+  <link rel="preload" as="image" href="https://example.org/speakerdeck.svg" />
   
-  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  <link rel="preload" as="image" href="https://example.org/rss.svg" />
   
   
 
@@ -109,7 +109,7 @@ Cucumber-jvm has support for many languages, e.g. Scala, Groovy, Closure and of 
   
   <script
     defer
-    src="http://localhost:1313/highlight.min.js"
+    src="https://example.org/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -119,13 +119,41 @@ Cucumber-jvm has support for many languages, e.g. Scala, Groovy, Closure and of 
   
 
   
-  <link rel="icon" href="http://localhost:1313/favicon.ico" />
-  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+  <link rel="icon" href="https://example.org/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://example.org/apple-touch-icon.png" />
 
   
   <meta name="generator" content="Hugo 0.124.1">
 
   
+  
+  
+  
+  
+  <meta itemprop="name" content="Cucumber-jvm for Java">
+<meta itemprop="description" content="In an earlier article I compared cucumber (with Cuke4Duke) and Concordion. It was very cumbersome due to the ruby/jruby jvm chain. Behold - the new cucumber-jvm was released. So how did it improve ?
+Cucumber-jvm has support for many languages, e.g. Scala, Groovy, Closure and of course Java. I will focus on Java and Maven."><meta itemprop="datePublished" content="2012-04-12T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2012-04-12T00:00:00+00:00" />
+<meta itemprop="wordCount" content="432">
+<meta itemprop="keywords" content="Test,Java," />
+  
+  <meta property="og:title" content="Cucumber-jvm for Java" />
+<meta property="og:description" content="In an earlier article I compared cucumber (with Cuke4Duke) and Concordion. It was very cumbersome due to the ruby/jruby jvm chain. Behold - the new cucumber-jvm was released. So how did it improve ?
+Cucumber-jvm has support for many languages, e.g. Scala, Groovy, Closure and of course Java. I will focus on Java and Maven." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.org/cucumber-jvm-for-java/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2012-04-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2012-04-12T00:00:00+00:00" />
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Cucumber-jvm for Java"/>
+<meta name="twitter:description" content="In an earlier article I compared cucumber (with Cuke4Duke) and Concordion. It was very cumbersome due to the ruby/jruby jvm chain. Behold - the new cucumber-jvm was released. So how did it improve ?
+Cucumber-jvm has support for many languages, e.g. Scala, Groovy, Closure and of course Java. I will focus on Java and Maven."/>
+
+  
+  
+  
+  <link rel="canonical" href="https://example.org/cucumber-jvm-for-java/" />
   
   
 </head>
@@ -134,7 +162,7 @@ Cucumber-jvm has support for many languages, e.g. Scala, Groovy, Closure and of 
     
 <div class="mx-auto pt-2 flex flex-col justify-center items-center">
   <div>
-      <a  href="http://localhost:1313/">
+      <a  href="https://example.org/">
        <img
         class="my-0 aspect-square  rounded-full "
         src="/img/oliver_square.jpg"
@@ -198,7 +226,7 @@ Cucumber-jvm has support for many languages, e.g. Scala, Groovy, Closure and of 
         <a
           class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
           style="--url: url(./rss.svg)"
-          href="http://localhost:1313/rss "
+          href="https://example.org/rss "
           target="_blank" 
           rel="alternate"
         >
@@ -286,13 +314,13 @@ And yes, this applies to cucumber-jvm version 1.0.2.</p>
      
     <a
       class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="http://localhost:1313/tags/test"
+      href="https://example.org/tags/test"
       >Test</a
     >
      
     <a
       class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="http://localhost:1313/tags/java"
+      href="https://example.org/tags/java"
       >Java</a
     >
     
@@ -307,14 +335,14 @@ And yes, this applies to cucumber-jvm version 1.0.2.</p>
     
     <a
       class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="http://localhost:1313/realtime-push-events-zum-browser/"
+      href="https://example.org/realtime-push-events-zum-browser/"
       ><span class="mr-1.5">←</span><span>Realtime Push Events zum Browser</span></a
     >
     
     
     <a
       class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="http://localhost:1313/one-assert-per-test-really/"
+      href="https://example.org/one-assert-per-test-really/"
       ><span>One assert per test, really</span><span class="ml-1.5">→</span></a
     >
     
@@ -353,8 +381,8 @@ class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-co
 >
 
   <div class="mr-auto">
-    &copy; 2012 - 2024
-    <a class="link" href="http://localhost:1313/">Oliver Wehrens</a>
+    &copy; 2009 - 2024
+    <a class="link" href="https://example.org/">Oliver Wehrens</a>
   </div>
 
 </footer>

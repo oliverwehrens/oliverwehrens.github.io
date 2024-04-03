@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Html5 Geolocation on Oliver Wehrens</title>
-    <link>http://localhost:1313/categories/html5-geolocation/</link>
+    <link>https://example.org/categories/html5-geolocation/</link>
     <description>Recent content in Html5 Geolocation on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 11 Apr 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/html5-geolocation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/categories/html5-geolocation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting the Browsers GeoLocation with HTML 5</title>
-      <link>http://localhost:1313/getting-the-browsers-geolocation-with-html-5/</link>
+      <link>https://example.org/getting-the-browsers-geolocation-with-html-5/</link>
       <pubDate>Sat, 11 Apr 2009 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/getting-the-browsers-geolocation-with-html-5/</guid>
+      <guid>https://example.org/getting-the-browsers-geolocation-with-html-5/</guid>
       <description>Until now it was almost impossible to get the GeoLocation of a user browsing your site. You could try to use several services to more or less guess the current position. Most of the time they where using the IP address to tackle the problem. This was not very reliable when it came to mobile devices. Ever since the iPhone hit the market mobile adoption of the web grew exponentially.</description>
     </item>
   </channel>

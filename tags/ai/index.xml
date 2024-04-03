@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ai on Oliver Wehrens</title>
-    <link>http://localhost:1313/tags/ai/</link>
+    <link>https://example.org/tags/ai/</link>
     <description>Recent content in Ai on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Dec 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Can AI replace me as a consultant?</title>
-      <link>http://localhost:1313/can-ai-replace-me-as-a-consultant/</link>
+      <link>https://example.org/can-ai-replace-me-as-a-consultant/</link>
       <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/can-ai-replace-me-as-a-consultant/</guid>
+      <guid>https://example.org/can-ai-replace-me-as-a-consultant/</guid>
       <description>I got recently asked if my job as a consultant in the tech, product and organizations development space, can be replaced by an AI.&#xA;I said, that I&amp;rsquo;m that arrogant to think that this is not possible.&#xA;After thinking about it for a few days I was wondering: Is that so?&#xA;Usually our customers call us to get help or for an outside view on their (digital) product development. This includes observing everything around product, technology &amp;amp; organization, help implementing improvements and enable the customer to be more effective and efficient after we leave.</description>
     </item>
     <item>
       <title>Whisper: Nvidia RTX 4090 vs M1Pro with MLX (updated with M2/M3)</title>
-      <link>http://localhost:1313/whisper-nvidia-rtx-4090-vs-m1pro-with-mlx/</link>
+      <link>https://example.org/whisper-nvidia-rtx-4090-vs-m1pro-with-mlx/</link>
       <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/whisper-nvidia-rtx-4090-vs-m1pro-with-mlx/</guid>
+      <guid>https://example.org/whisper-nvidia-rtx-4090-vs-m1pro-with-mlx/</guid>
       <description>(&amp;hellip; see down below for M2 Ultra / M3 Max Update and a Nvidia optimzied whisper)&#xA;Apple released a machine learning framework for Apple Silicon. Along with that are some examples to see how things are working. They also use a whisper for benchmarking. So I dug out my benchmark and used that to measure performance.&#xA;I simply added a new file to the repo (and the whisper large model was already downloaded).</description>
     </item>
     <item>
       <title>OpenAI Whisper Performance on Nvidia RTX 4090</title>
-      <link>http://localhost:1313/whisper-performance-on-nvidia-rtx-4090/</link>
+      <link>https://example.org/whisper-performance-on-nvidia-rtx-4090/</link>
       <pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/whisper-performance-on-nvidia-rtx-4090/</guid>
+      <guid>https://example.org/whisper-performance-on-nvidia-rtx-4090/</guid>
       <description>Short update on my performance series on OpenAI Whisper running on T4 / A100 and Apple Silicon.&#xA;I got my hands on a Nvidia RTX 4090 and ran a 3600 seconds audio file through it.&#xA;GPU 0 NVIDIA GeForce RTX 4090 Load Model at 2023-03-21 17:22:09.623805 Loading took 0:00:09.574030 started at 2023-03-21 17:22:19.197835 ended at 2023-03-21 17:25:25.905605 time elapsed: 0:03:06.707770 With the large model it makes a ~ 19.3 x speed up.</description>
     </item>
     <item>
       <title>Semantic Search with Cosine Similarity</title>
-      <link>http://localhost:1313/semantic-search-with-cosine-similarity/</link>
+      <link>https://example.org/semantic-search-with-cosine-similarity/</link>
       <pubDate>Thu, 23 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/semantic-search-with-cosine-similarity/</guid>
+      <guid>https://example.org/semantic-search-with-cosine-similarity/</guid>
       <description>If you have a lot of text, how do you search though it? Keywords? What if these keywords never show up there? Imagine you want to know if Jerome Powell says something about &amp;lsquo;Inflation decrease&amp;rsquo; but he might not say the exact words? You will not find it. Databases like Meilisearch offer synonyms, but this can only take you so far.&#xA;Similarity Enter semantic search.&#xA;I first heard about it when I saw that OpenAI offers this.</description>
     </item>
     <item>
       <title>OpenAI Whisper Benchmark Nvidia Tesla T4 / A100</title>
-      <link>http://localhost:1313/openai-whisper-benchmark-on-nvidia-tesla-t4-a100/</link>
+      <link>https://example.org/openai-whisper-benchmark-on-nvidia-tesla-t4-a100/</link>
       <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/openai-whisper-benchmark-on-nvidia-tesla-t4-a100/</guid>
+      <guid>https://example.org/openai-whisper-benchmark-on-nvidia-tesla-t4-a100/</guid>
       <description>In my previous article, I wondered how OpenAI Whisper C++ Edition on a MacBook Pro M1Pro stacks up against a CUDA card. I don&amp;rsquo;t have one, so I could not do the test.&#xA;Benchmarking Nvidia Tesla T4 Google Colab to the rescue. I totally forgot about it. I can run (for free) on an Nvidia T4. If you start a notebook for yourself, don&amp;rsquo;t forget to set the Runtime to GPU.</description>
     </item>
     <item>
       <title>OpenAI Whisper on Apple M1</title>
-      <link>http://localhost:1313/openai-whisper-on-apple-m1-cpp-version/</link>
+      <link>https://example.org/openai-whisper-on-apple-m1-cpp-version/</link>
       <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/openai-whisper-on-apple-m1-cpp-version/</guid>
+      <guid>https://example.org/openai-whisper-on-apple-m1-cpp-version/</guid>
       <description>OpenAI released Whisper in September 2022 as Open Source. To achieve good performance, you need an Nvidia CUDA GPU with &amp;gt; 8 GB VRAM.&#xA;Recently, Georgi Gerganov released a C++ port optimized for CPU and especially Apple Silicon Platform. So I tried this out.&#xA;I run all of that on a Macbook Pro with a M1Pro CPU (6 performance and 2 efficiency cores) and 32 GB RAM. I want to run one 10 minute audio file in German with different number of cores and different models (tiny, base, small, medium, large).</description>
     </item>
   </channel>

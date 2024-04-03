@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SOLID on Oliver Wehrens</title>
-    <link>http://localhost:1313/categories/solid/</link>
+    <link>https://example.org/categories/solid/</link>
     <description>Recent content in SOLID on Oliver Wehrens</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 08 Mar 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/solid/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/categories/solid/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SOLID Development Principles In Motivational Pictures (enhanced)</title>
-      <link>http://localhost:1313/solid-development-principles-in-motivational-pictures-enhanced/</link>
+      <link>https://example.org/solid-development-principles-in-motivational-pictures-enhanced/</link>
       <pubDate>Sun, 08 Mar 2009 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/solid-development-principles-in-motivational-pictures-enhanced/</guid>
+      <guid>https://example.org/solid-development-principles-in-motivational-pictures-enhanced/</guid>
       <description> I found SOLID Development Principles In Motivational Pictures a couple of days ago. I put one of them up in the restroom. So it turned out some clever colleague enhanced the SRP picture. Nice job. </description>
     </item>
   </channel>
