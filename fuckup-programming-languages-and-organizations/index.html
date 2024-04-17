@@ -1,0 +1,363 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Fuckup: Programming Languages and Organizations - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Some years ago I witnessed a fuckup which let to the creation of our Rules of Play and the need for a macro architecture and guidelines.
+In the early 2010 Scala as a functional programming language became very popular. We were a Java Shop with an occasional Groovy service. All JVM based. One team decided that they wanted to try out something new a went for Scala. It was cool, new features, functional, less boilerplate." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://oliverwehrens.github.io/main.min.css" />
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://oliverwehrens.github.io/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="https://oliverwehrens.github.io/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="https://oliverwehrens.github.io/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="https://oliverwehrens.github.io/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://oliverwehrens.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://oliverwehrens.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://oliverwehrens.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.124.1">
+
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="Fuckup: Programming Languages and Organizations">
+<meta itemprop="description" content="How not to deal with programming languages introduced by developers."><meta itemprop="datePublished" content="2024-04-17T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2024-04-17T00:00:00+00:00" />
+<meta itemprop="wordCount" content="551">
+<meta itemprop="keywords" content="fuckup," />
+  
+  <meta property="og:title" content="Fuckup: Programming Languages and Organizations" />
+<meta property="og:description" content="How not to deal with programming languages introduced by developers." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oliverwehrens.github.io/fuckup-programming-languages-and-organizations/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-04-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-04-17T00:00:00+00:00" />
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Fuckup: Programming Languages and Organizations"/>
+<meta name="twitter:description" content="How not to deal with programming languages introduced by developers."/>
+
+  
+  
+  
+  <link rel="canonical" href="https://oliverwehrens.github.io/fuckup-programming-languages-and-organizations/" />
+  
+  
+  <script defer data-domain="owehrens.com" src="https://plausible.io/js/script.js"></script>
+  <script defer data-domain="owehrens.com" src="https://superpod.podpodgogo.com/js/script.js"></script>
+
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    
+<div class="mx-auto pt-2 flex flex-col justify-center items-center">
+  <div>
+      <a  href="https://oliverwehrens.github.io/">
+       <img
+        class="my-0 aspect-square  rounded-full "
+        src="/img/oliver_square.jpg"
+        alt="Oliver Wehrens"
+      />
+    </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Mentor. Dad.</div>
+
+
+    <div>
+      
+      <nav
+        class="mt-5 flex justify-center space-x-10 items-center "
+      >
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./linkedin.svg)"
+          href="https://linkedin.com/in/oliverwehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          linkedin
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./bluesky.svg)"
+          href="https://bsky.app/profile/owehrensbsky.social"
+          target="_blank" 
+          rel="me"
+        >
+          bluesky
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./speakerdeck.svg)"
+          href="https://speakerdeck.com/owehrens
+          "
+          target="_blank" 
+          rel="me"
+        >
+          speakerdeck
+        </a>
+        
+        <a
+          class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="https://oliverwehrens.github.io/rss.xml "
+          target="_blank" 
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+      </nav>
+      
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Fuckup: Programming Languages and Organizations</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Apr 17, 2024</time>
+      
+      
+      
+      
+      <span class="text-gray">- 3 min</span>
+    </div>
+    
+  </header>
+
+  <section><p>Some years ago I witnessed a fuckup which let to the creation of our
+<a href="/why-you-need-a-macro-architecture">Rules of Play</a> and the need for a macro architecture and guidelines.</p>
+<p>In the early 2010 Scala as a functional programming language became very popular. We were a Java Shop
+with an occasional Groovy service. All JVM based. One team decided that they wanted to try
+out something new a went for Scala. It was cool, new features, functional, less boilerplate. It was hype.</p>
+<p>As you have it in your head right now: But hey, there must be some governance around this. Yes, we had.
+But not as much as we needed to. We were heavily growing, we scaled from 10 to 120 people in 2 years. We
+were distracted. So much was happening all at once.</p>
+<p>Software was written, the product owner like the outcome. At least one other team tried to emulate
+the functional style in Java, where everything at the end had an <code>.apply()</code> method.
+The idea was spreading.</p>
+<p>The intervention came late. The Head of Architecture stepped in and made it clear, that the course
+had to be reversed. Introducing in a growing organization with existing hiring a functional
+language was too much at this point. This needs to be rewritten in Java over the next few weeks.</p>
+<p><strong>The story could end here.</strong></p>
+<p>What did happen was that the product owner did not wanted to put time aside for a rewrite with
+no new features. I can only imagine how the developers tried convince the PO to migrate
+away from their beloved Scala. At the end the team happily coded away in Scala and nobody noticed. Until one day, weeks later.
+So much code was written already and the pressure was even higher to deliver, that nobody considered
+a rewrite anymore. So we had now officially Scala in our Tech Stack.</p>
+<p>This all worked all nice under the circumstances until the first Scala people left and others had to take over.
+They did not know Scala. They had to learn it. And some did not want to.</p>
+<p>We kept Scala alive. Over the years
+we always had to make sure that we have 2-3 people knowing Scala are in that team. As the hype dried down it was
+harder and harder to get the right developers.</p>
+<p><strong>People leave but technology stays.</strong></p>
+<p>We fucked up.</p>
+<p>After all of that, we came up with two rules regarding programming languages.</p>
+<ul>
+<li>It had to be JVM based</li>
+<li>If you want to introduce a new language, you need to convince the management team, that the benefits outweigh the costs.</li>
+</ul>
+<p>This way we could still introduce a new language and get the benefits but only after all
+relevant arguments were heard.</p>
+<p>Years later we introduced Kotlin. In another company, one person was advocating for Rust. We were a Javascript and Go shop.
+We did not introduce Rust.</p>
+<h2 id="what-did-i-learn">What did I learn</h2>
+<ul>
+<li><strong>A few hard guidelines are important.</strong> There should be only a few and these should be strict. Some</li>
+<li><strong>Product and Tech need to be aligned.</strong> Because of this misalignment the product owner did not had a chance to understand the tech implications for the company and the product of using a new programming language.</li>
+</ul>
+<p>P.S.: It just happened to be Scala, it could have been any other language.</p>
+</section>
+
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://oliverwehrens.github.io/tags/fuckup"
+      >fuckup</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://oliverwehrens.github.io/clean-code-should-you-dry/"
+      ><span>Clean code ... should you DRY?</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+  <div class="mr-auto">
+    &copy; 2009 - 2024
+    <a class="link" href="https://oliverwehrens.github.io/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

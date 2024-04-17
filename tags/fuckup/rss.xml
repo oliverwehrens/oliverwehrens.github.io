@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fuckup on Oliver Wehrens</title>
+    <link>https://oliverwehrens.github.io/tags/fuckup/</link>
+    <description>Recent content in Fuckup on Oliver Wehrens</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://oliverwehrens.github.io/tags/fuckup/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fuckup: Programming Languages and Organizations</title>
+      <link>https://oliverwehrens.github.io/fuckup-programming-languages-and-organizations/</link>
+      <pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://oliverwehrens.github.io/fuckup-programming-languages-and-organizations/</guid>
+      <description>Some years ago I witnessed a fuckup which let to the creation of our Rules of Play and the need for a macro architecture and guidelines.&#xA;In the early 2010 Scala as a functional programming language became very popular. We were a Java Shop with an occasional Groovy service. All JVM based. One team decided that they wanted to try out something new a went for Scala. It was cool, new features, functional, less boilerplate.</description>
+    </item>
+  </channel>
+</rss>
