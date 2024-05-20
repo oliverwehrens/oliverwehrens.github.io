@@ -4,7 +4,7 @@
     <title>Posts on Oliver Wehrens</title>
     <link>https://oliverwehrens.github.io/posts/</link>
     <description>Recent content in Posts on Oliver Wehrens</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 18 Apr 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://oliverwehrens.github.io/posts/rss.xml" rel="self" type="application/rss+xml" />
@@ -181,7 +181,7 @@
       <link>https://oliverwehrens.github.io/2017-90-random-tech-links/</link>
       <pubDate>Fri, 31 Mar 2017 00:00:00 +0000</pubDate>
       <guid>https://oliverwehrens.github.io/2017-90-random-tech-links/</guid>
-      <description>Automating Kubernetes Cluster Operations with OperatorsThe goal is to give end-users a carefree Kubernetes-as-a-Service (KaaS) no matter the underlying infrastructure. Most importantly that means getting the full vanilla Kubernetes experience out-of-the-box. A fully functional local AWS cloud stack. Develop and test your cloud apps offline!LocalStack provides an easy-to-use test/mocking framework for developing Cloud applications. Currently, the focus is primarily on supporting the AWS cloud stack. LocalStack spins up the following core Cloud APIs on your local machine: API Gateway, Kinesis, DynamoDB, DynamoDB Streams, Elasticsearch, S3, Firehose, Lambda, SNS, SQS, Redshift Automating Your Security Acceptance TestsAutomate security tests with the open source OWASP ZAP proxy.</description>
+      <description></description>
     </item>
     <item>
       <title>Service Discovery For Machines And Humans</title>
