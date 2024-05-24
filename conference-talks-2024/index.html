@@ -54,7 +54,7 @@
   />
 
   
-  <title>Fuckup: Goodhart&#39;s Law in practice - tie a metric to a bonus - Oliver Wehrens</title>
+  <title>Conference talks 2024 - Oliver Wehrens</title>
 
   
   <meta name="theme-color" />
@@ -63,9 +63,9 @@
   
   
   
-  <meta name="description" content="It might be a familiar situation to you: You have an increasing code base 📈, teams are growing and your ability to deploy is deteriorating 🚨.
-What do you do? How can you make sure all developers and product owners take care of quality?
-In order to react to changes and fix bugs we wanted to be able to roll out fixes as fast as possible (that was in ~2014). One prerequisite for this was a that all build pipelines for the main branch are green 🟢." />
+  <meta name="description" content="I&rsquo;m looking forward to pick up speaking at conferences again. It has been a long time since Covid.
+Our Fuckups and What You Can Learn From It I will talk together with André Neubauer this year at
+Bedcon 2024 in Berlin Sep 19th - Sep 20th 2024 WJAX 2024 in Munich Nov 4th - Nov 8th 2024 We will share the most significant technical fuckups we&rsquo;ve encountered across different companies during our career." />
   <meta name="author" content="Oliver Wehrens" />
   
 
@@ -125,32 +125,32 @@ In order to react to changes and fix bugs we wanted to be able to roll out fixes
 
   
   
-  <meta itemprop="name" content="Fuckup: Goodhart&#39;s Law in practice - tie a metric to a bonus">
-  <meta itemprop="description" content="We had good intentions of increasing the quality of the code base. Well ...">
-  <meta itemprop="datePublished" content="2024-04-18T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2024-04-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="317">
-  <meta itemprop="keywords" content="Fuckup">
+  <meta itemprop="name" content="Conference talks 2024">
+  <meta itemprop="description" content="I will pick up conference talks once again after Covid. See you there.">
+  <meta itemprop="datePublished" content="2024-05-24T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-05-24T00:00:00+00:00">
+  <meta itemprop="wordCount" content="160">
+  <meta itemprop="keywords" content="Talks">
   
-  <meta property="og:url" content="https://oliverwehrens.github.io/fuckup-goodharts-law-in-practice-tie-a-metric-to-a-bonus/">
+  <meta property="og:url" content="https://oliverwehrens.github.io/conference-talks-2024/">
   <meta property="og:site_name" content="Oliver Wehrens">
-  <meta property="og:title" content="Fuckup: Goodhart&#39;s Law in practice - tie a metric to a bonus">
-  <meta property="og:description" content="We had good intentions of increasing the quality of the code base. Well ...">
+  <meta property="og:title" content="Conference talks 2024">
+  <meta property="og:description" content="I will pick up conference talks once again after Covid. See you there.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
   <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-04-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-04-18T00:00:00+00:00">
-    <meta property="article:tag" content="Fuckup">
+    <meta property="article:published_time" content="2024-05-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-05-24T00:00:00+00:00">
+    <meta property="article:tag" content="Talks">
 
   
-  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Fuckup: Goodhart&#39;s Law in practice - tie a metric to a bonus">
-<meta name="twitter:description" content="We had good intentions of increasing the quality of the code base. Well ...">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Conference talks 2024">
+<meta name="twitter:description" content="I will pick up conference talks once again after Covid. See you there.">
 
   
   
   
-  <link rel="canonical" href="https://oliverwehrens.github.io/fuckup-goodharts-law-in-practice-tie-a-metric-to-a-bonus/" />
+  <link rel="canonical" href="https://oliverwehrens.github.io/conference-talks-2024/" />
   
   
   <script defer data-domain="owehrens.com" src="https://superpod.podpodgogo.com/js/script.js"></script>
@@ -259,44 +259,32 @@ In order to react to changes and fix bugs we wanted to be able to roll out fixes
 <article>
   <header class="mb-16">
     Oliver Wehrens
-    <h1 class="!my-0 pb-2.5 article-title">Fuckup: Goodhart&#39;s Law in practice - tie a metric to a bonus</h1>
+    <h1 class="!my-0 pb-2.5 article-title">Conference talks 2024</h1>
 
     
     <div class="text-sm antialiased opacity-60">
       
-      <time>Apr 18, 2024</time>
+      <time>May 24, 2024</time>
       
       
       
       
-      <span class="text-gray">- 2 min</span>
+      <span class="text-gray">- 1 min</span>
     </div>
     
   </header>
 
-  <section><p>It might be a familiar situation to you:
-You have an increasing code base 📈, teams are growing and your ability to deploy is deteriorating 🚨.</p>
-<p>What do you do? How can you make sure all developers and product owners take care of quality?</p>
-<p>In order to react to changes and fix bugs we wanted to be able to roll out fixes as fast as possible (that was
-in ~2014). One prerequisite for this was a that all build pipelines for the main branch are green 🟢.</p>
-<p>So we set the goal, that at the end of the day, on average all (main) build pipelines must be green
-(implicating deployable) at 95% rate. We tied part of the yearly 📅 bonus 🤑 on that.</p>
-<p>At the time it sounded like a good idea 👍, and we had a company goal for everyone. We had dashboards at the coffee machine,
-everybody could see the progress.</p>
-<p><strong>We had no idea</strong></p>
-<p>1️⃣ We did not know about <a href="https://en.wikipedia.org/wiki/Goodhart%27s_law">Goodhart&rsquo;s Law:</a> 👩🏻‍💼. It says:</p>
-<blockquote>
-<p>When a measure becomes a target, it ceases to be a good measure.</p>
-</blockquote>
-<p>2️⃣ People like to <del>game</del> win against the system 🏆</p>
-<p><strong>What happened</strong></p>
-<p>Some developers created build pipelines, which did nothing besides being green 🤷🏻‍. If it was not enough, they had
-one pipeline which created other green pipelines and deleted them afterward.</p>
-<p>I got to know this practice a few weeks before the official end of the bonus period. I was responsible for that
-goal. I saw that I fucked up 🤦. Good intentions. Wrong outcome. At this point, I got to know Charles Goodhart.</p>
-<p><strong>What did I learn</strong></p>
-<p>I will ❌ never ❌ tie such a metric to a financial outcome 💰 again. We could still have the goal, just not tied to money.
-Instead, talk to everyone and understand why their build is broken and try to remove 🚚 what is blocking them.</p>
+  <section><p>I&rsquo;m looking forward to pick up speaking at conferences again. It has been a long time since Covid.</p>
+<h2 id="our-fuckups-and-what-you-can-learn-from-it">Our Fuckups and What You Can Learn From It</h2>
+<p>I will talk together with <a href="https://devpg.com">André Neubauer</a> this year at</p>
+<ul>
+<li><a href="https://bed-con.org/2024">Bedcon 2024 in Berlin</a> Sep 19th - Sep 20th 2024</li>
+<li><a href="https://jax.de/agile-culture/fuckups-learn-from-it-agile/">WJAX 2024 in Munich</a> Nov 4th - Nov 8th 2024</li>
+</ul>
+<p>We will share the most significant technical fuckups we&rsquo;ve encountered across different companies during our career. We will offer a perspective on the causes, the impacts, and the lessons we learned.</p>
+<p>By sharing our experiences, we aim to provide insights into the complexity and dynamics of failures in the tech world and how to mitigate them. It will be an entertaining and informative talk. Attendees will get practical tips on how to foster a culture of learning and resilience and embrace mistakes.</p>
+<p>If you wonder how seemingly small decisions can have a big impact, this is your talk.</p>
+<p>Come by and say hello.</p>
 </section>
 
 
@@ -306,8 +294,8 @@ Instead, talk to everyone and understand why their build is broken and try to re
      
     <a
       class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="https://oliverwehrens.github.io/tags/fuckup"
-      >fuckup</a
+      href="https://oliverwehrens.github.io/tags/talks"
+      >talks</a
     >
     
   </footer>
@@ -319,17 +307,11 @@ Instead, talk to everyone and understand why their build is broken and try to re
   
   <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
     
-    <a
-      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="https://oliverwehrens.github.io/conference-talks-2024/"
-      ><span class="mr-1.5">←</span><span>Conference talks 2024</span></a
-    >
-    
     
     <a
       class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="https://oliverwehrens.github.io/fuckup-programming-languages-and-organizations/"
-      ><span>Fuckup: Programming Languages and Organizations</span><span class="ml-1.5">→</span></a
+      href="https://oliverwehrens.github.io/fuckup-goodharts-law-in-practice-tie-a-metric-to-a-bonus/"
+      ><span>Fuckup: Goodhart&#39;s Law in practice - tie a metric to a bonus</span><span class="ml-1.5">→</span></a
     >
     
   </nav>
