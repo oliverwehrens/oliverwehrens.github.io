@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Oliver Wehrens</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Jun 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://oliverwehrens.github.io/posts/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reporting on a big waterscrum project</title>
+      <link>https://oliverwehrens.github.io/reporting-on-a-big-waterscrum-project/</link>
+      <pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://oliverwehrens.github.io/reporting-on-a-big-waterscrum-project/</guid>
+      <description>I once worked in a smaller development unit with around 100 developers. We were part of a big corporate and got the task as a whole company to finish a strategic project within 12 months. I was assigned to be the project lead on our part and had to make sure we delivered. We used to be an agile development shop, which now got closer and closer to corporate processes.</description>
+    </item>
     <item>
       <title>Conference talks 2024</title>
       <link>https://oliverwehrens.github.io/conference-talks-2024/</link>
