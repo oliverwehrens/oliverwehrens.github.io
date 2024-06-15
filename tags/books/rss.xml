@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Books on Oliver Wehrens</title>
-    <link>https://oliverwehrens.github.io/tags/books/</link>
+    <link>https://owehrens.com/tags/books/</link>
     <description>Recent content in Books on Oliver Wehrens</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 05 Jun 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://oliverwehrens.github.io/tags/books/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://owehrens.com/tags/books/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Busy Programmers Guide on where to buy eBooks</title>
-      <link>https://oliverwehrens.github.io/busy-programmers-guide-on-where-to-buy-ebooks/</link>
+      <link>https://owehrens.com/busy-programmers-guide-on-where-to-buy-ebooks/</link>
       <pubDate>Sat, 05 Jun 2010 00:00:00 +0000</pubDate>
-      <guid>https://oliverwehrens.github.io/busy-programmers-guide-on-where-to-buy-ebooks/</guid>
+      <guid>https://owehrens.com/busy-programmers-guide-on-where-to-buy-ebooks/</guid>
       <description>Every Programmer needs to read books. Usually you would get some packages from Amazon (or your favorite retailer) and read through them. Now with devices like the Kindle and iPad (and Nook and&amp;hellip;) things will change. No more carrying around a couple of hundred pages of paper. Only some Megabytes on Gigabytes of storage. The displays nowadays are good enough and the battery is not a problem for the most part.</description>
     </item>
   </channel>

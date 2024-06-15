@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Links on Oliver Wehrens</title>
-    <link>https://oliverwehrens.github.io/tags/links/</link>
+    <link>https://owehrens.com/tags/links/</link>
     <description>Recent content in Links on Oliver Wehrens</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 31 Mar 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://oliverwehrens.github.io/tags/links/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://owehrens.com/tags/links/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2017-90 - Random Tech Links</title>
-      <link>https://oliverwehrens.github.io/2017-90-random-tech-links/</link>
+      <link>https://owehrens.com/2017-90-random-tech-links/</link>
       <pubDate>Fri, 31 Mar 2017 00:00:00 +0000</pubDate>
-      <guid>https://oliverwehrens.github.io/2017-90-random-tech-links/</guid>
+      <guid>https://owehrens.com/2017-90-random-tech-links/</guid>
       <description></description>
     </item>
   </channel>

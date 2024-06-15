@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TDD PairProgramming on Oliver Wehrens</title>
-    <link>https://oliverwehrens.github.io/categories/tdd-pairprogramming/</link>
+    <link>https://owehrens.com/categories/tdd-pairprogramming/</link>
     <description>Recent content in TDD PairProgramming on Oliver Wehrens</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 13 Sep 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://oliverwehrens.github.io/categories/tdd-pairprogramming/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://owehrens.com/categories/tdd-pairprogramming/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How pair programming can help you to get into Test Driven Development</title>
-      <link>https://oliverwehrens.github.io/how-pair-programming-can-help-you-to-get-into-test-driven-development/</link>
+      <link>https://owehrens.com/how-pair-programming-can-help-you-to-get-into-test-driven-development/</link>
       <pubDate>Sun, 13 Sep 2009 00:00:00 +0000</pubDate>
-      <guid>https://oliverwehrens.github.io/how-pair-programming-can-help-you-to-get-into-test-driven-development/</guid>
+      <guid>https://owehrens.com/how-pair-programming-can-help-you-to-get-into-test-driven-development/</guid>
       <description>At my current job management buys into Test driven development. It slowly starts to become our primary development style. Some advantages of TDD for me are: Focus on problem solution No unnecessary development for use cases dreamed up by the developer Always make sure your code fulfills the requirements (tests) If you have tests you can safely refactor your code at any time Even though we all knew about the advantages of TDD, we figured out that we do not always write tests first.</description>
     </item>
   </channel>

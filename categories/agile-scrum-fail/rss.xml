@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Agile Scrum Fail on Oliver Wehrens</title>
-    <link>https://oliverwehrens.github.io/categories/agile-scrum-fail/</link>
+    <link>https://owehrens.com/categories/agile-scrum-fail/</link>
     <description>Recent content in Agile Scrum Fail on Oliver Wehrens</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 05 Mar 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://oliverwehrens.github.io/categories/agile-scrum-fail/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://owehrens.com/categories/agile-scrum-fail/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why our current Sprint commitment will fail</title>
-      <link>https://oliverwehrens.github.io/why-our-current-sprint-commitment-will-fail/</link>
+      <link>https://owehrens.com/why-our-current-sprint-commitment-will-fail/</link>
       <pubDate>Thu, 05 Mar 2009 00:00:00 +0000</pubDate>
-      <guid>https://oliverwehrens.github.io/why-our-current-sprint-commitment-will-fail/</guid>
+      <guid>https://owehrens.com/why-our-current-sprint-commitment-will-fail/</guid>
       <description>We do have our Sprint Review tomorrow. We will not meet our commitment. Bummer.&#xA;What happened?&#xA;After the planning we did the breakdown of almost all stories. We had 5 Stories and another epic. As we did the epic breakdown we knew that we could not nail down every task since it was clear that some refactoring along the user story would be needed. So we marked one card in that story to remind us that we need to break things further down and refine the tasks.</description>
     </item>
   </channel>

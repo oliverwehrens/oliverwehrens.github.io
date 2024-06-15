@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TestNG Drools on Oliver Wehrens</title>
-    <link>https://oliverwehrens.github.io/categories/testng-drools/</link>
+    <link>https://owehrens.com/categories/testng-drools/</link>
     <description>Recent content in TestNG Drools on Oliver Wehrens</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 23 Sep 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://oliverwehrens.github.io/categories/testng-drools/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://owehrens.com/categories/testng-drools/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test JBoss Rules 5 (or Drools) with TestNG</title>
-      <link>https://oliverwehrens.github.io/test-jboss-rules-5-or-drools-with-testng/</link>
+      <link>https://owehrens.com/test-jboss-rules-5-or-drools-with-testng/</link>
       <pubDate>Wed, 23 Sep 2009 00:00:00 +0000</pubDate>
-      <guid>https://oliverwehrens.github.io/test-jboss-rules-5-or-drools-with-testng/</guid>
+      <guid>https://owehrens.com/test-jboss-rules-5-or-drools-with-testng/</guid>
       <description>We have been using our own flavor of Fit for Rules (which is build on top of fit) for about 1 1/2 years now to test our business logic written in JBoss Rules 5. It&#39;s relatively easy to get the Business Analyst on board since he is using his tool (which is Microsoft Excel) to communicate test cases for the rules. So in theory, he writes the tests in Excel, we do the rules coding and voila, all tests turn green.</description>
     </item>
   </channel>

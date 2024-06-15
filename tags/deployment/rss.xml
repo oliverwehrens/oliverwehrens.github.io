@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Deployment on Oliver Wehrens</title>
-    <link>https://oliverwehrens.github.io/tags/deployment/</link>
+    <link>https://owehrens.com/tags/deployment/</link>
     <description>Recent content in Deployment on Oliver Wehrens</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 13 Feb 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://oliverwehrens.github.io/tags/deployment/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://owehrens.com/tags/deployment/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How failing tests can be green</title>
-      <link>https://oliverwehrens.github.io/how-failing-tests-can-be-green/</link>
+      <link>https://owehrens.com/how-failing-tests-can-be-green/</link>
       <pubDate>Thu, 13 Feb 2014 00:00:00 +0000</pubDate>
-      <guid>https://oliverwehrens.github.io/how-failing-tests-can-be-green/</guid>
+      <guid>https://owehrens.com/how-failing-tests-can-be-green/</guid>
       <description>Imagine this conversation:&#xA;Friend: &amp;ldquo;We have an integration system where we deploy every two weeks all commits and run hundreds of end to end tests on it.&amp;rdquo;&#xA;Me: &amp;ldquo;And if everything passed it goes into production?&amp;rdquo;&#xA;Friend: &amp;ldquo;Yes.&amp;rdquo;&#xA;Me: &amp;ldquo;How often do they fail?&amp;rdquo;&#xA;Friend: &amp;ldquo;Uhmm, well like every night. But we just take the failing tests and run them again and after that or the next run they will be green.</description>
     </item>
     <item>
       <title>Getting Faster</title>
-      <link>https://oliverwehrens.github.io/getting-faster/</link>
+      <link>https://owehrens.com/getting-faster/</link>
       <pubDate>Wed, 18 Dec 2013 00:00:00 +0000</pubDate>
-      <guid>https://oliverwehrens.github.io/getting-faster/</guid>
+      <guid>https://owehrens.com/getting-faster/</guid>
       <description> My Continuous Lifecycle 2013 talk. How we got faster at deploying our software. </description>
     </item>
     <item>
       <title>From Development to Production</title>
-      <link>https://oliverwehrens.github.io/from-development-to-production/</link>
+      <link>https://owehrens.com/from-development-to-production/</link>
       <pubDate>Fri, 26 Apr 2013 00:00:00 +0000</pubDate>
-      <guid>https://oliverwehrens.github.io/from-development-to-production/</guid>
+      <guid>https://owehrens.com/from-development-to-production/</guid>
       <description> My BedCon 2013 talk. Covering commiting code, packaging,testing, deployment and organisational changes. </description>
     </item>
   </channel>

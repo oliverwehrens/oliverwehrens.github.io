@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Code on Oliver Wehrens</title>
-    <link>https://oliverwehrens.github.io/tags/code/</link>
+    <link>https://owehrens.com/tags/code/</link>
     <description>Recent content in Code on Oliver Wehrens</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Feb 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://oliverwehrens.github.io/tags/code/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://owehrens.com/tags/code/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>5 code metrics you need to watch</title>
-      <link>https://oliverwehrens.github.io/5-code-metrics-you-need-to-watch/</link>
+      <link>https://owehrens.com/5-code-metrics-you-need-to-watch/</link>
       <pubDate>Tue, 23 Feb 2010 00:00:00 +0000</pubDate>
-      <guid>https://oliverwehrens.github.io/5-code-metrics-you-need-to-watch/</guid>
+      <guid>https://owehrens.com/5-code-metrics-you-need-to-watch/</guid>
       <description>Developing software ain&amp;rsquo;t easy.&#xA;How do you know how you are doing ?&#xA;You could start collecting metrics about your code. These can give you some indication how maintainable and reliable it is.&#xA;The metric which come to mind to the most people is code coverage. Some people say it must be near 100%, other say 80% is a good number. At the end it can&amp;rsquo;t tell you if you are doing great or good.</description>
     </item>
   </channel>

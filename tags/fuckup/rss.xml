@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fuckup on Oliver Wehrens</title>
-    <link>https://oliverwehrens.github.io/tags/fuckup/</link>
+    <link>https://owehrens.com/tags/fuckup/</link>
     <description>Recent content in Fuckup on Oliver Wehrens</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 18 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://oliverwehrens.github.io/tags/fuckup/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://owehrens.com/tags/fuckup/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fuckup: Goodhart&#39;s Law in practice - tie a metric to a bonus</title>
-      <link>https://oliverwehrens.github.io/fuckup-goodharts-law-in-practice-tie-a-metric-to-a-bonus/</link>
+      <link>https://owehrens.com/fuckup-goodharts-law-in-practice-tie-a-metric-to-a-bonus/</link>
       <pubDate>Thu, 18 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://oliverwehrens.github.io/fuckup-goodharts-law-in-practice-tie-a-metric-to-a-bonus/</guid>
+      <guid>https://owehrens.com/fuckup-goodharts-law-in-practice-tie-a-metric-to-a-bonus/</guid>
       <description>It might be a familiar situation to you: You have an increasing code base 📈, teams are growing and your ability to deploy is deteriorating 🚨.&#xA;What do you do? How can you make sure all developers and product owners take care of quality?&#xA;In order to react to changes and fix bugs we wanted to be able to roll out fixes as fast as possible (that was in ~2014). One prerequisite for this was a that all build pipelines for the main branch are green 🟢.</description>
     </item>
     <item>
       <title>Fuckup: Programming Languages and Organizations</title>
-      <link>https://oliverwehrens.github.io/fuckup-programming-languages-and-organizations/</link>
+      <link>https://owehrens.com/fuckup-programming-languages-and-organizations/</link>
       <pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://oliverwehrens.github.io/fuckup-programming-languages-and-organizations/</guid>
+      <guid>https://owehrens.com/fuckup-programming-languages-and-organizations/</guid>
       <description>Some years ago I witnessed a fuckup which let to the creation of our Rules of Play and the need for a macro architecture and guidelines.&#xA;In the early 2010 Scala as a functional programming language became very popular. We were a Java Shop with an occasional Groovy service. All JVM based. One team decided that they wanted to try out something new and went for Scala. It was cool, new features, functional, less boilerplate.</description>
     </item>
   </channel>

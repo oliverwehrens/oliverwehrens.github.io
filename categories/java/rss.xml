@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java on Oliver Wehrens</title>
-    <link>https://oliverwehrens.github.io/categories/java/</link>
+    <link>https://owehrens.com/categories/java/</link>
     <description>Recent content in Java on Oliver Wehrens</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 Feb 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://oliverwehrens.github.io/categories/java/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://owehrens.com/categories/java/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IntelliJ IDEA 8.1</title>
-      <link>https://oliverwehrens.github.io/intellij-idea-8.1/</link>
+      <link>https://owehrens.com/intellij-idea-8.1/</link>
       <pubDate>Wed, 11 Feb 2009 00:00:00 +0000</pubDate>
-      <guid>https://oliverwehrens.github.io/intellij-idea-8.1/</guid>
+      <guid>https://owehrens.com/intellij-idea-8.1/</guid>
       <description>I do love IntelliJ IDEA but the 8.0 release had some issues with indexing and compiler caches. Version 8.1 is out and addresses these issues (among other things, e.g. git support). Hurray.</description>
     </item>
     <item>
       <title>Behavior driven development with EasyB (and vs. TestNG)</title>
-      <link>https://oliverwehrens.github.io/behavior-driven-development-with-easyb-and-vs.-testng/</link>
+      <link>https://owehrens.com/behavior-driven-development-with-easyb-and-vs.-testng/</link>
       <pubDate>Tue, 10 Feb 2009 00:00:00 +0000</pubDate>
-      <guid>https://oliverwehrens.github.io/behavior-driven-development-with-easyb-and-vs.-testng/</guid>
+      <guid>https://owehrens.com/behavior-driven-development-with-easyb-and-vs.-testng/</guid>
       <description>I heard about BDD a couple of months ago and did not really pay attention. Just some weeks ago I thought that maybe I could improve our test and/or documentation. So I decided to give it a shot with the BDD implementation easyb.&#xA;According to Wikipedia:&#xA;So I took the chance to sketch out a little example and to test it against readability.&#xA;This is the class which I would to test with BDD and classic TestNG.</description>
     </item>
   </channel>
