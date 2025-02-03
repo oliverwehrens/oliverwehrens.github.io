@@ -13,14 +13,14 @@
       <link>https://owehrens.com/intellij-idea-plugin-property-sorter-updated/</link>
       <pubDate>Tue, 05 May 2009 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/intellij-idea-plugin-property-sorter-updated/</guid>
-      <description> I&#39;m pretty busy at work right now but I could find some time to add one more feature to my little property sorter plugin for IntelliJ Idea. Comments above property entries will now be preserved when you sort the file. The plugin is available from within Idea or at Google Code. </description>
+      <description>I&#39;m pretty busy at work right now but I could find some time to add one more feature to my little property sorter plugin for IntelliJ Idea.&#xA;&#xA;Comments above property entries will now be preserved when you sort the file.&#xA;&#xA;The plugin is available from within Idea or at &lt;a href=&#34;http://code.google.com/p/ideapropertysorterplugin/downloads/list&#34;&gt;Google Code&lt;/a&gt;.&#xA;&#xA;&lt;img alt=&#34;From unsorted ...&#34; src=&#34;https://owehrens.com/static/CommentPropertyUnsorted.png&#34; title=&#34;From unsorted ...&#34; width=&#34;199&#34; height=&#34;133&#34; /&gt;&#xA;&#xA;&lt;img alt=&#34;... to sorted with comments.&#34; src=&#34;https://owehrens.com/static/CommentPropertySorted.png&#34; title=&#34;... to sorted with comments.&#34; width=&#34;203&#34; height=&#34;143&#34; /&gt;</description>
     </item>
     <item>
       <title>Sorting your properties files in IntelliJ Idea</title>
       <link>https://owehrens.com/sorting-your-properties-files-in-intellij-idea/</link>
       <pubDate>Mon, 23 Feb 2009 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/sorting-your-properties-files-in-intellij-idea/</guid>
-      <description>I do work with language property files pretty much every day (since I&amp;rsquo;m the GUI guy in the team). The files are updated on different branches copied up to the trunk and merged down to new branches, sometimes even updated by our product owner. We got a couple of times into not so funny merge conflicts since people did not sort the property files in the same way. To get around that we used an external tool to sort the files just before committing them.</description>
+      <description>&lt;p&gt;I do work with language property files pretty much every day (since I&amp;rsquo;m the GUI guy in the team). The files are updated on different branches copied up to the trunk and merged down to new branches, sometimes even updated by our product owner. We got a couple of times into not so funny merge conflicts since people did not sort the property files in the same way. To get around that we used an external tool to sort the files just before committing them.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -63,7 +63,8 @@
   
   
   
-  <meta name="description" content="If you start, a monolith is much easier to begin with. Everything is in one place, it&rsquo;s fast and all team members understand the code. If you plan your application from the start as distributed system in a microservice like style, you add some significant overhead. Don&rsquo;t do it, monoliths have their advantages at some point. If another team start with the same project or more functionality is added, splitting up the monolith might be a way to go." />
+  <meta name="description" content="If you start, a monolith is much easier to begin with. Everything is in one place, it&rsquo;s fast and all team members understand the code.
+If you plan your application from the start as distributed system in a microservice like style, you add some significant overhead. Don&rsquo;t do it, monoliths have their advantages at some point. If another team start with the same project or more functionality is added, splitting up the monolith might be a way to go. Looking at ways to migrate, you maybe can do some better  design decision to for you monolith." />
   <meta name="author" content="Oliver Wehrens" />
   
 
@@ -112,19 +113,16 @@
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.128.0">
+  <meta name="generator" content="Hugo 0.135.0">
 
   
   
   
   
-  
-
-
   
   
   <meta itemprop="name" content="Migrating a monolith">
-  <meta itemprop="description" content="If you start, a monolith is much easier to begin with. Everything is in one place, it’s fast and all team members understand the code. If you plan your application from the start as distributed system in a microservice like style, you add some significant overhead. Don’t do it, monoliths have their advantages at some point. If another team start with the same project or more functionality is added, splitting up the monolith might be a way to go.">
+  <meta itemprop="description" content="If you start, a monolith is much easier to begin with. Everything is in one place, it’s fast and all team members understand the code. If you plan your application from the start as distributed system in a microservice like style, you add some significant overhead. Don’t do it, monoliths have their advantages at some point. If another team start with the same project or more functionality is added, splitting up the monolith might be a way to go. Looking at ways to migrate, you maybe can do some better design decision to for you monolith.">
   <meta itemprop="datePublished" content="2014-10-09T00:00:00+00:00">
   <meta itemprop="dateModified" content="2014-10-09T00:00:00+00:00">
   <meta itemprop="wordCount" content="1032">
@@ -133,7 +131,7 @@
   <meta property="og:url" content="https://owehrens.com/migrating-a-monolith/">
   <meta property="og:site_name" content="Oliver Wehrens">
   <meta property="og:title" content="Migrating a monolith">
-  <meta property="og:description" content="If you start, a monolith is much easier to begin with. Everything is in one place, it’s fast and all team members understand the code. If you plan your application from the start as distributed system in a microservice like style, you add some significant overhead. Don’t do it, monoliths have their advantages at some point. If another team start with the same project or more functionality is added, splitting up the monolith might be a way to go.">
+  <meta property="og:description" content="If you start, a monolith is much easier to begin with. Everything is in one place, it’s fast and all team members understand the code. If you plan your application from the start as distributed system in a microservice like style, you add some significant overhead. Don’t do it, monoliths have their advantages at some point. If another team start with the same project or more functionality is added, splitting up the monolith might be a way to go. Looking at ways to migrate, you maybe can do some better design decision to for you monolith.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -146,7 +144,7 @@
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Migrating a monolith">
-  <meta name="twitter:description" content="If you start, a monolith is much easier to begin with. Everything is in one place, it’s fast and all team members understand the code. If you plan your application from the start as distributed system in a microservice like style, you add some significant overhead. Don’t do it, monoliths have their advantages at some point. If another team start with the same project or more functionality is added, splitting up the monolith might be a way to go.">
+  <meta name="twitter:description" content="If you start, a monolith is much easier to begin with. Everything is in one place, it’s fast and all team members understand the code. If you plan your application from the start as distributed system in a microservice like style, you add some significant overhead. Don’t do it, monoliths have their advantages at some point. If another team start with the same project or more functionality is added, splitting up the monolith might be a way to go. Looking at ways to migrate, you maybe can do some better design decision to for you monolith.">
 
   
   
@@ -193,7 +191,7 @@
             <a
                     class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
                     style="--url: url(./bluesky.svg)"
-                    href="https://bsky.app/profile/owehrensbsky.social"
+                    href="https://bsky.app/profile/owehrens.com"
                     target="_blank"
                     rel="me"
             >
@@ -222,26 +220,6 @@
             </a>
             
         </nav>
-        
-    </div>
-
-    <div class="pt-5">
-        
-        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-        <script>
-            (function() {
-              var target = document.currentScript;
-              window.addEventListener('load', function() {
-                calendar.schedulingButton.load({
-                  url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1dyveASD9UGEUV24QnaYdmFX6L7Le3-gQPIHS6c7dTVLlUZFMqLzJINB1w6HgUwcYKIfOqCFLA?gv=true',
-                  color: '#039BE5',
-                  label: 'Book an hour of FREE consultation with me.',
-                  target,
-                });
-              });
-            })();
-        </script>
         
     </div>
 
@@ -352,9 +330,6 @@ If you plan your application from the start as distributed system in a microserv
   
 
   
-  
-
-  
 
 
   
@@ -385,7 +360,7 @@ class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-co
   
 
   <div class="mr-auto">
-    &copy; 2009 - 2024
+    &copy; 2009 - 2025
     <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
   </div>
 

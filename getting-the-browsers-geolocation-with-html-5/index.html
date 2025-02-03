@@ -63,7 +63,34 @@
   
   
   
-  <meta name="description" content="Until now it was almost impossible to get the GeoLocation of a user browsing your site. You could try to use several services to more or less guess the current position. Most of the time they where using the IP address to tackle the problem. This was not very reliable when it came to mobile devices. Ever since the iPhone hit the market mobile adoption of the web grew exponentially." />
+  <meta name="description" content="Until now it was almost impossible to get the GeoLocation of a user browsing your site. You could try to use several services to more or less guess the current position. Most of the time they where using the IP address to tackle the problem. This was not very reliable when it came to mobile devices.
+
+Ever since the iPhone hit the market mobile adoption of the web grew exponentially. Google threw in Android and I&#39;m sure some Windows Mobile phones do have GPS as well.  According to some talks at re:publica 09 the big telco carriers such as T-Mobile and Vodafone see their future in the mobile (geolocation aware) web.
+
+Even though these devices had the capabilities to get the current location,  website developers are still facing the problem that they can not access the positioning hardware of the phone. There was almost no way for (mobile) web developers to get the location of the user. There are some solution out there but you needed to install extra software which is not always possible on a phone.
+
+Fortunately W3C is working on the HTML 5 standard which includes JavaScript access to the browsers location (at least I hope it will be included). The latest beta of Firefox 3.1 (beta3) already supports that API.   If you don&#39;t have a GPS system in your computer you can install an addon to set your location. Rumors has it that Apple will release the upcoming iPhone 3.0 OS with a location aware browser and Google will do the same with one of the next updates of Android.
+
+To test that I wrote a small geolocation aware demo webpage with some JavaScript to pull out the information. If you are accessing it with Firefox 3.1b3&#43; (plugin installed and configured with your position) you will be prompted for unveiling your location to the website. If you do so it will show you your current position on the map and print out the address.
+
+
+
+
+To access this information all you need to do is:
+
+``` javascript
+    function showMap(position) {
+      // Show a map centered at
+      // (position.coords.latitude, position.coords.longitude).
+    }
+    // One-shot position request.
+    navigator.geolocation.getCurrentPosition(showMap);
+```
+
+
+Once this feature is widely available in mobile browsers (I do hope for this summer) my bet is that we will see a whole bunch of websites doing all sort of crazy things with these information. I&#39;m a big Location Based Services (LBS) fan and I can&#39;t wait to see people taking advantage of this.
+
+ Update Firefox 3.5.x uses Google&#39;s Geolocation service if no other way can be used. This is halfway accurate. It gathers information about nearby wireless access points and your computer&#39;s IP address. No more plugin needed." />
   <meta name="author" content="Oliver Wehrens" />
   
 
@@ -112,19 +139,16 @@
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.128.0">
+  <meta name="generator" content="Hugo 0.135.0">
 
   
   
   
   
-  
-
-
   
   
   <meta itemprop="name" content="Getting the Browsers GeoLocation with HTML 5">
-  <meta itemprop="description" content="Until now it was almost impossible to get the GeoLocation of a user browsing your site. You could try to use several services to more or less guess the current position. Most of the time they where using the IP address to tackle the problem. This was not very reliable when it came to mobile devices. Ever since the iPhone hit the market mobile adoption of the web grew exponentially.">
+  <meta itemprop="description" content="Until now it was almost impossible to get the GeoLocation of a user browsing your site. You could try to use several services to more or less guess the current position. Most of the time they where using the IP address to tackle the problem. This was not very reliable when it came to mobile devices. Ever since the iPhone hit the market mobile adoption of the web grew exponentially. Google threw in Android and I&#39;m sure some Windows Mobile phones do have GPS as well. According to some talks at re:publica 09 the big telco carriers such as T-Mobile and Vodafone see their future in the mobile (geolocation aware) web. Even though these devices had the capabilities to get the current location, website developers are still facing the problem that they can not access the positioning hardware of the phone. There was almost no way for (mobile) web developers to get the location of the user. There are some solution out there but you needed to install extra software which is not always possible on a phone. Fortunately W3C is working on the HTML 5 standard which includes JavaScript access to the browsers location (at least I hope it will be included). The latest beta of Firefox 3.1 (beta3) already supports that API. If you don&#39;t have a GPS system in your computer you can install an addon to set your location. Rumors has it that Apple will release the upcoming iPhone 3.0 OS with a location aware browser and Google will do the same with one of the next updates of Android. To test that I wrote a small geolocation aware demo webpage with some JavaScript to pull out the information. If you are accessing it with Firefox 3.1b3&#43; (plugin installed and configured with your position) you will be prompted for unveiling your location to the website. If you do so it will show you your current position on the map and print out the address. To access this information all you need to do is: ``` javascript function showMap(position) { // Show a map centered at // (position.coords.latitude, position.coords.longitude). } // One-shot position request. navigator.geolocation.getCurrentPosition(showMap); ``` Once this feature is widely available in mobile browsers (I do hope for this summer) my bet is that we will see a whole bunch of websites doing all sort of crazy things with these information. I&#39;m a big Location Based Services (LBS) fan and I can&#39;t wait to see people taking advantage of this. Update Firefox 3.5.x uses Google&#39;s Geolocation service if no other way can be used. This is halfway accurate. It gathers information about nearby wireless access points and your computer&#39;s IP address. No more plugin needed.">
   <meta itemprop="datePublished" content="2009-04-11T00:00:00+00:00">
   <meta itemprop="dateModified" content="2009-04-11T00:00:00+00:00">
   <meta itemprop="wordCount" content="449">
@@ -133,7 +157,7 @@
   <meta property="og:url" content="https://owehrens.com/getting-the-browsers-geolocation-with-html-5/">
   <meta property="og:site_name" content="Oliver Wehrens">
   <meta property="og:title" content="Getting the Browsers GeoLocation with HTML 5">
-  <meta property="og:description" content="Until now it was almost impossible to get the GeoLocation of a user browsing your site. You could try to use several services to more or less guess the current position. Most of the time they where using the IP address to tackle the problem. This was not very reliable when it came to mobile devices. Ever since the iPhone hit the market mobile adoption of the web grew exponentially.">
+  <meta property="og:description" content="Until now it was almost impossible to get the GeoLocation of a user browsing your site. You could try to use several services to more or less guess the current position. Most of the time they where using the IP address to tackle the problem. This was not very reliable when it came to mobile devices. Ever since the iPhone hit the market mobile adoption of the web grew exponentially. Google threw in Android and I&#39;m sure some Windows Mobile phones do have GPS as well. According to some talks at re:publica 09 the big telco carriers such as T-Mobile and Vodafone see their future in the mobile (geolocation aware) web. Even though these devices had the capabilities to get the current location, website developers are still facing the problem that they can not access the positioning hardware of the phone. There was almost no way for (mobile) web developers to get the location of the user. There are some solution out there but you needed to install extra software which is not always possible on a phone. Fortunately W3C is working on the HTML 5 standard which includes JavaScript access to the browsers location (at least I hope it will be included). The latest beta of Firefox 3.1 (beta3) already supports that API. If you don&#39;t have a GPS system in your computer you can install an addon to set your location. Rumors has it that Apple will release the upcoming iPhone 3.0 OS with a location aware browser and Google will do the same with one of the next updates of Android. To test that I wrote a small geolocation aware demo webpage with some JavaScript to pull out the information. If you are accessing it with Firefox 3.1b3&#43; (plugin installed and configured with your position) you will be prompted for unveiling your location to the website. If you do so it will show you your current position on the map and print out the address. To access this information all you need to do is: ``` javascript function showMap(position) { // Show a map centered at // (position.coords.latitude, position.coords.longitude). } // One-shot position request. navigator.geolocation.getCurrentPosition(showMap); ``` Once this feature is widely available in mobile browsers (I do hope for this summer) my bet is that we will see a whole bunch of websites doing all sort of crazy things with these information. I&#39;m a big Location Based Services (LBS) fan and I can&#39;t wait to see people taking advantage of this. Update Firefox 3.5.x uses Google&#39;s Geolocation service if no other way can be used. This is halfway accurate. It gathers information about nearby wireless access points and your computer&#39;s IP address. No more plugin needed.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -144,7 +168,7 @@
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Getting the Browsers GeoLocation with HTML 5">
-  <meta name="twitter:description" content="Until now it was almost impossible to get the GeoLocation of a user browsing your site. You could try to use several services to more or less guess the current position. Most of the time they where using the IP address to tackle the problem. This was not very reliable when it came to mobile devices. Ever since the iPhone hit the market mobile adoption of the web grew exponentially.">
+  <meta name="twitter:description" content="Until now it was almost impossible to get the GeoLocation of a user browsing your site. You could try to use several services to more or less guess the current position. Most of the time they where using the IP address to tackle the problem. This was not very reliable when it came to mobile devices. Ever since the iPhone hit the market mobile adoption of the web grew exponentially. Google threw in Android and I&#39;m sure some Windows Mobile phones do have GPS as well. According to some talks at re:publica 09 the big telco carriers such as T-Mobile and Vodafone see their future in the mobile (geolocation aware) web. Even though these devices had the capabilities to get the current location, website developers are still facing the problem that they can not access the positioning hardware of the phone. There was almost no way for (mobile) web developers to get the location of the user. There are some solution out there but you needed to install extra software which is not always possible on a phone. Fortunately W3C is working on the HTML 5 standard which includes JavaScript access to the browsers location (at least I hope it will be included). The latest beta of Firefox 3.1 (beta3) already supports that API. If you don&#39;t have a GPS system in your computer you can install an addon to set your location. Rumors has it that Apple will release the upcoming iPhone 3.0 OS with a location aware browser and Google will do the same with one of the next updates of Android. To test that I wrote a small geolocation aware demo webpage with some JavaScript to pull out the information. If you are accessing it with Firefox 3.1b3&#43; (plugin installed and configured with your position) you will be prompted for unveiling your location to the website. If you do so it will show you your current position on the map and print out the address. To access this information all you need to do is: ``` javascript function showMap(position) { // Show a map centered at // (position.coords.latitude, position.coords.longitude). } // One-shot position request. navigator.geolocation.getCurrentPosition(showMap); ``` Once this feature is widely available in mobile browsers (I do hope for this summer) my bet is that we will see a whole bunch of websites doing all sort of crazy things with these information. I&#39;m a big Location Based Services (LBS) fan and I can&#39;t wait to see people taking advantage of this. Update Firefox 3.5.x uses Google&#39;s Geolocation service if no other way can be used. This is halfway accurate. It gathers information about nearby wireless access points and your computer&#39;s IP address. No more plugin needed.">
 
   
   
@@ -191,7 +215,7 @@
             <a
                     class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
                     style="--url: url(./bluesky.svg)"
-                    href="https://bsky.app/profile/owehrensbsky.social"
+                    href="https://bsky.app/profile/owehrens.com"
                     target="_blank"
                     rel="me"
             >
@@ -220,26 +244,6 @@
             </a>
             
         </nav>
-        
-    </div>
-
-    <div class="pt-5">
-        
-        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-        <script>
-            (function() {
-              var target = document.currentScript;
-              window.addEventListener('load', function() {
-                calendar.schedulingButton.load({
-                  url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1dyveASD9UGEUV24QnaYdmFX6L7Le3-gQPIHS6c7dTVLlUZFMqLzJINB1w6HgUwcYKIfOqCFLA?gv=true',
-                  color: '#039BE5',
-                  label: 'Book an hour of FREE consultation with me.',
-                  target,
-                });
-              });
-            })();
-        </script>
         
     </div>
 
@@ -337,9 +341,6 @@ Once this feature is widely available in mobile browsers (I do hope for this sum
   
 
   
-  
-
-  
 
 
   
@@ -370,7 +371,7 @@ class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-co
   
 
   <div class="mr-auto">
-    &copy; 2009 - 2024
+    &copy; 2009 - 2025
     <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
   </div>
 

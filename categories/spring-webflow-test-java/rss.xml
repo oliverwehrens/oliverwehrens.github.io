@@ -13,7 +13,7 @@
       <link>https://owehrens.com/how-to-test-spring-webflow-2-with-parent-flows/</link>
       <pubDate>Mon, 20 Apr 2009 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/how-to-test-spring-webflow-2-with-parent-flows/</guid>
-      <description>In the last couple of month I was writing some flows using Spring Webflow 2. I knew that I (in theory) I could test them but I never did. The overall documentation of Webflow 2 is not that great at the moment, so I hope to improve that a little bit.&#xA;Spring Webflow 2 supports only JUnit tests so far. I guess this will change at some point but until then you have to pull out that junit.</description>
+      <description>&lt;p&gt;In the last couple of month I was writing some flows using Spring Webflow 2. I knew that I (in theory) I could test them but I never did. The overall documentation of Webflow 2 is not that great at the moment, so I hope to improve that a little bit.&lt;/p&gt;&#xA;&lt;p&gt;Spring Webflow 2 supports only JUnit tests so far. I guess this will change at some point  but until then you have to pull out that junit.jar again.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

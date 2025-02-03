@@ -13,49 +13,49 @@
       <link>https://owehrens.com/getting-faster/</link>
       <pubDate>Wed, 18 Dec 2013 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/getting-faster/</guid>
-      <description> My Continuous Lifecycle 2013 talk. How we got faster at deploying our software. </description>
+      <description>My &lt;a href=&#34;http://www.continuouslifecycle.de/lecture.php?id=291&#34;&gt;Continuous Lifecycle 2013&lt;/a&gt; talk. How we got faster at deploying our software.&#xA;&#xA;&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;fd5eb9e02df501313a98663820a88a30&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;</description>
     </item>
     <item>
       <title>Getting started with veewee and vagrant</title>
       <link>https://owehrens.com/getting-started-with-veewee-and-vagrant/</link>
       <pubDate>Sun, 26 May 2013 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/getting-started-with-veewee-and-vagrant/</guid>
-      <description>What do you need to do to get a fully automated kickstart of a virtual machine on your local development platform running? Not much it turns out. There are some tricks to get around but after that it&amp;rsquo;s all fine.&#xA;The resulting image can also be used to get a system in production.&#xA;I will look at the OS installation part. Puppet will come in a later post.&#xA;Installation Tools we will play with:</description>
+      <description>&lt;p&gt;What do you need to do to get a fully automated kickstart of a virtual machine on your local development platform running? Not much it turns out. There are some tricks to get around but after that it&amp;rsquo;s all fine.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;The resulting image can also be used to get a system in production.&lt;/p&gt;&#xA;&lt;p&gt;I will look at the OS installation part. Puppet will come in a later post.&lt;/p&gt;</description>
     </item>
     <item>
       <title>From Development to Production</title>
       <link>https://owehrens.com/from-development-to-production/</link>
       <pubDate>Fri, 26 Apr 2013 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/from-development-to-production/</guid>
-      <description> My BedCon 2013 talk. Covering commiting code, packaging,testing, deployment and organisational changes. </description>
+      <description>My &lt;a href=&#34;http://bed-con.org/2013/talks/&#34;&gt;BedCon 2013&lt;/a&gt; talk. Covering commiting code, packaging,testing, deployment and organisational changes.&#xA;&#xA;&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;e8470d7082450130e5211231381a9963&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;</description>
     </item>
     <item>
       <title>Do not use Javadoc</title>
       <link>https://owehrens.com/do-not-use-javadoc/</link>
       <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/do-not-use-javadoc/</guid>
-      <description>Javadoc is here to help. To understand what the code does and how it works? Right?&#xA;I don&amp;rsquo;t think so. I confuses the heck out of me in most cases.&#xA;When I look at code like&#xA;/** * Version number of signature. */ public static final String SIGNATURE_VERSION = &amp;#34;1&amp;#34;; I get the feeling that the javadoc is pretty pointless. Well, the damn String is named what it is, how does the Javadoc help me here?</description>
+      <description>&lt;p&gt;Javadoc is here to help. To understand what the code does and how it works? Right?&lt;/p&gt;&#xA;&lt;p&gt;I don&amp;rsquo;t think so. I confuses the heck out of me in most cases.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;When I look at code like&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/**&#xA;* Version number of signature.&#xA;*/&#xA;public static final String SIGNATURE_VERSION = &amp;#34;1&amp;#34;;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I get the feeling that the javadoc is pretty pointless. Well, the damn String is named what it is, how does the Javadoc help me here?&lt;/p&gt;</description>
     </item>
     <item>
       <title>5 code metrics you need to watch</title>
       <link>https://owehrens.com/5-code-metrics-you-need-to-watch/</link>
       <pubDate>Tue, 23 Feb 2010 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/5-code-metrics-you-need-to-watch/</guid>
-      <description>Developing software ain&amp;rsquo;t easy.&#xA;How do you know how you are doing ?&#xA;You could start collecting metrics about your code. These can give you some indication how maintainable and reliable it is.&#xA;The metric which come to mind to the most people is code coverage. Some people say it must be near 100%, other say 80% is a good number. At the end it can&amp;rsquo;t tell you if you are doing great or good.</description>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Developing software ain&amp;rsquo;t easy.&lt;/p&gt;&#xA;&lt;p&gt;How do you know how you are doing ?&lt;/p&gt;&#xA;&lt;p&gt;You could start &lt;!-- raw HTML omitted --&gt;collecting metrics&lt;!-- raw HTML omitted --&gt; about your code. These can give you some indication how maintainable and reliable it is.&lt;/p&gt;&#xA;&lt;p&gt;The metric which come to mind to the most people is &lt;!-- raw HTML omitted --&gt;code coverage&lt;!-- raw HTML omitted --&gt;. Some people say it must be near 100%, other say 80% is a good number. At the end it can&amp;rsquo;t tell you if you are doing great or good. The only thing you might read from it is that a &lt;!-- raw HTML omitted --&gt;low number&lt;!-- raw HTML omitted --&gt; indicates a &lt;!-- raw HTML omitted --&gt;potential problem&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Name your objects right</title>
       <link>https://owehrens.com/name-your-objects-right/</link>
       <pubDate>Tue, 09 Feb 2010 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/name-your-objects-right/</guid>
-      <description>Whenever you create an object you have to find a meaningful name.&#xA;While renaming later in modern IDE&amp;rsquo;s is no problem at all you should not pick the first name which comes to your mind.&#xA;Imagine you have an external fraud detection web service and it will return a &amp;lsquo;hit&amp;rsquo; or &amp;lsquo;miss&amp;rsquo;. How do you name this object? HitOrMiss maybe (since this is the representation you get from the webservice) ?</description>
+      <description>&lt;p&gt;Whenever you create an object you have to find a meaningful name.&lt;/p&gt;&#xA;&lt;p&gt;While renaming later in modern IDE&amp;rsquo;s is no problem at all you should not pick the first name which comes to your mind.&lt;/p&gt;&#xA;&lt;p&gt;Imagine you have an external fraud detection web service and it will return a &amp;lsquo;hit&amp;rsquo; or &amp;lsquo;miss&amp;rsquo;. How do you name this object? HitOrMiss maybe (since this is the representation you get from the webservice) ? It might describe the problem at hand. If you go with this name it will dripple down through all layers. The domain model, the dto&amp;rsquo;s, services and more will now reference to this object (and create their own derivates for it). Your colleagues which code up other parts of the system will refer to it and create their own variants of the name (like structure for web pages). The wrong name is now all over your code.&lt;/p&gt;</description>
     </item>
     <item>
       <title>What&#39;s your preferred development infrastructure stack?</title>
       <link>https://owehrens.com/whats-your-preferred-development-infrastructure-stack/</link>
       <pubDate>Wed, 13 Jan 2010 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/whats-your-preferred-development-infrastructure-stack/</guid>
-      <description>In Response to Matt Raible&#39;s question about my preferred development stack. Source control In my own development project I switched to Git some time ago. I was using svn and before that cvs for a couple of years. Git just makes it easy to try out small ideas very quickly without reverting the code. We will introduce Git at work pretty soon (I hope).&#xA;The Atlassian cloud I was using Confluence as a Wiki in my open source project and my current employer Hypoport uses it as well.</description>
+      <description>In Response to &lt;a href=&#34;http://raibledesigns.com/rd/entry/what_s_your_preferred_development&#34;&gt;Matt Raible&#39;s&lt;/a&gt; question about my preferred development stack.&#xA;&#xA;&lt;h3 id=&#34;source-control&#34;&gt;Source control&lt;/h3&gt;&#xA;&lt;p&gt;In my own development project I switched to &lt;!-- raw HTML omitted --&gt;Git&lt;!-- raw HTML omitted --&gt; some time ago. I was using svn and before that cvs for a couple of years. Git just makes it easy to try out small ideas very quickly without reverting the code. We will introduce Git at work pretty soon (I hope).&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

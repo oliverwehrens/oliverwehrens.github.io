@@ -65,7 +65,7 @@
   
   <meta name="description" content="Whenever you create an object you have to find a meaningful name.
 While renaming later in modern IDE&rsquo;s is no problem at all you should not pick the first name which comes to your mind.
-Imagine you have an external fraud detection web service and it will return a &lsquo;hit&rsquo; or &lsquo;miss&rsquo;. How do you name this object? HitOrMiss maybe (since this is the representation you get from the webservice) ?" />
+Imagine you have an external fraud detection web service and it will return a &lsquo;hit&rsquo; or &lsquo;miss&rsquo;. How do you name this object? HitOrMiss maybe (since this is the representation you get from the webservice) ? It might describe the problem at hand. If you go with this name it will dripple down through all layers. The domain model, the dto&rsquo;s, services and more will now reference to this object (and create their own derivates for it). Your colleagues which code up other parts of the system will refer to it and create their own variants of the name (like structure for web pages). The wrong name is now all over your code." />
   <meta name="author" content="Oliver Wehrens" />
   
 
@@ -114,21 +114,18 @@ Imagine you have an external fraud detection web service and it will return a &l
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.128.0">
+  <meta name="generator" content="Hugo 0.135.0">
 
   
   
   
   
-  
-
-
   
   
   <meta itemprop="name" content="Name your objects right">
   <meta itemprop="description" content="Whenever you create an object you have to find a meaningful name.
 While renaming later in modern IDE’s is no problem at all you should not pick the first name which comes to your mind.
-Imagine you have an external fraud detection web service and it will return a ‘hit’ or ‘miss’. How do you name this object? HitOrMiss maybe (since this is the representation you get from the webservice) ?">
+Imagine you have an external fraud detection web service and it will return a ‘hit’ or ‘miss’. How do you name this object? HitOrMiss maybe (since this is the representation you get from the webservice) ? It might describe the problem at hand. If you go with this name it will dripple down through all layers. The domain model, the dto’s, services and more will now reference to this object (and create their own derivates for it). Your colleagues which code up other parts of the system will refer to it and create their own variants of the name (like structure for web pages). The wrong name is now all over your code.">
   <meta itemprop="datePublished" content="2010-02-09T00:00:00+00:00">
   <meta itemprop="dateModified" content="2010-02-09T00:00:00+00:00">
   <meta itemprop="wordCount" content="287">
@@ -139,7 +136,7 @@ Imagine you have an external fraud detection web service and it will return a �
   <meta property="og:title" content="Name your objects right">
   <meta property="og:description" content="Whenever you create an object you have to find a meaningful name.
 While renaming later in modern IDE’s is no problem at all you should not pick the first name which comes to your mind.
-Imagine you have an external fraud detection web service and it will return a ‘hit’ or ‘miss’. How do you name this object? HitOrMiss maybe (since this is the representation you get from the webservice) ?">
+Imagine you have an external fraud detection web service and it will return a ‘hit’ or ‘miss’. How do you name this object? HitOrMiss maybe (since this is the representation you get from the webservice) ? It might describe the problem at hand. If you go with this name it will dripple down through all layers. The domain model, the dto’s, services and more will now reference to this object (and create their own derivates for it). Your colleagues which code up other parts of the system will refer to it and create their own variants of the name (like structure for web pages). The wrong name is now all over your code.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -154,7 +151,7 @@ Imagine you have an external fraud detection web service and it will return a �
   <meta name="twitter:title" content="Name your objects right">
   <meta name="twitter:description" content="Whenever you create an object you have to find a meaningful name.
 While renaming later in modern IDE’s is no problem at all you should not pick the first name which comes to your mind.
-Imagine you have an external fraud detection web service and it will return a ‘hit’ or ‘miss’. How do you name this object? HitOrMiss maybe (since this is the representation you get from the webservice) ?">
+Imagine you have an external fraud detection web service and it will return a ‘hit’ or ‘miss’. How do you name this object? HitOrMiss maybe (since this is the representation you get from the webservice) ? It might describe the problem at hand. If you go with this name it will dripple down through all layers. The domain model, the dto’s, services and more will now reference to this object (and create their own derivates for it). Your colleagues which code up other parts of the system will refer to it and create their own variants of the name (like structure for web pages). The wrong name is now all over your code.">
 
   
   
@@ -201,7 +198,7 @@ Imagine you have an external fraud detection web service and it will return a �
             <a
                     class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
                     style="--url: url(./bluesky.svg)"
-                    href="https://bsky.app/profile/owehrensbsky.social"
+                    href="https://bsky.app/profile/owehrens.com"
                     target="_blank"
                     rel="me"
             >
@@ -230,26 +227,6 @@ Imagine you have an external fraud detection web service and it will return a �
             </a>
             
         </nav>
-        
-    </div>
-
-    <div class="pt-5">
-        
-        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-        <script>
-            (function() {
-              var target = document.currentScript;
-              window.addEventListener('load', function() {
-                calendar.schedulingButton.load({
-                  url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1dyveASD9UGEUV24QnaYdmFX6L7Le3-gQPIHS6c7dTVLlUZFMqLzJINB1w6HgUwcYKIfOqCFLA?gv=true',
-                  color: '#039BE5',
-                  label: 'Book an hour of FREE consultation with me.',
-                  target,
-                });
-              });
-            })();
-        </script>
         
     </div>
 
@@ -339,9 +316,6 @@ Imagine you have an external fraud detection web service and it will return a �
   
 
   
-  
-
-  
 
 
   
@@ -372,7 +346,7 @@ class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-co
   
 
   <div class="mr-auto">
-    &copy; 2009 - 2024
+    &copy; 2009 - 2025
     <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
   </div>
 

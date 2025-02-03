@@ -63,7 +63,78 @@
   
   
   
-  <meta name="description" content="At Campfire One Google announced their App Engine for Java (this was in the rumor mill for a couple of days already). The first 10,000 developers would get an early look at App Engine&#39;s Java language support. I would have almost missed it. Some tweets reminded me of registering with Google. I heard of AppEngine before but the fact that it was only available for Python did not make it very attractive to me." />
+  <meta name="description" content="At Campfire One Google announced their App Engine for Java (this was in the rumor mill for a couple of days already). The first 10,000 developers would get an early look at App Engine&#39;s Java language support. I would have almost missed it. Some tweets reminded me of registering with Google. I heard of AppEngine before but the fact that it was only available for Python did not make it very attractive to me. Now the game changed a bit with introducing Java (and other JVM languages (JRuby, partial Scala ...), well Groovy for sure, Ola Bini has more on that).
+
+After registering with my Google ID they wanted to verify my account with a sms text message. Google is just listing  3 countries and then &#39;Other&#39; for sms verification and I expected it would not work with a german cellphone. But it did ;-).
+
+The Tutorials on their site are working nicely (even if you don&#39;t have Eclipse which they are always referring to). Just follow the instructions step by step, use ant and the command line to get through the examples. Don&#39;t copy the template project, this is not in line with the documentation.
+
+In the last hour or so I went from nothing to a running Guestbook App at Google (try it!). Once you get the environment right, the code is pretty straight forward.
+
+I see a couple of things which I do like about the App Engine.
+
+Support for Google Id and Sign In
+AppEngine support sign in with an Google ID with 2! lines of code. Great. I don&#39;t want to worry about that (this generates the Google login page and redirects).
+
+UserService userService = UserServiceFactory.getUserService();
+User user = userService.getCurrentUser();
+
+
+Automagic Persistence
+With simple annotation you persist your objects. No mapping, no nothing. You can configure if you want to be using JDO or JPA. No database hassle or whatsoever. Of course it needs to be seen how this work with more complex domain models.
+
+``` java
+@PersistenceCapable(identityType = IdentityType.APPLICATION)
+..
+    @PrimaryKey
+    @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+    private Long id;
+
+    @Persistent
+    private User author;
+
+    @Persistent
+    private String content;
+
+    @Persistent
+    private Date date;
+...
+```
+
+Local Development - Remote Depolyment
+Everything works locally. If you deploy it to Google it uses the Google facilities. I don&#39;t have to worry (deployment is one ant command).
+
+Scalability and free Use
+If your application is successful you can grow with Google. More Resources at your fingertips. Of course this costs money (but you should make money at this point right?). If you are beyond the free 10 GB bandwidth in/day, 10 GB bandwidth out/day, 5 million pageviews a month, 46.3 cpu h/day and 1000 emails/day you pay:
+
+
+CPU Time 	$0.10/CPU hour 
+Bandwidth Out $0.12/GByte 
+Bandwidth In $0.10/GByte 
+Stored Data $0.005/GByte-day
+Recipients Emailed $0.0001/Email 
+
+
+Monitoring
+You get nice and detailed overview of the status of you application. You can upload new version any time and go live on demand.
+
+
+This this is limited access and Google titles it &#39;early look&#39; there must be some gotchas but I hope they will get worked out. Of course you will depend on Google&#39;s code but I could imagine with a good abstraction layer you can minimize the dependencies to the AppEngine (although replacing some services you might need to use could be hard).
+
+The downside of using it are (gathered from various sources)
+
+
+No own threads
+Restrictions of java.io.File
+Restrictions on reflection
+Maximum of 30 seconds per request
+An application may not open sockets
+
+
+
+For sure there are some more benefits in hosting with Google (I guess the same goes for Amazon with S3/EC2). In the past I heard from a couple of startups using those kind of services but I never imagined that it would be that easy.  As I said, I was up and running in under one hour.
+
+I certainly will use AppEngine for a small application in the near future." />
   <meta name="author" content="Oliver Wehrens" />
   
 
@@ -112,19 +183,16 @@
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.128.0">
+  <meta name="generator" content="Hugo 0.135.0">
 
   
   
   
   
-  
-
-
   
   
   <meta itemprop="name" content="A Quick Look at Google App Engine for Java">
-  <meta itemprop="description" content="At Campfire One Google announced their App Engine for Java (this was in the rumor mill for a couple of days already). The first 10,000 developers would get an early look at App Engine&#39;s Java language support. I would have almost missed it. Some tweets reminded me of registering with Google. I heard of AppEngine before but the fact that it was only available for Python did not make it very attractive to me.">
+  <meta itemprop="description" content="At Campfire One Google announced their App Engine for Java (this was in the rumor mill for a couple of days already). The first 10,000 developers would get an early look at App Engine&#39;s Java language support. I would have almost missed it. Some tweets reminded me of registering with Google. I heard of AppEngine before but the fact that it was only available for Python did not make it very attractive to me. Now the game changed a bit with introducing Java (and other JVM languages (JRuby, partial Scala ...), well Groovy for sure, Ola Bini has more on that). After registering with my Google ID they wanted to verify my account with a sms text message. Google is just listing 3 countries and then &#39;Other&#39; for sms verification and I expected it would not work with a german cellphone. But it did ;-). The Tutorials on their site are working nicely (even if you don&#39;t have Eclipse which they are always referring to). Just follow the instructions step by step, use ant and the command line to get through the examples. Don&#39;t copy the template project, this is not in line with the documentation. In the last hour or so I went from nothing to a running Guestbook App at Google (try it!). Once you get the environment right, the code is pretty straight forward. I see a couple of things which I do like about the App Engine. Support for Google Id and Sign In AppEngine support sign in with an Google ID with 2! lines of code. Great. I don&#39;t want to worry about that (this generates the Google login page and redirects). UserService userService = UserServiceFactory.getUserService(); User user = userService.getCurrentUser(); Automagic Persistence With simple annotation you persist your objects. No mapping, no nothing. You can configure if you want to be using JDO or JPA. No database hassle or whatsoever. Of course it needs to be seen how this work with more complex domain models. ``` java @PersistenceCapable(identityType = IdentityType.APPLICATION) .. @PrimaryKey @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY) private Long id; @Persistent private User author; @Persistent private String content; @Persistent private Date date; ... ``` Local Development - Remote Depolyment Everything works locally. If you deploy it to Google it uses the Google facilities. I don&#39;t have to worry (deployment is one ant command). Scalability and free Use If your application is successful you can grow with Google. More Resources at your fingertips. Of course this costs money (but you should make money at this point right?). If you are beyond the free 10 GB bandwidth in/day, 10 GB bandwidth out/day, 5 million pageviews a month, 46.3 cpu h/day and 1000 emails/day you pay: CPU Time $0.10/CPU hour Bandwidth Out $0.12/GByte Bandwidth In $0.10/GByte Stored Data $0.005/GByte-day Recipients Emailed $0.0001/Email Monitoring You get nice and detailed overview of the status of you application. You can upload new version any time and go live on demand. This this is limited access and Google titles it &#39;early look&#39; there must be some gotchas but I hope they will get worked out. Of course you will depend on Google&#39;s code but I could imagine with a good abstraction layer you can minimize the dependencies to the AppEngine (although replacing some services you might need to use could be hard). The downside of using it are (gathered from various sources) No own threads Restrictions of java.io.File Restrictions on reflection Maximum of 30 seconds per request An application may not open sockets For sure there are some more benefits in hosting with Google (I guess the same goes for Amazon with S3/EC2). In the past I heard from a couple of startups using those kind of services but I never imagined that it would be that easy. As I said, I was up and running in under one hour. I certainly will use AppEngine for a small application in the near future.">
   <meta itemprop="datePublished" content="2009-04-08T00:00:00+00:00">
   <meta itemprop="dateModified" content="2009-04-08T00:00:00+00:00">
   <meta itemprop="wordCount" content="649">
@@ -133,7 +201,7 @@
   <meta property="og:url" content="https://owehrens.com/a-quick-look-at-google-app-engine-for-java/">
   <meta property="og:site_name" content="Oliver Wehrens">
   <meta property="og:title" content="A Quick Look at Google App Engine for Java">
-  <meta property="og:description" content="At Campfire One Google announced their App Engine for Java (this was in the rumor mill for a couple of days already). The first 10,000 developers would get an early look at App Engine&#39;s Java language support. I would have almost missed it. Some tweets reminded me of registering with Google. I heard of AppEngine before but the fact that it was only available for Python did not make it very attractive to me.">
+  <meta property="og:description" content="At Campfire One Google announced their App Engine for Java (this was in the rumor mill for a couple of days already). The first 10,000 developers would get an early look at App Engine&#39;s Java language support. I would have almost missed it. Some tweets reminded me of registering with Google. I heard of AppEngine before but the fact that it was only available for Python did not make it very attractive to me. Now the game changed a bit with introducing Java (and other JVM languages (JRuby, partial Scala ...), well Groovy for sure, Ola Bini has more on that). After registering with my Google ID they wanted to verify my account with a sms text message. Google is just listing 3 countries and then &#39;Other&#39; for sms verification and I expected it would not work with a german cellphone. But it did ;-). The Tutorials on their site are working nicely (even if you don&#39;t have Eclipse which they are always referring to). Just follow the instructions step by step, use ant and the command line to get through the examples. Don&#39;t copy the template project, this is not in line with the documentation. In the last hour or so I went from nothing to a running Guestbook App at Google (try it!). Once you get the environment right, the code is pretty straight forward. I see a couple of things which I do like about the App Engine. Support for Google Id and Sign In AppEngine support sign in with an Google ID with 2! lines of code. Great. I don&#39;t want to worry about that (this generates the Google login page and redirects). UserService userService = UserServiceFactory.getUserService(); User user = userService.getCurrentUser(); Automagic Persistence With simple annotation you persist your objects. No mapping, no nothing. You can configure if you want to be using JDO or JPA. No database hassle or whatsoever. Of course it needs to be seen how this work with more complex domain models. ``` java @PersistenceCapable(identityType = IdentityType.APPLICATION) .. @PrimaryKey @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY) private Long id; @Persistent private User author; @Persistent private String content; @Persistent private Date date; ... ``` Local Development - Remote Depolyment Everything works locally. If you deploy it to Google it uses the Google facilities. I don&#39;t have to worry (deployment is one ant command). Scalability and free Use If your application is successful you can grow with Google. More Resources at your fingertips. Of course this costs money (but you should make money at this point right?). If you are beyond the free 10 GB bandwidth in/day, 10 GB bandwidth out/day, 5 million pageviews a month, 46.3 cpu h/day and 1000 emails/day you pay: CPU Time $0.10/CPU hour Bandwidth Out $0.12/GByte Bandwidth In $0.10/GByte Stored Data $0.005/GByte-day Recipients Emailed $0.0001/Email Monitoring You get nice and detailed overview of the status of you application. You can upload new version any time and go live on demand. This this is limited access and Google titles it &#39;early look&#39; there must be some gotchas but I hope they will get worked out. Of course you will depend on Google&#39;s code but I could imagine with a good abstraction layer you can minimize the dependencies to the AppEngine (although replacing some services you might need to use could be hard). The downside of using it are (gathered from various sources) No own threads Restrictions of java.io.File Restrictions on reflection Maximum of 30 seconds per request An application may not open sockets For sure there are some more benefits in hosting with Google (I guess the same goes for Amazon with S3/EC2). In the past I heard from a couple of startups using those kind of services but I never imagined that it would be that easy. As I said, I was up and running in under one hour. I certainly will use AppEngine for a small application in the near future.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -144,7 +212,7 @@
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="A Quick Look at Google App Engine for Java">
-  <meta name="twitter:description" content="At Campfire One Google announced their App Engine for Java (this was in the rumor mill for a couple of days already). The first 10,000 developers would get an early look at App Engine&#39;s Java language support. I would have almost missed it. Some tweets reminded me of registering with Google. I heard of AppEngine before but the fact that it was only available for Python did not make it very attractive to me.">
+  <meta name="twitter:description" content="At Campfire One Google announced their App Engine for Java (this was in the rumor mill for a couple of days already). The first 10,000 developers would get an early look at App Engine&#39;s Java language support. I would have almost missed it. Some tweets reminded me of registering with Google. I heard of AppEngine before but the fact that it was only available for Python did not make it very attractive to me. Now the game changed a bit with introducing Java (and other JVM languages (JRuby, partial Scala ...), well Groovy for sure, Ola Bini has more on that). After registering with my Google ID they wanted to verify my account with a sms text message. Google is just listing 3 countries and then &#39;Other&#39; for sms verification and I expected it would not work with a german cellphone. But it did ;-). The Tutorials on their site are working nicely (even if you don&#39;t have Eclipse which they are always referring to). Just follow the instructions step by step, use ant and the command line to get through the examples. Don&#39;t copy the template project, this is not in line with the documentation. In the last hour or so I went from nothing to a running Guestbook App at Google (try it!). Once you get the environment right, the code is pretty straight forward. I see a couple of things which I do like about the App Engine. Support for Google Id and Sign In AppEngine support sign in with an Google ID with 2! lines of code. Great. I don&#39;t want to worry about that (this generates the Google login page and redirects). UserService userService = UserServiceFactory.getUserService(); User user = userService.getCurrentUser(); Automagic Persistence With simple annotation you persist your objects. No mapping, no nothing. You can configure if you want to be using JDO or JPA. No database hassle or whatsoever. Of course it needs to be seen how this work with more complex domain models. ``` java @PersistenceCapable(identityType = IdentityType.APPLICATION) .. @PrimaryKey @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY) private Long id; @Persistent private User author; @Persistent private String content; @Persistent private Date date; ... ``` Local Development - Remote Depolyment Everything works locally. If you deploy it to Google it uses the Google facilities. I don&#39;t have to worry (deployment is one ant command). Scalability and free Use If your application is successful you can grow with Google. More Resources at your fingertips. Of course this costs money (but you should make money at this point right?). If you are beyond the free 10 GB bandwidth in/day, 10 GB bandwidth out/day, 5 million pageviews a month, 46.3 cpu h/day and 1000 emails/day you pay: CPU Time $0.10/CPU hour Bandwidth Out $0.12/GByte Bandwidth In $0.10/GByte Stored Data $0.005/GByte-day Recipients Emailed $0.0001/Email Monitoring You get nice and detailed overview of the status of you application. You can upload new version any time and go live on demand. This this is limited access and Google titles it &#39;early look&#39; there must be some gotchas but I hope they will get worked out. Of course you will depend on Google&#39;s code but I could imagine with a good abstraction layer you can minimize the dependencies to the AppEngine (although replacing some services you might need to use could be hard). The downside of using it are (gathered from various sources) No own threads Restrictions of java.io.File Restrictions on reflection Maximum of 30 seconds per request An application may not open sockets For sure there are some more benefits in hosting with Google (I guess the same goes for Amazon with S3/EC2). In the past I heard from a couple of startups using those kind of services but I never imagined that it would be that easy. As I said, I was up and running in under one hour. I certainly will use AppEngine for a small application in the near future.">
 
   
   
@@ -191,7 +259,7 @@
             <a
                     class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
                     style="--url: url(./bluesky.svg)"
-                    href="https://bsky.app/profile/owehrensbsky.social"
+                    href="https://bsky.app/profile/owehrens.com"
                     target="_blank"
                     rel="me"
             >
@@ -220,26 +288,6 @@
             </a>
             
         </nav>
-        
-    </div>
-
-    <div class="pt-5">
-        
-        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-        <script>
-            (function() {
-              var target = document.currentScript;
-              window.addEventListener('load', function() {
-                calendar.schedulingButton.load({
-                  url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1dyveASD9UGEUV24QnaYdmFX6L7Le3-gQPIHS6c7dTVLlUZFMqLzJINB1w6HgUwcYKIfOqCFLA?gv=true',
-                  color: '#039BE5',
-                  label: 'Book an hour of FREE consultation with me.',
-                  target,
-                });
-              });
-            })();
-        </script>
         
     </div>
 
@@ -381,9 +429,6 @@ I certainly will use AppEngine for a small application in the near future.
   
 
   
-  
-
-  
 
 
   
@@ -414,7 +459,7 @@ class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-co
   
 
   <div class="mr-auto">
-    &copy; 2009 - 2024
+    &copy; 2009 - 2025
     <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
   </div>
 

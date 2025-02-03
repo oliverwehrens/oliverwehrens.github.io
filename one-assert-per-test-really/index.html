@@ -63,7 +63,13 @@
   
   
   
-  <meta name="description" content="Recently I was debugging my code and I could not see why my test was failing. It took me about 20 minutes to see that I violated one rule I try to follow. One assert per test. After tweeting it I got some reaction ranging from &#39;this is a very silly guideline&#39; to &#39;Tests should test one thing. Often one assertion, but not always.&#39;. I, of course, tend to agree the latter one." />
+  <meta name="description" content="Recently I was debugging my code and I could not see why my test was failing. It took me about 20 minutes to see that I violated one rule I try to follow. One assert per test.
+
+
+After tweeting it I got some reaction ranging from &#39;this is a very silly guideline&#39; to &#39;Tests should test one thing. Often one assertion, but not always.&#39;. I, of course, tend to agree the latter one.
+
+So what&#39;s in for you when you use one assert per test? What are the problems?
+" />
   <meta name="author" content="Oliver Wehrens" />
   
 
@@ -112,19 +118,16 @@
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.128.0">
+  <meta name="generator" content="Hugo 0.135.0">
 
   
   
   
   
-  
-
-
   
   
   <meta itemprop="name" content="One assert per test, really">
-  <meta itemprop="description" content="Recently I was debugging my code and I could not see why my test was failing. It took me about 20 minutes to see that I violated one rule I try to follow. One assert per test. After tweeting it I got some reaction ranging from &#39;this is a very silly guideline&#39; to &#39;Tests should test one thing. Often one assertion, but not always.&#39;. I, of course, tend to agree the latter one.">
+  <meta itemprop="description" content="Recently I was debugging my code and I could not see why my test was failing. It took me about 20 minutes to see that I violated one rule I try to follow. One assert per test. After tweeting it I got some reaction ranging from &#39;this is a very silly guideline&#39; to &#39;Tests should test one thing. Often one assertion, but not always.&#39;. I, of course, tend to agree the latter one. So what&#39;s in for you when you use one assert per test? What are the problems? ">
   <meta itemprop="datePublished" content="2011-06-14T00:00:00+00:00">
   <meta itemprop="dateModified" content="2011-06-14T00:00:00+00:00">
   <meta itemprop="wordCount" content="342">
@@ -133,7 +136,7 @@
   <meta property="og:url" content="https://owehrens.com/one-assert-per-test-really/">
   <meta property="og:site_name" content="Oliver Wehrens">
   <meta property="og:title" content="One assert per test, really">
-  <meta property="og:description" content="Recently I was debugging my code and I could not see why my test was failing. It took me about 20 minutes to see that I violated one rule I try to follow. One assert per test. After tweeting it I got some reaction ranging from &#39;this is a very silly guideline&#39; to &#39;Tests should test one thing. Often one assertion, but not always.&#39;. I, of course, tend to agree the latter one.">
+  <meta property="og:description" content="Recently I was debugging my code and I could not see why my test was failing. It took me about 20 minutes to see that I violated one rule I try to follow. One assert per test. After tweeting it I got some reaction ranging from &#39;this is a very silly guideline&#39; to &#39;Tests should test one thing. Often one assertion, but not always.&#39;. I, of course, tend to agree the latter one. So what&#39;s in for you when you use one assert per test? What are the problems? ">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -145,7 +148,7 @@
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="One assert per test, really">
-  <meta name="twitter:description" content="Recently I was debugging my code and I could not see why my test was failing. It took me about 20 minutes to see that I violated one rule I try to follow. One assert per test. After tweeting it I got some reaction ranging from &#39;this is a very silly guideline&#39; to &#39;Tests should test one thing. Often one assertion, but not always.&#39;. I, of course, tend to agree the latter one.">
+  <meta name="twitter:description" content="Recently I was debugging my code and I could not see why my test was failing. It took me about 20 minutes to see that I violated one rule I try to follow. One assert per test. After tweeting it I got some reaction ranging from &#39;this is a very silly guideline&#39; to &#39;Tests should test one thing. Often one assertion, but not always.&#39;. I, of course, tend to agree the latter one. So what&#39;s in for you when you use one assert per test? What are the problems? ">
 
   
   
@@ -192,7 +195,7 @@
             <a
                     class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
                     style="--url: url(./bluesky.svg)"
-                    href="https://bsky.app/profile/owehrensbsky.social"
+                    href="https://bsky.app/profile/owehrens.com"
                     target="_blank"
                     rel="me"
             >
@@ -221,26 +224,6 @@
             </a>
             
         </nav>
-        
-    </div>
-
-    <div class="pt-5">
-        
-        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-        <script>
-            (function() {
-              var target = document.currentScript;
-              window.addEventListener('load', function() {
-                calendar.schedulingButton.load({
-                  url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1dyveASD9UGEUV24QnaYdmFX6L7Le3-gQPIHS6c7dTVLlUZFMqLzJINB1w6HgUwcYKIfOqCFLA?gv=true',
-                  color: '#039BE5',
-                  label: 'Book an hour of FREE consultation with me.',
-                  target,
-                });
-              });
-            })();
-        </script>
         
     </div>
 
@@ -358,9 +341,6 @@ And while on it, use a better assert lib. Both JUnit and TestNG Assert confuse t
   
 
   
-  
-
-  
 
 
   
@@ -391,7 +371,7 @@ class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-co
   
 
   <div class="mr-auto">
-    &copy; 2009 - 2024
+    &copy; 2009 - 2025
     <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
   </div>
 

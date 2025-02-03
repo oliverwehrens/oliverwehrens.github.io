@@ -13,7 +13,7 @@
       <link>https://owehrens.com/do-not-use-javadoc/</link>
       <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/do-not-use-javadoc/</guid>
-      <description>Javadoc is here to help. To understand what the code does and how it works? Right?&#xA;I don&amp;rsquo;t think so. I confuses the heck out of me in most cases.&#xA;When I look at code like&#xA;/** * Version number of signature. */ public static final String SIGNATURE_VERSION = &amp;#34;1&amp;#34;; I get the feeling that the javadoc is pretty pointless. Well, the damn String is named what it is, how does the Javadoc help me here?</description>
+      <description>&lt;p&gt;Javadoc is here to help. To understand what the code does and how it works? Right?&lt;/p&gt;&#xA;&lt;p&gt;I don&amp;rsquo;t think so. I confuses the heck out of me in most cases.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;When I look at code like&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/**&#xA;* Version number of signature.&#xA;*/&#xA;public static final String SIGNATURE_VERSION = &amp;#34;1&amp;#34;;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I get the feeling that the javadoc is pretty pointless. Well, the damn String is named what it is, how does the Javadoc help me here?&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -64,7 +64,7 @@
   
   
   <meta name="description" content="In the last couple of months I got to play around with virtualization at work. Doing automated delivery pipleines and provisiong via puppet I decided it&rsquo;s time to get my hands even more dirty at home.
-I got myself a HP Microserver N54L equipped with 16 GB of RAM and 9 TB disks. I wanted ZFS and KVM. Since the machine has an AMD processor the only way was to install Linux on it." />
+I got myself a HP Microserver N54L equipped with 16 GB of RAM and 9 TB disks. I wanted ZFS and KVM. Since the machine has an AMD processor the only way was to install Linux on it. SmartOS would have been a nice choice but it only supports KVM for Intel processors." />
   <meta name="author" content="Oliver Wehrens" />
   
 
@@ -113,20 +113,17 @@ I got myself a HP Microserver N54L equipped with 16 GB of RAM and 9 TB disks. I 
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.128.0">
+  <meta name="generator" content="Hugo 0.135.0">
 
   
   
   
   
-  
-
-
   
   
   <meta itemprop="name" content="Using KVM and Virt-Manager via XQuartz on MacOSX (and solving the keymapping trouble)">
   <meta itemprop="description" content="In the last couple of months I got to play around with virtualization at work. Doing automated delivery pipleines and provisiong via puppet I decided it’s time to get my hands even more dirty at home.
-I got myself a HP Microserver N54L equipped with 16 GB of RAM and 9 TB disks. I wanted ZFS and KVM. Since the machine has an AMD processor the only way was to install Linux on it.">
+I got myself a HP Microserver N54L equipped with 16 GB of RAM and 9 TB disks. I wanted ZFS and KVM. Since the machine has an AMD processor the only way was to install Linux on it. SmartOS would have been a nice choice but it only supports KVM for Intel processors.">
   <meta itemprop="datePublished" content="2013-06-03T00:00:00+00:00">
   <meta itemprop="dateModified" content="2013-06-03T00:00:00+00:00">
   <meta itemprop="wordCount" content="204">
@@ -136,7 +133,7 @@ I got myself a HP Microserver N54L equipped with 16 GB of RAM and 9 TB disks. I 
   <meta property="og:site_name" content="Oliver Wehrens">
   <meta property="og:title" content="Using KVM and Virt-Manager via XQuartz on MacOSX (and solving the keymapping trouble)">
   <meta property="og:description" content="In the last couple of months I got to play around with virtualization at work. Doing automated delivery pipleines and provisiong via puppet I decided it’s time to get my hands even more dirty at home.
-I got myself a HP Microserver N54L equipped with 16 GB of RAM and 9 TB disks. I wanted ZFS and KVM. Since the machine has an AMD processor the only way was to install Linux on it.">
+I got myself a HP Microserver N54L equipped with 16 GB of RAM and 9 TB disks. I wanted ZFS and KVM. Since the machine has an AMD processor the only way was to install Linux on it. SmartOS would have been a nice choice but it only supports KVM for Intel processors.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -151,7 +148,7 @@ I got myself a HP Microserver N54L equipped with 16 GB of RAM and 9 TB disks. I 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Using KVM and Virt-Manager via XQuartz on MacOSX (and solving the keymapping trouble)">
   <meta name="twitter:description" content="In the last couple of months I got to play around with virtualization at work. Doing automated delivery pipleines and provisiong via puppet I decided it’s time to get my hands even more dirty at home.
-I got myself a HP Microserver N54L equipped with 16 GB of RAM and 9 TB disks. I wanted ZFS and KVM. Since the machine has an AMD processor the only way was to install Linux on it.">
+I got myself a HP Microserver N54L equipped with 16 GB of RAM and 9 TB disks. I wanted ZFS and KVM. Since the machine has an AMD processor the only way was to install Linux on it. SmartOS would have been a nice choice but it only supports KVM for Intel processors.">
 
   
   
@@ -198,7 +195,7 @@ I got myself a HP Microserver N54L equipped with 16 GB of RAM and 9 TB disks. I 
             <a
                     class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
                     style="--url: url(./bluesky.svg)"
-                    href="https://bsky.app/profile/owehrensbsky.social"
+                    href="https://bsky.app/profile/owehrens.com"
                     target="_blank"
                     rel="me"
             >
@@ -227,26 +224,6 @@ I got myself a HP Microserver N54L equipped with 16 GB of RAM and 9 TB disks. I 
             </a>
             
         </nav>
-        
-    </div>
-
-    <div class="pt-5">
-        
-        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-        <script>
-            (function() {
-              var target = document.currentScript;
-              window.addEventListener('load', function() {
-                calendar.schedulingButton.load({
-                  url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1dyveASD9UGEUV24QnaYdmFX6L7Le3-gQPIHS6c7dTVLlUZFMqLzJINB1w6HgUwcYKIfOqCFLA?gv=true',
-                  color: '#039BE5',
-                  label: 'Book an hour of FREE consultation with me.',
-                  target,
-                });
-              });
-            })();
-        </script>
         
     </div>
 
@@ -361,9 +338,6 @@ With that you should have no problem running <code>virt-manager</code> via X11 o
   
 
   
-  
-
-  
 
 
   
@@ -394,7 +368,7 @@ class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-co
   
 
   <div class="mr-auto">
-    &copy; 2009 - 2024
+    &copy; 2009 - 2025
     <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
   </div>
 

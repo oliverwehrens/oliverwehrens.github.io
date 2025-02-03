@@ -13,14 +13,14 @@
       <link>https://owehrens.com/do-not-use-javadoc/</link>
       <pubDate>Fri, 27 Jul 2012 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/do-not-use-javadoc/</guid>
-      <description>Javadoc is here to help. To understand what the code does and how it works? Right?&#xA;I don&amp;rsquo;t think so. I confuses the heck out of me in most cases.&#xA;When I look at code like&#xA;/** * Version number of signature. */ public static final String SIGNATURE_VERSION = &amp;#34;1&amp;#34;; I get the feeling that the javadoc is pretty pointless. Well, the damn String is named what it is, how does the Javadoc help me here?</description>
+      <description>&lt;p&gt;Javadoc is here to help. To understand what the code does and how it works? Right?&lt;/p&gt;&#xA;&lt;p&gt;I don&amp;rsquo;t think so. I confuses the heck out of me in most cases.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;When I look at code like&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/**&#xA;* Version number of signature.&#xA;*/&#xA;public static final String SIGNATURE_VERSION = &amp;#34;1&amp;#34;;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I get the feeling that the javadoc is pretty pointless. Well, the damn String is named what it is, how does the Javadoc help me here?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Javascript testing for Java projects</title>
       <link>https://owehrens.com/javascript-testing-for-java-projects/</link>
       <pubDate>Thu, 12 Jul 2012 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/javascript-testing-for-java-projects/</guid>
-      <description>I&amp;rsquo;m a Java Programmer. I do mostly web projects. There is a tendency to move away from server side frameworks towards Javascript (+mvc) and rest services. This now involves me in programming Javascript at the GUI level. Welcome maven, IDE and continous integration.&#xA;Coming from the JVM world I&amp;rsquo;m pretty much used to writing tests in my IDE running them and then writing the production code. What I found out, this is not that easy with Javascript.</description>
+      <description>&lt;p&gt;I&amp;rsquo;m a Java Programmer. I do mostly web projects. There is a tendency to move away from server side frameworks towards Javascript (+mvc) and rest services. This now involves me in programming Javascript at the GUI level. Welcome &lt;strong&gt;maven&lt;/strong&gt;, &lt;strong&gt;IDE&lt;/strong&gt; and &lt;strong&gt;continous integration&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;Coming from the JVM world I&amp;rsquo;m pretty much used to writing tests in my IDE running them and then writing the production code. What I found out, this is not that easy with Javascript. For obvious reason I need to run it in a browser. So I need to leave my IDE. Not convinient. If something fails I transfer that result back to my IDE and check what&amp;rsquo;s going on. What about the different Javascript implementations? Ok, I need to run it on all browsers, Chrome, Firefox, Safari, IE … and the mobile versions maybe as well? Is this overkill? Is this managable?&#xA;What about my CI run? I need to make sure only tested code gets checked in. Oh boy. This can be very frustrating.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cucumber-jvm for Java</title>
@@ -34,7 +34,7 @@
       <link>https://owehrens.com/lightweight-web-prototyping-for-the-framework-loving-java-developer/</link>
       <pubDate>Tue, 20 Apr 2010 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/lightweight-web-prototyping-for-the-framework-loving-java-developer/</guid>
-      <description>A couple of month ago I had an idea for a small web app. But what does it take to do it ? Do you start with the back end or the front end (read server or client side) ? Typically I would start at the back end, get the domain right and then see how I can fit the UI in. If a programmer starts this way you end with the typical &amp;rsquo;the programmer did the GUI&amp;rsquo; scenario.</description>
+      <description>&lt;p&gt;A couple of month ago I had an idea for a small web app. But what does it take to do it ? Do you start with the back end or the front end (read server or client side) ? Typically I would start at the back end, get the domain right and then see how I can fit the UI in. If a programmer starts this way you end with the typical &amp;rsquo;the programmer did the GUI&amp;rsquo; scenario. That&amp;rsquo;s not really what I wanted. Don&amp;rsquo;t think too much about the domain, just see what the needs of the end user are and get the UI done (right).&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

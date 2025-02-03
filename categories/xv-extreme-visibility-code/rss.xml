@@ -13,7 +13,7 @@
       <link>https://owehrens.com/extreme-visibility-in-an-agile-environment/</link>
       <pubDate>Tue, 17 Feb 2009 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/extreme-visibility-in-an-agile-environment/</guid>
-      <description>What is Extreme visibility?&#xA;Extreme visibility is all about providing information about the code to every team in near real time. We show several metrics such as complexity of the code (xs), todo&amp;rsquo;s, deprecated methods, number of broken builds, open tickets and their priority and so on. These are distributed over a couple of screens which our software is rotating through. Every team member can easily see if his or her commits effecting the code quality in a good or bad way and makes the members aware of certain quality standards we try to keep in our code base.</description>
+      <description>&lt;p&gt;What is Extreme visibility?&lt;/p&gt;&#xA;&lt;p&gt;Extreme visibility is all about providing information about the code to every team in near real time. We show several metrics such as complexity of the code (xs), todo&amp;rsquo;s, deprecated methods, number of broken builds, open tickets and their priority and so on. These are distributed over a couple of screens which our software is rotating through. Every team member can easily see if his or her commits effecting the code quality in a good or bad way and makes the members aware of certain quality standards we try to keep in our code base. A typical screen looks like this (mockup):&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

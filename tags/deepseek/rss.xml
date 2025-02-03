@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deepseek on Oliver Wehrens</title>
+    <link>https://owehrens.com/tags/deepseek/</link>
+    <description>Recent content in Deepseek on Oliver Wehrens</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://owehrens.com/tags/deepseek/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running Deepseek 671B Model on a PC locally</title>
+      <link>https://owehrens.com/running-deepseek-671b-on-a-pc-locally/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://owehrens.com/running-deepseek-671b-on-a-pc-locally/</guid>
+      <description>&lt;p&gt;DeepSeek is making waves. I was running the 32B model locally and came &lt;a href=&#34;https://docs.unsloth.ai/basics/tutorial-how-to-run-deepseek-r1-on-your-own-local-device&#34;&gt;across a possibility&lt;/a&gt; (&lt;a href=&#34;https://unsloth.ai/blog/deepseekr1-dynamic#running%20r1&#34;&gt;another link&lt;/a&gt; to run the 671B model on my machine.&lt;/p&gt;&#xA;&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;&#xA;&lt;p&gt;I have a PC with an 12th Gen i7-12700K and 20 cores, with 128GB RAM and a Nvidia RTX 4090 graphics card. While running the whole process took 106 GB RAM and 21 GB VRAM. &lt;a href=&#34;https://www.reddit.com/r/selfhosted/comments/1ic8zil/yes_you_can_run_deepseekr1_locally_on_your_device/&#34;&gt;This Post&lt;/a&gt; claims 20GB RAM is the minimum needed and optimal would be RAM+VRAM = 80GB.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

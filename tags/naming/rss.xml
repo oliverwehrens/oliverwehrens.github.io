@@ -13,7 +13,7 @@
       <link>https://owehrens.com/name-your-objects-right/</link>
       <pubDate>Tue, 09 Feb 2010 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/name-your-objects-right/</guid>
-      <description>Whenever you create an object you have to find a meaningful name.&#xA;While renaming later in modern IDE&amp;rsquo;s is no problem at all you should not pick the first name which comes to your mind.&#xA;Imagine you have an external fraud detection web service and it will return a &amp;lsquo;hit&amp;rsquo; or &amp;lsquo;miss&amp;rsquo;. How do you name this object? HitOrMiss maybe (since this is the representation you get from the webservice) ?</description>
+      <description>&lt;p&gt;Whenever you create an object you have to find a meaningful name.&lt;/p&gt;&#xA;&lt;p&gt;While renaming later in modern IDE&amp;rsquo;s is no problem at all you should not pick the first name which comes to your mind.&lt;/p&gt;&#xA;&lt;p&gt;Imagine you have an external fraud detection web service and it will return a &amp;lsquo;hit&amp;rsquo; or &amp;lsquo;miss&amp;rsquo;. How do you name this object? HitOrMiss maybe (since this is the representation you get from the webservice) ? It might describe the problem at hand. If you go with this name it will dripple down through all layers. The domain model, the dto&amp;rsquo;s, services and more will now reference to this object (and create their own derivates for it). Your colleagues which code up other parts of the system will refer to it and create their own variants of the name (like structure for web pages). The wrong name is now all over your code.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -63,9 +63,11 @@
   
   
   
-  <meta name="description" content="If you have a lot of text, how do you search though it? Keywords? What if these keywords never show up there? Imagine you want to know if Jerome Powell says something about &lsquo;Inflation decrease&rsquo; but he might not say the exact words? You will not find it. Databases like Meilisearch offer synonyms, but this can only take you so far.
-Similarity Enter semantic search.
-I first heard about it when I saw that OpenAI offers this." />
+  <meta name="description" content="
+If you have a lot of text, how do you search though it? Keywords? What if these keywords never show up there? Imagine you want to know if Jerome Powell says something about &lsquo;Inflation decrease&rsquo; but he might not say the exact words? You will not find it. Databases like Meilisearch offer synonyms, but this can only take you so far.
+Similarity
+Enter semantic search.
+I first heard about it when I saw that OpenAI offers this. It is based around that text can be represented as vectors and similar texts are very close together &lsquo;cosine similarity&rsquo;. Complicated maths, but you don&rsquo;t need to understand all of it to use it (I certainly don&rsquo;t). Pretrained ML models can calculate vectors for any text. These vectors are specific to that particular model. To give you an understanding how such a vector looks like (I cut out 150 or so lines)." />
   <meta name="author" content="Oliver Wehrens" />
   
 
@@ -114,15 +116,12 @@ I first heard about it when I saw that OpenAI offers this." />
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.128.0">
+  <meta name="generator" content="Hugo 0.135.0">
 
   
   
   
   
-  
-
-
   
   
   <meta itemprop="name" content="Semantic Search with Cosine Similarity">
@@ -194,7 +193,7 @@ I first heard about it when I saw that OpenAI offers this." />
             <a
                     class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
                     style="--url: url(./bluesky.svg)"
-                    href="https://bsky.app/profile/owehrensbsky.social"
+                    href="https://bsky.app/profile/owehrens.com"
                     target="_blank"
                     rel="me"
             >
@@ -223,26 +222,6 @@ I first heard about it when I saw that OpenAI offers this." />
             </a>
             
         </nav>
-        
-    </div>
-
-    <div class="pt-5">
-        
-        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-        <script>
-            (function() {
-              var target = document.currentScript;
-              window.addEventListener('load', function() {
-                calendar.schedulingButton.load({
-                  url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1dyveASD9UGEUV24QnaYdmFX6L7Le3-gQPIHS6c7dTVLlUZFMqLzJINB1w6HgUwcYKIfOqCFLA?gv=true',
-                  color: '#039BE5',
-                  label: 'Book an hour of FREE consultation with me.',
-                  target,
-                });
-              });
-            })();
-        </script>
         
     </div>
 
@@ -381,9 +360,6 @@ I could answer this question by pointing to the inflation forecasts of private-s
   
 
   
-  
-
-  
 
 
   
@@ -414,7 +390,7 @@ class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-co
   
 
   <div class="mr-auto">
-    &copy; 2009 - 2024
+    &copy; 2009 - 2025
     <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
   </div>
 

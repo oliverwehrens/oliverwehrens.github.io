@@ -64,7 +64,9 @@
   
   
   <meta name="description" content="Whenever you write some code you better make sure you have it covered by some tests. There are different possibilities on how to achieve this (and you might want to use all of them).
-Unit Tests Unit tests are a classic. You usually write them while you code. Write tests, run failing test, write code and run passing test. Repeat. Keep this small and simple. Test the smallest unit which makes sense." />
+Unit Tests
+Unit tests are a classic. You usually write them while you code. Write tests, run failing test, write code and run passing test. Repeat. Keep this small and simple. Test the smallest unit which makes sense. You might end up with hundreds if not thousands of them. Make sure you have no external dependencies in them, like databases or external webservices. Mock them away. They are usually written in TestNG or JUnit.
+These tests can run at every check in in the VCS." />
   <meta name="author" content="Oliver Wehrens" />
   
 
@@ -113,20 +115,17 @@ Unit Tests Unit tests are a classic. You usually write them while you code. Writ
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.128.0">
+  <meta name="generator" content="Hugo 0.135.0">
 
   
   
   
   
-  
-
-
   
   
   <meta itemprop="name" content="4 ways to test your code">
   <meta itemprop="description" content="Whenever you write some code you better make sure you have it covered by some tests. There are different possibilities on how to achieve this (and you might want to use all of them).
-Unit Tests Unit tests are a classic. You usually write them while you code. Write tests, run failing test, write code and run passing test. Repeat. Keep this small and simple. Test the smallest unit which makes sense.">
+Unit Tests Unit tests are a classic. You usually write them while you code. Write tests, run failing test, write code and run passing test. Repeat. Keep this small and simple. Test the smallest unit which makes sense. You might end up with hundreds if not thousands of them. Make sure you have no external dependencies in them, like databases or external webservices. Mock them away. They are usually written in TestNG or JUnit. These tests can run at every check in in the VCS.">
   <meta itemprop="datePublished" content="2009-08-20T00:00:00+00:00">
   <meta itemprop="dateModified" content="2009-08-20T00:00:00+00:00">
   <meta itemprop="wordCount" content="429">
@@ -136,7 +135,7 @@ Unit Tests Unit tests are a classic. You usually write them while you code. Writ
   <meta property="og:site_name" content="Oliver Wehrens">
   <meta property="og:title" content="4 ways to test your code">
   <meta property="og:description" content="Whenever you write some code you better make sure you have it covered by some tests. There are different possibilities on how to achieve this (and you might want to use all of them).
-Unit Tests Unit tests are a classic. You usually write them while you code. Write tests, run failing test, write code and run passing test. Repeat. Keep this small and simple. Test the smallest unit which makes sense.">
+Unit Tests Unit tests are a classic. You usually write them while you code. Write tests, run failing test, write code and run passing test. Repeat. Keep this small and simple. Test the smallest unit which makes sense. You might end up with hundreds if not thousands of them. Make sure you have no external dependencies in them, like databases or external webservices. Mock them away. They are usually written in TestNG or JUnit. These tests can run at every check in in the VCS.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -148,7 +147,7 @@ Unit Tests Unit tests are a classic. You usually write them while you code. Writ
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="4 ways to test your code">
   <meta name="twitter:description" content="Whenever you write some code you better make sure you have it covered by some tests. There are different possibilities on how to achieve this (and you might want to use all of them).
-Unit Tests Unit tests are a classic. You usually write them while you code. Write tests, run failing test, write code and run passing test. Repeat. Keep this small and simple. Test the smallest unit which makes sense.">
+Unit Tests Unit tests are a classic. You usually write them while you code. Write tests, run failing test, write code and run passing test. Repeat. Keep this small and simple. Test the smallest unit which makes sense. You might end up with hundreds if not thousands of them. Make sure you have no external dependencies in them, like databases or external webservices. Mock them away. They are usually written in TestNG or JUnit. These tests can run at every check in in the VCS.">
 
   
   
@@ -195,7 +194,7 @@ Unit Tests Unit tests are a classic. You usually write them while you code. Writ
             <a
                     class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
                     style="--url: url(./bluesky.svg)"
-                    href="https://bsky.app/profile/owehrensbsky.social"
+                    href="https://bsky.app/profile/owehrens.com"
                     target="_blank"
                     rel="me"
             >
@@ -224,26 +223,6 @@ Unit Tests Unit tests are a classic. You usually write them while you code. Writ
             </a>
             
         </nav>
-        
-    </div>
-
-    <div class="pt-5">
-        
-        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-        <script>
-            (function() {
-              var target = document.currentScript;
-              window.addEventListener('load', function() {
-                calendar.schedulingButton.load({
-                  url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1dyveASD9UGEUV24QnaYdmFX6L7Le3-gQPIHS6c7dTVLlUZFMqLzJINB1w6HgUwcYKIfOqCFLA?gv=true',
-                  color: '#039BE5',
-                  label: 'Book an hour of FREE consultation with me.',
-                  target,
-                });
-              });
-            })();
-        </script>
         
     </div>
 
@@ -328,9 +307,6 @@ ways to make sure the customers gets what he pays for (and he understands it). I
   
 
   
-  
-
-  
 
 
   
@@ -361,7 +337,7 @@ class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-co
   
 
   <div class="mr-auto">
-    &copy; 2009 - 2024
+    &copy; 2009 - 2025
     <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
   </div>
 

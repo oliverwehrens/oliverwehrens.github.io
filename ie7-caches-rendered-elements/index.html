@@ -65,7 +65,7 @@
   
   <meta name="description" content="I&rsquo;m tasked with some css tweaking to our current product. We need to implement a &lsquo;Print Preview&rsquo; screen so the customer can see how this looks before printing. Css supports exactly this use case with the @media notation.
 So far so good.
-Now Internet Explorer gives me some headache. Basically it looks like that if I render a page and then render the same page again with a slightly different style sheet, the lovely IE (7) will cache the width/text-align of the element." />
+Now Internet Explorer gives me some headache. Basically it looks like that if I render a page and then render the same page again with a slightly different style sheet, the lovely IE (7) will cache the width/text-align of the element. That means formerly right aligned text now looks like center aligned. Using FireBug under Firefox confirms the correct right aligned styled text. Even using the IE Developer Toolbar shows the correct style sheet information and element. Still, it renders sort of centered. By accident the right border of the text is exactly as far away from the left border as in the previous rendering. If I add any attribute to the text cell (or delete an attribute) all of the sudden the text will be rendered right aligned exactly how it should have been in the first place." />
   <meta name="author" content="Oliver Wehrens" />
   
 
@@ -114,21 +114,18 @@ Now Internet Explorer gives me some headache. Basically it looks like that if I 
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.128.0">
+  <meta name="generator" content="Hugo 0.135.0">
 
   
   
   
   
-  
-
-
   
   
   <meta itemprop="name" content="IE7 caches rendered elements?">
   <meta itemprop="description" content="I’m tasked with some css tweaking to our current product. We need to implement a ‘Print Preview’ screen so the customer can see how this looks before printing. Css supports exactly this use case with the @media notation.
 So far so good.
-Now Internet Explorer gives me some headache. Basically it looks like that if I render a page and then render the same page again with a slightly different style sheet, the lovely IE (7) will cache the width/text-align of the element.">
+Now Internet Explorer gives me some headache. Basically it looks like that if I render a page and then render the same page again with a slightly different style sheet, the lovely IE (7) will cache the width/text-align of the element. That means formerly right aligned text now looks like center aligned. Using FireBug under Firefox confirms the correct right aligned styled text. Even using the IE Developer Toolbar shows the correct style sheet information and element. Still, it renders sort of centered. By accident the right border of the text is exactly as far away from the left border as in the previous rendering. If I add any attribute to the text cell (or delete an attribute) all of the sudden the text will be rendered right aligned exactly how it should have been in the first place.">
   <meta itemprop="datePublished" content="2009-03-30T00:00:00+00:00">
   <meta itemprop="dateModified" content="2009-03-30T00:00:00+00:00">
   <meta itemprop="wordCount" content="316">
@@ -139,7 +136,7 @@ Now Internet Explorer gives me some headache. Basically it looks like that if I 
   <meta property="og:title" content="IE7 caches rendered elements?">
   <meta property="og:description" content="I’m tasked with some css tweaking to our current product. We need to implement a ‘Print Preview’ screen so the customer can see how this looks before printing. Css supports exactly this use case with the @media notation.
 So far so good.
-Now Internet Explorer gives me some headache. Basically it looks like that if I render a page and then render the same page again with a slightly different style sheet, the lovely IE (7) will cache the width/text-align of the element.">
+Now Internet Explorer gives me some headache. Basically it looks like that if I render a page and then render the same page again with a slightly different style sheet, the lovely IE (7) will cache the width/text-align of the element. That means formerly right aligned text now looks like center aligned. Using FireBug under Firefox confirms the correct right aligned styled text. Even using the IE Developer Toolbar shows the correct style sheet information and element. Still, it renders sort of centered. By accident the right border of the text is exactly as far away from the left border as in the previous rendering. If I add any attribute to the text cell (or delete an attribute) all of the sudden the text will be rendered right aligned exactly how it should have been in the first place.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -152,7 +149,7 @@ Now Internet Explorer gives me some headache. Basically it looks like that if I 
   <meta name="twitter:title" content="IE7 caches rendered elements?">
   <meta name="twitter:description" content="I’m tasked with some css tweaking to our current product. We need to implement a ‘Print Preview’ screen so the customer can see how this looks before printing. Css supports exactly this use case with the @media notation.
 So far so good.
-Now Internet Explorer gives me some headache. Basically it looks like that if I render a page and then render the same page again with a slightly different style sheet, the lovely IE (7) will cache the width/text-align of the element.">
+Now Internet Explorer gives me some headache. Basically it looks like that if I render a page and then render the same page again with a slightly different style sheet, the lovely IE (7) will cache the width/text-align of the element. That means formerly right aligned text now looks like center aligned. Using FireBug under Firefox confirms the correct right aligned styled text. Even using the IE Developer Toolbar shows the correct style sheet information and element. Still, it renders sort of centered. By accident the right border of the text is exactly as far away from the left border as in the previous rendering. If I add any attribute to the text cell (or delete an attribute) all of the sudden the text will be rendered right aligned exactly how it should have been in the first place.">
 
   
   
@@ -199,7 +196,7 @@ Now Internet Explorer gives me some headache. Basically it looks like that if I 
             <a
                     class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
                     style="--url: url(./bluesky.svg)"
-                    href="https://bsky.app/profile/owehrensbsky.social"
+                    href="https://bsky.app/profile/owehrens.com"
                     target="_blank"
                     rel="me"
             >
@@ -228,26 +225,6 @@ Now Internet Explorer gives me some headache. Basically it looks like that if I 
             </a>
             
         </nav>
-        
-    </div>
-
-    <div class="pt-5">
-        
-        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-        <script>
-            (function() {
-              var target = document.currentScript;
-              window.addEventListener('load', function() {
-                calendar.schedulingButton.load({
-                  url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1dyveASD9UGEUV24QnaYdmFX6L7Le3-gQPIHS6c7dTVLlUZFMqLzJINB1w6HgUwcYKIfOqCFLA?gv=true',
-                  color: '#039BE5',
-                  label: 'Book an hour of FREE consultation with me.',
-                  target,
-                });
-              });
-            })();
-        </script>
         
     </div>
 
@@ -333,9 +310,6 @@ I guess there is a solution for this, I just don&rsquo;t know it. In any case&he
   
 
   
-  
-
-  
 
 
   
@@ -366,7 +340,7 @@ class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-co
   
 
   <div class="mr-auto">
-    &copy; 2009 - 2024
+    &copy; 2009 - 2025
     <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
   </div>
 

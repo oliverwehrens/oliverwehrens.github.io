@@ -13,7 +13,7 @@
       <link>https://owehrens.com/getting-started-with-veewee-and-vagrant/</link>
       <pubDate>Sun, 26 May 2013 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/getting-started-with-veewee-and-vagrant/</guid>
-      <description>What do you need to do to get a fully automated kickstart of a virtual machine on your local development platform running? Not much it turns out. There are some tricks to get around but after that it&amp;rsquo;s all fine.&#xA;The resulting image can also be used to get a system in production.&#xA;I will look at the OS installation part. Puppet will come in a later post.&#xA;Installation Tools we will play with:</description>
+      <description>&lt;p&gt;What do you need to do to get a fully automated kickstart of a virtual machine on your local development platform running? Not much it turns out. There are some tricks to get around but after that it&amp;rsquo;s all fine.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;The resulting image can also be used to get a system in production.&lt;/p&gt;&#xA;&lt;p&gt;I will look at the OS installation part. Puppet will come in a later post.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cucumber-jvm for Java</title>
@@ -27,14 +27,14 @@
       <link>https://owehrens.com/one-assert-per-test-really/</link>
       <pubDate>Tue, 14 Jun 2011 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/one-assert-per-test-really/</guid>
-      <description>Recently I was debugging my code and I could not see why my test was failing. It took me about 20 minutes to see that I violated one rule I try to follow. One assert per test. After tweeting it I got some reaction ranging from &#39;this is a very silly guideline&#39; to &#39;Tests should test one thing. Often one assertion, but not always.&#39;. I, of course, tend to agree the latter one.</description>
+      <description>&lt;p&gt;Recently I was debugging my code and I could not see why my test was failing. It took me about 20 minutes to see that I violated one rule I try to follow. &lt;!-- raw HTML omitted --&gt;One assert per test&lt;!-- raw HTML omitted --&gt;.&#xA;&#xA;&#xA;After &lt;a href=&#34;http://twitter.com/#!/owehrens/status/78809340437467136&#34;&gt;tweeting&lt;/a&gt; it I got some reaction ranging from &#39;this is a very silly guideline&#39; to &#39;Tests should test one thing. Often one assertion, but not always.&#39;. I, of course, tend to agree the latter one.&#xA;&#xA;So &lt;strong&gt;what&#39;s in for you&lt;/strong&gt; when you use one assert per test? What are the problems?&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Using Selenium2 for web testing (and not Selenium IDE)</title>
       <link>https://owehrens.com/using-selenium2-for-web-testing-and-not-selenium-ide/</link>
       <pubDate>Mon, 04 Jan 2010 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/using-selenium2-for-web-testing-and-not-selenium-ide/</guid>
-      <description>Selenium IDE Selenium is well know for automatic testing web pages. It does support many browsers, operating systems and languages. A Selenium IDE exists to aid you creating automated tests. It is possible to write extensions in JavaScript to have data driven tests. If you organize your selenium tests in a way that you split the pages and forms in components, you can load up new data for the tests (written in xml) to fill out forms differently for each use case.</description>
+      <description>&lt;h3 id=&#34;selenium-ide&#34;&gt;Selenium IDE&lt;/h3&gt;&#xA;&#xA;&#xA;&#xA;&lt;a href=&#34;http://seleniumhq.org&#34;&gt;Selenium&lt;/a&gt; is well know for automatic testing web pages. It does support many &lt;a href=&#34;http://seleniumhq.org/about/platforms.htm&#34;&gt;browsers, operating systems and languages&lt;a/&gt;. A &lt;a href=&#34;http://seleniumhq.org/projects/ide/&#34;&gt;Selenium IDE&lt;/a&gt; exists to aid you creating automated tests.&#xA;&#xA;&lt;img alt=&#34;Selenium&#34; src=&#34;https://owehrens.com/static/selenium.png&#34; title=&#34;Selenium IDE&#34; width=&#34;303&#34; height=&#34;177&#34; /&gt;&#xA;&#xA;It is possible to write extensions in JavaScript to have data driven tests. If you organize your selenium tests in a way that you split  the pages and forms in components, you can  load up new data for the tests (written in xml) to fill out forms differently for each use case. The Selenium IDE will be of a great help here since you start develop the tests in the IDE and later &#39;just&#39; parametrize the pages. With a couple of more javascript magic you can run these as well in &lt;a href=&#34;http://seleniumhq.org/projects/remote-control/&#34;&gt;Selenium Remote Control&lt;/a&gt; (Selenium RC for short). This even works for running  the tests in continuous integration systems like Hudson or Teamcity.&#xA;&#xA;Great Stuff.&#xA;&#xA;&lt;h3 id=&#34;the-problem&#34;&gt;The problem.&lt;/h3&gt;&#xA;&lt;p&gt;The drawback coding up your tests with the Selenium IDE is: &lt;!-- raw HTML omitted --&gt;HTML&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

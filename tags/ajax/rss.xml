@@ -13,7 +13,7 @@
       <link>https://owehrens.com/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</link>
       <pubDate>Mon, 26 Apr 2010 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/how-to-detect-if-your-server-is-down-when-making-jquery-ajax-calls/</guid>
-      <description>If you developed an ajax rich web application, maybe even a single page interface, you want to make sure that the user gets notified if the server is not reachable anymore. This happens either if the it goes down or the client loses its network connection. Depending on your code the application can run for a while and the user is confused about missing interactivity.&#xA;So how do you detect this?</description>
+      <description>&lt;p&gt;If you developed an &lt;!-- raw HTML omitted --&gt;ajax rich web application&lt;!-- raw HTML omitted --&gt;, maybe even a single page interface, you want to make sure that the user gets &lt;!-- raw HTML omitted --&gt;notified&lt;!-- raw HTML omitted --&gt; if the server is &lt;!-- raw HTML omitted --&gt;not reachable&lt;!-- raw HTML omitted --&gt; anymore. This happens either if the it goes down or the client loses its network connection.&#xA;Depending on your code the application can run for a while and the &lt;!-- raw HTML omitted --&gt;user is confused&lt;!-- raw HTML omitted --&gt; about missing interactivity.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

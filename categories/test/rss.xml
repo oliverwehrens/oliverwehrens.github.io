@@ -13,7 +13,7 @@
       <link>https://owehrens.com/4-ways-to-test-your-code/</link>
       <pubDate>Thu, 20 Aug 2009 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/4-ways-to-test-your-code/</guid>
-      <description>Whenever you write some code you better make sure you have it covered by some tests. There are different possibilities on how to achieve this (and you might want to use all of them).&#xA;Unit Tests Unit tests are a classic. You usually write them while you code. Write tests, run failing test, write code and run passing test. Repeat. Keep this small and simple. Test the smallest unit which makes sense.</description>
+      <description>&lt;p&gt;Whenever you write some code you better make sure you have it covered by some tests. There are different possibilities on how to achieve this (and you might want to use all of them).&lt;/p&gt;&#xA;&lt;h1 id=&#34;unit-tests&#34;&gt;Unit Tests&lt;/h1&gt;&#xA;&lt;p&gt;Unit tests are a classic. You usually write them while you code. Write tests, run failing test, write code and run passing test. Repeat. Keep this &lt;!-- raw HTML omitted --&gt;small and simple&lt;!-- raw HTML omitted --&gt;. Test the smallest unit which makes sense. You might end up with hundreds if not thousands of them. Make sure you have no external dependencies in them, like databases or external webservices. &lt;!-- raw HTML omitted --&gt;Mock&lt;!-- raw HTML omitted --&gt; them away. They are usually written in TestNG or JUnit.&#xA;These tests can run at every check in in the VCS.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

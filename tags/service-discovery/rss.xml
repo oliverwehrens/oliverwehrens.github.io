@@ -13,7 +13,7 @@
       <link>https://owehrens.com/service-discovery-for-machines-and-humans/</link>
       <pubDate>Wed, 01 Feb 2017 20:54:58 +0100</pubDate>
       <guid>https://owehrens.com/service-discovery-for-machines-and-humans/</guid>
-      <description>My slides from the OOP 2017 conference.&#xA;Abstract: Combining Continuous Deployment and a Microservice architecture brings new challenges to develop and operate your platform. A service discovery enables you to build a flexible system. Developers need to have an up to date view on the deployed services as well. A human readable registry with relevant information is needed. I will outline what we solved with a Service Registry and what impact it had on our architecture.</description>
+      <description>&lt;p&gt;My slides from the OOP 2017 conference.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Abstract:&#xA;&#xA;&#xA;&#xA;&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;5c80e29228d147f9891b7918f6a3a021&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Combining Continuous Deployment and a Microservice architecture brings new challenges to develop and operate your platform. A service discovery enables you to build a flexible system. Developers need to have an up to date view on the deployed services as well. A human readable registry with relevant information is needed.&#xA;I will outline what we solved with a Service Registry and what impact it had on our architecture. Furthermore I will show what we needed to give our developers to get an up to date view on the whole platform.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

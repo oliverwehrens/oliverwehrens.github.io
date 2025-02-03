@@ -65,8 +65,23 @@
   
   <meta name="description" content="Here is a small update on my little fun project.
 I released version 0.2 of quant. Now it will recognize all TestNG annotations which do not have a TestNG group (like @BeforeMethod, @BeforeClass etc.). The method &lsquo;reportViolation&rsquo; on ClassTester will now report whats wrong with the examined class.
-assertFalse(classTester.isInvalidTestClass(), classTester.reportViolation()); Above code will now report:
-In this way you know what went wrong and where to look for it. Quant is now also available in my repository." />
+ assertFalse(classTester.isInvalidTestClass(),
+    classTester.reportViolation());
+Above code will now report:
+
+
+In this way you know what went wrong and where to look for it.
+
+
+Quant is now also available in my repository. To include it add the following code to your pom.xml.
+
+[xml]
+
+com.maxheapsize
+quant
+0.2
+
+[/xml]" />
   <meta name="author" content="Oliver Wehrens" />
   
 
@@ -115,22 +130,19 @@ In this way you know what went wrong and where to look for it. Quant is now also
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.128.0">
+  <meta name="generator" content="Hugo 0.135.0">
 
   
   
   
   
-  
-
-
   
   
   <meta itemprop="name" content="Update on Quant TestTester">
   <meta itemprop="description" content="Here is a small update on my little fun project.
 I released version 0.2 of quant. Now it will recognize all TestNG annotations which do not have a TestNG group (like @BeforeMethod, @BeforeClass etc.). The method ‘reportViolation’ on ClassTester will now report whats wrong with the examined class.
 assertFalse(classTester.isInvalidTestClass(), classTester.reportViolation()); Above code will now report:
-In this way you know what went wrong and where to look for it. Quant is now also available in my repository.">
+In this way you know what went wrong and where to look for it. Quant is now also available in my repository. To include it add the following code to your pom.xml. [xml] com.maxheapsize quant 0.2 [/xml]">
   <meta itemprop="datePublished" content="2009-06-25T00:00:00+00:00">
   <meta itemprop="dateModified" content="2009-06-25T00:00:00+00:00">
   <meta itemprop="wordCount" content="116">
@@ -142,7 +154,7 @@ In this way you know what went wrong and where to look for it. Quant is now also
   <meta property="og:description" content="Here is a small update on my little fun project.
 I released version 0.2 of quant. Now it will recognize all TestNG annotations which do not have a TestNG group (like @BeforeMethod, @BeforeClass etc.). The method ‘reportViolation’ on ClassTester will now report whats wrong with the examined class.
 assertFalse(classTester.isInvalidTestClass(), classTester.reportViolation()); Above code will now report:
-In this way you know what went wrong and where to look for it. Quant is now also available in my repository.">
+In this way you know what went wrong and where to look for it. Quant is now also available in my repository. To include it add the following code to your pom.xml. [xml] com.maxheapsize quant 0.2 [/xml]">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -156,7 +168,7 @@ In this way you know what went wrong and where to look for it. Quant is now also
   <meta name="twitter:description" content="Here is a small update on my little fun project.
 I released version 0.2 of quant. Now it will recognize all TestNG annotations which do not have a TestNG group (like @BeforeMethod, @BeforeClass etc.). The method ‘reportViolation’ on ClassTester will now report whats wrong with the examined class.
 assertFalse(classTester.isInvalidTestClass(), classTester.reportViolation()); Above code will now report:
-In this way you know what went wrong and where to look for it. Quant is now also available in my repository.">
+In this way you know what went wrong and where to look for it. Quant is now also available in my repository. To include it add the following code to your pom.xml. [xml] com.maxheapsize quant 0.2 [/xml]">
 
   
   
@@ -203,7 +215,7 @@ In this way you know what went wrong and where to look for it. Quant is now also
             <a
                     class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
                     style="--url: url(./bluesky.svg)"
-                    href="https://bsky.app/profile/owehrensbsky.social"
+                    href="https://bsky.app/profile/owehrens.com"
                     target="_blank"
                     rel="me"
             >
@@ -232,26 +244,6 @@ In this way you know what went wrong and where to look for it. Quant is now also
             </a>
             
         </nav>
-        
-    </div>
-
-    <div class="pt-5">
-        
-        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-        <script>
-            (function() {
-              var target = document.currentScript;
-              window.addEventListener('load', function() {
-                calendar.schedulingButton.load({
-                  url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1dyveASD9UGEUV24QnaYdmFX6L7Le3-gQPIHS6c7dTVLlUZFMqLzJINB1w6HgUwcYKIfOqCFLA?gv=true',
-                  color: '#039BE5',
-                  label: 'Book an hour of FREE consultation with me.',
-                  target,
-                });
-              });
-            })();
-        </script>
         
     </div>
 
@@ -339,9 +331,6 @@ Quant is now also available in my <a href="http://maxheapsize.com/maven2/com/max
   
 
   
-  
-
-  
 
 
   
@@ -372,7 +361,7 @@ class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-co
   
 
   <div class="mr-auto">
-    &copy; 2009 - 2024
+    &copy; 2009 - 2025
     <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
   </div>
 

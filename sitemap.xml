@@ -2,16 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://owehrens.com/tags/architecture/</loc>
-    <lastmod>2024-08-28T00:00:00+00:00</lastmod>
+    <loc>https://owehrens.com/tags/ai/</loc>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://owehrens.com/tags/deepseek/</loc>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://owehrens.com/</loc>
-    <lastmod>2024-08-28T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://owehrens.com/posts/</loc>
-    <lastmod>2024-08-28T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://owehrens.com/running-deepseek-671b-on-a-pc-locally/</loc>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://owehrens.com/tags/</loc>
+    <lastmod>2025-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://owehrens.com/tags/architecture/</loc>
     <lastmod>2024-08-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://owehrens.com/tags/tech-lead/</loc>
@@ -46,9 +55,6 @@
   </url><url>
     <loc>https://owehrens.com/why-you-need-a-macro-architecture/</loc>
     <lastmod>2024-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://owehrens.com/tags/ai/</loc>
-    <lastmod>2023-12-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://owehrens.com/can-ai-replace-me-as-a-consultant/</loc>
     <lastmod>2023-12-24T00:00:00+00:00</lastmod>

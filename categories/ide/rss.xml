@@ -13,7 +13,7 @@
       <link>https://owehrens.com/two-upgrades-to-cut-down-development-time/</link>
       <pubDate>Fri, 24 Jul 2009 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/two-upgrades-to-cut-down-development-time/</guid>
-      <description>No matter how good a developer is, with two hardware upgrades you can speed up most machines and cut down development time for everybody.&#xA;Your big fat IDE Depending what you use to crunch out your code, these things are eating your memory. And then you have your application server running, and an internet browser with 20+ sessions, plus Twitter, plus Photoshop, plus, plus, plus.&#xA;I used to have 2 GB RAM in my laptop and I thought it is ok.</description>
+      <description>&lt;p&gt;No matter how good  a developer is, with two hardware upgrades you can speed up most machines and cut down development time for everybody.&lt;/p&gt;&#xA;&lt;h2 id=&#34;your-big-fat-ide&#34;&gt;Your big fat IDE&lt;/h2&gt;&#xA;&lt;p&gt;Depending what you use to crunch out your code, these things are eating your memory. And then you have your application server running, and an internet browser with 20+ sessions, plus Twitter, plus Photoshop, plus, plus, plus.&lt;/p&gt;&#xA;&lt;p&gt;I used to have 2 GB RAM in my laptop and I thought it is ok. Turns out, having 4 GB,  speeds up my overall development significantly. No more swapping of programs and more programs can stay open. So far I never reached the point where my memory was exhausted (well I never really tried).&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

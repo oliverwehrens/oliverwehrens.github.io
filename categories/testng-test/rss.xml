@@ -13,7 +13,7 @@
       <link>https://owehrens.com/using-testng-with-dataproviders-to-cover-more-test-cases/</link>
       <pubDate>Mon, 23 Mar 2009 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/using-testng-with-dataproviders-to-cover-more-test-cases/</guid>
-      <description>A couple of days ago I had the case that I needed to test a method with different parameters. I ended up writing a couple of test methods differing only in passing various arguments to the unit under test.&#xA;Tonight I was at a TestNG talk and while I knew most of the stuff already the DataProviders (which I heard of before but unfortunately never really payed attention to) really caught me.</description>
+      <description>&lt;p&gt;A couple of days ago I had the case that I needed to test a method with different parameters. I ended up writing a couple of test methods &lt;strong&gt;differing only in passing various arguments&lt;/strong&gt; to the unit under test.&lt;/p&gt;&#xA;&lt;p&gt;Tonight I was at a &lt;a href=&#34;http://newthinking-store.de/stammtisch/javausergroup/20090310&#34;&gt;TestNG&lt;/a&gt; talk and while I knew most of the stuff already the DataProviders (which I heard of before but unfortunately never really payed attention to) really caught me.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

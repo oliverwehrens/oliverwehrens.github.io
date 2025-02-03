@@ -13,7 +13,7 @@
       <link>https://owehrens.com/clean-code-should-you-dry/</link>
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/clean-code-should-you-dry/</guid>
-      <description>2008 Robert C. Martin published his book &amp;lsquo;Clean Code&amp;rsquo;. I was just starting my new job as Senior Software Developer at Hypoport. It was eye-opening. We discussed it in a tech department wide book circle, exchanged ideas of what things mean and agreed to some standards which are important to us.&#xA;Over the years, I learned that people took that as the bible. And it went further. My favourite example of taking it religiously is: Don&amp;rsquo;t repeat yourself (DRY).</description>
+      <description>&lt;p&gt;&lt;img src=&#34;clean-code.jpg&#34; alt=&#34;Clean Code&#34; title=&#34;Clean Code Book&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;2008 Robert C. Martin published his book &amp;lsquo;Clean Code&amp;rsquo;. I was just starting my new job as Senior Software Developer at Hypoport. It was eye-opening. We discussed it in a tech department wide book circle, exchanged ideas of what things mean and agreed to some standards which are important to us.&lt;/p&gt;&#xA;&lt;p&gt;Over the years, I learned that people took that as the bible. And it went further. My favourite example of taking it religiously is: Don&amp;rsquo;t repeat yourself (DRY). Never ever duplicate code. Make sure you generalize everything so it fits everything if it does remotely the same thing.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

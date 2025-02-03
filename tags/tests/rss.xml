@@ -13,7 +13,7 @@
       <link>https://owehrens.com/how-failing-tests-can-be-green/</link>
       <pubDate>Thu, 13 Feb 2014 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/how-failing-tests-can-be-green/</guid>
-      <description>Imagine this conversation:&#xA;Friend: &amp;ldquo;We have an integration system where we deploy every two weeks all commits and run hundreds of end to end tests on it.&amp;rdquo;&#xA;Me: &amp;ldquo;And if everything passed it goes into production?&amp;rdquo;&#xA;Friend: &amp;ldquo;Yes.&amp;rdquo;&#xA;Me: &amp;ldquo;How often do they fail?&amp;rdquo;&#xA;Friend: &amp;ldquo;Uhmm, well like every night. But we just take the failing tests and run them again and after that or the next run they will be green.</description>
+      <description>&lt;p&gt;Imagine this conversation:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://owehrens.com/static/traffic-light-vector-icon.jpg&#34; alt=&#34;red&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Friend&lt;/em&gt;: &amp;ldquo;We have an integration system where we deploy every two weeks all commits and run hundreds of end to end tests on it.&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Me&lt;/em&gt;: &amp;ldquo;And if everything passed it goes into production?&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Friend&lt;/em&gt;: &amp;ldquo;Yes.&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Me&lt;/em&gt;: &amp;ldquo;How often do they fail?&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Friend&lt;/em&gt;: &amp;ldquo;Uhmm, well like every night. But we just take the failing tests and run them again and after that or the next run they will be green.&amp;rdquo;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -13,7 +13,7 @@
       <link>https://owehrens.com/whats-your-preferred-development-infrastructure-stack/</link>
       <pubDate>Wed, 13 Jan 2010 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/whats-your-preferred-development-infrastructure-stack/</guid>
-      <description>In Response to Matt Raible&#39;s question about my preferred development stack. Source control In my own development project I switched to Git some time ago. I was using svn and before that cvs for a couple of years. Git just makes it easy to try out small ideas very quickly without reverting the code. We will introduce Git at work pretty soon (I hope).&#xA;The Atlassian cloud I was using Confluence as a Wiki in my open source project and my current employer Hypoport uses it as well.</description>
+      <description>In Response to &lt;a href=&#34;http://raibledesigns.com/rd/entry/what_s_your_preferred_development&#34;&gt;Matt Raible&#39;s&lt;/a&gt; question about my preferred development stack.&#xA;&#xA;&lt;h3 id=&#34;source-control&#34;&gt;Source control&lt;/h3&gt;&#xA;&lt;p&gt;In my own development project I switched to &lt;!-- raw HTML omitted --&gt;Git&lt;!-- raw HTML omitted --&gt; some time ago. I was using svn and before that cvs for a couple of years. Git just makes it easy to try out small ideas very quickly without reverting the code. We will introduce Git at work pretty soon (I hope).&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

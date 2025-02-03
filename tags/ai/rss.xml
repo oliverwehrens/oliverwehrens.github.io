@@ -6,49 +6,56 @@
     <description>Recent content in Ai on Oliver Wehrens</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://owehrens.com/tags/ai/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running Deepseek 671B Model on a PC locally</title>
+      <link>https://owehrens.com/running-deepseek-671b-on-a-pc-locally/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://owehrens.com/running-deepseek-671b-on-a-pc-locally/</guid>
+      <description>&lt;p&gt;DeepSeek is making waves. I was running the 32B model locally and came &lt;a href=&#34;https://docs.unsloth.ai/basics/tutorial-how-to-run-deepseek-r1-on-your-own-local-device&#34;&gt;across a possibility&lt;/a&gt; (&lt;a href=&#34;https://unsloth.ai/blog/deepseekr1-dynamic#running%20r1&#34;&gt;another link&lt;/a&gt; to run the 671B model on my machine.&lt;/p&gt;&#xA;&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;&#xA;&lt;p&gt;I have a PC with an 12th Gen i7-12700K and 20 cores, with 128GB RAM and a Nvidia RTX 4090 graphics card. While running the whole process took 106 GB RAM and 21 GB VRAM. &lt;a href=&#34;https://www.reddit.com/r/selfhosted/comments/1ic8zil/yes_you_can_run_deepseekr1_locally_on_your_device/&#34;&gt;This Post&lt;/a&gt; claims 20GB RAM is the minimum needed and optimal would be RAM+VRAM = 80GB.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Can AI replace me as a consultant?</title>
       <link>https://owehrens.com/can-ai-replace-me-as-a-consultant/</link>
       <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/can-ai-replace-me-as-a-consultant/</guid>
-      <description>I got recently asked if my job as a consultant in the tech, product and organizations development space, can be replaced by an AI.&#xA;I said, that I&amp;rsquo;m that arrogant to think that this is not possible.&#xA;After thinking about it for a few days I was wondering: Is that so?&#xA;Usually our customers call us to get help or for an outside view on their (digital) product development. This includes observing everything around product, technology &amp;amp; organization, help implementing improvements and enable the customer to be more effective and efficient after we leave.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;aitakeover.jpg&#34; alt=&#34;AI Takeover&#34; title=&#34;AI Takeover&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I got recently asked if my job as a consultant in the tech, product and organizations development space, can be replaced by an AI.&lt;/p&gt;&#xA;&lt;p&gt;I said, that I&amp;rsquo;m that arrogant to think that this is not possible.&lt;/p&gt;&#xA;&lt;p&gt;After thinking about it for a few days I was wondering: Is that so?&lt;/p&gt;&#xA;&lt;p&gt;Usually our customers call us to get help or for an outside view on their (digital) product development. This includes observing everything around product, technology &amp;amp; organization, help implementing improvements and enable the customer to be more effective and efficient after we leave.&#xA;They know that something could be better and hire us because they don&amp;rsquo;t have the capacity or the time to acquire the knowledge about the issue to solve it themselves.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Whisper: Nvidia RTX 4090 vs M1Pro with MLX (updated with M2/M3)</title>
       <link>https://owehrens.com/whisper-nvidia-rtx-4090-vs-m1pro-with-mlx/</link>
       <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/whisper-nvidia-rtx-4090-vs-m1pro-with-mlx/</guid>
-      <description>(&amp;hellip; see down below for M2 Ultra / M3 Max Update and a Nvidia optimzied whisper)&#xA;Apple released a machine learning framework for Apple Silicon. Along with that are some examples to see how things are working. They also use a whisper for benchmarking. So I dug out my benchmark and used that to measure performance.&#xA;I simply added a new file to the repo (and the whisper large model was already downloaded).</description>
+      <description>&lt;p&gt;(&amp;hellip; see down below for M2 Ultra / M3 Max Update and a Nvidia optimzied whisper)&lt;/p&gt;&#xA;&lt;p&gt;Apple &lt;a href=&#34;https://github.com/ml-explore/mlx&#34;&gt;released a machine learning framework&lt;/a&gt; for Apple Silicon. Along with that are &lt;a href=&#34;https://github.com/ml-explore/mlx-examples&#34;&gt;some examples&lt;/a&gt; to see how things are working. They also use a whisper for benchmarking. So I dug out my benchmark and used that to measure performance.&lt;/p&gt;&#xA;&lt;p&gt;I simply added a new file to the repo (and the whisper large model was already downloaded). See the original &lt;a href=&#34;https://github.com/ml-explore/mlx-examples/tree/main/whisper&#34;&gt;source dir&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>OpenAI Whisper Performance on Nvidia RTX 4090</title>
       <link>https://owehrens.com/whisper-performance-on-nvidia-rtx-4090/</link>
       <pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/whisper-performance-on-nvidia-rtx-4090/</guid>
-      <description>Short update on my performance series on OpenAI Whisper running on T4 / A100 and Apple Silicon.&#xA;I got my hands on a Nvidia RTX 4090 and ran a 3600 seconds audio file through it.&#xA;GPU 0 NVIDIA GeForce RTX 4090 Load Model at 2023-03-21 17:22:09.623805 Loading took 0:00:09.574030 started at 2023-03-21 17:22:19.197835 ended at 2023-03-21 17:25:25.905605 time elapsed: 0:03:06.707770 With the large model it makes a ~ 19.3 x speed up.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;openai4090.jpg&#34; alt=&#34;&amp;ldquo;OpenAI Nvidia&amp;rdquo;&#34; title=&#34;OpenAI Nvidia&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Short update on my performance series on OpenAI Whisper running on &lt;a href=&#34;https://owehrens.com/openai-whisper-benchmark-on-nvidia-tesla-t4-a100/&#34;&gt;T4 / A100&lt;/a&gt; and &lt;a href=&#34;https://owehrens.com/openai-whisper-on-apple-m1-cpp-version/&#34;&gt;Apple Silicon&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I got my hands on a Nvidia RTX 4090 and ran a 3600 seconds audio file through it.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;GPU&#xA;0&#xA;&#xA;NVIDIA GeForce RTX 4090&#xA;Load Model at  2023-03-21 17:22:09.623805&#xA;Loading took 0:00:09.574030&#xA;started at 2023-03-21 17:22:19.197835&#xA;ended at 2023-03-21 17:25:25.905605&#xA;time elapsed: 0:03:06.707770&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;With the large model it makes a ~ 19.3 x speed up. My prediction back then was about 10x but since just 11 MB VRAM was used I estimated 2 processes can be run in parallel. So it would be a 20x speed up. In a different way, but this prediction turned out to be true.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Semantic Search with Cosine Similarity</title>
       <link>https://owehrens.com/semantic-search-with-cosine-similarity/</link>
       <pubDate>Thu, 23 Feb 2023 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/semantic-search-with-cosine-similarity/</guid>
-      <description>If you have a lot of text, how do you search though it? Keywords? What if these keywords never show up there? Imagine you want to know if Jerome Powell says something about &amp;lsquo;Inflation decrease&amp;rsquo; but he might not say the exact words? You will not find it. Databases like Meilisearch offer synonyms, but this can only take you so far.&#xA;Similarity Enter semantic search.&#xA;I first heard about it when I saw that OpenAI offers this.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;Cosine.png&#34; alt=&#34;&amp;ldquo;Cosine&amp;rdquo;&#34; title=&#34;Cosine Similarity&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;If you have a lot of text, how do you search though it? Keywords? What if these keywords never show up there? Imagine you want to know if Jerome Powell says something about &amp;lsquo;Inflation decrease&amp;rsquo; but he might not say the exact words? You will not find it. Databases like &lt;a href=&#34;https://www.meilisearch.com/&#34;&gt;Meilisearch&lt;/a&gt; offer synonyms, but this can only take you so far.&lt;/p&gt;&#xA;&lt;h1 id=&#34;similarity&#34;&gt;Similarity&lt;/h1&gt;&#xA;&lt;p&gt;Enter semantic search.&lt;/p&gt;&#xA;&lt;p&gt;I first heard about it when I saw that &lt;a href=&#34;https://openai.com/blog/introducing-text-and-code-embeddings/&#34;&gt;OpenAI&lt;/a&gt; offers this. It is based around that text can be represented as vectors and similar texts are very close together &amp;lsquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Dot_product#Application_to_the_law_of_cosines&#34;&gt;cosine similarity&lt;/a&gt;&amp;rsquo;. Complicated maths, but you don&amp;rsquo;t need to understand all of it to use it (I certainly don&amp;rsquo;t). Pretrained ML models can calculate vectors for any text. These vectors are specific to that particular model. To give you an understanding how such a vector looks like (I cut out 150 or so lines).&lt;/p&gt;</description>
     </item>
     <item>
       <title>OpenAI Whisper Benchmark Nvidia Tesla T4 / A100</title>
       <link>https://owehrens.com/openai-whisper-benchmark-on-nvidia-tesla-t4-a100/</link>
       <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/openai-whisper-benchmark-on-nvidia-tesla-t4-a100/</guid>
-      <description>In my previous article, I wondered how OpenAI Whisper C++ Edition on a MacBook Pro M1Pro stacks up against a CUDA card. I don&amp;rsquo;t have one, so I could not do the test.&#xA;Benchmarking Nvidia Tesla T4 Google Colab to the rescue. I totally forgot about it. I can run (for free) on an Nvidia T4. If you start a notebook for yourself, don&amp;rsquo;t forget to set the Runtime to GPU.</description>
+      <description>&lt;p&gt;In my previous article, I wondered how OpenAI Whisper C++ Edition on a MacBook Pro M1Pro stacks up against a CUDA card. I don&amp;rsquo;t have one, so I could not do the test.&lt;/p&gt;&#xA;&lt;h1 id=&#34;benchmarking-nvidia-tesla-t4&#34;&gt;Benchmarking Nvidia Tesla T4&lt;/h1&gt;&#xA;&lt;p&gt;Google Colab to the rescue. I totally forgot about it. I can run (for free) on an Nvidia T4. If you start a notebook for yourself, don&amp;rsquo;t forget to set the Runtime to GPU.&lt;/p&gt;</description>
     </item>
     <item>
       <title>OpenAI Whisper on Apple M1</title>
       <link>https://owehrens.com/openai-whisper-on-apple-m1-cpp-version/</link>
       <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/openai-whisper-on-apple-m1-cpp-version/</guid>
-      <description>OpenAI released Whisper in September 2022 as Open Source. To achieve good performance, you need an Nvidia CUDA GPU with &amp;gt; 8 GB VRAM.&#xA;Recently, Georgi Gerganov released a C++ port optimized for CPU and especially Apple Silicon Platform. So I tried this out.&#xA;I run all of that on a Macbook Pro with a M1Pro CPU (6 performance and 2 efficiency cores) and 32 GB RAM. I want to run one 10 minute audio file in German with different number of cores and different models (tiny, base, small, medium, large).</description>
+      <description>&lt;p&gt;OpenAI &lt;a href=&#34;https://openai.com/blog/whisper/&#34;&gt;released Whisper&lt;/a&gt; in September 2022 as Open Source. To achieve good performance, you need an Nvidia CUDA GPU with &amp;gt; 8 GB VRAM.&lt;/p&gt;&#xA;&lt;p&gt;Recently, Georgi Gerganov released a &lt;a href=&#34;https://github.com/ggerganov/whisper.cpp&#34;&gt;C++ port&lt;/a&gt; optimized for CPU and especially Apple Silicon Platform.  So I tried this out.&lt;/p&gt;&#xA;&lt;p&gt;I run all of that on a Macbook Pro with a M1Pro CPU (6 performance and 2 efficiency cores) and 32 GB RAM. I want to run one 10 minute audio file in German with different number of cores and different models (tiny, base, small, medium, large). For more on the models and how it works, see the &lt;a href=&#34;https://github.com/ggerganov/whisper.cpp/blob/master/README.md&#34;&gt;readme&lt;/a&gt; of Georgi. I used an exact 10-minute audio clip (search for podcast with the &lt;a href=&#34;itunes:duration&#34;&gt;itunes:duration&lt;/a&gt;600&amp;lt;/itunes:duration&amp;gt; in the RSS feed) from []&amp;lsquo;Was jetzt?&amp;rsquo; Zeit Podcast](&lt;a href=&#34;https://www.zeit.de/serie/was-jetzt)&#34;&gt;https://www.zeit.de/serie/was-jetzt)&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

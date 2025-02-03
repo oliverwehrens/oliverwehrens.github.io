@@ -13,21 +13,21 @@
       <link>https://owehrens.com/how-failing-tests-can-be-green/</link>
       <pubDate>Thu, 13 Feb 2014 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/how-failing-tests-can-be-green/</guid>
-      <description>Imagine this conversation:&#xA;Friend: &amp;ldquo;We have an integration system where we deploy every two weeks all commits and run hundreds of end to end tests on it.&amp;rdquo;&#xA;Me: &amp;ldquo;And if everything passed it goes into production?&amp;rdquo;&#xA;Friend: &amp;ldquo;Yes.&amp;rdquo;&#xA;Me: &amp;ldquo;How often do they fail?&amp;rdquo;&#xA;Friend: &amp;ldquo;Uhmm, well like every night. But we just take the failing tests and run them again and after that or the next run they will be green.</description>
+      <description>&lt;p&gt;Imagine this conversation:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://owehrens.com/static/traffic-light-vector-icon.jpg&#34; alt=&#34;red&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Friend&lt;/em&gt;: &amp;ldquo;We have an integration system where we deploy every two weeks all commits and run hundreds of end to end tests on it.&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Me&lt;/em&gt;: &amp;ldquo;And if everything passed it goes into production?&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Friend&lt;/em&gt;: &amp;ldquo;Yes.&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Me&lt;/em&gt;: &amp;ldquo;How often do they fail?&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Friend&lt;/em&gt;: &amp;ldquo;Uhmm, well like every night. But we just take the failing tests and run them again and after that or the next run they will be green.&amp;rdquo;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Getting Faster</title>
       <link>https://owehrens.com/getting-faster/</link>
       <pubDate>Wed, 18 Dec 2013 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/getting-faster/</guid>
-      <description> My Continuous Lifecycle 2013 talk. How we got faster at deploying our software. </description>
+      <description>My &lt;a href=&#34;http://www.continuouslifecycle.de/lecture.php?id=291&#34;&gt;Continuous Lifecycle 2013&lt;/a&gt; talk. How we got faster at deploying our software.&#xA;&#xA;&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;fd5eb9e02df501313a98663820a88a30&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;</description>
     </item>
     <item>
       <title>From Development to Production</title>
       <link>https://owehrens.com/from-development-to-production/</link>
       <pubDate>Fri, 26 Apr 2013 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/from-development-to-production/</guid>
-      <description> My BedCon 2013 talk. Covering commiting code, packaging,testing, deployment and organisational changes. </description>
+      <description>My &lt;a href=&#34;http://bed-con.org/2013/talks/&#34;&gt;BedCon 2013&lt;/a&gt; talk. Covering commiting code, packaging,testing, deployment and organisational changes.&#xA;&#xA;&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;e8470d7082450130e5211231381a9963&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;</description>
     </item>
   </channel>
 </rss>

@@ -13,7 +13,7 @@
       <link>https://owehrens.com/using-kvm-and-virt-manager-via-xquartz-on-macosx-and-solving-the-keymapping-trouble/</link>
       <pubDate>Mon, 03 Jun 2013 00:00:00 +0000</pubDate>
       <guid>https://owehrens.com/using-kvm-and-virt-manager-via-xquartz-on-macosx-and-solving-the-keymapping-trouble/</guid>
-      <description>In the last couple of months I got to play around with virtualization at work. Doing automated delivery pipleines and provisiong via puppet I decided it&amp;rsquo;s time to get my hands even more dirty at home.&#xA;I got myself a HP Microserver N54L equipped with 16 GB of RAM and 9 TB disks. I wanted ZFS and KVM. Since the machine has an AMD processor the only way was to install Linux on it.</description>
+      <description>&lt;p&gt;In the last couple of months I got to play around with virtualization at work. Doing automated delivery pipleines and provisiong via puppet I decided it&amp;rsquo;s time to get my hands even more dirty at home.&lt;/p&gt;&#xA;&lt;p&gt;I got myself a &lt;!-- raw HTML omitted --&gt;HP Microserver N54L&lt;!-- raw HTML omitted --&gt; equipped with 16 GB of RAM and 9 TB disks. I wanted ZFS and KVM. Since the machine has an AMD processor the only way was to install Linux on it. SmartOS would have been a nice choice but it only supports KVM for Intel processors.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
