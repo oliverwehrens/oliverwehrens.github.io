@@ -6,8 +6,15 @@
     <description>Recent content on Oliver Wehrens</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://owehrens.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The return of product and requirements development. Writing software without being a developer.</title>
+      <link>https://owehrens.com/the-return-of-product-and-requirements-development-writing-software-without-being-a-developer/</link>
+      <pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://owehrens.com/the-return-of-product-and-requirements-development-writing-software-without-being-a-developer/</guid>
+      <description>&lt;p&gt;I wanted to try AI for software development. The last time I tried it was with Github Copilot in 2023, and I was thrilled. It was great. It could predict my next code, could almost read my mind.&lt;/p&gt;&#xA;&lt;p&gt;Fast forward to 2025, new tools were coming up. I decided to give cursor.com a try. Since I&amp;rsquo;ve been a podcast listener for years, I choose to program a podcast app. I&amp;rsquo;ve never done anything in iOS or Swift before.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Running Deepseek 671B Model on a PC locally</title>
       <link>https://owehrens.com/running-deepseek-671b-on-a-pc-locally/</link>
