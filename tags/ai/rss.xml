@@ -6,8 +6,15 @@
     <description>Recent content in Ai on Oliver Wehrens</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://owehrens.com/tags/ai/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iOS Development Setup with Cursor AI</title>
+      <link>https://owehrens.com/ios-development-with-cursor-ai/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://owehrens.com/ios-development-with-cursor-ai/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://owehrens.com/the-return-of-product-and-requirements-development-writing-software-without-being-a-developer/&#34;&gt;A few days ago&lt;/a&gt; I started to work with cursor and iOS development. Here is my setup so you get a head start on the setup.&lt;/p&gt;&#xA;&lt;h1 id=&#34;setup&#34;&gt;Setup&lt;/h1&gt;&#xA;&lt;h2 id=&#34;xcode&#34;&gt;Xcode&lt;/h2&gt;&#xA;&lt;p&gt;Yes you still need it to have it installed.&lt;/p&gt;&#xA;&lt;h2 id=&#34;cursor-extenstions&#34;&gt;Cursor Extenstions&lt;/h2&gt;&#xA;&lt;h3 id=&#34;swift&#34;&gt;Swift&lt;/h3&gt;&#xA;&lt;p&gt;Extension: &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=sswg.swift-lang&#34;&gt;Swift&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;This extension adds language support for Swift to Visual Studio Code. It supports:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Code completion&lt;/li&gt;&#xA;&lt;li&gt;Jump to definition, peek definition, find all references, symbol search&lt;/li&gt;&#xA;&lt;li&gt;Error annotations and apply suggestions from errors&lt;/li&gt;&#xA;&lt;li&gt;Automatic generation of launch configurations for debugging with CodeLLDB&lt;/li&gt;&#xA;&lt;li&gt;Automatic task creation&lt;/li&gt;&#xA;&lt;li&gt;Package dependency view&lt;/li&gt;&#xA;&lt;li&gt;Test Explorer view&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;sweetpad&#34;&gt;SweetPad&lt;/h3&gt;&#xA;&lt;p&gt;Extension &lt;a href=&#34;%5Bhttps://marketplace.visualstudio.com/items?itemName=sweetpad.sweetpad&#34;&gt;SweetPad&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>The return of product and requirements development. Writing software without being a developer.</title>
       <link>https://owehrens.com/the-return-of-product-and-requirements-development-writing-software-without-being-a-developer/</link>
