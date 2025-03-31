@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LLM on Oliver Wehrens</title>
+    <link>https://owehrens.com/tags/llm/</link>
+    <description>Recent content in LLM on Oliver Wehrens</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 31 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://owehrens.com/tags/llm/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using AI and MCP to create more usable Jira Tickets</title>
+      <link>https://owehrens.com/ai-and-mcp-to-create-more-usable-jira-tickets/</link>
+      <pubDate>Mon, 31 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://owehrens.com/ai-and-mcp-to-create-more-usable-jira-tickets/</guid>
+      <description>&lt;h1 id=&#34;the-problem&#34;&gt;The Problem&lt;/h1&gt;&#xA;&lt;p&gt;I have seen ticket systems with unusable ticket description. Sometimes way too much, sometimes just one line description. I am an interims PO job at the moment and I feel it. Describing everything, to make it easy for the developer to follow what I want is hard work. Some of it is just like boiler plate in coding. And it is easy to forget details.&lt;/p&gt;&#xA;&lt;h1 id=&#34;a-new-technology-a-new-solution&#34;&gt;A new technology, a new solution&lt;/h1&gt;&#xA;&lt;p&gt;AI helps programmers to write, understand code, generate unit tests. What does AI has ever done for Product Owners? Ok, Deep Research and ping-ponging product ideas. But else? Thanks to &lt;a href=&#34;https://www.anthropic.com/news/model-context-protocol&#34;&gt;Model Context Protocol (MCP)&lt;/a&gt; it now can generate a good base of tickets for your developers.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

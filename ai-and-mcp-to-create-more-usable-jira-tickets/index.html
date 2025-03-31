@@ -1,0 +1,378 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Using AI and MCP to create more usable Jira Tickets - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="The Problem
+I have seen ticket systems with unusable ticket description. Sometimes way too much, sometimes just one line description. I am an interims PO job at the moment and I feel it. Describing everything, to make it easy for the developer to follow what I want is hard work. Some of it is just like boiler plate in coding. And it is easy to forget details.
+A new technology, a new solution
+AI helps programmers to write, understand code, generate unit tests. What does AI has ever done for Product Owners? Ok, Deep Research and ping-ponging product ideas. But else? Thanks to Model Context Protocol (MCP) it now can generate a good base of tickets for your developers." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://owehrens.com/main.min.css" />
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://owehrens.com/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="https://owehrens.com/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="https://owehrens.com/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="https://owehrens.com/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://owehrens.com/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://owehrens.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.135.0">
+
+  
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="Using AI and MCP to create more usable Jira Tickets">
+  <meta itemprop="description" content="How many Jira tickets have you seen which are just one line of description? Fear no more. Your friendly AI will help you. (More AI slop?)">
+  <meta itemprop="datePublished" content="2025-03-31T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-03-31T00:00:00+00:00">
+  <meta itemprop="wordCount" content="428">
+  <meta itemprop="keywords" content="Mcp,LLM">
+  
+  <meta property="og:url" content="https://owehrens.com/ai-and-mcp-to-create-more-usable-jira-tickets/">
+  <meta property="og:site_name" content="Oliver Wehrens">
+  <meta property="og:title" content="Using AI and MCP to create more usable Jira Tickets">
+  <meta property="og:description" content="How many Jira tickets have you seen which are just one line of description? Fear no more. Your friendly AI will help you. (More AI slop?)">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-31T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-31T00:00:00+00:00">
+    <meta property="article:tag" content="Mcp">
+    <meta property="article:tag" content="LLM">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Using AI and MCP to create more usable Jira Tickets">
+  <meta name="twitter:description" content="How many Jira tickets have you seen which are just one line of description? Fear no more. Your friendly AI will help you. (More AI slop?)">
+
+  
+  
+  
+  <link rel="canonical" href="https://owehrens.com/ai-and-mcp-to-create-more-usable-jira-tickets/" />
+  
+  
+  <script defer data-domain="owehrens.com" src="https://superpod.podpodgogo.com/js/script.js"></script>
+
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    <div class="mx-auto pt-2 flex flex-col justify-center items-center">
+    <div>
+        <a href="https://owehrens.com/">
+            <img
+                    class="my-0 aspect-square  rounded-full "
+                    src="/img/oliver_square.jpg"
+                    alt="Oliver Wehrens"
+            />
+        </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Mentor. Dad.</div>
+
+
+    <div>
+        
+        <nav
+                class="mt-5 flex justify-center space-x-10 items-center "
+        >
+            
+            <a
+                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+                    style="--url: url(./linkedin.svg)"
+                    href="https://linkedin.com/in/oliverwehrens
+          "
+                    target="_blank"
+                    rel="me"
+            >
+                linkedin
+            </a>
+            
+            <a
+                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+                    style="--url: url(./bluesky.svg)"
+                    href="https://bsky.app/profile/owehrens.com"
+                    target="_blank"
+                    rel="me"
+            >
+                bluesky
+            </a>
+            
+            <a
+                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+                    style="--url: url(./speakerdeck.svg)"
+                    href="https://speakerdeck.com/owehrens
+          "
+                    target="_blank"
+                    rel="me"
+            >
+                speakerdeck
+            </a>
+            
+            <a
+                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+                    style="--url: url(./rss.svg)"
+                    href="https://owehrens.com/rss.xml "
+                    target="_blank"
+                    rel="alternate"
+            >
+                rss
+            </a>
+            
+        </nav>
+        
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">Using AI and MCP to create more usable Jira Tickets</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Mar 31, 2025</time>
+      
+      
+      
+      
+      <span class="text-gray">- 3 min</span>
+    </div>
+    
+  </header>
+
+  <section><h1 id="the-problem">The Problem</h1>
+<p>I have seen ticket systems with unusable ticket description. Sometimes way too much, sometimes just one line description. I am an interims PO job at the moment and I feel it. Describing everything, to make it easy for the developer to follow what I want is hard work. Some of it is just like boiler plate in coding. And it is easy to forget details.</p>
+<h1 id="a-new-technology-a-new-solution">A new technology, a new solution</h1>
+<p>AI helps programmers to write, understand code, generate unit tests. What does AI has ever done for Product Owners? Ok, Deep Research and ping-ponging product ideas. But else? Thanks to <a href="https://www.anthropic.com/news/model-context-protocol">Model Context Protocol (MCP)</a> it now can generate a good base of tickets for your developers.</p>
+<p>There is an <a href="https://github.com/sooperset/mcp-atlassian?tab=readme-ov-file">MCP server for Jira (and confluence)</a> which you can use in your AI.
+To use it in Claude Desktop edit the <code>/Library/Application Support/Claude/claude_desktop_config.json</code> (MacOS) config like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;mcpServers&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;mcp-atlassian&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;uvx&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;args&#34;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;mcp-atlassian&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;--confluence-url=https://your-company.atlassian.net/wiki&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;--confluence-username=your.email@company.com&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;--confluence-token=your_api_token&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;--jira-url=https://your-company.atlassian.net&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;--jira-username=your.email@company.com&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;--jira-token=your_api_token&#34;</span>
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Have uv installed (<code>brew install uv</code>) and install the mcp server (<code>uvx mcp-atlassian</code>).</p>
+<p>TMy random, very simple test prompt:</p>
+<pre tabindex="0"><code>You are a product owner for a webapp which allows user administration. 
+You task is it to come up with a new, more user friendly UI. 
+In the SWITCH project in Jira , create 5 or more new tickets describing 
+tasks on how to create a new UI for user administration. Give it a title 
+and a meaningful description with a defininition of done and 
+acceptance criteria.
+</code></pre><p>created 6 tickets detailing on what needs to be done.</p>
+<p><img src="jira.png" alt="&ldquo;Jira Tickets&rdquo;" title="Resulting Jira Tickets">
+<img src="claude.png" alt="&ldquo;Claude Desktop&rdquo;" title="Claude"></p>
+<h1 id="conclusion">Conclusion</h1>
+<p>With more thought and a good product description we will get to detailed tickets which breaks down the tasks even more. Better prompting and meta prompt is needed but
+this can be interesting. No more one liners, but of course the danger is that more AI slop is generated and the PO does not pay attention. Just like in programming, you need to understand what the AI is doing for you.</p>
+<p>Next step: The result can be fed into <a href="https://cursorai.com">cursor</a> which then generates the code. I made this joke 6 months ago and it seems like we are one step closer. And yes, maybe in the future we don&rsquo;t need these tickets anymore.</p>
+<h1 id="bonus">Bonus</h1>
+<p>As I asked &lsquo;Which stories in the SWITCH jira project do not have an epic?&rsquo; it found all epics and the stories and suggested to create an epic for the just created stories. It did not change the 4 original stories since they had no content and are meaningless.</p>
+<p><img src="epic.png" alt="&ldquo;Epic&rdquo;" title="Created an epic"></p>
+</section>
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://owehrens.com/tags/mcp"
+      >mcp</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://owehrens.com/tags/llm"
+      >LLM</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://owehrens.com/ios-development-with-cursor-ai/"
+      ><span>iOS Development Setup with Cursor AI</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+
+
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+
+
+
+  
+
+  <div class="mr-auto">
+    &copy; 2009 - 2025
+    <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>
