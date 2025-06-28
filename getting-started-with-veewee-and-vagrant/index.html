@@ -64,9 +64,10 @@
   
   
   <meta name="description" content="What do you need to do to get a fully automated kickstart of a virtual machine on your local development platform running? Not much it turns out. There are some tricks to get around but after that it&rsquo;s all fine.
-
 The resulting image can also be used to get a system in production.
-I will look at the OS installation part. Puppet will come in a later post." />
+I will look at the OS installation part. Puppet will come in a later post.
+Installation
+Tools we will play with:" />
   <meta name="author" content="Oliver Wehrens" />
   
 
@@ -115,7 +116,7 @@ I will look at the OS installation part. Puppet will come in a later post." />
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.135.0">
+  <meta name="generator" content="Hugo 0.147.8">
 
   
   
@@ -126,7 +127,8 @@ I will look at the OS installation part. Puppet will come in a later post." />
   <meta itemprop="name" content="Getting started with veewee and vagrant">
   <meta itemprop="description" content="What do you need to do to get a fully automated kickstart of a virtual machine on your local development platform running? Not much it turns out. There are some tricks to get around but after that it’s all fine.
 The resulting image can also be used to get a system in production.
-I will look at the OS installation part. Puppet will come in a later post.">
+I will look at the OS installation part. Puppet will come in a later post.
+Installation Tools we will play with:">
   <meta itemprop="datePublished" content="2013-05-26T00:00:00+00:00">
   <meta itemprop="dateModified" content="2013-05-26T00:00:00+00:00">
   <meta itemprop="wordCount" content="543">
@@ -137,7 +139,8 @@ I will look at the OS installation part. Puppet will come in a later post.">
   <meta property="og:title" content="Getting started with veewee and vagrant">
   <meta property="og:description" content="What do you need to do to get a fully automated kickstart of a virtual machine on your local development platform running? Not much it turns out. There are some tricks to get around but after that it’s all fine.
 The resulting image can also be used to get a system in production.
-I will look at the OS installation part. Puppet will come in a later post.">
+I will look at the OS installation part. Puppet will come in a later post.
+Installation Tools we will play with:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -152,7 +155,8 @@ I will look at the OS installation part. Puppet will come in a later post.">
   <meta name="twitter:title" content="Getting started with veewee and vagrant">
   <meta name="twitter:description" content="What do you need to do to get a fully automated kickstart of a virtual machine on your local development platform running? Not much it turns out. There are some tricks to get around but after that it’s all fine.
 The resulting image can also be used to get a system in production.
-I will look at the OS installation part. Puppet will come in a later post.">
+I will look at the OS installation part. Puppet will come in a later post.
+Installation Tools we will play with:">
 
   
   
@@ -161,7 +165,7 @@ I will look at the OS installation part. Puppet will come in a later post.">
   
   
   <script defer data-domain="owehrens.com" src="https://superpod.podpodgogo.com/js/script.js"></script>
-
+<script defer src="http://t.4004.fyi/script.js" data-website-id="c74b6817-9757-4ab0-b9c6-fee1036f806a"></script>
 </head>
 
   <body class="text-black duration-200 ease-out ">
@@ -262,7 +266,6 @@ I will look at the OS installation part. Puppet will come in a later post.">
   </header>
 
   <section><p>What do you need to do to get a fully automated kickstart of a virtual machine on your local development platform running? Not much it turns out. There are some tricks to get around but after that it&rsquo;s all fine.</p>
-<!-- raw HTML omitted -->
 <p>The resulting image can also be used to get a system in production.</p>
 <p>I will look at the OS installation part. Puppet will come in a later post.</p>
 <h1 id="installation">Installation</h1>
@@ -279,8 +282,7 @@ I will look at the OS installation part. Puppet will come in a later post.">
 </code></pre><p>The above line will do the trick to get you the latest version of <code>rvm</code> installed. This may take a while.</p>
 <p>Now we come to the meat:</p>
 <blockquote>
-<p>VeeWee: the tool to easily build vagrant base boxes or kvm,virtualbox and fusion images</p>
-</blockquote>
+<p>VeeWee: the tool to easily build vagrant base boxes or kvm,virtualbox and fusion images</p></blockquote>
 <p><code>VeeWee</code> will build the basebox containing our operating system which will be booted on the commandline in virtualbox via vagrant. ;-)</p>
 <p>VeeWee is written in ruby, so it&rsquo;s time to get your previously installed <code>rvm</code> in place.</p>
 <ol>
@@ -289,8 +291,7 @@ I will look at the OS installation part. Puppet will come in a later post.">
 </ol>
 <p>As the docs of veewee mention:</p>
 <blockquote>
-<p>The Veewee project is moving quickly and the Rubygem might be outdated. We recommend installing Veewee from source.</p>
-</blockquote>
+<p>The Veewee project is moving quickly and the Rubygem might be outdated. We recommend installing Veewee from source.</p></blockquote>
 <p>So your first steps would be:</p>
 <pre tabindex="0"><code>$ git clone https://github.com/jedi4ever/veewee.git
 $ cd veewee

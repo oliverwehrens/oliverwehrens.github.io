@@ -118,7 +118,7 @@ Friend: &ldquo;Uhmm, well like every night. But we just take the failing tests a
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.135.0">
+  <meta name="generator" content="Hugo 0.147.8">
 
   
   
@@ -174,7 +174,7 @@ Friend: “Uhmm, well like every night. But we just take the failing tests and r
   
   
   <script defer data-domain="owehrens.com" src="https://superpod.podpodgogo.com/js/script.js"></script>
-
+<script defer src="http://t.4004.fyi/script.js" data-website-id="c74b6817-9757-4ab0-b9c6-fee1036f806a"></script>
 </head>
 
   <body class="text-black duration-200 ease-out ">
@@ -284,13 +284,11 @@ Friend: “Uhmm, well like every night. But we just take the failing tests and r
 <p><em>Me</em>: &ldquo;And then it goes into production?&rdquo;</p>
 <p><em>Friend</em>: &ldquo;Yes.&rdquo;</p>
 <p><em>Me</em>: &ldquo;Uh?&rdquo;</p>
-<!-- raw HTML omitted -->
 <p>After some further digging it turns out the tests where not green in the first run for some time (like months). Nobody seem to care. Everybody thought they have just an unstable test system and no time for fixing it.</p>
 <h3 id="slow-is-the-new-fast">&ldquo;Slow is the new fast&rdquo;.</h3>
 <p>At some point somebody took the time to investigate one of the failing tests. He found that this was a real bug also happning in production and he opened a bug ticket for it. Yes, the system was unstable and they had flickering tests but this is no reason to put the (un)tested code into production. It took a team of 5 people three weeks to stabilize the system. No new features were deployed during that time.</p>
 <blockquote>
-<p>If you accept that red tests are ok you are on the way to hell. You have no clue if the system behaves like you think it should.</p>
-</blockquote>
+<p>If you accept that red tests are ok you are on the way to hell. You have no clue if the system behaves like you think it should.</p></blockquote>
 <p>No flickering tests are allowed. The build has to be always green. Do not accept any excuses telling you that this is ok and everything is under control.</p>
 <p><strong>It is not.</strong></p>
 <p>Don&rsquo;t do it.</p>

@@ -64,7 +64,6 @@
   
   
   <meta name="description" content="You planned your software. You talked to your business owners. As soon as you saw a new use case which should be implemented, you modularized it. You did everything right. And then you hit the integration layer. Sounds familiar?
-
 At some point in your project you need to integrate all modules with each other. In case of a website you need to produce HTML.
 There are different approaches how to tackle this problem. You can integrate it on the server side, grabbing all ui code from the affected systems and pack it together or you can integrate it in the browser." />
   <meta name="author" content="Oliver Wehrens" />
@@ -115,7 +114,7 @@ There are different approaches how to tackle this problem. You can integrate it 
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.135.0">
+  <meta name="generator" content="Hugo 0.147.8">
 
   
   
@@ -161,7 +160,7 @@ There are different approaches how to tackle this problem. You can integrate it 
   
   
   <script defer data-domain="owehrens.com" src="https://superpod.podpodgogo.com/js/script.js"></script>
-
+<script defer src="http://t.4004.fyi/script.js" data-website-id="c74b6817-9757-4ab0-b9c6-fee1036f806a"></script>
 </head>
 
   <body class="text-black duration-200 ease-out ">
@@ -262,7 +261,6 @@ There are different approaches how to tackle this problem. You can integrate it 
   </header>
 
   <section><p>You planned your software. You talked to your business owners. As soon as you saw a new use case which should be implemented, you modularized it. You did everything right. And then you hit the integration layer. Sounds familiar?</p>
-<!-- raw HTML omitted -->
 <p>At some point in your project you need to integrate all modules with each other. In case of a website you need to produce HTML.</p>
 <p>There are different approaches how to tackle this problem. You can integrate it on the server side, grabbing all ui code from the affected systems and pack it together or you can integrate it in the browser.</p>
 <p><strong>Why you should care?</strong> Both ways seem to have some advantages. What is the reason we modularize in the beginning? It could be something like code reuse or that we could refactor better. These are valid technical reasons.</p>
@@ -280,8 +278,7 @@ You can also add a <strong>new version/new resource</strong>. This is a backward
 <p><strong>What is a monolith anyway?</strong></p>
 <p>In a distributed system for me it is:</p>
 <blockquote>
-<p>You have a monolith in a distributed system if a change in one system requires deployment in at least one other system which the same team can&rsquo;t control/deploy all by themselves.</p>
-</blockquote>
+<p>You have a monolith in a distributed system if a change in one system requires deployment in at least one other system which the same team can&rsquo;t control/deploy all by themselves.</p></blockquote>
 <p>If it’s two teams, make sure they sit and work closely together. For more than 2, 3 teams: You’re doomed.</p>
 <p><strong>It&rsquo;s all about being independent</strong>. If you have systems which are coupled: this might not be bad. Make sure the same team is responsible for both. Problem solved. Migrating to that kind of solution can involve a differently layered business case, which means, talking to the business owners. This process can take very long.</p>
 <p>Why did I write all of the above? I saw it multiple times (I am guilty myself) that we wrote (with the best intensions) distributed systems but then had a problem at the integration of all of them. They all were required to be <strong>deployed together</strong> to make the system work. In the worst case this meant <strong>down time deployment</strong>. This is a reminder for myself that nothing in distributed systems is as easy as it looks.</p>
