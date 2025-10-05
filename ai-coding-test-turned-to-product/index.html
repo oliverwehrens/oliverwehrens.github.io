@@ -1,0 +1,426 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>AI coding test turned to product - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="TLDR;
+
+Write want you want
+Help cursor plan it
+Execute one step after another in a new agent window
+Commit to git each step.
+Win.
+
+AI Coding
+Everybody does AI coding. Well, not everybody. I went to the Berlin CTO Roundtable some time ago and we discussed the learnings and adoption of AI coding.
+Two things stuck to my mind.
+The usual adoption curve is ChatGPT -&gt; Github Coilot -&gt; Cursor. Some of the participants stated that only after they introduced Cursor, the adoption grew. With ChatGPT and Copilot it was more of a &lsquo;meh&rsquo;." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://owehrens.com/main.min.css" />
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://owehrens.com/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="https://owehrens.com/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="https://owehrens.com/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="https://owehrens.com/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://owehrens.com/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://owehrens.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.150.1">
+
+  
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="AI coding test turned to product">
+  <meta itemprop="description" content="The journey how I started to get my feet wet with cursor (again) and how it solved a hyperpersonal software problem for me.">
+  <meta itemprop="datePublished" content="2025-10-05T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-10-05T00:00:00+00:00">
+  <meta itemprop="wordCount" content="973">
+  <meta itemprop="keywords" content="Cursor,Hyperpersonal">
+  
+  <meta property="og:url" content="https://owehrens.com/ai-coding-test-turned-to-product/">
+  <meta property="og:site_name" content="Oliver Wehrens">
+  <meta property="og:title" content="AI coding test turned to product">
+  <meta property="og:description" content="The journey how I started to get my feet wet with cursor (again) and how it solved a hyperpersonal software problem for me.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-05T00:00:00+00:00">
+    <meta property="article:tag" content="Cursor">
+    <meta property="article:tag" content="Hyperpersonal">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI coding test turned to product">
+  <meta name="twitter:description" content="The journey how I started to get my feet wet with cursor (again) and how it solved a hyperpersonal software problem for me.">
+
+  
+  
+  
+  <link rel="canonical" href="https://owehrens.com/ai-coding-test-turned-to-product/" />
+  
+  
+<script defer src="https://t.4004.fyi/script.js" data-website-id="c74b6817-9757-4ab0-b9c6-fee1036f806a"></script>
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    <div class="mx-auto pt-2 flex flex-col justify-center items-center">
+    <div>
+        <a href="https://owehrens.com/">
+            <img
+                    class="my-0 aspect-square  rounded-full "
+                    src="/img/oliver_square.jpg"
+                    alt="Oliver Wehrens"
+            />
+        </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Mentor. Dad.</div>
+
+
+    <div>
+        
+        <nav
+                class="mt-5 flex justify-center space-x-10 items-center "
+        >
+            
+            <a
+                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+                    style="--url: url(./linkedin.svg)"
+                    href="https://linkedin.com/in/oliverwehrens
+          "
+                    target="_blank"
+                    rel="me"
+            >
+                linkedin
+            </a>
+            
+            <a
+                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+                    style="--url: url(./bluesky.svg)"
+                    href="https://bsky.app/profile/owehrens.com"
+                    target="_blank"
+                    rel="me"
+            >
+                bluesky
+            </a>
+            
+            <a
+                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+                    style="--url: url(./speakerdeck.svg)"
+                    href="https://speakerdeck.com/owehrens
+          "
+                    target="_blank"
+                    rel="me"
+            >
+                speakerdeck
+            </a>
+            
+            <a
+                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+                    style="--url: url(./rss.svg)"
+                    href="https://owehrens.com/rss.xml "
+                    target="_blank"
+                    rel="alternate"
+            >
+                rss
+            </a>
+            
+        </nav>
+        
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">AI coding test turned to product</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Oct 5, 2025</time>
+      
+      
+      
+      
+      <span class="text-gray">- 5 min</span>
+    </div>
+    
+  </header>
+
+  <section><h1 id="tldr">TLDR;</h1>
+<ul>
+<li>Write want you want</li>
+<li>Help cursor plan it</li>
+<li>Execute one step after another in a new agent window</li>
+<li>Commit to git each step.</li>
+<li>Win.</li>
+</ul>
+<h1 id="ai-coding">AI Coding</h1>
+<p>Everybody does AI coding. Well, not everybody. I went to the <a href="https://www.meetup.com/de-DE/cto-roundtable-berlin/events/310814766/">Berlin CTO Roundtable</a> some time ago and we discussed the learnings and adoption of AI coding.</p>
+<p>Two things stuck to my mind.</p>
+<p>The usual adoption curve is ChatGPT -&gt; Github Coilot -&gt; Cursor. Some of the participants stated that only after they introduced Cursor, the adoption grew. With ChatGPT and Copilot it was more of a &lsquo;meh&rsquo;.</p>
+<p>Especially Senior developers, I was told, are not seeing the benefit of AI assisted coding. They know their way around, and are of course faster. They not often giving it a chance to be more than an extension in their IDE, to try out different ways of coding.</p>
+<p>Nevertheless, at my employeer we also think introduced AI tools like Github CoPilot and Cursor. To get some street cred I needed a project to try that out. I&rsquo;m wearing two hats at the moment, Engineering Manager and Product Manager of our brand new product. A bit of dance, but that&rsquo;s a different story.</p>
+<p>So as a Product Manager I try to get some rough estimates during refinement to understand the constraints and complexity we have. For that we do classic story point estimation. This is useful for a discussion in the team to check if they understand more or less the same in a specific story.</p>
+<p>We jumped from tool to tool to support us for that estimation. All were not that good and having that in mind, I found my pet project to get started with cursor. <em><strong>An agile planning poker app which does not suck.</strong></em></p>
+<p>Yes, it is a green field project. Yes, it is fairly small.</p>
+<p>So after a few Youtube videos of <a href="https://leerob.com">Lee Robinson</a> (VP Education at Cursor) I started with a simple readme.</p>
+<p>Here is are the most essiential things I learned.</p>
+<h1 id="readme-and-plan">Readme and plan</h1>
+<p>I started with a simple readme.</p>
+<pre tabindex="0"><code># Planning Poker
+
+This is an webapp which allows a team to do an agile plannig poker.
+Member should be able to login via username and passkey. 
+Everyone can create a &#39;room&#39; where other can join if they know the room name.
+Inside this room, a regular agile plannig poker can take place, 
+typical fibunacci numbers. All member are seen in a list and can make a 
+estimate which is not shown yet. After everyone estimated or the reavel button 
+is pushed, all estimates are shown. User can be participant (like developers) 
+or observer (like PO).A clear button brings back the inital state and everyone
+can estimate a new story.
+
+## Features
+
+- Modern, minimalistic design
+- Warm colors, modern icons
+
+## Tech Stack
+
+- **Backend**: Python, FastAPI, SQLAlchemy, SQLite
+- **Frontend**: Jinja2 templates, Tailwind CSS v4
+- **Authentication**: Passkeys with usernames (WebAuthn)
+</code></pre><p>I wanted to judge the code later, so I start with Python which I still code once in a while.</p>
+<p>I asked cursor:</p>
+<pre tabindex="0"><code>Look at the readme and help me plan this app. Write it to plan.md.
+</code></pre><h1 id="start-coding">Start Coding</h1>
+<p>So it started to hash out the different phases in a 6 step (with substeps) plan. Look at it make adjustments where needed.</p>
+<pre tabindex="0"><code>Start with implementing Step 1
+</code></pre><p>And it went off and did it. Now just work down the plan and adjust it where needed.</p>
+<p><strong>Two main takeaways for starters</strong></p>
+<p>One step after another was done. What helps here is</p>
+<ul>
+<li>Commit after every successful step to git</li>
+<li>Each new task should be done in a new agent window. The context clogs up and gets confused after a while, even though it tried to summarize after the context reached 100%</li>
+</ul>
+<h1 id="new-features">New features</h1>
+<p>Of course new features came to my mind during development. I simply asked to do it and then continued after that with the plan.</p>
+<p>Some things did not work out quite well and I could easily revert to the latest git head.</p>
+<h1 id="cursorrules">Cursorrules</h1>
+<p>Cursor can read files with context to know how to act. I asked it to write some cursor rules in the new format (seperate files) about on how to git commit, to test and how the tech stack of the project is. It knows now in every new agent window the rules and how to behave. I also asked it to write the code in a way a junior developer could understand and maintain the code.</p>
+<h1 id="take-away">Take away</h1>
+<p>Coding was very different. I did some cursor coding in <a href="https://owehrens.com/the-return-of-product-and-requirements-development-writing-software-without-being-a-developer/">beginning of 2025</a> but back then this was pure vibe coding. Now I sat back thought about requierements, gave cursor hints on architecture, helped troubleshoot problems with code and databases. It was a real interaction. It was like a technical PO / Architect talking to a Junior Developer who can, if asked correctly, also implement Passkeys and think about Security. It felt really good.</p>
+<p>My next step will be a project where I worked on for about a year and see if I can extend and maintain it to get a feeling how Cursor performs in legacy projects.</p>
+<h1 id="result">Result</h1>
+<p>Overall I&rsquo;m really impressed. I started at 6:00 in morning and at 10:00 am I had <a href="https://planningpoker.fyi">https://planningpoker.fyi</a> up and running and that included buying the domain and setup the deployment.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Login with Passkeys</li>
+<li>Creating rooms</li>
+<li>Joining as participants and oberservers</li>
+<li>Text describing the task (or just showing the ticket number, synced accross all particpants with websockets)</li>
+<li>Voting (Websockets)</li>
+<li>Revaling (Websockets)</li>
+<li>Joining past rooms</li>
+</ul>
+<p><img src="login.png" alt="&ldquo;Login&rdquo;" title="Login">
+<img src="room.png" alt="&ldquo;Room&rdquo;" title="Room">
+<img src="rooms.png" alt="&ldquo;Rooms&rdquo;" title="Rooms"></p>
+<h1 id="hyperpersonal-software">Hyperpersonal Software</h1>
+<p>All of that got me thinking about how minimal costs are nowadays to create a solution for just my problem. The costs are near zero. I think a lot of tools will be created just like that to solve a niche problem. Software might not be even refactored but thrown away and rewritten.</p>
+</section>
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://owehrens.com/tags/cursor"
+      >cursor</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://owehrens.com/tags/hyperpersonal"
+      >hyperpersonal</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://owehrens.com/ai-and-mcp-to-create-more-usable-jira-tickets/"
+      ><span>Using AI and Model Context Protocol to create more usable Jira Tickets</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+
+
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+
+
+
+  
+
+  <div class="mr-auto">
+    &copy; 2009 - 2025
+    <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

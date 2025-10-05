@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hyperpersonal on Oliver Wehrens</title>
+    <link>https://owehrens.com/tags/hyperpersonal/</link>
+    <description>Recent content in Hyperpersonal on Oliver Wehrens</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://owehrens.com/tags/hyperpersonal/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI coding test turned to product</title>
+      <link>https://owehrens.com/ai-coding-test-turned-to-product/</link>
+      <pubDate>Sun, 05 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://owehrens.com/ai-coding-test-turned-to-product/</guid>
+      <description>&lt;h1 id=&#34;tldr&#34;&gt;TLDR;&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Write want you want&lt;/li&gt;&#xA;&lt;li&gt;Help cursor plan it&lt;/li&gt;&#xA;&lt;li&gt;Execute one step after another in a new agent window&lt;/li&gt;&#xA;&lt;li&gt;Commit to git each step.&lt;/li&gt;&#xA;&lt;li&gt;Win.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;ai-coding&#34;&gt;AI Coding&lt;/h1&gt;&#xA;&lt;p&gt;Everybody does AI coding. Well, not everybody. I went to the &lt;a href=&#34;https://www.meetup.com/de-DE/cto-roundtable-berlin/events/310814766/&#34;&gt;Berlin CTO Roundtable&lt;/a&gt; some time ago and we discussed the learnings and adoption of AI coding.&lt;/p&gt;&#xA;&lt;p&gt;Two things stuck to my mind.&lt;/p&gt;&#xA;&lt;p&gt;The usual adoption curve is ChatGPT -&amp;gt; Github Coilot -&amp;gt; Cursor. Some of the participants stated that only after they introduced Cursor, the adoption grew. With ChatGPT and Copilot it was more of a &amp;lsquo;meh&amp;rsquo;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
