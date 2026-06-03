@@ -130,7 +130,7 @@ quant
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.152.2">
+  <meta name="generator" content="Hugo 0.157.0">
 
   
   
@@ -271,6 +271,9 @@ In this way you know what went wrong and where to look for it. Quant is now also
       
       
       
+      <span class="mx-1">&middot;</span>
+      <span>Oliver Wehrens</span>
+      
       <span class="text-gray">- 1 min</span>
     </div>
     
@@ -278,7 +281,7 @@ In this way you know what went wrong and where to look for it. Quant is now also
 
   <section><p>Here is a small update on my little fun project.</p>
 <p>I released version 0.2 of quant. Now it will recognize all TestNG annotations which do not have a TestNG group (like @BeforeMethod, @BeforeClass etc.). The method &lsquo;reportViolation&rsquo; on ClassTester will now report whats wrong with the examined class.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> assertFalse(classTester.<span style="color:#a6e22e">isInvalidTestClass</span>(),
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> assertFalse(classTester.<span style="color:#a6e22e">isInvalidTestClass</span>(),
 </span></span><span style="display:flex;"><span>    classTester.<span style="color:#a6e22e">reportViolation</span>());
 </span></span></code></pre></div><p>Above code will now report:</p>
 <!-- raw HTML omitted -->

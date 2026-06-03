@@ -125,7 +125,7 @@ The drawback coding up your tests with the Selenium IDE is: HTML." />
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.152.2">
+  <meta name="generator" content="Hugo 0.157.0">
 
   
   
@@ -259,6 +259,9 @@ The drawback coding up your tests with the Selenium IDE is: HTML." />
       
       
       
+      <span class="mx-1">&middot;</span>
+      <span>Oliver Wehrens</span>
+      
       <span class="text-gray">- 6 min</span>
     </div>
     
@@ -279,7 +282,7 @@ Great Stuff.
 <h3 id="the-problem">The problem.</h3>
 <p>The drawback coding up your tests with the Selenium IDE is: <!-- raw HTML omitted -->HTML<!-- raw HTML omitted -->.</p>
 <p>You will end up with some test suites including many test scenarios. It will be one big ball of</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">tr</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">tr</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">td</span>&gt;type&lt;/<span style="color:#f92672">td</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">td</span>&gt;accountnumber:Value&lt;/<span style="color:#f92672">td</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">td</span>&gt;82892892811&lt;/<span style="color:#f92672">td</span>&gt;
@@ -297,7 +300,7 @@ While this works pretty ok: I'm a programmer and do have a <strong>problem</stro
 </p>
 <h3 id="selenium-2">Selenium 2</h3>
 <p>A much nicer approach for me would be something like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>WebDriver driver  <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FirefoxDriver();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>WebDriver driver  <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FirefoxDriver();
 </span></span><span style="display:flex;"><span>AppWebTest test <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AppWebTest(driver, <span style="color:#e6db74">&#34;http://myapp.com/login&#34;</span>);
 </span></span><span style="display:flex;"><span>LoggedInUser user <span style="color:#f92672">=</span> test.<span style="color:#a6e22e">login</span>(<span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#e6db74">&#34;password&#34;</span>);
 </span></span><span style="display:flex;"><span>Account account <span style="color:#f92672">=</span> user.<span style="color:#a6e22e">createNewAccount</span>(<span style="color:#e6db74">&#34;DemoAccount&#34;</span>);
@@ -321,7 +324,7 @@ Additionally, being a mature product, the API for Selenium RC has grown over tim
 Webdriver does not use JavaScript to control the web browser but <strong>uses native controls</strong>, e.g. an extension for Firefox or the native automation extensions of IE. Furthermore it introduces an object based API instead of following Seleniums directory based approach.
 </p>
 <p>So given the above example the login method would look something like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> LoggedInUser <span style="color:#a6e22e">login</span>(String userName, String password) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> LoggedInUser <span style="color:#a6e22e">login</span>(String userName, String password) {
 </span></span><span style="display:flex;"><span>    driver.<span style="color:#a6e22e">get</span>(url);
 </span></span><span style="display:flex;"><span>    driver.<span style="color:#a6e22e">findElement</span>(By.<span style="color:#a6e22e">id</span>(<span style="color:#e6db74">&#34;user&#34;</span>)).<span style="color:#a6e22e">sendKeys</span>(userName);
 </span></span><span style="display:flex;"><span>    driver.<span style="color:#a6e22e">findElement</span>(By.<span style="color:#a6e22e">id</span>(<span style="color:#e6db74">&#34;password&#34;</span>)).<span style="color:#a6e22e">sendKeys</span>(password);
@@ -336,7 +339,7 @@ Webdriver does not use JavaScript to control the web browser but <strong>uses na
 </span></span><span style="display:flex;"><span>  }
 </span></span></code></pre></div><p>You can take this to any level. It took me just a few hours to model the above use case with componentized input elements.</p>
 <p>With a bit more abstraction addPerson looks something like the following code. Whatever is needed to add a person to an account will be replayed. This is what Selenium IDE would normally do.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addPerson</span>(Person person) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addPerson</span>(Person person) {
 </span></span><span style="display:flex;"><span>    jumpToAccountOverView();
 </span></span><span style="display:flex;"><span>    clickOnLink(<span style="color:#e6db74">&#34;menu:Overview&#34;</span>);
 </span></span><span style="display:flex;"><span>    clickOnLink(<span style="color:#e6db74">&#34;table_personTable:link_newPerson&#34;</span>);
@@ -371,7 +374,7 @@ Another strong contender is <a href="http://webtest.canoo.com/webtest/manual/Web
 </p>
 <p>It does not seem to work. You need a real browser to get dynamically content re-rendered through Ajax.</p>
 <p>A method waiting for an id to be rendered (or timeout after x seconds) could look like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">waitForElementOrTimeout</span>(String idToWaitFor, <span style="color:#66d9ef">int</span> timeout) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">waitForElementOrTimeout</span>(String idToWaitFor, <span style="color:#66d9ef">int</span> timeout) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">long</span> end <span style="color:#f92672">=</span> System.<span style="color:#a6e22e">currentTimeMillis</span>() <span style="color:#f92672">+</span> timeout <span style="color:#f92672">*</span> 1000;
 </span></span><span style="display:flex;"><span>    RenderedWebElement resultsDiv <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (System.<span style="color:#a6e22e">currentTimeMillis</span>() <span style="color:#f92672">&lt;</span> end) {

@@ -118,7 +118,7 @@ So what&#39;s in for you when you use one assert per test? What are the problems
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.152.2">
+  <meta name="generator" content="Hugo 0.157.0">
 
   
   
@@ -251,6 +251,9 @@ So what&#39;s in for you when you use one assert per test? What are the problems
       
       
       
+      <span class="mx-1">&middot;</span>
+      <span>Oliver Wehrens</span>
+      
       <span class="text-gray">- 2 min</span>
     </div>
     
@@ -287,7 +290,7 @@ I try to do one assert per test. Once in a while my code reviewer catches one of
 
 And while on it, use a better assert lib. Both JUnit and TestNG Assert confuse the heck out of me. <a href="http://passion.forco.de/">Ansgar</a> introduced <a href="http://docs.codehaus.org/display/FEST/Fluent+Assertions+Module">  FEST Fluent Assertions Module</a> to our team. Now my tests look something like:
 </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#a6e22e">@Test</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#a6e22e">@Test</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testAddSubscriber</span>() {
 </span></span><span style="display:flex;"><span>    TestEventSubscriber eventSubscriber <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TestEventSubscriber();
 </span></span><span style="display:flex;"><span>    eventPublisher.<span style="color:#a6e22e">registerSubscriber</span>(eventSubscriber);

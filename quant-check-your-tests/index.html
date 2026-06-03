@@ -117,7 +117,7 @@ To overcome this situation I wrote a couple of java classes which will scan your
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.152.2">
+  <meta name="generator" content="Hugo 0.157.0">
 
   
   
@@ -252,6 +252,9 @@ To overcome this situation I wrote a couple of java classes which will scan your
       
       
       
+      <span class="mx-1">&middot;</span>
+      <span>Oliver Wehrens</span>
+      
       <span class="text-gray">- 3 min</span>
     </div>
     
@@ -265,7 +268,7 @@ I saw all of that in the last years.</p>
 <p>To overcome this situation I wrote a couple of java classes which will scan your java test sources and will examine the annotations (for TestNG, sorry JUnit). The code will detect if all public void methods do have a<code> @Test</code> annotation (either direct on the method or on the class) or if there are disabled tests. Both signals are most likely a sign of rotten code.</p>
 <p>If you have different test groups defined like &lsquo;unitTest&rsquo; or &lsquo;integrationTest&rsquo; you want to make sure all tests are in at least one test group. This ensures if you run all test groups all tests are executed.</p>
 <p>The usage is really <!-- raw HTML omitted -->simple<!-- raw HTML omitted -->. To make sure all your tests are ok is to <!-- raw HTML omitted -->write just another test<!-- raw HTML omitted --> which will check all tests.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ClassFinder classFinder <span style="color:#f92672">=</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ClassFinder classFinder <span style="color:#f92672">=</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">new</span> ClassFinder.<span style="color:#a6e22e">Builder</span>(sourceDirectory).<span style="color:#a6e22e">build</span>();
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Class klass : classFinder.<span style="color:#a6e22e">getClassList</span>()) {
 </span></span><span style="display:flex;"><span>  TestClassTester testClassTester <span style="color:#f92672">=</span>
@@ -274,7 +277,7 @@ I saw all of that in the last years.</p>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>You need to specify the source files of your code so that all java files can be scanned. It is possible to exclude certain packages to be checked (via <code>TestNGTestClassTester.Builder(klass).addExcludedPackage(&quot;testclasses&quot;).build()</code>). After gathering all class names from the sources the code will check for <code>@Test</code> annotations in the test classes. You can also specify the test groups which all test should belong to (via <code>addTestGroup(&quot;unitTest&quot;)</code> in the builder).</p>
 <p>Finding disabled test methods is very simple too (one of the unit tests)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Test</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testNoDisabledTest</span>() {
 </span></span><span style="display:flex;"><span>  DisabledTestFinder unitUnderTest <span style="color:#f92672">=</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">new</span> TestNGDisabledTestFinder.<span style="color:#a6e22e">Builder</span>(TwoTestGroups.<span style="color:#a6e22e">class</span>).<span style="color:#a6e22e">build</span>();

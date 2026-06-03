@@ -1,0 +1,591 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: "
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>From Idea to App with Spec Driven Development - Oliver Wehrens</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="TLDR;
+
+Start with an briefing.md — just dump your idea in there, don&rsquo;t overthink it.
+Ask the AI to turn it into a roadmap.md with goals, themes, and a tech stack.
+Iterate the roadmap until it represents what you actually want to build.
+Break the roadmap into epics — each epic is a self-contained chunk of the app.
+For each epic, write a spec. Iterate the spec until it&rsquo;s airtight.
+Implement one epic at a time, in a fresh agent window, commit after each.
+When something goes wrong, fix the spec first, then the code.
+
+
+The Problem with Vibe Coding
+As I started with Cursor, I would just type a rough idea into the chat, and hope for the best. Sometimes it worked. Many times I ended up with something that I could not understand and the AI was confused about what I wanted. It was a lot of trial and error." />
+  <meta name="author" content="Oliver Wehrens" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://owehrens.com/main.min.css" />
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://owehrens.com/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="https://owehrens.com/bluesky.svg" />
+  
+  <link rel="preload" as="image" href="https://owehrens.com/speakerdeck.svg" />
+  
+  <link rel="preload" as="image" href="https://owehrens.com/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://owehrens.com/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://owehrens.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.157.0">
+
+  
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="From Idea to App with Spec Driven Development">
+  <meta itemprop="description" content="How a single briefing.md file and a structured spec-driven workflow turns a rough idea into a working app — without losing your mind.">
+  <meta itemprop="datePublished" content="2026-03-19T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-03-19T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2489">
+  <meta itemprop="keywords" content="Claude,Sdd,Cursor,Ai">
+  
+  <meta property="og:url" content="https://owehrens.com/start-with-spec-driven-development/">
+  <meta property="og:site_name" content="Oliver Wehrens">
+  <meta property="og:title" content="From Idea to App with Spec Driven Development">
+  <meta property="og:description" content="How a single briefing.md file and a structured spec-driven workflow turns a rough idea into a working app — without losing your mind.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-19T00:00:00+00:00">
+    <meta property="article:tag" content="Claude">
+    <meta property="article:tag" content="Sdd">
+    <meta property="article:tag" content="Cursor">
+    <meta property="article:tag" content="Ai">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="From Idea to App with Spec Driven Development">
+  <meta name="twitter:description" content="How a single briefing.md file and a structured spec-driven workflow turns a rough idea into a working app — without losing your mind.">
+
+  
+  
+  
+  <link rel="canonical" href="https://owehrens.com/start-with-spec-driven-development/" />
+  
+  
+<script defer src="https://t.4004.fyi/script.js" data-website-id="ae7b9a21-3055-4b46-bc57-15eb0c646e2e"></script>
+</head>
+
+  <body class="text-black duration-200 ease-out ">
+    <div class="mx-auto pt-2 flex flex-col justify-center items-center">
+    <div>
+        <a href="https://owehrens.com/">
+            <img
+                    class="my-0 aspect-square  rounded-full "
+                    src="/img/oliver_square.jpg"
+                    alt="Oliver Wehrens"
+            />
+        </a>
+    </div>
+
+    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Mentor. Dad.</div>
+
+
+    <div>
+        
+        <nav
+                class="mt-5 flex justify-center space-x-10 items-center "
+        >
+            
+            <a
+                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+                    style="--url: url(./linkedin.svg)"
+                    href="https://linkedin.com/in/oliverwehrens
+          "
+                    target="_blank"
+                    rel="me"
+            >
+                linkedin
+            </a>
+            
+            <a
+                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+                    style="--url: url(./bluesky.svg)"
+                    href="https://bsky.app/profile/owehrens.com"
+                    target="_blank"
+                    rel="me"
+            >
+                bluesky
+            </a>
+            
+            <a
+                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+                    style="--url: url(./speakerdeck.svg)"
+                    href="https://speakerdeck.com/owehrens
+          "
+                    target="_blank"
+                    rel="me"
+            >
+                speakerdeck
+            </a>
+            
+            <a
+                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+                    style="--url: url(./rss.svg)"
+                    href="https://owehrens.com/rss.xml "
+                    target="_blank"
+                    rel="alternate"
+            >
+                rss
+            </a>
+            
+        </nav>
+        
+    </div>
+
+</div>  
+
+
+    
+  
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    Oliver Wehrens
+    <h1 class="!my-0 pb-2.5 article-title">From Idea to App with Spec Driven Development</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Mar 19, 2026</time>
+      
+      
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>Oliver Wehrens</span>
+      
+      <span class="text-gray">- 12 min</span>
+    </div>
+    
+  </header>
+
+  <section><h1 id="tldr">TLDR;</h1>
+<ul>
+<li>Start with an <code>briefing.md</code> — just dump your idea in there, don&rsquo;t overthink it.</li>
+<li>Ask the AI to turn it into a <code>roadmap.md</code> with goals, themes, and a tech stack.</li>
+<li>Iterate the roadmap until it represents what you actually want to build.</li>
+<li>Break the roadmap into epics — each epic is a self-contained chunk of the app.</li>
+<li>For each epic, write a spec. Iterate the spec until it&rsquo;s airtight.</li>
+<li>Implement one epic at a time, in a fresh agent window, commit after each.</li>
+<li>When something goes wrong, fix the spec first, then the code.</li>
+</ul>
+<hr>
+<h1 id="the-problem-with-vibe-coding">The Problem with Vibe Coding</h1>
+<p>As I started with Cursor, I would just type a rough idea into the chat, and hope for the best. Sometimes it worked. Many times I ended up with something that I could not understand and the AI was confused about what I wanted. It was a lot of trial and error.</p>
+<p>The root cause? I never told it precisely what I wanted.</p>
+<p>This is where <strong>Spec Driven Development</strong> (SDD) comes in. The idea is simple: before you write a line of code, you write a specification. You iterate on that spec until it&rsquo;s solid. Like really iterating a lot. Then you let the AI build from it.</p>
+<p>It sounds obvious. It is like writing a spec for a contractor. You really define what you want before you start building.</p>
+<h1 id="step-1-write-an-briefingmd">Step 1: Write an briefing.md</h1>
+<p>Everything starts with an <code>briefing.md</code>. This is your raw idea. No structure. No formality. Just write down what you want to build, who it&rsquo;s for, and what problem it solves.</p>
+<p>Here&rsquo;s the briefing I used for a Planning Poker app:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># Planning Poker
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Planning poker for agile teams to estimate stories.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Voting modes: Story Points, Fibonacci, T-Shirt Sizes, Time
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Voting mode is a room setting chosen on creation
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Users can create or join rooms; creator gets an invite link
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Others join via room ID (simple number) or invite link
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Auth via passkeys (WebAuthn — registered in the browser)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Moderator starts/ends voting; everyone sees results at the end
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Moderator sets multiple tickets per room, voted one by one
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Tickets added manually or imported from Jira
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Jira integration: list tickets, search/filter, import selected ones
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Moderator sees live voting status (who voted / pending) with colors
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> All room updates real-time via WebSockets — no page reload
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> End of vote: show who voted for what, average, consensus indicator
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> If everyone votes the same → fireworks animation
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Voters can press a Coffee icon (no opinion) — excluded from averages
+</span></span><span style="display:flex;"><span>  but shown in summary
+</span></span></code></pre></div><p>That&rsquo;s it. Messy. Missing tech decisions. But it captures everything that matters.</p>
+<h1 id="step-2-turn-it-into-a-roadmapmd">Step 2: Turn It Into a roadmap.md</h1>
+<p>Now hand your <code>briefing.md</code> to the AI and ask it to create a roadmap:</p>
+<pre tabindex="0"><code>&gt; Read briefing.md and write a roadmap.md for this app.
+&gt; Include: goals, key themes, a high-level feature list, out of scope items,
+&gt; and a proposed tech stack. Structure into epics which are self-contained and can be worked on step by step.
+</code></pre><p>The roadmap is intentionally high-level. It&rsquo;s not about requirements yet — it&rsquo;s about direction. What are we building and why? What are we deliberately <em>not</em> building? Which tech will we use?</p>
+<p>Here&rsquo;s what the roadmap might look like for Planning Poker (partial)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># Planning Poker — Roadmap
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Epic 2: User Authentication (Passkeys)
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">**Goal:**</span> Users can register and log in using WebAuthn passkeys stored in their browser.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">**Stories:**</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Implement user registration endpoint
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Integrate WebAuthn for passkey creation on registration
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Implement passkey-based login flow
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Persist user sessions (JWT or session tokens)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Build registration and login UI
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Handle passkey error states and browser compatibility
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>Now iterate over the roadmap until you are satisfied with the level of detail. I usually go back and forth a few times until I feel confident about the roadmap.</p>
+<h1 id="step-3-break-into-epics--and-iterate">Step 3: Break Into Epics — and Iterate</h1>
+<p>Once the roadmap is solid, break it into epics. An epic is a self-contained, independently deliverable chunk of the app. Each epic will later get its own spec.</p>
+<pre tabindex="0"><code>Now i want to clarify the requirement of epic 2 in a dedicated MD file in the 
+@specs/ directory. Requiremetns should be present as PRD. You will ask me
+clarifying questionst until we reach confidence level 90%. For each open question provide options with [ ] (so I caneasily select my option) and one option should have a recommendation marker (as the best option based on our @specs/briefing.md ). Writedown the open questions and the
+options into the requiremnts MD file, so I can answer there.
+</code></pre><p>For Planning Poker, this might produce:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># User Authentication (Passkeys) — PRD
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Overview
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Enable users to register and log in to the Planning Poker application using WebAuthn passkeys stored in their browser. This epic establishes the identity layer that all subsequent epics depend on — room ownership, voting attribution, and moderator permissions all require authenticated users.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Confidence Level: 93%
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Requirements Extracted from Briefing
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> &#34;we want to have users with auth passkeys (a user can create a pass key in their browser on registration)&#34;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> &#34;any user can create or join a room&#34; — implies registration must be lightweight so users aren&#39;t blocked from participating
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> &#34;the moderator can start the voting process&#34; — implies role/identity is tied to the authenticated user who created the room
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Real-time room updates require a persistent identity to attribute presence and votes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Directives
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> <span style="font-weight:bold">**Implement WebAuthn passkey registration and login**</span> using the Web Authentication API. The registration flow collects only a display name and creates a passkey credential in the user&#39;s browser. <span style="font-style:italic">*(Q2-A, Q3-C)*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> <span style="font-weight:bold">**Issue a short-lived JWT access token (15 min) paired with a server-side refresh token (30 days)**</span> on successful authentication. The access token is used for API and WebSocket requests; the refresh token is stored in the database and sent as an HTTP-only cookie. <span style="font-style:italic">*(Q1-C, Q5-C)*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> <span style="font-weight:bold">**Implement a token refresh endpoint**</span> that silently reissues access tokens using the refresh token, so users stay logged in for up to 30 days without re-authenticating. <span style="font-style:italic">*(Q1-C, Q5-C)*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> <span style="font-weight:bold">**Detect WebAuthn browser support on page load**</span> and show a clear unsupported-browser message with a list of supported browsers if the API is unavailable. Do not implement a password fallback. <span style="font-style:italic">*(Q3-C)*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">5.</span> <span style="font-weight:bold">**Support multiple passkeys per user account.**</span> Provide a profile UI where authenticated users can register additional passkeys and remove existing ones. <span style="font-style:italic">*(Q4-B)*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">6.</span> <span style="font-weight:bold">**Store an extended user profile**</span> including: ID, display name, theme preference, default voting mode, notification settings, created_at, updated_at. Passkey credentials are stored in a separate <span style="color:#e6db74">`credentials`</span> table linked by user ID. <span style="font-style:italic">*(Q2-A, Q6-B)*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">7.</span> <span style="font-weight:bold">**Build a minimal profile page in this epic**</span> scoped to passkey management and display name editing only. Expose API endpoints for all preference fields (theme, default voting mode, notification settings), but defer the preferences UI to a later epic. <span style="font-style:italic">*(Q8-B)*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">8.</span> <span style="font-weight:bold">**Build registration and login UI pages**</span> with clear calls to action, loading states, and error handling for WebAuthn failures (user cancellation, timeout, hardware errors). <span style="font-style:italic">*(Briefing, Q3-C)*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">9.</span> <span style="font-weight:bold">**Do not implement account recovery.**</span> Users are responsible for registering passkeys on multiple devices. No recovery codes, no email-based recovery. <span style="font-style:italic">*(Q7-A)*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Acceptance Criteria
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Registration
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Given a new user on a supported browser, when they enter a display name and confirm passkey creation, then a user account is created and a passkey credential is stored.
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Login
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Given a registered user, when they initiate login and authenticate with their passkey, then they receive a JWT access token and a refresh token cookie.
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Session Management
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Given a valid access token, when an API request is made, then it is authorized without server-side session lookup.
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Passkey Management
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Given an authenticated user on their profile page, when they register an additional passkey, then the new credential is stored and both passkeys can be used for login.
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Profile
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Given an authenticated user, when they visit the profile page, then they can view and edit their display name and manage passkeys.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> The user preferences API endpoints (theme, default voting mode, notification settings) accept GET and PATCH requests and persist changes to the database.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Deliverables
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> <span style="font-weight:bold">**User database table**</span> — ID, display name, theme preference, default voting mode, notification settings, created_at, updated_at.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> <span style="font-weight:bold">**Credentials database table**</span> — credential ID, user ID, public key, sign count, transports, created_at. Supports multiple rows per user.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> <span style="font-weight:bold">**Registration API**</span> — <span style="color:#e6db74">`POST /auth/register`</span> — accepts display name, initiates WebAuthn ceremony, creates user + credential.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> <span style="font-weight:bold">**Login API**</span> — <span style="color:#e6db74">`POST /auth/login`</span> — initiates WebAuthn assertion, validates credential, returns JWT + sets refresh token cookie.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">5.</span> <span style="font-weight:bold">**Token refresh API**</span> — <span style="color:#e6db74">`POST /auth/refresh`</span> — validates refresh token cookie, issues new access JWT.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">6.</span> <span style="font-weight:bold">**Logout API**</span> — <span style="color:#e6db74">`POST /auth/logout`</span> — invalidates refresh token.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">7.</span> <span style="font-weight:bold">**Passkey management API**</span> — <span style="color:#e6db74">`GET/POST/DELETE /auth/passkeys`</span> — list, add, and remove passkeys for the authenticated user.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">8.</span> <span style="font-weight:bold">**User preferences API**</span> — <span style="color:#e6db74">`GET/PATCH /users/me`</span> — read and update display name and preference fields.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">9.</span> <span style="font-weight:bold">**Registration page UI**</span> — display name input, WebAuthn passkey creation flow, unsupported browser detection.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">10.</span> <span style="font-weight:bold">**Login page UI**</span> — WebAuthn passkey assertion flow, error handling.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">11.</span> <span style="font-weight:bold">**Profile page UI**</span> — display name editing, passkey list with add/remove. Preferences UI deferred.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Open Questions
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[ ] Choice A
+</span></span><span style="display:flex;"><span>[ ] Choice B (**recommended**)
+</span></span><span style="display:flex;"><span>[ ] Choice C
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;details&gt;
+</span></span><span style="display:flex;"><span>&lt;summary&gt;Answered Questions (Reference)&lt;/summary&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Q1: Session persistence strategy
+</span></span></span><span style="display:flex;"><span>**Selected: Option C — Short-lived JWT + refresh token**
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>The AI writes these questions and options into the epic&rsquo;s spec file so you can answer directly in the markdown. Work through one epic at a time. You&rsquo;re front-loading decisions that would otherwise blow up mid-implementation. Once every question has an answer, lock the epics and move on.</p>
+<p>Write your own <code>/brainstorm</code> skill to help you with this which analyzes the epic, refines the epic requierements through structured Q&amp;A until it reaches confidence level 90%.</p>
+<pre tabindex="0"><code>Now based on this requirements design workflow I want to create a
+skill that will follow this procedure: 1. analyze briefing and create
+epic requirement file if not existing. 2. write down the open questions about the requirements into the file. Marking recommended option that suitas our applicaiton goals. Options should have [ ] for
+easy user selection. 3. On second run the skill should reconcile the
+answered questions into the PRD requiremetns and directives and acceptance criteria. 4. Once the confidence higher than 90% it should
+stop and recommend writing a spec. For creation of this skill use
+claude code documentaion the skill should be called brainstorm and
+laying in the .claude/skills/brainstorm/SKILL.md file
+</code></pre><p>You now have a nice skill which you can use on every epic to refine the requirements and answer the open questions. Once the confidence is higher than 90% it should stop and recommend writing a spec.</p>
+<h1 id="step-4-write-a-spec-for-each-epic">Step 4: Write a Spec for Each Epic</h1>
+<p>Now the real work begins. For each epic, write a proper spec before touching any code:</p>
+<pre tabindex="0"><code>Based on the the @specs/epic-1-authentication.md
+pleae write a detailed spec, that includes a
+complete testing strategy, done definition,
+architecture and tech stack decisions, that will be
+possible to implement step by step incrementally to
+achieve requirements and ACs stated in the epic
+requirements. We apply TDD in our development
+process. The spec should have -spec.md suffix and be placed in the same folder @specs/
+</code></pre><p>This is a very long, detailed file now, covering Architecture Overview, Key Architectural Decisions, Tech Stack &amp; Versions, and detailed instructions for implementation. To give you an idea of the size of my file, it is about 800 lines long and 44 KB of text.</p>
+<p>Create your own <code>/write-spec</code> skill turn the epic into an implementation spec with architecture, testing strategy, acceptance criteria, incremental implementation plan, and verification checklist.</p>
+<h1 id="step-5-implement-epic-by-epic">Step 5: Implement Epic by Epic</h1>
+<p>Now you&rsquo;re ready to build. The rule: <strong>one epic per agent window</strong>.</p>
+<pre tabindex="0"><code>implement  @specs/epic-1-authentication-spec.md using this     
+workflow: 1. Analyze the specification. 2. Implement the tests   
+using TDD. 3. Implement the spec requirements. 4. Verify the     
+implementation by running tests. Fix implementation until the    
+tests are passing. 5. By the end provide a report on AC          
+implemented and passing test execution.  
+</code></pre><p>The AI has exactly the context it needs. The spec tells it precisely what to build.</p>
+<h1 id="step-6-automated-verification">Step 6: Automated Verification</h1>
+<p>We can now verify that everything was implemented. Write a <code>verify-epic</code> skill for that.</p>
+<pre tabindex="0"><code>I want to have a new skill, verify-epic that will take an epic 
+ # as an input, and make a report for each AC of the epic that   
+1. There is a test for each AC 
+2. There is code for each AC. 
+3.  The tests for each AC are passing. It should return PASSED (if   
+all ACs are implemented)/PARTIAL (if some AC are                 
+implemented)/FAILED (if any AC have significant problems) and    
+return the found gaps. 
+
+This skill will be used during            
+implementation to confirm the successful implementation and fix  
+the found gaps. 
+</code></pre><p>This will read the epic spec file, and for each AC it will check if there is a test for it, if there is code for it, and if the test is passing. It will then write a report to the epic spec file with the results.</p>
+<h1 id="when-things-go-wrong">When Things Go Wrong</h1>
+<p>They will. Here&rsquo;s what I learned:</p>
+<p><strong>If the AI builds something unexpected</strong> — go back to the spec. Nine times out of ten, the spec was ambiguous, not the AI.</p>
+<p><strong>If a feature keeps breaking across sessions</strong> — write it out explicitly in the spec. I had a case where playback ordering logic kept getting mangled every time the AI touched it. The fix was documenting the exact sequence of steps in the spec so clearly that there was no room for interpretation.</p>
+<p><strong>If the AI goes in circles on a bug</strong> — close the window, open a new one, describe only the bug and the relevant spec section. Fresh context helps.</p>
+<h1 id="other-skills">Other skills</h1>
+<p>To top that up, a architecture documentation can be created and be used by an architecture advisor agent to verify the architecture.</p>
+<h1 id="results">Results</h1>
+<p>Using this workflow,</p>
+<ul>
+<li>Fewer surprises during implementation</li>
+<li>Fewer frustrating &ldquo;that&rsquo;s not what I meant&rdquo; moments</li>
+<li>Much easier to context-switch back in after time away — the spec brings you up to speed instantly</li>
+<li>The AI produces higher quality code when working from a tight spec</li>
+</ul>
+<p>The first hour of writing and refining the spec feels like overhead. It isn&rsquo;t. It&rsquo;s the work that makes everything else go faster.</p>
+<h1 id="the-workflow-summarized">The Workflow, Summarized</h1>
+<pre tabindex="0"><code>briefing.md  →  roadmap.md  →  epics.md  →  specs/epic-N.md  →  implement  →  verify
+     ↑               ↑                           ↑                              ↑
+  your idea      iterate here               iterate here                  iterate until
+                 (direction)                 (precision)                  all green
+</code></pre><p>The further right you go, the more precise things get. Breadth first, then depth. Each layer builds on the last.</p>
+<p>Start vague. Get specific before you build. Keep the spec honest as you go.</p>
+<p>That&rsquo;s it.</p>
+</section>
+
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://owehrens.com/tags/claude"
+      >claude</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://owehrens.com/tags/sdd"
+      >sdd</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://owehrens.com/tags/cursor"
+      >cursor</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://owehrens.com/tags/ai"
+      >ai</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://owehrens.com/ai-coding-test-turned-to-product/"
+      ><span>AI coding test turned to product</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    
+
+
+<div
+class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+>
+
+
+
+</div>
+
+
+<footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+
+
+
+
+  
+
+  <div class="mr-auto">
+    &copy; 2009 - 2026
+    <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
+  </div>
+
+</footer>
+
+  </body>
+</html>

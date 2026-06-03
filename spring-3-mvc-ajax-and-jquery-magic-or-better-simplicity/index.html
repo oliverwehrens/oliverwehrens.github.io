@@ -120,7 +120,7 @@ web.xml
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.152.2">
+  <meta name="generator" content="Hugo 0.157.0">
 
   
   
@@ -255,6 +255,9 @@ web.xml
       
       
       
+      <span class="mx-1">&middot;</span>
+      <span>Oliver Wehrens</span>
+      
       <span class="text-gray">- 3 min</span>
     </div>
     
@@ -272,7 +275,7 @@ I'm playing around with some web frameworks lately and to see what's in store wi
 The directory layout (using maven) should look like this:<img alt="Directory Layout" src="/static/Spring3MVCFiles.png" title="Ajax result" width="329" height="308" />
 web.xml
 </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;web-app</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://java.sun.com/xml/ns/javaee&#34;</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">xmlns:web=</span><span style="color:#e6db74">&#34;http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span>
@@ -298,7 +301,7 @@ web.xml
 </span></span></code></pre></div><p>The web.xml holds no secrets. The Dispatcher servlet is defined and it should react on everything *.html.</p>
 <p>Since we named our Servlet &lsquo;spring&rsquo; we need to add a servlet configuration for that. It goes in WEB-INF as well.</p>
 <p>xml</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;beans</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans&#34;</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">xmlns:p=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/p&#34;</span>
@@ -320,7 +323,7 @@ web.xml
 </span></span></code></pre></div><p>It uses the component scanning feature of spring and instructs spring to check the package &lsquo;com.maxheapsize.springmvc3.controller&rsquo; for controllers. Furthermore a url based view resolver is defined which uses Jstl and looks into /WEB-INF/jsp for jsp with the ending &lsquo;.jsp&rsquo;.</p>
 <p>In  WEB-INF/jsp/hello.jsp we define a jQuery snippet for the Ajax request and provide a button which we should push if we want to know the time.</p>
 <p>jsp hello.jsp</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;jsp:useBean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;message&#34;</span> <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;request&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;java.lang.String&#34;</span><span style="color:#f92672">/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;jsp:useBean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;message&#34;</span> <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;request&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;java.lang.String&#34;</span><span style="color:#f92672">/&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;html&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;head&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;title&gt;</span>Spring MVC Ajax Demo<span style="color:#f92672">&lt;/title&gt;</span>
@@ -346,7 +349,7 @@ web.xml
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/html&gt;</span>
 </span></span></code></pre></div><p>How does Spring now know which classes or methods to call? Here comes the nice part about it.</p>
 <p>java HelloWorldController.java</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.maxheapsize.springmvc3.controller;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.maxheapsize.springmvc3.controller;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Controller;
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.RequestMapping;
@@ -400,7 +403,7 @@ in their pom.xml.
 <li>The method you are calling has a signature like:
 
 </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/demo&#34;</span>, method<span style="color:#f92672">=</span> RequestMethod.<span style="color:#a6e22e">GET</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/demo&#34;</span>, method<span style="color:#f92672">=</span> RequestMethod.<span style="color:#a6e22e">GET</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">@ResponseBody</span> MySimpleDataObject <span style="color:#a6e22e">doSomething</span>(<span style="color:#a6e22e">@RequestParam</span> name, <span style="color:#a6e22e">@RequestParam</span> email)
 </span></span></code></pre></div><!-- raw HTML omitted -->
 </section>

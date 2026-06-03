@@ -114,7 +114,7 @@ Reality is, we have to tweak the Excel sheets. We need to put in imports of our 
   <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.152.2">
+  <meta name="generator" content="Hugo 0.157.0">
 
   
   
@@ -246,6 +246,9 @@ Reality is, we have to tweak the Excel sheets. We need to put in imports of our 
       
       
       
+      <span class="mx-1">&middot;</span>
+      <span>Oliver Wehrens</span>
+      
       <span class="text-gray">- 4 min</span>
     </div>
     
@@ -260,7 +263,7 @@ We have been using our own flavor of <a href="http://fit-for-rules.sourceforge.n
 <p>So what did we do ? Well why not try to get things working the way we used to do it ? TestNG anyone ?</p>
 <p>There are <!-- raw HTML omitted -->many pros<!-- raw HTML omitted --> to use unit testing but also some cons. <!-- raw HTML omitted -->The biggest issue is that we will loose the direct communication to the business analyst<!-- raw HTML omitted -->. It&rsquo;s always better if someone else writes the test and I just have to implement the solution. Maybe we can find another solution involving Active Spec or DSL. For now we stick to unit tests and the task the we have to make sure we convert every Excel test case to java code (but hey, that&rsquo;s what our code reviews are for).</p>
 <p>Checkout our current base class for testing our rules:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AbstractRulesTest</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AbstractRulesTest</span> {
 </span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> String<span style="color:#f92672">[]</span> <span style="color:#a6e22e">getRulesFileNames</span>();
 </span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String GET_FINDINGS <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;import com.maxheapsize.RulesFinding;&#34;</span> <span style="color:#f92672">+</span>
 </span></span><span style="display:flex;"><span>                                                                           <span style="color:#e6db74">&#34;query \&#34;getAllRulesFindings\&#34;\n&#34;</span> <span style="color:#f92672">+</span>
@@ -324,7 +327,7 @@ We have been using our own flavor of <a href="http://fit-for-rules.sourceforge.n
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>All my rules insert a RulesFinding (and only one at the moment) into the working memory when triggered.  The rest is pretty easy. You subclass it, overwrite getRulesFileNames and call fireRules with a set of objects (your tests) which need be insert into the working memory. To get the finding back you need to execute an already inserted  query which needs to have an identifier (line 3, 20, 52, 54). It will contain the result of your rule execution.</p>
 <p>Sample code would look like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RulesTest</span> <span style="color:#66d9ef">extends</span> AbstractRulesTest {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RulesTest</span> <span style="color:#66d9ef">extends</span> AbstractRulesTest {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">private</span> Set facts;
 </span></span><span style="display:flex;"><span>
