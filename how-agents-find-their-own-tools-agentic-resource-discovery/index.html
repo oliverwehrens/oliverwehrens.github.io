@@ -18,9 +18,9 @@
 <h2 id="the-problem">The problem</h2>
 <p>More and more websites are offering capabilities. Very often that are MCPs server going with that. But how do agents know about it? If you don’t have out of band communication with the LLM provider, I think there is no way. I by myself waiting for a solution. I have a user case where I want to provide more information in a structure way to agents and I can’t do that on the website, in html for reason. There are discussions out there on how to do that, like llm.txt or such. So far no clear winner.</p>
 <p>That’s the question <strong>Agentic Resource Discovery</strong> tries to answer. It’s a draft
-spec — v0.9, written by people from Google, Microsoft, and Hugging Face — and it
+spec (v0.9, written by people from Google, Microsoft, and Hugging Face) that
 describes how a domain can publish a catalog of its agentic resources (MCP
-servers, A2A agents, skills, APIs) so an agent can <em>find</em> them instead of being
+servers, A2A agents, skills, APIs) so an agent can find them instead of being
 told about them up front.</p>
 <p>Announcement from <a href="https://developers.googleblog.com/announcing-the-agentic-resource-discovery-specification/">Google</a>, <a href="https://commandline.microsoft.com/agentic-resource-discovery-specification-ard/">Microsoft</a>. Spec is available at <a href="https://agenticresourcediscovery.org/">agenticresourcediscovery.org</a>.</p>
 <p>I wanted to see if it actually holds together end to end. So I built a demo. It’s
@@ -34,54 +34,51 @@ pasted its URL into my config, restarted (out of band communication). If I didn�
 <em>do you have any tools?</em> The domain answers with a catalog. The agent spots a
 weather tool in it, reads how to call it, calls it, and tells me it’s 21°C and
 windy in Berlin. I never touched a config file. Now imagine this is a service allowing agents to better interact with the website. Weather service is not a good example here but an easy to implement one. It can also be a service offering better search capabilities for agents.</p>
-<p>That’s the whole pitch. The agent finds the tool at the moment it needs it — the
-same way your browser finds a site’s RSS feed without you registering anything.
-The rest of this post is just <em>how</em> that question — “do you have any tools?” —
-gets asked and answered.</p>
+<p>So the agent finds the tool at the moment it needs it, the same way your browser
+finds a site’s RSS feed without you registering anything. The rest of this post is
+about how that question — “do you have any tools?” — gets asked and answered.</p>
 <h2 id="so-what-is-ard">So what is ARD?</h2>
-<p>The thing I like about ARD is how little it tries to do.</p>
-<p>It handles <strong>discovery, not invocation</strong>. It tells an agent <em>where</em> a tool lives
-and <em>what kind</em> of thing it is. It says nothing about how you call it — that’s
+<p>What I like about ARD is that it does very little.</p>
+<p>It only handles discovery, not the actual call. It tells an agent where a tool
+lives and what kind of thing it is, and says nothing about how you call it. That’s
 left to the tool’s own protocol. In my demo the tool is an MCP server, so the
-actual call happens over MCP. ARD walks you up to the front door and then steps
-aside.</p>
-<p>A few ideas hold the whole thing up:</p>
+actual call happens over MCP. ARD just gets you to the endpoint.</p>
+<p>A few ideas hold the whole thing together:</p>
 <ul>
 <li>
-<p><strong>A thin, type-tagged envelope.</strong> Every catalog entry carries a <code>type</code> field
-that’s just an IANA media type — <code>application/mcp-server-card+json</code>,
-<code>application/a2a-agent-card+json</code>, and so on. ARD doesn’t care what’s inside.
-The type tells the agent which protocol to speak next. One catalog can list an
-MCP server, an A2A agent, and a dataset side by side.</p>
+<p><strong>A type-tagged envelope.</strong> Every catalog entry carries a <code>type</code> field that’s
+just an IANA media type — <code>application/mcp-server-card+json</code>,
+<code>application/a2a-agent-card+json</code>, and so on. ARD doesn’t care what’s inside; the
+type tells the agent which protocol to speak next. One catalog can list an MCP
+server, an A2A agent, and a dataset side by side.</p>
 </li>
 <li>
 <p><strong>Names anchored to domains.</strong> Every entry has an identifier like
 <code>urn:air:weather.example:mcp:weather</code>. The middle bit has to be a real domain.
-That separates a tool’s <em>name</em> (a stable thing) from its <em>location</em> (a thing
-that moves), and it gives a trust anchor — you can’t claim
-<code>urn:air:google.com:…</code> unless you actually control <code>google.com</code>.</p>
+That separates a tool’s name (which is stable) from its location (which moves),
+and it gives you a trust anchor: you can’t claim <code>urn:air:google.com:…</code> unless
+you actually control <code>google.com</code>.</p>
 </li>
 <li>
-<p><strong>Discovery built to live outside the model.</strong> Most agents pick tools by
-dumping every tool description into the prompt and reasoning over the pile. That
-doesn’t scale past a certain point — you run out of context window. ARD’s bigger
-idea is to push selection into a dedicated search service, so an agent can ask
-“find me a flight-booking tool with a SOC2 attestation” and get back a short
-list, without paying for it in tokens.</p>
+<p><strong>Discovery built to live outside the model.</strong> Most agents pick tools by dumping
+every tool description into the prompt and reasoning over the pile. That doesn’t
+scale — you run out of context window. ARD’s bigger idea is to push selection
+into a dedicated search service, so an agent can ask “find me a flight-booking
+tool with a SOC2 attestation” and get back a short list without paying for it in
+tokens.</p>
 </li>
 </ul>
-<p>That last idea splits the world in two. <strong>Static discovery</strong> is publishers
-hosting a plain JSON file. <strong>Dynamic discovery</strong> is registries crawling those
-files, indexing them, and offering a search API across the whole network. My demo
-lives in the static half — and that’s where the interesting part is, because
-that’s where the four mechanisms come in.</p>
+<p>That last idea splits the world in two. Static discovery is publishers hosting a
+plain JSON file. Dynamic discovery is registries crawling those files, indexing
+them, and offering a search API across the whole network. My demo lives in the
+static half, which is where the four mechanisms come in.</p>
 <h2 id="the-four-ways-an-agent-can-find-your-tools">The four ways an agent can find your tools</h2>
-<p>A publisher can advertise the <em>same</em> catalog in four different ways, and a good agent tries all of them. None of them is new technology. That’s the whole point — ARD reuses plumbing the web already has.</p>
+<p>A publisher can advertise the same catalog in four different ways, and a good agent tries all of them. None of them is new technology, which is the whole point: ARD reuses plumbing the web already has.</p>
 <h3 id="1-a-well-known-url">1. A well-known URL</h3>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>https://example.com/.well-known/ai-catalog.json</span></span></code></pre>
-<p>The canonical path. Same idea as <code>/.well-known/security.txt</code> — a fixed,
-predictable place where a thing always lives. You host one JSON file and you’re
-discoverable. No DNS, no extra files, nothing clever.</p>
+<p>The canonical path. Same idea as <code>/.well-known/security.txt</code>: a fixed, predictable
+place where a thing always lives. You host one JSON file and you’re discoverable.
+No DNS, no extra files.</p>
 <p>This is the simplest mechanism. If you only ever do one of these, do this one. One caveat, this means you are able to modify your <code>/.well-known</code> directory. Not every software allows you to do that.</p>
 <h3 id="2-a-line-in-robotstxt">2. A line in robots.txt</h3>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span># robots.txt</span></span>
@@ -93,27 +90,27 @@ where your <em>tool</em> index is. Exact same pattern.</p>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">head</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">link</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> rel</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"ai-catalog"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> href</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"/.well-known/ai-catalog.json"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">head</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span></code></pre>
-<p>This is the same move browsers use to find your RSS feed or your stylesheet — a
+<p>This is the same move browsers use to find your RSS feed or your stylesheet: a
 <code>&#x3C;link></code> tag in the page head. It puts discovery right next to the human-facing
-site. An agent that’s already on your page (because a user sent it there) finds
-your tools without having to guess. It does not say anything about how the agent gets to your source. Later javascript injected link might work or not - depends on the agent scraper implementation.</p>
+site, so an agent that’s already on your page (because a user sent it there) finds
+your tools without having to guess. It does not say anything about how the agent gets to your source. A link injected later by javascript might work or not - depends on the agent scraper implementation.</p>
 <h3 id="4-a-dns-record">4. A DNS record</h3>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>_catalog._agents.example.com.  3600  IN  TXT  "https://example.com/.well-known/ai-catalog.json"</span></span>
 <span class="line"><span>_search._agents.example.com.   3600  IN  TXT  "https://registry.example.com/api/v1/"</span></span></code></pre>
-<p>This is the one I find most interesting. Here discovery happens at the <strong>naming
-layer</strong> — before the agent makes a single HTTP request to your site. Under an
+<p>This is the one I find most interesting. Here discovery happens at the naming
+layer, before the agent makes a single HTTP request to your site. Under an
 <code>_agents</code> label you publish two kinds of record: one pointing at a static catalog,
 one pointing at a live, searchable registry.</p>
 <p>The spec asks for SVCB records (the modern DNS service-binding type). In practice
 plenty of DNS providers still can’t author those, so a plain TXT record carrying
-the URL is the reliable fallback — and that’s what I’d reach for first.</p>
-<p>Two things make this mechanism stand out. It’s the only one that works <em>before</em>
-you touch the website at all. And it’s the only one that can point at a <strong>dynamic
-registry</strong> instead of a static file — which is the bridge to the search-first
-future I mentioned earlier.</p>
+the URL is the reliable fallback, and that’s what I’d reach for first.</p>
+<p>Two things make this mechanism stand out. It’s the only one that works before you
+touch the website at all, and it’s the only one that can point at a dynamic
+registry instead of a static file, which is the bridge to the search-first future
+I mentioned earlier.</p>
 <h3 id="why-four">Why four?</h3>
-<p>Not for redundancy’s sake. Different agents reach into different layers — one is
-crawling HTML, one is resolving DNS, one just knows the well-known path. A
+<p>It’s not really about redundancy. Different agents reach into different layers: one
+is crawling HTML, one is resolving DNS, one just knows the well-known path. A
 publisher who advertises all four is findable by all of them. The spec doesn’t
 even rank them; if they all point at the same catalog, they’re equal.</p>
 <h2 id="what-about-more-than-one-catalog">What about more than one catalog?</h2>
@@ -125,18 +122,18 @@ assumes there’s exactly one.</p>
 <p>Nothing actually says there has to be. A <code>robots.txt</code> can carry more than one
 <code>Agentmap:</code> line, the same way it can list several sitemaps. You can drop more
 than one <code>&#x3C;link rel="ai-catalog"></code> into a page head. You can publish more than one
-DNS record. The spec <em>does</em> describe nested catalogs — an entry can itself point
-to a sub-catalog, say one per department — so hierarchy is clearly intended.
-Several independent catalogs sitting side by side on one domain, though? That’s
-neither blessed nor banned. It’s just… not described.</p>
+DNS record. The spec does describe nested catalogs (an entry can itself point to a
+sub-catalog, say one per department) so hierarchy is clearly intended. Several
+independent catalogs sitting side by side on one domain, though, is neither blessed
+nor banned. It’s just not described.</p>
 <p>So conceptually it’s allowed. You could split your tools across a few catalogs
 today and nothing would break.</p>
-<p>The open question is what an agent <em>does</em> with that. In my testing I wrote an agent trying
-the four mechanisms, loads the first catalog it finds, and stops. A
-different agent might gather every catalog it can reach and merge them. Without
-the spec saying which, you can’t rely on either. And that matters the moment this
+<p>The open question is what an agent does with that. In my testing I wrote an agent
+that tries the four mechanisms, loads the first catalog it finds, and stops. A
+different agent might gather every catalog it can reach and merge them. Without the
+spec saying which, you can’t rely on either. And that matters the moment this
 leaves the demo stage: if a publisher splits their tools across three catalogs and
-agents only ever read one, two-thirds of those tools are invisible — and the
+agents only ever read one, two-thirds of those tools are invisible, and the
 publisher has no way to know.</p>
 <p>For a v0.9 draft, fair enough. But it’s exactly the kind of detail a real standard
 has to pin down before anyone leans on it.</p>
@@ -160,18 +157,18 @@ has to pin down before anyone leans on it.</p>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  ]</span></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
-<p>From here the agent does the obvious things. It <strong>validates</strong> the file against
-the spec’s own schema — so a malformed catalog gets caught, not trusted. It reads
+<p>From here the agent does the obvious things. It validates the file against the
+spec’s own schema, so a malformed catalog gets caught instead of trusted. It reads
 the entry, sees it’s an MCP server, and follows the link to find the actual
-endpoint and tool list. It connects and asks the server, live, what tools it has
-— rather than trusting whatever the file claimed.</p>
-<p>Then comes the only step that needs a brain. Given a goal like <em>“what’s the
-weather in Berlin?”</em>, the agent picks the right tool and fills in its arguments.</p>
-<p>And then it actually calls the tool — a real round-trip to a real weather API —
-and prints the answer.</p>
+endpoint and tool list. Then it connects and asks the server, live, what tools it
+has, rather than trusting whatever the file claimed.</p>
+<p>Then comes the only step that needs a brain. Given a goal like “what’s the weather
+in Berlin?”, the agent picks the right tool and fills in its arguments.</p>
+<p>And then it actually calls the tool (a real round-trip to a real weather API) and
+prints the answer.</p>
 <p>That’s the bit I wanted to prove. ARD carried the agent from a bare domain name
 all the way to “here’s an endpoint and a tool schema,” and then got out of the
-way. MCP did the rest. The handoff is clean.</p>
+way. MCP did the rest.</p>
 <h2 id="what-about-a-plain-rest-api">What about a plain REST API?</h2>
 <p>MCP is great but most of the capabilities sitting on the web
 today aren’t MCP servers. They’re plain old REST APIs. The nice thing about ARD’s
@@ -180,38 +177,34 @@ with a different <code>type</code>.</p>
 <p>Instead of pointing at an MCP server card, the entry points at an OpenAPI
 document:</p>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">{</span></span>
-<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  "identifier"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"urn:ai:adr-demo.4004.fyi:rest:weather"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  "identifier"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"urn:air:adr-demo.4004.fyi:rest:weather"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  "displayName"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Weather REST API"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  "type"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"application/openapi+json"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  "url"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"https://adr-demo.4004.fyi/openapi.json"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  "description"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Current weather for a city over plain HTTPS."</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  "representativeQueries"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: [</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"what is the weather in Berlin"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">]</span></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
-<p>Discovery is <em>identical</em> — same four mechanisms, same catalog, same validation.
-Only the very last step changes. The agent sees <code>application/openapi+json</code>,
-fetches the OpenAPI doc, and now it knows everything it needs: the base URL, the
-path, the method, the parameters, the auth.</p>
-<p>From there it’s just an HTTP call. No client library, no special transport — the
+<p>Discovery is identical: same four mechanisms, same catalog, same validation. Only
+the very last step changes. The agent sees <code>application/openapi+json</code>, fetches the
+OpenAPI doc, and now it knows everything it needs: the base URL, the path, the
+method, the parameters, the auth.</p>
+<p>From there it’s just an HTTP call. No client library, no special transport, the
 thing every language and every agent already knows how to make:</p>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>GET https://adr-demo.4004.fyi/weather?city=Berlin</span></span>
 <span class="line"><span>Accept: application/json</span></span></code></pre>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">{ </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"city"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Berlin"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"temperature_c"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">21.3</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"wind_kmh"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">12</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"humidity"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">58</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> }</span></span></code></pre>
-<p>The discovery layer is the same whether
-the thing on the other end speaks MCP, A2A, or plain REST. The <code>type</code> field is the
-fork in the road — it tells the agent which kind of door it just found, and the
-agent brings its own key. ARD never has to learn about REST, or MCP, or whatever
+<p>The discovery layer is the same whether the thing on the other end speaks MCP, A2A,
+or plain REST. The <code>type</code> field tells the agent which kind of endpoint it found, and
+the agent handles the rest. ARD never has to learn about REST, or MCP, or whatever
 comes next. It just carries the label.</p>
-<p>Since this is still a draft: the exact media type for “this is
-an OpenAPI-described REST API” isn’t pinned down — the spec leans on each artifact
-ecosystem to define its own. <code>application/openapi+json</code> is an obvious candidate,
-but don’t be surprised if the string the world settles on ends up a little
-different.</p>
+<p>Since this is still a draft, the exact media type for “this is an OpenAPI-described
+REST API” isn’t pinned down; the spec leans on each artifact ecosystem to define
+its own. <code>application/openapi+json</code> is an obvious candidate, but don’t be surprised
+if the string the world settles on ends up a little different.</p>
 <p>Just to make sure. The REST endpoint does not exists in my demo service. Id di not built it.</p>
 <h2 id="try-it-yourself">Try it yourself</h2>
-<p>The whole thing is running at
-<a href="https://adr-demo.4004.fyi">adr-demo.4004.fyi</a>. Point an agent at the domain, give
-it a goal, and watch it discover the catalog all four ways, validate it, list the
-weather tool, pick it, and call it.</p>
+<p>The demo is running at
+<a href="https://adr-demo.4004.fyi">adr-demo.4004.fyi</a>. Point an agent at the domain and try it out.</p>
 <p>It’s a really tiny example — one weather tool — but the idea is clear.</p>
 <p>My example agent does this:.</p>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
@@ -264,12 +257,12 @@ weather tool, pick it, and call it.</p>
 <span class="line"><span>✓ Tool call complete.</span></span></code></pre>
 <h2 id="thoughts">Thoughts</h2>
 <p>My demo stops at static discovery, but that <code>_search._agents</code> DNS record is a
-noteworthy. The four publishing mechanisms are how <em>one</em> domain becomes findable.
-The dynamic layer — registries crawling those files and exposing a search API — is
-how the <em>whole ecosystem</em> becomes searchable. That’s the part that actually
-matters at scale: an agent that asks a registry for what it needs instead of
+also nice. The four publishing mechanisms are how <em>one</em> domain becomes findable.</p>
+<p>The dynamic layer — registries crawling those files and exposing a search API — is
+how a <em>whole ecosystem</em> becomes searchable. That’s the part that actually
+makes it work at scale: an agent that asks a registry for what it needs instead of
 carrying the entire toolbox around in its context.</p>
-<p>What I keep coming back to is how simple the four mechanisms are:</p>
+<p>And it is still the simple four mechanisms:</p>
 <ul>
 <li>well-known path</li>
 <li>line in robots.txt</li>
@@ -277,10 +270,10 @@ carrying the entire toolbox around in its context.</p>
 <li>DNS record</li>
 </ul>
 <p>We’ve been using
-every one of these for decades to help machines find things on the web. ARD just
+every one of these already to help machines find things on the web. ARD just
 points them at a new kind of thing.</p>
 <p>I don’t know if ARD specifically is the standard that wins — it’s still a draft,
-and this space moves fast. But I’m fairly convinced the <em>shape</em> is right. The out of band communication of knowing where tools are has to end. Letting agents discover
-tools the way browsers and crawlers always have feels like the obvious next step.</p>
+and this space moves really fast. But I’m fairly convinced the <em>idea</em> is right. The out of band communication of knowing where tools are has to end. Letting agents discover
+tools on websites is the future.</p>
 <p>If you want to see it work, it’s at
 <a href="https://adr-demo.4004.fyi">adr-demo.4004.fyi</a>.</p>  </div> <footer class="article__footer" data-astro-cid-zm77yjld> <a href="/" class="article__back" data-astro-cid-zm77yjld>← All stories</a> </footer> </article>  </main> <footer class="site-footer" data-astro-cid-37fxchfa> <div class="container site-footer__inner" data-astro-cid-37fxchfa> <span data-astro-cid-37fxchfa>© 2026 Oliver Wehrens</span> <span class="site-footer__links" data-astro-cid-37fxchfa> <a href="/rss.xml" data-astro-cid-37fxchfa>RSS</a> <a href="/tags/" data-astro-cid-37fxchfa>Topics</a> <a href="/readme/" data-astro-cid-37fxchfa>readme</a> </span> </div> </footer>  </body> </html> 
