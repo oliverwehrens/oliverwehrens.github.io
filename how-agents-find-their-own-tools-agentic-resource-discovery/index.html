@@ -213,8 +213,9 @@ different.</p>
 it a goal, and watch it discover the catalog all four ways, validate it, list the
 weather tool, pick it, and call it.</p>
 <p>It’s a really tiny example — one weather tool — but the idea is clear.</p>
-<p>My example agent does this (have not yet setup the DNS discovery).</p>
-<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>╔════════════════════════════════════════════════╗</span></span>
+<p>My example agent does this:.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
+<span class="line"><span>╔════════════════════════════════════════════════╗</span></span>
 <span class="line"><span>║   ARD Agent — Agentic Resource Discovery demo  ║</span></span>
 <span class="line"><span>╚════════════════════════════════════════════════╝</span></span>
 <span class="line"><span></span></span>
@@ -225,9 +226,9 @@ weather tool, pick it, and call it.</p>
 <span class="line"><span>  ✓ 1. Well-Known URI          https://adr-demo.4004.fyi/.well-known/ai-catalog.json</span></span>
 <span class="line"><span>  ✓ 2. robots.txt Agentmap     Agentmap: https://adr-demo.4004.fyi/.well-known/ai-catalog.json</span></span>
 <span class="line"><span>  ✓ 3. HTML &#x3C;link>             &#x3C;link rel="ai-catalog"> → https://adr-demo.4004.fyi/.well-known/ai-catalog.json</span></span>
-<span class="line"><span>  · 4. DNS Service Binding     no _catalog._agents.adr-demo.4004.fyi SVCB/TXT records</span></span>
+<span class="line"><span>  ✓ 4. DNS Service Binding     TXT _catalog._agents.adr-demo.4004.fyi → https://adr-demo.4004.fyi/.well-known/ai-catalog.json</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>Discovered the catalog via 3/4 mechanisms.</span></span>
+<span class="line"><span>Discovered the catalog via 4/4 mechanisms.</span></span>
 <span class="line"><span>✓ Loading catalog via "Well-Known URI": https://adr-demo.4004.fyi/.well-known/ai-catalog.json</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>▸ STEP 2 — Fetch &#x26; validate catalog</span></span>
@@ -235,11 +236,11 @@ weather tool, pick it, and call it.</p>
 <span class="line"><span>  specVersion    1.0</span></span>
 <span class="line"><span>  host           ARD Demo Publisher</span></span>
 <span class="line"><span>  entries        1</span></span>
-<span class="line"><span>✓ Manifest is valid against ai-catalog.schema.json (Draft 2020-12).</span></span>
+<span class="line"><span>✓ Manifest is valid against ai-catalog.schema.json.</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>▸ STEP 3 — Catalog entries &#x26; tools</span></span>
 <span class="line"><span>──────────────────────────────────</span></span>
-<span class="line"><span>  [MCP] Weather MCP Server  urn:ai:weather.example:mcp:weather</span></span>
+<span class="line"><span>  [MCP] Weather MCP Server  urn:air:weather.example:mcp:weather</span></span>
 <span class="line"><span>      capabilities: WeatherTool, get_weather</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>Tools (1):</span></span>
@@ -258,7 +259,7 @@ weather tool, pick it, and call it.</p>
 <span class="line"><span>─────────────────────────────────────────────────</span></span>
 <span class="line"><span>  endpoint       https://adr-demo.4004.fyi/mcp</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>  Current weather in Berlin, State of Berlin, Germany: 26.4°C, wind 8.3 km/h, humidity 33% (observed 2026-06-22T12:45).</span></span>
+<span class="line"><span>  Current weather in Berlin, State of Berlin, Germany: 23.4°C, wind 9.2 km/h, humidity 49% (observed 2026-06-22T19:45).</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>✓ Tool call complete.</span></span></code></pre>
 <h2 id="thoughts">Thoughts</h2>
