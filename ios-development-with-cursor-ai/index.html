@@ -1,279 +1,19 @@
-<!doctype html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<html
-  class="not-ready lg:text-base"
-  style="--bg: "
-  lang="en-us"
->
-  <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>iOS Development Setup with Cursor AI - Oliver Wehrens</title>
-
-  
-  <meta name="theme-color" />
-
-  
-  
-  
-  
-  <meta name="description" content="A few days ago I started to work with cursor and iOS development. Here is my setup so you get a head start on the setup.
-Setup
-Xcode
-Yes you still need it to have it installed. The initial project needs to be setup with Xcode.
-Cursor Extenstions
-Swift
-Extension: Swift
-This extension adds language support for Swift to Visual Studio Code. It supports:
-
-Code completion
-Jump to definition, peek definition, find all references, symbol search
-Error annotations and apply suggestions from errors
-Automatic generation of launch configurations for debugging with CodeLLDB
-Automatic task creation
-Package dependency view
-Test Explorer view
-
-SweetPad
-Extension SweetPad" />
-  <meta name="author" content="Oliver Wehrens" />
-  
-
-  
-  
-  
-  
-  
-  
-  <link rel="preload stylesheet" as="style" href="https://owehrens.com/main.min.css" />
-
-
-  
-  
-  
-  
-  
-
-  
-  
-  <link rel="preload" as="image" href="https://owehrens.com/linkedin.svg" />
-  
-  <link rel="preload" as="image" href="https://owehrens.com/bluesky.svg" />
-  
-  <link rel="preload" as="image" href="https://owehrens.com/speakerdeck.svg" />
-  
-  <link rel="preload" as="image" href="https://owehrens.com/rss.svg" />
-  
-  
-
-  
-  
-  <script
-    defer
-    src="https://owehrens.com/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad();"
-  ></script>
-  
-
-  
-  
-  
-
-  
-  <link rel="icon" href="https://owehrens.com/favicon.ico" />
-  <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
-
-  
-  <meta name="generator" content="Hugo 0.157.0">
-
-  
-  
-  
-  
-  
-  
-  <meta itemprop="name" content="iOS Development Setup with Cursor AI">
-  <meta itemprop="description" content="How to setup Cursor AI for iOS Development.">
-  <meta itemprop="datePublished" content="2025-02-08T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-02-08T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1481">
-  <meta itemprop="keywords" content="Ai,Ios,Cursor">
-  
-  <meta property="og:url" content="https://owehrens.com/ios-development-with-cursor-ai/">
-  <meta property="og:site_name" content="Oliver Wehrens">
-  <meta property="og:title" content="iOS Development Setup with Cursor AI">
-  <meta property="og:description" content="How to setup Cursor AI for iOS Development.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-08T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-08T00:00:00+00:00">
-    <meta property="article:tag" content="Ai">
-    <meta property="article:tag" content="Ios">
-    <meta property="article:tag" content="Cursor">
-
-  
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="iOS Development Setup with Cursor AI">
-  <meta name="twitter:description" content="How to setup Cursor AI for iOS Development.">
-
-  
-  
-  
-  <link rel="canonical" href="https://owehrens.com/ios-development-with-cursor-ai/" />
-  
-  
-<script defer src="https://t.4004.fyi/script.js" data-website-id="ae7b9a21-3055-4b46-bc57-15eb0c646e2e"></script>
-</head>
-
-  <body class="text-black duration-200 ease-out ">
-    <div class="mx-auto pt-2 flex flex-col justify-center items-center">
-    <div>
-        <a href="https://owehrens.com/">
-            <img
-                    class="my-0 aspect-square  rounded-full "
-                    src="/img/oliver_square.jpg"
-                    alt="Oliver Wehrens"
-            />
-        </a>
-    </div>
-
-    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Mentor. Dad.</div>
-
-
-    <div>
-        
-        <nav
-                class="mt-5 flex justify-center space-x-10 items-center "
-        >
-            
-            <a
-                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-                    style="--url: url(./linkedin.svg)"
-                    href="https://linkedin.com/in/oliverwehrens
-          "
-                    target="_blank"
-                    rel="me"
-            >
-                linkedin
-            </a>
-            
-            <a
-                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-                    style="--url: url(./bluesky.svg)"
-                    href="https://bsky.app/profile/owehrens.com"
-                    target="_blank"
-                    rel="me"
-            >
-                bluesky
-            </a>
-            
-            <a
-                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-                    style="--url: url(./speakerdeck.svg)"
-                    href="https://speakerdeck.com/owehrens
-          "
-                    target="_blank"
-                    rel="me"
-            >
-                speakerdeck
-            </a>
-            
-            <a
-                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-                    style="--url: url(./rss.svg)"
-                    href="https://owehrens.com/rss.xml "
-                    target="_blank"
-                    rel="alternate"
-            >
-                rss
-            </a>
-            
-        </nav>
-        
-    </div>
-
-</div>  
-
-
-    
-  
-
-
-    <main
-      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
-    >
-      
-
-<article>
-  <header class="mb-16">
-    Oliver Wehrens
-    <h1 class="!my-0 pb-2.5 article-title">iOS Development Setup with Cursor AI</h1>
-
-    
-    <div class="text-sm antialiased opacity-60">
-      
-      <time>Feb 8, 2025</time>
-      
-      
-      
-      
-      <span class="mx-1">&middot;</span>
-      <span>Oliver Wehrens</span>
-      
-      <span class="text-gray">- 7 min</span>
-    </div>
-    
-  </header>
-
-  <section><p><a href="https://owehrens.com/the-return-of-product-and-requirements-development-writing-software-without-being-a-developer/">A few days ago</a> I started to work with cursor and iOS development. Here is my setup so you get a head start on the setup.</p>
+<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>iOS Development Setup with Cursor AI · Oliver Wehrens</title><meta name="description" content="How to setup Cursor AI for iOS Development."><link rel="canonical" href="https://owehrens.com/ios-development-with-cursor-ai/"><link rel="alternate" type="application/rss+xml" title="Oliver Wehrens" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta property="og:type" content="article"><meta property="og:site_name" content="Oliver Wehrens"><meta property="og:title" content="iOS Development Setup with Cursor AI · Oliver Wehrens"><meta property="og:description" content="How to setup Cursor AI for iOS Development."><meta property="og:url" content="https://owehrens.com/ios-development-with-cursor-ai/"><meta name="twitter:card" content="summary_large_image"><script defer src="http://t.4004.fyi/script.js" data-website-id="ae7b9a21-3055-4b46-bc57-15eb0c646e2e"></script><script>
+      (() => {
+        try {
+          const stored = localStorage.getItem('theme');
+          const theme =
+            stored ||
+            (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.dataset.theme = theme;
+        } catch {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/_slug_.Ckz86HID.css">
+<style>.media-badge[data-astro-cid-uj44zf3t]{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.09em;padding:.15em .5em;border-radius:2px;color:var(--accent);background:var(--accent-soft)}.tag-chip[data-astro-cid-q2wpt7bd]{display:inline-block;font-size:var(--step--1);color:var(--ink-soft);text-decoration:none;padding:.1em .55em;border:1px solid var(--rule);border-radius:999px;transition:color .15s,border-color .15s}.tag-chip[data-astro-cid-q2wpt7bd]:before{content:"#";color:var(--muted);margin-right:.1em}.tag-chip[data-astro-cid-q2wpt7bd]:hover{color:var(--accent);border-color:var(--accent)}
+.article[data-astro-cid-zm77yjld]{padding-block:var(--space-4)}.article__header[data-astro-cid-zm77yjld]{margin-bottom:var(--space-4);padding-bottom:var(--space-3);border-bottom:1px solid var(--rule)}.article__meta[data-astro-cid-zm77yjld]{display:flex;align-items:center;gap:var(--space-2);font-size:var(--step--1);color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--space-2)}.article__title[data-astro-cid-zm77yjld]{font-size:var(--step-3);line-height:1.08;margin:0 0 var(--space-3)}.article__tags[data-astro-cid-zm77yjld]{display:flex;flex-wrap:wrap;gap:var(--space-1)}.prose[data-astro-cid-zm77yjld]{max-width:none;margin-inline:auto}.article__footer[data-astro-cid-zm77yjld]{margin-top:var(--space-5);padding-top:var(--space-3);border-top:1px solid var(--rule)}.article__back[data-astro-cid-zm77yjld]{text-decoration:none;color:var(--accent);font-weight:600}
+</style></head> <body data-astro-cid-37fxchfa> <a class="skip-link" href="#main" data-astro-cid-37fxchfa>Skip to content</a> <header class="masthead masthead--compact" data-astro-cid-r6zpem2t> <div class="container" data-astro-cid-r6zpem2t> <div class="masthead__inner" data-astro-cid-r6zpem2t> <a href="/" class="nameplate" aria-label="Oliver Wehrens — home" data-astro-cid-r6zpem2t> <span class="nameplate__name" data-astro-cid-r6zpem2t>Oliver Wehrens</span>  </a> <nav class="masthead__nav" aria-label="Primary" data-astro-cid-r6zpem2t> <a href="/" data-astro-cid-r6zpem2t>Home</a><a href="/tags/" data-astro-cid-r6zpem2t>Topics</a><a href="/readme/" data-astro-cid-r6zpem2t>readme</a><a href="/search/" data-astro-cid-r6zpem2t>Search</a> <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle color theme" data-astro-cid-x3pjskd3> <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-x3pjskd3> <circle cx="12" cy="12" r="4" data-astro-cid-x3pjskd3></circle> <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" data-astro-cid-x3pjskd3></path> </svg> <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-x3pjskd3> <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" data-astro-cid-x3pjskd3></path> </svg> </button>  <script type="module">const n=document.getElementById("theme-toggle");n?.addEventListener("click",()=>{const t=document.documentElement,e=t.dataset.theme==="dark"?"light":"dark";t.dataset.theme=e;try{localStorage.setItem("theme",e)}catch{}});</script> </nav> </div> <div class="masthead__rule" aria-hidden="true" data-astro-cid-r6zpem2t></div> </div> </header>  <main id="main" data-astro-cid-37fxchfa>  <article class="container article" lang="en" data-astro-cid-zm77yjld> <header class="article__header" data-astro-cid-zm77yjld> <div class="article__meta" data-astro-cid-zm77yjld> <time datetime="2025-02-08T00:00:00.000Z" data-astro-cid-zm77yjld>February 8, 2025</time>  </div> <h1 class="article__title" data-astro-cid-zm77yjld>iOS Development Setup with Cursor AI</h1> <div class="article__tags" data-astro-cid-zm77yjld> <a class="tag-chip" href="/tags/ai/" data-astro-cid-q2wpt7bd>ai</a> <a class="tag-chip" href="/tags/ios/" data-astro-cid-q2wpt7bd>ios</a> <a class="tag-chip" href="/tags/cursor/" data-astro-cid-q2wpt7bd>cursor</a>  </div> </header> <div class="prose" data-pagefind-body data-astro-cid-zm77yjld>  <p><a href="https://owehrens.com/the-return-of-product-and-requirements-development-writing-software-without-being-a-developer/">A few days ago</a> I started to work with cursor and iOS development. Here is my setup so you get a head start on the setup.</p>
 <h1 id="setup">Setup</h1>
 <h2 id="xcode">Xcode</h2>
 <p>Yes you still need it to have it installed. The initial project needs to be setup with Xcode.</p>
@@ -295,7 +35,7 @@ Extension SweetPad" />
 <p>Features</p>
 <ul>
 <li>✅ Autocomplete — setup autocomplete using xcode-build-server</li>
-<li>🛠️ Build &amp; Run — build and run application using xcodebuild</li>
+<li>🛠️ Build &#x26; Run — build and run application using xcodebuild</li>
 <li>💅🏼 Format — format files using swift-format or other formatter of your choice</li>
 <li>📱 Simulator — manage iOS simulators</li>
 <li>📱 Devices — run iOS applications on iPhone or iPad</li>
@@ -313,15 +53,15 @@ Extension SweetPad" />
 <h3 id="brew-install-swiftformat">brew install swiftformat</h3>
 <p>Formatting tool for reformatting Swift code</p>
 <h2 id="buildserver">BuildServer</h2>
-<p>Open your project folder and generate a buildserver.json. Hit CMD+Shift+P and select &lsquo;SweetPad: Generate Build Server Config (buildserver.json)&rsquo;</p>
-<p><img src="buildserver.png" alt="&ldquo;BuildServer&rdquo;" title="Create buildserver.json"></p>
+<p>Open your project folder and generate a buildserver.json. Hit CMD+Shift+P and select ‘SweetPad: Generate Build Server Config (buildserver.json)’</p>
+<p><img alt="&quot;BuildServer&quot;" title="Create buildserver.json" loading="lazy" decoding="async" fetchpriority="auto" width="800" height="173" src="/_astro/buildserver.4OZntYI7_Z1cjq3r.webp" ></p>
 <h1 id="running">Running</h1>
 <p>First you should pin the Sweetpad extension.</p>
-<p><img src="pinsweetpad.png" alt="&ldquo;Pin Sweetpad&rdquo;" title="Pin Sweetpad"></p>
+<p><img alt="&quot;Pin Sweetpad&quot;" title="Pin Sweetpad" loading="lazy" decoding="async" fetchpriority="auto" width="300" height="277" src="/_astro/pinsweetpad.DAjxoWXw_Z1sxg65.webp" ></p>
 <p>Now you can start your app from Cursor.</p>
-<p><img src="runapp.png" alt="&ldquo;Run App&rdquo;" title="Run App"></p>
+<p><img alt="&quot;Run App&quot;" title="Run App" loading="lazy" decoding="async" fetchpriority="auto" width="300" height="155" src="/_astro/runapp.C-y1fPhL_ZdvrYU.webp" ></p>
 <p>The Simulator starts and you see the Simulator output. Nice.</p>
-<p><img src="simulator.png" alt="&ldquo;Simulator&rdquo;" title="Simulator"></p>
+<p><img alt="&quot;Simulator&quot;" title="Simulator" loading="lazy" decoding="async" fetchpriority="auto" width="800" height="522" src="/_astro/simulator.1jMDlcSH_Z10jjVv.webp" ></p>
 <h1 id="tuning-cursor">Tuning Cursor</h1>
 <p>You can setup a .cursorrules file to help the AI understand what you are trying to do.</p>
 <p>Check out <a href="https://cursor101.com">Cursor101</a> for much more help on cursor and <a href="https://cursor101.com/cursor/rules">Cursor Rules</a> for help on the rules. There is also the <a href="https://docs.cursor.com/get-started/migrate-from-vscode">Official Cursor documentation</a>.</p>
@@ -330,289 +70,196 @@ Extension SweetPad" />
 <li>Increased Productivity: Cursor Rules automate repetitive tasks, allowing you to focus on writing quality code.</li>
 <li>Consistent Code Style: Enforce coding standards across your team, ensuring a uniform and readable codebase.</li>
 <li>Reduced Errors: Catch common mistakes early in the development process, saving time on debugging</li>
-<li>Faster Onboarding: New team members can quickly adapt to your project&rsquo;s coding style and best practices</li>
-<li>Project Context Understanding: Provide the AI with crucial information about your project&rsquo;s structure, technologies, and specific requirements</li>
-<li>Adaptive Behavior: Adjust the AI&rsquo;s responses based on its performance, allowing you to fine-tune its behavior over time</li>
-<li>Personalized AI Coding Assistance: Tailor the AI&rsquo;s behavior to match your coding style and project requirements</li>
+<li>Faster Onboarding: New team members can quickly adapt to your project’s coding style and best practices</li>
+<li>Project Context Understanding: Provide the AI with crucial information about your project’s structure, technologies, and specific requirements</li>
+<li>Adaptive Behavior: Adjust the AI’s responses based on its performance, allowing you to fine-tune its behavior over time</li>
+<li>Personalized AI Coding Assistance: Tailor the AI’s behavior to match your coding style and project requirements</li>
 </ul>
 <p>You can see some examples over at <a href="https://cursor.directory">cursor.directory</a>. Here is my setup. I mostly got the ideas off the internet. I do not have so much expierence yet what the best format is to help cursor to fit my needs with the code.</p>
-<pre tabindex="0"><code># Project Overview
-
-You are building a SwiftUI app for iOS 17 &amp; 18. The app is a podcast player. It has the following features:
-
-The Main UI has the following tabs:
-- Now Playing
-- Subscriptions
-
-This app has the following features:
-- Subscription
-    - Search the Apple Podcast directory for podcasts, he will be presented with a list of podcasts and a detail view of the podcast
-    - On the detail view of the podcast the user can subscribe and unsubscribe from this podcast
-    - The search feature should be part of the &#39;Subscriptions&#39; tab
-    - The &#39;Subscriptions&#39; tab has a list of podcasts that the user has subscribed to
-    - When the user subscribes to a podcast, the podcast is added to the &#39;Subscriptions&#39; tab
-    - When the user unsubscribes from a podcast, the podcast is removed from the &#39;Subscriptions&#39; tab
-    - When clicking on a podcast in the &#39;Subscriptions&#39; tab, the podcast detail view is presented
-- Podcast Detail View
-    - The podcast detail view has a list of episodes
-    - When the user clicks on an episode, the episode will play
-    - The episode will play in the background even when the app is closed
-    - The user can see the current time, duration and progress of an episode
-    - The user can seek to a different time in the episode
-- Sleep Timer
-    - The app as a sleep timer with 5,10,15,20,30 and 60 minute options, None is the default
-    - The sleep timer can be started and stopped
-    - The sleep timer will stop the episode from playing
-    - The user can adjust the playback speed of the episode
-- Playback speed
-    - The playback speed options are 0.5, 1.0, 1.25, 1.5, 2.0, 1.0 is the default
-- Now Playing
-    - The now playing view is presented when an episode is playing
-    - The now playing view shows the episode title, artwork, current time, duration and progress
-    - The now playing view has a sleep timer
-    - The now playing view has a playback speed control
-    - The now playing view has a button to stop the episode
-    - The episode full title is displayed 
-    - When the user switches to an episode which was previously played, the app will start playing from the last played position of that episode
-    - When clicking on Artwork or title, the show notes are presented
-
-# Tech Stack
-
-- SwiftUI
-- Swift
-
-# Rules
-
-# Original instructions: https://forum.cursor.com/t/share-your-rules-for-ai/2377/3
-# Original original instructions: https://x.com/NickADobos/status/1814596357879177592
-
-You are an expert AI programming assistant that primarily focuses on producing clear, readable Swift  and SwiftUI code.
-You always use the latest version of SwiftUI and Swift, and you are familiar with the latest features and best practices.
-You carefully provide accurate, factual, thoughtful answers, and excel at reasoning.
-
-- Follow the user&#39;s requirements carefully &amp; to the letter.
-- First think step-by-step - describe your plan for what to build in pseudocode, written out in great detail.
-- Confirm, then write code!
-- Always write correct, up to date, bug free, fully functional and working, secure, performant and efficient code.
-- Focus on readability over being performant.
-- Fully implement all requested functionality.
-- Leave NO todo&#39;s, placeholders or missing pieces.
-- Be concise. Minimize any other prose.
-- If you think there might not be a correct answer, you say so. If you do not know the answer, say so instead of guessing.
- 
-# Code Structure
-- Use Swift&#39;s latest features and protocol-oriented programming
-- Prefer value types (structs) over classes
-- Use MVVM architecture with SwiftUI
-- Structure: Features/, Core/, UI/, Resources/
-- Follow Apple&#39;s Human Interface Guidelines
-
-# Naming
-- camelCase for vars/funcs, PascalCase for types
-- Verbs for methods (fetchData)
-- Boolean: use is/has/should prefixes
-- Clear, descriptive names following Apple style
-
-# Swift Best Practices
-- Strong type system, proper optionals
-- async/await for concurrency
-- Result type for errors
-- @Published, @StateObject for state
-- Prefer let over var
-- Protocol extensions for shared code
-
-# UI Development
-- SwiftUI first, UIKit when needed
-- SF Symbols for icons
-- Support dark mode, dynamic type
-- SafeArea and GeometryReader for layout
-- Handle all screen sizes and orientations
-- Implement proper keyboard handling
-
-# Performance
-- Profile with Instruments
-- Lazy load views and images
-- Optimize network requests
-- Background task handling
-- Proper state management
-- Memory management
-
-# Data &amp; State
-- CoreData for complex models
-- UserDefaults for preferences
-- Combine for reactive code
-- Clean data flow architecture
-- Proper dependency injection
-- Handle state restoration
-
-# Security
-- Encrypt sensitive data
-- Use Keychain securely
-- Certificate pinning
-- Biometric auth when needed
-- App Transport Security
-- Input validation
-
-# Testing &amp; Quality
-- XCTest for unit tests
-- XCUITest for UI tests
-- Test common user flows
-- Performance testing
-- Error scenarios
-- Accessibility testing
-
-# Essential Features
-- Deep linking support
-- Push notifications
-- Background tasks
-- Localization
-- Error handling
-- Analytics/logging
-
-# Development Process
-- Use SwiftUI previews
-- Git branching strategy
-- Code review process
-- CI/CD pipeline
-- Documentation
-- Unit test coverage
-
-# App Store Guidelines
-- Privacy descriptions
-- App capabilities
-- In-app purchases
-- Review guidelines
-- App thinning
-- Proper signing
-
-Follow Apple&#39;s documentation for detailed implementation guidance.
-  
-
-# Example Project Structure
-.
-├── Info.plist
-├── buildServer.json
-├── podcastplayer
-|  ├── Assets.xcassets
-|  |  ├── AccentColor.colorset
-|  |  |  └── Contents.json
-|  |  ├── AppIcon.appiconset
-|  |  |  └── Contents.json
-|  |  └── Contents.json
-|  ├── ContentView.swift
-|  ├── Info.plist
-|  ├── Item.swift
-|  ├── Models
-|  |  ├── Episode.swift
-|  |  ├── Podcast.swift
-|  |  └── SubscribedPodcast.swift
-|  ├── Preview Content
-|  |  └── Preview Assets.xcassets
-|  │     └── Contents.json
-|  ├── Services
-|  |  ├── AudioPlayerService.swift
-|  |  ├── DownloadManager.swift
-|  |  ├── FeedParser.swift
-|  |  └── PodcastService.swift
-|  ├── Views
-|  |  ├── PodcastDetailView.swift
-|  |  └── SubscriptionsView.swift
-|  └── podcastplayerApp.swift
-├── podcastplayerTests
-|  └── podcastplayerTests.swift
-└── podcastplayerUITests
-    ├── podcastplayerUITests.swift
-    └── podcastplayerUITestsLaunchTests.swift
-</code></pre></section>
-
-
-  
-  
-  <footer class="mt-12 flex flex-wrap">
-     
-    <a
-      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="https://owehrens.com/tags/ai"
-      >ai</a
-    >
-     
-    <a
-      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="https://owehrens.com/tags/ios"
-      >ios</a
-    >
-     
-    <a
-      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="https://owehrens.com/tags/cursor"
-      >cursor</a
-    >
-    
-  </footer>
-  
-
-  
-  
-  
-  
-  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
-    
-    <a
-      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="https://owehrens.com/ai-and-mcp-to-create-more-usable-jira-tickets/"
-      ><span class="mr-1.5">←</span><span>Using AI and Model Context Protocol to create more usable Jira Tickets</span></a
-    >
-    
-    
-    <a
-      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="https://owehrens.com/the-return-of-product-and-requirements-development-writing-software-without-being-a-developer/"
-      ><span>The return of product and requirements development. Writing software without being a developer.</span><span class="ml-1.5">→</span></a
-    >
-    
-  </nav>
-  
-  
-
-  
-  
-
-  
-
-
-  
-</article>
-
-
-    </main>
-
-    
-
-
-<div
-class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
->
-
-
-
-</div>
-
-
-<footer
-  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
->
-
-
-
-
-  
-
-  <div class="mr-auto">
-    &copy; 2009 - 2026
-    <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
-  </div>
-
-</footer>
-
-  </body>
-</html>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span># Project Overview</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>You are building a SwiftUI app for iOS 17 &#x26; 18. The app is a podcast player. It has the following features:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>The Main UI has the following tabs:</span></span>
+<span class="line"><span>- Now Playing</span></span>
+<span class="line"><span>- Subscriptions</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>This app has the following features:</span></span>
+<span class="line"><span>- Subscription</span></span>
+<span class="line"><span>    - Search the Apple Podcast directory for podcasts, he will be presented with a list of podcasts and a detail view of the podcast</span></span>
+<span class="line"><span>    - On the detail view of the podcast the user can subscribe and unsubscribe from this podcast</span></span>
+<span class="line"><span>    - The search feature should be part of the 'Subscriptions' tab</span></span>
+<span class="line"><span>    - The 'Subscriptions' tab has a list of podcasts that the user has subscribed to</span></span>
+<span class="line"><span>    - When the user subscribes to a podcast, the podcast is added to the 'Subscriptions' tab</span></span>
+<span class="line"><span>    - When the user unsubscribes from a podcast, the podcast is removed from the 'Subscriptions' tab</span></span>
+<span class="line"><span>    - When clicking on a podcast in the 'Subscriptions' tab, the podcast detail view is presented</span></span>
+<span class="line"><span>- Podcast Detail View</span></span>
+<span class="line"><span>    - The podcast detail view has a list of episodes</span></span>
+<span class="line"><span>    - When the user clicks on an episode, the episode will play</span></span>
+<span class="line"><span>    - The episode will play in the background even when the app is closed</span></span>
+<span class="line"><span>    - The user can see the current time, duration and progress of an episode</span></span>
+<span class="line"><span>    - The user can seek to a different time in the episode</span></span>
+<span class="line"><span>- Sleep Timer</span></span>
+<span class="line"><span>    - The app as a sleep timer with 5,10,15,20,30 and 60 minute options, None is the default</span></span>
+<span class="line"><span>    - The sleep timer can be started and stopped</span></span>
+<span class="line"><span>    - The sleep timer will stop the episode from playing</span></span>
+<span class="line"><span>    - The user can adjust the playback speed of the episode</span></span>
+<span class="line"><span>- Playback speed</span></span>
+<span class="line"><span>    - The playback speed options are 0.5, 1.0, 1.25, 1.5, 2.0, 1.0 is the default</span></span>
+<span class="line"><span>- Now Playing</span></span>
+<span class="line"><span>    - The now playing view is presented when an episode is playing</span></span>
+<span class="line"><span>    - The now playing view shows the episode title, artwork, current time, duration and progress</span></span>
+<span class="line"><span>    - The now playing view has a sleep timer</span></span>
+<span class="line"><span>    - The now playing view has a playback speed control</span></span>
+<span class="line"><span>    - The now playing view has a button to stop the episode</span></span>
+<span class="line"><span>    - The episode full title is displayed </span></span>
+<span class="line"><span>    - When the user switches to an episode which was previously played, the app will start playing from the last played position of that episode</span></span>
+<span class="line"><span>    - When clicking on Artwork or title, the show notes are presented</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Tech Stack</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- SwiftUI</span></span>
+<span class="line"><span>- Swift</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Rules</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Original instructions: https://forum.cursor.com/t/share-your-rules-for-ai/2377/3</span></span>
+<span class="line"><span># Original original instructions: https://x.com/NickADobos/status/1814596357879177592</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>You are an expert AI programming assistant that primarily focuses on producing clear, readable Swift  and SwiftUI code.</span></span>
+<span class="line"><span>You always use the latest version of SwiftUI and Swift, and you are familiar with the latest features and best practices.</span></span>
+<span class="line"><span>You carefully provide accurate, factual, thoughtful answers, and excel at reasoning.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- Follow the user's requirements carefully &#x26; to the letter.</span></span>
+<span class="line"><span>- First think step-by-step - describe your plan for what to build in pseudocode, written out in great detail.</span></span>
+<span class="line"><span>- Confirm, then write code!</span></span>
+<span class="line"><span>- Always write correct, up to date, bug free, fully functional and working, secure, performant and efficient code.</span></span>
+<span class="line"><span>- Focus on readability over being performant.</span></span>
+<span class="line"><span>- Fully implement all requested functionality.</span></span>
+<span class="line"><span>- Leave NO todo's, placeholders or missing pieces.</span></span>
+<span class="line"><span>- Be concise. Minimize any other prose.</span></span>
+<span class="line"><span>- If you think there might not be a correct answer, you say so. If you do not know the answer, say so instead of guessing.</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span># Code Structure</span></span>
+<span class="line"><span>- Use Swift's latest features and protocol-oriented programming</span></span>
+<span class="line"><span>- Prefer value types (structs) over classes</span></span>
+<span class="line"><span>- Use MVVM architecture with SwiftUI</span></span>
+<span class="line"><span>- Structure: Features/, Core/, UI/, Resources/</span></span>
+<span class="line"><span>- Follow Apple's Human Interface Guidelines</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Naming</span></span>
+<span class="line"><span>- camelCase for vars/funcs, PascalCase for types</span></span>
+<span class="line"><span>- Verbs for methods (fetchData)</span></span>
+<span class="line"><span>- Boolean: use is/has/should prefixes</span></span>
+<span class="line"><span>- Clear, descriptive names following Apple style</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Swift Best Practices</span></span>
+<span class="line"><span>- Strong type system, proper optionals</span></span>
+<span class="line"><span>- async/await for concurrency</span></span>
+<span class="line"><span>- Result type for errors</span></span>
+<span class="line"><span>- @Published, @StateObject for state</span></span>
+<span class="line"><span>- Prefer let over var</span></span>
+<span class="line"><span>- Protocol extensions for shared code</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># UI Development</span></span>
+<span class="line"><span>- SwiftUI first, UIKit when needed</span></span>
+<span class="line"><span>- SF Symbols for icons</span></span>
+<span class="line"><span>- Support dark mode, dynamic type</span></span>
+<span class="line"><span>- SafeArea and GeometryReader for layout</span></span>
+<span class="line"><span>- Handle all screen sizes and orientations</span></span>
+<span class="line"><span>- Implement proper keyboard handling</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Performance</span></span>
+<span class="line"><span>- Profile with Instruments</span></span>
+<span class="line"><span>- Lazy load views and images</span></span>
+<span class="line"><span>- Optimize network requests</span></span>
+<span class="line"><span>- Background task handling</span></span>
+<span class="line"><span>- Proper state management</span></span>
+<span class="line"><span>- Memory management</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Data &#x26; State</span></span>
+<span class="line"><span>- CoreData for complex models</span></span>
+<span class="line"><span>- UserDefaults for preferences</span></span>
+<span class="line"><span>- Combine for reactive code</span></span>
+<span class="line"><span>- Clean data flow architecture</span></span>
+<span class="line"><span>- Proper dependency injection</span></span>
+<span class="line"><span>- Handle state restoration</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Security</span></span>
+<span class="line"><span>- Encrypt sensitive data</span></span>
+<span class="line"><span>- Use Keychain securely</span></span>
+<span class="line"><span>- Certificate pinning</span></span>
+<span class="line"><span>- Biometric auth when needed</span></span>
+<span class="line"><span>- App Transport Security</span></span>
+<span class="line"><span>- Input validation</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Testing &#x26; Quality</span></span>
+<span class="line"><span>- XCTest for unit tests</span></span>
+<span class="line"><span>- XCUITest for UI tests</span></span>
+<span class="line"><span>- Test common user flows</span></span>
+<span class="line"><span>- Performance testing</span></span>
+<span class="line"><span>- Error scenarios</span></span>
+<span class="line"><span>- Accessibility testing</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Essential Features</span></span>
+<span class="line"><span>- Deep linking support</span></span>
+<span class="line"><span>- Push notifications</span></span>
+<span class="line"><span>- Background tasks</span></span>
+<span class="line"><span>- Localization</span></span>
+<span class="line"><span>- Error handling</span></span>
+<span class="line"><span>- Analytics/logging</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Development Process</span></span>
+<span class="line"><span>- Use SwiftUI previews</span></span>
+<span class="line"><span>- Git branching strategy</span></span>
+<span class="line"><span>- Code review process</span></span>
+<span class="line"><span>- CI/CD pipeline</span></span>
+<span class="line"><span>- Documentation</span></span>
+<span class="line"><span>- Unit test coverage</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># App Store Guidelines</span></span>
+<span class="line"><span>- Privacy descriptions</span></span>
+<span class="line"><span>- App capabilities</span></span>
+<span class="line"><span>- In-app purchases</span></span>
+<span class="line"><span>- Review guidelines</span></span>
+<span class="line"><span>- App thinning</span></span>
+<span class="line"><span>- Proper signing</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Follow Apple's documentation for detailed implementation guidance.</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Example Project Structure</span></span>
+<span class="line"><span>.</span></span>
+<span class="line"><span>├── Info.plist</span></span>
+<span class="line"><span>├── buildServer.json</span></span>
+<span class="line"><span>├── podcastplayer</span></span>
+<span class="line"><span>|  ├── Assets.xcassets</span></span>
+<span class="line"><span>|  |  ├── AccentColor.colorset</span></span>
+<span class="line"><span>|  |  |  └── Contents.json</span></span>
+<span class="line"><span>|  |  ├── AppIcon.appiconset</span></span>
+<span class="line"><span>|  |  |  └── Contents.json</span></span>
+<span class="line"><span>|  |  └── Contents.json</span></span>
+<span class="line"><span>|  ├── ContentView.swift</span></span>
+<span class="line"><span>|  ├── Info.plist</span></span>
+<span class="line"><span>|  ├── Item.swift</span></span>
+<span class="line"><span>|  ├── Models</span></span>
+<span class="line"><span>|  |  ├── Episode.swift</span></span>
+<span class="line"><span>|  |  ├── Podcast.swift</span></span>
+<span class="line"><span>|  |  └── SubscribedPodcast.swift</span></span>
+<span class="line"><span>|  ├── Preview Content</span></span>
+<span class="line"><span>|  |  └── Preview Assets.xcassets</span></span>
+<span class="line"><span>|  │     └── Contents.json</span></span>
+<span class="line"><span>|  ├── Services</span></span>
+<span class="line"><span>|  |  ├── AudioPlayerService.swift</span></span>
+<span class="line"><span>|  |  ├── DownloadManager.swift</span></span>
+<span class="line"><span>|  |  ├── FeedParser.swift</span></span>
+<span class="line"><span>|  |  └── PodcastService.swift</span></span>
+<span class="line"><span>|  ├── Views</span></span>
+<span class="line"><span>|  |  ├── PodcastDetailView.swift</span></span>
+<span class="line"><span>|  |  └── SubscriptionsView.swift</span></span>
+<span class="line"><span>|  └── podcastplayerApp.swift</span></span>
+<span class="line"><span>├── podcastplayerTests</span></span>
+<span class="line"><span>|  └── podcastplayerTests.swift</span></span>
+<span class="line"><span>└── podcastplayerUITests</span></span>
+<span class="line"><span>    ├── podcastplayerUITests.swift</span></span>
+<span class="line"><span>    └── podcastplayerUITestsLaunchTests.swift</span></span></code></pre>  </div> <footer class="article__footer" data-astro-cid-zm77yjld> <a href="/" class="article__back" data-astro-cid-zm77yjld>← All stories</a> </footer> </article>  </main> <footer class="site-footer" data-astro-cid-37fxchfa> <div class="container site-footer__inner" data-astro-cid-37fxchfa> <span data-astro-cid-37fxchfa>© 2026 Oliver Wehrens</span> <span class="site-footer__links" data-astro-cid-37fxchfa> <a href="/rss.xml" data-astro-cid-37fxchfa>RSS</a> <a href="/tags/" data-astro-cid-37fxchfa>Topics</a> <a href="/readme/" data-astro-cid-37fxchfa>readme</a> </span> </div> </footer>  </body> </html> 

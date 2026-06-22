@@ -1,508 +1,171 @@
-<!doctype html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<html
-  class="not-ready lg:text-base"
-  style="--bg: "
-  lang="en-us"
->
-  <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>Getting started with JSF 2 (and Maven) - Oliver Wehrens</title>
-
-  
-  <meta name="theme-color" />
-
-  
-  
-  
-  
-  <meta name="description" content="I use Apache Trinidad at work and since JSF 2 is now final I decided to play with it a bit.
-Of course this is going to be the classic Hello World example (as there are many other like this around the web).
-First you need to setup a simple Maven project.
-The file layout should be something like that.
-
-
-
-
-
-After that change your pom.xml to include the servlet and jsf2 libs." />
-  <meta name="author" content="Oliver Wehrens" />
-  
-
-  
-  
-  
-  
-  
-  
-  <link rel="preload stylesheet" as="style" href="https://owehrens.com/main.min.css" />
-
-
-  
-  
-  
-  
-  
-
-  
-  
-  <link rel="preload" as="image" href="https://owehrens.com/linkedin.svg" />
-  
-  <link rel="preload" as="image" href="https://owehrens.com/bluesky.svg" />
-  
-  <link rel="preload" as="image" href="https://owehrens.com/speakerdeck.svg" />
-  
-  <link rel="preload" as="image" href="https://owehrens.com/rss.svg" />
-  
-  
-
-  
-  
-  <script
-    defer
-    src="https://owehrens.com/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad();"
-  ></script>
-  
-
-  
-  
-  
-
-  
-  <link rel="icon" href="https://owehrens.com/favicon.ico" />
-  <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
-
-  
-  <meta name="generator" content="Hugo 0.157.0">
-
-  
-  
-  
-  
-  
-  
-  <meta itemprop="name" content="Getting started with JSF 2 (and Maven)">
-  <meta itemprop="description" content="I use Apache Trinidad at work and since JSF 2 is now final I decided to play with it a bit.
-Of course this is going to be the classic Hello World example (as there are many other like this around the web).
-First you need to setup a simple Maven project.
-The file layout should be something like that. After that change your pom.xml to include the servlet and jsf2 libs.">
-  <meta itemprop="datePublished" content="2009-07-03T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2009-07-03T00:00:00+00:00">
-  <meta itemprop="wordCount" content="489">
-  <meta itemprop="keywords" content="Maven JSF2">
-  
-  <meta property="og:url" content="https://owehrens.com/getting-started-with-jsf-2-and-maven/">
-  <meta property="og:site_name" content="Oliver Wehrens">
-  <meta property="og:title" content="Getting started with JSF 2 (and Maven)">
-  <meta property="og:description" content="I use Apache Trinidad at work and since JSF 2 is now final I decided to play with it a bit.
-Of course this is going to be the classic Hello World example (as there are many other like this around the web).
-First you need to setup a simple Maven project.
-The file layout should be something like that. After that change your pom.xml to include the servlet and jsf2 libs.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2009-07-03T00:00:00+00:00">
-    <meta property="article:modified_time" content="2009-07-03T00:00:00+00:00">
-
-  
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Getting started with JSF 2 (and Maven)">
-  <meta name="twitter:description" content="I use Apache Trinidad at work and since JSF 2 is now final I decided to play with it a bit.
-Of course this is going to be the classic Hello World example (as there are many other like this around the web).
-First you need to setup a simple Maven project.
-The file layout should be something like that. After that change your pom.xml to include the servlet and jsf2 libs.">
-
-  
-  
-  
-  <link rel="canonical" href="https://owehrens.com/getting-started-with-jsf-2-and-maven/" />
-  
-  
-<script defer src="https://t.4004.fyi/script.js" data-website-id="ae7b9a21-3055-4b46-bc57-15eb0c646e2e"></script>
-</head>
-
-  <body class="text-black duration-200 ease-out ">
-    <div class="mx-auto pt-2 flex flex-col justify-center items-center">
-    <div>
-        <a href="https://owehrens.com/">
-            <img
-                    class="my-0 aspect-square  rounded-full "
-                    src="/img/oliver_square.jpg"
-                    alt="Oliver Wehrens"
-            />
-        </a>
-    </div>
-
-    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Mentor. Dad.</div>
-
-
-    <div>
-        
-        <nav
-                class="mt-5 flex justify-center space-x-10 items-center "
-        >
-            
-            <a
-                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-                    style="--url: url(./linkedin.svg)"
-                    href="https://linkedin.com/in/oliverwehrens
-          "
-                    target="_blank"
-                    rel="me"
-            >
-                linkedin
-            </a>
-            
-            <a
-                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-                    style="--url: url(./bluesky.svg)"
-                    href="https://bsky.app/profile/owehrens.com"
-                    target="_blank"
-                    rel="me"
-            >
-                bluesky
-            </a>
-            
-            <a
-                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-                    style="--url: url(./speakerdeck.svg)"
-                    href="https://speakerdeck.com/owehrens
-          "
-                    target="_blank"
-                    rel="me"
-            >
-                speakerdeck
-            </a>
-            
-            <a
-                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-                    style="--url: url(./rss.svg)"
-                    href="https://owehrens.com/rss.xml "
-                    target="_blank"
-                    rel="alternate"
-            >
-                rss
-            </a>
-            
-        </nav>
-        
-    </div>
-
-</div>  
-
-
-    
-  
-
-
-    <main
-      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
-    >
-      
-
-<article>
-  <header class="mb-16">
-    Oliver Wehrens
-    <h1 class="!my-0 pb-2.5 article-title">Getting started with JSF 2 (and Maven)</h1>
-
-    
-    <div class="text-sm antialiased opacity-60">
-      
-      <time>Jul 3, 2009</time>
-      
-      
-      
-      
-      <span class="mx-1">&middot;</span>
-      <span>Oliver Wehrens</span>
-      
-      <span class="text-gray">- 3 min</span>
-    </div>
-    
-  </header>
-
-  <section><p>I use Apache Trinidad at work and since JSF 2 is now final I decided to play with it a bit.</p>
+<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Getting started with JSF 2 (and Maven) · Oliver Wehrens</title><meta name="description" content="I use Apache Trinidad at work and since JSF 2 is now final I decided to play with it a bit. Of course this is going to be the classic Hello World example (as there are many other…"><link rel="canonical" href="https://owehrens.com/getting-started-with-jsf-2-and-maven/"><link rel="alternate" type="application/rss+xml" title="Oliver Wehrens" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta property="og:type" content="article"><meta property="og:site_name" content="Oliver Wehrens"><meta property="og:title" content="Getting started with JSF 2 (and Maven) · Oliver Wehrens"><meta property="og:description" content="I use Apache Trinidad at work and since JSF 2 is now final I decided to play with it a bit. Of course this is going to be the classic Hello World example (as there are many other…"><meta property="og:url" content="https://owehrens.com/getting-started-with-jsf-2-and-maven/"><meta name="twitter:card" content="summary_large_image"><script defer src="http://t.4004.fyi/script.js" data-website-id="ae7b9a21-3055-4b46-bc57-15eb0c646e2e"></script><script>
+      (() => {
+        try {
+          const stored = localStorage.getItem('theme');
+          const theme =
+            stored ||
+            (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.dataset.theme = theme;
+        } catch {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/_slug_.Ckz86HID.css">
+<style>.media-badge[data-astro-cid-uj44zf3t]{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.09em;padding:.15em .5em;border-radius:2px;color:var(--accent);background:var(--accent-soft)}.tag-chip[data-astro-cid-q2wpt7bd]{display:inline-block;font-size:var(--step--1);color:var(--ink-soft);text-decoration:none;padding:.1em .55em;border:1px solid var(--rule);border-radius:999px;transition:color .15s,border-color .15s}.tag-chip[data-astro-cid-q2wpt7bd]:before{content:"#";color:var(--muted);margin-right:.1em}.tag-chip[data-astro-cid-q2wpt7bd]:hover{color:var(--accent);border-color:var(--accent)}
+.article[data-astro-cid-zm77yjld]{padding-block:var(--space-4)}.article__header[data-astro-cid-zm77yjld]{margin-bottom:var(--space-4);padding-bottom:var(--space-3);border-bottom:1px solid var(--rule)}.article__meta[data-astro-cid-zm77yjld]{display:flex;align-items:center;gap:var(--space-2);font-size:var(--step--1);color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--space-2)}.article__title[data-astro-cid-zm77yjld]{font-size:var(--step-3);line-height:1.08;margin:0 0 var(--space-3)}.article__tags[data-astro-cid-zm77yjld]{display:flex;flex-wrap:wrap;gap:var(--space-1)}.prose[data-astro-cid-zm77yjld]{max-width:none;margin-inline:auto}.article__footer[data-astro-cid-zm77yjld]{margin-top:var(--space-5);padding-top:var(--space-3);border-top:1px solid var(--rule)}.article__back[data-astro-cid-zm77yjld]{text-decoration:none;color:var(--accent);font-weight:600}
+</style></head> <body data-astro-cid-37fxchfa> <a class="skip-link" href="#main" data-astro-cid-37fxchfa>Skip to content</a> <header class="masthead masthead--compact" data-astro-cid-r6zpem2t> <div class="container" data-astro-cid-r6zpem2t> <div class="masthead__inner" data-astro-cid-r6zpem2t> <a href="/" class="nameplate" aria-label="Oliver Wehrens — home" data-astro-cid-r6zpem2t> <span class="nameplate__name" data-astro-cid-r6zpem2t>Oliver Wehrens</span>  </a> <nav class="masthead__nav" aria-label="Primary" data-astro-cid-r6zpem2t> <a href="/" data-astro-cid-r6zpem2t>Home</a><a href="/tags/" data-astro-cid-r6zpem2t>Topics</a><a href="/readme/" data-astro-cid-r6zpem2t>readme</a><a href="/search/" data-astro-cid-r6zpem2t>Search</a> <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle color theme" data-astro-cid-x3pjskd3> <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-x3pjskd3> <circle cx="12" cy="12" r="4" data-astro-cid-x3pjskd3></circle> <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" data-astro-cid-x3pjskd3></path> </svg> <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-x3pjskd3> <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" data-astro-cid-x3pjskd3></path> </svg> </button>  <script type="module">const n=document.getElementById("theme-toggle");n?.addEventListener("click",()=>{const t=document.documentElement,e=t.dataset.theme==="dark"?"light":"dark";t.dataset.theme=e;try{localStorage.setItem("theme",e)}catch{}});</script> </nav> </div> <div class="masthead__rule" aria-hidden="true" data-astro-cid-r6zpem2t></div> </div> </header>  <main id="main" data-astro-cid-37fxchfa>  <article class="container article" lang="en" data-astro-cid-zm77yjld> <header class="article__header" data-astro-cid-zm77yjld> <div class="article__meta" data-astro-cid-zm77yjld> <time datetime="2009-07-03T00:00:00.000Z" data-astro-cid-zm77yjld>July 3, 2009</time>  </div> <h1 class="article__title" data-astro-cid-zm77yjld>Getting started with JSF 2 (and Maven)</h1> <div class="article__tags" data-astro-cid-zm77yjld> <a class="tag-chip" href="/tags/maven/" data-astro-cid-q2wpt7bd>maven</a> <a class="tag-chip" href="/tags/jsf2/" data-astro-cid-q2wpt7bd>jsf2</a>  </div> </header> <div class="prose" data-pagefind-body data-astro-cid-zm77yjld>  <p>I use Apache Trinidad at work and since JSF 2 is now final I decided to play with it a bit.</p>
 <p>Of course this is going to be the classic Hello World example (as there are many other like this around the web).</p>
 <p>First you need to setup a simple Maven project.</p>
-<p>The file layout should be something like that.
-
-
-<img alt="Directory Layout for JSF 2 Ajax Demo" src="/static/JSF2AjaxDemoFileLayout.png" title="Directory Layout for JSF 2 Ajax Demo" width="290" height="234" />
-
-
-After that change your pom.xml to include the servlet and jsf2 libs.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;project</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-</span></span><span style="display:flex;"><span>         <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;modelVersion&gt;</span>4.0.0<span style="color:#f92672">&lt;/modelVersion&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;groupId&gt;</span>com.maxheapsize<span style="color:#f92672">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;artifactId&gt;</span>jsf2demo<span style="color:#f92672">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;packaging&gt;</span>war<span style="color:#f92672">&lt;/packaging&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;version&gt;</span>1.0-SNAPSHOT<span style="color:#f92672">&lt;/version&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;name&gt;</span>jsf2demo Maven Webapp<span style="color:#f92672">&lt;/name&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;url&gt;</span>http://maven.apache.org<span style="color:#f92672">&lt;/url&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;dependencies&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;groupId&gt;</span>com.sun.faces<span style="color:#f92672">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;artifactId&gt;</span>jsf-api<span style="color:#f92672">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;version&gt;</span>2.0.0-b13<span style="color:#f92672">&lt;/version&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;scope&gt;</span>compile<span style="color:#f92672">&lt;/scope&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/dependency&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;groupId&gt;</span>com.sun.faces<span style="color:#f92672">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;artifactId&gt;</span>jsf-impl<span style="color:#f92672">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;version&gt;</span>2.0.0-b13<span style="color:#f92672">&lt;/version&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;scope&gt;</span>compile<span style="color:#f92672">&lt;/scope&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/dependency&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;groupId&gt;</span>javax.servlet<span style="color:#f92672">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;artifactId&gt;</span>jstl<span style="color:#f92672">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;version&gt;</span>1.2<span style="color:#f92672">&lt;/version&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/dependency&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;groupId&gt;</span>javax.servlet<span style="color:#f92672">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;artifactId&gt;</span>servlet-api<span style="color:#f92672">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;version&gt;</span>2.5<span style="color:#f92672">&lt;/version&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/dependency&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/dependencies&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;build&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;finalName&gt;</span>jsf2demo<span style="color:#f92672">&lt;/finalName&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/build&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;repositories&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;repository&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;id&gt;</span>maven2-repository.dev.java.net<span style="color:#f92672">&lt;/id&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;name&gt;</span>Java.net Repository for Maven<span style="color:#f92672">&lt;/name&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;url&gt;</span>http://download.java.net/maven/2<span style="color:#f92672">&lt;/url&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/repository&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/repositories&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/project&gt;</span>
-</span></span></code></pre></div><p>First we are going to create the managed bean to hold the name we are going to enter.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.maxheapsize.jsf2demo;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.faces.bean.*;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.Serializable;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ManagedBean</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@SessionScoped</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorldBean</span> <span style="color:#66d9ef">implements</span> Serializable {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@ManagedProperty</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;#{demoService}&#34;</span>)
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> Service service;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> name;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setName</span>(String name) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setService</span>(Service service) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">service</span> <span style="color:#f92672">=</span> service;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getReverseName</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> service.<span style="color:#a6e22e">reverse</span>(name);
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>To demonstrate the dependency injection with JSF 2 I use a service to reverse the name. Simply add the @ManagedProperty with the name of the service and it will get injected. Of course we need the service. Here it is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.maxheapsize.jsf2demo;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.faces.bean.*;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ManagedBean</span>(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demoService&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ApplicationScoped</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Service</span> {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">reverse</span>(String name) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> StringBuffer(name).<span style="color:#a6e22e">reverse</span>().<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">toLowerCase</span>();    
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Very simple&hellip;isn&rsquo;t it ?</p>
-<p>The only thing what&rsquo;s missing is the web.xml and the webpage itself.</p>
+<p>The file layout should be something like that.</p>
+<p>After that change your pom.xml to include the servlet and jsf2 libs.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">project</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> xmlns</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"http://maven.apache.org/POM/4.0.0"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> xmlns:xsi</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"http://www.w3.org/2001/XMLSchema-instance"</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">         xsi:schemaLocation</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">modelVersion</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>4.0.0&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">modelVersion</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">groupId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>com.maxheapsize&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">groupId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">artifactId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>jsf2demo&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">artifactId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">packaging</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>war&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">packaging</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">version</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>1.0-SNAPSHOT&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">version</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>jsf2demo Maven Webapp&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">url</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>http://maven.apache.org&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">url</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">dependencies</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">dependency</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">groupId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>com.sun.faces&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">groupId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">artifactId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>jsf-api&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">artifactId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">version</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>2.0.0-b13&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">version</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">scope</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>compile&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">scope</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">dependency</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">dependency</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">groupId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>com.sun.faces&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">groupId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">artifactId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>jsf-impl&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">artifactId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">version</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>2.0.0-b13&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">version</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">scope</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>compile&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">scope</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">dependency</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">dependency</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">groupId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>javax.servlet&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">groupId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">artifactId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>jstl&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">artifactId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">version</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>1.2&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">version</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">dependency</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">dependency</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">groupId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>javax.servlet&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">groupId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">artifactId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>servlet-api&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">artifactId</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">version</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>2.5&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">version</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">dependency</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">dependencies</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">build</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">finalName</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>jsf2demo&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">finalName</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">build</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">repositories</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">repository</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">id</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>maven2-repository.dev.java.net&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">id</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>Java.net Repository for Maven&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">url</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>http://download.java.net/maven/2&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">url</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">repository</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">repositories</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">project</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span></code></pre>
+<p>First we are going to create the managed bean to hold the name we are going to enter.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">package</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> com.maxheapsize.jsf2demo;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> javax.faces.bean.</span><span style="color:#005CC5;--shiki-dark:#79B8FF">*</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> java.io.Serializable;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">@</span><span style="color:#D73A49;--shiki-dark:#F97583">ManagedBean</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">@</span><span style="color:#D73A49;--shiki-dark:#F97583">SessionScoped</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">public</span><span style="color:#D73A49;--shiki-dark:#F97583"> class</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> HelloWorldBean</span><span style="color:#D73A49;--shiki-dark:#F97583"> implements</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> Serializable</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  private</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> String name </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> ""</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  @</span><span style="color:#D73A49;--shiki-dark:#F97583">ManagedProperty</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#005CC5;--shiki-dark:#79B8FF">value</span><span style="color:#D73A49;--shiki-dark:#F97583"> =</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "#{demoService}"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  private</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> Service service;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  public</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> String </span><span style="color:#6F42C1;--shiki-dark:#B392F0">getName</span><span style="color:#24292E;--shiki-dark:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">    return</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> name;</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  public</span><span style="color:#D73A49;--shiki-dark:#F97583"> void</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> setName</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(String </span><span style="color:#E36209;--shiki-dark:#FFAB70">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    this</span><span style="color:#24292E;--shiki-dark:#E1E4E8">.name </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> name;</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  public</span><span style="color:#D73A49;--shiki-dark:#F97583"> void</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> setService</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(Service </span><span style="color:#E36209;--shiki-dark:#FFAB70">service</span><span style="color:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    this</span><span style="color:#24292E;--shiki-dark:#E1E4E8">.service </span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> service;</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  public</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> String </span><span style="color:#6F42C1;--shiki-dark:#B392F0">getReverseName</span><span style="color:#24292E;--shiki-dark:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">    return</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> service.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">reverse</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(name);</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
+<p>To demonstrate the dependency injection with JSF 2 I use a service to reverse the name. Simply add the @ManagedProperty with the name of the service and it will get injected. Of course we need the service. Here it is:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">package</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> com.maxheapsize.jsf2demo;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">import</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> javax.faces.bean.</span><span style="color:#005CC5;--shiki-dark:#79B8FF">*</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">@</span><span style="color:#D73A49;--shiki-dark:#F97583">ManagedBean</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#005CC5;--shiki-dark:#79B8FF">name</span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"demoService"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">@</span><span style="color:#D73A49;--shiki-dark:#F97583">ApplicationScoped</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">public</span><span style="color:#D73A49;--shiki-dark:#F97583"> class</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> Service</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  public</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> String </span><span style="color:#6F42C1;--shiki-dark:#B392F0">reverse</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(String </span><span style="color:#E36209;--shiki-dark:#FFAB70">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">    return</span><span style="color:#D73A49;--shiki-dark:#F97583"> new</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> StringBuffer</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(name).</span><span style="color:#6F42C1;--shiki-dark:#B392F0">reverse</span><span style="color:#24292E;--shiki-dark:#E1E4E8">().</span><span style="color:#6F42C1;--shiki-dark:#B392F0">toString</span><span style="color:#24292E;--shiki-dark:#E1E4E8">().</span><span style="color:#6F42C1;--shiki-dark:#B392F0">toLowerCase</span><span style="color:#24292E;--shiki-dark:#E1E4E8">();    </span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
+<p>Very simple…isn’t it ?</p>
+<p>The only thing what’s missing is the web.xml and the webpage itself.</p>
 <p>The web.xml is pretty straight forward and should not show any surprises.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE web-app PUBLIC
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &#34;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &#34;http://java.sun.com/dtd/web-app_2_3.dtd&#34; &gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;web-app&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;display-name&gt;</span>Web Application<span style="color:#f92672">&lt;/display-name&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;servlet&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;servlet-name&gt;</span>Faces Servlet<span style="color:#f92672">&lt;/servlet-name&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;servlet-class&gt;</span>javax.faces.webapp.FacesServlet<span style="color:#f92672">&lt;/servlet-class&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;load-on-startup&gt;</span>1<span style="color:#f92672">&lt;/load-on-startup&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/servlet&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;servlet-mapping&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;servlet-name&gt;</span>Faces Servlet<span style="color:#f92672">&lt;/servlet-name&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;url-pattern&gt;</span>*.xhtml<span style="color:#f92672">&lt;/url-pattern&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/servlet-mapping&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;context-param&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;param-name&gt;</span>javax.faces.PROJECT_STAGE<span style="color:#f92672">&lt;/param-name&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;param-value&gt;</span>Development<span style="color:#f92672">&lt;/param-value&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/context-param&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/web-app&gt;</span>
-</span></span></code></pre></div><p>The index.xhtml has some differences from earlier versions of JSF. First, JSF now supports Ajax out of the box. To have this enabled you need to load the jsf.js javascript library. The inputText tag binds to our managed bean and includes an f:ajax tag. This tag determines which part should be rerendered (in this case the element with the id reverseName). F:ajax will execute on value holding components always with an &lsquo;onchange&rsquo; event and on action components (like commandButtons) with an &lsquo;onclick&rsquo; event.
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;!</span><span style="color:#D73A49;--shiki-dark:#F97583">DOCTYPE</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> web-app</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> PUBLIC</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    "http://java.sun.com/dtd/web-app_2_3.dtd" ></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">web-app</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">display-name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>Web Application&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">display-name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">servlet</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">servlet-name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>Faces Servlet&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">servlet-name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">servlet-class</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>javax.faces.webapp.FacesServlet&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">servlet-class</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">load-on-startup</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>1&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">load-on-startup</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">servlet</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">servlet-mapping</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">servlet-name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>Faces Servlet&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">servlet-name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">url-pattern</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>*.xhtml&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">url-pattern</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">servlet-mapping</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">context-param</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">param-name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>javax.faces.PROJECT_STAGE&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">param-name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">param-value</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>Development&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">param-value</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">context-param</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">web-app</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span></code></pre>
+<p>The index.xhtml has some differences from earlier versions of JSF. First, JSF now supports Ajax out of the box. To have this enabled you need to load the jsf.js javascript library. The inputText tag binds to our managed bean and includes an f:ajax tag. This tag determines which part should be rerendered (in this case the element with the id reverseName). F:ajax will execute on value holding components always with an ‘onchange’ event and on action components (like commandButtons) with an ‘onclick’ event.
 The output will trigger the injected service in our managed bean and return the reversed input string.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Transitional//EN&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&#34;&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;html</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.w3.org/1999/xhtml&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">xmlns:ui=</span><span style="color:#e6db74">&#34;http://java.sun.com/jsf/facelets&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">xmlns:f=</span><span style="color:#e6db74">&#34;http://java.sun.com/jsf/core&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">xmlns:h=</span><span style="color:#e6db74">&#34;http://java.sun.com/jsf/html&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;h:head&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;title&gt;</span>JSF Demo<span style="color:#f92672">&lt;/title&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/h:head&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;h:body&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;h:outputScript</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;jsf.js&#34;</span> <span style="color:#a6e22e">library=</span><span style="color:#e6db74">&#34;javax.faces&#34;</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;body&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/h:outputScript&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;h1&gt;</span>Ajax JSF 2 Demo<span style="color:#f92672">&lt;/h1&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;h:form&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;h:inputText</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;#{helloWorldBean.name}&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;f:ajax</span> <span style="color:#a6e22e">render=</span><span style="color:#e6db74">&#34;reverseName&#34;</span><span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/h:inputText&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;h:commandButton</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;Say reverse Hi via Ajax&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;f:ajax</span> <span style="color:#a6e22e">execute=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">render=</span><span style="color:#e6db74">&#34;reverseName&#34;</span><span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/h:commandButton&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;h:outputText</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;reverseName&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;#{helloWorldBean.reverseName}&#34;</span><span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/h:form&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/h:body&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/html&gt;</span>
-</span></span></code></pre></div><p>
-
-<img alt="JSF 2 Ajax Demo" src="/static/JSF2AjaxDemo.png" title="JSF 2 Ajax Demo" width="396" height="107" />
-
-And that&rsquo;s it. Sure it&rsquo;s a simple example, but so far I do like the minimal configuration and the ajax integration.</p>
-</section>
-
-
-  
-  
-
-  
-  
-  
-  
-  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
-    
-    <a
-      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="https://owehrens.com/two-upgrades-to-cut-down-development-time/"
-      ><span class="mr-1.5">←</span><span>Two upgrades to cut down development time</span></a
-    >
-    
-    
-    <a
-      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="https://owehrens.com/update-on-quant-testtester/"
-      ><span>Update on Quant TestTester</span><span class="ml-1.5">→</span></a
-    >
-    
-  </nav>
-  
-  
-
-  
-  
-
-  
-
-
-  
-</article>
-
-
-    </main>
-
-    
-
-
-<div
-class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
->
-
-
-
-</div>
-
-
-<footer
-  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
->
-
-
-
-
-  
-
-  <div class="mr-auto">
-    &copy; 2009 - 2026
-    <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
-  </div>
-
-</footer>
-
-  </body>
-</html>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;!</span><span style="color:#D73A49;--shiki-dark:#F97583">DOCTYPE</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> html</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">html</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> xmlns</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"http://www.w3.org/1999/xhtml"</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">      xmlns:ui</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"http://java.sun.com/jsf/facelets"</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">      xmlns:f</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"http://java.sun.com/jsf/core"</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">      xmlns:h</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"http://java.sun.com/jsf/html"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">h:head</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">title</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>JSF Demo&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">title</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">h:head</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">h:body</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">h:outputScript</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"jsf.js"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> library</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"javax.faces"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> target</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"body"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">h:outputScript</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">h1</span><span style="color:#24292E;--shiki-dark:#E1E4E8">>Ajax JSF 2 Demo&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">h1</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">h:form</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">h:inputText</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> id</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"name"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> value</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"#{helloWorldBean.name}"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">f:ajax</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> render</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"reverseName"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">/></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">h:inputText</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">h:commandButton</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> value</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Say reverse Hi via Ajax"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">f:ajax</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> execute</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"name"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> render</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"reverseName"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">/></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">h:commandButton</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">h:outputText</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> id</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"reverseName"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> value</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"#{helloWorldBean.reverseName}"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">/></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">h:form</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">h:body</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">html</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span></code></pre>
+<p>And that’s it. Sure it’s a simple example, but so far I do like the minimal configuration and the ajax integration.</p>  </div> <footer class="article__footer" data-astro-cid-zm77yjld> <a href="/" class="article__back" data-astro-cid-zm77yjld>← All stories</a> </footer> </article>  </main> <footer class="site-footer" data-astro-cid-37fxchfa> <div class="container site-footer__inner" data-astro-cid-37fxchfa> <span data-astro-cid-37fxchfa>© 2026 Oliver Wehrens</span> <span class="site-footer__links" data-astro-cid-37fxchfa> <a href="/rss.xml" data-astro-cid-37fxchfa>RSS</a> <a href="/tags/" data-astro-cid-37fxchfa>Topics</a> <a href="/readme/" data-astro-cid-37fxchfa>readme</a> </span> </div> </footer>  </body> </html> 

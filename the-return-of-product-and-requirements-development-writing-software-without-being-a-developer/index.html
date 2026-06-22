@@ -1,293 +1,51 @@
-<!doctype html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<html
-  class="not-ready lg:text-base"
-  style="--bg: "
-  lang="en-us"
->
-  <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-  <title>The return of product and requirements development. Writing software without being a developer. - Oliver Wehrens</title>
-
-  
-  <meta name="theme-color" />
-
-  
-  
-  
-  
-  <meta name="description" content="I wanted to try AI for software development. The last time I tried it was with Github Copilot in 2023, and I was thrilled. It was great. It could predict my next code, could almost read my mind.
-Fast forward to 2025, new tools were coming up. I decided to give cursor.com a try. Since I&rsquo;ve been a podcast listener for years, I choose to program a podcast app. I&rsquo;ve never done anything in iOS or Swift before." />
-  <meta name="author" content="Oliver Wehrens" />
-  
-
-  
-  
-  
-  
-  
-  
-  <link rel="preload stylesheet" as="style" href="https://owehrens.com/main.min.css" />
-
-
-  
-  
-  
-  
-  
-
-  
-  
-  <link rel="preload" as="image" href="https://owehrens.com/linkedin.svg" />
-  
-  <link rel="preload" as="image" href="https://owehrens.com/bluesky.svg" />
-  
-  <link rel="preload" as="image" href="https://owehrens.com/speakerdeck.svg" />
-  
-  <link rel="preload" as="image" href="https://owehrens.com/rss.svg" />
-  
-  
-
-  
-  
-  <script
-    defer
-    src="https://owehrens.com/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad();"
-  ></script>
-  
-
-  
-  
-  
-
-  
-  <link rel="icon" href="https://owehrens.com/favicon.ico" />
-  <link rel="apple-touch-icon" href="https://owehrens.com/apple-touch-icon.png" />
-
-  
-  <meta name="generator" content="Hugo 0.157.0">
-
-  
-  
-  
-  
-  
-  
-  <meta itemprop="name" content="The return of product and requirements development. Writing software without being a developer.">
-  <meta itemprop="description" content="I do not know Swift nor iOS Development. Yet, I wrote a fully fledged Podcast Player for iOS in 3 hours.">
-  <meta itemprop="datePublished" content="2025-02-04T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-02-04T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1731">
-  <meta itemprop="keywords" content="Software Development,Ai">
-  
-  <meta property="og:url" content="https://owehrens.com/the-return-of-product-and-requirements-development-writing-software-without-being-a-developer/">
-  <meta property="og:site_name" content="Oliver Wehrens">
-  <meta property="og:title" content="The return of product and requirements development. Writing software without being a developer.">
-  <meta property="og:description" content="I do not know Swift nor iOS Development. Yet, I wrote a fully fledged Podcast Player for iOS in 3 hours.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-04T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-04T00:00:00+00:00">
-    <meta property="article:tag" content="Software Development">
-    <meta property="article:tag" content="Ai">
-
-  
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="The return of product and requirements development. Writing software without being a developer.">
-  <meta name="twitter:description" content="I do not know Swift nor iOS Development. Yet, I wrote a fully fledged Podcast Player for iOS in 3 hours.">
-
-  
-  
-  
-  <link rel="canonical" href="https://owehrens.com/the-return-of-product-and-requirements-development-writing-software-without-being-a-developer/" />
-  
-  
-<script defer src="https://t.4004.fyi/script.js" data-website-id="ae7b9a21-3055-4b46-bc57-15eb0c646e2e"></script>
-</head>
-
-  <body class="text-black duration-200 ease-out ">
-    <div class="mx-auto pt-2 flex flex-col justify-center items-center">
-    <div>
-        <a href="https://owehrens.com/">
-            <img
-                    class="my-0 aspect-square  rounded-full "
-                    src="/img/oliver_square.jpg"
-                    alt="Oliver Wehrens"
-            />
-        </a>
-    </div>
-
-    <div class="p-8 text-xl font-serif">Seasoned Technology Leader. Mentor. Dad.</div>
-
-
-    <div>
-        
-        <nav
-                class="mt-5 flex justify-center space-x-10 items-center "
-        >
-            
-            <a
-                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-                    style="--url: url(./linkedin.svg)"
-                    href="https://linkedin.com/in/oliverwehrens
-          "
-                    target="_blank"
-                    rel="me"
-            >
-                linkedin
-            </a>
-            
-            <a
-                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-                    style="--url: url(./bluesky.svg)"
-                    href="https://bsky.app/profile/owehrens.com"
-                    target="_blank"
-                    rel="me"
-            >
-                bluesky
-            </a>
-            
-            <a
-                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-                    style="--url: url(./speakerdeck.svg)"
-                    href="https://speakerdeck.com/owehrens
-          "
-                    target="_blank"
-                    rel="me"
-            >
-                speakerdeck
-            </a>
-            
-            <a
-                    class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-                    style="--url: url(./rss.svg)"
-                    href="https://owehrens.com/rss.xml "
-                    target="_blank"
-                    rel="alternate"
-            >
-                rss
-            </a>
-            
-        </nav>
-        
-    </div>
-
-</div>  
-
-
-    
-  
-
-
-    <main
-      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12"
-    >
-      
-
-<article>
-  <header class="mb-16">
-    Oliver Wehrens
-    <h1 class="!my-0 pb-2.5 article-title">The return of product and requirements development. Writing software without being a developer.</h1>
-
-    
-    <div class="text-sm antialiased opacity-60">
-      
-      <time>Feb 4, 2025</time>
-      
-      
-      
-      
-      <span class="mx-1">&middot;</span>
-      <span>Oliver Wehrens</span>
-      
-      <span class="text-gray">- 9 min</span>
-    </div>
-    
-  </header>
-
-  <section><p>I wanted to try AI for software development. The last time I tried it was with Github Copilot in 2023, and I was thrilled. It was great. It could predict my next code, could almost read my mind.</p>
-<p>Fast forward to 2025, new tools were coming up. I decided to give cursor.com a try. Since I&rsquo;ve been a podcast listener for years, I choose to program a podcast app. I&rsquo;ve never done anything in iOS or Swift before.</p>
+<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>The return of product and requirements development. Writing software without being a developer. · Oliver Wehrens</title><meta name="description" content="I do not know Swift nor iOS Development. Yet, I wrote a fully fledged Podcast Player for iOS in 3 hours."><link rel="canonical" href="https://owehrens.com/the-return-of-product-and-requirements-development-writing-software-without-being-a-developer/"><link rel="alternate" type="application/rss+xml" title="Oliver Wehrens" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta property="og:type" content="article"><meta property="og:site_name" content="Oliver Wehrens"><meta property="og:title" content="The return of product and requirements development. Writing software without being a developer. · Oliver Wehrens"><meta property="og:description" content="I do not know Swift nor iOS Development. Yet, I wrote a fully fledged Podcast Player for iOS in 3 hours."><meta property="og:url" content="https://owehrens.com/the-return-of-product-and-requirements-development-writing-software-without-being-a-developer/"><meta name="twitter:card" content="summary_large_image"><script defer src="http://t.4004.fyi/script.js" data-website-id="ae7b9a21-3055-4b46-bc57-15eb0c646e2e"></script><script>
+      (() => {
+        try {
+          const stored = localStorage.getItem('theme');
+          const theme =
+            stored ||
+            (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.dataset.theme = theme;
+        } catch {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/_slug_.Ckz86HID.css">
+<style>.media-badge[data-astro-cid-uj44zf3t]{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.09em;padding:.15em .5em;border-radius:2px;color:var(--accent);background:var(--accent-soft)}.tag-chip[data-astro-cid-q2wpt7bd]{display:inline-block;font-size:var(--step--1);color:var(--ink-soft);text-decoration:none;padding:.1em .55em;border:1px solid var(--rule);border-radius:999px;transition:color .15s,border-color .15s}.tag-chip[data-astro-cid-q2wpt7bd]:before{content:"#";color:var(--muted);margin-right:.1em}.tag-chip[data-astro-cid-q2wpt7bd]:hover{color:var(--accent);border-color:var(--accent)}
+.article[data-astro-cid-zm77yjld]{padding-block:var(--space-4)}.article__header[data-astro-cid-zm77yjld]{margin-bottom:var(--space-4);padding-bottom:var(--space-3);border-bottom:1px solid var(--rule)}.article__meta[data-astro-cid-zm77yjld]{display:flex;align-items:center;gap:var(--space-2);font-size:var(--step--1);color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--space-2)}.article__title[data-astro-cid-zm77yjld]{font-size:var(--step-3);line-height:1.08;margin:0 0 var(--space-3)}.article__tags[data-astro-cid-zm77yjld]{display:flex;flex-wrap:wrap;gap:var(--space-1)}.prose[data-astro-cid-zm77yjld]{max-width:none;margin-inline:auto}.article__footer[data-astro-cid-zm77yjld]{margin-top:var(--space-5);padding-top:var(--space-3);border-top:1px solid var(--rule)}.article__back[data-astro-cid-zm77yjld]{text-decoration:none;color:var(--accent);font-weight:600}
+</style></head> <body data-astro-cid-37fxchfa> <a class="skip-link" href="#main" data-astro-cid-37fxchfa>Skip to content</a> <header class="masthead masthead--compact" data-astro-cid-r6zpem2t> <div class="container" data-astro-cid-r6zpem2t> <div class="masthead__inner" data-astro-cid-r6zpem2t> <a href="/" class="nameplate" aria-label="Oliver Wehrens — home" data-astro-cid-r6zpem2t> <span class="nameplate__name" data-astro-cid-r6zpem2t>Oliver Wehrens</span>  </a> <nav class="masthead__nav" aria-label="Primary" data-astro-cid-r6zpem2t> <a href="/" data-astro-cid-r6zpem2t>Home</a><a href="/tags/" data-astro-cid-r6zpem2t>Topics</a><a href="/readme/" data-astro-cid-r6zpem2t>readme</a><a href="/search/" data-astro-cid-r6zpem2t>Search</a> <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle color theme" data-astro-cid-x3pjskd3> <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-x3pjskd3> <circle cx="12" cy="12" r="4" data-astro-cid-x3pjskd3></circle> <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" data-astro-cid-x3pjskd3></path> </svg> <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-x3pjskd3> <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" data-astro-cid-x3pjskd3></path> </svg> </button>  <script type="module">const n=document.getElementById("theme-toggle");n?.addEventListener("click",()=>{const t=document.documentElement,e=t.dataset.theme==="dark"?"light":"dark";t.dataset.theme=e;try{localStorage.setItem("theme",e)}catch{}});</script> </nav> </div> <div class="masthead__rule" aria-hidden="true" data-astro-cid-r6zpem2t></div> </div> </header>  <main id="main" data-astro-cid-37fxchfa>  <article class="container article" lang="en" data-astro-cid-zm77yjld> <header class="article__header" data-astro-cid-zm77yjld> <div class="article__meta" data-astro-cid-zm77yjld> <time datetime="2025-02-04T00:00:00.000Z" data-astro-cid-zm77yjld>February 4, 2025</time>  </div> <h1 class="article__title" data-astro-cid-zm77yjld>The return of product and requirements development. Writing software without being a developer.</h1> <div class="article__tags" data-astro-cid-zm77yjld> <a class="tag-chip" href="/tags/software-development/" data-astro-cid-q2wpt7bd>software development</a> <a class="tag-chip" href="/tags/ai/" data-astro-cid-q2wpt7bd>ai</a>  </div> </header> <div class="prose" data-pagefind-body data-astro-cid-zm77yjld>  <p>I wanted to try AI for software development. The last time I tried it was with Github Copilot in 2023, and I was thrilled. It was great. It could predict my next code, could almost read my mind.</p>
+<p>Fast forward to 2025, new tools were coming up. I decided to give cursor.com a try. Since I’ve been a podcast listener for years, I choose to program a podcast app. I’ve never done anything in iOS or Swift before.</p>
 <p>This is my attempt to get away with not writing a single line of code and just prompt the AI for requirements and bug fixes. As I studied computer science, this was the dream. Just tell the machine what you want and you get it. Now we are there (on the way).</p>
 <h1 id="tldr">TLDR</h1>
-<p>Use AI for coding. Whether you are creating prototypes or program for production. It doesn&rsquo;t matter if you&rsquo;re a product manager or a software developer. You can do it and it will speed up your work 10-fold. If you know what you want the code to do, this is for you.</p>
+<p>Use AI for coding. Whether you are creating prototypes or program for production. It doesn’t matter if you’re a product manager or a software developer. You can do it and it will speed up your work 10-fold. If you know what you want the code to do, this is for you.</p>
 <h1 id="setup">Setup</h1>
 <p>I installed XCode and got a Pro subscription for the Cursor IDE. After creating a new iOS project in XCode I opened the project directory using Cursor. I exclusively utilized the composer and chat windows of Cursor and employed XCode only to click the “Run” button and copy error messages to Cursor.</p>
 <p>Cursor can be trained to adhere to Apple style guides and Swift programming language conventions, enabling it to make more informed decisions. How can this be achieved? In the composer windows, simply type <code>@Doc</code> and press <code>Add new docs</code>. I choose to add <a href="https://developer.apple.com/design/tips/">Apple Design Tips</a> (@Apple Design Tips) and <a href="https://developer.apple.com/documentation/swift">Swift</a> (@Swift) as additional documentation sources. Now, whenever you intend to ensure that certain elements should be considered by the AI while creating code, include them in the message (as demonstrated below).</p>
 <p>Update: <a href="https://owehrens.com/ios-development-with-cursor-ai/">I just added a description of my iOS - Cursor - development setup.</a></p>
-<p><img src="train_documentation.png" alt="&ldquo;Train Cursor&rdquo;"></p>
+<p><img alt="&quot;Train Cursor&quot;" loading="lazy" decoding="async" fetchpriority="auto" width="600" height="279" src="/_astro/train_documentation.D2lnU0Vn_Z1YKoUS.webp" ></p>
 <h1 id="prompting-to-code">Prompting To Code</h1>
 <p>My prompt to create the first code.</p>
-<pre tabindex="0"><code>@Apple Design Tips @Swift @Codebase I want to write a podcast player app. 
-This should be able to :
-
-1. browse feeds from the apple podcast directory with showing the images for 
-the podcasts in a grid view
-2. subscribe a selected feed so it shows up on my subscribe list
-3. When clicking a on podcats show a list of the episodes
-4. when clicking on one episode show a player and the ability to 
-play the epsiode
-5. it should have background playing
-</code></pre><p>I went on with this for a few minutes and got a working player with a working search in Apple iTunes and the ability to play episodes.</p>
-<p><img src="player.png" alt="&ldquo;Podcast Player&rdquo;" title="A look at a bit more advanced version"></p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@Apple Design Tips @Swift @Codebase I want to write a podcast player app. </span></span>
+<span class="line"><span>This should be able to :</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. browse feeds from the apple podcast directory with showing the images for </span></span>
+<span class="line"><span>the podcasts in a grid view</span></span>
+<span class="line"><span>2. subscribe a selected feed so it shows up on my subscribe list</span></span>
+<span class="line"><span>3. When clicking a on podcats show a list of the episodes</span></span>
+<span class="line"><span>4. when clicking on one episode show a player and the ability to </span></span>
+<span class="line"><span>play the epsiode</span></span>
+<span class="line"><span>5. it should have background playing</span></span></code></pre>
+<p>I went on with this for a few minutes and got a working player with a working search in Apple iTunes and the ability to play episodes.</p>
+<p><img alt="&quot;Podcast Player&quot;" title="A look at a bit more advanced version" loading="lazy" decoding="async" fetchpriority="auto" width="308" height="600" src="/_astro/player.D1rXtU1T_Z1xTT1k.webp" ></p>
 <p>Overall I was quite happy how fast this went.</p>
 <h1 id="bugfixing">Bugfixing</h1>
 <p>Whenever I got a compile error I simple pasted it to the Composer window and asked it to fix it. Sometimes I had to do that three times in a row until the bug was removed. Once I had to read manually fix something in XCode and it gave me instructions what I need to do. It was something about a info.plist file generated twice.</p>
-<p><img src="bugfix.png" alt="&ldquo;Bugfixing&rdquo;"></p>
+<p><img alt="&quot;Bugfixing&quot;" loading="lazy" decoding="async" fetchpriority="auto" width="600" height="1041" src="/_astro/bugfix.C3Kc3TVl_Zb40dd.webp" ></p>
 <p>And it got fixed.</p>
 <h1 id="confused-about-logic">Confused about Logic</h1>
 <p>Later in the development I discovered that it got confused about the same logic over and over again. Whenever it touched a certain piece of code, it broke it. It was the logic about the play position when jumping between episodes. The logic should be:</p>
 <ul>
-<li>When clicking on an episode, go to the &lsquo;Playing now&rsquo; tab</li>
+<li>When clicking on an episode, go to the ‘Playing now’ tab</li>
 <li>Pause the current episode playing</li>
 <li>Show the information and art work about the new podcast</li>
 <li>Download the audio if not downloaded already (and show a progress bar while doing so)</li>
@@ -301,75 +59,75 @@ play the epsiode
 <p>In the beginning when I was building out the functionality, sometimes Cursor would create the same class twice and not be able to fix this compile error. Once or twice I had to remove a duplicated class by hand. It gave me instructions on where to look for the code and remove it. After the first 20 minutes, this never happened again.</p>
 <h1 id="surprise-code-removal">Surprise code removal</h1>
 <p>As I prompted</p>
-<pre tabindex="0"><code>@Codebase when the audio of the episode is not yet downloaded, show the titel, 
-image and description of the podcast (as it is right now) but also show a 
-little spinner with the percentage, indicating that you download the audio. 
-Do this with the Apple Guidelines in mind @Apple Design Tips 
-</code></pre><p>Cursor decided the remove the <code>Sleep Timer</code> functionality.  I had to add it back with:</p>
-<pre tabindex="0"><code>@Codebase @Apple Design Tips Add a sleeptimer to the player. 
-Choose 5,10,15,30,45 min and 1h. &#39;None&#39; should be the default.
-</code></pre><p>and it was back.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@Codebase when the audio of the episode is not yet downloaded, show the titel, </span></span>
+<span class="line"><span>image and description of the podcast (as it is right now) but also show a </span></span>
+<span class="line"><span>little spinner with the percentage, indicating that you download the audio. </span></span>
+<span class="line"><span>Do this with the Apple Guidelines in mind @Apple Design Tips </span></span></code></pre>
+<p>Cursor decided the remove the <code>Sleep Timer</code> functionality.  I had to add it back with:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@Codebase @Apple Design Tips Add a sleeptimer to the player. </span></span>
+<span class="line"><span>Choose 5,10,15,30,45 min and 1h. 'None' should be the default.</span></span></code></pre>
+<p>and it was back.</p>
 <h1 id="security">Security</h1>
-<p>Is the code secure? Let&rsquo;s check:</p>
-<pre tabindex="0"><code>@Codebase What are security problems in this code. Pelase fix them.
-</code></pre><p>It suggested some edits and gave the summary:</p>
-<pre tabindex="0"><code>Key Security Improvements:
-- Enforce HTTPS-only connections
-- Input sanitization for user data
-- URL validation
-- Removal of overly permissive ATS settings
-- Secure storage of user data
-- Protection against XML injection
-- Domain whitelisting
-- Input validation before storage
-
-Additional Recommendations:
-- Implement certificate pinning for critical API endpoints
-- Add rate limiting for network requests
-- Implement proper error handling for all network operations
-- Use keychain for sensitive data instead of UserDefaults
-- Add logging for security-related events
-- Implement proper session handling
-- Add timeout for network requests
-
-Would you like me to implement any of these additional security measures in detail?
-</code></pre><p>I briefly looked over the changes and they seem to be ok. I did prompt it a few more times, hoping that it really fixed things.</p>
+<p>Is the code secure? Let’s check:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@Codebase What are security problems in this code. Pelase fix them.</span></span></code></pre>
+<p>It suggested some edits and gave the summary:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Key Security Improvements:</span></span>
+<span class="line"><span>- Enforce HTTPS-only connections</span></span>
+<span class="line"><span>- Input sanitization for user data</span></span>
+<span class="line"><span>- URL validation</span></span>
+<span class="line"><span>- Removal of overly permissive ATS settings</span></span>
+<span class="line"><span>- Secure storage of user data</span></span>
+<span class="line"><span>- Protection against XML injection</span></span>
+<span class="line"><span>- Domain whitelisting</span></span>
+<span class="line"><span>- Input validation before storage</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Additional Recommendations:</span></span>
+<span class="line"><span>- Implement certificate pinning for critical API endpoints</span></span>
+<span class="line"><span>- Add rate limiting for network requests</span></span>
+<span class="line"><span>- Implement proper error handling for all network operations</span></span>
+<span class="line"><span>- Use keychain for sensitive data instead of UserDefaults</span></span>
+<span class="line"><span>- Add logging for security-related events</span></span>
+<span class="line"><span>- Implement proper session handling</span></span>
+<span class="line"><span>- Add timeout for network requests</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Would you like me to implement any of these additional security measures in detail?</span></span></code></pre>
+<p>I briefly looked over the changes and they seem to be ok. I did prompt it a few more times, hoping that it really fixed things.</p>
 <h1 id="performance-issues">Performance issues</h1>
 <p>At some point, I noticed in the iPhone Simulator that the UI was very slowing responding. I told cursor about that and was always detecting something how it could improve performance.</p>
-<pre tabindex="0"><code>While playing, it is still very slow, when no audio is playing 
-the ui behave normal. Please fix this.
-</code></pre><p>and</p>
-<pre tabindex="0"><code>During playback the UI is sluggish, I get every second 
-the console message: AudioHardware-mac-imp.cpp:2866  
- AudioDeviceGetCurrentTime: no device with given ID
-
-Does this have something to so with it?
-</code></pre><p>Nothing helped, it was slow. I asked multiple times in different ways, it always suggested ways to improve performance.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>While playing, it is still very slow, when no audio is playing </span></span>
+<span class="line"><span>the ui behave normal. Please fix this.</span></span></code></pre>
+<p>and</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>During playback the UI is sluggish, I get every second </span></span>
+<span class="line"><span>the console message: AudioHardware-mac-imp.cpp:2866  </span></span>
+<span class="line"><span> AudioDeviceGetCurrentTime: no device with given ID</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Does this have something to so with it?</span></span></code></pre>
+<p>Nothing helped, it was slow. I asked multiple times in different ways, it always suggested ways to improve performance.</p>
 <p>Just as I pointed out:</p>
-<pre tabindex="0"><code>@Codebase When I start playing the CPU on the Simulator reaches to up to 
-150% from 1% when not playing. Please fix that.
-</code></pre><p>Now it fixed it, cursor responded:</p>
-<pre tabindex="0"><code>The high CPU usage is likely due to inefficient audio 
-handling and excessive UI updates. 
-Let&#39;s optimize the AudioPlayer class to reduce CPU usage:
-
-Key optimizations:
-
-Added optimal audio session settings
-Asynchronous asset loading
-Reduced observation frequency
-Better memory management
-More efficient player item handling
-Optimized background playback
-Reduced main thread work
-Better error handling
-</code></pre><p>So only if I gave it external observation which it self could not see, it found the right solution for it.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>@Codebase When I start playing the CPU on the Simulator reaches to up to </span></span>
+<span class="line"><span>150% from 1% when not playing. Please fix that.</span></span></code></pre>
+<p>Now it fixed it, cursor responded:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>The high CPU usage is likely due to inefficient audio </span></span>
+<span class="line"><span>handling and excessive UI updates. </span></span>
+<span class="line"><span>Let's optimize the AudioPlayer class to reduce CPU usage:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Key optimizations:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Added optimal audio session settings</span></span>
+<span class="line"><span>Asynchronous asset loading</span></span>
+<span class="line"><span>Reduced observation frequency</span></span>
+<span class="line"><span>Better memory management</span></span>
+<span class="line"><span>More efficient player item handling</span></span>
+<span class="line"><span>Optimized background playback</span></span>
+<span class="line"><span>Reduced main thread work</span></span>
+<span class="line"><span>Better error handling</span></span></code></pre>
+<p>So only if I gave it external observation which it self could not see, it found the right solution for it.</p>
 <h1 id="result">Result</h1>
-<p>In the first 2h I felt 100 times more productive. As the code base grew, things like making sure the algorithm stays the same and some weird performance issues took a while to resolve. In those parts it helped that I have a developer background to point the AI in the right direction. It was a bit annoying for me, to just type a prompt and then wait 20-30 seconds, hit &lsquo;Run&rsquo; and test it again. Felt like QA Engineers from way back doing things in HP Quality Center.
+<p>In the first 2h I felt 100 times more productive. As the code base grew, things like making sure the algorithm stays the same and some weird performance issues took a while to resolve. In those parts it helped that I have a developer background to point the AI in the right direction. It was a bit annoying for me, to just type a prompt and then wait 20-30 seconds, hit ‘Run’ and test it again. Felt like QA Engineers from way back doing things in HP Quality Center.
 Find a bug, tell developers to fix it, wait and retest.</p>
-<p>I&rsquo;m just starting with Cursor and I guess there are most sophistacted ways of working with it.</p>
+<p>I’m just starting with Cursor and I guess there are most sophistacted ways of working with it.</p>
 <p>After about 3h of prompting, what did I got?</p>
-<p><img src="iphone_podcastplayer.png" alt="&ldquo;Podcast Player&rdquo;" title="Podcast Player on my iPhone"></p>
+<p><img alt="&quot;Podcast Player&quot;" title="Podcast Player on my iPhone" loading="lazy" decoding="async" fetchpriority="auto" width="800" height="534" src="/_astro/iphone_podcastplayer.HpAZjMJH_2mRLAk.webp" ></p>
 <p>A Podcast Player App with</p>
 <ul>
 <li>Searching Apple iTunes Podcasts</li>
@@ -383,98 +141,11 @@ Find a bug, tell developers to fix it, wait and retest.</p>
 <li>All designed to look like a nice (standard) iOS App</li>
 </ul>
 <h1 id="thoughts">Thoughts</h1>
-<p><strong>Use AI assistants for programming</strong>. 90% of your code has already been written, and AI can take that burden off your shoulders. You can focus on the real challenges in your business case. If your code is in production and the company is making money, it&rsquo;s a good idea to know the programming language and pay attention to the maintainability of the code. On the other hand, if you keep everything modular and with clear interfaces, why not just regenerate the one module that is important to you with a sophisticated prompt and advanced functions? Just keep the prompt in your Jira ticket and the code &hellip; well, maybe not (yet).</p>
-<p>As the code base grew, I found myself not using the auto-magic-composer such much anymore. I rather asked it to help me understand the codebase. This was beyond the prototype phase. Shortly after I began to understand how Swift works and refactored the code to make the maintenance easier for me. But the code did look partially like mumbo-jumbo. So it was refactoring time. I dug into the code and structured better (for my taste). Cursor was at my side and explained everything to me. I would imagine this is how I would approach a bigger project or some code I took over. Learn &amp; understand with the help of cursor.</p>
-<p>If you don&rsquo;t have developers and only have a rough idea of how code works, use it to get things out the door or prove that your idea meets a need. It allows you to create prototypes quickly.</p>
+<p><strong>Use AI assistants for programming</strong>. 90% of your code has already been written, and AI can take that burden off your shoulders. You can focus on the real challenges in your business case. If your code is in production and the company is making money, it’s a good idea to know the programming language and pay attention to the maintainability of the code. On the other hand, if you keep everything modular and with clear interfaces, why not just regenerate the one module that is important to you with a sophisticated prompt and advanced functions? Just keep the prompt in your Jira ticket and the code … well, maybe not (yet).</p>
+<p>As the code base grew, I found myself not using the auto-magic-composer such much anymore. I rather asked it to help me understand the codebase. This was beyond the prototype phase. Shortly after I began to understand how Swift works and refactored the code to make the maintenance easier for me. But the code did look partially like mumbo-jumbo. So it was refactoring time. I dug into the code and structured better (for my taste). Cursor was at my side and explained everything to me. I would imagine this is how I would approach a bigger project or some code I took over. Learn &#x26; understand with the help of cursor.</p>
+<p>If you don’t have developers and only have a rough idea of how code works, use it to get things out the door or prove that your idea meets a need. It allows you to create prototypes quickly.</p>
 <h1 id="more-screenshots">More Screenshots</h1>
-<p>Yes, I&rsquo;m still at awe how fast I got things to work. In 2023 I programmed a full text search engine of the spoken words in (almost) any podcast (podpodgogo.com). Back then I was convinced, that this functionality should go into a podcast player, because this is where you would need it. But I was not able to program a nice player. Now I can. Wow.</p>
-<p><img src="search_podcasts.png" alt="&ldquo;Search&rdquo;">
-<img src="subscriptio_list.png" alt="&ldquo;Subscription&rdquo;">
-<img src="episode_list.png" alt="&ldquo;Episodes&rdquo;"></p>
-</section>
-
-
-  
-  
-  <footer class="mt-12 flex flex-wrap">
-     
-    <a
-      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="https://owehrens.com/tags/software-development"
-      >software development</a
-    >
-     
-    <a
-      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="https://owehrens.com/tags/ai"
-      >ai</a
-    >
-    
-  </footer>
-  
-
-  
-  
-  
-  
-  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
-    
-    <a
-      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="https://owehrens.com/ios-development-with-cursor-ai/"
-      ><span class="mr-1.5">←</span><span>iOS Development Setup with Cursor AI</span></a
-    >
-    
-    
-    <a
-      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="https://owehrens.com/running-deepseek-671b-on-a-pc-locally/"
-      ><span>Running Deepseek 671B Model on a PC locally</span><span class="ml-1.5">→</span></a
-    >
-    
-  </nav>
-  
-  
-
-  
-  
-
-  
-
-
-  
-</article>
-
-
-    </main>
-
-    
-
-
-<div
-class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
->
-
-
-
-</div>
-
-
-<footer
-  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
->
-
-
-
-
-  
-
-  <div class="mr-auto">
-    &copy; 2009 - 2026
-    <a class="link" href="https://owehrens.com/">Oliver Wehrens</a>
-  </div>
-
-</footer>
-
-  </body>
-</html>
+<p>Yes, I’m still at awe how fast I got things to work. In 2023 I programmed a full text search engine of the spoken words in (almost) any podcast (podpodgogo.com). Back then I was convinced, that this functionality should go into a podcast player, because this is where you would need it. But I was not able to program a nice player. Now I can. Wow.</p>
+<p><img alt="&quot;Search&quot;" loading="lazy" decoding="async" fetchpriority="auto" width="300" height="607" src="/_astro/search_podcasts.C7zVdSOw_2mSpjc.webp" >
+<img alt="&quot;Subscription&quot;" loading="lazy" decoding="async" fetchpriority="auto" width="300" height="603" src="/_astro/subscriptio_list.Dtb9g048_1kRGvc.webp" >
+<img alt="&quot;Episodes&quot;" loading="lazy" decoding="async" fetchpriority="auto" width="300" height="612" src="/_astro/episode_list.CS1VTkU-_ZJf48T.webp" ></p>  </div> <footer class="article__footer" data-astro-cid-zm77yjld> <a href="/" class="article__back" data-astro-cid-zm77yjld>← All stories</a> </footer> </article>  </main> <footer class="site-footer" data-astro-cid-37fxchfa> <div class="container site-footer__inner" data-astro-cid-37fxchfa> <span data-astro-cid-37fxchfa>© 2026 Oliver Wehrens</span> <span class="site-footer__links" data-astro-cid-37fxchfa> <a href="/rss.xml" data-astro-cid-37fxchfa>RSS</a> <a href="/tags/" data-astro-cid-37fxchfa>Topics</a> <a href="/readme/" data-astro-cid-37fxchfa>readme</a> </span> </div> </footer>  </body> </html> 
