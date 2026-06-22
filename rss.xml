@@ -6,8 +6,15 @@
     <description>Recent content on Oliver Wehrens</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://owehrens.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How Agents Find Their Own Tools: Agentic Resource Discovery</title>
+      <link>https://owehrens.com/how-agents-find-their-own-tools-agentic-resource-discovery/</link>
+      <pubDate>Sun, 21 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://owehrens.com/how-agents-find-their-own-tools-agentic-resource-discovery/</guid>
+      <description>&lt;h1&gt;&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;TLDR:&lt;/strong&gt; How do agents find capabilities of web sites? Agentic Resource Discovery (ARD) is a draft spec that lets any domain advertise its AI tools the same way websites advertise themselves to search engines. I built a small demo that discovers a site&amp;rsquo;s tools four different ways and then actually calls one. You can play with it at &lt;a href=&#34;https://adr-demo.4004.fyi&#34;&gt;adr-demo.4004.fyi&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;&#xA;&lt;p&gt;More and more websites are offering capabilities. Very often that are MCPs server going with that. But how do agents know about it? If you don’t have out of band communication with the LLM provider, I think there is no way. I by myself waiting for a solution. I have a user case where I want to provide more information in a structure way to agents and I can’t do that on the website, in html for reason. There are discussions out there on how to do that, like llm.txt or such. So far no clear winner.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>AI coding test turned to product</title>
       <link>https://owehrens.com/ai-coding-test-turned-to-product/</link>
