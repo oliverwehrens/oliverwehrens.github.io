@@ -127,7 +127,7 @@ More and more websites are offering capabilities. Very often that are MCPs serve
   <meta itemprop="description" content="How do agents find capabilities of web sites? Agentic Resource Discovery (ARD) is a draft spec that lets any domain advertise its AI tools the same way websites advertise themselves to search engines. Let&#39;s explore how this works.">
   <meta itemprop="datePublished" content="2026-06-21T00:00:00+00:00">
   <meta itemprop="dateModified" content="2026-06-21T00:00:00+00:00">
-  <meta itemprop="wordCount" content="2502">
+  <meta itemprop="wordCount" content="2550">
   <meta itemprop="keywords" content="ARD,Agents">
   
   <meta property="og:url" content="https://owehrens.com/how-agents-find-their-own-tools-agentic-resource-discovery/">
@@ -300,10 +300,10 @@ MCP server, an A2A agent, and a dataset side by side.</p>
 </li>
 <li>
 <p><strong>Names anchored to domains.</strong> Every entry has an identifier like
-<code>urn:ai:weather.example:mcp:weather</code>. The middle bit has to be a real domain.
+<code>urn:air:weather.example:mcp:weather</code>. The middle bit has to be a real domain.
 That separates a tool&rsquo;s <em>name</em> (a stable thing) from its <em>location</em> (a thing
 that moves), and it gives a trust anchor — you can&rsquo;t claim
-<code>urn:ai:google.com:…</code> unless you actually control <code>google.com</code>.</p>
+<code>urn:air:google.com:…</code> unless you actually control <code>google.com</code>.</p>
 </li>
 <li>
 <p><strong>Discovery built to live outside the model.</strong> Most agents pick tools by
@@ -320,7 +320,10 @@ files, indexing them, and offering a search API across the whole network. My dem
 lives in the static half — and that&rsquo;s where the interesting part is, because
 that&rsquo;s where the four mechanisms come in.</p>
 <h2 id="the-four-ways-an-agent-can-find-your-tools">The four ways an agent can find your tools</h2>
-<p>A publisher can advertise the <em>same</em> catalog in four different ways, and a good agent tries all of them. None of them is new technology. That&rsquo;s the whole point — ARD reuses plumbing the web already has.</p>
+<p>A publisher can advertise the <em>same</em> catalog in four different ways, and a good agent tries all of them. None of them is new technology. See <a href="https://agenticresourcediscovery.org/spec/#61-discovery-mechanisms">Section 6.1</a> of the spec.</p>
+<blockquote>
+<p>Web Ingestion (Required): Crawling ai-catalog.json files from discovered URIs. All ARD implementations MUST support this.</p>
+</blockquote>
 <h3 id="1-a-well-known-url">1. A well-known URL</h3>
 <pre tabindex="0"><code>https://example.com/.well-known/ai-catalog.json
 </code></pre><p>The canonical path. Same idea as <code>/.well-known/security.txt</code> — a fixed,
@@ -391,7 +394,7 @@ has to pin down before anyone leans on it.</p>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;host&#34;</span>: { <span style="color:#f92672">&#34;displayName&#34;</span>: <span style="color:#e6db74">&#34;ARD Demo Publisher&#34;</span> },
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;entries&#34;</span>: [
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;identifier&#34;</span>: <span style="color:#e6db74">&#34;urn:ai:weather.example:mcp:weather&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;identifier&#34;</span>: <span style="color:#e6db74">&#34;urn:air:weather.example:mcp:weather&#34;</span>,
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;displayName&#34;</span>: <span style="color:#e6db74">&#34;Weather MCP Server&#34;</span>,
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;application/mcp-server-card+json&#34;</span>,
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://adr-demo.4004.fyi/mcp/weather-card.json&#34;</span>,
@@ -527,6 +530,7 @@ and this space moves fast. But I&rsquo;m fairly convinced the <em>shape</em> is 
 tools the way browsers and crawlers always have feels like the obvious next step.</p>
 <p>If you want to see it work, it&rsquo;s at
 <a href="https://adr-demo.4004.fyi">adr-demo.4004.fyi</a>.</p>
+<p>Reminder: The spec is evolving. Everything stated above is as of 2026/06/22. In some parts the spec is not clear, e.g. it mentions in one place just one discovery, in another two and also 4 discovery mechanisms. Stay tuned.</p>
 </section>
 
 
