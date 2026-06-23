@@ -16,20 +16,20 @@
 </style></head> <body data-astro-cid-37fxchfa> <a class="skip-link" href="#main" data-astro-cid-37fxchfa>Skip to content</a> <header class="masthead masthead--compact" data-astro-cid-r6zpem2t> <div class="container" data-astro-cid-r6zpem2t> <div class="masthead__inner" data-astro-cid-r6zpem2t> <a href="/" class="nameplate" aria-label="Oliver Wehrens — home" data-astro-cid-r6zpem2t> <span class="nameplate__name" data-astro-cid-r6zpem2t>Oliver Wehrens</span>  </a> <nav class="masthead__nav" aria-label="Primary" data-astro-cid-r6zpem2t> <a href="/" data-astro-cid-r6zpem2t>Home</a><a href="/tags/" data-astro-cid-r6zpem2t>Topics</a><a href="/readme/" data-astro-cid-r6zpem2t>readme</a><a href="/search/" data-astro-cid-r6zpem2t>Search</a> <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle color theme" data-astro-cid-x3pjskd3> <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-x3pjskd3> <circle cx="12" cy="12" r="4" data-astro-cid-x3pjskd3></circle> <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" data-astro-cid-x3pjskd3></path> </svg> <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-x3pjskd3> <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" data-astro-cid-x3pjskd3></path> </svg> </button>  <script type="module">const n=document.getElementById("theme-toggle");n?.addEventListener("click",()=>{const t=document.documentElement,e=t.dataset.theme==="dark"?"light":"dark";t.dataset.theme=e;try{localStorage.setItem("theme",e)}catch{}});</script> </nav> </div> <div class="masthead__rule" aria-hidden="true" data-astro-cid-r6zpem2t></div> </div> </header>  <main id="main" data-astro-cid-37fxchfa>  <article class="container article" lang="en" data-astro-cid-zm77yjld> <header class="article__header" data-astro-cid-zm77yjld> <div class="article__meta" data-astro-cid-zm77yjld> <time datetime="2026-06-21T00:00:00.000Z" data-astro-cid-zm77yjld>June 21, 2026</time>  </div> <h1 class="article__title" data-astro-cid-zm77yjld>How Agents Find Their Own Tools: Agentic Resource Discovery</h1> <div class="article__tags" data-astro-cid-zm77yjld> <a class="tag-chip" href="/tags/ard/" data-astro-cid-q2wpt7bd>ard</a> <a class="tag-chip" href="/tags/agents/" data-astro-cid-q2wpt7bd>agents</a>  </div> </header> <div class="prose" data-pagefind-body data-astro-cid-zm77yjld>  <h1 id=""></h1>
 <p><strong>TLDR:</strong> How do agents find capabilities of web sites? Agentic Resource Discovery (ARD) is a draft spec that lets any domain advertise its AI tools the same way websites advertise themselves to search engines. I built a small demo that provides a site’s tools four different ways. You can play with it at <a href="https://adr-demo.4004.fyi">adr-demo.4004.fyi</a>.</p>
 <h2 id="the-problem">The problem</h2>
-<p>More and more websites are offering capabilities. Very often that are MCPs server going with that. But how do agents know about it? If you don’t have out of band communication with the LLM provider, I think there is no way. I by myself waiting for a solution. I have a user case where I want to provide more information in a structure way to agents and I can’t do that on the website, in html for reason. There are discussions out there on how to do that, like llm.txt or such. So far no clear winner.</p>
+<p>More and more websites are offering capabilities. Very often that are MCPs server going with that. But how do agents know about it? If you don’t have out of band communication with the LLM provider, there is no way. I by myself waiting for a solution. I have a use case where I want to provide more information in a structure way to agents and I can’t do that on the website, there is no way to advertise more functionality. There are discussions out there on how to do that, like llm.txt or such. So far no clear winner.</p>
 <p>That’s the question <strong>Agentic Resource Discovery</strong> tries to answer. It’s a draft
 spec (v0.9, written by people from Google, Microsoft, and Hugging Face) that
 describes how a domain can publish a catalog of its agentic resources (MCP
 servers, A2A agents, skills, APIs) so an agent can find them instead of being
 told about them up front.</p>
 <p>Announcement from <a href="https://developers.googleblog.com/announcing-the-agentic-resource-discovery-specification/">Google</a>, <a href="https://commandline.microsoft.com/agentic-resource-discovery-specification-ard/">Microsoft</a>. Spec is available at <a href="https://agenticresourcediscovery.org/">agenticresourcediscovery.org</a>.</p>
-<p>I wanted to see if it actually holds together end to end. So I built a demo. It’s
+<p>I wanted to see how this works end to end. So I built a demo. It’s
 live at <a href="https://adr-demo.4004.fyi">adr-demo.4004.fyi</a>.</p>
 <h2 id="a-small-example">A small example</h2>
 <p>Say I ask my agent a simple question: <em>“What’s the weather in Berlin?”</em></p>
-<p>Today that only works if I already did the dance — found a weather MCP server,
-pasted its URL into my config, restarted (out of band communication). If I didn’t, the agent just shrugs. It has no idea such a tool exists, even if a perfectly good one is sitting one DNS lookup away.</p>
-<p>Here’s what I would like much more. The agent takes a domain —
+<p>Today that only works if I already found a weather MCP server,
+pasted its URL into my config, restarted (out of band communication). If I didn’t, the agent just does not know about it. It has no idea such a tool exists, even if a perfectly good one is sitting one DNS lookup away.</p>
+<p>What is a much better idea: The agent takes a domain —
 <a href="https://adr-demo.4004.fyi">adr-demo.4004.fyi</a> — and asks it a plain question:
 <em>do you have any tools?</em> The domain answers with a catalog. The agent spots a
 weather tool in it, reads how to call it, calls it, and tells me it’s 21°C and
@@ -43,7 +43,7 @@ about how that question — “do you have any tools?” — gets asked and answ
 lives and what kind of thing it is, and says nothing about how you call it. That’s
 left to the tool’s own protocol. In my demo the tool is an MCP server, so the
 actual call happens over MCP. ARD just gets you to the endpoint.</p>
-<p>A few ideas hold the whole thing together:</p>
+<p>Basic ideas:</p>
 <ul>
 <li>
 <p><strong>A type-tagged envelope.</strong> Every catalog entry carries a <code>type</code> field that’s
@@ -64,7 +64,7 @@ you actually control <code>google.com</code>.</p>
 every tool description into the prompt and reasoning over the pile. That doesn’t
 scale — you run out of context window. ARD’s bigger idea is to push selection
 into a dedicated search service, so an agent can ask “find me a flight-booking
-tool with a SOC2 attestation” and get back a short list without paying for it in
+tool” and get back a short list without paying for it in
 tokens.</p>
 </li>
 </ul>
@@ -73,7 +73,7 @@ plain JSON file. Dynamic discovery is registries crawling those files, indexing
 them, and offering a search API across the whole network. My demo lives in the
 static half, which is where the four mechanisms come in.</p>
 <h2 id="the-four-ways-an-agent-can-find-your-tools">The four ways an agent can find your tools</h2>
-<p>A publisher can advertise the same catalog in four different ways, and a good agent tries all of them. None of them is new technology, which is the whole point: ARD reuses plumbing the web already has.</p>
+<p>A publisher can advertise the same catalog in four different ways, and a good agent tries all of them. None of them is new technology, which is a nice idea: ARD reuses plumbing the web already has.</p>
 <h3 id="a-well-known-url">A well-known URL</h3>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>https://example.com/.well-known/ai-catalog.json</span></span></code></pre>
 <p>The canonical path. Same idea as <code>/.well-known/security.txt</code>: a fixed, predictable
@@ -90,7 +90,7 @@ where your <em>tool</em> index is. Exact same pattern.</p>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">head</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">link</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> rel</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"ai-catalog"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> href</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"/.well-known/ai-catalog.json"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">head</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span></code></pre>
-<p>This is the same move browsers use to find your RSS feed or your stylesheet: a
+<p>This is the basic browser / HTML tooling: a
 <code>&#x3C;link></code> tag in the page head. It puts discovery right next to the human-facing
 site, so an agent that’s already on your page (because a user sent it there) finds
 your tools without having to guess. It does not say anything about how the agent gets to your source. A link injected later by javascript might work or not - depends on the agent scraper implementation.</p>
@@ -109,7 +109,7 @@ touch the website at all, and it’s the only one that can point at a dynamic
 registry instead of a static file, which is the bridge to the search-first future
 I mentioned earlier.</p>
 <h3 id="why-four">Why four?</h3>
-<p>It’s not really about redundancy (I guess). Different agents reach into different layers: one
+<p>It’s not really about redundancy, more about flexibility. Different agents reach into different layers: one
 is crawling HTML, one is resolving DNS, one just knows the well-known path. A
 publisher who advertises all four is findable by all of them. The spec doesn’t
 even rank them; if they all point at the same catalog, they’re equal.
@@ -132,12 +132,10 @@ today and nothing would break.</p>
 <p>The open question is what an agent does with that. In my testing I wrote an agent
 that tries the four mechanisms, loads the first catalog it finds, and stops. A
 different agent might gather every catalog it can reach and merge them. Without the
-spec saying which, you can’t rely on either. And that matters the moment this
-leaves the demo stage: if a publisher splits their tools across three catalogs and
+spec saying which, you can’t rely on either. So we will see how this gets used: if a publisher splits their tools across three catalogs and
 agents only ever read one, two-thirds of those tools are invisible, and the
 publisher has no way to know.</p>
-<p>For a v0.9 draft, fair enough. But it’s exactly the kind of detail a real standard
-has to pin down before anyone leans on it.</p>
+<p>For a v0.9 draft, fair enough. But at least clarifying if all, or just the first one should be read and if multiple (different) can exist is needed.</p>
 <h2 id="from-discovery-to-a-real-tool-call">From discovery to a real tool call</h2>
 <p>Discovery gets you a file. Here’s the one my demo serves, trimmed down:</p>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">{</span></span>
@@ -167,7 +165,7 @@ has, rather than trusting whatever the file claimed.</p>
 in Berlin?”, the agent picks the right tool and fills in its arguments.</p>
 <p>And then it actually calls the tool (a real round-trip to a real weather API) and
 prints the answer.</p>
-<p>That’s the bit I wanted to prove. ARD carried the agent from a bare domain name
+<p>That’s the demo I wanted to share. ARD carried the agent from a bare domain name
 all the way to “here’s an endpoint and a tool schema,” and then got out of the
 way. MCP did the rest.</p>
 <h2 id="what-about-a-plain-rest-api">What about a plain REST API?</h2>
