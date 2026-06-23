@@ -14,7 +14,7 @@
 <style>.media-badge[data-astro-cid-uj44zf3t]{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.09em;padding:.15em .5em;border-radius:2px;color:var(--accent);background:var(--accent-soft)}.tag-chip[data-astro-cid-q2wpt7bd]{display:inline-block;font-size:var(--step--1);color:var(--ink-soft);text-decoration:none;padding:.1em .55em;border:1px solid var(--rule);border-radius:999px;transition:color .15s,border-color .15s}.tag-chip[data-astro-cid-q2wpt7bd]:before{content:"#";color:var(--muted);margin-right:.1em}.tag-chip[data-astro-cid-q2wpt7bd]:hover{color:var(--accent);border-color:var(--accent)}
 .article[data-astro-cid-zm77yjld]{padding-block:var(--space-4)}.article__header[data-astro-cid-zm77yjld]{margin-bottom:var(--space-4);padding-bottom:var(--space-3);border-bottom:1px solid var(--rule)}.article__meta[data-astro-cid-zm77yjld]{display:flex;align-items:center;gap:var(--space-2);font-size:var(--step--1);color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--space-2)}.article__title[data-astro-cid-zm77yjld]{font-size:var(--step-3);line-height:1.08;margin:0 0 var(--space-3)}.article__tags[data-astro-cid-zm77yjld]{display:flex;flex-wrap:wrap;gap:var(--space-1)}.prose[data-astro-cid-zm77yjld]{max-width:none;margin-inline:auto}.article__footer[data-astro-cid-zm77yjld]{margin-top:var(--space-5);padding-top:var(--space-3);border-top:1px solid var(--rule)}.article__back[data-astro-cid-zm77yjld]{text-decoration:none;color:var(--accent);font-weight:600}
 </style></head> <body data-astro-cid-37fxchfa> <a class="skip-link" href="#main" data-astro-cid-37fxchfa>Skip to content</a> <header class="masthead masthead--compact" data-astro-cid-r6zpem2t> <div class="container" data-astro-cid-r6zpem2t> <div class="masthead__inner" data-astro-cid-r6zpem2t> <a href="/" class="nameplate" aria-label="Oliver Wehrens — home" data-astro-cid-r6zpem2t> <span class="nameplate__name" data-astro-cid-r6zpem2t>Oliver Wehrens</span>  </a> <nav class="masthead__nav" aria-label="Primary" data-astro-cid-r6zpem2t> <a href="/" data-astro-cid-r6zpem2t>Home</a><a href="/tags/" data-astro-cid-r6zpem2t>Topics</a><a href="/readme/" data-astro-cid-r6zpem2t>readme</a><a href="/search/" data-astro-cid-r6zpem2t>Search</a> <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle color theme" data-astro-cid-x3pjskd3> <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-x3pjskd3> <circle cx="12" cy="12" r="4" data-astro-cid-x3pjskd3></circle> <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" data-astro-cid-x3pjskd3></path> </svg> <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-x3pjskd3> <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" data-astro-cid-x3pjskd3></path> </svg> </button>  <script type="module">const n=document.getElementById("theme-toggle");n?.addEventListener("click",()=>{const t=document.documentElement,e=t.dataset.theme==="dark"?"light":"dark";t.dataset.theme=e;try{localStorage.setItem("theme",e)}catch{}});</script> </nav> </div> <div class="masthead__rule" aria-hidden="true" data-astro-cid-r6zpem2t></div> </div> </header>  <main id="main" data-astro-cid-37fxchfa>  <article class="container article" lang="en" data-astro-cid-zm77yjld> <header class="article__header" data-astro-cid-zm77yjld> <div class="article__meta" data-astro-cid-zm77yjld> <time datetime="2026-06-21T00:00:00.000Z" data-astro-cid-zm77yjld>June 21, 2026</time>  </div> <h1 class="article__title" data-astro-cid-zm77yjld>How Agents Find Their Own Tools: Agentic Resource Discovery</h1> <div class="article__tags" data-astro-cid-zm77yjld> <a class="tag-chip" href="/tags/ard/" data-astro-cid-q2wpt7bd>ard</a> <a class="tag-chip" href="/tags/agents/" data-astro-cid-q2wpt7bd>agents</a>  </div> </header> <div class="prose" data-pagefind-body data-astro-cid-zm77yjld>  <h1 id=""></h1>
-<p><strong>TLDR:</strong> How do agents find capabilities of web sites? Agentic Resource Discovery (ARD) is a draft spec that lets any domain advertise its AI tools the same way websites advertise themselves to search engines. I built a small demo that discovers a site’s tools four different ways and then actually calls one. You can play with it at <a href="https://adr-demo.4004.fyi">adr-demo.4004.fyi</a>.</p>
+<p><strong>TLDR:</strong> How do agents find capabilities of web sites? Agentic Resource Discovery (ARD) is a draft spec that lets any domain advertise its AI tools the same way websites advertise themselves to search engines. I built a small demo that provides a site’s tools four different ways. You can play with it at <a href="https://adr-demo.4004.fyi">adr-demo.4004.fyi</a>.</p>
 <h2 id="the-problem">The problem</h2>
 <p>More and more websites are offering capabilities. Very often that are MCPs server going with that. But how do agents know about it? If you don’t have out of band communication with the LLM provider, I think there is no way. I by myself waiting for a solution. I have a user case where I want to provide more information in a structure way to agents and I can’t do that on the website, in html for reason. There are discussions out there on how to do that, like llm.txt or such. So far no clear winner.</p>
 <p>That’s the question <strong>Agentic Resource Discovery</strong> tries to answer. It’s a draft
@@ -74,19 +74,19 @@ them, and offering a search API across the whole network. My demo lives in the
 static half, which is where the four mechanisms come in.</p>
 <h2 id="the-four-ways-an-agent-can-find-your-tools">The four ways an agent can find your tools</h2>
 <p>A publisher can advertise the same catalog in four different ways, and a good agent tries all of them. None of them is new technology, which is the whole point: ARD reuses plumbing the web already has.</p>
-<h3 id="1-a-well-known-url">1. A well-known URL</h3>
+<h3 id="a-well-known-url">A well-known URL</h3>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>https://example.com/.well-known/ai-catalog.json</span></span></code></pre>
 <p>The canonical path. Same idea as <code>/.well-known/security.txt</code>: a fixed, predictable
 place where a thing always lives. You host one JSON file and you’re discoverable.
 No DNS, no extra files.</p>
 <p>This is the simplest mechanism. If you only ever do one of these, do this one. One caveat, this means you are able to modify your <code>/.well-known</code> directory. Not every software allows you to do that.</p>
-<h3 id="2-a-line-in-robotstxt">2. A line in robots.txt</h3>
+<h3 id="a-line-in-robotstxt">A line in robots.txt</h3>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span># robots.txt</span></span>
 <span class="line"><span>Agentmap: https://example.com/catalog.json</span></span></code></pre>
 <p>You already have a <code>robots.txt</code>. It already has a <code>Sitemap:</code> line telling search
 engines where your page index is. ARD adds an <code>Agentmap:</code> line telling agents
 where your <em>tool</em> index is. Exact same pattern.</p>
-<h3 id="3-a-link-tag-in-your-html">3. A link tag in your HTML</h3>
+<h3 id="a-link-tag-in-your-html">A link tag in your HTML</h3>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">head</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="color:#22863A;--shiki-dark:#85E89D">link</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> rel</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"ai-catalog"</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> href</span><span style="color:#24292E;--shiki-dark:#E1E4E8">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"/.well-known/ai-catalog.json"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="color:#22863A;--shiki-dark:#85E89D">head</span><span style="color:#24292E;--shiki-dark:#E1E4E8">></span></span></code></pre>
@@ -94,7 +94,7 @@ where your <em>tool</em> index is. Exact same pattern.</p>
 <code>&#x3C;link></code> tag in the page head. It puts discovery right next to the human-facing
 site, so an agent that’s already on your page (because a user sent it there) finds
 your tools without having to guess. It does not say anything about how the agent gets to your source. A link injected later by javascript might work or not - depends on the agent scraper implementation.</p>
-<h3 id="4-a-dns-record">4. A DNS record</h3>
+<h3 id="a-dns-record">A DNS record</h3>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>_catalog._agents.example.com.  3600  IN  TXT  "https://example.com/.well-known/ai-catalog.json"</span></span>
 <span class="line"><span>_search._agents.example.com.   3600  IN  TXT  "https://registry.example.com/api/v1/"</span></span></code></pre>
 <p>This is the one I find most interesting. Here discovery happens at the naming
@@ -109,10 +109,11 @@ touch the website at all, and it’s the only one that can point at a dynamic
 registry instead of a static file, which is the bridge to the search-first future
 I mentioned earlier.</p>
 <h3 id="why-four">Why four?</h3>
-<p>It’s not really about redundancy. Different agents reach into different layers: one
+<p>It’s not really about redundancy (I guess). Different agents reach into different layers: one
 is crawling HTML, one is resolving DNS, one just knows the well-known path. A
 publisher who advertises all four is findable by all of them. The spec doesn’t
-even rank them; if they all point at the same catalog, they’re equal.</p>
+even rank them; if they all point at the same catalog, they’re equal.
+Not sure how agents will implement this though. Question to be raised.</p>
 <h2 id="what-about-more-than-one-catalog">What about more than one catalog?</h2>
 <p>I just said the four mechanisms are equal <em>if they all point at the same
 catalog</em>. But what if they don’t? And while we’re there — what if a domain simply
@@ -144,7 +145,7 @@ has to pin down before anyone leans on it.</p>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  "host"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: { </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"displayName"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"ARD Demo Publisher"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> },</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  "entries"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: [</span></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    {</span></span>
-<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">      "identifier"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"urn:air:weather.example:mcp:weather"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">      "identifier"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"urn:air:adr-demo.4004.fyi:mcp:weather"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">      "displayName"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Weather MCP Server"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">      "type"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"application/mcp-server-card+json"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">      "url"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"https://adr-demo.4004.fyi/mcp/weather-card.json"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
@@ -233,7 +234,7 @@ if the string the world settles on ends up a little different.</p>
 <span class="line"><span></span></span>
 <span class="line"><span>▸ STEP 3 — Catalog entries &#x26; tools</span></span>
 <span class="line"><span>──────────────────────────────────</span></span>
-<span class="line"><span>  [MCP] Weather MCP Server  urn:air:weather.example:mcp:weather</span></span>
+<span class="line"><span>  [MCP] Weather MCP Server  urn:air:adr-demo.4004.fyi:mcp:weather</span></span>
 <span class="line"><span>      capabilities: WeatherTool, get_weather</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>Tools (1):</span></span>
@@ -273,7 +274,10 @@ carrying the entire toolbox around in its context.</p>
 every one of these already to help machines find things on the web. ARD just
 points them at a new kind of thing.</p>
 <p>I don’t know if ARD specifically is the standard that wins — it’s still a draft,
-and this space moves really fast. But I’m fairly convinced the <em>idea</em> is right. The out of band communication of knowing where tools are has to end. Letting agents discover
+and this space moves really fast.
+I don’t know if agents need to implement all four methods. I would very much welcome that, since in some
+services you can’t modify / create the <code>./well-known/ai-catalog.json</code>. I do have some expierence with ecommerce shop software, it’s not easy. So multiple ways is very much needed.</p>
+<p>But I’m fairly convinced the <em>idea</em> is right. The out of band communication of knowing where tools are has to end. Letting agents discover
 tools on websites is the future.</p>
 <p>If you want to see it work, it’s at
 <a href="https://adr-demo.4004.fyi">adr-demo.4004.fyi</a>.</p>  </div> <footer class="article__footer" data-astro-cid-zm77yjld> <a href="/" class="article__back" data-astro-cid-zm77yjld>← All stories</a> </footer> </article>  </main> <footer class="site-footer" data-astro-cid-37fxchfa> <div class="container site-footer__inner" data-astro-cid-37fxchfa> <span data-astro-cid-37fxchfa>© 2026 Oliver Wehrens</span> <span class="site-footer__links" data-astro-cid-37fxchfa> <a href="/rss.xml" data-astro-cid-37fxchfa>RSS</a> <a href="/tags/" data-astro-cid-37fxchfa>Topics</a> <a href="/readme/" data-astro-cid-37fxchfa>readme</a> </span> </div> </footer>  </body> </html> 
