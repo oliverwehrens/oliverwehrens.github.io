@@ -35,28 +35,50 @@ The runtime denies all write and network access by default, so configure it befo
 </blockquote>
 <p>After I’m done and my issues were in Github I ran the following script. It picks up the highest prio task with ‘ready-for-agent’ label and starts implementing it, one after another.</p>
 <pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">#!/bin/bash</span></span>
-<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">set</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -e</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">#</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D"># ralph.sh — autonomous "nightshift" loop (agent-driven ticket selection).</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">#</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D"># Each iteration runs a single sandboxed `claude` that does EVERYTHING itself:</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">#   pick the next ready-for-agent + nightshift ticket, read it, implement it,</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">#   test, update docs, append progress.txt, commit locally, then relabel/close</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">#   the issue — all via the hosted GitHub MCP (https://api.githubcopilot.com/mcp).</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">#</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D"># Why the MCP and not `gh`: srt's macOS Seatbelt profile blocks the mach services</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D"># a Go binary needs for TLS (`trustd`) and Keychain, so `gh` fails inside srt with</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D"># `x509: OSStatus -26276`. The GitHub MCP is a Node/HTTP client, which self-verifies</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D"># TLS and honours srt's egress proxy, so it works inside the sandbox.</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">#</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D"># PREREQUISITES (one-time, outside this script):</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">#   1. The `github` MCP must be configured &#x26; connected:  claude mcp get github</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">#   2. Its PAT must have access to the PRIVATE repo &#x3C;YOURREPO> with</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">#      Issues: Read and write (a bare token 404s — see the NO_GITHUB abort below).</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">#   3. This script allowlists githubcopilot.com for you (see the settings block).</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">REPO</span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"&#x3C;YOUREPO>>"</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">if</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> [ </span><span style="color:#D73A49;--shiki-dark:#F97583">-z</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "</span><span style="color:#005CC5;--shiki-dark:#79B8FF">$1</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> ]; </span><span style="color:#D73A49;--shiki-dark:#F97583">then</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  echo</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "Usage: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">$0</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> &#x3C;iterations>"</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  exit</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> 1</span></span>
 <span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">fi</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">ITERATIONS</span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"</span><span style="color:#005CC5;--shiki-dark:#79B8FF">$1</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">PROJECT_DIR</span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"$(</span><span style="color:#005CC5;--shiki-dark:#79B8FF">pwd</span><span style="color:#032F62;--shiki-dark:#9ECBFF">)"</span></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">USER_HOME</span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$HOME</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">SETTINGS</span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$PROJECT_DIR</span><span style="color:#032F62;--shiki-dark:#9ECBFF">/.srt-settings.json"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D"># Always clean up the temp sandbox profile, however we exit.</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">trap</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> 'rm -f "$SETTINGS"'</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> EXIT</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">echo</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "Creating temporary sandbox profile..."</span></span>
-<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D"># Providing all required keys to satisfy the exact schema validation spec</span></span>
-<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">cat</span><span style="color:#D73A49;--shiki-dark:#F97583"> &#x3C;&#x3C;</span><span style="color:#032F62;--shiki-dark:#9ECBFF">EOF</span><span style="color:#D73A49;--shiki-dark:#F97583"> ></span><span style="color:#6F42C1;--shiki-dark:#B392F0"> "</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$PROJECT_DIR</span><span style="color:#6F42C1;--shiki-dark:#B392F0">/.srt-settings.json"</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">cat</span><span style="color:#D73A49;--shiki-dark:#F97583"> &#x3C;&#x3C;</span><span style="color:#032F62;--shiki-dark:#9ECBFF">EOF</span><span style="color:#D73A49;--shiki-dark:#F97583"> ></span><span style="color:#6F42C1;--shiki-dark:#B392F0"> "</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$SETTINGS</span><span style="color:#6F42C1;--shiki-dark:#B392F0">"</span></span>
 <span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">{</span></span>
 <span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  "network": {</span></span>
 <span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">    "allowedDomains": [</span></span>
 <span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      "anthropic.com",</span></span>
 <span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      "*.anthropic.com",</span></span>
-<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      "github.com",</span></span>
-<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      "*.github.com",</span></span>
 <span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      "registry.npmjs.org",</span></span>
-<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      "api.github.com"</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      "githubcopilot.com",</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      "*.githubcopilot.com"</span></span>
 <span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">    ],</span></span>
 <span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">    "deniedDomains": []</span></span>
 <span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  },</span></span>
@@ -74,31 +96,81 @@ The runtime denies all write and network access by default, so configure it befo
 <span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">}</span></span>
 <span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">EOF</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">for</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> ((i</span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#005CC5;--shiki-dark:#79B8FF">1</span><span style="color:#24292E;--shiki-dark:#E1E4E8">; i</span><span style="color:#D73A49;--shiki-dark:#F97583">&#x3C;=</span><span style="color:#E36209;--shiki-dark:#FFAB70">$1</span><span style="color:#24292E;--shiki-dark:#E1E4E8">; i</span><span style="color:#D73A49;--shiki-dark:#F97583">++</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)); </span><span style="color:#D73A49;--shiki-dark:#F97583">do</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">read</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -r</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -d</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> ''</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> PROMPT</span><span style="color:#D73A49;--shiki-dark:#F97583"> &#x3C;&#x3C;</span><span style="color:#032F62;--shiki-dark:#9ECBFF">PROMPT_EOF</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">@PRD.md @BACKEND.md @progress.txt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">You are the nightshift implementation agent for the PRIVATE repo </span><span style="color:#24292E;--shiki-dark:#E1E4E8">$REPO</span><span style="color:#032F62;--shiki-dark:#9ECBFF">. Use the</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">**github MCP tools** (mcp__github__*) for ALL GitHub access. Do NOT use </span><span style="color:#005CC5;--shiki-dark:#79B8FF">\`</span><span style="color:#032F62;--shiki-dark:#9ECBFF">gh</span><span style="color:#005CC5;--shiki-dark:#79B8FF">\`</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> — it</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">cannot reach GitHub from inside this sandbox. Work through these steps in order:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">0. CONNECTIVITY: list issues in </span><span style="color:#24292E;--shiki-dark:#E1E4E8">$REPO</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> via the github MCP. If that call errors</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   (cannot resolve repository / 404 / auth), STOP now, change no files, and output</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   &#x3C;promise>NO_GITHUB&#x3C;/promise> followed by the exact error text.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">1. PICK: among OPEN issues carrying ALL of the labels 'ready-for-agent' AND 'nightshift'</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   AND 'backend-only' AND NOT 'BLOCKED', consider only those whose stated dependencies are</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   already satisfied — i.e. every issue its body says must be done first is already CLOSED.</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   This is DEPENDENCY order, NOT numeric order: a lower-numbered issue with an unmet</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   dependency must be SKIPPED in favour of the dependency it is waiting on (e.g. if #100</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   says "do #101 first" and #101 is still open, pick #101, not #100). Do NOT block on</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   ordering. Among the dependency-eligible issues, choose the lowest number. If there are</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   NONE eligible (none carry the labels, or every remaining one is waiting on an unmet</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   dependency), output &#x3C;promise>COMPLETE&#x3C;/promise> and stop without changing any files.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">2. READ: fetch the chosen issue's full body via the MCP. Call its number N.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">3. DEPENDENCIES: PICK already guaranteed the ticket's stated ordering dependencies are</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   satisfied (the issues it says to do first are CLOSED), so do NOT block merely on</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   ordering. This step is for GENUINE blockers only: the ticket is missing information,</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   is ambiguous, or needs an external prerequisite you cannot satisfy. In that case make</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   no code changes, add an MCP comment on issue #N noting the block, add the label</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   'BLOCKED', then output &#x3C;promise>BLOCKED #N&#x3C;/promise> with a one-line reason and stop.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">4. IMPLEMENT: /implement issue #N end-to-end from its body + the repo. ONLY this one ticket.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">5. VERIFY: run the tests and the type checks. Check again that you implemented what the tickets wanted.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">6. DOCS: update PRD.md / BACKEND.md to reflect what changed, and append a short dated</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   entry to progress.txt.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">7. COMMIT: commit your changes locally. Do NOT push.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">8. CLOSE OUT (via MCP): add a brief comment on issue #N summarising what you built and</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   the local commit hash; remove the 'ready-for-agent' label so it is not picked again;</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">   then close issue #N as completed.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">Finally output &#x3C;promise>DONE #N&#x3C;/promise>.</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">PROMPT_EOF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">for</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> ((i</span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#005CC5;--shiki-dark:#79B8FF">1</span><span style="color:#24292E;--shiki-dark:#E1E4E8">; i</span><span style="color:#D73A49;--shiki-dark:#F97583">&#x3C;=</span><span style="color:#24292E;--shiki-dark:#E1E4E8">ITERATIONS; i</span><span style="color:#D73A49;--shiki-dark:#F97583">++</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)); </span><span style="color:#D73A49;--shiki-dark:#F97583">do</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  echo</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "=== Starting Iteration </span><span style="color:#24292E;--shiki-dark:#E1E4E8">$i</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> ==="</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  result</span><span style="color:#D73A49;--shiki-dark:#F97583">=</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$(</span><span style="color:#6F42C1;--shiki-dark:#B392F0">npx</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> --package=@anthropic-ai/sandbox-runtime</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> srt</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
-<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    --settings</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$PROJECT_DIR</span><span style="color:#032F62;--shiki-dark:#9ECBFF">/.srt-settings.json"</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
-<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">    claude</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> --dangerously-skip-permissions</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -p</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "</span></span>
-<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      @PRD.md @BACKEND.md @progress.txt</span></span>
-<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      1. Find the highest-priority task with 'ready-for-agent' label and implement it.</span></span>
-<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      2. Run your tests and type checks.</span></span>
-<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      3. Update the PRD / BACKEND with what was done.</span></span>
-<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      4. Append your progress to progress.txt.</span></span>
-<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      5. Commit your changes.</span></span>
-<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      ONLY WORK ON A SINGLE TASK.</span></span>
-<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">      If the PRD is complete, output &#x3C;promise>COMPLETE&#x3C;/promise>."</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    --settings</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$SETTINGS</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">    claude</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> --dangerously-skip-permissions</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -p</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$PROMPT</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">)</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  echo</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$result</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"</span></span>
 <span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  if</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> [[ </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$result</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"</span><span style="color:#D73A49;--shiki-dark:#F97583"> ==</span><span style="color:#D73A49;--shiki-dark:#F97583"> *</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"&#x3C;promise>NO_GITHUB&#x3C;/promise>"</span><span style="color:#D73A49;--shiki-dark:#F97583">*</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> ]]; </span><span style="color:#D73A49;--shiki-dark:#F97583">then</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    echo</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "GitHub is unreachable via the MCP. Most likely the fine-grained PAT lacks"</span><span style="color:#D73A49;--shiki-dark:#F97583"> >&#x26;2</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    echo</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "access to the private repo </span><span style="color:#24292E;--shiki-dark:#E1E4E8">$REPO</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> (needs Issues: Read and write)."</span><span style="color:#D73A49;--shiki-dark:#F97583"> >&#x26;2</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    echo</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "Fix the token's repository access, then re-run. Aborting."</span><span style="color:#D73A49;--shiki-dark:#F97583"> >&#x26;2</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    exit</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> 1</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  fi</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  if</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> [[ </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$result</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"</span><span style="color:#D73A49;--shiki-dark:#F97583"> ==</span><span style="color:#D73A49;--shiki-dark:#F97583"> *</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"&#x3C;promise>COMPLETE&#x3C;/promise>"</span><span style="color:#D73A49;--shiki-dark:#F97583">*</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> ]]; </span><span style="color:#D73A49;--shiki-dark:#F97583">then</span></span>
-<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    echo</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "PRD complete after </span><span style="color:#24292E;--shiki-dark:#E1E4E8">$i</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> iterations."</span></span>
-<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">    rm</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -f</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$PROJECT_DIR</span><span style="color:#032F62;--shiki-dark:#9ECBFF">/.srt-settings.json"</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    echo</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "No ready-for-agent + nightshift tickets left. Done after $((</span><span style="color:#6F42C1;--shiki-dark:#B392F0">i-1</span><span style="color:#032F62;--shiki-dark:#9ECBFF">)) iterations."</span></span>
 <span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    exit</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> 0</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  fi</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  if</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> [[ </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$result</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"</span><span style="color:#D73A49;--shiki-dark:#F97583"> ==</span><span style="color:#D73A49;--shiki-dark:#F97583"> *</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"&#x3C;promise>BLOCKED"</span><span style="color:#D73A49;--shiki-dark:#F97583">*</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> ]]; </span><span style="color:#D73A49;--shiki-dark:#F97583">then</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    echo</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "Agent reported a blocked ticket; stopping so a human can look."</span><span style="color:#D73A49;--shiki-dark:#F97583"> >&#x26;2</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    exit</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> 1</span></span>
 <span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">  fi</span></span>
 <span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">done</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">rm</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -f</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "</span><span style="color:#24292E;--shiki-dark:#E1E4E8">$PROJECT_DIR</span><span style="color:#032F62;--shiki-dark:#9ECBFF">/.srt-settings.json"</span></span></code></pre>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">echo</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "Reached the </span><span style="color:#24292E;--shiki-dark:#E1E4E8">$ITERATIONS</span><span style="color:#032F62;--shiki-dark:#9ECBFF">-iteration limit."</span></span></code></pre>
+<p>Note: You need to update the repo name here. It needs Github MCP and a PAT for that repo.</p>
 <p>I came back in the morning and my whole backend was implemented.</p>
 <p>This is an adoption of <a href="https://www.aihero.dev/getting-started-with-ralph">Matt’s Ralph Loop</a>. You can be more elaborate with the prompt and reference the <code>/implement</code> and <code>/tdd</code> skills.</p>
 <p>With the SRT the whole Claude Code process is isolated, including file tools, MCP servers, and hooks.</p>
