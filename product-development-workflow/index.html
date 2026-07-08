@@ -27,6 +27,29 @@ where I had the Aha moment. I checked with Fable the flow I had, did improvement
 <p>Since the Claude Sandbox Runtime can’t do iOS development / compiling I isolate backend tickets for <a href="https://owehrens.com/nightshift-with-claude-sandbox-runtime-srt/">‘ralph.sh’</a>. I spend 1h to refine them, bring them in the right dependency order and then fired the script.</p>
 <p>The following is my <code>WORKFLOW.md</code> which is linked in my <code>CLAUDE.md</code>. And yes, I develop on <code>main</code> :).</p>
 <p>It is addictive.</p>
+<h3 id="update">Update</h3>
+<p>First I was not sure if the <code>/verify</code> can really spot gaps, since it is the same LLM checking itself. But no, the context matters, it spawns a fresh agent checking and voila:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>...</span></span>
+<span class="line"><span>The project's verify skill has a fresh-context rule: since this conversation implemented #173, I must not verify inline — I spawn a general-purpose subagent with only the issue number, repo root, and the verifier protocol (no diff, no summary), then relay its report. Doing that now.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>⏺ Agent(Independently verify issue 173)</span></span>
+<span class="line"><span>Backgrounded agent (↓ to manage · ctrl+o to expand)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Verification is running in a fresh-context subagent (per the project rule that the implementer can't verify their own work). I'll relay its report when it completes.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  Ran 1 shell command</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>The verifier is working independently. Waiting for its report.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>✻ Waiting for 1 background agent to finish</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>⏺ Agent "Independently verify issue 173" finished · 4m 46s</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>The verifier caught a real miss: Criterion 3 requires editing an ingredient's note, and my EditIngredientRow omits it. Fixing now — add a note field to the row and trim it on save.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>⏺ Update(app/Cooked/Features/Recipes/RecipeEditorView.swift)</span></span>
+<span class="line"><span>...</span></span></code></pre>
+<p>It caught a problem, fixed and ran the verifier again.</p>
 <h1 id="product-development-workflow">Product development workflow</h1>
 <p>How a feature travels from idea to verified delivery in this repo. Three phases, each with
 its own owner, tools, and exit condition. <code>CLAUDE.md</code> holds the one-screen summary; this is
