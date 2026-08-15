@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Flappy Bird — Canvas Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg0:#0b1622; --bg1:#132a3d;
+    --ink:#eaf4ff; --dim:#8fa8bd;
+    --yellow:#ffd93b; --green:#58c26a; --coral:#ff6b5e;
+    --card-edge:#5a4632;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ height:100%; }
+  body{
+    min-height:100dvh;
+    display:flex; flex-direction:column; align-items:center;
+    font-family:'Nunito',sans-serif; font-weight:700; color:var(--ink);
+    background:
+      radial-gradient(1100px 560px at 50% -10%, rgba(88,194,106,.10), transparent 60%),
+      radial-gradient(900px 520px at 88% 112%, rgba(255,217,59,.07), transparent 60%),
+      linear-gradient(180deg, var(--bg0), var(--bg1));
+    overflow-x:hidden;
+    user-select:none; -webkit-user-select:none;
+    -webkit-tap-highlight-color:transparent;
+    touch-action:manipulation;
+  }
+  .px{ font-family:'Press Start 2P',monospace; }
+
+  /* ---------- ambient starfield ---------- */
+  .stars{
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image:
+      radial-gradient(1px 1px at 25px 35px, rgba(255,255,255,.75), transparent),
+      radial-gradient(1px 1px at 120px 90px, rgba(255,255,255,.4), transparent),
+      radial-gradient(1.6px 1.6px at 200px 160px, rgba(255,255,255,.55), transparent),
+      radial-gradient(1px 1px at 300px 60px, rgba(255,255,255,.35), transparent),
+      radial-gradient(1.3px 1.3px at 70px 200px, rgba(255,255,255,.45), transparent);
+    background-size:340px 260px;
+    animation: twinkle 5s ease-in-out infinite alternate, drift 120s linear infinite;
+  }
+  @keyframes twinkle{ from{opacity:.4} to{opacity:.9} }
+  @keyframes drift{ from{background-position:0 0} to{background-position:340px 260px} }
+
+  /* ---------- header ---------- */
+  header{
+    position:relative; z-index:2;
+    width:min(92vw, 560px);
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:22px 4px 14px;
+    animation: rise .6s cubic-bezier(.22,1,.36,1) both;
+  }
+  .logo{ display:flex; align-items:center; gap:11px; }
+  .logo-bird-wrap{ display:inline-block; animation: bob 2.2s ease-in-out infinite; }
+  #logoBird{ display:block; }
+  #logoBird.flap{ animation: logoFlap .28s ease-out; }
+  @keyframes logoFlap{ 0%{transform:translateY(0)} 40%{transform:translateY(-9px) rotate(-12deg)} 100%{transform:translateY(0)} }
+  @keyframes bob{ 0%,100%{transform:translateY(0) rotate(-4deg)} 50%{transform:translateY(-5px) rotate(5deg)} }
+  .logo-text{
+    font-family:'Press Start 2P',monospace; font-size:14px; letter-spacing:1px;
+    color:#fff; text-shadow:2px 2px 0 rgba(0,0,0,.45);
+  }
+  .logo-text .alt{ color:var(--yellow); }
+  .hud{ display:flex; align-items:center; gap:10px; }
+  .chip{
+    font-family:'Press Start 2P',monospace; font-size:9px; letter-spacing:1px;
+    color:var(--yellow);
+    background:rgba(255,217,59,.08); border:1px solid rgba(255,217,59,.35);
+    padding:10px 12px; border-radius:9px;
+    display:flex; gap:9px; align-items:center;
+  }
+  .chip b{ color:#fff; }
+  .icon-btn{
+    width:40px; height:40px; display:grid; place-items:center;
+    color:var(--ink); background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14); border-radius:10px; cursor:pointer;
+    transition: transform .15s, background .15s, box-shadow .15s;
+  }
+  .icon-btn:hover{ transform:translateY(-2px); background:rgba(255,255,255,.12); box-shadow:0 6px 14px rgba(0,0,0,.35); }
+  .icon-btn:active{ transform:translateY(0); }
+  .icon-btn.muted{ color:#6b8299; }
+  .icon-btn .slash{ opacity:0; }
+  .icon-btn.muted .w1, .icon-btn.muted .w2{ opacity:0; }
+  .icon-btn.muted .slash{ opacity:1; }
+
+  /* ---------- cabinet ---------- */
+  main{ position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; }
+  .cabinet{
+    position:relative; padding:13px;
+    background:linear-gradient(180deg,#1c2f43,#0f1c2b);
+    border:1px solid rgba(255,255,255,.09); border-radius:20px;
+    box-shadow: 0 34px 70px -22px rgba(0,0,0,.75), inset 0 1px 0 rgba(255,255,255,.08);
+    animation: rise .6s .08s cubic-bezier(.22,1,.36,1) both;
+  }
+  .cabinet::before{
+    content:""; position:absolute; inset:-46px; z-index:-1;
+    background:radial-gradient(closest-side, rgba(88,194,106,.16), transparent);
+  }
+  .led{
+    position:absolute; top:5px; right:13px; width:8px; height:8px; border-radius:50%;
+    background:#ffd93b; box-shadow:0 0 8px #ffd93b;
+  }
+  .cabinet[data-state="play"]  .led{ background:#3dff8f; box-shadow:0 0 10px #3dff8f; animation: ledpulse 1s ease-in-out infinite; }
+  .cabinet[data-state="over"]  .led{ background:#ff5d5d; box-shadow:0 0 9px #ff5d5d; }
+  .cabinet[data-state="pause"] .led{ background:#ffb84d; box-shadow:0 0 9px #ffb84d; }
+  @keyframes ledpulse{ 50%{ opacity:.45 } }
+  .bezel-tag{
+    position:absolute; bottom:4px; right:15px;
+    font-family:'Press Start 2P',monospace; font-size:7px; letter-spacing:2px;
+    color:rgba(255,255,255,.22);
+  }
+  .screen{
+    position:relative;
+    width:min(92vw, 420px, calc((100vh - 250px) * 0.6667));
+    width:min(92vw, 420px, calc((100dvh - 250px) * 0.6667));
+    aspect-ratio:2/3;
+    border-radius:12px; overflow:hidden; background:#57c1e8;
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,.35), inset 0 12px 34px rgba(0,0,0,.14);
+  }
+  canvas{ display:block; width:100%; height:100%; touch-action:none; }
+  .fx{
+    position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:
+      radial-gradient(120% 100% at 50% 45%, transparent 62%, rgba(0,0,0,.20)),
+      repeating-linear-gradient(0deg, rgba(0,0,0,.05) 0 1px, transparent 1px 3px);
+  }
+
+  /* ---------- overlays ---------- */
+  .overlay{
+    position:absolute; inset:0; z-index:2;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px;
+    pointer-events:none; opacity:0; transition:opacity .25s ease;
+  }
+  .overlay.show{ opacity:1; }
+  .ov-title{
+    font-family:'Press Start 2P',monospace; font-size:19px; letter-spacing:1px;
+    animation: bob 1.6s ease-in-out infinite;
+  }
+  .over-title{ color:var(--coral); font-size:17px; }
+  .outline{
+    text-shadow:
+      -2px 0 0 #263238, 2px 0 0 #263238, 0 -2px 0 #263238, 0 2px 0 #263238,
+      -2px -2px 0 #263238, 2px -2px 0 #263238, -2px 2px 0 #263238, 2px 2px 0 #263238,
+      0 5px 0 rgba(0,0,0,.28);
+  }
+  .hint-px{
+    font-family:'Press Start 2P',monospace; font-size:8px; letter-spacing:1px;
+    color:rgba(255,255,255,.92);
+    text-shadow:-1px 0 0 rgba(38,50,56,.8), 1px 0 0 rgba(38,50,56,.8), 0 -1px 0 rgba(38,50,56,.8), 0 1px 0 rgba(38,50,56,.8);
+  }
+  .hint-px.dim{ color:rgba(255,255,255,.6); }
+  .tap{
+    width:64px; height:64px; border-radius:50%;
+    border:3px solid rgba(255,255,255,.92);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:22px; position:relative;
+    animation: tapbob 1.2s ease-in-out infinite;
+    text-shadow:0 2px 0 rgba(0,0,0,.3);
+  }
+  .tap::after{
+    content:""; position:absolute; inset:-3px; border-radius:50%;
+    border:3px solid rgba(255,255,255,.7);
+    animation: ripple 1.2s ease-out infinite;
+  }
+  @keyframes tapbob{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
+  @keyframes ripple{ from{transform:scale(1); opacity:.8} to{transform:scale(1.9); opacity:0} }
+
+  /* game-over panel */
+  .panel{
+    display:flex; align-items:center; gap:20px;
+    background:linear-gradient(180deg,#fbf0d8,#efdab0);
+    border:3px solid var(--card-edge); border-radius:14px;
+    padding:16px 22px;
+    box-shadow: 0 6px 0 rgba(0,0,0,.35), inset 0 2px 0 rgba(255,255,255,.6);
+  }
+  .ov-over.show .panel{ animation: drop .45s cubic-bezier(.34,1.56,.64,1) both; }
+  @keyframes drop{
+    from{ transform:translateY(-46px) scale(.9); opacity:0; }
+    60%{ transform:translateY(6px) scale(1.02); opacity:1; }
+    to{ transform:none; opacity:1; }
+  }
+  .medal-wrap{ display:flex; flex-direction:column; align-items:center; gap:7px; }
+  .medal{
+    width:58px; height:58px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; position:relative;
+  }
+  .medal .star{ font-size:22px; color:rgba(60,40,10,.55); text-shadow:0 1px 0 rgba(255,255,255,.35); }
+  .m-none{ border:3px dashed rgba(90,70,50,.4); }
+  .m-bronze{ background:radial-gradient(circle at 35% 30%, #e8a06a, #a95f2c 72%); box-shadow:inset 0 -5px 7px rgba(0,0,0,.3), inset 0 4px 6px rgba(255,255,255,.35); }
+  .m-silver{ background:radial-gradient(circle at 35% 30%, #f4f6fa, #98a3b6 72%); box-shadow:inset 0 -5px 7px rgba(0,0,0,.28), inset 0 4px 6px rgba(255,255,255,.5); }
+  .m-gold{   background:radial-gradient(circle at 35% 30%, #ffe98a, #d4a017 72%); box-shadow:inset 0 -5px 7px rgba(0,0,0,.3), inset 0 4px 6px rgba(255,255,255,.45); }
+  .m-plat{   background:radial-gradient(circle at 35% 30%, #d9fff5, #4fbfae 72%); box-shadow:inset 0 -5px 7px rgba(0,0,0,.3), inset 0 4px 6px rgba(255,255,255,.5); }
+  .medal:not(.m-none)::after{
+    content:""; position:absolute; inset:0; border-radius:50%;
+    background:linear-gradient(120deg, transparent 32%, rgba(255,255,255,.55) 46%, transparent 60%);
+    background-size:250% 100%; animation: shine 2.6s linear infinite;
+  }
+  @keyframes shine{ from{background-position:160% 0} to{background-position:-160% 0} }
+  .medal-label{ font-family:'Press Start 2P',monospace; font-size:7px; letter-spacing:1px; color:#8a6d4a; }
+  .scores{ display:flex; flex-direction:column; gap:11px; }
+  .row{ display:flex; align-items:baseline; gap:14px; }
+  .row span{ font-family:'Press Start 2P',monospace; font-size:8px; letter-spacing:1px; color:#8a6d4a; }
+  .row b{ font-family:'Press Start 2P',monospace; font-size:16px; color:#4a3826; }
+  .new{
+    font-family:'Press Start 2P',monospace; font-size:7px; font-style:normal;
+    background:var(--coral); color:#fff; padding:4px 6px; border-radius:4px;
+    box-shadow:0 2px 0 rgba(0,0,0,.25);
+  }
+  .ov-over.show .new{ animation: pop .3s .3s cubic-bezier(.34,1.56,.64,1) both; }
+  @keyframes pop{ from{transform:scale(0) rotate(-6deg)} to{transform:scale(1) rotate(-6deg)} }
+
+  .btn{
+    pointer-events:auto; cursor:pointer;
+    font-family:'Press Start 2P',monospace; font-size:11px; letter-spacing:1px;
+    color:#fff; text-shadow:1px 2px 0 rgba(0,0,0,.35);
+    background:linear-gradient(180deg,#6fd484,#43ad5c);
+    border:3px solid #1e5c33; border-radius:12px; padding:15px 24px;
+    box-shadow:0 6px 0 #1e5c33, 0 12px 20px rgba(0,0,0,.35);
+    transition: transform .12s, box-shadow .12s, filter .12s;
+  }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 0 #1e5c33, 0 16px 24px rgba(0,0,0,.4); filter:brightness(1.06); }
+  .btn:active{ transform:translateY(4px); box-shadow:0 2px 0 #1e5c33; }
+
+  .ov-pause{ background:rgba(8,16,26,.5); }
+
+  /* ---------- legend / footer ---------- */
+  .legend{
+    display:flex; flex-wrap:wrap; gap:10px 24px; justify-content:center;
+    margin-top:20px; font-size:12px; color:var(--dim);
+    animation: rise .6s .16s cubic-bezier(.22,1,.36,1) both;
+  }
+  .key{ display:flex; align-items:center; gap:7px; }
+  kbd{
+    font-family:'Press Start 2P',monospace; font-size:8px; color:var(--ink);
+    background:#152a3d; border:1px solid rgba(255,255,255,.16);
+    border-bottom:3px solid rgba(255,255,255,.28); border-radius:6px;
+    padding:6px 8px; transition: transform .15s;
+  }
+  .key:hover kbd{ transform:translateY(-2px); }
+  footer{
+    margin:16px 0 22px; font-size:11px; font-weight:600; color:#5c7488;
+    animation: rise .6s .22s cubic-bezier(.22,1,.36,1) both;
+  }
+  @keyframes rise{ from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none} }
+
+  @media (max-width:480px){
+    .logo-text{ font-size:11px; }
+    .chip{ font-size:8px; padding:8px 9px; }
+    .legend{ font-size:11px; }
+  }
+</style>
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+
+<header>
+  <div class="logo">
+    <span class="logo-bird-wrap">
+      <svg id="logoBird" viewBox="0 0 40 32" width="36" height="29" aria-hidden="true">
+        <ellipse cx="18" cy="17" rx="14" ry="11" fill="#ffd93b" stroke="#5a3d1e" stroke-width="2"/>
+        <ellipse cx="11" cy="20" rx="6" ry="4" fill="#f5b73e" stroke="#5a3d1e" stroke-width="1.5"/>
+        <circle cx="24" cy="12" r="5" fill="#fff" stroke="#5a3d1e" stroke-width="1.5"/>
+        <circle cx="25.5" cy="12.5" r="2" fill="#26211a"/>
+        <path d="M30 15 q9 1 0 7" fill="#ff7b39" stroke="#5a3d1e" stroke-width="1.5"/>
+      </svg>
+    </span>
+    <span class="logo-text">FLAPPY <span class="alt">BIRD</span></span>
+  </div>
+  <div class="hud">
+    <div class="chip">BEST <b id="bestVal">0</b></div>
+    <button id="btnMute" class="icon-btn" aria-label="Toggle sound (M)" title="Sound (M)">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" stroke="none"/>
+        <path class="w1" d="M15.5 8.5a5 5 0 0 1 0 7"/>
+        <path class="w2" d="M18.5 5.5a9 9 0 0 1 0 13"/>
+        <line class="slash" x1="16" y1="9" x2="22" y2="15"/>
+        <line class="slash" x1="22" y1="9" x2="16" y2="15"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="cabinet" id="cabinet" data-state="ready">
+    <span class="led" aria-hidden="true"></span>
+    <span class="bezel-tag">FLAPPY·01</span>
+    <div class="screen" id="screen">
+      <canvas id="game"></canvas>
+      <div class="fx" aria-hidden="true"></div>
+
+      <div class="overlay show" id="ovReady">
+        <div class="ov-title outline">GET READY</div>
+        <div class="tap" aria-hidden="true">▲</div>
+        <div class="hint-px">TAP · CLICK · SPACE</div>
+      </div>
+
+      <div class="overlay ov-over" id="ovOver">
+        <div class="ov-title over-title outline">GAME OVER</div>
+        <div class="panel">
+          <div class="medal-wrap">
+            <div class="medal m-none" id="medal"><span class="star" id="medalStar">★</span></div>
+            <div class="medal-label" id="medalLabel">NO MEDAL</div>
+          </div>
+          <div class="scores">
+            <div class="row"><span>SCORE</span><b id="finalScore">0</b></div>
+            <div class="row"><span>BEST</span><b id="finalBest">0</b><em class="new" id="newBest" style="display:none">NEW!</em></div>
+          </div>
+        </div>
+        <button class="btn" id="btnRestart">PLAY AGAIN</button>
+        <div class="hint-px dim">OR PRESS R</div>
+      </div>
+
+      <div class="overlay ov-pause" id="ovPause">
+        <div class="ov-title outline">PAUSED</div>
+        <div class="hint-px">PRESS P TO RESUME</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="key"><kbd>SPACE</kbd><kbd>↑</kbd><kbd>CLICK</kbd> flap</span>
+    <span class="key"><kbd>P</kbd> pause</span>
+    <span class="key"><kbd>M</kbd> sound</span>
+    <span class="key"><kbd>R</kbd> restart</span>
+  </div>
+</main>
+
+<footer>Pure canvas · zero image assets · sound synthesized live in your browser</footer>
+
+<script>
+(() => {
+'use strict';
+
+/* ================= constants & state ================= */
+const W = 400, H = 600, GROUND_H = 88, GROUND_Y = H - GROUND_H;
+const PIPE_W = 68, CAP_H = 26, CAP_OVER = 5, SPACING = 232;
+const GRAV = 1800, FLAP_V = -520, MAX_FALL = 900, READY_Y = 250;
+
+const S = { READY:0, PLAY:1, DEAD:2, OVER:3 };
+let state = S.READY, paused = false, t = 0;
+let score = 0, overT = 0, popT = 0, shake = 0, flash = 0;
+let groundOff = 0, hillFarOff = 0, hillNearOff = 0;
+
+const store = {
+  get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+};
+let best   = +(store.get('flappy.best') || 0);
+let muted  = store.get('flappy.muted') === '1';
+
+const bird = { x:104, y:READY_Y, vy:0, rot:0, wing:0, r:13 };
+let pipes = [], parts = [];
+
+const clouds = [];
+for(let i=0;i<7;i++) clouds.push({ x:Math.random()*W, y:30+Math.random()*180, s:.5+Math.random()*.9, far:i<4 });
+
+const stars = [];
+for(let i=0;i<42;i++) stars.push({ x:Math.random()*W, y:Math.random()*H*.55, p:Math.random()*6.28, s:Math.random()<.3?2:1 });
+
+/* ================= dom ================= */
+const $ = id => document.getElementById(id);
+const canvas = $('game'), ctx = canvas.getContext('2d');
+const screenEl = $('screen'), cabinet = $('cabinet');
+const ovReady = $('ovReady'), ovOver = $('ovOver'), ovPause = $('ovPause');
+const elFinal = $('finalScore'), elBest = $('finalBest'), elNew = $('newBest');
+const medalEl = $('medal'), medalStar = $('medalStar'), medalLabel = $('medalLabel');
+const bestVal = $('bestVal'), btnMute = $('btnMute'), btnRestart = $('btnRestart'), logoBird = $('logoBird');
+
+let scale = 1;
+function resize(){
+  const r = screenEl.getBoundingClientRect();
+  if(r.width < 2) return;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  canvas.width  = Math.round(r.width * dpr);
+  canvas.height = Math.round(r.height * dpr);
+  scale = canvas.width / W;
+}
+new ResizeObserver(resize).observe(screenEl);
+window.addEventListener('resize', resize);
+resize();
+
+/* ================= audio (synthesized) ================= */
+let AC = null, master = null;
+function audio(){
+  if(!AC){
+    AC = new (window.AudioContext || window.webkitAudioContext)();
+    master = AC.createGain();
+    master.gain.value = muted ? 0 : .5;
+    master.connect(AC.destination);
+  }
+  if(AC.state === 'suspended') AC.resume();
+}
+function tone(f0, f1, dur, type, vol, delay=0){
+  if(!AC) return;
+  const t0 = AC.currentTime + delay;
+  const o = AC.createOscillator(), g = AC.createGain();
+  o.type = type; o.frequency.setValueAtTime(f0, t0);
+  if(f1) o.frequency.exponentialRampToValueAtTime(Math.max(f1,1), t0+dur);
+  g.gain.setValueAtTime(vol, t0);
+  g.gain.exponentialRampToValueAtTime(.001, t0+dur);
+  o.connect(g); g.connect(master);
+  o.start(t0); o.stop(t0+dur+.02);
+}
+function noise(dur, vol, freq, delay=0){
+  if(!AC) return;
+  const t0 = AC.currentTime + delay;
+  const len = Math.max(1, Math.floor(AC.sampleRate*dur));
+  const buf = AC.createBuffer(1, len, AC.sampleRate);
+  const d = buf.getChannelData(0);
+  for(let i=0;i<len;i++) d[i] = (Math.random()*2-1) * (1 - i/len);
+  const src = AC.createBufferSource(); src.buffer = buf;
+  const f = AC.createBiquadFilter(); f.type='lowpass'; f.frequency.value = freq;
+  const g = AC.createGain(); g.gain.value = vol;
+  src.connect(f); f.connect(g); g.connect(master);
+  src.start(t0);
+}
+const sfx = {
+  flap(){ tone(480, 760, .09, 'triangle', .5); },
+  score(){ tone(988, 0, .07, 'sine', .5); tone(1319, 0, .14, 'sine', .5, .07); },
+  hit(){ noise(.18, .7, 900); tone(200, 60, .25, 'square', .5); },
+  die(){ tone(500, 110, .5, 'sawtooth', .3, .25); },
+  thud(){ noise(.12, .5, 300); },
+  swoosh(){ noise(.22, .25, 1200); },
+  click(){ tone(700, 0, .05, 'square', .3); }
+};
+
+/* ================= sky palettes (day → sunset → night → dawn) ================= */
+const PALS = [
+  { top:[87,193,232],  bot:[205,239,245], far:[143,220,174], near:[77,181,111],  cloud:[255,255,255], star:0,   sun:1   },
+  { top:[255,158,94],  bot:[255,224,176], far:[201,122,82],  near:[143,79,58],   cloud:[255,230,199], star:.15, sun:1   },
+  { top:[20,31,69],    bot:[58,74,124],   far:[43,58,102],   near:[29,42,78],    cloud:[147,164,207], star:1,   sun:0   },
+  { top:[143,123,216], bot:[255,201,163], far:[122,106,168], near:[85,72,126],   cloud:[255,217,232], star:.3,  sun:.85 }
+];
+function pal(){
+  const ph = score/10, i = Math.floor(ph)%4, j = (i+1)%4;
+  let f = ph - Math.floor(ph); f = f*f*(3-2*f);
+  const A = PALS[i], B = PALS[j];
+  const L = (a,b) => a.map((v,k) => Math.round(v + (b[k]-v)*f));
+  return { top:L(A.top,B.top), bot:L(A.bot,B.bot), far:L(A.far,B.far), near:L(A.near,B.near),
+           cloud:L(A.cloud,B.cloud), star:A.star+(B.star-A.star)*f, sun:A.sun+(B.sun-A.sun)*f };
+}
+const rgb = c => `rgb(${c[0]},${c[1]},${c[2]})`;
+const shade = (c,f) => c.map(v => Math.round(v*f));
+
+/* ================= game flow ================= */
+function setLed(){
+  cabinet.dataset.state = paused ? 'pause' : state===S.PLAY ? 'play' : state===S.OVER ? 'over' : 'ready';
+}
+function flapPuff(){
+  for(let i=0;i<4;i++) parts.push({ x:bird.x-10, y:bird.y+10, vx:-40-Math.random()*40, vy:20+Math.random()*40,
+    life:.35, t:0, size:3+Math.random()*3, type:'puff' });
+}
+function feathers(){
+  for(let i=0;i<10;i++) parts.push({ x:bird.x, y:bird.y, vx:(Math.random()-.5)*260, vy:-120-Math.random()*160,
+    life:.9, t:0, size:4+Math.random()*4, rot:Math.random()*6, vr:(Math.random()-.5)*10, type:'feather' });
+}
+function press(){
+  audio();
+  if(paused){ togglePause(); return; }
+  if(state === S.READY || state === S.PLAY){
+    if(state === S.READY){ state = S.PLAY; ovReady.classList.remove('show'); setLed(); }
+    bird.vy = FLAP_V;
+    sfx.flap(); flapPuff();
+    logoBird.classList.remove('flap'); void logoBird.offsetWidth; logoBird.classList.add('flap');
+  } else if(state === S.OVER && overT > .4){
+    restart();
+  }
+}
+function hit(){
+  if(state !== S.PLAY) return;
+  state = S.DEAD;
+  bird.vy = -140;
+  sfx.hit(); sfx.die();
+  shake = 14; flash = .7;
+  feathers();
+  setLed();
+}
+function groundHit(){
+  if(state === S.PLAY) hit();
+  if(state === S.DEAD){
+    state = S.OVER; overT = 0;
+    bird.y = GROUND_Y - bird.r;
+    sfx.thud(); shake = 8;
+    showOver();
+  }
+}
+function medalFor(s){
+  if(s >= 40) return { cls:'m-plat',   label:'PLATINUM' };
+  if(s >= 30) return { cls:'m-gold',   label:'GOLD' };
+  if(s >= 20) return { cls:'m-silver', label:'SILVER' };
+  if(s >= 10) return { cls:'m-bronze', label:'BRONZE' };
+  return { cls:'m-none', label:'NO MEDAL' };
+}
+function showOver(){
+  const isBest = score > best;
+  if(isBest){ best = score; store.set('flappy.best', best); }
+  elFinal.textContent = score;
+  elBest.textContent = best;
+  elNew.style.display = isBest ? '' : 'none';
+  const m = medalFor(score);
+  medalEl.className = 'medal ' + m.cls;
+  medalLabel.textContent = m.label;
+  medalStar.style.display = m.cls === 'm-none' ? 'none' : '';
+  bestVal.textContent = best;
+  ovOver.classList.add('show');
+  setLed();
+}
+function restart(){
+  sfx.swoosh();
+  score = 0; pipes = []; parts = [];
+  popT = 0; shake = 0; flash = 0; overT = 0;
+  bird.y = READY_Y; bird.vy = 0; bird.rot = 0;
+  state = S.READY; paused = false;
+  ovOver.classList.remove('show');
+  ovPause.classList.remove('show');
+  ovReady.classList.add('show');
+  setLed();
+}
+function togglePause(){
+  if(state !== S.PLAY && state !== S.READY) return;
+  paused = !paused;
+  ovPause.classList.toggle('show', paused);
+  setLed();
+}
+function toggleMute(){
+  muted = !muted;
+  store.set('flappy.muted', muted ? '1' : '0');
+  if(master) master.gain.value = muted ? 0 : .5;
+  btnMute.classList.toggle('muted', muted);
+  if(!muted) sfx.click();
+}
+
+/* ================= physics helpers ================= */
+const pipeSpeed = () => 150 + Math.min(score * 2.2, 70);
+const pipeGap   = () => 168 - Math.min(score * 1.1, 40);
+function spawnPipe(x){
+  const gap = pipeGap(), m = 70;
+  const gapY = m + gap/2 + Math.random() * (GROUND_Y - m*2 - gap);
+  pipes.push({ x, gapY, gap, scored:false });
+}
+function circleRect(cx, cy, r, rx, ry, rw, rh){
+  const nx = Math.max(rx, Math.min(cx, rx+rw));
+  const ny = Math.max(ry, Math.min(cy, ry+rh));
+  const dx = cx-nx, dy = cy-ny;
+  return dx*dx + dy*dy < r*r;
+}
+function collide(){
+  for(const p of pipes){
+    if(p.x > bird.x + 60 || p.x + PIPE_W < bird.x - 60) continue;
+    const gapTop = p.gapY - p.gap/2, gapBot = p.gapY + p.gap/2;
+    if(circleRect(bird.x, bird.y, bird.r, p.x, -200, PIPE_W, gapTop+200)) return true;
+    if(circleRect(bird.x, bird.y, bird.r, p.x, gapBot, PIPE_W, GROUND_Y-gapBot)) return true;
+    if(circleRect(bird.x, bird.y, bird.r, p.x-CAP_OVER, gapTop-CAP_H, PIPE_W+CAP_OVER*2, CAP_H)) return true;
+    if(circleRect(bird.x, bird.y, bird.r, p.x-CAP_OVER, gapBot, PIPE_W+CAP_OVER*2, CAP_H)) return true;
+  }
+  return false;
+}
+
+/* ================= update ================= */
+function update(dt){
+  t += dt;
+  popT  = Math.max(0, popT - dt*3);
+  shake = Math.max(0, shake - 50*dt);
+  flash = Math.max(0, flash - 2.2*dt);
+
+  for(const c of clouds){
+    c.x -= (c.far ? 9 : 20) * dt * (state===S.PLAY ? 1.4 : 1);
+    if(c.x < -90*c.s){ c.x = W + 60; c.y = 30 + Math.random()*180; }
+  }
+
+  const sp = pipeSpeed();
+
+  if(state === S.READY){
+    bird.y = READY_Y + Math.sin(t*3.2)*7;
+    bird.rot = Math.sin(t*3.2 + 1)*.08;
+    bird.wing += dt*9;
+    groundOff = (groundOff + sp*.6*dt) % 26;
+    hillFarOff += 10*dt; hillNearOff += 22*dt;
+
+  } else if(state === S.PLAY){
+    bird.vy = Math.min(bird.vy + GRAV*dt, MAX_FALL);
+    bird.y += bird.vy*dt;
+    if(bird.y < bird.r){ bird.y = bird.r; bird.vy = Math.max(bird.vy, 0); }
+    const target = bird.vy < 0 ? -.38 : Math.min(1.5, (bird.vy/MAX_FALL)*1.5 + .2);
+    bird.rot += (target - bird.rot) * Math.min(1, dt * (bird.vy < 0 ? 14 : 6));
+    bird.wing += dt * (bird.vy < 0 ? 26 : 10);
+
+    for(const p of pipes) p.x -= sp*dt;
+    while(pipes.length && pipes[0].x < -PIPE_W - 30) pipes.shift();
+    if(pipes.length === 0) spawnPipe(W + 80);
+    else {
+      const last = pipes[pipes.length-1];
+      if(last.x <= W - SPACING) spawnPipe(last.x + SPACING);
+    }
+    for(const p of pipes){
+      if(!p.scored && p.x + PIPE_W < bird.x - bird.r){
+        p.scored = true; score++; popT = 1;
+        sfx.score();
+        parts.push({ x:bird.x, y:bird.y, life:.35, t:0, type:'ring' });
+      }
+    }
+    if(collide()) hit();
+    if(bird.y + bird.r >= GROUND_Y) groundHit();
+    groundOff = (groundOff + sp*dt) % 26;
+    hillFarOff += 10*dt; hillNearOff += 22*dt;
+
+  } else if(state === S.DEAD){
+    bird.vy = Math.min(bird.vy + GRAV*dt, MAX_FALL);
+    bird.y += bird.vy*dt;
+    bird.rot = Math.min(bird.rot + dt*7, Math.PI/2);
+    bird.wing += dt*4;
+    if(bird.y + bird.r >= GROUND_Y) groundHit();
+
+  } else {
+    overT += dt;
+  }
+
+  for(let i=parts.length-1;i>=0;i--){
+    const p = parts[i]; p.t += dt;
+    if(p.t >= p.life){ parts.splice(i,1); continue; }
+    if(p.type === 'feather'){ p.vy += 600*dt; p.x += p.vx*dt; p.y += p.vy*dt; p.rot += p.vr*dt; }
+    else if(p.type === 'puff'){ p.x += p.vx*dt; p.y += p.vy*dt; }
+  }
+}
+
+/* ================= render ================= */
+function drawPipe(p, f){
+  const gapTop = p.gapY - p.gap/2, gapBot = p.gapY + p.gap/2;
+  const body = (x, y, w, h) => {
+    const g = ctx.createLinearGradient(x, 0, x+w, 0);
+    g.addColorStop(0,   rgb(shade([62,158,82], f)));
+    g.addColorStop(.35, rgb(shade([124,214,138], f)));
+    g.addColorStop(.6,  rgb(shade([88,194,106], f)));
+    g.addColorStop(1,   rgb(shade([47,138,68], f)));
+    ctx.fillStyle = g;
+    ctx.fillRect(x, y, w, h);
+    ctx.strokeStyle = rgb(shade([24,64,36], f));
+    ctx.lineWidth = 2;
+    ctx.strokeRect(x+1, y+1, w-2, h-2);
+  };
+  body(p.x, -4, PIPE_W, gapTop - CAP_H + 4);
+  body(p.x - CAP_OVER, gapTop - CAP_H, PIPE_W + CAP_OVER*2, CAP_H);
+  body(p.x, gapBot + CAP_H, PIPE_W, GROUND_Y - gapBot - CAP_H + 4);
+  body(p.x - CAP_OVER, gapBot, PIPE_W + CAP_OVER*2, CAP_H);
+}
+function hill(base, a1, a2, off, col){
+  ctx.fillStyle = rgb(col);
+  ctx.beginPath();
+  ctx.moveTo(-10, GROUND_Y + 10);
+  for(let x=-10; x<=W+10; x+=10){
+    ctx.lineTo(x, base - (Math.sin((x+off)*.012)*a1 + Math.sin((x+off)*.031+2)*a2));
+  }
+  ctx.lineTo(W+10, GROUND_Y + 10);
+  ctx.closePath(); ctx.fill();
+}
+function drawBird(){
+  ctx.save();
+  ctx.translate(bird.x, bird.y);
+  ctx.rotate(bird.rot);
+  ctx.lineWidth = 2.5; ctx.strokeStyle = '#5a3d1e';
+  // body
+  ctx.fillStyle = '#ffd93b';
+  ctx.beginPath(); ctx.ellipse(0, 0, 17, 13, 0, 0, 7); ctx.fill(); ctx.stroke();
+  // belly
+  ctx.fillStyle = '#fff3c4';
+  ctx.beginPath(); ctx.ellipse(-1, 4, 11, 8, 0, 0, Math.PI); ctx.closePath(); ctx.fill();
+  // wing
+  ctx.save();
+  ctx.translate(-4, 0);
+  ctx.rotate(Math.sin(bird.wing)*.7 - .15);
+  ctx.fillStyle = '#f5b73e';
+  ctx.beginPath(); ctx.ellipse(-4, 0, 9, 6, 0, 0, 7); ctx.fill(); ctx.stroke();
+  ctx.restore();
+  // eye
+  ctx.fillStyle = '#fff';
+  ctx.beginPath(); ctx.arc(7, -5, 5.5, 0, 7); ctx.fill(); ctx.stroke();
+  ctx.fillStyle = '#26211a';
+  ctx.beginPath(); ctx.arc(8.5, -5, 2.3, 0, 7); ctx.fill();
+  // beak
+  ctx.fillStyle = '#ff7b39';
+  ctx.beginPath();
+  ctx.moveTo(11, 0);
+  ctx.quadraticCurveTo(25, -1, 25, 3.5);
+  ctx.quadraticCurveTo(25, 8, 11, 8);
+  ctx.closePath(); ctx.fill(); ctx.stroke();
+  ctx.restore();
+}
+function render(){
+  const P = pal(), night = P.star;
+  ctx.setTransform(scale, 0, 0, scale, 0, 0);
+  if(shake > 0) ctx.translate((Math.random()-.5)*shake, (Math.random()-.5)*shake);
+
+  // sky
+  const g = ctx.createLinearGradient(0, 0, 0, GROUND_Y);
+  g.addColorStop(0, rgb(P.top)); g.addColorStop(1, rgb(P.bot));
+  ctx.fillStyle = g; ctx.fillRect(-20, -20, W+40, H+40);
+
+  // stars
+  if(P.star > .02){
+    for(const s of stars){
+      const a = P.star * (.35 + .65*Math.abs(Math.sin(t*1.5 + s.p)));
+      ctx.fillStyle = `rgba(255,255,255,${a.toFixed(3)})`;
+      ctx.fillRect(s.x, s.y, s.s, s.s);
+    }
+  }
+  // sun / moon
+  const cx = W-72, cy = 86;
+  if(P.sun > .02){
+    const sg = ctx.createRadialGradient(cx, cy, 4, cx, cy, 60);
+    sg.addColorStop(0, `rgba(255,236,150,${(.9*P.sun).toFixed(3)})`);
+    sg.addColorStop(1, 'rgba(255,236,150,0)');
+    ctx.fillStyle = sg; ctx.beginPath(); ctx.arc(cx, cy, 60, 0, 7); ctx.fill();
+    ctx.fillStyle = `rgba(255,224,102,${P.sun.toFixed(3)})`;
+    ctx.beginPath(); ctx.arc(cx, cy, 22, 0, 7); ctx.fill();
+  }
+  if(P.star > .02){
+    ctx.fillStyle = `rgba(240,244,255,${P.star.toFixed(3)})`;
+    ctx.beginPath(); ctx.arc(cx, cy, 20, 0, 7); ctx.fill();
+    ctx.fillStyle = `rgba(200,208,235,${(P.star*.8).toFixed(3)})`;
+    ctx.beginPath(); ctx.arc(cx-6, cy-4, 4, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(cx+7, cy+6, 3, 0, 7); ctx.fill();
+  }
+  // clouds
+  const cloudCol = rgb(P.cloud);
+  for(const c of clouds){
+    ctx.save(); ctx.translate(c.x, c.y); ctx.scale(c.s, c.s);
+    ctx.globalAlpha = c.far ? .75 : .95;
+    ctx.fillStyle = cloudCol;
+    ctx.beginPath();
+    ctx.arc(0, 0, 16, 0, 7); ctx.arc(18, -6, 20, 0, 7); ctx.arc(40, 0, 15, 0, 7);
+    ctx.rect(-14, 0, 68, 14);
+    ctx.fill();
+    ctx.restore();
+  }
+  ctx.globalAlpha = 1;
+
+  // hills
+  hill(GROUND_Y-34, 20, 8, hillFarOff, P.far);
+  hill(GROUND_Y-10, 14, 6, hillNearOff, P.near);
+
+  // pipes
+  const pf = 1 - night*.28;
+  for(const p of pipes) drawPipe(p, pf);
+
+  // ground
+  const gf = 1 - night*.3;
+  ctx.fillStyle = rgb(shade([215,176,107], gf));
+  ctx.fillRect(-20, GROUND_Y, W+40, GROUND_H+20);
+  ctx.fillStyle = rgb(shade([190,150,88], gf));
+  for(let x=-26; x<W+26; x+=26){
+    const xx = x - (groundOff % 26);
+    ctx.fillRect(xx, GROUND_Y+42, 12, 4);
+    ctx.fillRect(xx+13, GROUND_Y+64, 10, 4);
+  }
+  ctx.fillStyle = rgb(shade([126,217,87], gf));
+  ctx.fillRect(-20, GROUND_Y, W+40, 20);
+  ctx.fillStyle = rgb(shade([94,190,64], gf));
+  for(let x=-26; x<W+26; x+=26){
+    const xx = x - (groundOff % 26);
+    ctx.beginPath();
+    ctx.moveTo(xx, GROUND_Y+20); ctx.lineTo(xx+13, GROUND_Y);
+    ctx.lineTo(xx+26, GROUND_Y); ctx.lineTo(xx+13, GROUND_Y+20);
+    ctx.closePath(); ctx.fill();
+  }
+  ctx.fillStyle = rgb(shade([47,109,47], gf));
+  ctx.fillRect(-20, GROUND_Y, W+40, 3);
+  ctx.fillStyle = 'rgba(0,0,0,.15)';
+  ctx.fillRect(-20, GROUND_Y+20, W+40, 3);
+
+  // bird shadow
+  const shH = (GROUND_Y - bird.y) / GROUND_Y;
+  ctx.fillStyle = `rgba(0,0,0,${(0.22*(1-shH*.8)).toFixed(3)})`;
+  ctx.beginPath();
+  ctx.ellipse(bird.x, GROUND_Y+8, 16*(1-shH*.5), 4*(1-shH*.5), 0, 0, 7);
+  ctx.fill();
+
+  drawBird();
+
+  // particles
+  for(const p of parts){
+    const k = p.t / p.life;
+    if(p.type === 'puff'){
+      ctx.fillStyle = `rgba(255,255,255,${((1-k)*.8).toFixed(3)})`;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.size*(1-k*.5), 0, 7); ctx.fill();
+    } else if(p.type === 'feather'){
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+      ctx.fillStyle = `rgba(255,217,59,${(1-k).toFixed(3)})`;
+      ctx.beginPath(); ctx.ellipse(0, 0, p.size, p.size*.45, 0, 0, 7); ctx.fill();
+      ctx.restore();
+    } else if(p.type === 'ring'){
+      ctx.strokeStyle = `rgba(255,255,255,${((1-k)*.9).toFixed(3)})`;
+      ctx.lineWidth = 3*(1-k) + 1;
+      ctx.beginPath(); ctx.arc(p.x, p.y, 8 + k*26, 0, 7); ctx.stroke();
+    }
+  }
+
+  // score
+  if(state === S.PLAY || state === S.DEAD){
+    const s = 1 + popT*.45;
+    ctx.save();
+    ctx.translate(W/2, 64); ctx.scale(s, s);
+    ctx.font = '26px "Press Start 2P", monospace';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.lineJoin = 'round'; ctx.lineWidth = 7;
+    ctx.strokeStyle = '#263238';
+    ctx.strokeText(score, 0, 0);
+    ctx.fillStyle = '#fff';
+    ctx.fillText(score, 0, 0);
+    ctx.restore();
+  }
+
+  if(flash > 0){
+    ctx.fillStyle = `rgba(255,255,255,${flash.toFixed(3)})`;
+    ctx.fillRect(-20, -20, W+40, H+40);
+  }
+}
+
+/* ================= loop ================= */
+let last = performance.now();
+function frame(now){
+  const dt = Math.min((now - last)/1000, 1/30);
+  last = now;
+  if(!paused) update(dt);
+  render();
+  requestAnimationFrame(frame);
+}
+
+/* ================= input ================= */
+canvas.addEventListener('pointerdown', e => { e.preventDefault(); press(); });
+window.addEventListener('keydown', e => {
+  if(e.repeat) return;
+  if(e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'KeyW'){ e.preventDefault(); press(); }
+  else if(e.code === 'KeyP') togglePause();
+  else if(e.code === 'KeyM') toggleMute();
+  else if(e.code === 'KeyR' || e.code === 'Enter'){ if(state === S.OVER) restart(); }
+});
+btnRestart.addEventListener('click', e => { e.stopPropagation(); audio(); restart(); sfx.click(); });
+btnMute.addEventListener('click', () => { audio(); toggleMute(); });
+document.addEventListener('visibilitychange', () => {
+  if(document.hidden && state === S.PLAY && !paused) togglePause();
+});
+
+/* ================= init ================= */
+bestVal.textContent = best;
+btnMute.classList.toggle('muted', muted);
+setLed();
+if(document.fonts && document.fonts.load) document.fonts.load('10px "Press Start 2P"');
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
+
