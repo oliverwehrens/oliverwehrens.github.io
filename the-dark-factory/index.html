@@ -112,12 +112,11 @@ one deep review.</li>
 <li><strong>Human-understandable.</strong> You can read a verifier and know exactly what it does. You cannot
 read a 400-line review skill and predict how it weighs anything.</li>
 </ul>
-<p>Verifiers are how you encode <em>taste</em> — the architectural preferences that are too fuzzy
-for a linter but too important to leave to chance. Historically you’d enforce those in code
-review, one PR at a time. Now you write it once and every agent obeys it forever.</p>
+<p>Verifiers are how you encode <em>taste</em>, describe how your code should look like. Historically you’d enforce those in code
+review, in each PR. Now you write it once and every agent obeys it forever.</p>
 <h2 id="tier-5--agentic-review-expensive-slow-catch-all">Tier 5 — Agentic review (expensive, slow, catch-all)</h2>
 <p>A full review agent reading the diff with repo context. Give it a small number of distinct
-tasks / focus rather than one generic prompt -> security, maintainability, functional correctness, run each as a separate pass. Its job is to catch what the lower tiers missed. Anything it catches <em>repeatedly</em> should be implemented in the earlier tests.</p>
+tasks / focus rather than one generic prompt -> security, maintainability, functional correctness, run each as a separate pass / marker. The job is to catch what the lower tiers missed. Anything it catches <em>repeatedly</em> should be implemented in the earlier tests.</p>
 <h1 id="fixing-findings">Fixing findings</h1>
 <p>The orchestrator collects the findings into a prompt.
 Starts a new container with that branch and the prompt and pushes the changes which it thinks need to be done, <code>make verify</code> runs again.</p>
