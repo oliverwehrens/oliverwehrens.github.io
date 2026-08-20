@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>The Dark Factory · Oliver Wehrens</title><meta name="description" content="People keep talking about dark factories in software development. How could this work? How do I know that the right things got developed? Questions I keep hearing. Lets explore an idea."><link rel="canonical" href="https://owehrens.com/the-dark-factory/"><link rel="alternate" type="application/rss+xml" title="Oliver Wehrens" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta property="og:type" content="article"><meta property="og:site_name" content="Oliver Wehrens"><meta property="og:title" content="The Dark Factory · Oliver Wehrens"><meta property="og:description" content="People keep talking about dark factories in software development. How could this work? How do I know that the right things got developed? Questions I keep hearing. Lets explore an idea."><meta property="og:url" content="https://owehrens.com/the-dark-factory/"><meta name="twitter:card" content="summary_large_image"><script defer src="https://t.4004.fyi/script.js" data-website-id="ae7b9a21-3055-4b46-bc57-15eb0c646e2e"></script><script>
+      (() => {
+        try {
+          const stored = localStorage.getItem('theme');
+          const theme =
+            stored ||
+            (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.dataset.theme = theme;
+        } catch {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/_slug_.Ckz86HID.css">
+<style>.media-badge[data-astro-cid-uj44zf3t]{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.09em;padding:.15em .5em;border-radius:2px;color:var(--accent);background:var(--accent-soft)}.tag-chip[data-astro-cid-q2wpt7bd]{display:inline-block;font-size:var(--step--1);color:var(--ink-soft);text-decoration:none;padding:.1em .55em;border:1px solid var(--rule);border-radius:999px;transition:color .15s,border-color .15s}.tag-chip[data-astro-cid-q2wpt7bd]:before{content:"#";color:var(--muted);margin-right:.1em}.tag-chip[data-astro-cid-q2wpt7bd]:hover{color:var(--accent);border-color:var(--accent)}
+.article[data-astro-cid-zm77yjld]{padding-block:var(--space-4)}.article__header[data-astro-cid-zm77yjld]{margin-bottom:var(--space-4);padding-bottom:var(--space-3);border-bottom:1px solid var(--rule)}.article__meta[data-astro-cid-zm77yjld]{display:flex;align-items:center;gap:var(--space-2);font-size:var(--step--1);color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--space-2)}.article__title[data-astro-cid-zm77yjld]{font-size:var(--step-3);line-height:1.08;margin:0 0 var(--space-3)}.article__tags[data-astro-cid-zm77yjld]{display:flex;flex-wrap:wrap;gap:var(--space-1)}.prose[data-astro-cid-zm77yjld]{max-width:none;margin-inline:auto}.article__footer[data-astro-cid-zm77yjld]{margin-top:var(--space-5);padding-top:var(--space-3);border-top:1px solid var(--rule)}.article__back[data-astro-cid-zm77yjld]{text-decoration:none;color:var(--accent);font-weight:600}
+</style></head> <body data-astro-cid-37fxchfa> <a class="skip-link" href="#main" data-astro-cid-37fxchfa>Skip to content</a> <header class="masthead masthead--compact" data-astro-cid-r6zpem2t> <div class="container" data-astro-cid-r6zpem2t> <div class="masthead__inner" data-astro-cid-r6zpem2t> <a href="/" class="nameplate" aria-label="Oliver Wehrens — home" data-astro-cid-r6zpem2t> <span class="nameplate__name" data-astro-cid-r6zpem2t>Oliver Wehrens</span>  </a> <nav class="masthead__nav" aria-label="Primary" data-astro-cid-r6zpem2t> <a href="/" data-astro-cid-r6zpem2t>Home</a><a href="/tags/" data-astro-cid-r6zpem2t>Topics</a><a href="/readme/" data-astro-cid-r6zpem2t>readme</a><a href="/search/" data-astro-cid-r6zpem2t>Search</a> <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle color theme" data-astro-cid-x3pjskd3> <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-x3pjskd3> <circle cx="12" cy="12" r="4" data-astro-cid-x3pjskd3></circle> <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" data-astro-cid-x3pjskd3></path> </svg> <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-astro-cid-x3pjskd3> <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" data-astro-cid-x3pjskd3></path> </svg> </button>  <script type="module">const n=document.getElementById("theme-toggle");n?.addEventListener("click",()=>{const t=document.documentElement,e=t.dataset.theme==="dark"?"light":"dark";t.dataset.theme=e;try{localStorage.setItem("theme",e)}catch{}});</script> </nav> </div> <div class="masthead__rule" aria-hidden="true" data-astro-cid-r6zpem2t></div> </div> </header>  <main id="main" data-astro-cid-37fxchfa>  <article class="container article" lang="en" data-astro-cid-zm77yjld> <header class="article__header" data-astro-cid-zm77yjld> <div class="article__meta" data-astro-cid-zm77yjld> <time datetime="2026-08-20T00:00:00.000Z" data-astro-cid-zm77yjld>August 20, 2026</time>  </div> <h1 class="article__title" data-astro-cid-zm77yjld>The Dark Factory</h1> <div class="article__tags" data-astro-cid-zm77yjld> <a class="tag-chip" href="/tags/darkfactory/" data-astro-cid-q2wpt7bd>darkfactory</a>  </div> </header> <div class="prose" data-pagefind-body data-astro-cid-zm77yjld>  <p>Software Engineering is going through the biggest change I ever experienced.</p>
+<p>I <a href="https://www.youtube.com/watch?v=APYUJoQkVUo">keep hearing about</a> dark factories. Software written by agents, verified and merged all automatically. I read about that some people are more often saying that the question is rather not <em>if</em> but <em>when</em> this is coming. Software will be cattle rather than pet.</p>
+<p>Other developers and I are adopting spec driven development in one way or another. This is one part of the journey.</p>
+<p>I see two areas to tackle next.</p>
+<ol>
+<li><em>How do the requirements from product get into a form that might be usable by development?</em></li>
+<li><em>How do we figure out that what got developed is what we want, in the shape and form we expect.</em></li>
+</ol>
+<p>Let’s look at the latter one. How can this look like? A bit deeper look how this lifecycle can be.</p>
+<h1 id="requirements">Requirements</h1>
+<p>Imagine a product manager writes up his PRD  (maybe with some <a href="https://github.com/mattpocock/skills/tree/main">skills</a>) and refines that with developers. The resulting tickets need to have some acceptance criteria which an agent can develop against.
+It is written in a way that an agent can figure out the proper order of the tickets if they have dependencies.</p>
+<p>This gets added to a ticket system with a label ‘factory’.</p>
+<h2 id="software">Software</h2>
+<p>The repository needs to have some prerequisites.</p>
+<h3 id="build--run">Build &#x26; run</h3>
+<p>One way to run the software and spin up everything which is needed. This also includes mocks and everything you need, depends on your isolation for tests, like <code>make bootstrap</code>. A <code>make verify</code> can make sure everything passes basic tests.</p>
+<h3 id="context">Context</h3>
+<p>A standard way where the agent can find enough context, like a <code>CONTEXT.md</code>, <code>ARCHITECTURE.md</code> and ADRs. An <code>AGENTS.md</code> or <code>CLAUDE.md</code> helps guiding the agent.</p>
+<h1 id="orchestrator">Orchestrator</h1>
+<p>The orchestrator runs and checks regularly if there are tickets with the <code>factory</code> label. If it finds one:</p>
+<ul>
+<li>That is the next one to be implemented without dependencies.</li>
+<li>Takes the ticket and creates a prompt out of it with instructions for the agent to implement -> <code>prompt.md</code></li>
+<li>Spins up a docker image fitting for that particular repository</li>
+<li>Checks out the code</li>
+<li>Runs <code>make bootstrap</code></li>
+<li>Runs the agent with <code>prompt.md</code></li>
+<li>Agent implements and runs <code>make verify</code></li>
+<li>Only if that passes it creates a branch and pushes it, leaves metadata in the workdir, branch name, screenshots etc</li>
+<li>Orchestrator takes branch name out of metadata and creates PR with things like screenshot etc as proof as a comment</li>
+</ul>
+<p>Necessary metadata and tokens are passed to the docker image via env vars.</p>
+<p>The <code>make verify</code> before the push is important. If it fails, nothing gets pushed. The container is
+thrown away and the ticket goes back in the queue for another try. Failed work is never going to be a PR.</p>
+<p>The workflow will run the same checks again later on the PR, but by then it is a second opinion (fresh agent).</p>
+<p>The agent can also stop and ask. If the ticket is ambiguous, or it would have to break something to do it
+properly, it posts one question on the ticket and stops instead of guessing. This way a blocked ticket can be seen and refined.
+An agent guessing with confidence costs more down the road.</p>
+<h1 id="verification">Verification</h1>
+<p>Once the PR is opened a workflow is triggered to verify the results. Every check reports back as a commit status on the PR, one per check.</p>
+<blockquote>
+<p>A commit status is a small record on a commit - a name, pass or fail, and one line of text.
+Every check picks its own name, like <code>ci</code> or <code>verify/no-cross-module-imports</code>. Branch protection config on main
+holds a list of names that have to be green before anything can merge, and you can use patterns - <code>verify/* covers</code> every
+verifier, so a new one becomes required the moment you write it.</p>
+</blockquote>
+<p>Only the agentic review in tier 5 leaves real comments on the diff.</p>
+<p>There are different types of tests:</p>
+<h2 id="tier-1--deterministic-checks-milliseconds-free">Tier 1 — Deterministic checks (milliseconds, free)</h2>
+<p>Formatters, linters, type checkers, dependency-boundary rules, schema validation.</p>
+<p>Anything you <em>can</em> make deterministic, make deterministic.</p>
+<h2 id="tier-2---tools-like-sonarqube-minutes-free">Tier 2 - Tools like SonarQube (minutes, free)</h2>
+<p>Set a quality gate condition on coverage of new code — it is the gate that will stop an agent shipping untested code, and it is deterministic. Make it boolean decision.</p>
+<h2 id="tier-3---tests-seconds-to-minutes-free">Tier 3 - Tests (seconds to minutes, free)</h2>
+<p>Unit, integration, end-to-end.</p>
+<ol>
+<li>
+<p><strong>Test behaviour, not implementation.</strong> The factory will rewrite implementations freely. Tests coupled to internals can produce constant false failures. Tests coupled to observable behaviour are the contract the factory works against.</p>
+</li>
+<li>
+<p><strong>Your end-to-end tests are your real specification.</strong></p>
+</li>
+</ol>
+<h2 id="tier-4--verifiers-one-cheap-llm-call-each">Tier 4 — Verifiers (one cheap LLM call each)</h2>
+<p>A <strong>verifier</strong> is a single natural-language assertion about a diff that resolves to a boolean, evaluated by one LLM call, judging <em>only that one thing</em>.</p>
+<p>A definition could look like:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D"># .factory/verifiers/imports.yml</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">- </span><span style="color:#22863A;--shiki-dark:#85E89D">id</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">no-cross-module-imports</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  paths</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: [</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"apps/api/**/*.py"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  assert</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#D73A49;--shiki-dark:#F97583">></span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">    No file imports from another application module directly.</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">    All shared code is imported from lib/.</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  severity</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">block</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">- </span><span style="color:#22863A;--shiki-dark:#85E89D">id</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">migrations-are-reversible</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  paths</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: [</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"db/migrations/**"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  assert</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#D73A49;--shiki-dark:#F97583">></span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">    Every migration defines both an up and a down path, and the down</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">    path fully reverses the up path.</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  severity</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">block</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">- </span><span style="color:#22863A;--shiki-dark:#85E89D">id</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">no-silent-except</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  paths</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: [</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"**/*.py"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  assert</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#D73A49;--shiki-dark:#F97583">></span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">    No exception handler swallows an exception without either logging</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">    it or re-raising.</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  severity</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">warn</span></span></code></pre>
+<p>This is better than a big review prompt:</p>
+<ul>
+<li><strong>Deterministic triggering.</strong> The path glob decides whether it runs. No “the reviewer
+didn’t notice.”</li>
+<li><strong>One concern per call.</strong> A review agent holding fifteen competing priorities will drop
+some of them. A model asked one yes/no question about one diff answers reliably.</li>
+<li><strong>Cheap and parallel.</strong> Each is a single call on the diff. Ten verifiers cost less than
+one deep review.</li>
+<li><strong>Human-understandable.</strong> You can read a verifier and know exactly what it does. You cannot
+read a 400-line review skill and predict how it weighs anything.</li>
+</ul>
+<p>Verifiers are how you encode <em>taste</em> — the architectural preferences that are too fuzzy
+for a linter but too important to leave to chance. Historically you’d enforce those in code
+review, one PR at a time. Now you write it once and every agent obeys it forever.</p>
+<h2 id="tier-5--agentic-review-expensive-slow-catch-all">Tier 5 — Agentic review (expensive, slow, catch-all)</h2>
+<p>A full review agent reading the diff with repo context. Give it a small number of distinct
+tasks / focus rather than one generic prompt -> security, maintainability, functional correctness, run each as a separate pass. Its job is to catch what the lower tiers missed. Anything it catches <em>repeatedly</em> should be implemented in the earlier tests.</p>
+<h1 id="fixing-findings">Fixing findings</h1>
+<p>The orchestrator collects the findings into a prompt.
+Starts a new container with that branch and the prompt and pushes the changes which it thinks need to be done, <code>make verify</code> runs again.</p>
+<p>When done, pushes these changes to the branch and the git workflow will be triggered again.</p>
+<p>The orchestrator will update the status / labels during going back and forth. He also checks if one ticket went too often to that loop and can halt it by setting a <code>need human</code> label and remove the <code>factory</code> label.</p>
+<h1 id="merging">Merging</h1>
+<p>Merges happen without humans looking at it. But not everything should.</p>
+<p>It is classified by path in a file you can read, e.g.</p>
+<ul>
+<li>Docs, tests, tooling, non-user-visible refactors are low risk.</li>
+<li>Backend behind existing tests is medium. Auth, payments, migrations, anything a user sees is high.</li>
+</ul>
+<p>The riskiest file in the diff decides the whole PR - twenty docs and one migration is a migration.</p>
+<p>Only the classes which are nominatated merge on their own. Everything else waits for a human, with a comment saying which rule
+made that call. I would start with low only and widen when the verifiers for those paths have earned it.</p>
+<p>This is kept as a rules file, not something a model decides. When something bad lands (and it will) I want to open
+a file, read the line that said this was safe, and change it.</p>
+<p>Example:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D"> # .factory/risk.yml</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  default</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">med</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  rules</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    - </span><span style="color:#22863A;--shiki-dark:#85E89D">paths</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: [</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"docs/**"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"**/*.md"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"tests/**"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">      risk</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">low</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">      why</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">no runtime effect</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    - </span><span style="color:#22863A;--shiki-dark:#85E89D">paths</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: [</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"scripts/**"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">      risk</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">low</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">      why</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">dev tooling, does not run in production</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    - </span><span style="color:#22863A;--shiki-dark:#85E89D">paths</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: [</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"src/**"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">      risk</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">med</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">      why</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">covered by the existing test suite</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    - </span><span style="color:#22863A;--shiki-dark:#85E89D">paths</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: [</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"src/**/money/**"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"src/**/billing/**"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">      risk</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">high</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">      why</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">rounding mistakes are silent and expensive</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    - </span><span style="color:#22863A;--shiki-dark:#85E89D">paths</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: [</span><span style="color:#032F62;--shiki-dark:#9ECBFF">"src/**/auth/**"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"db/migrations/**"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#032F62;--shiki-dark:#9ECBFF">".gitea/workflows/**"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">      risk</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">high</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">      why</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">blast radius is the whole system</span></span></code></pre>
+<p>The merge itself is not the orchestrators job. Branch protection on <code>main</code> lists the checks that have to be
+green. The orchestrator asks the git server to merge as soon as all of them pass, and the git server does it
+when they do. Branch protection with these rules is essantial here.</p>
+<p>The number to watch is the percentage of PRs merges without a human. Thats the one KPI.</p>
+<h1 id="what-this-does-not-tell-me">What this does not tell me</h1>
+<p>All of that above tells me that the code is correct. None of it checks that it is the thing I asked for.</p>
+<p>Nothing in the loop reads my ticket and checks it.</p>
+<p>The ticket contains acceptance criterions I can tick off. The agent turns it into a test before it starts implementing. From
+then on tier 3 runs that test like any other test. And this is really important now, I need to make sure I have the right, not too vague
+criterion in the ticket. Otherweise, all tests pass, everything is green and the wrong thing shipped.</p>
+<p>This brings the question of what is right to the ticket, to the PM, to the developers. Really good tickets with good acceptance criteria, the unicorn in development, are now cruicial. Thankfully, <a href="https://github.com/mattpocock/skills/tree/main/skills/engineering/to-tickets">good skills</a> help.</p>
+<h1 id="what-does-that-mean-for-developers">What does that mean for developers</h1>
+<p>We will see a <strong>shift from coding to specification.</strong> Engineers need to pivot from writing syntax to defining precise specifications and rigorous testing protocols. A shock to almost everyone. I dont know how many posts on reddit I see about this. Coder and builders.</p>
+<p>We need to <strong>mitigate cognitive debt risks.</strong> to precent skill erosion by maintaining active understanding of system architecture and logic. Still important. Blind reliance on AI outputs creates critical vulnerabilities in understanding / debugging and long-term system stability. We have to up the security game.</p>
+<p>And the role change:</p>
+<p><strong>Engineering and Product Roles.</strong> Developers must cultivate product sense and UX intuition to remain competitive. The convergence of technical and business roles demands a broader skill set than pure coding. This shift redefines the core value proposition of technical talent in the AI era.</p>
+<h1 id="how-to-start">How to start</h1>
+<p>I would / will not start with all of it. The hardest part which will break everything for me is the warm and fuzzy feeling I need to have when an agent runs through the verifier loop. If I do not have that, it’s not worth investing time in it.</p>
+<p>Many of the checks you can start developing now, just running locally. Learning what works and what not.
+I think the <em>verifiers</em> are the most important ones. They need to earn your trust that they do the right thing.</p>
+<p>Without all the orchestrator, passing context, env vars back and forth you could start <strong>today</strong> with</p>
+<ol>
+<li>Writing good tickets with ACs</li>
+<li>Writing verifiers to learn what works and what not.</li>
+</ol>
+<h1 id="thoughts">Thoughts</h1>
+<p>This all reminds me of the early 2000s as we introduced CI/CD. We automated away systemadminstrators which deployed software to (on prem) production and database admins who wanted to write migrations by hand because only they knew how to optimize. Then the cloud came and many moved on. Servers were configured by hand back then and are now fully automated.</p>
+<p>This now feels like infrastructure work again and a step to automate wirting code in the editor away.
+We are shifting left. Closer to product, closer to customers.</p>
+<p>Best practices have not formed yet, the landscape is still evoloving every day. New models, tooling, skills, practices. Every. Single. Day. Main challange is deterministic vs undeterministic. Neck breaking speed.</p>
+<p>We as engineers have to adapt. I can not see this going away. Will it change again? Yes. Do I know what will it be like in 6, even 3 months from now? No, but it will be different.</p>
+<p>Embrace the change as much as you can.</p>
+<p>I started to build this loop. Not there yet. Complicated and many things to tinker and discover. That’s why I wrote this text to understand it better for myself. I started my career as system administrator.</p>
+<p>Thanks for making it through my thougts, a bit rough on the edges but I needed to write it down.</p>
+<p><em>Hey, this already sounds like a PRD I can give to an agent to implement.</em></p>
+<p>Version 1</p>  </div> <footer class="article__footer" data-astro-cid-zm77yjld> <a href="/" class="article__back" data-astro-cid-zm77yjld>← All stories</a> </footer> </article>  </main> <footer class="site-footer" data-astro-cid-37fxchfa> <div class="container site-footer__inner" data-astro-cid-37fxchfa> <span data-astro-cid-37fxchfa>© 2026 Oliver Wehrens</span> <span class="site-footer__links" data-astro-cid-37fxchfa> <a href="/rss.xml" data-astro-cid-37fxchfa>RSS</a> <a href="/tags/" data-astro-cid-37fxchfa>Topics</a> <a href="/readme/" data-astro-cid-37fxchfa>readme</a> </span> </div> </footer>  </body> </html> 
