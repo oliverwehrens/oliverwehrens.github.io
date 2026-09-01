@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pioneer, Settler, Town Planner — self-check</title>
+<style>
+  :root{
+    --ink:#1B1D1A;
+    --ink-soft:#4A4F49;
+    --paper:#EDEAE3;
+    --paper-lift:#F6F4EF;
+    --rule:#C9C4B8;
+    --pioneer:#7A6E92;
+    --settler:#A9784F;
+    --planner:#456F8C;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:Optima,Candara,"Gill Sans MT","Gill Sans","Segoe UI",sans-serif;
+    --mono:"Courier New",Courier,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--sans);font-size:17px;line-height:1.55;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 90px}
+
+  .eyebrow{
+    font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--ink-soft);
+  }
+
+  header{padding:54px 0 8px}
+  h1{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(34px,6vw,52px);line-height:1.05;
+    margin:14px 0 16px;letter-spacing:-.01em;
+  }
+  .standfirst{max-width:52ch;color:var(--ink-soft);margin:0}
+
+  /* ---------- the axis: signature element ---------- */
+  .axis-fig{margin:34px 0 10px}
+  .axis-fig svg{display:block;width:100%;height:auto}
+  .zonekey{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:6px;
+  }
+  .zone h3{
+    font-family:var(--serif);font-weight:400;font-size:20px;margin:0 0 2px;
+  }
+  .zone .q{
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;
+    color:var(--ink-soft);margin:0 0 7px;
+  }
+  .zone p{margin:0;font-size:14.5px;line-height:1.5;color:var(--ink-soft)}
+  .zone{border-top:2px solid;padding-top:9px}
+  .zone.p{border-color:var(--pioneer)}
+  .zone.s{border-color:var(--settler)}
+  .zone.t{border-color:var(--planner)}
+
+  hr.rule{border:0;border-top:1px solid var(--rule);margin:44px 0}
+
+  h2{
+    font-family:var(--serif);font-weight:400;font-size:27px;
+    margin:0 0 4px;letter-spacing:-.005em;
+  }
+  .sechead{margin-bottom:22px}
+  .sechead p{margin:6px 0 0;color:var(--ink-soft);max-width:56ch;font-size:15.5px}
+
+  ol.misread{margin:0;padding:0;list-style:none;counter-reset:m}
+  ol.misread li{
+    counter-increment:m;padding:12px 0 12px 44px;position:relative;
+    border-bottom:1px solid var(--rule);font-size:15.5px;max-width:62ch;
+  }
+  ol.misread li:last-child{border-bottom:0}
+  ol.misread li::before{
+    content:counter(m,decimal-leading-zero);position:absolute;left:0;top:13px;
+    font-family:var(--mono);font-size:12px;color:var(--ink-soft);
+  }
+  ol.misread b{font-weight:600}
+
+  /* ---------- items ---------- */
+  .colhead{
+    display:flex;justify-content:flex-end;gap:8px;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+    color:var(--ink-soft);margin-bottom:2px;position:sticky;top:0;
+    background:var(--paper);padding:8px 0 6px;z-index:3;
+  }
+  .colhead span{width:38px;text-align:center}
+
+  .item{border-top:1px solid var(--rule);padding:16px 0 6px}
+  .item.err{background:rgba(169,120,79,.10)}
+  .item-q{
+    display:flex;gap:12px;align-items:baseline;margin-bottom:10px;
+  }
+  .item-n{font-family:var(--mono);font-size:12px;color:var(--ink-soft);flex:0 0 auto}
+  .item-q p{margin:0;font-weight:600;font-size:16px}
+
+  .opt{
+    display:flex;align-items:center;gap:8px;padding:5px 0;
+  }
+  .opt .txt{flex:1 1 auto;font-size:15.5px;line-height:1.45;color:var(--ink-soft)}
+  .opt .pick{
+    width:38px;height:32px;flex:0 0 auto;border:1px solid var(--rule);
+    background:var(--paper-lift);border-radius:2px;cursor:pointer;padding:0;
+    font-family:var(--mono);font-size:11px;color:var(--ink-soft);
+  }
+  .opt .pick:hover{border-color:var(--ink-soft)}
+  .opt .pick:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+  .opt .pick[aria-pressed="true"]{
+    background:var(--ink);border-color:var(--ink);color:var(--paper-lift);
+  }
+  .opt.chosen .txt{color:var(--ink)}
+
+  /* ---------- part 2 ---------- */
+  .alloc{margin-top:6px}
+  .allocrow{
+    display:flex;align-items:center;gap:14px;padding:11px 0;
+    border-top:1px solid var(--rule);
+  }
+  .allocrow .lab{flex:1 1 auto;font-size:16px}
+  .allocrow .lab small{display:block;font-size:13.5px;color:var(--ink-soft)}
+  .stepper{display:flex;align-items:center;gap:4px;flex:0 0 auto}
+  .stepper button{
+    width:34px;height:34px;border:1px solid var(--rule);background:var(--paper-lift);
+    font-family:var(--mono);font-size:16px;line-height:1;cursor:pointer;
+    border-radius:2px;color:var(--ink);
+  }
+  .stepper button:hover{border-color:var(--ink-soft)}
+  .stepper button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+  .stepper .val{
+    width:34px;text-align:center;font-family:var(--mono);font-size:17px;
+  }
+  .remain{font-family:var(--mono);font-size:12px;color:var(--ink-soft);margin-top:12px}
+  .remain.bad{color:var(--settler)}
+
+  /* ---------- action ---------- */
+  .action{margin-top:34px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .go{
+    font-family:var(--sans);font-size:16px;letter-spacing:.01em;
+    background:var(--ink);color:var(--paper-lift);border:0;border-radius:2px;
+    padding:14px 26px;cursor:pointer;
+  }
+  .go:disabled{background:var(--rule);color:#8A867C;cursor:not-allowed}
+  .go:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+  .ghost{
+    background:none;border:0;color:var(--ink-soft);text-decoration:underline;
+    cursor:pointer;font-family:var(--sans);font-size:14.5px;padding:6px 0;
+  }
+  .progress{font-family:var(--mono);font-size:12px;color:var(--ink-soft)}
+
+  /* ---------- result ---------- */
+  #result{display:none}
+  #result.on{display:block}
+  .verdict{
+    font-family:var(--serif);font-size:clamp(26px,4.4vw,38px);line-height:1.15;
+    font-weight:400;margin:0 0 10px;
+  }
+  .verdict em{font-style:normal;border-bottom:3px solid var(--ink)}
+  .readout{
+    font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);
+    letter-spacing:.03em;margin:0 0 26px;
+  }
+  .gapnote{
+    border-left:3px solid var(--ink);padding:2px 0 2px 16px;margin:26px 0 0;
+    max-width:58ch;font-size:16px;
+  }
+  .gapnote strong{display:block;font-family:var(--mono);font-size:11px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:5px}
+  .homebase{max-width:58ch;margin:22px 0 0;color:var(--ink-soft);font-size:15.5px}
+  .figcap{
+    font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);
+    margin:14px 0 0;max-width:64ch;line-height:1.6;
+  }
+
+  .tablewrap{overflow-x:auto;margin-top:30px;-webkit-overflow-scrolling:touch}
+  table.compare{
+    border-collapse:collapse;width:100%;min-width:640px;font-size:14.5px;
+  }
+  table.compare th,table.compare td{
+    text-align:left;vertical-align:top;padding:11px 16px 11px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  table.compare td:last-child,table.compare th:last-child{padding-right:0}
+  table.compare thead th{
+    font-family:var(--serif);font-weight:400;font-size:19px;
+    border-bottom:2px solid;padding-bottom:7px;
+  }
+  table.compare thead th.h-p{border-color:var(--pioneer)}
+  table.compare thead th.h-s{border-color:var(--settler)}
+  table.compare thead th.h-t{border-color:var(--planner)}
+  table.compare thead th.h-x{border-bottom-color:transparent}
+  table.compare tbody th{
+    font-family:var(--mono);font-weight:400;font-size:10.5px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+    white-space:nowrap;width:1%;
+  }
+  table.compare td{color:var(--ink-soft)}
+  table.compare tr.quote td{font-family:var(--serif);font-size:16px;color:var(--ink)}
+
+  ul.prompts{margin:0;padding:0;list-style:none;max-width:60ch}
+  ul.prompts li{
+    border-bottom:1px solid var(--rule);padding:13px 0;font-size:15.5px;
+  }
+  ul.prompts li:last-child{border-bottom:0}
+  ul.prompts b{font-weight:600;color:var(--ink)}
+
+  .copyline{margin-top:30px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+
+  .pin-self,.pin-work,.pin-lab{opacity:0}
+  .drawn .pin-self{animation:drop .5s .05s cubic-bezier(.2,.8,.3,1) forwards}
+  .drawn .pin-work{animation:drop .5s .22s cubic-bezier(.2,.8,.3,1) forwards}
+  .drawn .pin-lab{animation:fade .4s .5s linear forwards}
+  @keyframes drop{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fade{to{opacity:1}}
+  @media (prefers-reduced-motion:reduce){
+    .pin-self,.pin-work,.pin-lab{opacity:1;animation:none!important}
+  }
+
+  footer{
+    margin-top:56px;padding-top:20px;border-top:1px solid var(--rule);
+    font-size:13.5px;color:var(--ink-soft);max-width:60ch;
+  }
+
+  @media(max-width:640px){
+    body{font-size:16px}
+    .zonekey{grid-template-columns:1fr;gap:16px}
+    .opt .txt{font-size:15px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Wardley &middot; Pioneers, Settlers, Town Planners</div>
+  <h1>Where on the map<br>do you build best?</h1>
+  <p class="standfirst">Twelve forced choices, about ten minutes, for you alone. There are no good or bad answers — but there is no way to pick all three, which is the whole point of it.</p>
+</header>
+
+<figure class="axis-fig" aria-label="The evolution axis, from uncharted to industrialised">
+  <svg viewBox="0 0 900 150" role="img" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gp" x1="0" x2="1"><stop offset="0" stop-color="#7A6E92" stop-opacity=".05"/><stop offset="1" stop-color="#7A6E92" stop-opacity=".20"/></linearGradient>
+      <linearGradient id="gs" x1="0" x2="1"><stop offset="0" stop-color="#A9784F" stop-opacity=".16"/><stop offset="1" stop-color="#A9784F" stop-opacity=".20"/></linearGradient>
+      <linearGradient id="gt" x1="0" x2="1"><stop offset="0" stop-color="#456F8C" stop-opacity=".18"/><stop offset="1" stop-color="#456F8C" stop-opacity=".30"/></linearGradient>
+      <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+        <path d="M0,0 L9,4.5 L0,9 z" fill="#1B1D1A"/>
+      </marker>
+    </defs>
+    <rect x="40" y="34" width="273" height="46" fill="url(#gp)"/>
+    <rect x="313" y="34" width="273" height="46" fill="url(#gs)"/>
+    <rect x="586" y="34" width="274" height="46" fill="url(#gt)"/>
+    <path d="M313,30 L313,84" stroke="#C9C4B8" stroke-dasharray="2 5"/>
+    <path d="M586,30 L586,84" stroke="#C9C4B8" stroke-dasharray="2 5"/>
+    <path d="M40,80 L866,80" stroke="#1B1D1A" stroke-width="1.4" marker-end="url(#ar)"/>
+    <g font-family="Courier New,monospace" font-size="11.5" fill="#4A4F49">
+      <text x="40" y="24">uncharted</text>
+      <text x="860" y="24" text-anchor="end">industrialised</text>
+      <text x="40" y="101">genesis</text>
+      <text x="313" y="101">custom-built</text>
+      <text x="586" y="101">product</text>
+      <text x="860" y="101" text-anchor="end">commodity</text>
+    </g>
+    <g stroke="#1B1D1A" stroke-width="1">
+      <path d="M40,80 L40,88"/><path d="M313,80 L313,88"/><path d="M586,80 L586,88"/><path d="M860,80 L860,88"/>
+    </g>
+  </svg>
+  <figcaption class="figcap">This is the evolution axis of a Wardley map: everything travels left to right, from nobody knowing whether a thing is possible to everybody depending on it working. The three roles are the three stops on that road.</figcaption>
+</figure>
+
+<div class="zonekey">
+  <div class="zone p">
+    <h3>Pioneer</h3>
+    <p class="q">"Is this even possible?"</p>
+    <p>Builds the crude thing that proves an idea can exist at all. Most attempts fail — that is the price of the ones that don't.</p>
+  </div>
+  <div class="zone s">
+    <h3>Settler</h3>
+    <p class="q">"Who actually needs this, and why?"</p>
+    <p>Takes the rough prototype and turns it into something people can rely on without asking whoever built it.</p>
+  </div>
+  <div class="zone t">
+    <h3>Town Planner</h3>
+    <p class="q">"How do we make this cheap and boring?"</p>
+    <p>Turns a working product into a utility: measured, automated, predictable, dull by design.</p>
+  </div>
+</div>
+
+<div class="tablewrap">
+  <table class="compare">
+    <thead>
+      <tr>
+        <th class="h-x"><span class="eyebrow">side by side</span></th>
+        <th class="h-p" scope="col">Pioneer</th>
+        <th class="h-s" scope="col">Settler</th>
+        <th class="h-t" scope="col">Town Planner</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Produces</th>
+        <td>A crude prototype that proves a thing can exist</td>
+        <td>A product people trust, with users, docs and an ecosystem</td>
+        <td>A utility: SLAs, automation, volume, low unit cost</td>
+      </tr>
+      <tr>
+        <th scope="row">Wins by</th>
+        <td>Exploring fast, failing often</td>
+        <td>Listening, refactoring, productising</td>
+        <td>Measuring, optimising, removing variance</td>
+      </tr>
+      <tr>
+        <th scope="row">Failure rate</th>
+        <td>High, and expected</td>
+        <td>Moderate</td>
+        <td>Low, and unacceptable</td>
+      </tr>
+      <tr>
+        <th scope="row">Allergic to</th>
+        <td>Requirements, process, "what's the return on this"</td>
+        <td>Half-finished toys, and scaling before anyone has adopted it</td>
+        <td>Snowflakes, undocumented magic, surprises</td>
+      </tr>
+      <tr>
+        <th scope="row">Horizon</th>
+        <td>Weeks</td>
+        <td>Quarters</td>
+        <td>Years</td>
+      </tr>
+      <tr class="quote">
+        <th scope="row">Sounds like</th>
+        <td>"Let's just build it and see."</td>
+        <td>"Have you watched anyone actually try to use this?"</td>
+        <td>"What happens when this fails at three in the morning?"</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="rule">
+
+<div class="sechead">
+  <h2>Four things people get wrong</h2>
+</div>
+<ol class="misread">
+  <li><b>It isn't a ladder.</b> A Town Planner is not a promoted Pioneer. The three are peers doing different jobs, and an organisation missing any one of them is stuck.</li>
+  <li><b>It measures attitude, not ability.</b> All three can be brilliant engineers, and all three can be poor ones. This says nothing about how good you are.</li>
+  <li><b>The handover is theft, and it's meant to sting.</b> Settlers take work off Pioneers before Pioneers feel finished. Town Planners do the same to Settlers. If nothing is being taken, nothing is moving.</li>
+  <li><b>Nobody is only one thing.</b> You have a home base, not a cage. What's worth knowing is where your home base is — and whether the work in front of you matches it.</li>
+</ol>
+
+<hr class="rule">
+
+<div class="sechead">
+  <h2>Part one &mdash; your instinct</h2>
+  <p>For each set, mark the one statement that is <b>most</b> like you and the one that is <b>least</b> like you. Answer for how you actually work, not how you think you should.</p>
+</div>
+
+<div class="colhead"><span>MOST</span><span>LEAST</span></div>
+<div id="items"></div>
+
+<hr class="rule">
+
+<div class="sechead">
+  <h2>Part two &mdash; your actual work</h2>
+  <p>Now forget preference. Split ten points across the three to describe what the last three months of your work really looked like.</p>
+</div>
+
+<div class="alloc" id="alloc"></div>
+<div class="remain" id="remain">10 points left to place</div>
+
+<div class="action">
+  <button class="go" id="go" disabled>See where you land</button>
+  <span class="progress" id="progress">0 of 12 sets answered</span>
+  <button class="ghost" id="reset">Start over</button>
+</div>
+
+<div id="result">
+  <hr class="rule">
+  <h2 class="verdict" id="verdict"></h2>
+  <p class="readout" id="readout"></p>
+
+  <figure class="axis-fig" id="resfig">
+    <svg viewBox="0 0 900 170" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="restitle">
+      <title id="restitle">Your instinct and your current work, plotted on the evolution axis</title>
+      <defs>
+        <linearGradient id="rp" x1="0" x2="1"><stop offset="0" stop-color="#7A6E92" stop-opacity=".05"/><stop offset="1" stop-color="#7A6E92" stop-opacity=".20"/></linearGradient>
+        <linearGradient id="rs" x1="0" x2="1"><stop offset="0" stop-color="#A9784F" stop-opacity=".16"/><stop offset="1" stop-color="#A9784F" stop-opacity=".20"/></linearGradient>
+        <linearGradient id="rt" x1="0" x2="1"><stop offset="0" stop-color="#456F8C" stop-opacity=".18"/><stop offset="1" stop-color="#456F8C" stop-opacity=".30"/></linearGradient>
+        <marker id="rar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="#1B1D1A"/>
+        </marker>
+      </defs>
+      <rect x="40" y="52" width="273" height="30" fill="url(#rp)"/>
+      <rect x="313" y="52" width="273" height="30" fill="url(#rs)"/>
+      <rect x="586" y="52" width="274" height="30" fill="url(#rt)"/>
+      <path d="M313,48 L313,86" stroke="#C9C4B8" stroke-dasharray="2 5"/>
+      <path d="M586,48 L586,86" stroke="#C9C4B8" stroke-dasharray="2 5"/>
+      <path d="M40,82 L866,82" stroke="#1B1D1A" stroke-width="1.4" marker-end="url(#rar)"/>
+      <g font-family="Courier New,monospace" font-size="11.5" fill="#4A4F49">
+        <text x="40" y="103">genesis</text>
+        <text x="313" y="103">custom-built</text>
+        <text x="586" y="103">product</text>
+        <text x="860" y="103" text-anchor="end">commodity</text>
+      </g>
+      <g class="pin-self">
+        <path id="pself-stem" d="M0,82 L0,34" stroke="#1B1D1A" stroke-width="1.4"/>
+        <circle id="pself-dot" cx="0" cy="30" r="7" fill="#1B1D1A"/>
+      </g>
+      <g class="pin-work">
+        <path id="pwork-stem" d="M0,82 L0,126" stroke="#1B1D1A" stroke-width="1.4" stroke-dasharray="3 3"/>
+        <circle id="pwork-dot" cx="0" cy="130" r="7" fill="none" stroke="#1B1D1A" stroke-width="2"/>
+      </g>
+      <g class="pin-lab" font-family="Courier New,monospace" font-size="11.5" fill="#1B1D1A">
+        <text id="lself" x="0" y="17" text-anchor="middle">your instinct</text>
+        <text id="lwork" x="0" y="153" text-anchor="middle">your work</text>
+      </g>
+    </svg>
+  </figure>
+
+  <p class="homebase" id="homebase"></p>
+
+  <div class="gapnote" id="gapnote"><strong>The gap</strong><span id="gaptext"></span></div>
+
+  <div class="sechead" style="margin-top:44px">
+    <h2>What to do with this</h2>
+    <p>The label is the least interesting part. These three questions are the reason to have done it.</p>
+  </div>
+  <ul class="prompts">
+    <li><b>If your two pins sit close together</b>, the risk isn't today, it's next year. Everything you build eventually moves right along that axis, and the work stops resembling the work you signed up for. Decide in advance whether you follow this thing right — or hand it over and go back left.</li>
+    <li><b>If they sit far apart</b>, the useful question isn't which one to change. It's whether the mismatch is temporary and worth it, or whether it's simply the shape of the job. Those two have very different answers, and only you can tell them apart.</li>
+    <li><b>Either way, say it out loud</b> to whoever decides what you work on. Most people can feel a role fitting badly without being able to name why, which makes it come out as a complaint. You can now say it in one sentence that describes the work rather than your mood.</li>
+  </ul>
+
+  <div class="copyline">
+    <button class="go" id="copy">Copy my result as text</button>
+    <span class="progress" id="copied"></span>
+  </div>
+</div>
+
+<footer>
+  The model is Simon Wardley's, part of the Wardley Mapping body of work (CC BY-SA), adapted from the commandos, infantry and police of Robert Cringely's <i>Accidental Empires</i>. This page has no server and no storage: nothing you enter is saved or sent anywhere, and closing the tab discards it. It is a way of thinking about your own work, not a rating of you.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var ITEMS = [
+    ["When something new lands on my desk",
+      "I want the crudest possible version running today, just to see if the idea holds.",
+      "I want to know who will use it and what they actually need before I build.",
+      "I want the volume, the cost per unit and the failure modes."],
+    ["\u201CDone\u201D means",
+      "We proved it's possible. Someone else can make it real.",
+      "Real users depend on it and can succeed without asking me.",
+      "It runs itself, inside its SLA, and nobody has to think about it."],
+    ["There are no requirements and nobody can say what good looks like",
+      "Perfect. That's the most interesting kind of problem there is.",
+      "Fine \u2014 I'll go and talk to people until good looks like something.",
+      "Then it isn't a project yet. Come back when it is."],
+    ["Documentation",
+      "Slows me down. The demo is the argument.",
+      "Is the product. If it isn't documented, it isn't adopted.",
+      "Is a control. Undocumented behaviour is an incident waiting to happen."],
+    ["A system that works but is held together with tape",
+      "Is a success. It works, doesn't it?",
+      "Is a starting point. Now let's make it something people can lean on.",
+      "Is a liability, and I want a dated plan to remove it."],
+    ["The week I'd enjoy most",
+      "Three throwaway spikes, two of which go nowhere.",
+      "Turning a rough prototype into something a customer would pay for.",
+      "Halving p95 latency and taking a third off the bill."],
+    ["Users",
+      "Don't exist yet. I'm building the thing they'll want later.",
+      "Are the whole job. I want to sit next to them and watch them struggle.",
+      "Are a load profile. I care that all of them are served, predictably."],
+    ["When something I built fails",
+      "Expected. Most of what I try fails; that's the deal.",
+      "Annoying \u2014 it means I misread what people needed.",
+      "Unacceptable. There should have been a control that caught it."],
+    ["Looking at an unfamiliar system, I notice first",
+      "The one strange thing nobody has tried yet.",
+      "Where the seams are, and how hard it would be to make this usable.",
+      "The operating cost, the monitoring gaps, the single points of failure."],
+    ["Process and standards",
+      "Are for things that are already understood. This isn't one of them.",
+      "Are worth adopting once we know which ones actually fit.",
+      "Are why anything works at scale. Exceptions are where it goes wrong."],
+    ["Given a free Friday I'd",
+      "Chase a half-formed idea nobody asked for.",
+      "Fix the onboarding path that keeps losing people.",
+      "Automate the manual step we do every single release."],
+    ["My uncomfortable truth",
+      "I lose interest the moment it starts working.",
+      "I keep polishing when I should have shipped or handed it over.",
+      "I want to standardise things that aren't ready to be standardised."]
+  ];
+
+  var KEYS = ["p","s","t"];
+
+  // Display order of the three statements per item, as indices into ITEMS[i] (0=P, 1=S, 2=T).
+  // Fixed rather than random so everyone sees the same sheet. All six permutations are used
+  // twice, and each slot carries each type exactly four times across the twelve items.
+  var ORDER = [
+    [2,0,1],[1,0,2],[1,2,0],[2,1,0],[0,1,2],[0,2,1],
+    [1,2,0],[2,0,1],[2,1,0],[1,0,2],[0,2,1],[0,1,2]
+  ];
+  var NAMES = {p:"Pioneer", s:"Settler", t:"Town Planner"};
+  var HOME = {
+    p:"Your home base is exploration. You are at your best where the problem is undefined and the cost of being wrong is low \u2014 and you are most likely to go flat when handed something that already works and just needs finishing.",
+    s:"Your home base is the transition. You are at your best taking something half-proven and making it dependable for other people \u2014 and most likely to go flat on a blank page, or on a system that is already routine.",
+    t:"Your home base is industrialisation. You are at your best where scale, cost and reliability are the problem \u2014 and most likely to go flat where nobody can yet say what the thing is supposed to do."
+  };
+
+  var most = new Array(ITEMS.length).fill(null);
+  var least = new Array(ITEMS.length).fill(null);
+  var alloc = {p:0,s:0,t:0};
+
+  var itemsEl = document.getElementById("items");
+  var frag = document.createDocumentFragment();
+
+  ITEMS.forEach(function(it, i){
+    var box = document.createElement("div");
+    box.className = "item";
+    box.id = "item"+i;
+
+    var q = document.createElement("div");
+    q.className = "item-q";
+    var n = document.createElement("span");
+    n.className = "item-n";
+    n.textContent = (i+1 < 10 ? "0" : "") + (i+1);
+    var p = document.createElement("p");
+    p.textContent = it[0];
+    q.appendChild(n); q.appendChild(p);
+    box.appendChild(q);
+
+    for (var k = 0; k < 3; k++){
+      (function(k){
+        var row = document.createElement("div");
+        row.className = "opt";
+        row.dataset.k = k;
+
+        var body = it[ORDER[i][k] + 1];
+
+        var t = document.createElement("span");
+        t.className = "txt";
+        t.textContent = body;
+
+        var bm = document.createElement("button");
+        bm.className = "pick"; bm.type = "button";
+        bm.setAttribute("aria-pressed","false");
+        bm.setAttribute("aria-label","Most like me: " + body);
+        bm.textContent = "M";
+        bm.onclick = function(){ setPick(i, k, "m"); };
+
+        var bl = document.createElement("button");
+        bl.className = "pick"; bl.type = "button";
+        bl.setAttribute("aria-pressed","false");
+        bl.setAttribute("aria-label","Least like me: " + body);
+        bl.textContent = "L";
+        bl.onclick = function(){ setPick(i, k, "l"); };
+
+        row.appendChild(t); row.appendChild(bm); row.appendChild(bl);
+        box.appendChild(row);
+      })(k);
+    }
+    frag.appendChild(box);
+  });
+  itemsEl.appendChild(frag);
+
+  function setPick(i, k, which){
+    if (which === "m"){
+      most[i] = (most[i] === k) ? null : k;
+      if (least[i] === most[i]) least[i] = null;
+    } else {
+      least[i] = (least[i] === k) ? null : k;
+      if (most[i] === least[i]) most[i] = null;
+    }
+    paintItem(i);
+    refresh();
+  }
+
+  function paintItem(i){
+    var box = document.getElementById("item"+i);
+    var rows = box.querySelectorAll(".opt");
+    for (var k = 0; k < rows.length; k++){
+      var btns = rows[k].querySelectorAll(".pick");
+      var m = (most[i] === k), l = (least[i] === k);
+      btns[0].setAttribute("aria-pressed", m ? "true" : "false");
+      btns[1].setAttribute("aria-pressed", l ? "true" : "false");
+      rows[k].className = "opt" + ((m || l) ? " chosen" : "");
+    }
+    box.className = "item";
+  }
+
+  // ---- part two ----
+  var allocEl = document.getElementById("alloc");
+  var ALLOC_COPY = {
+    p:"Exploring, prototyping, proving things could exist",
+    s:"Making rough things dependable for other people",
+    t:"Scaling, automating, cutting cost and variance"
+  };
+  KEYS.forEach(function(key){
+    var row = document.createElement("div");
+    row.className = "allocrow";
+    var lab = document.createElement("div");
+    lab.className = "lab";
+    lab.innerHTML = "<span></span><small></small>";
+    lab.querySelector("span").textContent = NAMES[key] + " work";
+    lab.querySelector("small").textContent = ALLOC_COPY[key];
+
+    var st = document.createElement("div");
+    st.className = "stepper";
+    var minus = document.createElement("button");
+    minus.type = "button"; minus.textContent = "\u2212";
+    minus.setAttribute("aria-label","One point fewer for " + NAMES[key] + " work");
+    var val = document.createElement("span");
+    val.className = "val"; val.id = "v-"+key; val.textContent = "0";
+    val.setAttribute("aria-live","polite");
+    var plus = document.createElement("button");
+    plus.type = "button"; plus.textContent = "+";
+    plus.setAttribute("aria-label","One point more for " + NAMES[key] + " work");
+
+    minus.onclick = function(){ if (alloc[key] > 0){ alloc[key]--; refresh(); } };
+    plus.onclick = function(){ if (total(alloc) < 10){ alloc[key]++; refresh(); } };
+
+    st.appendChild(minus); st.appendChild(val); st.appendChild(plus);
+    row.appendChild(lab); row.appendChild(st);
+    allocEl.appendChild(row);
+  });
+
+  function total(o){ return o.p + o.s + o.t; }
+
+  function answered(){
+    var c = 0;
+    for (var i = 0; i < ITEMS.length; i++){
+      if (most[i] !== null && least[i] !== null) c++;
+    }
+    return c;
+  }
+
+  function refresh(){
+    KEYS.forEach(function(k){ document.getElementById("v-"+k).textContent = alloc[k]; });
+    var left = 10 - total(alloc);
+    var rem = document.getElementById("remain");
+    rem.textContent = left === 0 ? "All ten points placed" :
+      left + (left === 1 ? " point left to place" : " points left to place");
+    rem.className = "remain" + (left === 0 ? "" : " bad");
+
+    var a = answered();
+    document.getElementById("progress").textContent = a + " of " + ITEMS.length + " sets answered";
+    document.getElementById("go").disabled = !(a === ITEMS.length && left === 0);
+  }
+
+  // ---- scoring ----
+  function score(){
+    var s = {p:0,s:0,t:0};
+    for (var i = 0; i < ITEMS.length; i++){
+      for (var k = 0; k < 3; k++){
+        var pts = (most[i] === k) ? 2 : (least[i] === k) ? 0 : 1;
+        s[KEYS[ORDER[i][k]]] += pts;
+      }
+    }
+    return s;
+  }
+  // centroid on the evolution axis: pioneer 0, settler 0.5, planner 1
+  function centroid(o){
+    var tot = total(o);
+    if (!tot) return 0.5;
+    return (o.s * 0.5 + o.t) / tot;
+  }
+  function pct(o){
+    var tot = total(o) || 1;
+    return {p: Math.round(o.p/tot*100), s: Math.round(o.s/tot*100), t: Math.round(o.t/tot*100)};
+  }
+  function label(o){
+    var r = KEYS.slice().sort(function(a,b){ return o[b]-o[a]; });
+    if (o[r[0]] - o[r[1]] <= 2) return NAMES[r[0]] + "\u2013" + NAMES[r[1]];
+    return NAMES[r[0]];
+  }
+  function topKey(o){
+    return KEYS.slice().sort(function(a,b){ return o[b]-o[a]; })[0];
+  }
+
+  var lastSummary = "";
+
+  document.getElementById("go").onclick = function(){
+    var s = score();
+    var sp = pct(s), ap = pct(alloc);
+    var cs = centroid(s), ca = centroid(alloc);
+    var name = label(s);
+
+    document.getElementById("verdict").innerHTML =
+      "Your home base is <em>" + name + "</em>.";
+    document.getElementById("readout").textContent =
+      "instinct  P " + sp.p + "%  \u00B7  S " + sp.s + "%  \u00B7  T " + sp.t + "%" +
+      "      work  P " + ap.p + "%  \u00B7  S " + ap.s + "%  \u00B7  T " + ap.t + "%";
+
+    document.getElementById("homebase").textContent = HOME[topKey(s)];
+
+    // plot: axis runs x=40..860
+    var xs = 40 + cs * 820, xa = 40 + ca * 820;
+    place("pself-stem","pself-dot","lself", xs);
+    place("pwork-stem","pwork-dot","lwork", xa);
+
+    var d = ca - cs, gap = document.getElementById("gaptext");
+    if (Math.abs(d) < 0.10){
+      gap.textContent = "Your work sits roughly where your instinct does. That's a good place to be — the thing to watch is what happens when this work moves on without you.";
+    } else if (d > 0){
+      gap.textContent = "Your work sits further toward the industrialised end than your instinct does. You are being asked to settle or standardise things you would rather still be opening up. Expect that to feel like drag rather than difficulty — and say so out loud, because it is fixable.";
+    } else {
+      gap.textContent = "Your work sits further toward the uncharted end than your instinct does. You are being asked to operate without the ground rules you would normally want. Expect that to feel like exposure rather than incompetence — and name what would have to be true for you to work well here.";
+    }
+
+    lastSummary =
+      "PST self-check — home base: " + name + ". " +
+      "Instinct: P " + sp.p + "% / S " + sp.s + "% / T " + sp.t + "%. " +
+      "Last three months of work: P " + ap.p + "% / S " + ap.s + "% / T " + ap.t + "%. " +
+      "Gap: " + (Math.abs(d) < 0.10 ? "aligned" :
+        d > 0 ? "work sits further toward industrialised than instinct" :
+                "work sits further toward uncharted than instinct") + ".";
+
+    var res = document.getElementById("result");
+    res.classList.add("on");
+    document.getElementById("resfig").classList.add("drawn");
+    document.getElementById("copied").textContent = "";
+    res.scrollIntoView({behavior:"smooth", block:"start"});
+  };
+
+  function place(stemId, dotId, labId, x){
+    var stem = document.getElementById(stemId);
+    var d = stem.getAttribute("d").replace(/M[\d.-]+,/, "M" + x.toFixed(1) + ",")
+                                   .replace(/L[\d.-]+,/, "L" + x.toFixed(1) + ",");
+    stem.setAttribute("d", d);
+    document.getElementById(dotId).setAttribute("cx", x.toFixed(1));
+    var lab = document.getElementById(labId);
+    lab.setAttribute("x", Math.min(800, Math.max(90, x)).toFixed(1));
+  }
+
+  document.getElementById("copy").onclick = function(){
+    var done = function(ok){
+      document.getElementById("copied").textContent = ok ? "Copied to your clipboard." : "Couldn't copy. Select the text above instead.";
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(lastSummary).then(function(){done(true);}, function(){done(false);});
+    } else { done(false); }
+  };
+
+  document.getElementById("reset").onclick = function(){
+    most.fill(null); least.fill(null);
+    alloc = {p:0,s:0,t:0};
+    for (var i = 0; i < ITEMS.length; i++) paintItem(i);
+    document.getElementById("result").classList.remove("on");
+    document.getElementById("resfig").classList.remove("drawn");
+    refresh();
+    window.scrollTo({top:0, behavior:"smooth"});
+  };
+
+  refresh();
+})();
+</script>
+</body>
+</html>
