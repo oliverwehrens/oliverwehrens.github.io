@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Data folder · daily-recall · make · Oliver Wehrens</title><meta name="description" content="What Daily Recall stores in ~/.config/daily-recall, how long files are kept, and how to query the SQLite database from the shell."><meta name="robots" content="index, follow, max-image-preview:large"><link rel="canonical" href="https://owehrens.com/make/daily-recall/docs/data/"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="theme-color" content="#0c0c0e"><meta property="og:type" content="article"><meta property="og:site_name" content="Oliver Wehrens"><meta property="og:title" content="Data folder · daily-recall · make · Oliver Wehrens"><meta property="og:description" content="What Daily Recall stores in ~/.config/daily-recall, how long files are kept, and how to query the SQLite database from the shell."><meta property="og:url" content="https://owehrens.com/make/daily-recall/docs/data/"><meta name="twitter:card" content="summary_large_image"><script defer src="https://t.4004.fyi/script.js" data-website-id="ae7b9a21-3055-4b46-bc57-15eb0c646e2e"></script><script>
+      (() => {
+        try {
+          const stored = localStorage.getItem('theme');
+          document.documentElement.dataset.theme =
+            stored || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        } catch {}
+      })();
+    </script><link rel="stylesheet" href="/_astro/_doc_.hlnl6tG8.css"></head> <body> <a class="skip" href="#main">skip to content</a> <header class="site-header"> <div class="wrap header-inner"> <a class="logo" href="/make/" aria-label="make home"> <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"> <rect width="32" height="32" rx="8" fill="currentColor"></rect> <path d="M8 23V10l8 8 8-8v13" fill="none" stroke="var(--bg)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <span><span class="dim">owehrens</span>/make</span> </a> <nav class="nav" aria-label="main"> <a href="/">owehrens.com</a> </nav> <div class="tools"> <button class="tool-btn" type="button" id="make-theme" aria-label="toggle color theme"> <span class="theme-icon" aria-hidden="true"></span> </button> </div> </div> </header> <main id="main" class="wrap">  <article class="project c-green"> <header class="post-header"> <nav class="crumb" aria-label="breadcrumb"><a href="/make/">projects</a><span>/</span><a href="/make/daily-recall/">daily-recall</a></nav> <h1>Data folder</h1>  </header> <div class="project-layout"> <aside class="project-side"><nav class="pnav" aria-label="daily-recall docs"><div class="toc-head">docs</div><ol><li><a href="/make/daily-recall/">overview</a></li><li><a href="/make/daily-recall/docs/install/">install</a></li><li><a href="/make/daily-recall/docs/llm-server/">model server</a></li><li><a href="/make/daily-recall/docs/configuration/">configuration</a></li><li><a href="/make/daily-recall/docs/prompts/">prompts</a></li><li><a href="/make/daily-recall/docs/data/" aria-current="page">data folder</a></li></ol></nav></aside> <div class="prose"><p>All data lives in one folder, <code>~/.config/daily-recall</code> by default, created readable by your user only. Settings › Storage can point the app at another folder.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="text"><code><span class="line"><span>~/.config/daily-recall/</span></span>
+<span class="line"><span>├── settings.json     settings, hand-editable</span></span>
+<span class="line"><span>├── recall.db         SQLite database (WAL mode; safe to read while the app runs)</span></span>
+<span class="line"><span>├── recall.lock       held by the running app</span></span>
+<span class="line"><span>├── shots/            screenshots, shots/YYYY-MM-DD/HHmmss.jpg</span></span>
+<span class="line"><span>├── marked/           marked moment images, marked/YYYY-MM-DD/HHmmss.jpg</span></span>
+<span class="line"><span>├── dictation/        scratch audio while dictating; deleted after each dictation</span></span>
+<span class="line"><span>└── summary-runs/     the exact prompt and raw reply of every summary and digest request</span></span></code></pre>
+<p>Only one running Daily Recall uses a data folder. A second copy started on the same folder records nothing and offers to quit, to quit the other one, or to choose another folder.</p>
+<h2 id="what-is-kept"><a class="header-anchor" href="#what-is-kept" aria-hidden="true">#</a>What is kept</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Data</th><th>Kept</th></tr></thead><tbody><tr><td>Window spans, meetings, notes, clips</td><td>forever</td></tr><tr><td>Screenshot and marked-moment descriptions</td><td>forever</td></tr><tr><td>Summaries and digests, all versions</td><td>forever</td></tr><tr><td>Screenshot images</td><td>14 days by default</td></tr><tr><td>Marked moment images</td><td>forever by default</td></tr><tr><td>Summary request logs</td><td>forever by default</td></tr></tbody></table>
+<p>Retention runs at launch, once a day and when you change a period. It deletes only files. A screenshot image is deleted only after its description exists.</p>
+<blockquote class="callout callout-caution" data-kind="caution">
+<p>Database migrations can’t be reversed. Once a newer version has opened the database, an older version can’t open it anymore. Keep a copy of <code>recall.db</code> before you try an older build.</p>
+</blockquote>
+<h2 id="tables"><a class="header-anchor" href="#tables" aria-hidden="true">#</a>Tables</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Table</th><th>One row per</th></tr></thead><tbody><tr><td><code>focus_spans</code></td><td>stable foreground state: app, window title, URL, start, end, end reason</td></tr><tr><td><code>screenshots</code>, <code>analyses</code></td><td>capture, and the model’s description with the exact prompt sent</td></tr><tr><td><code>meetings</code>, <code>meeting_digests</code></td><td>Teams call with your notes, and each digest version</td></tr><tr><td><code>notes</code></td><td>note, with title and Markdown body</td></tr><tr><td><code>web_clips</code>, <code>page_digests</code></td><td>clipped page per day, and each digest version</td></tr><tr><td><code>summaries</code></td><td>summary version of a day</td></tr><tr><td><code>search_docs</code>, <code>search_fts</code></td><td>searchable item, with an FTS5 full-text index</td></tr></tbody></table>
+<p>Times are UTC milliseconds since the epoch. Each row also stores the local UTC offset at the time.</p>
+<h2 id="query-from-the-shell"><a class="header-anchor" href="#query-from-the-shell" aria-hidden="true">#</a>Query from the shell</h2>
+<p>Today’s windows in local time:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">sqlite3</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -header</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -column</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> ~/.config/daily-recall/recall.db</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  SELECT time(started_at/1000, 'unixepoch', 'localtime') AS start,</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">         time(coalesce(ended_at, last_seen_at)/1000, 'unixepoch', 'localtime') AS end,</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">         app_name, window_title, url, end_reason</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  FROM focus_spans</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  WHERE started_at >= strftime('%s', 'now', 'localtime', 'start of day', 'utc') * 1000</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  ORDER BY started_at;"</span></span></code></pre>
+<p>Today’s screenshot descriptions:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">sqlite3</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -header</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -column</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> ~/.config/daily-recall/recall.db</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  SELECT time(s.taken_at/1000, 'unixepoch', 'localtime') AS time, s.app_name, s.status, a.response</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  FROM screenshots s LEFT JOIN analyses a ON a.screenshot_id = s.id</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  WHERE s.taken_at >= strftime('%s', 'now', 'localtime', 'start of day', 'utc') * 1000</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  ORDER BY s.taken_at;"</span></span></code></pre>
+<p>Full-text search for a word:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">sqlite3</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -header</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -column</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> ~/.config/daily-recall/recall.db</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> "</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  SELECT d.kind, datetime(d.started_at/1000, 'unixepoch', 'localtime') AS time, substr(d.body, 1, 80) AS text</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  FROM search_fts JOIN search_docs d ON d.doc_id = search_fts.rowid</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  WHERE search_fts MATCH '</span><span style="color:#005CC5;--shiki-dark:#79B8FF">\"</span><span style="color:#032F62;--shiki-dark:#9ECBFF">atlas</span><span style="color:#005CC5;--shiki-dark:#79B8FF">\"</span><span style="color:#032F62;--shiki-dark:#9ECBFF">' ORDER BY d.started_at DESC LIMIT 20;"</span></span></code></pre>
+<h2 id="why-a-summary-failed"><a class="header-anchor" href="#why-a-summary-failed" aria-hidden="true">#</a>Why a summary failed</h2>
+<p>Every summary and digest request leaves two files in <code>summary-runs/&#x3C;day>/</code>: the exact prompt sent, and the result with HTTP status, duration and the server’s raw reply. For example, <code>"finish_reason": "length"</code> with empty content means thinking used up the token limit. Turn off “Let the model think” for that prompt, or raise the server’s context.</p></div> </div> </article>  </main> <footer class="site-footer"> <div class="wrap footer-inner"> <div> <span class="dim">©</span> 2026 Oliver Wehrens
+<span class="sep">·</span> <span class="dim">built, printed, soldered.</span> </div> <ul class="footer-links"> <li><a href="/">blog</a></li> <li><a href="/rss.xml">rss</a></li> </ul> </div> </footer> <script type="module" src="/_astro/MakeLayout.astro_astro_type_script_index_0_lang.9-8_K50b.js"></script> </body> </html>

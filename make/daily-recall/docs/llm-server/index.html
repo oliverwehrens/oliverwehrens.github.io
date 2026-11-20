@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Model server · daily-recall · make · Oliver Wehrens</title><meta name="description" content="Connect Daily Recall to an OpenAI-compatible model server such as llama.cpp or LM Studio, with a vision model for screenshots and enough context for a day."><meta name="robots" content="index, follow, max-image-preview:large"><link rel="canonical" href="https://owehrens.com/make/daily-recall/docs/llm-server/"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="theme-color" content="#0c0c0e"><meta property="og:type" content="article"><meta property="og:site_name" content="Oliver Wehrens"><meta property="og:title" content="Model server · daily-recall · make · Oliver Wehrens"><meta property="og:description" content="Connect Daily Recall to an OpenAI-compatible model server such as llama.cpp or LM Studio, with a vision model for screenshots and enough context for a day."><meta property="og:url" content="https://owehrens.com/make/daily-recall/docs/llm-server/"><meta name="twitter:card" content="summary_large_image"><script defer src="https://t.4004.fyi/script.js" data-website-id="ae7b9a21-3055-4b46-bc57-15eb0c646e2e"></script><script>
+      (() => {
+        try {
+          const stored = localStorage.getItem('theme');
+          document.documentElement.dataset.theme =
+            stored || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        } catch {}
+      })();
+    </script><link rel="stylesheet" href="/_astro/_doc_.hlnl6tG8.css"></head> <body> <a class="skip" href="#main">skip to content</a> <header class="site-header"> <div class="wrap header-inner"> <a class="logo" href="/make/" aria-label="make home"> <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"> <rect width="32" height="32" rx="8" fill="currentColor"></rect> <path d="M8 23V10l8 8 8-8v13" fill="none" stroke="var(--bg)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <span><span class="dim">owehrens</span>/make</span> </a> <nav class="nav" aria-label="main"> <a href="/">owehrens.com</a> </nav> <div class="tools"> <button class="tool-btn" type="button" id="make-theme" aria-label="toggle color theme"> <span class="theme-icon" aria-hidden="true"></span> </button> </div> </div> </header> <main id="main" class="wrap">  <article class="project c-green"> <header class="post-header"> <nav class="crumb" aria-label="breadcrumb"><a href="/make/">projects</a><span>/</span><a href="/make/daily-recall/">daily-recall</a></nav> <h1>Model server</h1>  </header> <div class="project-layout"> <aside class="project-side"><nav class="pnav" aria-label="daily-recall docs"><div class="toc-head">docs</div><ol><li><a href="/make/daily-recall/">overview</a></li><li><a href="/make/daily-recall/docs/install/">install</a></li><li><a href="/make/daily-recall/docs/llm-server/" aria-current="page">model server</a></li><li><a href="/make/daily-recall/docs/configuration/">configuration</a></li><li><a href="/make/daily-recall/docs/prompts/">prompts</a></li><li><a href="/make/daily-recall/docs/data/">data folder</a></li></ol></nav></aside> <div class="prose"><p>Daily Recall sends every request to one OpenAI-compatible chat completions endpoint. Screenshot analysis needs a model that reads images. Summaries, digests and search answers are text only.</p>
+<h2 id="settings-model"><a class="header-anchor" href="#settings-model" aria-hidden="true">#</a>Settings › Model</h2>
+<ul>
+<li><strong>Base URL</strong> including <code>/v1</code>, for example <code>http://localhost:8080/v1</code>. Requests go to <code>&#x3C;base URL>/chat/completions</code>. A missing <code>/v1</code> shows up as HTTP 404.</li>
+<li><strong>Model</strong>: the name the server expects. If you leave it empty, the name the server reports is stored.</li>
+<li><strong>API key</strong>: only if the server requires one. It is sent as <code>Authorization: Bearer &#x3C;key></code>.</li>
+<li><strong>Test Connection</strong> sends a small picture (a red circle and a blue square) and shows the reply and the response time. If the server can’t read images, it shows the error.</li>
+</ul>
+<h2 id="llama-cpp"><a class="header-anchor" href="#llama-cpp" aria-hidden="true">#</a>llama.cpp</h2>
+<p>Start <code>llama-server</code> with a vision model and its projector file:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">llama-server</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -m</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> model.gguf</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> --mmproj</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> mmproj.gguf</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> --host</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> 127.0.0.1</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> --port</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> 8080</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -c</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> 131072</span></span></code></pre>
+<p>Check it from the shell:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">curl</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -s</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> http://localhost:8080/v1/chat/completions</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -H</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> 'Content-Type: application/json'</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -d</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> '{</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  "messages": [{"role": "user", "content": "Reply with the single word: ready"}],</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">  "max_tokens": 20, "chat_template_kwargs": {"enable_thinking": false}}'</span><span style="color:#D73A49;--shiki-dark:#F97583"> |</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> jq</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -r</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> '.choices[0].message.content'</span></span></code></pre>
+<p>By default <code>llama-server</code> answers one request at a time, so a search question waits behind a running screenshot analysis or summary. Start it with <code>-np 2</code> to answer two in parallel. Each slot gets half of the context set with <code>-c</code>, so double <code>-c</code> as well.</p>
+<h2 id="lm-studio"><a class="header-anchor" href="#lm-studio" aria-hidden="true">#</a>LM Studio</h2>
+<p>LM Studio works with the same settings. Use the server address LM Studio shows, with <code>/v1</code>, and load a vision model.</p>
+<h2 id="thinking"><a class="header-anchor" href="#thinking" aria-hidden="true">#</a>Thinking</h2>
+<p>Prompts 2 to 6 have a “Let the model think” switch. Screenshot analyses never think.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Thinking on</th><th>Thinking off</th></tr></thead><tbody><tr><td>Sent</td><td><code>enable_thinking: true</code></td><td><code>enable_thinking: false</code>, <code>reasoning_effort: "none"</code></td></tr><tr><td>Summary output limit</td><td>64,000 tokens</td><td>3,000 tokens</td></tr><tr><td>Marked moment output limit</td><td>8,000 tokens</td><td>800 tokens</td></tr></tbody></table>
+<p>llama.cpp follows <code>enable_thinking</code>. LM Studio ignores it and needs <code>reasoning_effort</code>, so both are sent. A <code>&#x3C;think>…&#x3C;/think></code> block in a reply is removed before it is stored.</p>
+<h2 id="context-size"><a class="header-anchor" href="#context-size" aria-hidden="true">#</a>Context size</h2>
+<p>A summary sends the whole day in one request. A full day at the 5-minute interval holds about 100 screenshot descriptions and a few hundred window spans. With thinking on, the reply can take up to 64,000 tokens on top of the prompt, so give the server a large context, for example <code>-c 131072</code>.</p>
+<blockquote class="callout callout-warning" data-kind="warning">
+<p>If the server rejects a summary for its context size, Daily Recall retries once with a shorter log. If that fails too, the overview shows the error. Raise the server’s context and regenerate.</p>
+</blockquote>
+<p>A summary cut off by the token limit is stored as a version marked incomplete, with a warning in the overview.</p>
+<h2 id="when-the-server-is-down"><a class="header-anchor" href="#when-the-server-is-down" aria-hidden="true">#</a>When the server is down</h2>
+<p>Screenshots wait in a queue that survives restarts. While the server is unreachable they stay pending and are retried, starting at 30 s and doubling up to 15 minutes. The menubar menu shows how many are pending or failed, with “Retry failed”.</p></div> </div> </article>  </main> <footer class="site-footer"> <div class="wrap footer-inner"> <div> <span class="dim">©</span> 2026 Oliver Wehrens
+<span class="sep">·</span> <span class="dim">built, printed, soldered.</span> </div> <ul class="footer-links"> <li><a href="/">blog</a></li> <li><a href="/rss.xml">rss</a></li> </ul> </div> </footer> <script type="module" src="/_astro/MakeLayout.astro_astro_type_script_index_0_lang.9-8_K50b.js"></script> </body> </html>

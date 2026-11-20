@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>daily-recall · make · Oliver Wehrens</title><meta name="description" content="A macOS menubar app that records your workday and writes the recap with an LLM you choose. Activity, screenshots and meetings stay on your Mac."><meta name="robots" content="index, follow, max-image-preview:large"><link rel="canonical" href="https://owehrens.com/make/daily-recall/"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="theme-color" content="#0c0c0e"><meta property="og:type" content="article"><meta property="og:site_name" content="Oliver Wehrens"><meta property="og:title" content="daily-recall · make · Oliver Wehrens"><meta property="og:description" content="A macOS menubar app that records your workday and writes the recap with an LLM you choose. Activity, screenshots and meetings stay on your Mac."><meta property="og:url" content="https://owehrens.com/make/daily-recall/"><meta property="og:image" content="https://owehrens.com/_astro/cover.DLzGkbOG.png"><meta name="twitter:card" content="summary_large_image"><script defer src="https://t.4004.fyi/script.js" data-website-id="ae7b9a21-3055-4b46-bc57-15eb0c646e2e"></script><script>
+      (() => {
+        try {
+          const stored = localStorage.getItem('theme');
+          document.documentElement.dataset.theme =
+            stored || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        } catch {}
+      })();
+    </script><link rel="stylesheet" href="/_astro/_doc_.hlnl6tG8.css"></head> <body> <a class="skip" href="#main">skip to content</a> <header class="site-header"> <div class="wrap header-inner"> <a class="logo" href="/make/" aria-label="make home"> <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"> <rect width="32" height="32" rx="8" fill="currentColor"></rect> <path d="M8 23V10l8 8 8-8v13" fill="none" stroke="var(--bg)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <span><span class="dim">owehrens</span>/make</span> </a> <nav class="nav" aria-label="main"> <a href="/">owehrens.com</a> </nav> <div class="tools"> <button class="tool-btn" type="button" id="make-theme" aria-label="toggle color theme"> <span class="theme-icon" aria-hidden="true"></span> </button> </div> </div> </header> <main id="main" class="wrap">  <article class="project c-green"> <header class="project-hero"> <nav class="crumb" aria-label="breadcrumb"><a href="/make/">← projects</a></nav> <div class="meta"> <a class="chip" href="/make/#software">software</a> <span class="status status-beta"><span class="led" aria-hidden="true"></span>beta</span> <span>v0.7.0</span>  </div> <h1>daily-recall</h1> <p class="project-tagline">Remembers what you did on your Mac.</p> <div class="actions"> <a class="btn btn-primary" href="/make/daily-recall/DailyRecall-0.7.0.dmg" download> download dmg ↓ </a> </div> </header> <figure class="cover"><img src="/_astro/cover.DLzGkbOG_1t4GzL.webp" alt="Daily Recall's overview window showing the summary, todos and timeline of one day" loading="eager" fetchpriority="high" decoding="async" width="1600" height="976"></figure> <div class="project-layout"> <aside class="project-side"> <dl class="facts"> <div><dt>status</dt><dd><span class="status status-beta"><span class="led" aria-hidden="true"></span>beta</span></dd></div> <div><dt>version</dt><dd>0.7.0</dd></div><div><dt>updated</dt><dd>2026-11-17</dd></div><div><dt>platform</dt><dd>macOS 26+</dd></div><div><dt>language</dt><dd>Swift 6</dd></div><div><dt>UI</dt><dd>SwiftUI, AppKit</dd></div><div><dt>LLM</dt><dd>OpenAI-compatible API</dd></div><div><dt>data</dt><dd>local SQLite</dd></div><div><dt>meetings</dt><dd>Microsoft Teams</dd></div><div><dt>browsers</dt><dd>Safari, Chrome, Brave</dd></div> </dl> <nav class="pnav" aria-label="daily-recall docs"><div class="toc-head">docs</div><ol><li><a href="/make/daily-recall/" aria-current="page">overview</a></li><li><a href="/make/daily-recall/docs/install/">install</a></li><li><a href="/make/daily-recall/docs/llm-server/">model server</a></li><li><a href="/make/daily-recall/docs/configuration/">configuration</a></li><li><a href="/make/daily-recall/docs/prompts/">prompts</a></li><li><a href="/make/daily-recall/docs/data/">data folder</a></li></ol></nav> </aside> <div class="prose"> <p><strong>A macOS menubar app that records your workday and writes the recap.</strong></p>
+<p>Daily Recall records which window you have in front, takes a screenshot of the active window every few minutes and notices when you are in a Teams call. At the end of the day, a language model you choose turns that record into a summary of what you worked on. All data stays in a folder on your Mac, and requests go only to the endpoint you set, for example a model server on your own machine.</p>
+<h2 id="features"><a class="header-anchor" href="#features" aria-hidden="true">#</a>Features</h2>
+<h3 id="day-summary"><a class="header-anchor" href="#day-summary" aria-hidden="true">#</a>Day summary</h3>
+<ul>
+<li>“Generate summary” sends the day’s log to your model and shows the result as Markdown: overview, main activities, meetings, open items, and sections for marked moments, notes and pages read when the day has them.</li>
+<li>Every summary is stored as a version, together with the exact prompt that was sent.</li>
+<li>Nothing runs on its own. A summary starts only when you ask for one, for any past day.</li>
+<li>A day runs from 04:00 to 04:00 by default, so work after midnight counts toward the day it started.</li>
+</ul>
+<h3 id="activity-timeline"><a class="header-anchor" href="#activity-timeline" aria-hidden="true">#</a>Activity timeline</h3>
+<ul>
+<li>Each switch of the front window becomes a span with app, window title and, for Safari, Chrome and Brave, the tab URL.</li>
+<li>A window counts after it stays in front for 5 s, so apps you pass while tabbing don’t clutter the timeline.</li>
+<li>Idle (after 5 minutes without input), locked, asleep and paused show as gaps.</li>
+<li>Every 5 minutes it screenshots the active window, scaled to at most 1500 px. A vision model describes each shot in up to three sentences.</li>
+</ul>
+<figure class="figure">
+  <img src="01-activity-timeline.png" alt="Timeline of a workday from 09:00 to 00:40 in app colours, above a list of screenshots with one-line descriptions" width="1600" height="976" loading="lazy" decoding="async">
+  <figcaption>The Activity view: app spans, meetings above, screenshot ticks below, and each screenshot with its description</figcaption>
+</figure>
+<h3 id="meeting-digests"><a class="header-anchor" href="#meeting-digests" aria-hidden="true">#</a>Meeting digests</h3>
+<ul>
+<li>A meeting is recorded while Microsoft Teams has the microphone open. It starts after 10 s and ends 15 s after the microphone closes.</li>
+<li>A notes window opens next to the call, with a call timer and the meeting title taken from Teams.</li>
+<li>10 minutes after the call, your model writes a digest from the title, your notes and everything recorded during the meeting: topic, decisions, action items, open questions, what was shown.</li>
+<li>In the day summary, the digest replaces the meeting’s raw spans and screenshots.</li>
+</ul>
+<figure class="figure">
+  <img src="02-meeting-digests.png" alt="Two meeting digests with sections for topic, decisions, action items, open questions and what was shown" width="1600" height="976" loading="lazy" decoding="async">
+  <figcaption>Meeting digests in the Summary view</figcaption>
+</figure>
+<h3 id="notes-dictation-and-todos"><a class="header-anchor" href="#notes-dictation-and-todos" aria-hidden="true">#</a>Notes, dictation and todos</h3>
+<ul>
+<li><code>⌃⌥⌘N</code> opens a Markdown note from any app. <code>⌃⌥⌘V</code> opens one with dictation already running.</li>
+<li>Dictation runs on your Mac with Apple’s speech models. Nothing is sent to a server and no audio is kept.</li>
+<li>Type <code>/</code> for a menu with <code>/todo</code>, <code>/time</code>, <code>/heading</code> and <code>/speak</code>. Todos are plain <code>- [ ]</code> lines and show as checkboxes.</li>
+<li><code>⌃⌥⌘M</code> captures the front window as a marked moment with a note. The summary always includes it.</li>
+</ul>
+<figure class="figure">
+  <img src="03-todos-list.png" alt="List of open todos grouped by the note or meeting they were written in, with an Add a todo field at the top" width="1600" height="976" loading="lazy" decoding="async">
+  <figcaption>The Todos list collects open todos from all notes and meeting notes</figcaption>
+</figure>
+<h3 id="clipped-pages"><a class="header-anchor" href="#clipped-pages" aria-hidden="true">#</a>Clipped pages</h3>
+<ul>
+<li>The Daily Recall Clipper extension for Chrome and Brave clips the current page as Markdown with <code>⌥⇧C</code>, also behind a login.</li>
+<li>Each clip gets a short digest, and the day summary gets a “Pages read” section.</li>
+<li>Clipping the same page again on the same day replaces it.</li>
+</ul>
+<figure class="figure">
+  <img src="04-clipped-pages.png" alt="Pages section with three clipped pages, each with title, domain, time and a short digest" width="1600" height="976" loading="lazy" decoding="async">
+  <figcaption>Clipped pages with their digests</figcaption>
+</figure>
+<h3 id="search"><a class="header-anchor" href="#search" aria-hidden="true">#</a>Search</h3>
+<ul>
+<li><code>⌃⌥⌘F</code> from any app searches screenshot descriptions, notes, meetings, digests, summaries, clipped pages and window titles across all days.</li>
+<li>Keyword hits appear immediately, grouped by day.</li>
+<li>With a model configured, questions work too. “When did I talk to Anna?” lists calls and chats per person. “What did we decide about Atlas?” gets an answer with numbered sources.</li>
+</ul>
+<figure class="figure">
+  <img src="05-search-results.png" alt="Search results for coupon flow, grouped by day and labelled summary, digest, meeting, screen, page and note" width="1600" height="976" loading="lazy" decoding="async">
+  <figcaption>Keyword search across all days</figcaption>
+</figure>
+<h3 id="menubar"><a class="header-anchor" href="#menubar" aria-hidden="true">#</a>Menubar</h3>
+<p>The app lives in the menubar. The menu shows the tracking state and any pending or failed analyses, and lets you pause for an hour or until tomorrow.</p>
+<p><img alt="Daily Recall&amp;#x27;s menubar menu with tracking state, pause options, New Note, Speak a Note, Open daily overview and Settings" loading="lazy" decoding="async" fetchpriority="auto" width="598" height="642" src="/_astro/06-menubar-menu.DLwij_Nj_2hKnzk.webp" ></p>
+<h2 id="privacy"><a class="header-anchor" href="#privacy" aria-hidden="true">#</a>Privacy</h2>
+<blockquote class="callout callout-note" data-kind="note">
+<p>Everything is stored in one folder on your Mac, <code>~/.config/daily-recall</code> by default. Requests go only to the model endpoint you configure.</p>
+</blockquote>
+<ul>
+<li><strong>Private rules.</strong> Mark an app, a domain or window-title text as private. Matching windows are not screenshotted for analysis, and the model sees only a gap, with no app, title or time range.</li>
+<li><strong>Retention.</strong> Screenshot images are deleted after 14 days by default, once their description exists. The text stays.</li>
+<li><strong>Note windows</strong> are excluded from screen capture.</li>
+<li><strong>Dictation</strong> is transcribed on the Mac. The scratch audio is deleted after each dictation.</li>
+<li><strong>About me</strong>, a few sentences of context you write, goes to the model with every request. Leave it empty if you prefer.</li>
+</ul>
+<figure class="figure">
+  <img src="07-private-rules.png" alt="Settings window with the Private pane: two rules, a domain and an app, and a form to add a rule" width="1600" height="1001" loading="lazy" decoding="async">
+  <figcaption>Settings › Private</figcaption>
+</figure>
+<h2 id="requirements"><a class="header-anchor" href="#requirements" aria-hidden="true">#</a>Requirements</h2>
+<ul>
+<li>macOS 26 or later</li>
+<li>An OpenAI-compatible chat completions endpoint with a vision model, for example llama.cpp’s <code>llama-server</code> or LM Studio. See <a href="docs/llm-server/">model server</a>.</li>
+<li>Microsoft Teams (the new app) for meeting detection. Zoom, Meet and classic Teams are not detected.</li>
+<li>Chrome or Brave for web clips</li>
+</ul>
+<h2 id="getting-started"><a class="header-anchor" href="#getting-started" aria-hidden="true">#</a>Getting started</h2>
+<ol>
+<li>Open the DMG and drag Daily Recall to Applications. Start it.</li>
+<li>The “Welcome to Daily Recall” window opens. Nothing is recorded until you select “Get Started”.</li>
+<li>Select “Open…” next to “Grant permissions”. In Settings › Permissions, “Open Settings” under Screen Recording adds Daily Recall to the list in System Settings. Turn it on there.</li>
+<li>Grant <strong>Accessibility</strong> in System Settings › Privacy &#x26; Security › Accessibility. Window titles appear within 2 seconds.</li>
+<li>Select “Set Up…” next to “Connect a model”, enter the base URL including <code>/v1</code>, for example <code>http://localhost:8080/v1</code>, and run “Test Connection”.</li>
+<li>Optionally write “About me” and review the prompts. Then select “Get Started”.</li>
+<li>macOS asks for <strong>Automation</strong> the first time Safari, Chrome or Brave is in front, so the tab URL can be read. It asks for the <strong>Microphone</strong> the first time you dictate.</li>
+<li>Work as usual. In the evening, open the overview from the menubar and select “Generate summary”.</li>
+</ol>
+<p>More detail: <a href="docs/install/">install</a>, <a href="docs/configuration/">configuration</a>, <a href="docs/prompts/">prompts</a>, <a href="docs/data/">data folder</a>.</p>  <h2 id="downloads">downloads</h2> <ul class="downloads"> <li><a href="/make/daily-recall/DailyRecall-0.7.0.dmg" download><span class="dl-ext">dmg</span>DailyRecall-0.7.0.dmg</a><span class="dim">9.9 MB</span></li> </ul>    <h2 id="changelog">changelog</h2> <ol class="changelog"> <li> <div class="cl-head"><strong>v0.7.0</strong><span class="dim">2026-11-17</span></div> <ul><li>Notes and meeting notes get a slash menu with /todo, /time, /heading and /speak.</li><li>Todos are Markdown checkboxes in notes. A Todos list in the overview collects them from all notes and meetings.</li><li>A browser extension for Chrome and Brave clips the current page. Each clip gets its own LLM digest.</li><li>Back-to-back Teams calls are recorded as separate meetings.</li></ul> </li><li> <div class="cl-head"><strong>v0.6.0</strong><span class="dim">2026-11-11</span></div> <ul><li>A welcome window guides a new install through permissions, model and prompts.</li><li>Typed and spoken notes are now one kind of note. Dictation writes straight into the note.</li><li>Two running copies no longer record into the same data folder.</li><li>Thinking can now be turned off on LM Studio.</li></ul> </li><li> <div class="cl-head"><strong>v0.5.0</strong><span class="dim">2026-11-03</span></div> <ul><li>Search across all days, with answers to questions from your configured model.</li><li>Markdown notes from any app with a global hotkey.</li><li>Dictation into notes, transcribed on your Mac.</li></ul> </li><li> <div class="cl-head"><strong>v0.4.0</strong><span class="dim">2026-11-02</span></div> <ul><li>Each finished Teams meeting gets an LLM-written digest.</li><li>Prompts and &quot;About me&quot; can be exported and imported as a JSON file.</li><li>Private activity is no longer sent to the model in any form.</li></ul> </li><li> <div class="cl-head"><strong>v0.3.0</strong><span class="dim">2026-11-02</span></div> <ul><li>Screenshots show only the active window by default.</li><li>Private rules keep apps, domains or window titles out of the summary.</li></ul> </li><li> <div class="cl-head"><strong>v0.2.0</strong><span class="dim">2026-11-02</span></div> <ul><li>First release with activity tracking, screenshot analysis, the daily overview and summary, marked moments and Teams meetings.</li></ul> </li> </ol>   </div> </div> </article>  </main> <footer class="site-footer"> <div class="wrap footer-inner"> <div> <span class="dim">©</span> 2026 Oliver Wehrens
+<span class="sep">·</span> <span class="dim">built, printed, soldered.</span> </div> <ul class="footer-links"> <li><a href="/">blog</a></li> <li><a href="/rss.xml">rss</a></li> </ul> </div> </footer> <script type="module" src="/_astro/MakeLayout.astro_astro_type_script_index_0_lang.9-8_K50b.js"></script> </body> </html>

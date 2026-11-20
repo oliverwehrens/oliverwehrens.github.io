@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Prompts · daily-recall · make · Oliver Wehrens</title><meta name="description" content="Customize the six Daily Recall prompts and their placeholders, write About me context, and import or export prompts as a JSON file."><meta name="robots" content="index, follow, max-image-preview:large"><link rel="canonical" href="https://owehrens.com/make/daily-recall/docs/prompts/"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="theme-color" content="#0c0c0e"><meta property="og:type" content="article"><meta property="og:site_name" content="Oliver Wehrens"><meta property="og:title" content="Prompts · daily-recall · make · Oliver Wehrens"><meta property="og:description" content="Customize the six Daily Recall prompts and their placeholders, write About me context, and import or export prompts as a JSON file."><meta property="og:url" content="https://owehrens.com/make/daily-recall/docs/prompts/"><meta name="twitter:card" content="summary_large_image"><script defer src="https://t.4004.fyi/script.js" data-website-id="ae7b9a21-3055-4b46-bc57-15eb0c646e2e"></script><script>
+      (() => {
+        try {
+          const stored = localStorage.getItem('theme');
+          document.documentElement.dataset.theme =
+            stored || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        } catch {}
+      })();
+    </script><link rel="stylesheet" href="/_astro/_doc_.hlnl6tG8.css"></head> <body> <a class="skip" href="#main">skip to content</a> <header class="site-header"> <div class="wrap header-inner"> <a class="logo" href="/make/" aria-label="make home"> <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"> <rect width="32" height="32" rx="8" fill="currentColor"></rect> <path d="M8 23V10l8 8 8-8v13" fill="none" stroke="var(--bg)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <span><span class="dim">owehrens</span>/make</span> </a> <nav class="nav" aria-label="main"> <a href="/">owehrens.com</a> </nav> <div class="tools"> <button class="tool-btn" type="button" id="make-theme" aria-label="toggle color theme"> <span class="theme-icon" aria-hidden="true"></span> </button> </div> </div> </header> <main id="main" class="wrap">  <article class="project c-green"> <header class="post-header"> <nav class="crumb" aria-label="breadcrumb"><a href="/make/">projects</a><span>/</span><a href="/make/daily-recall/">daily-recall</a></nav> <h1>Prompts</h1>  </header> <div class="project-layout"> <aside class="project-side"><nav class="pnav" aria-label="daily-recall docs"><div class="toc-head">docs</div><ol><li><a href="/make/daily-recall/">overview</a></li><li><a href="/make/daily-recall/docs/install/">install</a></li><li><a href="/make/daily-recall/docs/llm-server/">model server</a></li><li><a href="/make/daily-recall/docs/configuration/">configuration</a></li><li><a href="/make/daily-recall/docs/prompts/" aria-current="page">prompts</a></li><li><a href="/make/daily-recall/docs/data/">data folder</a></li></ol></nav></aside> <div class="prose"><p>Settings › Prompts holds “About me” and six prompts. Pick a prompt in the “Prompt” menu, edit it, and use “Reset to Default” to go back. Changes apply to requests made afterwards. Existing descriptions, digests and summaries are not redone.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>#</th><th>Prompt</th><th>Used for</th><th>Thinking default</th></tr></thead><tbody><tr><td>1</td><td>Screenshot</td><td>one description per periodic screenshot</td><td>always off</td></tr><tr><td>2</td><td>Daily Summary</td><td>the recap of a day</td><td>on</td></tr><tr><td>3</td><td>Marked Moment</td><td>a captured window with your note</td><td>on</td></tr><tr><td>4</td><td>Meeting Digest</td><td>one finished Teams meeting</td><td>on</td></tr><tr><td>5</td><td>Search Answer</td><td>answers to search questions</td><td>off</td></tr><tr><td>6</td><td>Page Digest</td><td>one clipped web page</td><td>on</td></tr></tbody></table>
+<h2 id="about-me"><a class="header-anchor" href="#about-me" aria-hidden="true">#</a>About me</h2>
+<p>A few sentences about you and your work, for example “Work laptop. Engineering manager of a payments team; I also code.” When it is not empty, it is sent as a <code>system</code> message with every request: prompts 1 to 6 and the search question parse. “Test Connection” does not send it.</p>
+<h2 id="placeholders"><a class="header-anchor" href="#placeholders" aria-hidden="true">#</a>Placeholders</h2>
+<p>Each placeholder is replaced before the request is sent. For prompts 2, 4, 5 and 6, placeholders missing from your text are appended after it.</p>
+<h3 id="1-screenshot"><a class="header-anchor" href="#1-screenshot" aria-hidden="true">#</a>1 · Screenshot</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Placeholder</th><th>Replaced by</th></tr></thead><tbody><tr><td><code>{{time}}</code></td><td>local capture time, e.g. <code>2026-10-27 14:05</code></td></tr><tr><td><code>{{window}}</code></td><td>app, window title and URL</td></tr><tr><td><code>{{scope}}</code></td><td>”one window” or “the whole screen”</td></tr></tbody></table>
+<h3 id="2-daily-summary"><a class="header-anchor" href="#2-daily-summary" aria-hidden="true">#</a>2 · Daily Summary</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Placeholder</th><th>Replaced by</th></tr></thead><tbody><tr><td><code>{{date}}</code></td><td>the day and its range, e.g. <code>Tue 27 Oct 2026 (04:00 – Wed 28 Oct 04:00)</code></td></tr><tr><td><code>{{log}}</code></td><td>the merged log of the day (below)</td></tr><tr><td><code>{{app_totals}}</code></td><td>one <code>App  1h 12m</code> line per app, longest first</td></tr><tr><td><code>{{marked}}</code></td><td>the day’s marked moments, or <code>none</code></td></tr><tr><td><code>{{meetings}}</code></td><td>each meeting with its digest, or its notes if it has no digest</td></tr><tr><td><code>{{pages}}</code></td><td>each clipped page with its digest</td></tr><tr><td><code>{{notes}}</code></td><td>each note with its title and body</td></tr></tbody></table>
+<p>The log merges consecutive spans of the same window, leaves out spans shorter than 30 s, and interleaves screenshot descriptions, meetings, notes, clipped pages and absences:</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="text"><code><span class="line"><span>09:00-09:58  Xcode  "AuthService.swift"</span></span>
+<span class="line"><span>09:58-10:09  Google Chrome  "PR #12 - GitHub"  https://github.com/x/y/pull/12</span></span>
+<span class="line"><span>10:05  [screen] Reviews PR #12 in GitHub. Comments on the auth change.</span></span>
+<span class="line"><span>10:30-10:50  (idle)</span></span>
+<span class="line"><span>11:30-11:55  [meeting] Sprint Review</span></span>
+<span class="line"><span>    Topic: sprint review of the Atlas team.</span></span>
+<span class="line"><span>    Decisions: ...</span></span>
+<span class="line"><span>13:42  [page] Atlas rollout plan  https://wiki.example.com/atlas/rollout</span></span>
+<span class="line"><span>    Rollout plan for Atlas in two waves.</span></span>
+<span class="line"><span>14:05  [note] Clarify the migration with Anna</span></span></code></pre>
+<p>A meeting with a current digest appears as its <code>[meeting]</code> line followed by the digest. Its spans, screenshots and notes are left out, because the digest already covers them.</p>
+<h3 id="3-marked-moment"><a class="header-anchor" href="#3-marked-moment" aria-hidden="true">#</a>3 · Marked Moment</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Placeholder</th><th>Replaced by</th></tr></thead><tbody><tr><td><code>{{time}}</code></td><td>capture time</td></tr><tr><td><code>{{scope}}</code></td><td>”one window” or “the whole screen”</td></tr><tr><td><code>{{window}}</code></td><td>app, window title and URL</td></tr><tr><td><code>{{note}}</code></td><td>the note you typed</td></tr></tbody></table>
+<h3 id="4-meeting-digest"><a class="header-anchor" href="#4-meeting-digest" aria-hidden="true">#</a>4 · Meeting Digest</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Placeholder</th><th>Replaced by</th></tr></thead><tbody><tr><td><code>{{title}}</code></td><td>the meeting title</td></tr><tr><td><code>{{time}}</code></td><td>date and time range, e.g. <code>Tue 27 Oct 2026 10:02-10:47</code></td></tr><tr><td><code>{{notes}}</code></td><td>your meeting notes, or <code>none</code></td></tr><tr><td><code>{{log}}</code></td><td>everything recorded during the meeting, in the day log format, or <code>none</code></td></tr></tbody></table>
+<p>The meeting log includes marked moments and notes up to 10 minutes after the call ends.</p>
+<h3 id="5-search-answer"><a class="header-anchor" href="#5-search-answer" aria-hidden="true">#</a>5 · Search Answer</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Placeholder</th><th>Replaced by</th></tr></thead><tbody><tr><td><code>{{question}}</code></td><td>the search input as typed</td></tr><tr><td><code>{{today}}</code></td><td>the current day, e.g. <code>Tue 3 Nov 2026</code></td></tr><tr><td><code>{{sources}}</code></td><td>up to 12 hits, most relevant first, each numbered <code>[n]</code> and cut to 600 characters</td></tr></tbody></table>
+<h3 id="6-page-digest"><a class="header-anchor" href="#6-page-digest" aria-hidden="true">#</a>6 · Page Digest</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Placeholder</th><th>Replaced by</th></tr></thead><tbody><tr><td><code>{{title}}</code></td><td>the page title</td></tr><tr><td><code>{{url}}</code></td><td>the URL as clipped</td></tr><tr><td><code>{{time}}</code></td><td>date and clip time, with <code>, updated 14:10</code> after a re-clip</td></tr><tr><td><code>{{content}}</code></td><td>the page as Markdown, in full</td></tr></tbody></table>
+<h2 id="import-and-export"><a class="header-anchor" href="#import-and-export" aria-hidden="true">#</a>Import and export</h2>
+<p>“Export…” writes “About me” and prompts 1 to 4 and 6 to a JSON file. A sheet lets you uncheck sections you don’t want to share. The file holds no base URL, model, API key or private rules. Prompt 5 is not part of the file.</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  "format"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"daily-recall-prompts"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  "version"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : </span><span style="color:#005CC5;--shiki-dark:#79B8FF">1</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  "aboutMe"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"Work laptop. Engineering manager of a payments team; I also code."</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">  "prompts"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : {</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    "screenshot"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : { </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"text"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"…"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    "summary"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : { </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"text"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"…"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"thinking"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : </span><span style="color:#005CC5;--shiki-dark:#79B8FF">true</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    "marked"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : { </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"text"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"…"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"thinking"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : </span><span style="color:#005CC5;--shiki-dark:#79B8FF">true</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    "meeting"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : { </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"text"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"…"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"thinking"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : </span><span style="color:#005CC5;--shiki-dark:#79B8FF">true</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">    "page"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : { </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"text"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : </span><span style="color:#032F62;--shiki-dark:#9ECBFF">"…"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span style="color:#005CC5;--shiki-dark:#79B8FF">"thinking"</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> : </span><span style="color:#005CC5;--shiki-dark:#79B8FF">true</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> }</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
+<p>“Import…” shows the same sheet. “About me” starts unchecked, so importing someone else’s prompts does not replace your context by accident. “Replace” overwrites only the checked sections. A file that is not JSON, has another format, a newer version or no sections is refused, and nothing changes.</p></div> </div> </article>  </main> <footer class="site-footer"> <div class="wrap footer-inner"> <div> <span class="dim">©</span> 2026 Oliver Wehrens
+<span class="sep">·</span> <span class="dim">built, printed, soldered.</span> </div> <ul class="footer-links"> <li><a href="/">blog</a></li> <li><a href="/rss.xml">rss</a></li> </ul> </div> </footer> <script type="module" src="/_astro/MakeLayout.astro_astro_type_script_index_0_lang.9-8_K50b.js"></script> </body> </html>

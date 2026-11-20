@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Install · daily-recall · make · Oliver Wehrens</title><meta name="description" content="Install Daily Recall on macOS 26, grant Screen Recording, Accessibility, Automation and Microphone, and finish the welcome window."><meta name="robots" content="index, follow, max-image-preview:large"><link rel="canonical" href="https://owehrens.com/make/daily-recall/docs/install/"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="theme-color" content="#0c0c0e"><meta property="og:type" content="article"><meta property="og:site_name" content="Oliver Wehrens"><meta property="og:title" content="Install · daily-recall · make · Oliver Wehrens"><meta property="og:description" content="Install Daily Recall on macOS 26, grant Screen Recording, Accessibility, Automation and Microphone, and finish the welcome window."><meta property="og:url" content="https://owehrens.com/make/daily-recall/docs/install/"><meta name="twitter:card" content="summary_large_image"><script defer src="https://t.4004.fyi/script.js" data-website-id="ae7b9a21-3055-4b46-bc57-15eb0c646e2e"></script><script>
+      (() => {
+        try {
+          const stored = localStorage.getItem('theme');
+          document.documentElement.dataset.theme =
+            stored || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        } catch {}
+      })();
+    </script><link rel="stylesheet" href="/_astro/_doc_.hlnl6tG8.css"></head> <body> <a class="skip" href="#main">skip to content</a> <header class="site-header"> <div class="wrap header-inner"> <a class="logo" href="/make/" aria-label="make home"> <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"> <rect width="32" height="32" rx="8" fill="currentColor"></rect> <path d="M8 23V10l8 8 8-8v13" fill="none" stroke="var(--bg)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <span><span class="dim">owehrens</span>/make</span> </a> <nav class="nav" aria-label="main"> <a href="/">owehrens.com</a> </nav> <div class="tools"> <button class="tool-btn" type="button" id="make-theme" aria-label="toggle color theme"> <span class="theme-icon" aria-hidden="true"></span> </button> </div> </div> </header> <main id="main" class="wrap">  <article class="project c-green"> <header class="post-header"> <nav class="crumb" aria-label="breadcrumb"><a href="/make/">projects</a><span>/</span><a href="/make/daily-recall/">daily-recall</a></nav> <h1>Install</h1>  </header> <div class="project-layout"> <aside class="project-side"><nav class="pnav" aria-label="daily-recall docs"><div class="toc-head">docs</div><ol><li><a href="/make/daily-recall/">overview</a></li><li><a href="/make/daily-recall/docs/install/" aria-current="page">install</a></li><li><a href="/make/daily-recall/docs/llm-server/">model server</a></li><li><a href="/make/daily-recall/docs/configuration/">configuration</a></li><li><a href="/make/daily-recall/docs/prompts/">prompts</a></li><li><a href="/make/daily-recall/docs/data/">data folder</a></li></ol></nav></aside> <div class="prose"><h2 id="install-the-app"><a class="header-anchor" href="#install-the-app" aria-hidden="true">#</a>Install the app</h2>
+<ol>
+<li>Open the DMG and drag Daily Recall to Applications.</li>
+<li>Start Daily Recall from Applications. A new install opens the “Welcome to Daily Recall” window.</li>
+</ol>
+<p>The app needs macOS 26 or later. It is signed with a Developer ID and notarized.</p>
+<h2 id="the-welcome-window"><a class="header-anchor" href="#the-welcome-window" aria-hidden="true">#</a>The welcome window</h2>
+<p>The window has four rows. Each one opens the matching Settings pane:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Row</th><th>Opens</th><th>What to do</th></tr></thead><tbody><tr><td>Grant permissions</td><td>Settings › Permissions</td><td>Grant Screen Recording and Accessibility</td></tr><tr><td>Connect a model</td><td>Settings › Model</td><td>Enter the base URL and run “Test Connection”</td></tr><tr><td>Tell it about you</td><td>edits “About me” in place</td><td>A few sentences about your work (optional)</td></tr><tr><td>Review the prompts</td><td>Settings › Prompts</td><td>The defaults work (optional)</td></tr></tbody></table>
+<p>Nothing is recorded until you select “Get Started”: no spans, screenshots or meetings, and the global hotkeys do nothing. “Get Started” is always enabled, whatever is still missing.</p>
+<p>If you close the window instead, the menubar menu reads “Setup not finished” and offers “Finish Setup…”.</p>
+<h2 id="permissions"><a class="header-anchor" href="#permissions" aria-hidden="true">#</a>Permissions</h2>
+<p>Daily Recall is not sandboxed. Settings › Permissions shows the state of each permission and opens the matching System Settings pane.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Permission</th><th>Needed for</th><th>Without it</th></tr></thead><tbody><tr><td>Screen Recording</td><td>screenshots</td><td>no screenshots; activity tracking continues</td></tr><tr><td>Accessibility</td><td>window titles</td><td>only app switches are recorded</td></tr><tr><td>Automation › Safari, Chrome, Brave</td><td>the active tab URL</td><td>spans of that browser have no URL</td></tr><tr><td>Microphone</td><td>dictation</td><td>the dictation hotkey shows a warning</td></tr></tbody></table>
+<p>In the order you meet them:</p>
+<ol>
+<li><strong>Screen Recording.</strong> In Settings › Permissions, “Open Settings” adds Daily Recall to the list in System Settings › Privacy &#x26; Security › Screen Recording. Turn it on there. Daily Recall never asks at launch. macOS may ask you to confirm this permission again from time to time.</li>
+<li><strong>Accessibility.</strong> Turn on Daily Recall in System Settings › Privacy &#x26; Security › Accessibility. The app picks it up within 2 seconds, without a restart.</li>
+<li><strong>Automation.</strong> macOS asks the first time each browser is in front while Daily Recall is tracking. Change it later in System Settings › Privacy &#x26; Security › Automation.</li>
+<li><strong>Microphone.</strong> macOS asks the first time you dictate. “Request Access” in Settings › Permissions asks ahead of time. Speech recognition needs no separate permission.</li>
+</ol>
+<blockquote class="callout callout-tip" data-kind="tip">
+<p>Meeting detection reads which app uses the microphone. That needs no microphone permission.</p>
+</blockquote>
+<h2 id="launch-at-login"><a class="header-anchor" href="#launch-at-login" aria-hidden="true">#</a>Launch at login</h2>
+<p>Turn on “Launch at login” in Settings › General. A launch at login shows only the menubar icon. Starting the app from Finder or Spotlight opens the overview on today.</p>
+<p><code>⌘Q</code> closes the overview, Settings and meeting notes windows and keeps tracking in the menubar. “Quit” in the menubar menu exits.</p>
+<h2 id="web-clip-extension"><a class="header-anchor" href="#web-clip-extension" aria-hidden="true">#</a>Web clip extension</h2>
+<p>The clipper works in Google Chrome and Brave.</p>
+<ol>
+<li>In Settings › Web Clips, select “Connect”. This installs the native messaging host that passes clips to the app.</li>
+<li>Open <code>chrome://extensions</code> or <code>brave://extensions</code> and turn on “Developer mode”.</li>
+<li>Select “Load unpacked” and choose the folder that “Show Extension in Finder” reveals: <code>~/Library/Application Support/Daily Recall/Browser Extension</code>.</li>
+<li>Clip with the toolbar button or <code>⌥⇧C</code>. Change the shortcut at <code>chrome://extensions/shortcuts</code>.</li>
+</ol>
+<p>After an app update, select the extension’s reload button on the extensions page or restart the browser.</p>
+<h2 id="known-limits"><a class="header-anchor" href="#known-limits" aria-hidden="true">#</a>Known limits</h2>
+<ul>
+<li>Web clips work in Chrome and Brave only, from the unpacked extension. Chrome shows its developer mode notice for it.</li>
+<li>Safari private windows can’t be detected and are recorded like normal windows. Chrome and Brave incognito windows are recorded with the app name only.</li>
+<li>A URL change without a title change, as in some single-page apps, does not start a new span.</li>
+<li>Watching a video without keyboard or mouse input counts as idle after the idle threshold.</li>
+<li>Only the new Teams app is detected as a meeting. A Teams device test that keeps the microphone open for 10 s is recorded as a meeting.</li>
+<li>Opening a Bluetooth headset’s microphone for dictation switches it to a low-quality profile. This also affects a running Teams call.</li>
+</ul></div> </div> </article>  </main> <footer class="site-footer"> <div class="wrap footer-inner"> <div> <span class="dim">©</span> 2026 Oliver Wehrens
+<span class="sep">·</span> <span class="dim">built, printed, soldered.</span> </div> <ul class="footer-links"> <li><a href="/">blog</a></li> <li><a href="/rss.xml">rss</a></li> </ul> </div> </footer> <script type="module" src="/_astro/MakeLayout.astro_astro_type_script_index_0_lang.9-8_K50b.js"></script> </body> </html>

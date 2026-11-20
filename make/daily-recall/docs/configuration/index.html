@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Configuration · daily-recall · make · Oliver Wehrens</title><meta name="description" content="Every Daily Recall setting by pane: day start, idle time, screenshot interval, hotkeys, dictation languages, private rules and storage retention."><meta name="robots" content="index, follow, max-image-preview:large"><link rel="canonical" href="https://owehrens.com/make/daily-recall/docs/configuration/"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="theme-color" content="#0c0c0e"><meta property="og:type" content="article"><meta property="og:site_name" content="Oliver Wehrens"><meta property="og:title" content="Configuration · daily-recall · make · Oliver Wehrens"><meta property="og:description" content="Every Daily Recall setting by pane: day start, idle time, screenshot interval, hotkeys, dictation languages, private rules and storage retention."><meta property="og:url" content="https://owehrens.com/make/daily-recall/docs/configuration/"><meta name="twitter:card" content="summary_large_image"><script defer src="https://t.4004.fyi/script.js" data-website-id="ae7b9a21-3055-4b46-bc57-15eb0c646e2e"></script><script>
+      (() => {
+        try {
+          const stored = localStorage.getItem('theme');
+          document.documentElement.dataset.theme =
+            stored || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        } catch {}
+      })();
+    </script><link rel="stylesheet" href="/_astro/_doc_.hlnl6tG8.css"></head> <body> <a class="skip" href="#main">skip to content</a> <header class="site-header"> <div class="wrap header-inner"> <a class="logo" href="/make/" aria-label="make home"> <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"> <rect width="32" height="32" rx="8" fill="currentColor"></rect> <path d="M8 23V10l8 8 8-8v13" fill="none" stroke="var(--bg)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <span><span class="dim">owehrens</span>/make</span> </a> <nav class="nav" aria-label="main"> <a href="/">owehrens.com</a> </nav> <div class="tools"> <button class="tool-btn" type="button" id="make-theme" aria-label="toggle color theme"> <span class="theme-icon" aria-hidden="true"></span> </button> </div> </div> </header> <main id="main" class="wrap">  <article class="project c-green"> <header class="post-header"> <nav class="crumb" aria-label="breadcrumb"><a href="/make/">projects</a><span>/</span><a href="/make/daily-recall/">daily-recall</a></nav> <h1>Configuration</h1>  </header> <div class="project-layout"> <aside class="project-side"><nav class="pnav" aria-label="daily-recall docs"><div class="toc-head">docs</div><ol><li><a href="/make/daily-recall/">overview</a></li><li><a href="/make/daily-recall/docs/install/">install</a></li><li><a href="/make/daily-recall/docs/llm-server/">model server</a></li><li><a href="/make/daily-recall/docs/configuration/" aria-current="page">configuration</a></li><li><a href="/make/daily-recall/docs/prompts/">prompts</a></li><li><a href="/make/daily-recall/docs/data/">data folder</a></li></ol></nav></aside> <div class="prose"><p>Open Settings with <code>⌘,</code> or “Settings…” in the menubar menu. Settings are stored in <code>settings.json</code> in the data folder. You can edit the file by hand: unknown keys are ignored and missing keys use their defaults.</p>
+<h2 id="general"><a class="header-anchor" href="#general" aria-hidden="true">#</a>General</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Setting</th><th>Default</th><th>Notes</th></tr></thead><tbody><tr><td>Launch at login</td><td>off</td><td>A launch at login shows only the menubar icon</td></tr><tr><td>Day starts at</td><td>04:00</td><td>Activity before this time counts toward the previous day</td></tr><tr><td>Search hotkey</td><td><code>⌃⌥⌘F</code></td><td>Opens the overview with the search field focused</td></tr></tbody></table>
+<h2 id="activity"><a class="header-anchor" href="#activity" aria-hidden="true">#</a>Activity</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Setting</th><th>Default</th><th>Choices</th></tr></thead><tbody><tr><td>Mark as idle after</td><td>5 min</td><td>1, 2, 3, 5, 10, 15, 30 min</td></tr><tr><td>Record a window after</td><td>5 s</td><td>2, 3, 5, 10, 15, 30 s</td></tr></tbody></table>
+<p>A window must stay in front for the “Record a window after” time before it shows up in the timeline. Shorter visits count toward the next window. Lock, sleep, idle and pause end the current span.</p>
+<h2 id="screenshots"><a class="header-anchor" href="#screenshots" aria-hidden="true">#</a>Screenshots</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Setting</th><th>Default</th><th>Choices</th></tr></thead><tbody><tr><td>Capture every</td><td>5 min</td><td>1, 2, 5, 10, 15, 30 min</td></tr><tr><td>Longest image edge</td><td>1500 px</td><td>1000, 1280, 1500, 1920, 2560 px</td></tr><tr><td>Capture active window only</td><td>on</td><td></td></tr></tbody></table>
+<p>With “Capture active window only” on, a screenshot shows the front window. It shows the whole display instead when no window is open, when Daily Recall is in front, or when the window covers less than 10% of its display. No screenshots are taken while idle, locked, asleep or paused.</p>
+<h2 id="marked-moments"><a class="header-anchor" href="#marked-moments" aria-hidden="true">#</a>Marked Moments</h2>
+<p><code>⌃⌥⌘M</code> captures the front window and asks for a note. It works while paused. The model analyses it with prompt 3, and the day summary always includes it.</p>
+<h2 id="dictation"><a class="header-anchor" href="#dictation" aria-hidden="true">#</a>Dictation</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Setting</th><th>Default</th></tr></thead><tbody><tr><td>Speak a note hotkey</td><td><code>⌃⌥⌘V</code></td></tr><tr><td>Primary language</td><td>German</td></tr><tr><td>Secondary language</td><td>English</td></tr></tbody></table>
+<p>Dictation starts in the primary language. <code>⌘L</code> while dictating switches to the other one and redoes the text. Speech Models shows whether each language’s on-device model is installed, with “Download”.</p>
+<h2 id="notes"><a class="header-anchor" href="#notes" aria-hidden="true">#</a>Notes</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Setting</th><th>Default</th></tr></thead><tbody><tr><td>New note hotkey</td><td><code>⌃⌥⌘N</code></td></tr></tbody></table>
+<p>During a Teams call and the 10 minutes after it, both note hotkeys go to the meeting’s notes window instead.</p>
+<h2 id="web-clips"><a class="header-anchor" href="#web-clips" aria-hidden="true">#</a>Web Clips</h2>
+<p>“Connect” and “Disconnect” install and remove the native messaging host for Chrome and Brave. See <a href="../install/#web-clip-extension">install</a>.</p>
+<h2 id="model"><a class="header-anchor" href="#model" aria-hidden="true">#</a>Model</h2>
+<p>Base URL, model name, API key and “Test Connection”. See <a href="../llm-server/">model server</a>.</p>
+<h2 id="prompts"><a class="header-anchor" href="#prompts" aria-hidden="true">#</a>Prompts</h2>
+<p>“About me” and the six prompts, with import and export. See <a href="../prompts/">prompts</a>.</p>
+<h2 id="private"><a class="header-anchor" href="#private" aria-hidden="true">#</a>Private</h2>
+<p>Rules that keep activity away from the model. A rule matches an app, a domain (including its subdomains), text in the window title, or a combination. With several set, a window must match all of them.</p>
+<p>Matching activity:</p>
+<ul>
+<li>still counts in the overview, with a lock</li>
+<li>is left out of the summary log and the time per app the model sees</li>
+<li>is not analysed: periodic screenshots of a private window are skipped</li>
+<li>is left out of search results and meeting digests</li>
+<li>is refused by the web clip extension</li>
+</ul>
+<p>Marked moments, notes and meetings are not affected. You can also right-click an entry in the Activity list, or an app or domain in the Apps view, to mark it as private.</p>
+<h2 id="permissions"><a class="header-anchor" href="#permissions" aria-hidden="true">#</a>Permissions</h2>
+<p>The state of Screen Recording, Accessibility, Microphone and Automation, with buttons to the matching System Settings panes. See <a href="../install/#permissions">install</a>.</p>
+<h2 id="storage"><a class="header-anchor" href="#storage" aria-hidden="true">#</a>Storage</h2>
+<p>Shows the disk space each kind of data takes, and sets how long files are kept.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Data</th><th>Default</th><th>Choices</th></tr></thead><tbody><tr><td>Screenshots</td><td>14 days</td><td>7, 14, 30, 90 days, forever</td></tr><tr><td>Marked moments</td><td>forever</td><td>1, 3, 6, 12 months, forever</td></tr><tr><td>Summary logs</td><td>forever</td><td>1, 3, 6, 12 months, forever</td></tr></tbody></table>
+<p>Retention deletes only image and log files, never the text in the database. A screenshot image is deleted only after its description exists. A shorter period that would delete files right away asks first.</p>
+<p>Here you can also choose another data folder. It takes effect after “Restart Now”. Existing data is not moved: to keep it, quit Daily Recall, copy the old folder’s contents into the new folder, then start it.</p>
+<h2 id="overview-shortcuts"><a class="header-anchor" href="#overview-shortcuts" aria-hidden="true">#</a>Overview shortcuts</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Shortcut</th><th>Action</th></tr></thead><tbody><tr><td><code>⌘[</code> / <code>⌘]</code></td><td>previous / next day</td></tr><tr><td><code>⌘T</code></td><td>today</td></tr><tr><td><code>⌘1</code> / <code>⌘2</code> / <code>⌘3</code></td><td>Summary / Activity / Apps</td></tr><tr><td><code>⌃⌘I</code></td><td>show or hide the inspector</td></tr><tr><td><code>⌘F</code></td><td>focus the search field</td></tr><tr><td><code>⌘D</code></td><td>dictate into the search field or a note</td></tr></tbody></table></div> </div> </article>  </main> <footer class="site-footer"> <div class="wrap footer-inner"> <div> <span class="dim">©</span> 2026 Oliver Wehrens
+<span class="sep">·</span> <span class="dim">built, printed, soldered.</span> </div> <ul class="footer-links"> <li><a href="/">blog</a></li> <li><a href="/rss.xml">rss</a></li> </ul> </div> </footer> <script type="module" src="/_astro/MakeLayout.astro_astro_type_script_index_0_lang.9-8_K50b.js"></script> </body> </html>
